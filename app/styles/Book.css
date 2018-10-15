@@ -1,0 +1,50 @@
+.book-all {
+  background: black;
+  width: 13.5%;
+  float: left;
+  margin-left: 10px;
+  border: 10px solid #9d9d80;
+  margin-bottom: 20px;
+}
+
+.img-all {
+  width: 100%;
+  max-height: 200px;
+  min-height: 200px;
+}
+
+.bookname-all {
+  padding: 10px;
+  text-align: center;
+  font-size: 30px;
+  overflow: auto;
+  white-space: nowrap;
+  color: #f0ff00;
+}
+
+.nickname-all {
+  padding: 10px;
+  text-align: center;
+  color: rgba(239, 255, 0, 0.42);
+  overflow: auto;
+}
+
+.nickname-all:hover {
+  cursor: help;
+}
+
+.exchange-btn-all {
+  color: yellow;
+  width: 100%;
+  background: #ff006a;
+  padding: 5px;
+  text-align: center;
+}
+
+.exchange-btn-all:hover {
+  color: black;
+  width: 100%;
+  background: yellow;
+  font-weight: bold;
+  cursor: pointer;
+}
