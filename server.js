@@ -28,16 +28,16 @@ const mongoose = require('mongoose');
 const url = process.env.MONGOLAB_URI;      
 // connection
 //error here below
-//const promise_connection = mongoose.connect(url, { 	useMongoClient: true });
+const promise_connection = mongoose.connect(url, { 	useMongoClient: true });
 
-//*try
-const promise_connection = mongoose.connect(url,{useNewUrlParser: true, 
-    useUnifiedTopology: true})
+/*try
+const promise_connection = mongoose.connect(url,{useNewUrlParser: true 
+    //, useUnifiedTopology: true                                                })
 .then(() => console.log("Success"))
 .catch(err => console.log(err)); 
 
 
-//*/
+/*/
 
 
 
