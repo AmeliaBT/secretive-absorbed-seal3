@@ -12586,8 +12586,10 @@ render((
   React.createElement(Provider, {store: store}, 
     React.createElement(BrowserRouter, null, 
       React.createElement("div", null, 
-        React.createElement(Route, {exact: true, path: "/", component: Main}), 
-        React.createElement(Route, {path: "/books", component: Books}), 
+        /* 
+        <Route exact path="/" component={Main}/>
+        <Route path="/books" component={Books}/>
+        */
         React.createElement(Route, {path: "/signup", component: SignUp}), 
         React.createElement(Route, {path: "/login", component: LogIn}), 
         React.createElement(Route, {path: "/profile", component: Profile})

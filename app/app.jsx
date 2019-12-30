@@ -24,8 +24,10 @@ render((
   <Provider store={store}>
     <BrowserRouter>
       <div>
+        {/* 
         <Route exact path="/" component={Main}/>
         <Route path="/books" component={Books}/>
+        */}
         <Route path="/signup" component={SignUp}/>
         <Route path="/login" component={LogIn}/>
         <Route path="/profile" component={Profile}/>

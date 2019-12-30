@@ -27,14 +27,29 @@ const mongoose = require('mongoose');
 // connection URL
 const url = process.env.MONGOLAB_URI;      
 // connection
-const promise_connection = mongoose.connect(url, {
-	useMongoClient: true
-});
+//error here below
+//const promise_connection = mongoose.connect(url, { 	useMongoClient: true });
+
+//*try
+const promise_connection = mongoose.connect(url,{useNewUrlParser: true, 
+    useUnifiedTopology: true})
+.then(() => console.log("Success"))
+.catch(err => console.log(err)); 
+
+
+//*/
+
+
+
 let db = mongoose.connection;
 // if connection is success
 promise_connection.then(function(db){
 	console.log('Connected to mongodb');
 });
+
+
+
+
 /******************************/
 // set store
 /******************************/
