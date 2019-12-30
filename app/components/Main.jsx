@@ -19,12 +19,13 @@ class Main extends React.Component {
       <div>
         <Header/>
       <Jumbotron>
-        <h1 className="jmbtrn-p" style={{color: "#f6ff67"}}>New CMS dB </h1>
+       {/*  <h1 className="jmbtrn-p" style={{color: "#f6ff67"}}>New CMS dB </h1>*/}
+         <h1 className="jmbtrn-p" >New CMS dB </h1>
         <p className="jmbtrn-p">
           “****  more info .” 
         </p>
         <p className="jmbtrn-p">
-          ― Kelly Armstrong
+          ― contact AT 
         </p>
       </Jumbotron>
       </div>
