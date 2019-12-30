@@ -19,9 +19,9 @@ class Main extends React.Component {
       <div>
         <Header/>
       <Jumbotron>
-        <h1 className="jmbtrn-p" style={{color: "#f6ff67"}}>Book Tradin CLub</h1>
+        <h1 className="jmbtrn-p" style={{color: "#f6ff67"}}>New CMS dB </h1>
         <p className="jmbtrn-p">
-          “Five more minutes of reading this and she'd have been in a coma.” 
+          “****  more info .” 
         </p>
         <p className="jmbtrn-p">
           ― Kelly Armstrong

@@ -30,7 +30,9 @@ const url = process.env.MONGOLAB_URI;
 //error here below
 const promise_connection = mongoose.connect(url, { 	useMongoClient: true });
 
-/*try
+/* To Do: see Anon Message Board https://impossible-petalite.glitch.me/ for good connection
+
+try
 const promise_connection = mongoose.connect(url,{useNewUrlParser: true 
     //, useUnifiedTopology: true                                                })
 .then(() => console.log("Success"))

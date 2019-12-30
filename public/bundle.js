@@ -36009,9 +36009,9 @@ class Main extends React.Component {
       React.createElement("div", null, 
         React.createElement(Header, null), 
       React.createElement(Jumbotron, null, 
-        React.createElement("h1", {className: "jmbtrn-p", style: {color: "#f6ff67"}}, "Book Tradin CLub"), 
+        React.createElement("h1", {className: "jmbtrn-p", style: {color: "#f6ff67"}}, "New CMS dB "), 
         React.createElement("p", {className: "jmbtrn-p"}, 
-          "“Five more minutes of reading this and she'd have been in a coma.”" 
+          "“****  more info .”" 
         ), 
         React.createElement("p", {className: "jmbtrn-p"}, 
           "― Kelly Armstrong"
