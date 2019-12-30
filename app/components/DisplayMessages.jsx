@@ -24,7 +24,7 @@ render() {
        <h2>Type in a new Message:</h2>
        { /* render an input, button, and ul here */ }
 <input  onChange={this.handleChange} value ={this.state.input} />
-<button onClick={this.submitMessage} > </button>
+<button onClick={this.submitMessage} >submit message </button>
 <ul>{this.state.messages.map( i => <li> {i} </li>  ) }</ul>
        { /* change code above this line */ }
      </div>
