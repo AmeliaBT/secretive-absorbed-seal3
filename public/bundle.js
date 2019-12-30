@@ -36065,7 +36065,7 @@ exports = module.exports = __webpack_require__(19)(false);
 
 
 // module
-exports.push([module.i, "body {\n  background: gray; /* #f6ff67;  height:100%;*/\n  height:50%;\n}\n\n.jumbotron {\n  width: 90%;\n  margin: auto;\n  padding: 10px;\n  background-color: gray ; /*#353535;*/\n}\n\n.jmbtrn-p {\n  text-align: center;\n  color: blue; /*#f6ff67;*/\n}", ""]);
+exports.push([module.i, "body {\n  background: #d3d3d3; /* #f6ff67;  height:100%;*/\n  height:50%;\n}\n\n.jumbotron {\n  width: 90%;\n  margin: auto;\n  padding: 10px;\n  background-color: #d3d3d3 ; /*#353535;*/\n}\n\n.jmbtrn-p {\n  text-align: center;\n  color: blue; /*#f6ff67;*/\n}", ""]);
 
 // exports
 
@@ -48237,6 +48237,7 @@ class LogIn extends React.Component {
   }
   handleSubmit(event) {
       let that = this;
+    console.log(that)
       const xhr = new XMLHttpRequest();
       
       xhr.open('POST', '/log-in', true);

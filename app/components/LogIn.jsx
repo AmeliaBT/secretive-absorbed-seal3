@@ -29,6 +29,7 @@ class LogIn extends React.Component {
   }
   handleSubmit(event) {
       let that = this;
+    console.log(that)
       const xhr = new XMLHttpRequest();
       
       xhr.open('POST', '/log-in', true);
