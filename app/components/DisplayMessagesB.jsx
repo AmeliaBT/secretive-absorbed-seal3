@@ -1,46 +1,104 @@
 const React = require('react');
 const Link = require('react-router-dom').Link
-class DisplayMessages extends React.Component {
- constructor(props) {
-   super(props);
-   this.state = {
-     input: '',
-     messages: []
-   }
-this.handleChange=this.handleChange.bind(this);
-this.submitMessage=this.submitMessage.bind(this);
- }
- // add handleChange() and submitMessage() methods here
-handleChange(event){this.setState(
- {input: event.target.value})};
-  
-  
-submitMessage(){ 
- this.setState(
-   {messages: this.state.messages.concat(this.state.input),  
-   input: ""}
- )}
-render() {
-      return (
-           <div>               <div class="row">
-<div className ="col-xs-4">
-        <h2 className="red-text text-center">Type in a <span className="text-danger">new Message: </span></h2>
-        </div></div>
-        { /* render an input, button, and ul here */ }
-        <div class="row">
-<div className="col-xs-4">       
- <input className="thick-green-border" onChange={this.handleChange} value ={this.state.input} />
- </div></div>
- <div className="row">
- <div className="col-xs-4">  
- <button  type="submit" className="btn btn-primary btn-block" onClick={this.submitMessage} ><i className="fa fa-paper-plane"></i> Submit </button>
- </div>
- </div>
- <div className="row">
- <div className="col-xs-4"> 
-  <ul>{this.state.messages.map( i => <li> {i} </li>  ) }</ul>
-  </div>
-  </div>   { /* change code above this line */ }     </div> 
-    );  } }; 
+// Redux:
+const ADD = 'ADD';
 
-module.exports = DisplayMessages;
+const addMessage = (message) => {
+  return {
+    type: ADD,
+    message: message
+  }
+};
+
+const messageReducer = (state = [], action) => {
+  switch (action.type) {
+    case ADD:
+      return [
+        ...state,
+        action.message
+      ];
+    default:
+      return state;
+  }
+};
+
+const store = Redux.createStore(messageReducer);
+
+// React:
+const Provider = ReactRedux.Provider;
+const connect = ReactRedux.connect;
+//DisplayMessagesB
+//class Presentational extends React.Component {
+ class DisplayMessagesB extends React.Component { 
+  constructor(props) {
+    super(props);
+    this.state = {
+      input: '',
+      
+    }
+    this.handleChange = this.handleChange.bind(this);
+    this.submitMessage = this.submitMessage.bind(this);
+  }
+  handleChange(event) {
+    this.setState({
+      input: event.target.value
+    });
+  }
+  submitMessage() {
+    //this.props.messages // access messages state
+    this.props.submitNewMessage(this.state.input);
+    this.setState({
+      input: '',
+    });
+  }
+  render() {
+    return (
+      <div>
+        <h2>Type in a new Message:</h2>
+        <input
+          value={this.state.input}
+          onChange={this.handleChange}/><br/>
+        <button onClick={this.submitMessage}>Submit</button>
+        <ul>
+          {this.props.messages.map( (message, idx) => {
+              return (
+                 <li key={idx}>{message}</li>
+              )
+            })
+          }
+        </ul>
+      </div>
+    );
+  }
+};
+// Change code above this line
+
+const mapStateToProps = (state) => {
+  return {messages: state}
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    submitNewMessage: (message) => {
+      dispatch(addMessage(message))
+    }
+  }
+};
+
+const Container = connect(mapStateToProps, mapDispatchToProps)(Presentational);
+
+class AppWrapper extends React.Component {
+  render() {
+    return (
+      <Provider store={store}>
+        <Container/>
+      </Provider>
+    );
+  }
+};
+
+
+
+
+
+module.exports = DisplayMessagesB;
