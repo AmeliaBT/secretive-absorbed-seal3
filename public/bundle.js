@@ -35939,7 +35939,7 @@ function verifySubselectors(mapStateToProps, mapDispatchToProps, mergeProps, dis
 
 /* reducers */
 
-const { UPVOTE, DOWNVOTE, ADD } = __webpack_require__(266);
+const { UPVOTE, DOWNVOTE } = __webpack_require__(266);
 
 function votes(state = [], action) {
   switch (action.type) {
@@ -35954,11 +35954,7 @@ function votes(state = [], action) {
         voteCount: ( state.voteCount ) ? state.voteCount + 1 : 1
       });
       
-     case ADD:
-      return Object.assign({}, state, {
-        addMessage: ( state.message ) 
-       
-      });
+    
      
     default:
       return state;
@@ -35967,6 +35963,11 @@ function votes(state = [], action) {
 
 module.exports = votes
 /* 
+ case ADD:
+      return Object.assign({}, state, {
+        addMessage: ( state.message ) 
+       
+      });
 addMessage: function(message) {
     return {
       type: this.ADD,
@@ -35992,25 +35993,33 @@ const messageReducer = (state = [], action) => {
 /***/ (function(module, exports) {
 
 /* actions */
-const ADD = 'ADD';
+
 module.exports = {
  
   UPVOTE: 'UPVOTE',
   
   DOWNVOTE: 'DOWNVOTE',
   
+
+
+  downvote: function() {
+    return {
+      type: this.DOWNVOTE
+    }
+  }
+}
+
+
+/* //const ADD = 'ADD';
   ADD: 'ADD',
   upvote: function() {
     return {
       type: this.UPVOTE
     }
   },
-
-  downvote: function() {
-    return {
-      type: this.DOWNVOTE
-    }
-  },
+  
+  
+  ,
   
     addMessage: function(message) {
     return {
@@ -36018,10 +36027,7 @@ module.exports = {
       message: message
     }
   }
-}
-
-
-
+*/
 
 
 

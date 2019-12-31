@@ -1,23 +1,31 @@
 /* actions */
-const ADD = 'ADD';
+
 module.exports = {
  
   UPVOTE: 'UPVOTE',
   
   DOWNVOTE: 'DOWNVOTE',
   
+
+
+  downvote: function() {
+    return {
+      type: this.DOWNVOTE
+    }
+  }
+}
+
+
+/* //const ADD = 'ADD';
   ADD: 'ADD',
   upvote: function() {
     return {
       type: this.UPVOTE
     }
   },
-
-  downvote: function() {
-    return {
-      type: this.DOWNVOTE
-    }
-  },
+  
+  
+  ,
   
     addMessage: function(message) {
     return {
@@ -25,8 +33,5 @@ module.exports = {
       message: message
     }
   }
-}
-
-
-
+*/
 
