@@ -21,17 +21,26 @@ submitMessage(){
    input: ""}
  )}
 render() {
-   return (
-          <div>
-       <h2>Type in a new Message:</h2>
-       { /* render an input, button, and ul here */ }
-<input  onChange={this.handleChange} value ={this.state.input} />
-<button onClick={this.submitMessage} >submit message </button>
-       
-<ul>{this.state.messages.map( i => <li> {i} </li>  ) }</ul>
-       { /* change code above this line */ }
-     </div>
-   );
- }
-};
+      return (
+           <div>               <div class="row">
+<div class="col-xs-4">
+        <h2 class="red-text text-center">Type in a <span class="text-danger">new Message: </span></h2>
+        </div></div>
+        { /* render an input, button, and ul here */ }
+        <div class="row">
+<div class="col-xs-4">       
+ <input class="thick-green-border" onChange={this.handleChange} value ={this.state.input} />
+ </div></div>
+ <div class="row">
+ <div class="col-xs-4">  
+ <button  type="submit" class="btn btn-primary btn-block" onClick={this.submitMessage} ><i class="fa fa-paper-plane"></i> Submit </button>
+ </div>
+ </div>
+ <div class="row">
+ <div class="col-xs-4"> 
+  <ul>{this.state.messages.map( i => <li> {i} </li>  ) }</ul>
+  </div>
+  </div>   { /* change code above this line */ }     </div> 
+    );  } }; 
+
 module.exports = DisplayMessages;
