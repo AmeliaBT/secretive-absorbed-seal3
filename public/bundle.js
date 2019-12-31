@@ -35985,6 +35985,15 @@ module.exports = {
 }
 
 
+const ADD = 'ADD';
+
+const addMessage = (message) => {
+  return {
+    type: ADD,
+    message: message
+  }
+};
+
 /***/ }),
 /* 267 */
 /***/ (function(module, exports, __webpack_require__) {

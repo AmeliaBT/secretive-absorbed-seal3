@@ -6,7 +6,7 @@ const { createStore } = require('redux');
 const { Provider } = require('react-redux');
 const reducers = require('./reducers');
 
-//let store = createStore(reducers);
+let store = createStore(reducers);
 // Redux:
 const ADD = 'ADD';
 

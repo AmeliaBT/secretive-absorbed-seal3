@@ -1,5 +1,5 @@
 /* actions */
-
+const ADD = 'ADD';
 module.exports = {
  
   UPVOTE: 'UPVOTE',
@@ -19,3 +19,13 @@ module.exports = {
   }
   
 }
+
+
+
+
+const addMessage = (message) => {
+  return {
+    type: ADD,
+    message: message
+  }
+};
