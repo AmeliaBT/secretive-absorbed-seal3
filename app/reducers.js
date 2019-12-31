@@ -1,6 +1,6 @@
 /* reducers */
 
-const { UPVOTE, DOWNVOTE } = require('./actions');
+const { UPVOTE, DOWNVOTE, ADD } = require('./actions');
 
 function votes(state = [], action) {
   switch (action.type) {
@@ -14,9 +14,29 @@ function votes(state = [], action) {
         voteScore: ( state.voteScore ) ? state.voteScore - 1 : -1,
         voteCount: ( state.voteCount ) ? state.voteCount + 1 : 1
       });
+      
+     case ADD:
+      return [
+        ...state,
+        action.message
+      ];
+     
     default:
       return state;
   }
 }
 
 module.exports = votes
+/*
+const messageReducer = (state = [], action) => {
+  switch (action.type) {
+    case ADD:
+      return [
+        ...state,
+        action.message
+      ];
+    default:
+      return state;
+  }
+};
+*/

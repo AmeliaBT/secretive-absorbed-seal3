@@ -5,7 +5,8 @@ module.exports = {
   UPVOTE: 'UPVOTE',
   
   DOWNVOTE: 'DOWNVOTE',
-
+  
+  ADD: 'ADD',
   upvote: function() {
     return {
       type: this.UPVOTE
@@ -16,16 +17,16 @@ module.exports = {
     return {
       type: this.DOWNVOTE
     }
-  }
+  },
   
+    addMessage: function(message) {
+    return {
+      type: this.ADD,
+      message: message
+    }
+  }
 }
 
 
 
 
-const addMessage = (message) => {
-  return {
-    type: ADD,
-    message: message
-  }
-};

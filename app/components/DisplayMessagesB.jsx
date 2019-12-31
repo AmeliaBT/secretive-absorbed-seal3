@@ -8,6 +8,7 @@ const reducers = require('./reducers');
 
 let store = createStore(reducers);
 // Redux:
+/*
 const ADD = 'ADD';
 
 const addMessage = (message) => {
@@ -28,12 +29,12 @@ const messageReducer = (state = [], action) => {
       return state;
   }
 };
-
-const store = Redux.createStore(messageReducer);
+*/
+//const store = Redux.createStore(messageReducer);
 
 // React:
-const Provider = ReactRedux.Provider;
-const connect = ReactRedux.connect;
+//const Provider = ReactRedux.Provider;
+//const connect = ReactRedux.connect;
 //DisplayMessagesB
 //class Presentational extends React.Component {
  class DisplayMessagesB extends React.Component { 
