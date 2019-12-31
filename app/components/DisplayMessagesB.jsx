@@ -1,5 +1,12 @@
 const React = require('react');
 const Link = require('react-router-dom').Link
+
+// redux
+const { createStore } = require('redux');
+const { Provider } = require('react-redux');
+const reducers = require('./reducers');
+
+//let store = createStore(reducers);
 // Redux:
 const ADD = 'ADD';
 
@@ -84,9 +91,9 @@ const mapDispatchToProps = (dispatch) => {
     }
   }
 };
-
-const Container = connect(mapStateToProps, mapDispatchToProps)(Presentational);
-
+//DisplayMessagesB
+//const Container = connect(mapStateToProps, mapDispatchToProps)(Presentational);
+const Container = connect(mapStateToProps, mapDispatchToProps)(DisplayMessagesB);
 class AppWrapper extends React.Component {
   render() {
     return (
