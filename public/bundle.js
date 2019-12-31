@@ -49017,19 +49017,28 @@ submitMessage(){
    input: ""}
  )}
 render() {
-   return (
-          React.createElement("div", null, 
-       React.createElement("h2", null, "Type in a new Message:"), 
-       /* render an input, button, and ul here */ 
-React.createElement("input", {onChange: this.handleChange, value: this.state.input}), 
-React.createElement("button", {DisplayMessages: true, onClick: this.submitMessage}, "submit message "), 
-       
-React.createElement("ul", null, this.state.messages.map( i => React.createElement("li", null, " ", i, " ")) )
-       /* change code above this line */ 
-     )
-   );
- }
-};
+      return (
+           React.createElement("div", null, "               ", React.createElement("div", {class: "row"}, 
+React.createElement("div", {className: "col-xs-4"}, 
+        React.createElement("h2", {className: "red-text text-center"}, "Type in a ", React.createElement("span", {className: "text-danger"}, "new Message: "))
+        )), 
+        /* render an input, button, and ul here */ 
+        React.createElement("div", {class: "row"}, 
+React.createElement("div", {className: "col-xs-4"}, 
+ React.createElement("input", {className: "thick-green-border", onChange: this.handleChange, value: this.state.input})
+ )), 
+ React.createElement("div", {className: "row"}, 
+ React.createElement("div", {className: "col-xs-4"}, 
+ React.createElement("button", {type: "submit", className: "btn btn-primary btn-block", onClick: this.submitMessage}, React.createElement("i", {className: "fa fa-paper-plane"}), " Submit ")
+ )
+ ), 
+ React.createElement("div", {className: "row"}, 
+ React.createElement("div", {className: "col-xs-4"}, 
+  React.createElement("ul", null, this.state.messages.map( i => React.createElement("li", null, " ", i, " ")) )
+  )
+  ), "   ", /* change code above this line */ "     ") 
+    );  } }; 
+
 module.exports = DisplayMessages;
 
 
