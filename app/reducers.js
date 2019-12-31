@@ -16,10 +16,10 @@ function votes(state = [], action) {
       });
       
      case ADD:
-      return [
-        ...state,
-        action.message
-      ];
+      return Object.assign({}, state, {
+        messages: ( state.messages ) 
+       
+      });
      
     default:
       return state;
@@ -27,7 +27,7 @@ function votes(state = [], action) {
 }
 
 module.exports = votes
-/*
+/*  {messages: state}
 const messageReducer = (state = [], action) => {
   switch (action.type) {
     case ADD:

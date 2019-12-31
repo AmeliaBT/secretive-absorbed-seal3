@@ -6,9 +6,9 @@ const { createStore } = require('redux');
 const { Provider } = require('react-redux');
 const reducers = require('./reducers');
 
-let store = createStore(reducers);
+//let store = createStore(reducers);
 // Redux:
-/*
+
 const ADD = 'ADD';
 
 const addMessage = (message) => {
@@ -17,7 +17,7 @@ const addMessage = (message) => {
     message: message
   }
 };
-
+/*
 const messageReducer = (state = [], action) => {
   switch (action.type) {
     case ADD:
@@ -94,6 +94,7 @@ const mapDispatchToProps = (dispatch) => {
 };
 //DisplayMessagesB
 //const Container = connect(mapStateToProps, mapDispatchToProps)(Presentational);
+/*
 const Container = connect(mapStateToProps, mapDispatchToProps)(DisplayMessagesB);
 class AppWrapper extends React.Component {
   render() {
@@ -104,7 +105,7 @@ class AppWrapper extends React.Component {
     );
   }
 };
-
+*/
 
 
 
