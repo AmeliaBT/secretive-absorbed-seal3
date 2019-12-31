@@ -17,7 +17,7 @@ function votes(state = [], action) {
       
      case ADD:
       return Object.assign({}, state, {
-        messages: ( state.messages ) 
+        addMessage: ( state.message ) 
        
       });
      
@@ -27,7 +27,14 @@ function votes(state = [], action) {
 }
 
 module.exports = votes
-/*  {messages: state}
+/* 
+addMessage: function(message) {
+    return {
+      type: this.ADD,
+      message: message
+    }
+
+{messages: state}
 const messageReducer = (state = [], action) => {
   switch (action.type) {
     case ADD:

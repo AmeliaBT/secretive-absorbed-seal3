@@ -4,7 +4,7 @@ const Link = require('react-router-dom').Link
 // redux
 const { createStore } = require('redux');
 const { Provider } = require('react-redux');
-const reducers = require('./reducers');
+//const reducers = require('./reducers');
 
 //let store = createStore(reducers);
 // Redux:

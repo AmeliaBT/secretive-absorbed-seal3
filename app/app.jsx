@@ -20,12 +20,14 @@ const SignUp = require('./components/SignUp');
 const LogIn = require('./components/LogIn');
 const Profile = require('./components/Profile');
 const DisplayMessages= require('./components/DisplayMessages');
+const DisplayMessagesB= require('./components/DisplayMessagesB');
 render((
   
   <Provider store={store}>
     <BrowserRouter>
       <div>
        < DisplayMessages />
+       
         <Route exact path="/" component={Main}/>
         <Route path="/books" component={Books}/>
         
