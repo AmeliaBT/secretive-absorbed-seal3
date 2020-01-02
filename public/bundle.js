@@ -36059,7 +36059,10 @@ class Main extends React.Component {
        /*  <h1 className="jmbtrn-p" style={{color: "#f6ff67"}}>New CMS dB </h1>*/
          React.createElement("h1", {className: "jmbtrn-p"}, "New CMS dB "), 
         React.createElement("p", {className: "jmbtrn-p"}, 
-          "“****  more info .”" 
+       "QA SJ started  testing the new RI website on Jan 2, 2020, which revamps the caurrent Android tablet app." + " " +
+"The new look is intended to be easier to navigate ...." + " " +
+ "feedback on the new website can be shared by clicking here."
+         
         ), 
         React.createElement("p", {className: "jmbtrn-p"}, 
           "― contact AT" 
