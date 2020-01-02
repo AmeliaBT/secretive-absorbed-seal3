@@ -30,7 +30,8 @@ The new look is intended to be easier to navigate ....<br/>
                                       mongdb (back-end); secury  <br/>     
       Hosting MongoDB on AWS with MongoDB Atlas - <br/>
           Hosting, managing, and runing MongoDB on the AWS Cloud with MongoDB Atlas  <br/>
-          1.Import Data into Cluster
+          1.Import Data into Cluster - bring data from existing JSON/CSV files into Atlas
+          
         </p>
         <p className="jmbtrn-p">
           ― contact AT 

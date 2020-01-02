@@ -36067,7 +36067,8 @@ class Main extends React.Component {
                                       "mongdb (back-end); secury  ", React.createElement("br", null), 
       "Hosting MongoDB on AWS with MongoDB Atlas - ", React.createElement("br", null), 
           "Hosting, managing, and runing MongoDB on the AWS Cloud with MongoDB Atlas  ", React.createElement("br", null), 
-          "1.Import Data into Cluster"
+          "1.Import Data into Cluster - bring data from existing JSON/CSV files into Atlas"
+          
         ), 
         React.createElement("p", {className: "jmbtrn-p"}, 
           "― contact AT" 
