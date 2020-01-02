@@ -36061,7 +36061,10 @@ class Main extends React.Component {
         React.createElement("p", {className: "jmbtrn-p"}, 
        "QA SJ started  testing the new RI website on Jan 2, 2020, which revamps the caurrent Android tablet app." + " " +
 "The new look is intended to be easier to navigate ...." + " " +
- "feedback on the new website can be shared by clicking here."
+ "feedback on the new website can be shared by clicking here. ", React.createElement("br", null), 
+          
+    "A prove of concept; to demonstrate feasibility of using nodes, ract-redux (front end)," + " " + 
+                                      "mongdb (back-end); secury"       
          
         ), 
         React.createElement("p", {className: "jmbtrn-p"}, 
