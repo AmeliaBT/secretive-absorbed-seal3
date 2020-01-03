@@ -1,4 +1,4 @@
-.Form {
+.FormSU {
   width: 600px;
   margin: auto;
   margin-top: 100px;
@@ -7,7 +7,7 @@
   border: 1px solid black; /*10px solid #9d9d8e;*/
 }
 
-.form-label {
-  color: red ; /*#f6ff67;*/
+.form-labelSU {
+  color: black ; /*#f6ff67;*/
   font-weight: bold
 }
