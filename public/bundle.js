@@ -2716,7 +2716,7 @@ class Header extends React.Component {
     super(props);
     this.state = {
       navBtns: null,
-      booksLink: ""
+      riLinks: ""
     };
     this.handleLogOut = this.handleLogOut.bind(this);
   }
@@ -2771,7 +2771,7 @@ class Header extends React.Component {
                           React.createElement("div", {className: "link", onClick: that.handleLogOut}, "^Log^ [ouT]")
                         )
                       ),
-            ["booksLink"]: "/books"
+            ["riLinks"]: "/books"
            });
         }
         else {
@@ -2784,7 +2784,7 @@ class Header extends React.Component {
                           React.createElement(Link, {to: "/login", className: "link"}, "^Log^ [iN]")
                         )
                       ),
-          ["booksLink"]: "/login"
+          ["riLinks"]: "/login"
            });
          }
         }
@@ -2796,7 +2796,7 @@ class Header extends React.Component {
        React.createElement(Navbar, {inverse: true, collapseOnSelect: true}, 
         React.createElement(Navbar.Header, null, 
           React.createElement(Navbar.Brand, null, 
-            React.createElement(Link, {to: this.state.booksLink}, "Books")
+            React.createElement(Link, {to: this.state.riLinks}, "Receiving Inspection Reports")
           ), 
           React.createElement(Navbar.Toggle, null)
         ), 
