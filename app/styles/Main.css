@@ -1,5 +1,5 @@
 body {
-  background: #d3d3d3; /* #f6ff67;  height:100%;*/
+  background: white; /* #d3d3d3; #f6ff67;  height:100%;*/
   height:50%;
 }
 
@@ -7,7 +7,7 @@ body {
   width: 90%;
   margin: auto;
   padding: 10px;
-  background-color: #d3d3d3 ; /*#353535;*/
+  background-color: white; /* #d3d3d3 #353535;*/
 }
 
 .jmbtrn-p {
