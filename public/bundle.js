@@ -36057,18 +36057,8 @@ class Main extends React.Component {
         React.createElement(Header, null), 
       React.createElement(Jumbotron, null, 
        /*  <h1 className="jmbtrn-p" style={{color: "#f6ff67"}}>New CMS dB </h1>*/
-         React.createElement("h1", {className: "jmbtrn-p"}, "New CMS dB "), 
-        React.createElement("p", {className: "jmbtrn-p"}, 
-       "QA SJ started  testing the new RI website on Jan 2, 2020, which revamps the caurrent Android tablet app." + " " +
-"The new look is intended to be easier to navigate ....", React.createElement("br", null), 
- "feedback on the new website can be shared by clicking here. ", React.createElement("br", null), 
-          
-    "A prove of concept; to demonstrate feasibility of using nodes, ract-redux (front end)," + " " + 
-                                      "mongdb (back-end); secury  ", React.createElement("br", null), 
-      "Hosting MongoDB on AWS with MongoDB Atlas - ", React.createElement("br", null), 
-          "Hosting, managing, and runing MongoDB on the AWS Cloud with MongoDB Atlas  ", React.createElement("br", null), 
-          "1.Import Data into Cluster - bring data from existing JSON/CSV files into Atlas", React.createElement("br", null), 
-          "To load data from a JSON or a CSV file into an Atlas cluster. See the tutorial Load File with mongoimport." 
+         React.createElement("h1", {className: "jmbtrn-p"}, "New RI dB "), 
+        React.createElement("p", {className: "jmbtrn-p"}
         ), 
         React.createElement("p", {className: "jmbtrn-p"}, 
           "― contact AT" 
