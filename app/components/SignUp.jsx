@@ -100,7 +100,7 @@ class SignUp extends React.Component {
 
               <FormGroup>
                 <Col smOffset={2} sm={10}>
-                  <Button type="submit">Sign up</Button>
+                  <Button className="btn btn-primary btn-block" type="submit"><i className="fa fa-paper-plane"></i> Sign up</Button>
                 </Col>
               </FormGroup>
           </Form>

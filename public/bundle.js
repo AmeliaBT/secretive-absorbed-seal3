@@ -48192,7 +48192,7 @@ class SignUp extends React.Component {
 
               React.createElement(FormGroup, null, 
                 React.createElement(Col, {smOffset: 2, sm: 10}, 
-                  React.createElement(Button, {type: "submit"}, "Sign up")
+                  React.createElement(Button, {className: "btn btn-primary btn-block", type: "submit"}, React.createElement("i", {className: "fa fa-paper-plane"}), " Sign up")
                 )
               )
           )
@@ -48243,7 +48243,7 @@ exports = module.exports = __webpack_require__(19)(false);
 
 
 // module
-exports.push([module.i, ".FormSU {\n  width: 600px;\n  margin: auto;\n  margin-top: 100px;\n  background: #987D00 ;/*#2f2f2f;*/\n  padding: 50px;\n  border: 1px solid black; /*10px solid #9d9d8e;*/\n}\n\n.form-labelSU {\n  color: red ; /*#f6ff67;*/\n  font-weight: bold\n}", ""]);
+exports.push([module.i, ".FormSU {\n  width: 600px;\n  margin: auto;\n  margin-top: 100px;\n  background: #987D00 ;/*#2f2f2f;*/\n  padding: 50px;\n  border: 1px solid black; /*10px solid #9d9d8e;*/\n}\n\n.form-labelSU {\n  color: black ; /*#f6ff67;*/\n  font-weight: bold;\n}", ""]);
 
 // exports
 
