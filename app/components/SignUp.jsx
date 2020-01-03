@@ -1,7 +1,7 @@
 const React = require('react');
 const Link = require('react-router-dom').Link
 // style for BOOKS
-const style = require('../styles/SignUp');
+//const style = require('../styles/SignUp');
 // other components and etc
 const Header = require('./Header');
 // react-bootstrap
@@ -73,10 +73,10 @@ class SignUp extends React.Component {
             <Form className="Form" horizontal method="post" action="/signup" name="signup" onSubmit={this.handleSubmit}>
               <FormGroup controlId="formHorizontalNickname">
                 <Col className="form-label" sm={2}>
-                  Nickname
+                  Name
                 </Col>
                 <Col sm={10}>
-                  <FormControl type="text" name="nickname" required value={this.state.nickname} placeholder="Nickname" onChange={this.handleChangeValue} />
+                  <FormControl type="text" name="nickname" required value={this.state.nickname} placeholder="Name" onChange={this.handleChangeValue} />
                 </Col>
               </FormGroup>
 
