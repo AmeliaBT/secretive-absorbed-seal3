@@ -6,9 +6,11 @@ const Link = require('react-router-dom').Link
 //import React, { Component } from 'react';
 //import logo from './logo.svg';
 //import './RINav.css';
-import { Navbar, NavItem, NavDropdown, MenuItem, Nav } from 'react-bootstrap';
+//import { Navbar, NavItem, NavDropdown, MenuItem, Nav } from 'react-bootstrap'; 
+//navbar-nav
+const {Navbar, NavItem, NavDropdown, MenuItem, Nav } = require('react-bootstrap');
+class RINav extends React.Component {
 
-class RINav extends Component {
   render() {
     return (
       <div className="App">
@@ -46,4 +48,4 @@ class RINav extends Component {
   }
 }
 
-export default RINav;
+module.exports = RINav;
