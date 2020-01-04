@@ -19,7 +19,7 @@ class Main extends React.Component {
   render() {
     return (
       <div>
-       <RINav/> 
+       {/*   <RINav/> */}
         <Header/>
       <Jumbotron>
        {/*  <h1 className="jmbtrn-p" style={{color: "#f6ff67"}}>New CMS dB </h1>*/}
