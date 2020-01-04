@@ -36233,14 +36233,14 @@ class RINav extends React.Component {
 
   render() {
     return (
-      React.createElement("div", {className: "navbar-navb"}, 
-        React.createElement("header", {className: "navbar-navb"}, 
+      React.createElement("div", {className: "navbar-nav"}, 
+        React.createElement("header", {className: "navbar-nav"}, 
         
           React.createElement("h1", {className: "navbar-navb"}, "Welcome to Ri")
         ), 
-        React.createElement(Navbar, {className: "navbar-navb"}, 
-          React.createElement(Navbar.Header, {className: "navbar-navb"}, 
-            React.createElement(Navbar.Brand, {className: "navbar-navb"}, 
+        React.createElement(Navbar, {className: "navbar-nav"}, 
+          React.createElement(Navbar.Header, {className: "navbar-nav"}, 
+            React.createElement(Navbar.Brand, {className: "navbar-nav"}, 
               "item 11"
             ), 
                         React.createElement(Navbar.Brand, null, 
@@ -36318,7 +36318,7 @@ exports = module.exports = __webpack_require__(18)(false);
 
 
 // module
-exports.push([module.i, ".navbar-navb {\n  color:red;\n  padding: 15px;\n  display: inline-block;\n  line-height: 40px;\n  background-color: antiquewhite;\n}\n/* .navbar-navb span[role=button] {\n  color:red;\n  padding: 15px;\n  display: inline-block;\n  line-height: 40px;\n  background-color: antiquewhite;\n}*/", ""]);
+exports.push([module.i, ".navbar-nav {\n  color:red;\n  padding: 15px;\n  display: inline-block;\n  line-height: 20px;\n  background-color: antiquewhite;\n}\n/* .navbar-navb span[role=button] {\n  color:red;\n  padding: 15px;\n  display: inline-block;\n  line-height: 40px;\n  background-color: antiquewhite;\n}*/", ""]);
 
 // exports
 

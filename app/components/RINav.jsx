@@ -13,14 +13,14 @@ class RINav extends React.Component {
 
   render() {
     return (
-      <div className="navbar-navb">
-        <header className="navbar-navb">
+      <div className="navbar-nav">
+        <header className="navbar-nav">
         
           <h1 className="navbar-navb">Welcome to Ri</h1>
         </header>
-        <Navbar className="navbar-navb">
-          <Navbar.Header className="navbar-navb">
-            <Navbar.Brand className="navbar-navb">
+        <Navbar className="navbar-nav">
+          <Navbar.Header className="navbar-nav">
+            <Navbar.Brand className="navbar-nav">
               item 11
             </Navbar.Brand>
                         <Navbar.Brand>
