@@ -3038,11 +3038,11 @@ class Header extends React.Component {
   /***********************/
   render() {
     return (
-      React.createElement("div", null, 
+      React.createElement("div", {className: "riheader"}, 
        React.createElement(Navbar, {inverse: true, collapseOnSelect: true}, 
         React.createElement(Navbar.Header, null, 
           React.createElement(Navbar.Brand, null, 
-            React.createElement(Link, {to: this.state.booksLink, className: "linkc"}, "RI Reports")
+            React.createElement(Link, {to: this.state.booksLink, className: "linkc"}, "RI Reports aaa")
           ), 
           React.createElement(Navbar.Toggle, null)
         ), 
@@ -47822,7 +47822,7 @@ exports = module.exports = __webpack_require__(18)(false);
 
 
 // module
-exports.push([module.i, ".linkc {\n  text-decoration: none;\n  color: #9d9d9d;\n}\n\n.linkc:hover {\n  text-decoration: none;\n  color: green; /* white;*/\n}\n", ""]);
+exports.push([module.i, ".linkc {\n  text-decoration: none;\n  color: #9d9d9d;\n}\n\n.linkc:hover {\n  text-decoration: none;\n  color: green; /* white;*/\n}\n.riheader{background-color: aqua;}", ""]);
 
 // exports
 
