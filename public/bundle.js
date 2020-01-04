@@ -2769,7 +2769,7 @@ class Header extends React.Component {
                            React.createElement(Link, {to: "/profile", className: "link"}, "Hello, ", response.nickname)
                         ), 
                         React.createElement(NavItem, null, 
-                          React.createElement("div", {className: "link", onClick: that.handleLogOut}, "^Log^ [ouT]")
+                          React.createElement("div", {className: "link btn btn-primary btn-block", onClick: that.handleLogOut}, "^Log^ [ouT]")
                         )
                       ),
             ["riLinks"]: "/books"
@@ -2778,11 +2778,10 @@ class Header extends React.Component {
         else {
           that.setState({
           ["navBtns"]: React.createElement(Nav, {pullRight: true}, 
-                        React.createElement(NavItem, null, 
-                           React.createElement(Link, {to: "/signup", className: "link"}, "^Sign^ [uP]")
+                        React.createElement(NavItem, null
                         ), 
                         React.createElement(NavItem, null, 
-                          React.createElement(Link, {to: "/login", className: "link"}, "^Log^ [iN]")
+                          React.createElement(Link, {to: "/login", className: "link btn btn-primary btn-block"}, "^Log^ [iN]")
                         )
                       ),
           ["riLinks"]: "/login"
@@ -36252,7 +36251,7 @@ exports = module.exports = __webpack_require__(19)(false);
 
 
 // module
-exports.push([module.i, ".link {\n  text-decoration: none;\n  color: #9d9d9d;\n}\n\n.link:hover {\n  text-decoration: none;\n  color: white;\n}", ""]);
+exports.push([module.i, ".link {\n  text-decoration: none;\n  color: #9d9d9d;\n}\n\n.link:hover {\n  text-decoration: none;\n  color: white;\n}\n", ""]);
 
 // exports
 
@@ -49064,12 +49063,12 @@ submitMessage(){
  )}
 render() {
       return (
-           React.createElement("div", null, "               ", React.createElement("div", {class: "row"}, 
+           React.createElement("div", null, " ", React.createElement("div", {className: "row"}, 
 React.createElement("div", {className: "col-xs-4"}, 
         React.createElement("h2", {className: "red-text text-center"}, "Type in a ", React.createElement("span", {className: "text-danger"}, "new Message: "))
         )), 
         /* render an input, button, and ul here */ 
-        React.createElement("div", {class: "row"}, 
+        React.createElement("div", {className: "row"}, 
 React.createElement("div", {className: "col-xs-4"}, 
  React.createElement("input", {className: "thick-green-border", onChange: this.handleChange, value: this.state.input})
  )), 

@@ -22,12 +22,12 @@ submitMessage(){
  )}
 render() {
       return (
-           <div>               <div class="row">
+           <div> <div className="row">
 <div className ="col-xs-4">
         <h2 className="red-text text-center">Type in a <span className="text-danger">new Message: </span></h2>
         </div></div>
         { /* render an input, button, and ul here */ }
-        <div class="row">
+        <div className="row">
 <div className="col-xs-4">       
  <input className="thick-green-border" onChange={this.handleChange} value ={this.state.input} />
  </div></div>

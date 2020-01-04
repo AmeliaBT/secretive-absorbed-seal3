@@ -64,7 +64,7 @@ class Header extends React.Component {
                            <Link  to='/profile' className="link">Hello, {response.nickname}</Link>
                         </NavItem> 
                         <NavItem>
-                          <div className="link" onClick={that.handleLogOut}>^Log^ [ouT]</div>
+                          <div className="link btn btn-primary btn-block" onClick={that.handleLogOut}>^Log^ [ouT]</div>
                         </NavItem>
                       </Nav>,
             ["riLinks"]: "/books"
@@ -74,10 +74,9 @@ class Header extends React.Component {
           that.setState({
           ["navBtns"]: <Nav pullRight>
                         <NavItem>
-                           <Link  to='/signup' className="link">^Sign^ [uP]</Link>
                         </NavItem> 
                         <NavItem>
-                          <Link to='/login' className="link">^Log^ [iN]</Link>
+                          <Link to='/login' className="link btn btn-primary btn-block">^Log^ [iN]</Link>
                         </NavItem>
                       </Nav>,
           ["riLinks"]: "/login"
