@@ -3011,10 +3011,10 @@ class Header extends React.Component {
            that.setState({
           ["navBtns"]: React.createElement(Nav, {pullRight: true}, 
                         React.createElement(NavItem, null, 
-                           React.createElement(Link, {to: "/profile", className: "linkb"}, "Hello, ", response.nickname)
+                           React.createElement(Link, {to: "/profile", className: "linkc"}, "Hello, ", response.nickname)
                         ), 
                         React.createElement(NavItem, null, 
-                          React.createElement("div", {className: "linkb", onClick: that.handleLogOut}, "^Log^ [ouT]")
+                          React.createElement("div", {className: "linkc", onClick: that.handleLogOut}, "^Log^ [ouT]")
                         )
                       ),
             ["booksLink"]: "/books"
@@ -3024,10 +3024,10 @@ class Header extends React.Component {
           that.setState({
           ["navBtns"]: React.createElement(Nav, {pullRight: true}, 
                         React.createElement(NavItem, null, 
-                           React.createElement(Link, {to: "/signup", className: "linkb"}, "^Sign^ [uP]")
+                           React.createElement(Link, {to: "/signup", className: "linkc"}, "^Sign^ [uP]")
                         ), 
                         React.createElement(NavItem, null, 
-                          React.createElement(Link, {to: "/login", className: "linkb"}, "^Log^ [iN]")
+                          React.createElement(Link, {to: "/login", className: "linkc"}, "^Log^ [iN]")
                         )
                       ),
           ["booksLink"]: "/login"
@@ -3042,7 +3042,7 @@ class Header extends React.Component {
        React.createElement(Navbar, {inverse: true, collapseOnSelect: true}, 
         React.createElement(Navbar.Header, null, 
           React.createElement(Navbar.Brand, null, 
-            React.createElement(Link, {to: this.state.booksLink}, "RI Reports")
+            React.createElement(Link, {to: this.state.booksLink, className: "linkc"}, "RI Reports")
           ), 
           React.createElement(Navbar.Toggle, null)
         ), 
@@ -47822,7 +47822,7 @@ exports = module.exports = __webpack_require__(18)(false);
 
 
 // module
-exports.push([module.i, ".linkb {\n  text-decoration: none;\n  color: #9d9d9d;\n}\n\n.linkb:hover {\n  text-decoration: none;\n  color: green; /* white;*/\n}\n", ""]);
+exports.push([module.i, ".linkc {\n  text-decoration: none;\n  color: #9d9d9d;\n}\n\n.linkc:hover {\n  text-decoration: none;\n  color: green; /* white;*/\n}\n", ""]);
 
 // exports
 

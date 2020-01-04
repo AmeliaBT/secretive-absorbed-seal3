@@ -1,9 +1,9 @@
-.linkb {
+.linkc {
   text-decoration: none;
   color: #9d9d9d;
 }
 
-.linkb:hover {
+.linkc:hover {
   text-decoration: none;
   color: green; /* white;*/
 }
