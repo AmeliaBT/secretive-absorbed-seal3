@@ -7,28 +7,34 @@ const Link = require('react-router-dom').Link
 //import logo from './logo.svg';
 //import './RINav.css';
 //import { Navbar, NavItem, NavDropdown, MenuItem, Nav } from 'react-bootstrap'; 
-//navbar-nav
+//className="navbar-nav"
 const {Navbar, NavItem, NavDropdown, MenuItem, Nav } = require('react-bootstrap');
 class RINav extends React.Component {
 
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
+      <div className="navbar-nav">
+        <header className="navbar-nav">
         
-          <h1 className="App-title">Welcome to React</h1>
+          <h1 className="navbar-nav">Welcome to Ri</h1>
         </header>
         <Navbar>
           <Navbar.Header>
             <Navbar.Brand>
-              <a href="#home">React-Bootstrap</a>
+              item 1
+            </Navbar.Brand>
+                        <Navbar.Brand>
+              item 2
+            </Navbar.Brand>
+                        <Navbar.Brand>
+              item 3
             </Navbar.Brand>
           </Navbar.Header>
           <Nav>
-            <NavItem eventKey={1} href="#">
+            <NavItem eventKey={1} >
               Link
             </NavItem>
-            <NavItem eventKey={2} href="#">
+            <NavItem eventKey={2} >
               Link
             </NavItem>
             <NavDropdown eventKey={3} title="Dropdown" id="basic-nav-dropdown">
@@ -41,7 +47,7 @@ class RINav extends React.Component {
           </Nav>
         </Navbar>
         <p className="Nav-intro">
-          To get started, edit <code>src/Nav.js</code> and save to reload.
+          To get started .... <code>s some place </code> and save to reload.
         </p>
       </div>
     );

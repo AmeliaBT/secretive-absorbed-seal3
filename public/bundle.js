@@ -36227,28 +36227,34 @@ const Link = __webpack_require__(14).Link
 //import logo from './logo.svg';
 //import './RINav.css';
 //import { Navbar, NavItem, NavDropdown, MenuItem, Nav } from 'react-bootstrap'; 
-//navbar-nav
+//className="navbar-nav"
 const {Navbar, NavItem, NavDropdown, MenuItem, Nav } = __webpack_require__(21);
 class RINav extends React.Component {
 
   render() {
     return (
-      React.createElement("div", {className: "App"}, 
-        React.createElement("header", {className: "App-header"}, 
+      React.createElement("div", {className: "navbar-nav"}, 
+        React.createElement("header", {className: "navbar-nav"}, 
         
-          React.createElement("h1", {className: "App-title"}, "Welcome to React")
+          React.createElement("h1", {className: "navbar-nav"}, "Welcome to Ri")
         ), 
         React.createElement(Navbar, null, 
           React.createElement(Navbar.Header, null, 
             React.createElement(Navbar.Brand, null, 
-              React.createElement("a", {href: "#home"}, "React-Bootstrap")
+              "item 1"
+            ), 
+                        React.createElement(Navbar.Brand, null, 
+              "item 2"
+            ), 
+                        React.createElement(Navbar.Brand, null, 
+              "item 3"
             )
           ), 
           React.createElement(Nav, null, 
-            React.createElement(NavItem, {eventKey: 1, href: "#"}, 
+            React.createElement(NavItem, {eventKey: 1}, 
               "Link"
             ), 
-            React.createElement(NavItem, {eventKey: 2, href: "#"}, 
+            React.createElement(NavItem, {eventKey: 2}, 
               "Link"
             ), 
             React.createElement(NavDropdown, {eventKey: 3, title: "Dropdown", id: "basic-nav-dropdown"}, 
@@ -36261,7 +36267,7 @@ class RINav extends React.Component {
           )
         ), 
         React.createElement("p", {className: "Nav-intro"}, 
-          "To get started, edit ", React.createElement("code", null, "src/Nav.js"), " and save to reload."
+          "To get started .... ", React.createElement("code", null, "s some place "), " and save to reload."
         )
       )
     );
