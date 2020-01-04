@@ -1,7 +1,7 @@
 const React = require('react');
 const ReactDOM = require('react-dom');
 const Link = require('react-router-dom').Link
-
+const style = require('../styles/RINav');
 
 //import React, { Component } from 'react';
 //import logo from './logo.svg';
@@ -13,23 +13,24 @@ class RINav extends React.Component {
 
   render() {
     return (
-      <div className="navbar-nav">
-        <header className="navbar-nav">
+      <div className="navbar-navb">
+        <header className="navbar-navb">
         
-          <h1 className="navbar-nav">Welcome to Ri</h1>
+          <h1 className="navbar-navb">Welcome to Ri</h1>
         </header>
-        <Navbar>
-          <Navbar.Header>
-            <Navbar.Brand>
-              item 1
+        <Navbar className="navbar-navb">
+          <Navbar.Header className="navbar-navb">
+            <Navbar.Brand className="navbar-navb">
+              item 11
             </Navbar.Brand>
                         <Navbar.Brand>
-              item 2
+              item 21
             </Navbar.Brand>
                         <Navbar.Brand>
-              item 3
+              item 31
             </Navbar.Brand>
           </Navbar.Header>
+          {/* 
           <Nav>
             <NavItem eventKey={1} >
               Link
@@ -45,6 +46,7 @@ class RINav extends React.Component {
               <MenuItem eventKey={3.4}>Separated link</MenuItem>
             </NavDropdown>
           </Nav>
+          */}
         </Navbar>
         <p className="Nav-intro">
           To get started .... <code>s some place </code> and save to reload.

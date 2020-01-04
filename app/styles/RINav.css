@@ -1,5 +1,7 @@
-.navbar-nav span[role=button] {
+.navbar-navb span[role=button] {
+  color:red;
   padding: 15px;
   display: inline-block;
-  line-height: 20px;
+  line-height: 40px;
+  background-color: antiquewhite;
 }
