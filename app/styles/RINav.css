@@ -1,7 +1,14 @@
-.navbar-navb span[role=button] {
+.navbar-navb {
   color:red;
   padding: 15px;
   display: inline-block;
   line-height: 40px;
   background-color: antiquewhite;
 }
+/* .navbar-navb span[role=button] {
+  color:red;
+  padding: 15px;
+  display: inline-block;
+  line-height: 40px;
+  background-color: antiquewhite;
+}*/
