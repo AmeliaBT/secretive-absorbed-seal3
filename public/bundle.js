@@ -3011,10 +3011,10 @@ class Header extends React.Component {
            that.setState({
           ["navBtns"]: React.createElement(Nav, {pullRight: true}, 
                         React.createElement(NavItem, null, 
-                           React.createElement(Link, {to: "/profile", className: "link"}, "Hello, ", response.nickname)
+                           React.createElement(Link, {to: "/profile", className: "linkb"}, "Hello, ", response.nickname)
                         ), 
                         React.createElement(NavItem, null, 
-                          React.createElement("div", {className: "link", onClick: that.handleLogOut}, "^Log^ [ouT]")
+                          React.createElement("div", {className: "linkb", onClick: that.handleLogOut}, "^Log^ [ouT]")
                         )
                       ),
             ["booksLink"]: "/books"
@@ -3024,10 +3024,10 @@ class Header extends React.Component {
           that.setState({
           ["navBtns"]: React.createElement(Nav, {pullRight: true}, 
                         React.createElement(NavItem, null, 
-                           React.createElement(Link, {to: "/signup", className: "link"}, "^Sign^ [uP]")
+                           React.createElement(Link, {to: "/signup", className: "linkb"}, "^Sign^ [uP]")
                         ), 
                         React.createElement(NavItem, null, 
-                          React.createElement(Link, {to: "/login", className: "link"}, "^Log^ [iN]")
+                          React.createElement(Link, {to: "/login", className: "linkb"}, "^Log^ [iN]")
                         )
                       ),
           ["booksLink"]: "/login"
@@ -36318,7 +36318,7 @@ exports = module.exports = __webpack_require__(18)(false);
 
 
 // module
-exports.push([module.i, ".navbar-navb span[role=button] {\n  padding: 15px;\n  display: inline-block;\n  line-height: 40px;\n  background-color: antiquewhite;\n}", ""]);
+exports.push([module.i, ".navbar-navb {\n  color:red;\n  padding: 15px;\n  display: inline-block;\n  line-height: 40px;\n  background-color: antiquewhite;\n}\n/* .navbar-navb span[role=button] {\n  color:red;\n  padding: 15px;\n  display: inline-block;\n  line-height: 40px;\n  background-color: antiquewhite;\n}*/", ""]);
 
 // exports
 
@@ -47822,7 +47822,7 @@ exports = module.exports = __webpack_require__(18)(false);
 
 
 // module
-exports.push([module.i, ".link {\n  text-decoration: none;\n  color: #9d9d9d;\n}\n\n.link:hover {\n  text-decoration: none;\n  color: white;\n}\n", ""]);
+exports.push([module.i, ".linkb {\n  text-decoration: none;\n  color: #9d9d9d;\n}\n\n.linkb:hover {\n  text-decoration: none;\n  color: green; /* white;*/\n}\n", ""]);
 
 // exports
 
