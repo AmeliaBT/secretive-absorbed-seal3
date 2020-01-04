@@ -5,7 +5,7 @@ const style = require('../styles/Header');
 
 // react-bootstrap
 const {Nav, Navbar, NavItem, NavDropdown, MenuItem} = require('react-bootstrap');
-
+//navbar-toggleable- classes have changed to navbar-expand-*
 /* the header component for navbar */
 class Header extends React.Component {
   constructor(props) {
@@ -59,7 +59,7 @@ class Header extends React.Component {
         let response = JSON.parse(this.responseText);
         if(response.isLogedIn == true) {
            that.setState({
-          ["navBtns"]: <Nav pullLeft>
+          ["navBtns"]: <Nav pullRight>
                         <NavItem>
                            <Link  to='/profile' className="link">Hello, {response.nickname}</Link>
                         </NavItem> 
@@ -72,7 +72,7 @@ class Header extends React.Component {
         }
         else {
           that.setState({
-          ["navBtns"]: <Nav pullLeft>
+          ["navBtns"]: <Nav pullRight>
                         <NavItem>
                            <Link  to='/signup' className="link">^Sign^ [uP]</Link>
                         </NavItem> 

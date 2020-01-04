@@ -2710,7 +2710,7 @@ const style = __webpack_require__(271);
 
 // react-bootstrap
 const {Nav, Navbar, NavItem, NavDropdown, MenuItem} = __webpack_require__(23);
-
+//navbar-toggleable- classes have changed to navbar-expand-*
 /* the header component for navbar */
 class Header extends React.Component {
   constructor(props) {
@@ -2764,7 +2764,7 @@ class Header extends React.Component {
         let response = JSON.parse(this.responseText);
         if(response.isLogedIn == true) {
            that.setState({
-          ["navBtns"]: React.createElement(Nav, {pullLeft: true}, 
+          ["navBtns"]: React.createElement(Nav, {pullRight: true}, 
                         React.createElement(NavItem, null, 
                            React.createElement(Link, {to: "/profile", className: "link"}, "Hello, ", response.nickname)
                         ), 
@@ -2777,7 +2777,7 @@ class Header extends React.Component {
         }
         else {
           that.setState({
-          ["navBtns"]: React.createElement(Nav, {pullLeft: true}, 
+          ["navBtns"]: React.createElement(Nav, {pullRight: true}, 
                         React.createElement(NavItem, null, 
                            React.createElement(Link, {to: "/signup", className: "link"}, "^Sign^ [uP]")
                         ), 
