@@ -2766,10 +2766,10 @@ class Header extends React.Component {
            that.setState({
           ["navBtns"]: React.createElement(Nav, {pullRight: true}, 
                         React.createElement(NavItem, null, 
-                           React.createElement(Link, {to: "/profile", className: "link"}, "Hello, ", response.nickname)
+                           React.createElement(Link, {to: "/profile", className: "link btn btn-primary"}, "Hello, ", response.nickname)
                         ), 
                         React.createElement(NavItem, null, 
-                          React.createElement("div", {className: "link btn btn-primary btn-block", onClick: that.handleLogOut}, "^Log^ [ouT]")
+                          React.createElement("div", {className: "link btn btn-primary", onClick: that.handleLogOut}, "Log out")
                         )
                       ),
             ["riLinks"]: "/books"
@@ -2781,7 +2781,7 @@ class Header extends React.Component {
                         React.createElement(NavItem, null
                         ), 
                         React.createElement(NavItem, null, 
-                          React.createElement(Link, {to: "/login", className: "link btn btn-primary btn-block"}, "^Log^ [iN]")
+                          React.createElement(Link, {to: "/login", className: "link btn btn-primary"}, "Log in")
                         )
                       ),
           ["riLinks"]: "/login"
