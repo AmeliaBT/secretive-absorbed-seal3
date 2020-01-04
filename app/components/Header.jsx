@@ -2,6 +2,7 @@ const React = require('react');
 const Link = require('react-router-dom').Link
 // style for HEADER
 const style = require('../styles/Header');
+//import 'bootstrap/dist/css/bootstrap.min.css';
 // react-bootstrap
 const {Nav, Navbar, NavItem, NavDropdown, MenuItem} = require('react-bootstrap');
 

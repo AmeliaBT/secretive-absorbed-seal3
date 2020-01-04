@@ -2707,6 +2707,7 @@ const React = __webpack_require__(0);
 const Link = __webpack_require__(16).Link
 // style for HEADER
 const style = __webpack_require__(271);
+//import 'bootstrap/dist/css/bootstrap.min.css';
 // react-bootstrap
 const {Nav, Navbar, NavItem, NavDropdown, MenuItem} = __webpack_require__(23);
 
