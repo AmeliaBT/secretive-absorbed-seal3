@@ -2707,17 +2707,16 @@ const React = __webpack_require__(0);
 const Link = __webpack_require__(16).Link
 // style for HEADER
 const style = __webpack_require__(271);
-
 // react-bootstrap
 const {Nav, Navbar, NavItem, NavDropdown, MenuItem} = __webpack_require__(23);
-//navbar-toggleable- classes have changed to navbar-expand-*
+
 /* the header component for navbar */
 class Header extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       navBtns: null,
-      riLinks: ""
+      booksLink: ""
     };
     this.handleLogOut = this.handleLogOut.bind(this);
   }
@@ -2766,25 +2765,26 @@ class Header extends React.Component {
            that.setState({
           ["navBtns"]: React.createElement(Nav, {pullRight: true}, 
                         React.createElement(NavItem, null, 
-                           React.createElement(Link, {to: "/profile", className: "link btn btn-primary"}, "Hello, ", response.nickname)
+                           React.createElement(Link, {to: "/profile", className: "link"}, "Hello, ", response.nickname)
                         ), 
                         React.createElement(NavItem, null, 
-                          React.createElement("div", {className: "link btn btn-primary", onClick: that.handleLogOut}, "Log out")
+                          React.createElement("div", {className: "link", onClick: that.handleLogOut}, "^Log^ [ouT]")
                         )
                       ),
-            ["riLinks"]: "/books"
+            ["booksLink"]: "/books"
            });
         }
         else {
           that.setState({
           ["navBtns"]: React.createElement(Nav, {pullRight: true}, 
-                        React.createElement(NavItem, null
+                        React.createElement(NavItem, null, 
+                           React.createElement(Link, {to: "/signup", className: "link"}, "^Sign^ [uP]")
                         ), 
                         React.createElement(NavItem, null, 
-                          React.createElement(Link, {to: "/login", className: "link btn btn-primary"}, "Log in")
+                          React.createElement(Link, {to: "/login", className: "link"}, "^Log^ [iN]")
                         )
                       ),
-          ["riLinks"]: "/login"
+          ["booksLink"]: "/login"
            });
          }
         }
@@ -2796,7 +2796,7 @@ class Header extends React.Component {
        React.createElement(Navbar, {inverse: true, collapseOnSelect: true}, 
         React.createElement(Navbar.Header, null, 
           React.createElement(Navbar.Brand, null, 
-            React.createElement(Link, {to: this.state.riLinks}, "Receiving Inspection Reports")
+            React.createElement(Link, {to: this.state.booksLink}, "Books")
           ), 
           React.createElement(Navbar.Toggle, null)
         ), 

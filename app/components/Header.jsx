@@ -2,17 +2,16 @@ const React = require('react');
 const Link = require('react-router-dom').Link
 // style for HEADER
 const style = require('../styles/Header');
-
 // react-bootstrap
 const {Nav, Navbar, NavItem, NavDropdown, MenuItem} = require('react-bootstrap');
-//navbar-toggleable- classes have changed to navbar-expand-*
+
 /* the header component for navbar */
 class Header extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       navBtns: null,
-      riLinks: ""
+      booksLink: ""
     };
     this.handleLogOut = this.handleLogOut.bind(this);
   }
@@ -61,25 +60,26 @@ class Header extends React.Component {
            that.setState({
           ["navBtns"]: <Nav pullRight>
                         <NavItem>
-                           <Link  to='/profile' className="link btn btn-primary">Hello, {response.nickname}</Link>
+                           <Link  to='/profile' className="link">Hello, {response.nickname}</Link>
                         </NavItem> 
                         <NavItem>
-                          <div className="link btn btn-primary" onClick={that.handleLogOut}>Log out</div>
+                          <div className="link" onClick={that.handleLogOut}>^Log^ [ouT]</div>
                         </NavItem>
                       </Nav>,
-            ["riLinks"]: "/books"
+            ["booksLink"]: "/books"
            });
         }
         else {
           that.setState({
           ["navBtns"]: <Nav pullRight>
                         <NavItem>
+                           <Link  to='/signup' className="link">^Sign^ [uP]</Link>
                         </NavItem> 
                         <NavItem>
-                          <Link to='/login' className="link btn btn-primary">Log in</Link>
+                          <Link to='/login' className="link">^Log^ [iN]</Link>
                         </NavItem>
                       </Nav>,
-          ["riLinks"]: "/login"
+          ["booksLink"]: "/login"
            });
          }
         }
@@ -91,7 +91,7 @@ class Header extends React.Component {
        <Navbar inverse collapseOnSelect>
         <Navbar.Header>
           <Navbar.Brand>
-            <Link to={this.state.riLinks}>Receiving Inspection Reports</Link>
+            <Link to={this.state.booksLink}>Books</Link>
           </Navbar.Brand>
           <Navbar.Toggle />
         </Navbar.Header>
