@@ -3,7 +3,9 @@ const Link = require('react-router-dom').Link
 // style for MAIN
 const style = require('../styles/Main');
 // other components and etc
+const RINav = require('./RINav');
 const Header = require('./Header');
+
 // react-bootstrap
 const {Jumbotron} = require('react-bootstrap');
 
@@ -17,6 +19,7 @@ class Main extends React.Component {
   render() {
     return (
       <div>
+       <RINav/> 
         <Header/>
       <Jumbotron>
        {/*  <h1 className="jmbtrn-p" style={{color: "#f6ff67"}}>New CMS dB </h1>*/}

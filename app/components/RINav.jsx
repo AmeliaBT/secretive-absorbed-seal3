@@ -1,6 +1,11 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './RINav.css';
+const React = require('react');
+const ReactDOM = require('react-dom');
+const Link = require('react-router-dom').Link
+
+
+//import React, { Component } from 'react';
+//import logo from './logo.svg';
+//import './RINav.css';
 import { Navbar, NavItem, NavDropdown, MenuItem, Nav } from 'react-bootstrap';
 
 class RINav extends Component {
@@ -8,7 +13,7 @@ class RINav extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
+        
           <h1 className="App-title">Welcome to React</h1>
         </header>
         <Navbar>
