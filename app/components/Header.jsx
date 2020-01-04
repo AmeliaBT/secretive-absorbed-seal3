@@ -59,7 +59,7 @@ class Header extends React.Component {
         let response = JSON.parse(this.responseText);
         if(response.isLogedIn == true) {
            that.setState({
-          ["navBtns"]: <Nav pullRight>
+          ["navBtns"]: <Nav pullLeft>
                         <NavItem>
                            <Link  to='/profile' className="link">Hello, {response.nickname}</Link>
                         </NavItem> 
@@ -72,7 +72,7 @@ class Header extends React.Component {
         }
         else {
           that.setState({
-          ["navBtns"]: <Nav pullRight>
+          ["navBtns"]: <Nav pullLeft>
                         <NavItem>
                            <Link  to='/signup' className="link">^Sign^ [uP]</Link>
                         </NavItem> 

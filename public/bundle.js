@@ -2764,7 +2764,7 @@ class Header extends React.Component {
         let response = JSON.parse(this.responseText);
         if(response.isLogedIn == true) {
            that.setState({
-          ["navBtns"]: React.createElement(Nav, {pullRight: true}, 
+          ["navBtns"]: React.createElement(Nav, {pullLeft: true}, 
                         React.createElement(NavItem, null, 
                            React.createElement(Link, {to: "/profile", className: "link"}, "Hello, ", response.nickname)
                         ), 
@@ -2777,7 +2777,7 @@ class Header extends React.Component {
         }
         else {
           that.setState({
-          ["navBtns"]: React.createElement(Nav, {pullRight: true}, 
+          ["navBtns"]: React.createElement(Nav, {pullLeft: true}, 
                         React.createElement(NavItem, null, 
                            React.createElement(Link, {to: "/signup", className: "link"}, "^Sign^ [uP]")
                         ), 
