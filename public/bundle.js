@@ -3042,7 +3042,7 @@ class Header extends React.Component {
        React.createElement(Navbar, {inverse: true, collapseOnSelect: true}, 
         React.createElement(Navbar.Header, null, 
           React.createElement(Navbar.Brand, null, 
-            React.createElement(Link, {to: this.state.booksLink}, "Books")
+            React.createElement(Link, {to: this.state.booksLink}, "RI Reports")
           ), 
           React.createElement(Navbar.Toggle, null)
         ), 
@@ -36056,11 +36056,11 @@ class Main extends React.Component {
   render() {
     return (
       React.createElement("div", null, 
-       React.createElement(RINav, null), 
+       /*   <RINav/> */
         React.createElement(Header, null), 
       React.createElement(Jumbotron, null, 
        /*  <h1 className="jmbtrn-p" style={{color: "#f6ff67"}}>New CMS dB </h1>*/
-         React.createElement("h1", {className: "jmbtrn-p"}, "New RI dB "), 
+         React.createElement("h4", {className: "jmbtrn-p"}, "New RI dB for testing  "), 
         React.createElement("p", {className: "jmbtrn-p"}
         ), 
         React.createElement("p", {className: "jmbtrn-p"}, 

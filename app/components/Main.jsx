@@ -23,7 +23,7 @@ class Main extends React.Component {
         <Header/>
       <Jumbotron>
        {/*  <h1 className="jmbtrn-p" style={{color: "#f6ff67"}}>New CMS dB </h1>*/}
-         <h1 className="jmbtrn-p" >New RI dB </h1>
+         <h4 className="jmbtrn-p" >New RI dB for testing  </h4>
         <p className="jmbtrn-p">
         </p>
         <p className="jmbtrn-p">
