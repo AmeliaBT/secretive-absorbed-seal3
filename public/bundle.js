@@ -3010,10 +3010,10 @@ class Header extends React.Component {
         if(response.isLogedIn == true) {
            that.setState({
           ["navBtns"]: React.createElement(Nav, {pullRight: true}, 
-                        React.createElement(NavItem, null, 
+                        React.createElement(NavItem, {componentClass: "span"}, 
                            React.createElement(Link, {to: "/profile", className: "linkc"}, "Hello, ", response.nickname)
                         ), 
-                        React.createElement(NavItem, null, 
+                        React.createElement(NavItem, {componentClass: "span"}, 
                           React.createElement("div", {className: "linkc", onClick: that.handleLogOut}, "^Log^ [ouT]")
                         )
                       ),
@@ -3023,10 +3023,10 @@ class Header extends React.Component {
         else {
           that.setState({
           ["navBtns"]: React.createElement(Nav, {pullRight: true}, 
-                        React.createElement(NavItem, null, 
+                        React.createElement(NavItem, {componentClass: "span"}, 
                            React.createElement(Link, {to: "/signup", className: "linkc"}, "^Sign^ [uP]")
                         ), 
-                        React.createElement(NavItem, null, 
+                        React.createElement(NavItem, {componentClass: "span"}, 
                           React.createElement(Link, {to: "/login", className: "linkc"}, "^Log^ [iN]")
                         )
                       ),
@@ -12607,14 +12607,15 @@ render((
   React.createElement(Provider, {store: store}, 
     React.createElement(BrowserRouter, null, 
       React.createElement("div", null, 
-       React.createElement(DisplayMessages, null), 
+     
        
         React.createElement(Route, {exact: true, path: "/", component: Main}), 
         React.createElement(Route, {path: "/books", component: Books}), 
         
         React.createElement(Route, {path: "/signup", component: SignUp}), 
         React.createElement(Route, {path: "/login", component: LogIn}), 
-        React.createElement(Route, {path: "/profile", component: Profile})
+        React.createElement(Route, {path: "/profile", component: Profile}), 
+        React.createElement(DisplayMessages, null)
       )
     )
   )), document.getElementById('main'));

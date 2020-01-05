@@ -59,10 +59,10 @@ class Header extends React.Component {
         if(response.isLogedIn == true) {
            that.setState({
           ["navBtns"]: <Nav pullRight>
-                        <NavItem>
+                        <NavItem componentClass='span'>
                            <Link  to='/profile' className="linkc">Hello, {response.nickname}</Link>
                         </NavItem> 
-                        <NavItem>
+                        <NavItem componentClass='span'>
                           <div className="linkc" onClick={that.handleLogOut}>^Log^ [ouT]</div>
                         </NavItem>
                       </Nav>,
@@ -72,10 +72,10 @@ class Header extends React.Component {
         else {
           that.setState({
           ["navBtns"]: <Nav pullRight>
-                        <NavItem>
+                        <NavItem componentClass='span'>
                            <Link  to='/signup' className="linkc">^Sign^ [uP]</Link>
                         </NavItem> 
-                        <NavItem>
+                        <NavItem componentClass='span'>
                           <Link to='/login' className="linkc">^Log^ [iN]</Link>
                         </NavItem>
                       </Nav>,
