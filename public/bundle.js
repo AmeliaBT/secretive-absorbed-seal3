@@ -36255,7 +36255,7 @@ exports = module.exports = __webpack_require__(19)(false);
 
 
 // module
-exports.push([module.i, ".link {\n  text-decoration: none;\n  color: #9d9d9d;\n}\n\n.link:hover {\n  text-decoration: none;\n  color: white;\n}\n.riheader{background-color: aqua;}\n\n\n.navbar-nav span[role=button] {\n  padding-left: 50px;\n  display: inline-block;\n  line-height: 20px;\n}\n\n", ""]);
+exports.push([module.i, ".link {\n  text-decoration: none;\n  color: #9d9d9d;\n}\n\n.link:hover {\n  text-decoration: none;\n  color: white;\n}\n\n\n\n.navbar-nav span[role=button] {\n  padding-left: 50px;\n  display: inline-block;\n  line-height: 20px;\n  background-color: aqua;\n}\n\n/* .riheader{background-color: aqua;}*/", ""]);
 
 // exports
 

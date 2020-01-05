@@ -7,12 +7,14 @@
   text-decoration: none;
   color: white;
 }
-.riheader{background-color: aqua;}
+
 
 
 .navbar-nav span[role=button] {
   padding-left: 50px;
   display: inline-block;
   line-height: 20px;
+  background-color: aqua;
 }
 
+/* .riheader{background-color: aqua;}*/
