@@ -3011,10 +3011,10 @@ class Header extends React.Component {
            that.setState({
           ["navBtns"]: React.createElement(Nav, {pullRight: true}, 
                         React.createElement(NavItem, {componentClass: "span"}, 
-                           React.createElement(Link, {to: "/profile", className: "linkc"}, "Hello, ", response.nickname)
+                           React.createElement(Link, {to: "/profile", className: "link"}, "Hello, ", response.nickname)
                         ), 
                         React.createElement(NavItem, {componentClass: "span"}, 
-                          React.createElement("div", {className: "linkc", onClick: that.handleLogOut}, "^Log^ [ouT]")
+                          React.createElement("div", {className: "link", onClick: that.handleLogOut}, "^Log^ [ouT]")
                         )
                       ),
             ["booksLink"]: "/books"
@@ -3024,10 +3024,10 @@ class Header extends React.Component {
           that.setState({
           ["navBtns"]: React.createElement(Nav, {pullRight: true}, 
                         React.createElement(NavItem, {componentClass: "span"}, 
-                           React.createElement(Link, {to: "/signup", className: "linkc"}, "^Sign^ [uP]")
+                           React.createElement(Link, {to: "/signup", className: "link"}, "^Sign^ [uP]")
                         ), 
                         React.createElement(NavItem, {componentClass: "span"}, 
-                          React.createElement(Link, {to: "/login", className: "linkc"}, "^Log^ [iN]")
+                          React.createElement(Link, {to: "/login", className: "link"}, "^Log^ [iN]")
                         )
                       ),
           ["booksLink"]: "/login"
@@ -3042,7 +3042,7 @@ class Header extends React.Component {
        React.createElement(Navbar, {inverse: true, collapseOnSelect: true}, 
         React.createElement(Navbar.Header, null, 
           React.createElement(Navbar.Brand, null, 
-            React.createElement(Link, {to: this.state.booksLink, className: "linkc"}, "RI Reports aaa")
+            React.createElement(Link, {to: this.state.booksLink, className: "link"}, "RI Reports aaa")
           ), 
           React.createElement(Navbar.Toggle, null)
         ), 
@@ -36237,7 +36237,7 @@ class RINav extends React.Component {
       React.createElement("div", {className: "navbar-nav"}, 
         React.createElement("header", {className: "navbar-nav"}, 
         
-          React.createElement("h1", {className: "navbar-navb"}, "Welcome to RI ..")
+          React.createElement("h1", {className: "navbar-nav"}, "Welcome to RI ..")
         ), 
         React.createElement(Navbar, {className: "navbar-nav"}, 
           React.createElement(Navbar.Header, {className: "navbar-nav"}, 
@@ -36319,7 +36319,7 @@ exports = module.exports = __webpack_require__(18)(false);
 
 
 // module
-exports.push([module.i, ".navbar-nav {\n  color:red;\n  padding: 15px;\n  display: inline-block;\n  line-height: 20px;\n  background-color: antiquewhite;\n}\n/* .navbar-navb span[role=button] {\n  color:red;\n  padding: 15px;\n  display: inline-block;\n  line-height: 40px;\n  background-color: antiquewhite;\n}*/", ""]);
+exports.push([module.i, ".navbar-navb span[role=button] {\n  color:red;\n  padding: 15px;\n  display: inline-block;\n  line-height: 40px;\n   \n  }\n\n/* \n\n.navbar-nav {\n  color:red;\n  padding: 15px;\n  display: inline-block;\n  line-height: 20px;\n  background-color: antiquewhite;\n}\n\n\n*/", ""]);
 
 // exports
 
@@ -47823,7 +47823,7 @@ exports = module.exports = __webpack_require__(18)(false);
 
 
 // module
-exports.push([module.i, ".linkc {\n  text-decoration: none;\n  color: #9d9d9d;\n}\n\n.linkc:hover {\n  text-decoration: none;\n  color: green; /* white;*/\n}\n.riheader{background-color: aqua;}\n\n\n.navbar-nav span[role=button] {\n  padding-left: 50px;\n  display: inline-block;\n  line-height: 20px;\n}\n\n", ""]);
+exports.push([module.i, ".link {\n  text-decoration: none;\n  color: #9d9d9d;\n}\n\n.link:hover {\n  text-decoration: none;\n  color: white;\n}\n.riheader{background-color: aqua;}\n\n\n.navbar-nav span[role=button] {\n  padding-left: 50px;\n  display: inline-block;\n  line-height: 20px;\n}\n\n", ""]);
 
 // exports
 
