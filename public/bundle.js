@@ -2778,10 +2778,10 @@ class Header extends React.Component {
           that.setState({
           ["navBtns"]: React.createElement(Nav, {pullRight: true}, 
                         React.createElement(NavItem, {componentClass: "span"}, 
-                           React.createElement(Link, {to: "/signup", className: "link"}, "^Sign^ [uP]")
+                           React.createElement(Link, {to: "/signup", className: "link"}, React.createElement("h5", null, "Sign up"))
                         ), 
                         React.createElement(NavItem, {componentClass: "span"}, 
-                          React.createElement(Link, {to: "/login", className: "link"}, "^Log^ [iN]")
+                          React.createElement(Link, {to: "/login", className: "link"}, React.createElement("h5", null, " Log in "))
                         )
                       ),
           ["booksLink"]: "/login"
@@ -2796,7 +2796,7 @@ class Header extends React.Component {
        React.createElement(Navbar, {inverse: true, collapseOnSelect: true}, 
         React.createElement(Navbar.Header, null, 
           React.createElement(Navbar.Brand, null, 
-            React.createElement(Link, {to: this.state.booksLink, className: "link"}, "RI Reports test")
+            React.createElement(Link, {to: this.state.booksLink, className: "link"}, React.createElement("h5", null, "RI Reports test"))
           ), 
           React.createElement(Navbar.Toggle, null)
         ), 
@@ -2810,6 +2810,12 @@ class Header extends React.Component {
 };
 
 module.exports = Header;
+/* 
+ <Link  to='/signup' className="link"><h5>^Sign^ [uP]</h5></Link>
+                        </NavItem> 
+                        <NavItem componentClass='span'>
+                          <Link to='/login' className="link"><h5> ^Log^ [iN] </h5></Link>
+*/
 
 /***/ }),
 /* 43 */

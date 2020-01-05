@@ -5,14 +5,13 @@
    margin: 0;
   padding: 0;
    float: left;
+   background-color: aqua;
+     display: inline-block;
   */
  
-  list-style-type: none;
- 
-  overflow: hidden;
-
-  background-color: aqua;
-  display: inline-block;
+  list-style-type: none; 
+  overflow: hidden;  
+  display: inline;
 }
 
 .link:hover {
@@ -31,4 +30,6 @@
 
 }
 
-/* .riheader{background-color: aqua;}*/
+/* .riheader{background-color: aqua;}
+ display: inline-block;
+*/

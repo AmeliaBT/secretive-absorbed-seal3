@@ -73,10 +73,10 @@ class Header extends React.Component {
           that.setState({
           ["navBtns"]: <Nav pullRight>
                         <NavItem componentClass='span'>
-                           <Link  to='/signup' className="link"><h4>^Sign^ [uP]</h4</Link>
+                           <Link  to='/signup' className="link"><h5>Sign up</h5></Link>
                         </NavItem> 
                         <NavItem componentClass='span'>
-                          <Link to='/login' className="link">^Log^ [iN]</Link>
+                          <Link to='/login' className="link"><h5> Log in </h5></Link>
                         </NavItem>
                       </Nav>,
           ["booksLink"]: "/login"
@@ -91,7 +91,7 @@ class Header extends React.Component {
        <Navbar inverse collapseOnSelect>
         <Navbar.Header>
           <Navbar.Brand>
-            <Link to={this.state.booksLink}  className="link">RI Reports test</Link>
+            <Link to={this.state.booksLink}  className="link"><h5>RI Reports test</h5></Link>
           </Navbar.Brand>
           <Navbar.Toggle />
         </Navbar.Header>
@@ -105,3 +105,9 @@ class Header extends React.Component {
 };
 
 module.exports = Header;
+/* 
+ <Link  to='/signup' className="link"><h5>^Sign^ [uP]</h5></Link>
+                        </NavItem> 
+                        <NavItem componentClass='span'>
+                          <Link to='/login' className="link"><h5> ^Log^ [iN] </h5></Link>
+*/
