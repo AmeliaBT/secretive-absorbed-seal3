@@ -3,7 +3,7 @@ const Link = require('react-router-dom').Link
 // style for MAIN
 const style = require('../styles/Main');
 // other components and etc
-const RINav = require('./RINav');
+//const RINav = require('./RINav');
 const Header = require('./Header');
 
 // react-bootstrap

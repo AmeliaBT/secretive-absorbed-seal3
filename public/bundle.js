@@ -36041,7 +36041,7 @@ const Link = __webpack_require__(16).Link
 // style for MAIN
 const style = __webpack_require__(268);
 // other components and etc
-const RINav = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./RINav\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+//const RINav = require('./RINav');
 const Header = __webpack_require__(42);
 
 // react-bootstrap
