@@ -22,14 +22,16 @@
 
 
 .navbar-nav span[role=button] {
-  padding-left: 10px;
+  padding-left: 100px;
   display: inline;
   line-height: 20px;
  
 
 }
-.riheader {background-color: coral; 
+.riheader {
   display: inline;
+  padding-right: 100px;
+  font-weight: bold;
 }
 
 /*
