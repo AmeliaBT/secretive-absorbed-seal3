@@ -2750,10 +2750,7 @@ class Header extends React.Component {
       
       xhr.open('POST', '/is-loged-in', true);
       xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-
-
       xhr.send();
-
       xhr.onreadystatechange = function() {
         if (this.readyState != 4) return;
         if (this.status != 200) {
@@ -2763,12 +2760,12 @@ class Header extends React.Component {
         let response = JSON.parse(this.responseText);
         if(response.isLogedIn == true) {
            that.setState({
-          ["navBtns"]: React.createElement(Nav, {pullRight: true}, 
+          ["navBtns"]: React.createElement(Nav, {pullRight: true, className: "riheader"}, 
                         React.createElement(NavItem, {componentClass: "span"}, 
                            React.createElement(Link, {to: "/profile", className: "link"}, "Hello, ", response.nickname)
                         ), 
                         React.createElement(NavItem, {componentClass: "span"}, 
-                          React.createElement("div", {className: "link", onClick: that.handleLogOut}, "^Log^ [ouT]")
+                          React.createElement("div", {className: "link", onClick: that.handleLogOut}, "Log out")
                         )
                       ),
             ["booksLink"]: "/books"
@@ -2776,7 +2773,7 @@ class Header extends React.Component {
         }
         else {
           that.setState({
-          ["navBtns"]: React.createElement(Nav, {pullRight: true}, 
+          ["navBtns"]: React.createElement(Nav, {pullRight: true, className: "riheader"}, 
                         React.createElement(NavItem, {componentClass: "span"}, 
                            React.createElement(Link, {to: "/signup", className: "link"}, React.createElement("h5", null, "Sign up"))
                         ), 
@@ -2796,7 +2793,7 @@ class Header extends React.Component {
        React.createElement(Navbar, {inverse: true, collapseOnSelect: true}, 
         React.createElement(Navbar.Header, null, 
           React.createElement(Navbar.Brand, null, 
-            React.createElement(Link, {to: this.state.booksLink, className: "link"}, React.createElement("h5", null, "RI Reports test"))
+            React.createElement(Link, {to: this.state.booksLink, className: "link"}, React.createElement("h5", null, "RI Reports bbb"))
           ), 
           React.createElement(Navbar.Toggle, null)
         ), 
@@ -2815,6 +2812,9 @@ module.exports = Header;
                         </NavItem> 
                         <NavItem componentClass='span'>
                           <Link to='/login' className="link"><h5> ^Log^ [iN] </h5></Link>
+
+
+                            <div className="link" onClick={that.handleLogOut}>^Log^ [ouT]</div>
 */
 
 /***/ }),
@@ -36261,7 +36261,7 @@ exports = module.exports = __webpack_require__(19)(false);
 
 
 // module
-exports.push([module.i, ".link {\n  text-decoration: none;\n  color: #9d9d9d;\n  /*mee \n   margin: 0;\n  padding: 0;\n   float: left;\n  */\n \n  list-style-type: none;\n \n  overflow: hidden;\n\n  background-color: aqua;\n  display: inline-block;\n}\n\n.link:hover {\n  text-decoration: none;\n  color: white;\n}\n\n\n\n.navbar-nav span[role=button] {\n  padding-left: 10px;\n  display: inline-block;\n  line-height: 20px;\n \n  background-color: coral;\n\n}\n\n/* .riheader{background-color: aqua;}*/", ""]);
+exports.push([module.i, ".link {\n  text-decoration: none;\n  color: #9d9d9d;\n  /*mee \n   margin: 0;\n  padding: 0;\n   float: left;\n   background-color: aqua;\n     display: inline-block;\n  */\n \n  list-style-type: none; \n  overflow: hidden;  \n  display: inline;\n}\n\n.link:hover {\n  text-decoration: none;\n  color: white;\n}\n\n\n\n.navbar-nav span[role=button] {\n  padding-left: 10px;\n  display: inline;\n  line-height: 20px;\n \n\n}\n.riheader {background-color: coral; \n  display: inline;\n}\n\n/*\n background-color: coral;\n.riheader{background-color: aqua;}\n display: inline-block;\n className=\"riheader\"\n*/", ""]);
 
 // exports
 

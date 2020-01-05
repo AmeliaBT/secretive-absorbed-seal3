@@ -23,13 +23,18 @@
 
 .navbar-nav span[role=button] {
   padding-left: 10px;
-  display: inline-block;
+  display: inline;
   line-height: 20px;
  
-  background-color: coral;
 
 }
+.riheader {background-color: coral; 
+  display: inline;
+}
 
-/* .riheader{background-color: aqua;}
+/*
+ background-color: coral;
+.riheader{background-color: aqua;}
  display: inline-block;
+ className="riheader"
 */

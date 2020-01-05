@@ -45,10 +45,7 @@ class Header extends React.Component {
       
       xhr.open('POST', '/is-loged-in', true);
       xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-
-
       xhr.send();
-
       xhr.onreadystatechange = function() {
         if (this.readyState != 4) return;
         if (this.status != 200) {
@@ -58,12 +55,12 @@ class Header extends React.Component {
         let response = JSON.parse(this.responseText);
         if(response.isLogedIn == true) {
            that.setState({
-          ["navBtns"]: <Nav pullRight>
+          ["navBtns"]: <Nav pullRight className="riheader">
                         <NavItem componentClass='span'>
                            <Link  to='/profile' className="link">Hello, {response.nickname}</Link>
                         </NavItem> 
                         <NavItem componentClass='span'>
-                          <div className="link" onClick={that.handleLogOut}>^Log^ [ouT]</div>
+                          <div className="link" onClick={that.handleLogOut}>Log out</div>
                         </NavItem>
                       </Nav>,
             ["booksLink"]: "/books"
@@ -71,7 +68,7 @@ class Header extends React.Component {
         }
         else {
           that.setState({
-          ["navBtns"]: <Nav pullRight>
+          ["navBtns"]: <Nav pullRight className="riheader">
                         <NavItem componentClass='span'>
                            <Link  to='/signup' className="link"><h5>Sign up</h5></Link>
                         </NavItem> 
@@ -91,7 +88,7 @@ class Header extends React.Component {
        <Navbar inverse collapseOnSelect>
         <Navbar.Header>
           <Navbar.Brand>
-            <Link to={this.state.booksLink}  className="link"><h5>RI Reports test</h5></Link>
+            <Link to={this.state.booksLink}  className="link"><h5>RI Reports bbb</h5></Link>
           </Navbar.Brand>
           <Navbar.Toggle />
         </Navbar.Header>
@@ -110,4 +107,7 @@ module.exports = Header;
                         </NavItem> 
                         <NavItem componentClass='span'>
                           <Link to='/login' className="link"><h5> ^Log^ [iN] </h5></Link>
+
+
+                            <div className="link" onClick={that.handleLogOut}>^Log^ [ouT]</div>
 */
