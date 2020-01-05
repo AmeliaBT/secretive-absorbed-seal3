@@ -36237,7 +36237,7 @@ class RINav extends React.Component {
       React.createElement("div", {className: "navbar-nav"}, 
         React.createElement("header", {className: "navbar-nav"}, 
         
-          React.createElement("h1", {className: "navbar-navb"}, "Welcome to Ri")
+          React.createElement("h1", {className: "navbar-navb"}, "Welcome to RI ..")
         ), 
         React.createElement(Navbar, {className: "navbar-nav"}, 
           React.createElement(Navbar.Header, {className: "navbar-nav"}, 
@@ -47823,7 +47823,7 @@ exports = module.exports = __webpack_require__(18)(false);
 
 
 // module
-exports.push([module.i, ".linkc {\n  text-decoration: none;\n  color: #9d9d9d;\n}\n\n.linkc:hover {\n  text-decoration: none;\n  color: green; /* white;*/\n}\n.riheader{background-color: aqua;}", ""]);
+exports.push([module.i, ".linkc {\n  text-decoration: none;\n  color: #9d9d9d;\n}\n\n.linkc:hover {\n  text-decoration: none;\n  color: green; /* white;*/\n}\n.riheader{background-color: aqua;}\n\n\n.navbar-nav span[role=button] {\n  padding-left: 50px;\n  display: inline-block;\n  line-height: 20px;\n}\n\n", ""]);
 
 // exports
 

@@ -5,13 +5,13 @@
 
 .linkc:hover {
   text-decoration: none;
-  color: green; /* white;*/
+  color: white;
 }
 .riheader{background-color: aqua;}
 
 
 .navbar-nav span[role=button] {
-  padding: 15px;
+  padding-left: 50px;
   display: inline-block;
   line-height: 20px;
 }

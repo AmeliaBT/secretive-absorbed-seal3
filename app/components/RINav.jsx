@@ -16,7 +16,7 @@ class RINav extends React.Component {
       <div className="navbar-nav">
         <header className="navbar-nav">
         
-          <h1 className="navbar-navb">Welcome to Ri</h1>
+          <h1 className="navbar-navb">Welcome to RI ..</h1>
         </header>
         <Navbar className="navbar-nav">
           <Navbar.Header className="navbar-nav">
