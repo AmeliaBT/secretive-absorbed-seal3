@@ -1,6 +1,18 @@
 .link {
   text-decoration: none;
   color: #9d9d9d;
+  /*mee 
+   margin: 0;
+  padding: 0;
+   float: left;
+  */
+ 
+  list-style-type: none;
+ 
+  overflow: hidden;
+
+  background-color: aqua;
+  display: inline-block;
 }
 
 .link:hover {
@@ -11,10 +23,12 @@
 
 
 .navbar-nav span[role=button] {
-  padding-left: 50px;
+  padding-left: 10px;
   display: inline-block;
   line-height: 20px;
-  background-color: aqua;
+ 
+  background-color: coral;
+
 }
 
 /* .riheader{background-color: aqua;}*/
