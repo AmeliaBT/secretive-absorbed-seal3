@@ -1,7 +1,7 @@
 const React = require('react');
 const Link = require('react-router-dom').Link
 // style for HEADER
-//const style = require('../styles/Header');
+const style = require('../styles/Header');
 // react-bootstrap
 const {Nav, Navbar, NavItem, NavDropdown, MenuItem} = require('react-bootstrap');
 
@@ -55,12 +55,12 @@ class Header extends React.Component {
         let response = JSON.parse(this.responseText);
         if(response.isLogedIn == true) {
            that.setState({
-          ["navBtns"]: <Nav pullRight className="riheader">
-                        <NavItem componentClass='span'>
-                           <Link  to='/profile' className="link">Hello, {response.nickname}</Link>
+          ["navBtns"]: <Nav pullRight className="link span riheader">
+                        <NavItem >
+                           <Link  to='/profile' >Hello, {response.nickname}</Link>
                         </NavItem> 
                         <NavItem componentClass='span'>
-                          <div className="link" onClick={that.handleLogOut}>Log out</div>
+                          <div  onClick={that.handleLogOut}>Log out</div>
                         </NavItem>
                       </Nav>,
             ["booksLink"]: "/books"
@@ -68,7 +68,7 @@ class Header extends React.Component {
         }
         else {
           that.setState({
-          ["navBtns"]: <Nav pullRight className="riheader">
+          ["navBtns"]: <Nav pullRight className="link span riheader">
                         <NavItem componentClass='span'>
                            <Link  to='/signup' className="link"><h5>Sign up</h5></Link>
                         </NavItem> 
@@ -84,11 +84,11 @@ class Header extends React.Component {
   /***********************/
   render() {
     return (
-      <div className=" " >
+      <div  className="link span riheader">
        <Navbar inverse collapseOnSelect>
         <Navbar.Header>
           <Navbar.Brand>
-            <Link to={this.state.booksLink}  className="link span riheader"><h5>RI Reports test2</h5></Link>
+            <Link to={this.state.booksLink} ><h5>RI Reports</h5></Link>
           </Navbar.Brand>
           <Navbar.Toggle />
         </Navbar.Header>
