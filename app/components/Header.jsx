@@ -1,7 +1,7 @@
 const React = require('react');
 const Link = require('react-router-dom').Link
 // style for HEADER
-const style = require('../styles/Header');
+//const style = require('../styles/Header');
 // react-bootstrap
 const {Nav, Navbar, NavItem, NavDropdown, MenuItem} = require('react-bootstrap');
 
