@@ -1,5 +1,5 @@
 /*  ["navBtns"]: <Nav pullRight className="link span riheader"> */
-
+.span{background-color: aqua;}
 .link {
   text-decoration: none;
   color: #9d9d9d;
@@ -18,7 +18,7 @@
 
 .link:hover {
   text-decoration: none;
-  color: red;
+  color: white;
 }
 
 
@@ -30,17 +30,15 @@
  background-color: green ;
 
 }
-
-/*
- background-color: coral;
-.riheader{background-color: aqua;}
- display: inline-block;
- className="riheader"
-
 .riheader {
   display: inline;
   padding-right: 100px;
   font-weight: bold;
 }
 
+/*
+ background-color: coral;
+.riheader{background-color: aqua;}
+ display: inline-block;
+ className="riheader"
 */

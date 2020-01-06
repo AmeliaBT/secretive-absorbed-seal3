@@ -2773,7 +2773,7 @@ class Header extends React.Component {
         }
         else {
           that.setState({
-          ["navBtns"]: React.createElement(Nav, {className: "link span riheader"}, 
+          ["navBtns"]: React.createElement(Nav, {className: "link span"}, 
     /*  ["navBtns"]: <Nav pullRight className="link span riheader"> */
                         React.createElement(NavItem, {componentClass: "span"}, 
                            React.createElement(Link, {to: "/signup"}, React.createElement("h5", null, "Sign up"))
@@ -2790,12 +2790,12 @@ class Header extends React.Component {
   /***********************/
   render() {
     return (
-      React.createElement("div", {className: "link span riheader"}, 
+      React.createElement("div", {className: "link span"}, 
      /*  <Navbar inverse collapseOnSelect> navbar-nav  */
-        React.createElement(Navbar, {collapseOnSelect: true}, 
+        React.createElement(Navbar, {collapseOnSelect: true, "navbar-nav": true}, 
         React.createElement(Navbar.Header, null, 
           React.createElement(Navbar.Brand, null, 
-            React.createElement(Link, {to: this.state.booksLink, componentClass: "span"}, React.createElement("h5", null, "RI Reports no inv"))
+            React.createElement(Link, {to: this.state.booksLink, componentClass: "span"}, React.createElement("h5", null, "RI Reports no inv32"))
             
           ), 
           React.createElement(Navbar.Toggle, null)
@@ -36267,7 +36267,7 @@ exports = module.exports = __webpack_require__(19)(false);
 
 
 // module
-exports.push([module.i, "/*  [\"navBtns\"]: <Nav pullRight className=\"link span riheader\"> */\n.span{background-color: aqua;}\n.link {\n  text-decoration: none;\n  color: #9d9d9d;\n  /*mee \n   margin: 0;\n  padding: 0;\n   float: left;\n   background-color: aqua;\n     display: inline-block;\n  */\n \n  list-style-type: none; \n  overflow: hidden;  \n  display: inline;\n}\n\n.link:hover {\n  text-decoration: none;\n  color: blue;\n}\n\n\n\n.navbar-nav span[role=button] {\n  padding-left: 100px;\n  display: inline;\n  line-height: 20px;\n background-color: green ;\n\n}\n\n/*\n background-color: coral;\n.riheader{background-color: aqua;}\n display: inline-block;\n className=\"riheader\"\n\n.riheader {\n  display: inline;\n  padding-right: 100px;\n  font-weight: bold;\n}\n\n*/", ""]);
+exports.push([module.i, "/*  [\"navBtns\"]: <Nav pullRight className=\"link span riheader\"> */\n\n.navbar-nav span[role=button] {\n  padding-left: 100px; \n  line-height: 20px;\n background-color: green ;\n\n}\n.navbar-nav link {\n  text-decoration: none;\n  color: black;\n  /*mee \n    color: #9d9d9d;\n   margin: 0;\n  padding: 0;\n   float: left;\n   background-color: aqua;\n     display: inline-block;\n    color: #9d9d9d;\n  */\n \n  list-style-type: none; \n  overflow: hidden;  \n  display: inline;\n}\n\n.navbar-nav link:hover {\n  text-decoration: none;\n  color: red;\n  list-style-type: none; \n  font-weigth: bold;\n}\n\n\n\n\n/*\n background-color: coral;\n.riheader{background-color: aqua;}\n display: inline-block;\n className=\"riheader\"\n\n.riheader {\n  display: inline;\n  padding-right: 100px;\n  font-weight: bold;\n}\n\n*/", ""]);
 
 // exports
 
