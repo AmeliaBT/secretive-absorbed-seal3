@@ -85,10 +85,11 @@ class Header extends React.Component {
   render() {
     return (
       <div  className="link span riheader">
-       <Navbar inverse collapseOnSelect>
+     {/*  <Navbar inverse collapseOnSelect>*/} 
+        <Navbar collapseOnSelect>
         <Navbar.Header>
           <Navbar.Brand >            
-            <Link to={this.state.booksLink} componentClass='span'><h5>RI Reports6</h5></Link>
+            <Link to={this.state.booksLink} componentClass='span'><h5>RI Reports inv</h5></Link>
             
           </Navbar.Brand>
           <Navbar.Toggle />

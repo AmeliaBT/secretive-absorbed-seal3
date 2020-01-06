@@ -2790,10 +2790,11 @@ class Header extends React.Component {
   render() {
     return (
       React.createElement("div", {className: "link span riheader"}, 
-       React.createElement(Navbar, {inverse: true, collapseOnSelect: true}, 
+     /*  <Navbar inverse collapseOnSelect>*/
+        React.createElement(Navbar, {collapseOnSelect: true}, 
         React.createElement(Navbar.Header, null, 
           React.createElement(Navbar.Brand, null, 
-            React.createElement(Link, {to: this.state.booksLink, componentClass: "span"}, React.createElement("h5", null, "RI Reports6"))
+            React.createElement(Link, {to: this.state.booksLink, componentClass: "span"}, React.createElement("h5", null, "RI Reports inv"))
             
           ), 
           React.createElement(Navbar.Toggle, null)
