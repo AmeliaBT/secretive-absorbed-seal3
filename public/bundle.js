@@ -36065,10 +36065,13 @@ class Main extends React.Component {
       React.createElement("div", null, 
        /*   <RINav/> */
         React.createElement(Header, null), 
-      React.createElement(Jumbotron, null, 
+      React.createElement(Jumbotron, {className: "jmbtrn-p"}, 
        /*  <h1 className="jmbtrn-p" style={{color: "#f6ff67"}}>New CMS dB </h1>*/
-         React.createElement("h4", {className: "jmbtrn-p"}, "New RI dB for testing  "), 
-        React.createElement("p", {className: "jmbtrn-p"}
+         React.createElement("h4", {className: "jmbtrn-p"}, " New RI dB for testing "), 
+        React.createElement("p", {className: "jmbtrn-p"}, 
+          "This section:", React.createElement("br", null), 
+          "component: Main.jsx ", React.createElement("br", null), 
+          "element: Jumbotrone ", React.createElement("br", null), "className=\"jmbtrn-p\" ", React.createElement("br", null)
         ), 
         React.createElement("p", {className: "jmbtrn-p"}, 
           "― contact AT" 
@@ -36121,7 +36124,7 @@ exports = module.exports = __webpack_require__(21)(false);
 
 
 // module
-exports.push([module.i, "body {\n  background: white; /* #d3d3d3; #f6ff67;  height:100%;*/\n  height:50%;\n}\n\n.jumbotron {\n  width: 90%;\n  margin: auto;\n  padding: 10px;\n  background-color: white; /* #d3d3d3 #353535;*/\n}\n\n.jmbtrn-p {\n  text-align: center;\n  color: blue; /*#f6ff67;*/\n}", ""]);
+exports.push([module.i, "body {\n  background: white; /* #d3d3d3; #f6ff67;  height:100%;*/\n  height:50%;\n}\n\n.jumbotron {\n  width: 90%;\n  margin: auto;\n  padding: 10px;\n  background-color: white; /* #d3d3d3 #353535;*/\n}\n\n.jmbtrn-p {\n  background-color: #90ee90 ; ;\n  text-align: center;\n  color: blue; /*#f6ff67;*/\n}", ""]);
 
 // exports
 

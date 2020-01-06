@@ -21,10 +21,13 @@ class Main extends React.Component {
       <div>
        {/*   <RINav/> */}
         <Header/>
-      <Jumbotron>
+      <Jumbotron className="jmbtrn-p">
        {/*  <h1 className="jmbtrn-p" style={{color: "#f6ff67"}}>New CMS dB </h1>*/}
-         <h4 className="jmbtrn-p" >New RI dB for testing  </h4>
+         <h4 className="jmbtrn-p" > New RI dB for testing </h4>
         <p className="jmbtrn-p">
+          This section:<br/>
+          component: Main.jsx <br/>
+          element: Jumbotrone <br/>className="jmbtrn-p" <br/>
         </p>
         <p className="jmbtrn-p">
           ― contact AT 
