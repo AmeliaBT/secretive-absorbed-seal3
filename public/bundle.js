@@ -2761,10 +2761,10 @@ class Header extends React.Component {
         if(response.isLogedIn == true) {
            that.setState({
           ["navBtns"]: React.createElement(Nav, {pullRight: true, className: "link span riheader"}, 
-                        React.createElement(NavItem, null, 
+                        React.createElement(NavItem, {componentClass: "span"}, 
                            React.createElement(Link, {to: "/profile"}, "Hello, ", response.nickname)
                         ), 
-                        React.createElement(NavItem, null, 
+                        React.createElement(NavItem, {componentClass: "span"}, 
                           React.createElement("div", {onClick: that.handleLogOut}, "Log out")
                         )
                       ),
@@ -2774,11 +2774,11 @@ class Header extends React.Component {
         else {
           that.setState({
           ["navBtns"]: React.createElement(Nav, {pullRight: true, className: "link span riheader"}, 
-                        React.createElement(NavItem, null, 
+                        React.createElement(NavItem, {componentClass: "span"}, 
                            React.createElement(Link, {to: "/signup"}, React.createElement("h5", null, "Sign up"))
                         ), 
-                        React.createElement(NavItem, null, 
-                          React.createElement(Link, {to: "/login"}, React.createElement("h5", null, " Log in "))
+                        React.createElement(NavItem, {componentClass: "span"}, 
+                          React.createElement(Link, {to: "/login"}, React.createElement("h5", null, " Log in  fff"))
                         )
                       ),
           ["booksLink"]: "/login"
@@ -2792,13 +2792,9 @@ class Header extends React.Component {
       React.createElement("div", {className: "link span riheader"}, 
        React.createElement(Navbar, {inverse: true, collapseOnSelect: true}, 
         React.createElement(Navbar.Header, null, 
-          React.createElement(Navbar.Brand, {pullLeft: true}, 
-            React.createElement(Link, {to: this.state.booksLink}, React.createElement("h5", null, "RI Reports2")), 
-             React.createElement(Link, {to: this.state.booksLink}, React.createElement("h5", null, "RI Reports2")), 
-             React.createElement(Link, {to: this.state.booksLink}, React.createElement("h5", null, "RI Reports2")), 
-            React.createElement(Link, {to: this.state.booksLink}, React.createElement("h5", null, "RI Reports2")), 
-             React.createElement(Link, {to: this.state.booksLink}, React.createElement("h5", null, "RI Reports2")), 
-             React.createElement(Link, {to: this.state.booksLink}, React.createElement("h5", null, "RI Reports2"))
+          React.createElement(Navbar.Brand, null, 
+            React.createElement(Link, {to: this.state.booksLink}, React.createElement("h5", null, "RI Reports3"))
+            
           ), 
           React.createElement(Navbar.Toggle, null)
         ), 

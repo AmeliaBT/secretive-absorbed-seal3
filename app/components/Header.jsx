@@ -56,10 +56,10 @@ class Header extends React.Component {
         if(response.isLogedIn == true) {
            that.setState({
           ["navBtns"]: <Nav pullRight className="link span riheader">
-                        <NavItem >
+                        <NavItem componentClass='span'>
                            <Link  to='/profile' >Hello, {response.nickname}</Link>
                         </NavItem> 
-                        <NavItem >
+                        <NavItem componentClass='span'>
                           <div  onClick={that.handleLogOut}>Log out</div>
                         </NavItem>
                       </Nav>,
@@ -69,11 +69,11 @@ class Header extends React.Component {
         else {
           that.setState({
           ["navBtns"]: <Nav pullRight className="link span riheader">
-                        <NavItem >
+                        <NavItem componentClass='span'>
                            <Link  to='/signup' ><h5>Sign up</h5></Link>
                         </NavItem> 
-                        <NavItem >
-                          <Link to='/login' ><h5> Log in </h5></Link>
+                        <NavItem componentClass='span'>
+                          <Link to='/login' ><h5> Log in  fff</h5></Link>
                         </NavItem>
                       </Nav>,
           ["booksLink"]: "/login"
@@ -87,13 +87,9 @@ class Header extends React.Component {
       <div  className="link span riheader">
        <Navbar inverse collapseOnSelect>
         <Navbar.Header>
-          <Navbar.Brand pullLeft>
-            <Link to={this.state.booksLink} ><h5>RI Reports2</h5></Link>
-             <Link to={this.state.booksLink} ><h5>RI Reports2</h5></Link>
-             <Link to={this.state.booksLink} ><h5>RI Reports2</h5></Link>
-            <Link to={this.state.booksLink} ><h5>RI Reports2</h5></Link>
-             <Link to={this.state.booksLink} ><h5>RI Reports2</h5></Link>
-             <Link to={this.state.booksLink} ><h5>RI Reports2</h5></Link>
+          <Navbar.Brand >            
+            <Link to={this.state.booksLink} ><h5>RI Reports3</h5></Link>
+            
           </Navbar.Brand>
           <Navbar.Toggle />
         </Navbar.Header>
