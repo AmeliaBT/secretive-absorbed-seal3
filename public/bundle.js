@@ -2761,11 +2761,11 @@ class Header extends React.Component {
         if(response.isLogedIn == true) {
            that.setState({
           ["navBtns"]: React.createElement(Nav, {pullRight: true, className: "link span riheader"}, 
-                        React.createElement(NavItem, {componentClass: "span"}, 
-                           React.createElement(Link, {to: "/profile", className: "link"}, "Hello, ", response.nickname)
+                        React.createElement(NavItem, null, 
+                           React.createElement(Link, {to: "/profile"}, "Hello, ", response.nickname)
                         ), 
-                        React.createElement(NavItem, {componentClass: "span"}, 
-                          React.createElement("div", {className: "link", onClick: that.handleLogOut}, "Log out")
+                        React.createElement(NavItem, null, 
+                          React.createElement("div", {onClick: that.handleLogOut}, "Log out")
                         )
                       ),
             ["booksLink"]: "/books"
@@ -2773,12 +2773,12 @@ class Header extends React.Component {
         }
         else {
           that.setState({
-          ["navBtns"]: React.createElement(Nav, {pullRight: true, className: "riheader"}, 
-                        React.createElement(NavItem, {componentClass: "span"}, 
-                           React.createElement(Link, {to: "/signup", className: "link"}, React.createElement("h5", null, "Sign up"))
+          ["navBtns"]: React.createElement(Nav, {pullRight: true, className: "link span riheader"}, 
+                        React.createElement(NavItem, null, 
+                           React.createElement(Link, {to: "/signup"}, React.createElement("h5", null, "Sign up"))
                         ), 
-                        React.createElement(NavItem, {componentClass: "span"}, 
-                          React.createElement(Link, {to: "/login", className: "link"}, React.createElement("h5", null, " Log in "))
+                        React.createElement(NavItem, null, 
+                          React.createElement(Link, {to: "/login"}, React.createElement("h5", null, " Log in "))
                         )
                       ),
           ["booksLink"]: "/login"
@@ -2793,7 +2793,12 @@ class Header extends React.Component {
        React.createElement(Navbar, {inverse: true, collapseOnSelect: true}, 
         React.createElement(Navbar.Header, null, 
           React.createElement(Navbar.Brand, null, 
-            React.createElement(Link, {to: this.state.booksLink}, React.createElement("h5", null, "RI Reports"))
+            React.createElement(Link, {to: this.state.booksLink}, React.createElement("h5", null, "RI Reports2")), 
+             React.createElement(Link, {to: this.state.booksLink}, React.createElement("h5", null, "RI Reports2")), 
+             React.createElement(Link, {to: this.state.booksLink}, React.createElement("h5", null, "RI Reports2")), 
+            React.createElement(Link, {to: this.state.booksLink}, React.createElement("h5", null, "RI Reports2")), 
+             React.createElement(Link, {to: this.state.booksLink}, React.createElement("h5", null, "RI Reports2")), 
+             React.createElement(Link, {to: this.state.booksLink}, React.createElement("h5", null, "RI Reports2"))
           ), 
           React.createElement(Navbar.Toggle, null)
         ), 

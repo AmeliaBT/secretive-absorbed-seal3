@@ -59,7 +59,7 @@ class Header extends React.Component {
                         <NavItem >
                            <Link  to='/profile' >Hello, {response.nickname}</Link>
                         </NavItem> 
-                        <NavItem componentClass='span'>
+                        <NavItem >
                           <div  onClick={that.handleLogOut}>Log out</div>
                         </NavItem>
                       </Nav>,
@@ -69,11 +69,11 @@ class Header extends React.Component {
         else {
           that.setState({
           ["navBtns"]: <Nav pullRight className="link span riheader">
-                        <NavItem componentClass='span'>
-                           <Link  to='/signup' className="link"><h5>Sign up</h5></Link>
+                        <NavItem >
+                           <Link  to='/signup' ><h5>Sign up</h5></Link>
                         </NavItem> 
-                        <NavItem componentClass='span'>
-                          <Link to='/login' className="link"><h5> Log in </h5></Link>
+                        <NavItem >
+                          <Link to='/login' ><h5> Log in </h5></Link>
                         </NavItem>
                       </Nav>,
           ["booksLink"]: "/login"
@@ -88,7 +88,12 @@ class Header extends React.Component {
        <Navbar inverse collapseOnSelect>
         <Navbar.Header>
           <Navbar.Brand>
-            <Link to={this.state.booksLink} ><h5>RI Reports</h5></Link>
+            <Link to={this.state.booksLink} ><h5>RI Reports2</h5></Link>
+             <Link to={this.state.booksLink} ><h5>RI Reports2</h5></Link>
+             <Link to={this.state.booksLink} ><h5>RI Reports2</h5></Link>
+            <Link to={this.state.booksLink} ><h5>RI Reports2</h5></Link>
+             <Link to={this.state.booksLink} ><h5>RI Reports2</h5></Link>
+             <Link to={this.state.booksLink} ><h5>RI Reports2</h5></Link>
           </Navbar.Brand>
           <Navbar.Toggle />
         </Navbar.Header>
