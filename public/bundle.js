@@ -2793,7 +2793,7 @@ class Header extends React.Component {
        React.createElement(Navbar, {inverse: true, collapseOnSelect: true}, 
         React.createElement(Navbar.Header, null, 
           React.createElement(Navbar.Brand, null, 
-            React.createElement(Link, {to: this.state.booksLink}, React.createElement("h5", null, "RI Reports3"))
+            React.createElement(Link, {to: this.state.booksLink, componentClass: "span"}, React.createElement("h5", null, "RI Reports6"))
             
           ), 
           React.createElement(Navbar.Toggle, null)
