@@ -21,7 +21,12 @@
   color: white;
 }
 
-
+.span:hover {
+  text-decoration: none;
+  color: white;
+}
+.navbar-nav:hover span[role=button] { text-decoration: none;
+  color: white;}
 
 .navbar-nav span[role=button] {
   padding-left: 100px;
@@ -30,6 +35,8 @@
  background-color: green ;
 
 }
+
+
 .riheader {
   display: inline;
   padding-right: 100px;
