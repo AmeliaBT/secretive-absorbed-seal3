@@ -55,12 +55,12 @@ class Header extends React.Component {
         let response = JSON.parse(this.responseText);
         if(response.isLogedIn == true) {
            that.setState({
-          ["navBtns"]: <Nav pullRight className="link span riheader">
+          ["navBtns"]: <Nav pullRight className="link span">
                         <NavItem className='span'>
-                           <Link  to='/profile' >Hello, {response.nickname}</Link>
+                           <Link  to='/profile' className="link">Hello, {response.nickname}</Link>
                         </NavItem> 
                         <NavItem className='span'>
-                          <div  onClick={that.handleLogOut}>Log out</div>
+                          <div  onClick={that.handleLogOut} className="link">Log out</div>
                         </NavItem>
                       </Nav>,
             ["booksLink"]: "/books"
@@ -84,11 +84,11 @@ class Header extends React.Component {
   /***********************/
   render() {
     return (
-      <div  className="link span riheader">
+      <div  className="link span">
        <Navbar inverse collapseOnSelect>
         <Navbar.Header>
           <Navbar.Brand >            
-            <Link to={this.state.booksLink} className='span'><h5>RI Reports componentClass</h5></Link>
+            <Link to={this.state.booksLink} className='link span'><h5>RI Reports componentClass</h5></Link>
             
           </Navbar.Brand>
           <Navbar.Toggle />
