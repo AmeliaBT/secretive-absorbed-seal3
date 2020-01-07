@@ -56,10 +56,10 @@ class Header extends React.Component {
         if(response.isLogedIn == true) {
            that.setState({
           ["navBtns"]: <Nav pullRight className="link span riheader">
-                        <NavItem componentClass='span'>
+                        <NavItem className='span'>
                            <Link  to='/profile' >Hello, {response.nickname}</Link>
                         </NavItem> 
-                        <NavItem componentClass='span'>
+                        <NavItem className='span'>
                           <div  onClick={that.handleLogOut}>Log out</div>
                         </NavItem>
                       </Nav>,
@@ -68,12 +68,12 @@ class Header extends React.Component {
         }
         else {
           that.setState({
-          ["navBtns"]: <Nav pullRight className="link span riheader">
-                        <NavItem componentClass='span'>
-                           <Link  to='/signup' ><h5>Sign up</h5></Link>
+          ["navBtns"]: <Nav pullRight>
+                        <NavItem className='span'>
+                           <Link  to='/signup' className="link"><h5>Sign up</h5></Link>
                         </NavItem> 
-                        <NavItem componentClass='span'>
-                          <Link to='/login' ><h5> Log in  fff</h5></Link>
+                        <NavItem className='span'>
+                          <Link to='/login' className="link"><h5> Log in  fff</h5></Link>
                         </NavItem>
                       </Nav>,
           ["booksLink"]: "/login"
@@ -88,7 +88,7 @@ class Header extends React.Component {
        <Navbar inverse collapseOnSelect>
         <Navbar.Header>
           <Navbar.Brand >            
-            <Link to={this.state.booksLink} componentClass='span'><h5>RI Reports6</h5></Link>
+            <Link to={this.state.booksLink} className='span'><h5>RI Reports componentClass</h5></Link>
             
           </Navbar.Brand>
           <Navbar.Toggle />
