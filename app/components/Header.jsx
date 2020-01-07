@@ -55,7 +55,7 @@ class Header extends React.Component {
         let response = JSON.parse(this.responseText);
         if(response.isLogedIn == true) {
            that.setState({
-          ["navBtns"]: <Nav pullLeft className="link span">
+          ["navBtns"]: <Nav pullLeft className="navbar-nav span">
                         <NavItem className='span'>
                            <Link  to='/profile' className="link">Hello, {response.nickname}</Link>
                         </NavItem> 
@@ -68,12 +68,12 @@ class Header extends React.Component {
         }
         else {
           that.setState({
-          ["navBtns"]: <Nav pullLeft>
+          ["navBtns"]: <Nav pullLeft className='navbar-nav span'>
                {/* <Nav pullRight>*/}
-                        <NavItem  componentClass='span'>
+                        <NavItem  >
                            <Link  to='/signup' className="link"><h5>Sign up</h5></Link>
                         </NavItem> 
-                        <NavItem  componentClass='span'>
+                        <NavItem >
                           <Link to='/login' className="link"><h5> Log in  fff</h5></Link>
                         </NavItem>
                       </Nav>,
@@ -90,7 +90,7 @@ class Header extends React.Component {
          {/*  <Navbar inverse collapseOnSelect>*/}
         <Navbar.Header>
           <Navbar.Brand >            
-            <Link to={this.state.booksLink} ><h5 className='link'>RI Reports</h5></Link>
+            <Link to={this.state.booksLink} ><h5 className='link'>RI Reports ???</h5></Link>
             
           </Navbar.Brand>
           <Navbar.Toggle />
