@@ -20,15 +20,12 @@
   color: red;
 }
 
-Nav{
-  display: inline;
- background-color: pink ;
-}
+
 .navbar-nav span[role=button] {
-  padding-left: 100px;
+  padding-left: 10px;
   display: inline;
   line-height: 20px;
- background-color: yellow ;
+ background-color: blue;
 
 }
 

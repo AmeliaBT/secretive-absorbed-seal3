@@ -55,7 +55,7 @@ class Header extends React.Component {
         let response = JSON.parse(this.responseText);
         if(response.isLogedIn == true) {
            that.setState({
-          ["navBtns"]: <Nav pullRight className="link span">
+          ["navBtns"]: <Nav pullLeft className="link span">
                         <NavItem className='span'>
                            <Link  to='/profile' className="link">Hello, {response.nickname}</Link>
                         </NavItem> 
@@ -70,11 +70,11 @@ class Header extends React.Component {
           that.setState({
           ["navBtns"]: <Nav pullLeft>
                {/* <Nav pullRight>*/}
-                        <NavItem className='link span'>
-                           <Link  to='/signup' className="link span"><h5>Sign up</h5></Link>
+                        <NavItem  componentClass='span'>
+                           <Link  to='/signup' className="link"><h5>Sign up</h5></Link>
                         </NavItem> 
-                        <NavItem className='span'>
-                          <Link to='/login' className="link span"><h5> Log in  fff</h5></Link>
+                        <NavItem  componentClass='span'>
+                          <Link to='/login' className="link"><h5> Log in  fff</h5></Link>
                         </NavItem>
                       </Nav>,
           ["booksLink"]: "/login"
@@ -90,7 +90,7 @@ class Header extends React.Component {
          {/*  <Navbar inverse collapseOnSelect>*/}
         <Navbar.Header>
           <Navbar.Brand >            
-            <Link to={this.state.booksLink} ><h5 className='link span'>RI Reports239 inverse</h5></Link>
+            <Link to={this.state.booksLink} ><h5 className='link'>RI Reports</h5></Link>
             
           </Navbar.Brand>
           <Navbar.Toggle />
