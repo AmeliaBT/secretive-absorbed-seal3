@@ -12,8 +12,7 @@
   */
  
   list-style-type: none; 
-  overflow: hidden;  
-  display: inline;
+  overflow: hidden; 
 }
 
 .link:hover {
@@ -21,7 +20,10 @@
   color: red;
 }
 
-
+Nav{
+  display: inline;
+ background-color: pink ;
+}
 .navbar-nav span[role=button] {
   padding-left: 100px;
   display: inline;
