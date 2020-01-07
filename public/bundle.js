@@ -2774,10 +2774,10 @@ class Header extends React.Component {
         else {
           that.setState({
           ["navBtns"]: React.createElement(Nav, {pullRight: true, className: "link span riheader"}, 
-                        React.createElement(NavItem, {componentClass: "span"}, 
+                        React.createElement(NavItem, {componentClass: "link "}, 
                            React.createElement(Link, {to: "/signup"}, React.createElement("h5", null, "Sign up"))
                         ), 
-                        React.createElement(NavItem, {componentClass: "span"}, 
+                        React.createElement(NavItem, {componentClass: "link "}, 
                           React.createElement(Link, {to: "/login"}, React.createElement("h5", null, " Log in  fff"))
                         )
                       ),
@@ -2793,7 +2793,7 @@ class Header extends React.Component {
        React.createElement(Navbar, {inverse: true, collapseOnSelect: true}, 
         React.createElement(Navbar.Header, null, 
           React.createElement(Navbar.Brand, null, 
-            React.createElement(Link, {to: this.state.booksLink, componentClass: "span"}, React.createElement("h5", null, "RI Reports6"))
+            React.createElement(Link, {to: this.state.booksLink, componentClass: "span"}, React.createElement("h5", null, "RI Reports11"))
             
           ), 
           React.createElement(Navbar.Toggle, null)
