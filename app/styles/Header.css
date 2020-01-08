@@ -9,11 +9,11 @@
    float: left;
    background-color: aqua;
      display: inline-block;
-  */
- margin: 0;
-  padding: 0;
-  list-style-type: none; 
+   list-style-type: none; 
   overflow: hidden; 
+  */
+ 
+ 
 }
 
 .link:hover {
@@ -22,16 +22,19 @@
 }
 
 
-.navbar-nav span[role=button] {  
-  display: inline;
-  line-height: 20px;
- background-color: blue;
-padding-left: 10px;
-}
-
 
 
 /*
+
+.navbar-nav span[role=button] {
+  padding-left: 10px;
+  display: inline;
+  line-height: 20px;
+ background-color: blue;
+
+}
+
+
 .span{background-color: green;}
 
 .riheader {
