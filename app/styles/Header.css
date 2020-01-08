@@ -22,12 +22,11 @@
 }
 
 
-.navbar-nav span[role=button] {
-  padding-left: 10px;
+.navbar-nav span[role=button] {  
   display: inline;
   line-height: 20px;
  background-color: blue;
-
+padding-left: 10px;
 }
 
 
