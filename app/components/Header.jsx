@@ -90,7 +90,7 @@ class Header extends React.Component {
          {/*  <Navbar inverse collapseOnSelect>*/}
         <Navbar.Header>
           <Navbar.Brand >            
-            <Link to={this.state.booksLink} ><h5 className='link'>RI Reports ??cc??</h5></Link>
+            <Link to={this.state.booksLink} ><h5 className='link'>RI Reports</h5></Link>
             
           </Navbar.Brand>
           <Navbar.Toggle />
