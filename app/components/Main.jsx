@@ -27,7 +27,8 @@ class Main extends React.Component {
         <p className="jmbtrn-p">
           This section:<br/>
           component: Main.jsx <br/>
-          element: Jumbotrone <br/>className="jmbtrn-p" <br/>
+          element: Jumbotrone <br/>c
+          lassName="jmbtrn-p" <br/>
         </p>
         <p className="jmbtrn-p">
           ― contact AT 
