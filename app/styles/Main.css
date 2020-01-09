@@ -11,7 +11,18 @@ body {
 }
 
 .jmbtrn-p {
+  
+  
+  color: bblack; /*#f6ff67;*/
+   border-style: 6px solid black;
+  background-color: lightgrey;
+}
+
+/* 
+
+.jmbtrn-p {
   background-color: #90ee90 ; ;
   text-align: center;
   color: blue; /*#f6ff67;*/
 }
+*/
