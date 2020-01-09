@@ -36267,7 +36267,7 @@ exports = module.exports = __webpack_require__(19)(false);
 
 
 // module
-exports.push([module.i, "/*  [\"navBtns\"]: <Nav pullRight className=\"link span riheader\"> */\n.span{background-color: aqua;}\n.link {\n  text-decoration: none;\n  color: #9d9d9d;\n  /*mee \n   margin: 0;\n  padding: 0;\n   float: left;\n   background-color: aqua;\n     display: inline-block;\n  */\n \n  list-style-type: none; \n  overflow: hidden;  \n  display: inline;\n}\n\n.link:hover {\n  text-decoration: none;\n  color: blue;\n}\n\n\n\n.navbar-nav span[role=button] {\n  padding-left: 100px;\n  display: inline;\n  line-height: 20px;\n background-color: green ;\n\n}\n\n/*\n background-color: coral;\n.riheader{background-color: aqua;}\n display: inline-block;\n className=\"riheader\"\n\n.riheader {\n  display: inline;\n  padding-right: 100px;\n  font-weight: bold;\n}\n\n*/", ""]);
+exports.push([module.i, "/*  [\"navBtns\"]: <Nav pullRight className=\"link span riheader\"> */\n\n.link {\n  text-decoration: none;\n  color: #9d9d9d;\n  /*mee \n   margin: 0;\n  padding: 0;\n   float: left;\n   background-color: aqua;\n     display: inline-block;\n  */\n \n  list-style-type: none; \n  overflow: hidden;  \n  display: inline;\n}\n\n.link:hover {\n  text-decoration: none;\n  color: red;\n}\n\n\n\n.navbar-nav span[role=button] {\n  padding-left: 100px;\n  display: inline;\n  line-height: 20px;\n background-color: green ;\n\n}\n\n/*\n background-color: coral;\n.riheader{background-color: aqua;}\n display: inline-block;\n className=\"riheader\"\n\n.riheader {\n  display: inline;\n  padding-right: 100px;\n  font-weight: bold;\n}\n\n*/", ""]);
 
 // exports
 
