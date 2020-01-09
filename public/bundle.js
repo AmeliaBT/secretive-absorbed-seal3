@@ -2760,7 +2760,7 @@ class Header extends React.Component {
         let response = JSON.parse(this.responseText);
         if(response.isLogedIn == true) {
            that.setState({
-          ["navBtns"]: React.createElement(Nav, {pullLeft: true, className: "navbar-nav span"}, 
+          ["navBtns"]: React.createElement(Nav, null, 
                         React.createElement(NavItem, {className: "span"}, 
                            React.createElement(Link, {to: "/profile", className: "link"}, "Hello, ", response.nickname)
                         ), 
@@ -2773,13 +2773,13 @@ class Header extends React.Component {
         }
         else {
           that.setState({
-          ["navBtns"]: React.createElement(Nav, {pullLeft: true, className: "navbar-nav span"}, 
+          ["navBtns"]: React.createElement(Nav, null, 
                /* <Nav pullRight>*/
                         React.createElement(NavItem, null, 
                            React.createElement(Link, {to: "/signup"}, "Sign up ")
                         ), 
                         React.createElement(NavItem, null, 
-                          React.createElement(Link, {to: "/login"}, "Log in f")
+                          React.createElement(Link, {to: "/login"}, "Log in ")
                         )
                       ),
           ["booksLink"]: "/login"
@@ -2791,11 +2791,11 @@ class Header extends React.Component {
   render() {
     return (
       React.createElement("div", {className: "link span"}, 
-       React.createElement(Navbar, {inverse: true, collapseOnSelect: true}, 
+       React.createElement(Navbar, {inverse: true, fluid: true}, 
          /*  <Navbar inverse collapseOnSelect>*/
         React.createElement(Navbar.Header, null, 
           React.createElement(Navbar.Brand, null, 
-            React.createElement(Link, {to: this.state.booksLink}, React.createElement("h5", {className: "link"}, "RI Reports 0"))
+            React.createElement(Link, {to: this.state.booksLink}, "RI Reports o110 ")
             
           ), 
           React.createElement(Navbar.Toggle, null)
