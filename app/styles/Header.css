@@ -1,7 +1,6 @@
 /*  ["navBtns"]: <Nav pullRight className="link span riheader"> */
 .span{
   color: blue; 
-
 }
 .link {
   text-decoration: none;
@@ -10,13 +9,10 @@
   overflow: hidden;  
   display: inline;
 }
-
 .link:hover {
   text-decoration: none;
   color: red;
 }
-
-
 .navbar-nav span[role=button] {
   padding-left: 100px; 
   line-height: 20px; 

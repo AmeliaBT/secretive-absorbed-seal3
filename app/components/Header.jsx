@@ -88,7 +88,7 @@ class Header extends React.Component {
        <Navbar collapseOnSelect>
         <Navbar.Header>
           <Navbar.Brand >            
-            <Link to={this.state.booksLink} ><p  className="link span">RI Reports 463</p></Link>
+            <Link to={this.state.booksLink} ><p  className="link">RI Reports </p></Link>
             
           </Navbar.Brand>
           <Navbar.Toggle />
