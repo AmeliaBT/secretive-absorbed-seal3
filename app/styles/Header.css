@@ -1,5 +1,5 @@
 /*  ["navBtns"]: <Nav pullRight className="link span riheader"> */
-.span{background-color: aqua;}
+.span{background-color: green;}
 .link {
   text-decoration: none;
   color: #9d9d9d;
@@ -12,31 +12,35 @@
   */
  
   list-style-type: none; 
-  overflow: hidden;  
-  display: inline;
+  overflow: hidden; 
 }
 
 .link:hover {
   text-decoration: none;
-  color: white;
+  color: red;
 }
-
 
 
 .navbar-nav span[role=button] {
-  padding-left: 100px;
+  padding-left: 10px;
   display: inline;
   line-height: 20px;
- background-color: green ;
+ background-color: blue;
 
 }
+
+
+
+/*
+
+
 .riheader {
   display: inline;
   padding-right: 100px;
   font-weight: bold;
 }
 
-/*
+
  background-color: coral;
 .riheader{background-color: aqua;}
  display: inline-block;

@@ -55,12 +55,12 @@ class Header extends React.Component {
         let response = JSON.parse(this.responseText);
         if(response.isLogedIn == true) {
            that.setState({
-          ["navBtns"]: <Nav pullRight className="link span riheader">
-                        <NavItem componentClass='span'>
-                           <Link  to='/profile' >Hello, {response.nickname}</Link>
+          ["navBtns"]: <Nav pullLeft className="navbar-nav span">
+                        <NavItem className='span'>
+                           <Link  to='/profile' className="link">Hello, {response.nickname}</Link>
                         </NavItem> 
-                        <NavItem componentClass='span'>
-                          <div  onClick={that.handleLogOut}>Log out</div>
+                        <NavItem className='span'>
+                          <div  onClick={that.handleLogOut} className="link">Log out</div>
                         </NavItem>
                       </Nav>,
             ["booksLink"]: "/books"
@@ -68,12 +68,13 @@ class Header extends React.Component {
         }
         else {
           that.setState({
-          ["navBtns"]: <Nav pullRight className="link span riheader">
-                        <NavItem componentClass='span link ' >
-                           <Link  to='/signup' ><h5>Sign up</h5></Link>
+          ["navBtns"]: <Nav pullLeft className='navbar-nav span'>
+               {/* <Nav pullRight>*/}
+                        <NavItem  >
+                           <Link  to='/signup' className="link"><h5>Sign up</h5></Link>
                         </NavItem> 
-                        <NavItem componentClass='span link '>
-                          <Link to='/login' ><h5> Log in  fff</h5></Link>
+                        <NavItem >
+                          <Link to='/login' className="link"><h5> Log in  fff</h5></Link>
                         </NavItem>
                       </Nav>,
           ["booksLink"]: "/login"
@@ -84,11 +85,12 @@ class Header extends React.Component {
   /***********************/
   render() {
     return (
-      <div  className="link span riheader">
-       <Navbar inverse collapseOnSelect>
+      <div  className="link span">
+       <Navbar inverse  collapseOnSelect>
+         {/*  <Navbar inverse collapseOnSelect>*/}
         <Navbar.Header>
           <Navbar.Brand >            
-            <Link to={this.state.booksLink} componentClass='span'><h5>RI Reports11</h5></Link>
+            <Link to={this.state.booksLink} ><h5 className='link'>RI Reports ???</h5></Link>
             
           </Navbar.Brand>
           <Navbar.Toggle />
