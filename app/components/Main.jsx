@@ -27,9 +27,9 @@ class Main extends React.Component {
         <p className="jmbtrn-p">
           This is main section:<br/>
           Sign in or log in to view dB<br/>
-          to do <br/>
-          add description <br/>
-          list available features<br/>
+          To Do <br/>
+          1. add description <br/>
+          2. list available features<br/>
         </p>
         
       </Jumbotron>

@@ -12625,8 +12625,8 @@ render((
         
         React.createElement(Route, {path: "/signup", component: SignUp}), 
         React.createElement(Route, {path: "/login", component: LogIn}), 
-        React.createElement(Route, {path: "/profile", component: Profile}), 
-        React.createElement(DisplayMessages, null)
+        React.createElement(Route, {path: "/profile", component: Profile})
+       /*  < DisplayMessages />*/
       )
     )
   )), document.getElementById('main'));
@@ -36076,9 +36076,9 @@ class Main extends React.Component {
         React.createElement("p", {className: "jmbtrn-p"}, 
           "This is main section:", React.createElement("br", null), 
           "Sign in or log in to view dB", React.createElement("br", null), 
-          "to do ", React.createElement("br", null), 
-          "add description ", React.createElement("br", null), 
-          "list available features", React.createElement("br", null)
+          "To Do ", React.createElement("br", null), 
+          "1. add description ", React.createElement("br", null), 
+          "2. list available features", React.createElement("br", null)
         )
         
       )
@@ -36129,7 +36129,7 @@ exports = module.exports = __webpack_require__(19)(false);
 
 
 // module
-exports.push([module.i, "body {\n  background: white; /* #d3d3d3; #f6ff67;  height:100%;*/\n  height:50%;\n}\n\n.jumbotron {\n  width: 90%;\n  margin: auto;\n  padding: 10px;\n  background-color: white; /* #d3d3d3 #353535;*/\n}\n\n.jmbtrn-p p{ \n  \n  color: black; /*#f6ff67;*/\n   border: 1px solid lightgrey;\n  background-color: white;\n padding: 20px;\n  \n}\n\n/* \n\n.jmbtrn-p {\n  background-color: #90ee90 ; \n  text-align: center;\n  color: #f6ff67;\n border-left: 6px solid red;\n  background-color: lightgrey;\n}\n*/", ""]);
+exports.push([module.i, "body {\n  background: white; /* #d3d3d3; #f6ff67;  height:100%;*/\n  height:50%;\n}\n\n.jumbotron {\n  width: 90%;\n  margin: auto;\n  padding: 10px;\n  background-color: white; /* #d3d3d3 #353535;*/\n}\n\n.jmbtrn-p p{ \n  \n  color: black; /*#f6ff67;*/\n   border: 1px solid lightgrey;\n  background-color: white;\n padding: 20px;\n  font-size: small;\n}\n\n/* \n\n.jmbtrn-p {\n  background-color: #90ee90 ; \n  text-align: center;\n  color: #f6ff67;\n border-left: 6px solid red;\n  background-color: lightgrey;\n}\n*/", ""]);
 
 // exports
 

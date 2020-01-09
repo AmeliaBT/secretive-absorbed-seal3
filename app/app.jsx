@@ -34,7 +34,7 @@ render((
         <Route path="/signup" component={SignUp}/>
         <Route path="/login" component={LogIn}/>
         <Route path="/profile" component={Profile}/>
-        < DisplayMessages />
+       {/*  < DisplayMessages />*/}
       </div>
     </BrowserRouter>
   </Provider>), document.getElementById('main'));
