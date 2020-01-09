@@ -15,7 +15,7 @@ let store = createStore(reducers);
 
 /* Import Components */
 const Main = require('./components/Main');
-const Books = require('./components/Books');
+const RIreports = require('./components/RIreports');
 const SignUp = require('./components/SignUp');
 const LogIn = require('./components/LogIn');
 const Profile = require('./components/Profile');
@@ -29,7 +29,7 @@ render((
      
        
         <Route exact path="/" component={Main}/>
-        <Route path="/books" component={Books}/>
+        <Route path="/books" component={RIreports}/>
         
         <Route path="/signup" component={SignUp}/>
         <Route path="/login" component={LogIn}/>

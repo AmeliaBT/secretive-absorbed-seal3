@@ -12607,7 +12607,7 @@ let store = createStore(reducers);
 
 /* Import Components */
 const Main = __webpack_require__(267);
-const Books = __webpack_require__(419);
+const RIreports = __webpack_require__(419);
 const SignUp = __webpack_require__(425);
 const LogIn = __webpack_require__(428);
 const Profile = __webpack_require__(431);
@@ -12621,7 +12621,7 @@ render((
      
        
         React.createElement(Route, {exact: true, path: "/", component: Main}), 
-        React.createElement(Route, {path: "/books", component: Books}), 
+        React.createElement(Route, {path: "/books", component: RIreports}), 
         
         React.createElement(Route, {path: "/signup", component: SignUp}), 
         React.createElement(Route, {path: "/login", component: LogIn}), 
@@ -47748,7 +47748,7 @@ const Header = __webpack_require__(42);
 const Book = __webpack_require__(422);
 
 /* the books page that shows all books */
-class Books extends React.Component {
+class RIreports extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -47925,7 +47925,7 @@ class Books extends React.Component {
   }
 };
 
-module.exports = Books;
+module.exports = RIreports;
 
 /***/ }),
 /* 420 */
@@ -47948,8 +47948,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../node_modules/css-loader/index.js!./Books.css", function() {
-			var newContent = require("!!../../node_modules/css-loader/index.js!./Books.css");
+		module.hot.accept("!!../../node_modules/css-loader/index.js!./RIreports.css", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js!./RIreports.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});

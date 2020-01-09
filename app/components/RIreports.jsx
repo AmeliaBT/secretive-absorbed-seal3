@@ -1,7 +1,7 @@
 const React = require('react');
 const Link = require('react-router-dom').Link
 // style for BOOKS
-const style = require('../styles/Books');
+const style = require('../styles/RIreports');
 // react-bootstrap
 const {Modal, Button, form, FormGroup, FormControl, ControlLabel, option} = require('react-bootstrap');
 // other components and etc
@@ -9,7 +9,7 @@ const Header = require('./Header');
 const Book = require('./Book');
 
 /* the books page that shows all books */
-class Books extends React.Component {
+class RIreports extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -186,4 +186,4 @@ class Books extends React.Component {
   }
 };
 
-module.exports = Books;
+module.exports = RIreports;
