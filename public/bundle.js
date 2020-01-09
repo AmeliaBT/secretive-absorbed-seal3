@@ -2762,7 +2762,7 @@ class Header extends React.Component {
            that.setState({
           ["navBtns"]: React.createElement(Nav, {pullLeft: true, className: "link span"}, 
                         React.createElement(NavItem, {className: "span"}, 
-                           React.createElement(Link, {to: "/profile", className: "link"}, "Hello, ", response.nickname)
+                           React.createElement(Link, {to: "/profile", className: "link"}, "Hello Inspector, ", response.nickname)
                         ), 
                         React.createElement(NavItem, {className: "span"}, 
                           React.createElement("div", {onClick: that.handleLogOut, className: "link"}, "Log out")
