@@ -48442,14 +48442,14 @@ class Profile extends React.Component {
       nickname: "",
       city: "",
       street: "",
-      book_to_add: "",
+      ri_report_to_add: "",
       user_books: "loading...",
       income: null,
       outcome: null
     };
     this.cityChanged = this.cityChanged.bind(this);
     this.streetChanged = this.streetChanged.bind(this);
-    this.bookChanged = this.bookChanged.bind(this);
+    this.reportChanged = this.reportChanged.bind(this);
     this.addBook = this.addBook.bind(this);
   }
   /****************************/
@@ -48507,10 +48507,10 @@ class Profile extends React.Component {
         }
   }
   /**/
-  bookChanged(event) {
+  reportChanged(event) {
     const value = event.target.value;
           this.setState({
-            ["book_to_add"]: value
+            ["ri_report_to_add"]: value
            });
   }
   /**/
@@ -48520,7 +48520,7 @@ class Profile extends React.Component {
       
       xhr.open('POST', '/add-book', true);
       xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-      let body = 'bookname=' + encodeURIComponent(this.state.book_to_add);
+      let body = 'bookname=' + encodeURIComponent(this.state.ri_report_to_add);
 
       xhr.send(body);
 
@@ -48655,12 +48655,12 @@ class Profile extends React.Component {
                       }, 
                         React.createElement(FormControl, {
                           type: "text", 
-                          value: this.state.book_to_add, 
-                          placeholder: "enter book name", 
-                          onChange: this.bookChanged, 
+                          value: this.state.ri_report_to_add, 
+                          placeholder: "enter P/N", 
+                          onChange: this.reportChanged, 
                           style: {"width": "100%"}}
                         ), 
-                         React.createElement(Button, {type: "button", style: {"width": "100%"}, onClick: this.addBook}, "Add book"), 
+                         React.createElement(Button, {type: "button", style: {"width": "100%"}, onClick: this.addBook}, "Add RI Report"), 
                         React.createElement(FormControl.Feedback, null)
                       )
                     ), 
