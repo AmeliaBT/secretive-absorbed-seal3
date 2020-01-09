@@ -10,12 +10,13 @@ body {
   background-color: white; /* #d3d3d3 #353535;*/
 }
 
-.jmbtrn-p {
-  
+.jmbtrn-p p{ 
   
   color: black; /*#f6ff67;*/
-   border-style: 1px solid black;
+   border: 1px solid lightgrey;
   background-color: white;
+ 
+  
 }
 
 /* 
@@ -24,5 +25,7 @@ body {
   background-color: #90ee90 ; 
   text-align: center;
   color: #f6ff67;
+ border-left: 6px solid red;
+  background-color: lightgrey;
 }
 */

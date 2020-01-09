@@ -26,11 +26,12 @@ class Main extends React.Component {
          <h4 className="jmbtrn-p" > New RI dB for testing </h4>
         <p className="jmbtrn-p">
           This section:<br/>
+          Sin in or log in to view dB<br/>
           component: Main.jsx <br/>
           element: Jumbotrone <br/>c
           lassName="jmbtrn-p" <br/>
         </p>
-        <p className="jmbtrn-p">
+        <p >
           ― contact AT 
         </p>
       </Jumbotron>
