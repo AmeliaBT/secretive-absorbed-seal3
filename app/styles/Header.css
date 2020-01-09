@@ -12,7 +12,8 @@
   */
  
   list-style-type: none; 
-  overflow: hidden; 
+  overflow: hidden;  
+  display: inline;
 }
 
 .link:hover {
@@ -22,10 +23,10 @@
 
 
 .navbar-nav span[role=button] {
-  padding-left: 10px;
+  padding-left: 100px;
   display: inline;
   line-height: 20px;
- background-color: blue;
+ background-color: yellow ;
 
 }
 
