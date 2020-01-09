@@ -45,10 +45,7 @@ class Header extends React.Component {
       
       xhr.open('POST', '/is-loged-in', true);
       xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-
-
       xhr.send();
-
       xhr.onreadystatechange = function() {
         if (this.readyState != 4) return;
         if (this.status != 200) {
@@ -58,12 +55,12 @@ class Header extends React.Component {
         let response = JSON.parse(this.responseText);
         if(response.isLogedIn == true) {
            that.setState({
-          ["navBtns"]: <Nav pullRight>
+          ["navBtns"]: <Nav pullRight className="link span riheader">
                         <NavItem componentClass='span'>
-                           <Link  to='/profile' className="link">Hello, {response.nickname}</Link>
+                           <Link  to='/profile' >Hello, {response.nickname}</Link>
                         </NavItem> 
                         <NavItem componentClass='span'>
-                          <div className="link" onClick={that.handleLogOut}>^Log^ [ouT]</div>
+                          <div  onClick={that.handleLogOut}>Log out</div>
                         </NavItem>
                       </Nav>,
             ["booksLink"]: "/books"
@@ -71,12 +68,13 @@ class Header extends React.Component {
         }
         else {
           that.setState({
-          ["navBtns"]: <Nav pullRight>
+          ["navBtns"]: <Nav className="link span riheader">
+    {/*  ["navBtns"]: <Nav pullRight className="link span riheader"> */}
                         <NavItem componentClass='span'>
-                           <Link  to='/signup' className="link">^Sign^ [uP]</Link>
+                           <Link  to='/signup' ><h5>Sign up</h5></Link>
                         </NavItem> 
                         <NavItem componentClass='span'>
-                          <Link to='/login' className="link">^Log^ [iN]</Link>
+                          <Link to='/login' ><h5> Log in  fff</h5></Link>
                         </NavItem>
                       </Nav>,
           ["booksLink"]: "/login"
@@ -87,11 +85,13 @@ class Header extends React.Component {
   /***********************/
   render() {
     return (
-      <div className="riheader" >
-       <Navbar inverse collapseOnSelect>
+      <div  className="link span riheader">
+     {/*  <Navbar inverse collapseOnSelect> navbar-nav  */} 
+        <Navbar collapseOnSelect>
         <Navbar.Header>
-          <Navbar.Brand>
-            <Link to={this.state.booksLink}  className="link">RI Reports aaa</Link>
+          <Navbar.Brand >            
+            <Link to={this.state.booksLink} componentClass='span'><h5>RI Reports no inv</h5></Link>
+            
           </Navbar.Brand>
           <Navbar.Toggle />
         </Navbar.Header>
@@ -105,3 +105,12 @@ class Header extends React.Component {
 };
 
 module.exports = Header;
+/* 
+ <Link  to='/signup' className="link"><h5>^Sign^ [uP]</h5></Link>
+                        </NavItem> 
+                        <NavItem componentClass='span'>
+                          <Link to='/login' className="link"><h5> ^Log^ [iN] </h5></Link>
+
+
+                            <div className="link" onClick={that.handleLogOut}>^Log^ [ouT]</div>
+*/
