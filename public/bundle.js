@@ -2774,10 +2774,10 @@ class Header extends React.Component {
         else {
           that.setState({
           ["navBtns"]: React.createElement(Nav, {pullRight: true, className: "link span riheader"}, 
-                        React.createElement(NavItem, {componentClass: "link "}, 
+                        React.createElement(NavItem, {componentClass: "span link "}, 
                            React.createElement(Link, {to: "/signup"}, React.createElement("h5", null, "Sign up"))
                         ), 
-                        React.createElement(NavItem, {componentClass: "link "}, 
+                        React.createElement(NavItem, {componentClass: "span link "}, 
                           React.createElement(Link, {to: "/login"}, React.createElement("h5", null, " Log in  fff"))
                         )
                       ),
