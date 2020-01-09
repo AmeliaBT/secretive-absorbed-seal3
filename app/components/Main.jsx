@@ -23,17 +23,15 @@ class Main extends React.Component {
         <Header/>
       <Jumbotron className="jmbtrn-p">
        {/*  <h1 className="jmbtrn-p" style={{color: "#f6ff67"}}>New CMS dB </h1>*/}
-         <h4 className="jmbtrn-p" > New RI dB for testing </h4>
+         <h3 className="jmbtrn-p" > New RI dB for testing </h3>
         <p className="jmbtrn-p">
-          This section:<br/>
-          Sin in or log in to view dB<br/>
-          component: Main.jsx <br/>
-          element: Jumbotrone <br/>c
-          lassName="jmbtrn-p" <br/>
+          This is main section:<br/>
+          Sign in or log in to view dB<br/>
+          to do <br/>
+          add description <br/>
+          list available features<br/>
         </p>
-        <p >
-          ― contact AT 
-        </p>
+        
       </Jumbotron>
       </div>
     );
