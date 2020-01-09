@@ -52,10 +52,10 @@ class Header extends React.Component {
           alert( 'error: ' + (this.status ? this.statusText : 'request has not been set') );
           return;
         }
-        let response = JSON.parse(this.responseText);
+       let response = JSON.parse(this.responseText);
         if(response.isLogedIn == true) {
            that.setState({
-          ["navBtns"]: <Nav pullLeft className="navbar-nav span">
+          ["navBtns"]: <Nav pullLeft className="link span">
                         <NavItem className='span'>
                            <Link  to='/profile' className="link">Hello, {response.nickname}</Link>
                         </NavItem> 
@@ -68,13 +68,12 @@ class Header extends React.Component {
         }
         else {
           that.setState({
-          ["navBtns"]: <Nav pullLeft className='navbar-nav span'>
-               {/* <Nav pullRight>*/}
-                        <NavItem  >
-                           <Link  to='/signup' ><h5 className="link">Sign up</h5></Link>
+          ["navBtns"]: <Nav pullLeft className="link span">
+                        <NavItem className='span'>
+                           <Link  to='/signup' className="link"><p  className="link">Sign up</p></Link>
                         </NavItem> 
-                        <NavItem >
-                          <Link to='/login' ><h5 className="link"> Log in  fff</h5></Link>
+                        <NavItem className='span'>
+                          <Link to='/login' className="link"><p  className="link"> Log in </p></Link>
                         </NavItem>
                       </Nav>,
           ["booksLink"]: "/login"
@@ -82,15 +81,16 @@ class Header extends React.Component {
          }
         }
   }
+
   /***********************/
+   /************  inverse    ***********/
   render() {
     return (
       <div  className="link span">
-       <Navbar inverse  collapseOnSelect>
-         {/*  <Navbar inverse collapseOnSelect>*/}
+       <Navbar collapseOnSelect>
         <Navbar.Header>
           <Navbar.Brand >            
-            <Link to={this.state.booksLink} ><h5 className='link'>RI Reports</h5></Link>
+            <Link to={this.state.booksLink} ><p  className="link">RI Reports </p></Link>
             
           </Navbar.Brand>
           <Navbar.Toggle />
@@ -105,6 +105,8 @@ class Header extends React.Component {
 };
 
 module.exports = Header;
+
+
 /* 
  <Link  to='/signup' className="link"><h5>^Sign^ [uP]</h5></Link>
                         </NavItem> 
