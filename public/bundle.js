@@ -2760,7 +2760,7 @@ class Header extends React.Component {
         let response = JSON.parse(this.responseText);
         if(response.isLogedIn == true) {
            that.setState({
-          ["navBtns"]: React.createElement(Nav, {pullRight: true, className: "link span"}, 
+          ["navBtns"]: React.createElement(Nav, {pullLeft: true, className: "link span"}, 
                         React.createElement(NavItem, {className: "span"}, 
                            React.createElement(Link, {to: "/profile", className: "link"}, "Hello, ", response.nickname)
                         ), 
@@ -2773,12 +2773,12 @@ class Header extends React.Component {
         }
         else {
           that.setState({
-          ["navBtns"]: React.createElement(Nav, {pullRight: true}, 
+          ["navBtns"]: React.createElement(Nav, {pullLeft: true}, 
                         React.createElement(NavItem, {className: "span"}, 
-                           React.createElement(Link, {to: "/signup", className: "link"}, React.createElement("h5", null, "Sign up"))
+                           React.createElement(Link, {to: "/signup", className: "link"}, "Sign up")
                         ), 
                         React.createElement(NavItem, {className: "span"}, 
-                          React.createElement(Link, {to: "/login", className: "link"}, React.createElement("h5", null, " Log in  fff"))
+                          React.createElement(Link, {to: "/login", className: "link"}, "Log in ")
                         )
                       ),
           ["booksLink"]: "/login"
@@ -2793,7 +2793,7 @@ class Header extends React.Component {
        React.createElement(Navbar, {inverse: true, collapseOnSelect: true}, 
         React.createElement(Navbar.Header, null, 
           React.createElement(Navbar.Brand, null, 
-            React.createElement(Link, {to: this.state.booksLink, className: "link span"}, React.createElement("h5", null, "RI Reports componentClass"))
+            React.createElement(Link, {to: this.state.booksLink, className: "link span"}, "RI Reports 2")
             
           ), 
           React.createElement(Navbar.Toggle, null)
@@ -36265,7 +36265,7 @@ exports = module.exports = __webpack_require__(19)(false);
 
 
 // module
-exports.push([module.i, "/*  [\"navBtns\"]: <Nav pullRight className=\"link span riheader\"> */\n.span{background-color: green;}\n.link {\n  text-decoration: none;\n  color: #9d9d9d;\n  /*mee \n   margin: 0;\n  padding: 0;\n   float: left;\n   background-color: aqua;\n     display: inline-block;\n  */\n \n  list-style-type: none; \n  overflow: hidden;  \n  display: inline;\n}\n\n.link:hover {\n  text-decoration: none;\n  color: red;\n}\n\n\n.navbar-nav span[role=button] {\n  padding-left: 100px;\n  display: inline;\n  line-height: 20px;\n background-color: yellow ;\n\n}\n\n\n\n/*\n\n\n.riheader {\n  display: inline;\n  padding-right: 100px;\n  font-weight: bold;\n}\n\n\n background-color: coral;\n.riheader{background-color: aqua;}\n display: inline-block;\n className=\"riheader\"\n*/", ""]);
+exports.push([module.i, "/*  [\"navBtns\"]: <Nav pullRight className=\"link span riheader\"> */\n.span{background-color: green;}\n.link {\n  text-decoration: none;\n  color: #9d9d9d; \n  list-style-type: none; \n  overflow: hidden;  \n  display: inline;\n}\n\n.link:hover {\n  text-decoration: none;\n  color: red;\n}\n\n\n.navbar-nav span[role=button] {\n  padding-left: 100px;\n \n  line-height: 20px;\n background-color: yellow ;\n\n}\n\n /*mee \n   margin: 0;\n  padding: 0;\n   float: left;\n   background-color: aqua;\n     display: inline-block;\n  */\n \n\n/*\n\n\n.riheader {\n  display: inline;\n  padding-right: 100px;\n  font-weight: bold;\n}\n\n\n background-color: coral;\n.riheader{background-color: aqua;}\n display: inline-block;\n className=\"riheader\"\n*/", ""]);
 
 // exports
 
