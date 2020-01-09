@@ -2760,12 +2760,12 @@ class Header extends React.Component {
         let response = JSON.parse(this.responseText);
         if(response.isLogedIn == true) {
            that.setState({
-          ["navBtns"]: React.createElement(Nav, null, 
-                        React.createElement(NavItem, {className: "span"}, 
-                           React.createElement(Link, {to: "/profile", className: "link"}, "Hello, ", response.nickname)
+          ["navBtns"]: React.createElement(Nav, {pullRight: true}, 
+                        React.createElement(NavItem, null, 
+                           React.createElement(Link, {to: "/profile"}, "Hello, ", response.nickname)
                         ), 
                         React.createElement(NavItem, {className: "span"}, 
-                          React.createElement("div", {onClick: that.handleLogOut, className: "link"}, "Log out")
+                          React.createElement("div", {onClick: that.handleLogOut}, "Log out")
                         )
                       ),
             ["booksLink"]: "/books"
@@ -2773,7 +2773,7 @@ class Header extends React.Component {
         }
         else {
           that.setState({
-          ["navBtns"]: React.createElement(Nav, null, 
+          ["navBtns"]: React.createElement(Nav, {pullRight: true}, 
                /* <Nav pullRight>*/
                         React.createElement(NavItem, null, 
                            React.createElement(Link, {to: "/signup"}, "Sign up ")
@@ -2795,7 +2795,7 @@ class Header extends React.Component {
          /*  <Navbar inverse collapseOnSelect>*/
         React.createElement(Navbar.Header, null, 
           React.createElement(Navbar.Brand, null, 
-            React.createElement(Link, {to: this.state.booksLink}, "RI Reports o110 ")
+            React.createElement(Link, {to: this.state.booksLink}, " RI Reports r110mm ")
             
           ), 
           React.createElement(Navbar.Toggle, null)
