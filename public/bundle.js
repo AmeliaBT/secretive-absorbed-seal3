@@ -48669,7 +48669,7 @@ class Profile extends React.Component {
                           onChange: this.reportChanged, 
                           style: {"width": "100%"}}
                         ), 
- React.createElement(FormControl, {
+                       React.createElement(FormControl, {
                           type: "text", 
                           value: this.state.ri_report_to_add2, 
                           placeholder: "enter Model", 
