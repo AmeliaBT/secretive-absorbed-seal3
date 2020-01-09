@@ -20,6 +20,7 @@ class Profile extends React.Component {
       city: "",
       street: "",
       ri_report_to_add: "",
+      ri_report_to_add2: "",
       user_books: "loading...",
       income: null,
       outcome: null
@@ -90,6 +91,12 @@ class Profile extends React.Component {
             ["ri_report_to_add"]: value
            });
   }
+  reportChanged2(event) {
+    const value = event.target.value;
+          this.setState({
+            ["ri_report_to_add2"]: value
+           });
+  }
   /**/
   addRIreport() {
       let that = this;
@@ -97,7 +104,9 @@ class Profile extends React.Component {
       
       xhr.open('POST', '/add-book', true);
       xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-      let body = 'bookname=' + encodeURIComponent(this.state.ri_report_to_add);
+
+      let body = 'bookname=' + encodeURIComponent(this.state.ri_report_to_add) +
+      'cellB1=' + encodeURIComponent(this.state.ri_report_to_add2)  ;
 
       xhr.send(body);
 
