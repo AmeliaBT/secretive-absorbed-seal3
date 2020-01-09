@@ -45,7 +45,10 @@ class Header extends React.Component {
       
       xhr.open('POST', '/is-loged-in', true);
       xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+
       xhr.send();
+
       xhr.onreadystatechange = function() {
         if (this.readyState != 4) return;
         if (this.status != 200) {
@@ -56,11 +59,11 @@ class Header extends React.Component {
         if(response.isLogedIn == true) {
            that.setState({
           ["navBtns"]: <Nav pullRight>
-                        <NavItem >
-                           <Link  to='/profile' >Hello, {response.nickname}</Link>
+                        <NavItem componentClass='span'>
+                           <Link  to='/profile' className="link">Hello, {response.nickname}</Link>
                         </NavItem> 
-                        <NavItem className='span'>
-                          <div  onClick={that.handleLogOut} >Log out</div>
+                        <NavItem componentClass='span'>
+                          <div className="link" onClick={that.handleLogOut}>^Log^ [ouT]</div>
                         </NavItem>
                       </Nav>,
             ["booksLink"]: "/books"
@@ -69,13 +72,12 @@ class Header extends React.Component {
         else {
           that.setState({
           ["navBtns"]: <Nav pullRight>
-               {/* <Nav pullRight>*/}
-                        <NavItem  >
-                           <Link  to='/signup' >Sign up < /Link>
+                        <NavItem componentClass='span'>
+                           <Link  to='/signup' className="link">^Sign^ [uP]</Link>
                         </NavItem> 
-                        <NavItem >
-                          <Link to='/login' >Log in </Link>
-                        </NavItem>                             
+                        <NavItem componentClass='span'>
+                          <Link to='/login' className="link">^Log^ [iN]</Link>
+                        </NavItem>
                       </Nav>,
           ["booksLink"]: "/login"
            });
@@ -85,13 +87,11 @@ class Header extends React.Component {
   /***********************/
   render() {
     return (
-      <div  className="link span">
-       <Navbar inverse  fluid>
-         {/*  <Navbar inverse collapseOnSelect>*/}
+      <div className="riheader" >
+       <Navbar inverse collapseOnSelect>
         <Navbar.Header>
-          <Navbar.Brand >            
-            <Link to={this.state.booksLink} > RI Reports r110mm </Link>
-            
+          <Navbar.Brand>
+            <Link to={this.state.booksLink}  className="link">RI Reports aaa</Link>
           </Navbar.Brand>
           <Navbar.Toggle />
         </Navbar.Header>
@@ -105,12 +105,3 @@ class Header extends React.Component {
 };
 
 module.exports = Header;
-/* 
- <Link  to='/signup' className="link"><h5>^Sign^ [uP]</h5></Link>
-                        </NavItem> 
-                        <NavItem componentClass='span'>
-                          <Link to='/login' className="link"><h5> ^Log^ [iN] </h5></Link>
-
-
-                            <div className="link" onClick={that.handleLogOut}>^Log^ [ouT]</div>
-*/

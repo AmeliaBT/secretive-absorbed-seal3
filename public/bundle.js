@@ -2750,7 +2750,10 @@ class Header extends React.Component {
       
       xhr.open('POST', '/is-loged-in', true);
       xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+
       xhr.send();
+
       xhr.onreadystatechange = function() {
         if (this.readyState != 4) return;
         if (this.status != 200) {
@@ -2761,11 +2764,11 @@ class Header extends React.Component {
         if(response.isLogedIn == true) {
            that.setState({
           ["navBtns"]: React.createElement(Nav, {pullRight: true}, 
-                        React.createElement(NavItem, null, 
-                           React.createElement(Link, {to: "/profile"}, "Hello, ", response.nickname)
+                        React.createElement(NavItem, {componentClass: "span"}, 
+                           React.createElement(Link, {to: "/profile", className: "link"}, "Hello, ", response.nickname)
                         ), 
-                        React.createElement(NavItem, {className: "span"}, 
-                          React.createElement("div", {onClick: that.handleLogOut}, "Log out")
+                        React.createElement(NavItem, {componentClass: "span"}, 
+                          React.createElement("div", {className: "link", onClick: that.handleLogOut}, "^Log^ [ouT]")
                         )
                       ),
             ["booksLink"]: "/books"
@@ -2774,12 +2777,11 @@ class Header extends React.Component {
         else {
           that.setState({
           ["navBtns"]: React.createElement(Nav, {pullRight: true}, 
-               /* <Nav pullRight>*/
-                        React.createElement(NavItem, null, 
-                           React.createElement(Link, {to: "/signup"}, "Sign up ")
+                        React.createElement(NavItem, {componentClass: "span"}, 
+                           React.createElement(Link, {to: "/signup", className: "link"}, "^Sign^ [uP]")
                         ), 
-                        React.createElement(NavItem, null, 
-                          React.createElement(Link, {to: "/login"}, "Log in ")
+                        React.createElement(NavItem, {componentClass: "span"}, 
+                          React.createElement(Link, {to: "/login", className: "link"}, "^Log^ [iN]")
                         )
                       ),
           ["booksLink"]: "/login"
@@ -2790,13 +2792,11 @@ class Header extends React.Component {
   /***********************/
   render() {
     return (
-      React.createElement("div", {className: "link span"}, 
-       React.createElement(Navbar, {inverse: true, fluid: true}, 
-         /*  <Navbar inverse collapseOnSelect>*/
+      React.createElement("div", {className: "riheader"}, 
+       React.createElement(Navbar, {inverse: true, collapseOnSelect: true}, 
         React.createElement(Navbar.Header, null, 
           React.createElement(Navbar.Brand, null, 
-            React.createElement(Link, {to: this.state.booksLink}, " RI Reports r110mm ")
-            
+            React.createElement(Link, {to: this.state.booksLink, className: "link"}, "RI Reports aaa")
           ), 
           React.createElement(Navbar.Toggle, null)
         ), 
@@ -2810,15 +2810,6 @@ class Header extends React.Component {
 };
 
 module.exports = Header;
-/* 
- <Link  to='/signup' className="link"><h5>^Sign^ [uP]</h5></Link>
-                        </NavItem> 
-                        <NavItem componentClass='span'>
-                          <Link to='/login' className="link"><h5> ^Log^ [iN] </h5></Link>
-
-
-                            <div className="link" onClick={that.handleLogOut}>^Log^ [ouT]</div>
-*/
 
 /***/ }),
 /* 43 */
@@ -36050,7 +36041,7 @@ const Link = __webpack_require__(16).Link
 // style for MAIN
 const style = __webpack_require__(268);
 // other components and etc
-//const RINav = require('./RINav');
+const RINav = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./RINav\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 const Header = __webpack_require__(42);
 
 // react-bootstrap
@@ -36068,13 +36059,10 @@ class Main extends React.Component {
       React.createElement("div", null, 
        /*   <RINav/> */
         React.createElement(Header, null), 
-      React.createElement(Jumbotron, {className: "jmbtrn-p"}, 
+      React.createElement(Jumbotron, null, 
        /*  <h1 className="jmbtrn-p" style={{color: "#f6ff67"}}>New CMS dB </h1>*/
-         React.createElement("h4", {className: "jmbtrn-p"}, " New RI dB for testing "), 
-        React.createElement("p", {className: "jmbtrn-p"}, 
-          "This section:", React.createElement("br", null), 
-          "component: Main.jsx ", React.createElement("br", null), 
-          "element: Jumbotrone ", React.createElement("br", null), "className=\"jmbtrn-p\" ", React.createElement("br", null)
+         React.createElement("h4", {className: "jmbtrn-p"}, "New RI dB for testing  "), 
+        React.createElement("p", {className: "jmbtrn-p"}
         ), 
         React.createElement("p", {className: "jmbtrn-p"}, 
           "― contact AT" 
@@ -36127,7 +36115,7 @@ exports = module.exports = __webpack_require__(19)(false);
 
 
 // module
-exports.push([module.i, "body {\n  background: white; /* #d3d3d3; #f6ff67;  height:100%;*/\n  height:50%;\n}\n\n.jumbotron {\n  width: 90%;\n  margin: auto;\n  padding: 10px;\n  background-color: white; /* #d3d3d3 #353535;*/\n}\n\n.jmbtrn-p {\n  background-color: #90ee90 ; ;\n  text-align: center;\n  color: blue; /*#f6ff67;*/\n}", ""]);
+exports.push([module.i, "body {\n  background: white; /* #d3d3d3; #f6ff67;  height:100%;*/\n  height:50%;\n}\n\n.jumbotron {\n  width: 90%;\n  margin: auto;\n  padding: 10px;\n  background-color: white; /* #d3d3d3 #353535;*/\n}\n\n.jmbtrn-p {\n  text-align: center;\n  color: blue; /*#f6ff67;*/\n}", ""]);
 
 // exports
 
@@ -36267,7 +36255,7 @@ exports = module.exports = __webpack_require__(19)(false);
 
 
 // module
-exports.push([module.i, "/*  [\"navBtns\"]: <Nav pullRight className=\"link span riheader\"> */\n\n.link {\n  text-decoration: none;\n  color: #9d9d9d;\n  /*mee \n   margin: 0;\n  padding: 0;\n   float: left;\n   background-color: aqua;\n     display: inline-block;\n   list-style-type: none; \n  overflow: hidden; \n  */\n \n \n}\n\n.link:hover {\n  text-decoration: none;\n  color: red;\n}\n\n\n\n\n/*\n\n.navbar-nav span[role=button] {\n  padding-left: 10px;\n  display: inline;\n  line-height: 20px;\n background-color: blue;\n\n}\n\n\n.span{background-color: green;}\n\n.riheader {\n  display: inline;\n  padding-right: 100px;\n  font-weight: bold;\n}\n\n\n background-color: coral;\n.riheader{background-color: aqua;}\n display: inline-block;\n className=\"riheader\"\n*/", ""]);
+exports.push([module.i, ".link {\n  text-decoration: none;\n  color: #9d9d9d;\n}\n\n.link:hover {\n  text-decoration: none;\n  color: white;\n}\n.riheader{background-color: aqua;}\n\n\n.navbar-nav span[role=button] {\n  padding-left: 50px;\n  display: inline-block;\n  line-height: 20px;\n}\n\n", ""]);
 
 // exports
 

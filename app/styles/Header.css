@@ -1,51 +1,18 @@
-/*  ["navBtns"]: <Nav pullRight className="link span riheader"> */
-
 .link {
   text-decoration: none;
   color: #9d9d9d;
-  /*mee 
-   margin: 0;
-  padding: 0;
-   float: left;
-   background-color: aqua;
-     display: inline-block;
-   list-style-type: none; 
-  overflow: hidden; 
-  */
- 
- 
 }
 
 .link:hover {
   text-decoration: none;
-  color: red;
+  color: white;
 }
+.riheader{background-color: aqua;}
 
-
-
-
-/*
 
 .navbar-nav span[role=button] {
-  padding-left: 10px;
-  display: inline;
+  padding-left: 50px;
+  display: inline-block;
   line-height: 20px;
- background-color: blue;
-
 }
 
-
-.span{background-color: green;}
-
-.riheader {
-  display: inline;
-  padding-right: 100px;
-  font-weight: bold;
-}
-
-
- background-color: coral;
-.riheader{background-color: aqua;}
- display: inline-block;
- className="riheader"
-*/
