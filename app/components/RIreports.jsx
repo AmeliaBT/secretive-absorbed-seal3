@@ -6,7 +6,7 @@ const style = require('../styles/RIreports');
 const {Modal, Button, form, FormGroup, FormControl, ControlLabel, option} = require('react-bootstrap');
 // other components and etc
 const Header = require('./Header');
-const Book = require('./Book');
+const RIreport = require('./RIreport');
 
 /* the books page that shows all books */
 class RIreports extends React.Component {
@@ -117,7 +117,7 @@ class RIreports extends React.Component {
         }
         let response = JSON.parse(this.responseText);
         let books = response.books.map((el) => {
-          return <Book showModal={that.handleShowModal} bookname={el.bookname} nickname={el.nickname} img_url={el.img_url}/> 
+          return <RIreport showModal={that.handleShowModal} bookname={el.bookname} nickname={el.nickname} img_url={el.img_url}/> 
         });
            that.setState({
           ["books"]: <div className="books">

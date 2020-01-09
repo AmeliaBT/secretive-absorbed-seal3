@@ -47745,7 +47745,7 @@ const style = __webpack_require__(420);
 const {Modal, Button, form, FormGroup, FormControl, ControlLabel, option} = __webpack_require__(23);
 // other components and etc
 const Header = __webpack_require__(42);
-const Book = __webpack_require__(422);
+const RIreport = __webpack_require__(422);
 
 /* the books page that shows all books */
 class RIreports extends React.Component {
@@ -47856,7 +47856,7 @@ class RIreports extends React.Component {
         }
         let response = JSON.parse(this.responseText);
         let books = response.books.map((el) => {
-          return React.createElement(Book, {showModal: that.handleShowModal, bookname: el.bookname, nickname: el.nickname, img_url: el.img_url}) 
+          return React.createElement(RIreport, {showModal: that.handleShowModal, bookname: el.bookname, nickname: el.nickname, img_url: el.img_url}) 
         });
            that.setState({
           ["books"]: React.createElement("div", {className: "books"}, 
