@@ -1,8 +1,11 @@
 /*  ["navBtns"]: <Nav pullRight className="link span riheader"> */
-.span{background-color: green;}
+.span{
+  color: blue; 
+
+}
 .link {
   text-decoration: none;
-  color: #9d9d9d; 
+  color: blue; 
   list-style-type: none; 
   overflow: hidden;  
   display: inline;
@@ -15,14 +18,13 @@
 
 
 .navbar-nav span[role=button] {
-  padding-left: 100px;
- 
-  line-height: 20px;
- background-color: yellow ;
-
+  padding-left: 100px; 
+  line-height: 20px; 
 }
 
- /*mee 
+ /* 
+color: #9d9d9d; 
+mee 
    margin: 0;
   padding: 0;
    float: left;
