@@ -27,7 +27,7 @@ class Profile extends React.Component {
     this.cityChanged = this.cityChanged.bind(this);
     this.streetChanged = this.streetChanged.bind(this);
     this.reportChanged = this.reportChanged.bind(this);
-    this.addBook = this.addBook.bind(this);
+    this.addRIreport = this.addRIreport.bind(this);
   }
   /****************************/
   // Handlers
@@ -91,7 +91,7 @@ class Profile extends React.Component {
            });
   }
   /**/
-  addBook() {
+  addRIreport() {
       let that = this;
       const xhr = new XMLHttpRequest();
       
@@ -237,7 +237,17 @@ class Profile extends React.Component {
                           onChange={this.reportChanged}
                           style={{"width": "100%"}}
                         />
-                         <Button type="button" style={{"width": "100%"}} onClick={this.addBook}>Add RI Report</Button>
+ <FormControl
+                          type="text"
+                          value={this.state.ri_report_to_add2}
+                          placeholder="enter Model"
+                          onChange={this.reportChanged2}
+                          style={{"width": "100%"}}
+                        />
+
+
+
+                         <Button type="button" style={{"width": "100%"}} onClick={this.addRIreport}>Add RI Report</Button>
                         <FormControl.Feedback />
                       </FormGroup>
                     </Form>
