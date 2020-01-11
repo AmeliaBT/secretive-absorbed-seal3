@@ -48600,48 +48600,31 @@ class Profile extends React.Component {
                   React.createElement(Col, {xs: 6, md: 4, className: "left-col"}, 
                     React.createElement("div", {className: "profile-label"}, "Your profile"), 
                     React.createElement("div", {className: "profile-line"}), 
-                    
-                    React.createElement("form", {className: "input-label"}, 
-                      React.createElement(FormGroup, {controlId: "formBasicText"}, 
-                        React.createElement(ControlLabel, null, "Your nickname"), 
-                        React.createElement(FormControl, {
-                          type: "text", 
-                          value: this.state.nickname, 
-                          readonly: true}
-                        ), 
-                        React.createElement(FormControl.Feedback, null)
-                      )
-                    ), 
+
+    React.createElement("form", {className: "input-label"}, 
+      React.createElement(FormGroup, {controlId: "formBasicText"}, 
+        React.createElement(ControlLabel, null, "Your nickname"), 
+        React.createElement(FormControl, {type: "text", value: this.state.nickname, readonly: true}), 
+        React.createElement(FormControl.Feedback, null)
+      )
+    ), 
                     React.createElement("div", {className: "profile-line"}), 
-                    React.createElement("form", {className: "input-label"}, 
-                      React.createElement(FormGroup, {
-                        controlId: "formBasicText"
-                      }, 
-                        React.createElement(ControlLabel, null, "Your city"), 
-                        React.createElement(FormControl, {
-                          type: "text", 
-                          value: this.state.city, 
-                          placeholder: "enter your city", 
-                          onChange: this.cityChanged}
-                        ), 
-                        React.createElement(FormControl.Feedback, null)
-                      )
-                    ), 
+
+    React.createElement("form", {className: "input-label"}, 
+      React.createElement(FormGroup, {controlId: "formBasicText"}, 
+        React.createElement(ControlLabel, null, "Your city"), 
+        React.createElement(FormControl, {type: "text", value: this.state.city, placeholder: "enter your city", onChange: this.cityChanged}), 
+        React.createElement(FormControl.Feedback, null)
+      )
+    ), 
                     React.createElement("div", {className: "profile-line"}), 
-                    React.createElement("form", {className: "input-label"}, 
-                      React.createElement(FormGroup, {
-                        controlId: "formBasicText"
-                      }, 
-                        React.createElement(ControlLabel, null, "Your street"), 
-                        React.createElement(FormControl, {
-                          type: "text", 
-                          value: this.state.street, 
-                          placeholder: "enter your street", 
-                          onChange: this.streetChanged}
-                        ), 
-                        React.createElement(FormControl.Feedback, null)
-                      )
-                    ), 
+    React.createElement("form", {className: "input-label"}, 
+      React.createElement(FormGroup, {controlId: "formBasicText"}, 
+        React.createElement(ControlLabel, null, "Your street"), 
+        React.createElement(FormControl, {type: "text", value: this.state.street, placeholder: "enter your street", onChange: this.streetChanged}), 
+        React.createElement(FormControl.Feedback, null)
+      )
+    ), 
                     
                     React.createElement("div", {className: "proposal-label"}, "Proposals to exchange"), 
                     React.createElement("div", {className: "profile-line"}), 

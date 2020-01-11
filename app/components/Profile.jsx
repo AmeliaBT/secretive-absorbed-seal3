@@ -177,48 +177,31 @@ class Profile extends React.Component {
                   <Col xs={6} md={4} className="left-col">
                     <div className="profile-label">Your profile</div>
                     <div className="profile-line"></div>
-                    
-                    <form className="input-label">
-                      <FormGroup controlId="formBasicText" >
-                        <ControlLabel>Your nickname</ControlLabel>
-                        <FormControl
-                          type="text"
-                          value={this.state.nickname}
-                          readonly
-                        />
-                        <FormControl.Feedback />
-                      </FormGroup>
-                    </form>
+
+    <form className="input-label">
+      <FormGroup controlId="formBasicText" >
+        <ControlLabel>Your nickname</ControlLabel>
+        <FormControl type="text" value={this.state.nickname}  readonly  />
+        <FormControl.Feedback />
+      </FormGroup>
+    </form>
                     <div className="profile-line"></div>
-                    <form className="input-label">
-                      <FormGroup
-                        controlId="formBasicText"
-                      >
-                        <ControlLabel>Your city</ControlLabel>
-                        <FormControl
-                          type="text"
-                          value={this.state.city}
-                          placeholder="enter your city"
-                          onChange={this.cityChanged}
-                        />
-                        <FormControl.Feedback />
-                      </FormGroup>
-                    </form>
+
+    <form className="input-label">
+      <FormGroup controlId="formBasicText" >
+        <ControlLabel>Your city</ControlLabel>
+        <FormControl type="text" value={this.state.city} placeholder="enter your city" onChange={this.cityChanged} />
+        <FormControl.Feedback />
+      </FormGroup>
+    </form>
                     <div className="profile-line"></div>
-                    <form className="input-label">
-                      <FormGroup
-                        controlId="formBasicText"
-                      >
-                        <ControlLabel>Your street</ControlLabel>
-                        <FormControl
-                          type="text"
-                          value={this.state.street}
-                          placeholder="enter your street"
-                          onChange={this.streetChanged}
-                        />
-                        <FormControl.Feedback />
-                      </FormGroup>
-                    </form>
+    <form className="input-label">
+      <FormGroup controlId="formBasicText" >
+        <ControlLabel>Your street</ControlLabel>
+        <FormControl type="text" value={this.state.street} placeholder="enter your street" onChange={this.streetChanged}/>
+        <FormControl.Feedback />
+      </FormGroup>
+    </form>
                     
                     <div className="proposal-label">Proposals to exchange</div>
                     <div className="profile-line"></div>
