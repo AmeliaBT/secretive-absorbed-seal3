@@ -48600,10 +48600,9 @@ class Profile extends React.Component {
                   React.createElement(Col, {xs: 6, md: 4, className: "left-col"}, 
                     React.createElement("div", {className: "profile-label"}, "Your profile"), 
                     React.createElement("div", {className: "profile-line"}), 
+                    
                     React.createElement("form", {className: "input-label"}, 
-                      React.createElement(FormGroup, {
-                        controlId: "formBasicText"
-                      }, 
+                      React.createElement(FormGroup, {controlId: "formBasicText"}, 
                         React.createElement(ControlLabel, null, "Your nickname"), 
                         React.createElement(FormControl, {
                           type: "text", 

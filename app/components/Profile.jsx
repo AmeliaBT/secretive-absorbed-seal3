@@ -177,10 +177,9 @@ class Profile extends React.Component {
                   <Col xs={6} md={4} className="left-col">
                     <div className="profile-label">Your profile</div>
                     <div className="profile-line"></div>
+                    
                     <form className="input-label">
-                      <FormGroup
-                        controlId="formBasicText"
-                      >
+                      <FormGroup controlId="formBasicText" >
                         <ControlLabel>Your nickname</ControlLabel>
                         <FormControl
                           type="text"
