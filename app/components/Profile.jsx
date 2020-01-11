@@ -203,41 +203,29 @@ class Profile extends React.Component {
       </FormGroup>
     </form>
                     
-                    <div className="proposal-label">Proposals to exchange</div>
-                    <div className="profile-line"></div>
-                    <Tabs defaultActiveKey={1} id="uncontrolled-tab" className="tabs">
-                      <Tab eventKey={1} title="Income">
-                        {this.state.income}
-                      </Tab>
-                      <Tab eventKey={2} title="Outcome">
-                        {this.state.outcome}
-                      </Tab>
-                    </Tabs>
-                  </Col>
-                  <Col xs={12} md={8} className="right-col">
-                    <div className="library-label">Your library</div>
-                     <Form inline className="input-label add-form">
-                      <FormGroup
-                        controlId="addBookForm"
-                      >
-                        <FormControl
-                          type="text"
-                          value={this.state.ri_report_to_add}
-                          placeholder="enter P/N"
-                          onChange={this.reportChanged}
-                          style={{"width": "100%"}}
-                        />
+    <div className="proposal-label">Proposals to exchange</div>
+    <div className="profile-line"></div>
+    <Tabs defaultActiveKey={1} id="uncontrolled-tab" className="tabs">
+      <Tab eventKey={1} title="Income">   {this.state.income}  </Tab>
+      <Tab eventKey={2} title="Outcome">  {this.state.outcome}       </Tab>
+    </Tabs>   </Col>
+  <Col xs={12} md={8} className="right-col">
+    <div className="library-label">Your library</div>
+      <Form inline className="input-label add-form">
+      <FormGroup controlId="addBookForm"  >
+        <FormControl  type="text"  value={this.state.ri_report_to_add}  placeholder="enter P/N"
+          onChange={this.reportChanged} style={{"width": "100%"}} />
             
 
 
 
-                         <Button type="button" style={{"width": "100%"}} onClick={this.addRIreport}>Add RI Report</Button>
-                        <FormControl.Feedback />
-                      </FormGroup>
-                    </Form>
-                    <div className="library">
-                      {this.state.user_books}
-                    </div>
+      <Button type="button" style={{"width": "100%"}} onClick={this.addRIreport}>Add RI Report</Button>
+    <FormControl.Feedback />
+  </FormGroup>
+</Form>
+<div className="library">
+  {this.state.user_books}
+</div>
                   </Col>
                 </Row>
               </Grid>

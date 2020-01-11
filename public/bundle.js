@@ -48626,41 +48626,29 @@ class Profile extends React.Component {
       )
     ), 
                     
-                    React.createElement("div", {className: "proposal-label"}, "Proposals to exchange"), 
-                    React.createElement("div", {className: "profile-line"}), 
-                    React.createElement(Tabs, {defaultActiveKey: 1, id: "uncontrolled-tab", className: "tabs"}, 
-                      React.createElement(Tab, {eventKey: 1, title: "Income"}, 
-                        this.state.income
-                      ), 
-                      React.createElement(Tab, {eventKey: 2, title: "Outcome"}, 
-                        this.state.outcome
-                      )
-                    )
-                  ), 
-                  React.createElement(Col, {xs: 12, md: 8, className: "right-col"}, 
-                    React.createElement("div", {className: "library-label"}, "Your library"), 
-                     React.createElement(Form, {inline: true, className: "input-label add-form"}, 
-                      React.createElement(FormGroup, {
-                        controlId: "addBookForm"
-                      }, 
-                        React.createElement(FormControl, {
-                          type: "text", 
-                          value: this.state.ri_report_to_add, 
-                          placeholder: "enter P/N", 
-                          onChange: this.reportChanged, 
-                          style: {"width": "100%"}}
-                        ), 
+    React.createElement("div", {className: "proposal-label"}, "Proposals to exchange"), 
+    React.createElement("div", {className: "profile-line"}), 
+    React.createElement(Tabs, {defaultActiveKey: 1, id: "uncontrolled-tab", className: "tabs"}, 
+      React.createElement(Tab, {eventKey: 1, title: "Income"}, "   ", this.state.income, "  "), 
+      React.createElement(Tab, {eventKey: 2, title: "Outcome"}, "  ", this.state.outcome, "       ")
+    ), "   "), 
+  React.createElement(Col, {xs: 12, md: 8, className: "right-col"}, 
+    React.createElement("div", {className: "library-label"}, "Your library"), 
+      React.createElement(Form, {inline: true, className: "input-label add-form"}, 
+      React.createElement(FormGroup, {controlId: "addBookForm"}, 
+        React.createElement(FormControl, {type: "text", value: this.state.ri_report_to_add, placeholder: "enter P/N", 
+          onChange: this.reportChanged, style: {"width": "100%"}}), 
             
 
 
 
-                         React.createElement(Button, {type: "button", style: {"width": "100%"}, onClick: this.addRIreport}, "Add RI Report"), 
-                        React.createElement(FormControl.Feedback, null)
-                      )
-                    ), 
-                    React.createElement("div", {className: "library"}, 
-                      this.state.user_books
-                    )
+      React.createElement(Button, {type: "button", style: {"width": "100%"}, onClick: this.addRIreport}, "Add RI Report"), 
+    React.createElement(FormControl.Feedback, null)
+  )
+), 
+React.createElement("div", {className: "library"}, 
+  this.state.user_books
+)
                   )
                 )
               )
