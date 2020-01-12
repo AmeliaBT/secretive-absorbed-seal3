@@ -31,9 +31,9 @@ class Main extends React.Component {
           1. add description <br/>
           2. list available features<br/>
           A.authentication: middleware for Node.js Passport<br/>
-        B. Information Security: middleware HelmetJS (to prevent sensitive information from 
+          B. Information Security: middleware HelmetJS (to prevent sensitive information from 
           unintentially being passed between the server and client)<br/>. 
-          C. Hash and Compare Passwords: 
+          C. Hash and Compare Passwords: cryptography BCrypt hashes (saltRounds = 10;)
 
 
         </p>

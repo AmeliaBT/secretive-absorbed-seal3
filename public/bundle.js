@@ -36080,9 +36080,9 @@ class Main extends React.Component {
           "1. add description ", React.createElement("br", null), 
           "2. list available features", React.createElement("br", null), 
           "A.authentication: middleware for Node.js Passport", React.createElement("br", null), 
-        "B. Information Security: middleware HelmetJS (to prevent sensitive information from" + " " + 
+          "B. Information Security: middleware HelmetJS (to prevent sensitive information from" + " " + 
           "unintentially being passed between the server and client)", React.createElement("br", null), "." + " " + 
-          "C. Hash and Compare Passwords:" 
+          "C. Hash and Compare Passwords: cryptography BCrypt hashes (saltRounds = 10;)"
 
 
         )
