@@ -36078,7 +36078,13 @@ class Main extends React.Component {
           "Sign in or log in to view dB", React.createElement("br", null), 
           "To Do ", React.createElement("br", null), 
           "1. add description ", React.createElement("br", null), 
-          "2. list available features", React.createElement("br", null)
+          "2. list available features", React.createElement("br", null), 
+          "A.authentication: middleware for Node.js Passport", React.createElement("br", null), 
+        "B. Information Security: middleware HelmetJS (to prevent sensitive information from" + " " + 
+          "unintentially being passed between the server and client)", React.createElement("br", null), "." + " " + 
+          "C. Hash and Compare Passwords:" 
+
+
         )
         
       )
