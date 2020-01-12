@@ -36076,13 +36076,13 @@ class Main extends React.Component {
         React.createElement("p", {className: "jmbtrn-p"}, 
           "This is main section:", React.createElement("br", null), 
           "Sign in or log in to view dB", React.createElement("br", null), 
-          "To Do ", React.createElement("br", null), 
-          "1. add description ", React.createElement("br", null), 
-          "2. list available features", React.createElement("br", null), 
-          "A.authentication: middleware for Node.js Passport", React.createElement("br", null), 
+          React.createElement("br", null), 
+       React.createElement("br", null), 
+          "Features (WIP)", React.createElement("br", null), 
+          "A. Authentication: middleware for Node.js Passport", React.createElement("br", null), 
           "B. Information Security: middleware HelmetJS (to prevent sensitive information from" + " " + 
-          "unintentially being passed between the server and client)", React.createElement("br", null), "." + " " + 
-          "C. Hash and Compare Passwords: cryptography BCrypt hashes (saltRounds = 10;)"
+          "unintentially being passed between the server and client)", React.createElement("br", null), 
+          "C. Hash and Compare Passwords: cryptography BCrypt hashes (saltRounds = 10)", React.createElement("br", null)
 
 
         )

@@ -27,13 +27,13 @@ class Main extends React.Component {
         <p className="jmbtrn-p">
           This is main section:<br/>
           Sign in or log in to view dB<br/>
-          To Do <br/>
-          1. add description <br/>
-          2. list available features<br/>
-          A.authentication: middleware for Node.js Passport<br/>
+          <br/>
+       <br/>
+          Features (WIP)<br/>
+          A. Authentication: middleware for Node.js Passport<br/>
           B. Information Security: middleware HelmetJS (to prevent sensitive information from 
-          unintentially being passed between the server and client)<br/>. 
-          C. Hash and Compare Passwords: cryptography BCrypt hashes (saltRounds = 10;)
+          unintentially being passed between the server and client)<br/>
+          C. Hash and Compare Passwords: cryptography BCrypt hashes (saltRounds = 10)<br/>
 
 
         </p>
