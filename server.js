@@ -102,18 +102,31 @@ promise_connection.then(function(db){
 // describe the schema
 let Schema = mongoose.Schema,
     ObjectId = Schema.ObjectId;
-let userSchema = new Schema({
-    nickname: String,
+let reportSchema = new Schema({
+   /* nickname: String,
     email: String,
     password: String,
     city: String,
     street: String,
     books: [],
     income: [],
-    outcome: []
+    outcome: []*/
+    inspector: String,
+    email: String,
+    password: String,
+    supplier: String,
+    daterec:String,
+    dateinsp:String,
+    wopomtt: String,
+    no: String,
+    destination:String,
+    pn: String,
+    description: String,
+    lotsize: Number,
+    samplesize: Number
 });
 // get the model
-let reportModel = mongoose.model('reportsforri', userSchema);
+let reportModel = mongoose.model('reportsforri', reportSchema);
 /***********************************/
 // getting the layout(page) of application
 app.get("*", function(request, response) {
