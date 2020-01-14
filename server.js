@@ -113,7 +113,7 @@ let userSchema = new Schema({
     outcome: []
 });
 // get the model
-let userModel = mongoose.model('usersforbooktrading', userSchema);
+let reportModel = mongoose.model('reportsforri', userSchema);
 /***********************************/
 // getting the layout(page) of application
 app.get("*", function(request, response) {
@@ -134,22 +134,22 @@ app.get("*", function(request, response) {
 /******************************/
 app.post("/sign-up", function(request, response) {
   // check if email is already used
-  userModel.find({ email: request.body["email"]}, function (err, document) {
+  reportModel.find({ email: request.body["email"]}, function (err, document) {
               if(!err) {
                 if(document.length == 0) {
                      // check if email is already used
-                    userModel.find({ nickname: request.body["nickname"]}, function (err, document) {
+                    reportModel.find({ nickname: request.body["nickname"]}, function (err, document) {
                                 if(!err) {
                                   if(document.length == 0) {
                                            //hash password
                                             bcrypt.hash(request.body["password"], saltRounds, function(err, hash) {
                                             // create a user
                                                 let obj = {nickname: request.body["nickname"], email: request.body["email"], password: hash, city: "", street: "", books: [], income: [], outcome: []};
-                                                let user = new userModel(obj);
+                                                let user = new reportModel(obj);
                                                 user.save(function (err) {
                                                   if (!err) console.log('Success!');
                                                       // login after registration
-                                                      userModel.find({nickname: request.body["nickname"], email: request.body["email"], password: hash}, function (err, document) {
+                                                      reportModel.find({nickname: request.body["nickname"], email: request.body["email"], password: hash}, function (err, document) {
                                                         if(!err) {
                                                           let user_id = document[0]["id"];
                                                           request.login(user_id, () => {
@@ -175,7 +175,7 @@ app.post("/sign-up", function(request, response) {
 });
 /***********************************/
 app.post("/log-in", function(request, response) {
-              userModel.find({ email: request.body["email"]}, function (err, document) {
+              reportModel.find({ email: request.body["email"]}, function (err, document) {
               if(!err) {
                 if(document.length == 0) {
                   response.json({"error": "error0"});
@@ -207,7 +207,7 @@ app.post("/log-out", function(request, response) {
 app.post("/is-loged-in", function(request, response) {
   // in addition to check is loged in user also we get user nickname
   if(request.session.hasOwnProperty("passport")) {
-   userModel.findById(request.session.passport.user, (err, document) => {
+   reportModel.findById(request.session.passport.user, (err, document) => {
      if(!err) {
        response.json({isLogedIn: request.isAuthenticated(), nickname: document.nickname, city: document.city, street: document.street, books: document.books, income: document.income, outcome: document.outcome});
      } 
@@ -223,7 +223,7 @@ app.post("/is-loged-in", function(request, response) {
 });
 /***********************************/
 app.post("/set-city", function(request, response) {
-      userModel.findById(request.session.passport.user, (err, user) => {
+      reportModel.findById(request.session.passport.user, (err, user) => {
       if (err) throw err;
 
       user.set({city: request.body["city"]});
@@ -235,7 +235,7 @@ app.post("/set-city", function(request, response) {
 });
 /***********************************/
 app.post("/set-street", function(request, response) {
-      userModel.findById(request.session.passport.user, (err, user) => {
+      reportModel.findById(request.session.passport.user, (err, user) => {
       if (err) throw err;
 
       user.set({street: request.body["street"]});
@@ -247,14 +247,14 @@ app.post("/set-street", function(request, response) {
 });
 /***********************************/
 app.post("/get-street-city-by-nick", function(request, response) {
-      userModel.findOne({nickname: request.body["nickname"]}, (err, user) => {
+      reportModel.findOne({nickname: request.body["nickname"]}, (err, user) => {
       if (err) throw err;
       response.json({street: user.street, city: user.city});
     });
 });
 /***********************************/
 app.post("/add-book", function(request, response) {
-      userModel.findById(request.session.passport.user, (err, user) => {
+      reportModel.findById(request.session.passport.user, (err, user) => {
       if (err) throw err;
         //search book img
         books.search(request.body["bookname"], function(error, results) {
@@ -274,7 +274,7 @@ app.post("/add-book", function(request, response) {
 });
 /***********************************/
 app.post("/get-all-users-books", function(request, response) {
-       userModel.find({}, (err, users) => {
+       reportModel.find({}, (err, users) => {
           if(err) throw err;
           let books = []          
          
@@ -296,7 +296,7 @@ app.post("/get-all-users-books", function(request, response) {
 });
 /***********************************/
 app.post("/get-user-filtered-books", function(request, response) {
-       userModel.findById(request.session.passport.user, (err, user) => {
+       reportModel.findById(request.session.passport.user, (err, user) => {
           if (err) throw err;
           let books = []          
 
@@ -317,7 +317,7 @@ app.post("/get-user-filtered-books", function(request, response) {
 });
 /***********************************/
 app.post("/create-proposals", function(request, response) { 
-  userModel.findById(request.session.passport.user, (err, user) => {
+  reportModel.findById(request.session.passport.user, (err, user) => {
       if (err) response.json({error: 1});
        let arrayOfOutcome = user.outcome;
        arrayOfOutcome.push({chosenBook: request.body["chosenBook"], 
@@ -326,7 +326,7 @@ app.post("/create-proposals", function(request, response) {
       user.set({outcome: arrayOfOutcome});
       user.save(function (err, updatedUser) {
                   if (err) response.json({error: 2});
-                  userModel.findOne({nickname: request.body["anotherUserNickname"]}, (err, anotherUser) => {
+                  reportModel.findOne({nickname: request.body["anotherUserNickname"]}, (err, anotherUser) => {
                       if (err) response.json({error: 3});
                     let arrayOfIncome = anotherUser.income;
                      arrayOfIncome.push({chosenBook: request.body["chosenAnotherUserBook"], 
@@ -342,7 +342,7 @@ app.post("/create-proposals", function(request, response) {
 });
 /***********************************/
 app.post("/refuse-proposal", function(request, response) { 
-  userModel.findById(request.session.passport.user, (err, user) => {
+  reportModel.findById(request.session.passport.user, (err, user) => {
       if (err) response.json({error: 1});
         function checkProposal(element, index, array) {
               if((element.chosenBook == request.body["chosenBook"]) &&
@@ -359,7 +359,7 @@ app.post("/refuse-proposal", function(request, response) {
       user.set({outcome: arrayOfOutcome});
       user.save(function (err, updatedUser) {
                   if (err) response.json({error: 2});
-                  userModel.findOne({nickname: request.body["anotherUserNickname"]}, (err, anotherUser) => {
+                  reportModel.findOne({nickname: request.body["anotherUserNickname"]}, (err, anotherUser) => {
                       if (err) response.json({error: 3});
                     let arrayOfIncome = anotherUser.income;
                      arrayOfIncome.splice(arrayOfIncome.findIndex(checkProposal), 1);
@@ -373,7 +373,7 @@ app.post("/refuse-proposal", function(request, response) {
 });
 /***********************************/
 app.post("/accept-proposal", function(request, response) { 
-  userModel.findById(request.session.passport.user, (err, user) => {
+  reportModel.findById(request.session.passport.user, (err, user) => {
       if (err) response.json({error: 1});
         function checkProposal(element, index, array) {
               if((element.chosenBook == request.body["chosenBook"]) &&
@@ -415,7 +415,7 @@ app.post("/accept-proposal", function(request, response) {
               
                 user.save(function (err, updatedUser) {
                             if (err) response.json({error: 2});
-                            userModel.findOne({nickname: request.body["anotherUserNickname"]}, (err, anotherUser) => {
+                            reportModel.findOne({nickname: request.body["anotherUserNickname"]}, (err, anotherUser) => {
                                 if (err) response.json({error: 3});
                                //search book img
                                 books.search(request.body["chosenBook"], function(error, results) {
@@ -449,7 +449,7 @@ app.post("/accept-proposal", function(request, response) {
 });
 /***********************************/
 app.post("/refuse-proposal-income", function(request, response) { 
-  userModel.findById(request.session.passport.user, (err, user) => {
+  reportModel.findById(request.session.passport.user, (err, user) => {
       if (err) response.json({error: 1});
         function checkProposal(element, index, array) {
               if((element.chosenBook == request.body["chosenBook"]) &&
@@ -466,7 +466,7 @@ app.post("/refuse-proposal-income", function(request, response) {
       user.set({income: arrayOfIncome});
       user.save(function (err, updatedUser) {
                   if (err) response.json({error: 2});
-                  userModel.findOne({nickname: request.body["anotherUserNickname"]}, (err, anotherUser) => {
+                  reportModel.findOne({nickname: request.body["anotherUserNickname"]}, (err, anotherUser) => {
                       if (err) response.json({error: 3});
                     let arrayOfOutcome = anotherUser.outcome;
                     arrayOfOutcome.splice(arrayOfOutcome.findIndex(checkProposal), 1);
