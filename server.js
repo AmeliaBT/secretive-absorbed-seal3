@@ -286,7 +286,7 @@ app.post("/add-report", function(request, response) {
   if (err) throw err;
     //search book img
     // create a report
-    let obj = {inspname: request.body["inspname"], dep: request.body["dep"]};
+    let obj = {reportnumber: request.body["reportnumber"], dep: request.body["dep"]};
         if ( ! error ) {
             let arrayOfBooks = user.reports;
           //  arrayOfBooks.push({reportnumber:request.body["reportnumber"], img_url: results[0].thumbnail, inspname: user.inspname});
@@ -308,6 +308,7 @@ app.post("/add-report", function(request, response) {
 
 
 /***********************************/
+/*
 app.post("/add-report", function(request, response) {
       reportModel.findById(request.session.passport.user, (err, user) => {
       if (err) throw err;
@@ -328,6 +329,9 @@ app.post("/add-report", function(request, response) {
         });  
     });
 });
+
+
+*/
 /***********************************/
 
 

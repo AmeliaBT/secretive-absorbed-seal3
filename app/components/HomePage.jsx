@@ -18,7 +18,7 @@ class HomePage extends React.Component {
     this.state = {
       inspname: "",
       dep: "",
-      ri_report_to_add: ""
+      ri_report_to_add: "RI-5358"
      /*
      
       street: "",
@@ -31,7 +31,7 @@ class HomePage extends React.Component {
    this.depChanged = this.depChanged.bind(this);
   //  this.streetChanged = this.streetChanged.bind(this);
    // this.reportChanged = this.reportChanged.bind(this);
-   // this.addRIreport = this.addRIreport.bind(this);
+    this.addRIreport = this.addRIreport.bind(this);
   }
   /****************************/
   // Handlers
