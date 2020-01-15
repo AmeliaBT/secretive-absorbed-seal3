@@ -165,12 +165,13 @@ app.post("/sign-up", function(request, response) {
                                            //hash password
                                             bcrypt.hash(request.body["password"], saltRounds, function(err, hash) {
                                             // create a user
-                                                let obj = {inspname: request.body["inspname"], email: request.body["email"], password: hash, city: "", street: "", books: [], income: [], outcome: []};
+                                                let obj = {inspname: request.body["inspname"], email: request.body["email"], password: hash, dep: ""};
+                                              //, street: "", books: [], income: [], outcome: []
                                                 let user = new userModel(obj);
                                                 user.save(function (err) {
                                                   if (!err) console.log('Success!');
                                                       // login after registration
-                                                      Model.find({inspname: request.body["inspname"], email: request.body["email"], password: hash}, function (err, document) {
+                                                      userModel.find({inspname: request.body["inspname"], email: request.body["email"], password: hash}, function (err, document) {
                                                         if(!err) {
                                                           let user_id = document[0]["id"];
                                                           request.login(user_id, () => {
@@ -225,12 +226,16 @@ app.post("/log-out", function(request, response) {
      })
 });
 /***********************************/
-app.post("/is-loged-in", function(request, response) {
+ //, street: document.street, books: document.books, income: document.income, outcome: document.outcome
   // in addition to check is loged in user also we get user inspname
+  /*
+app.post("/is-loged-in", function(request, response) {
+ 
   if(request.session.hasOwnProperty("passport")) {
-   reportModel.findById(request.session.passport.user, (err, document) => {
+   userModel.findById(request.session.passport.user, (err, document) => {
      if(!err) {
-       response.json({isLogedIn: request.isAuthenticated(), inspname: document.inspname, city: document.city, street: document.street, books: document.books, income: document.income, outcome: document.outcome});
+       response.json({isLogedIn: request.isAuthenticated(), inspname: document.inspname, dep: document.dep});
+      
      } 
      else {
        console.log("ERROR!: ", err);
@@ -241,10 +246,10 @@ app.post("/is-loged-in", function(request, response) {
   else {
         response.json({isLogedIn: request.isAuthenticated(), inspname: "0"}); 
     }
-});
+});*/
 /***********************************/
-app.post("/set-city", function(request, response) {
-      reportModel.findById(request.session.passport.user, (err, user) => {
+app.post("/set-depcity", function(request, response) {
+      userModel.findById(request.session.passport.user, (err, user) => {
       if (err) throw err;
 
       user.set({city: request.body["city"]});
