@@ -198,7 +198,7 @@ app.post("/sign-up", function(request, response) {
 });
 /***********************************/
 app.post("/log-in", function(request, response) {
-              reportModel.find({ email: request.body["email"]}, function (err, document) {
+              userModel.find({ email: request.body["email"]}, function (err, document) {
               if(!err) {
                 if(document.length == 0) {
                   response.json({"error": "error0"});
