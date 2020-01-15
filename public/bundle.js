@@ -48459,7 +48459,8 @@ class HomePage extends React.Component {
     super(props);
     this.state = {
       inspname: "",
-      dep: ""
+      dep: "",
+      ri_report_to_add: ""
      /*
      
       street: "",
@@ -48549,8 +48550,9 @@ class HomePage extends React.Component {
       xhr.open('POST', '/add-report', true);
       xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
-     // let body = 'reportnumber=' + encodeURIComponent(this.state.ri_report_to_add) ;
-      let body = 'reportnumber=' + encodeURIComponent(this.state.ri_report_to_add) ;
+     // let body = 'reportnumber=' + encodeURIComponent(this.state.ri_report_to_add)  ;
+     //inspname: "",       dep: 
+      let body = 'inspname=' + encodeURIComponent(this.state.ri_report_to_add) ;
 
       xhr.send(body);
 
