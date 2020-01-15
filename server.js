@@ -103,7 +103,7 @@ promise_connection.then(function(db){
 let Schema = mongoose.Schema,
     ObjectId = Schema.ObjectId;
 let userSchema = new Schema({
-  inspname: String,
+      inspname: String,
       email: String,
       password: String,
       dep: String});

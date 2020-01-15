@@ -33,7 +33,7 @@ render((
         
         <Route path="/signup" component={SignUp}/>
         <Route path="/login" component={LogIn}/>
-        <Route path="/profile" component={HomePage}/>
+        <Route path="/homepage" component={HomePage}/>
        {/*  < DisplayMessages />*/}
       </div>
     </BrowserRouter>

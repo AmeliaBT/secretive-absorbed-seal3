@@ -12626,7 +12626,7 @@ render((
         
         React.createElement(Route, {path: "/signup", component: SignUp}), 
         React.createElement(Route, {path: "/login", component: LogIn}), 
-        React.createElement(Route, {path: "/profile", component: HomePage})
+        React.createElement(Route, {path: "/homepage", component: HomePage})
        /*  < DisplayMessages />*/
       )
     )
@@ -48458,7 +48458,7 @@ class HomePage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      nickname: "",
+      inspname: "",
       city: "",
       street: "",
       ri_report_to_add: "",
