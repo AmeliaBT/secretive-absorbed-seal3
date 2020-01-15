@@ -286,19 +286,17 @@ app.post("/add-report", function(request, response) {
   if (err) throw err;
     //search book img
     // create a report
-    let obj = {reportnumber: request.body["reportnumber"], dep: request.body["dep"]};
-        if ( ! error ) {
-            let arrayOfBooks = user.reports;
-          //  arrayOfBooks.push({reportnumber:request.body["reportnumber"], img_url: results[0].thumbnail, inspname: user.inspname});
-          arrayOfBooks.push({reportnumber:request.body["reportnumber"],  inspname: user.inspname});
-          user.set({reports: arrayOfBooks});
-            user.save(function (err, updatedUser) {
-              if (err) throw err;
-              response.json({update: true});
+    let obj = {reportnumber: request.body["reportnumber"]};
+
+    let report = new reportModel(obj);
+          
+            report.save(function (err) {
+              //if (err) throw err;
+              if (!err) console.log('Success!');
+              response.json({"error": 0});
             });
-        } else {
-            console.log(error);
-        }
+
+        
    
 });
 });
