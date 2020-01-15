@@ -11,7 +11,7 @@ class Header extends React.Component {
     super(props);
     this.state = {
       navBtns: null,
-      booksLink: ""
+      reportsLink: ""
     };
     this.handleLogOut = this.handleLogOut.bind(this);
   }
@@ -57,13 +57,14 @@ class Header extends React.Component {
            that.setState({
           ["navBtns"]: <Nav pullLeft className="link span">
                         <NavItem className='span'>
-                           <Link  to='/profile' className="link">Welcome Inspector, {response.nickname}</Link>
+                       {/*   <Link  to='/profile' className="link">Welcome Inspector, {response.nickname}</Link>*/}  
+                           <Link  to='/profile' className="link">Welcome Inspector, {response.name}</Link>
                         </NavItem> 
                         <NavItem className='span'>
                           <div  onClick={that.handleLogOut} className="link">Log out</div>
                         </NavItem>
                       </Nav>,
-            ["booksLink"]: "/books"
+            ["reportsLink"]: "/reports"
            });
         }
         else {
@@ -76,7 +77,7 @@ class Header extends React.Component {
                           <Link to='/login' className="link"><p  className="link"> Log in </p></Link>
                         </NavItem>
                       </Nav>,
-          ["booksLink"]: "/login"
+          ["reportsLink"]: "/login"
            });
          }
         }
@@ -90,7 +91,7 @@ class Header extends React.Component {
        <Navbar collapseOnSelect>
         <Navbar.Header>
           <Navbar.Brand >            
-            <Link to={this.state.booksLink} ><p  className="link">RI Reports </p></Link>
+            <Link to={this.state.reportsLink} ><p  className="link">RI Reports </p></Link>
             
           </Navbar.Brand>
           <Navbar.Toggle />

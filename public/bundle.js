@@ -2716,7 +2716,7 @@ class Header extends React.Component {
     super(props);
     this.state = {
       navBtns: null,
-      booksLink: ""
+      reportsLink: ""
     };
     this.handleLogOut = this.handleLogOut.bind(this);
   }
@@ -2762,13 +2762,14 @@ class Header extends React.Component {
            that.setState({
           ["navBtns"]: React.createElement(Nav, {pullLeft: true, className: "link span"}, 
                         React.createElement(NavItem, {className: "span"}, 
-                           React.createElement(Link, {to: "/profile", className: "link"}, "Welcome Inspector, ", response.nickname)
+                       /*   <Link  to='/profile' className="link">Welcome Inspector, {response.nickname}</Link>*/
+                           React.createElement(Link, {to: "/profile", className: "link"}, "Welcome Inspector, ", response.name)
                         ), 
                         React.createElement(NavItem, {className: "span"}, 
                           React.createElement("div", {onClick: that.handleLogOut, className: "link"}, "Log out")
                         )
                       ),
-            ["booksLink"]: "/books"
+            ["reportsLink"]: "/reports"
            });
         }
         else {
@@ -2781,7 +2782,7 @@ class Header extends React.Component {
                           React.createElement(Link, {to: "/login", className: "link"}, React.createElement("p", {className: "link"}, " Log in "))
                         )
                       ),
-          ["booksLink"]: "/login"
+          ["reportsLink"]: "/login"
            });
          }
         }
@@ -2795,7 +2796,7 @@ class Header extends React.Component {
        React.createElement(Navbar, {collapseOnSelect: true}, 
         React.createElement(Navbar.Header, null, 
           React.createElement(Navbar.Brand, null, 
-            React.createElement(Link, {to: this.state.booksLink}, React.createElement("p", {className: "link"}, "RI Reports "))
+            React.createElement(Link, {to: this.state.reportsLink}, React.createElement("p", {className: "link"}, "RI Reports "))
             
           ), 
           React.createElement(Navbar.Toggle, null)
