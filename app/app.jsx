@@ -18,7 +18,7 @@ const Main = require('./components/Main');
 const RIreports = require('./components/RIreports');
 const SignUp = require('./components/SignUp');
 const LogIn = require('./components/LogIn');
-const Profile = require('./components/Profile');
+const HomePage = require('./components/HomePage');
 const DisplayMessages= require('./components/DisplayMessages');
 const DisplayMessagesB= require('./components/DisplayMessagesB');
 render((
@@ -33,7 +33,7 @@ render((
         
         <Route path="/signup" component={SignUp}/>
         <Route path="/login" component={LogIn}/>
-        <Route path="/profile" component={Profile}/>
+        <Route path="/profile" component={HomePage}/>
        {/*  < DisplayMessages />*/}
       </div>
     </BrowserRouter>

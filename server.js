@@ -2,7 +2,7 @@
 const express = require('express');
 const app = express();
 // book search "engine"
-const books = require('google-books-search');
+const reports = require('google-books-search');
 // dotenv
 require('dotenv').config()
 // body-parser
@@ -285,11 +285,11 @@ app.post("/add-book", function(request, response) {
       reportModel.findById(request.session.passport.user, (err, user) => {
       if (err) throw err;
         //search book img
-        books.search(request.body["bookname"], function(error, results) {
+        reports.search(request.body["bookname"], function(error, results) {
             if ( ! error ) {
-                let arrayOfBooks = user.books;
+                let arrayOfBooks = user.reports;
                 arrayOfBooks.push({bookname:request.body["bookname"], img_url: results[0].thumbnail, inspname: user.inspname});
-                user.set({books: arrayOfBooks});
+                user.set({reports: arrayOfBooks});
                 user.save(function (err, updatedUser) {
                   if (err) throw err;
                   response.json({update: true});
@@ -301,46 +301,46 @@ app.post("/add-book", function(request, response) {
     });
 });
 /***********************************/
-app.post("/get-all-users-books", function(request, response) {
+app.post("/get-all-users-reports", function(request, response) {
        reportModel.find({}, (err, users) => {
           if(err) throw err;
-          let books = []          
+          let reports = []          
          
           for(let i = 0; i < users.length; i++) {
-            for(let j = 0; j < users[i].books.length; j++) {
+            for(let j = 0; j < users[i].reports.length; j++) {
               // function for filtering
                function checkBookName(el) {
-                 return el.chosenBook == users[i].books[j].bookname;
+                 return el.chosenBook == users[i].reports[j].bookname;
                }
               let filteredIncome = users[i].income.filter(checkBookName);
               let filteredOutcome = users[i].outcome.filter(checkBookName);
               if((filteredIncome.length == 0) && (filteredOutcome.length == 0)) {
-                books.push(users[i].books[j]);
+                reports.push(users[i].reports[j]);
               }
             }
-            if(i == users.length - 1) response.json({books: books});
+            if(i == users.length - 1) response.json({reports: reports});
           }
        });
 });
 /***********************************/
-app.post("/get-user-filtered-books", function(request, response) {
+app.post("/get-user-filtered-reports", function(request, response) {
        reportModel.findById(request.session.passport.user, (err, user) => {
           if (err) throw err;
-          let books = []          
+          let reports = []          
 
-            for(let j = 0; j < user.books.length; j++) {
+            for(let j = 0; j < user.reports.length; j++) {
               // function for filtering
                function checkBookName(el) {
-                 return el.chosenBook == user.books[j].bookname;
+                 return el.chosenBook == user.reports[j].bookname;
                }
               let filteredIncome = user.income.filter(checkBookName);
               let filteredOutcome = user.outcome.filter(checkBookName);
               if((filteredIncome.length == 0) && (filteredOutcome.length == 0)) {
-                books.push(user.books[j]);
+                reports.push(user.reports[j]);
               }
             }
          
-          response.json({books: books});
+          response.json({reports: reports});
      });
 });
 /***********************************/
@@ -431,12 +431,12 @@ app.post("/accept-proposal", function(request, response) {
                     }
         let arrayOfIncome = user.income;
         //search book img
-        books.search(request.body["chosenAnotherUserBook"], function(error, results) {
+        reports.search(request.body["chosenAnotherUserBook"], function(error, results) {
             if ( ! error ) {
-                let arrayOfBooks = user.books;
+                let arrayOfBooks = user.reports;
                 arrayOfBooks.splice(arrayOfBooks.findIndex(checkBooknameUser), 1);
                 arrayOfBooks.push({bookname:request.body["chosenAnotherUserBook"], img_url: results[0].thumbnail, inspname: user.inspname});
-                user.set({books: arrayOfBooks});
+                user.set({reports: arrayOfBooks});
                 
                 arrayOfIncome.splice(arrayOfIncome.findIndex(checkProposal), 1);
                 user.set({income: arrayOfIncome});
@@ -446,14 +446,14 @@ app.post("/accept-proposal", function(request, response) {
                             reportModel.findOne({inspname: request.body["anotherUserinspname"]}, (err, anotherUser) => {
                                 if (err) response.json({error: 3});
                                //search book img
-                                books.search(request.body["chosenBook"], function(error, results) {
+                                reports.search(request.body["chosenBook"], function(error, results) {
                                     if (!error) {
-                                        let arrayOfBooks = anotherUser.books;
+                                        let arrayOfBooks = anotherUser.reports;
                                       
                                         arrayOfBooks.splice(arrayOfBooks.findIndex(checkBooknameAnotherUser), 1);
                                       
                                         arrayOfBooks.push({bookname:request.body["chosenBook"], img_url: results[0].thumbnail, inspname: anotherUser.inspname});
-                                        anotherUser.set({books: arrayOfBooks});
+                                        anotherUser.set({reports: arrayOfBooks});
                                       
                                         let arrayOfOutcome = anotherUser.outcome;
                                         arrayOfOutcome.splice(arrayOfOutcome.findIndex(checkProposal), 1);

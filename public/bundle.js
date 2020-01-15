@@ -12611,7 +12611,7 @@ const Main = __webpack_require__(267);
 const RIreports = __webpack_require__(419);
 const SignUp = __webpack_require__(425);
 const LogIn = __webpack_require__(428);
-const Profile = __webpack_require__(431);
+const HomePage = __webpack_require__(431);
 const DisplayMessages= __webpack_require__(443);
 const DisplayMessagesB= __webpack_require__(444);
 render((
@@ -12626,7 +12626,7 @@ render((
         
         React.createElement(Route, {path: "/signup", component: SignUp}), 
         React.createElement(Route, {path: "/login", component: LogIn}), 
-        React.createElement(Route, {path: "/profile", component: Profile})
+        React.createElement(Route, {path: "/profile", component: HomePage})
        /*  < DisplayMessages />*/
       )
     )
@@ -48454,7 +48454,7 @@ const OutcomeProposal = __webpack_require__(440);
 const {Grid, Row, Col, FormControl, ControlLabel, FormGroup, HelpBlock, Tabs, Tab, Form, Button} = __webpack_require__(23);
 
 /* component for user profile */
-class Profile extends React.Component {
+class HomePage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -48463,7 +48463,7 @@ class Profile extends React.Component {
       street: "",
       ri_report_to_add: "",
      
-      user_books: "loading...",
+      user_reports: "loading...",
       income: null,
       outcome: null
     };
@@ -48676,7 +48676,7 @@ React.createElement("div", {className: "library"},
     );
   }
 }
-module.exports = Profile;
+module.exports = HomePage;
 
 /***/ }),
 /* 432 */
@@ -48699,8 +48699,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../node_modules/css-loader/index.js!./Profile.css", function() {
-			var newContent = require("!!../../node_modules/css-loader/index.js!./Profile.css");
+		module.hot.accept("!!../../node_modules/css-loader/index.js!./HomePage.css", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js!./HomePage.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});

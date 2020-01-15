@@ -2,7 +2,7 @@ const React = require('react');
 const ReactDOM = require('react-dom');
 const Link = require('react-router-dom').Link
 // style for BOOK
-const style = require('../styles/Profile');
+const style = require('../styles/HomePage');
 // other components and etc
 const Header = require('./Header');
 const UserBook = require('./UserBook');
@@ -12,7 +12,7 @@ const OutcomeProposal = require('./OutcomeProposal');
 const {Grid, Row, Col, FormControl, ControlLabel, FormGroup, HelpBlock, Tabs, Tab, Form, Button} = require('react-bootstrap');
 
 /* component for user profile */
-class Profile extends React.Component {
+class HomePage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -21,7 +21,7 @@ class Profile extends React.Component {
       street: "",
       ri_report_to_add: "",
      
-      user_books: "loading...",
+      user_reports: "loading...",
       income: null,
       outcome: null
     };
@@ -234,4 +234,4 @@ class Profile extends React.Component {
     );
   }
 }
-module.exports = Profile;
+module.exports = HomePage;
