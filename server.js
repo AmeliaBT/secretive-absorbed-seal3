@@ -167,7 +167,7 @@ app.post("/sign-up", function(request, response) {
                                             
                                               //, street: "", books: [], income: [], outcome: []
                           // create a user
-                    let obj = {inspname: request.body["inspname"], email: request.body["email"], password: hash, dep: ""};                    
+                    let obj = {inspname: request.body["inspname"], email: request.body["email"], password: hash, dep: request.body["dep"]};                    
                                                 let user = new userModel(obj);
                                                 user.save(function (err) {
                                                   if (!err) console.log('Success!');
