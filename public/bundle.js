@@ -48130,7 +48130,8 @@ class SignUp extends React.Component {
     this.state = {
       email: "",
       password: "",
-      inspname: ""
+      inspname: "",
+      dep: ""
     };
     this.handleChangeValue = this.handleChangeValue.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -48138,7 +48139,7 @@ class SignUp extends React.Component {
   handleChangeValue(event) {
      const target = event.target;
       const value = target.value;
-      const name = target.name;
+      const name = target.name;      
       this.setState({
         [name]: value
       });
@@ -48153,7 +48154,8 @@ class SignUp extends React.Component {
       
       let body = 'email=' + encodeURIComponent(this.state.email) +
       '&password=' + encodeURIComponent(this.state.password) +
-      '&inspname=' + encodeURIComponent(this.state.inspname);
+      '&inspname=' + encodeURIComponent(this.state.inspname) +
+      '&dep=' + encodeURIComponent(this.state.dep);
 
 
       xhr.send(body);
@@ -48166,11 +48168,13 @@ class SignUp extends React.Component {
         }
         let response = JSON.parse(this.responseText);
         if(response.error == 0) {
-          window.location.href = "/books";
+         // window.location.href = "/books";
+         window.location.href = "/reports";
           that.setState({
           ["email"]: "Succsess",
           ["password"]: "Succsess",
-          ["inspname"]: "Success"
+          ["inspname"]: "Success",
+          ["dep"]: "Success"
            });
         }
         else {
@@ -48211,6 +48215,14 @@ class SignUp extends React.Component {
                 ), 
                 React.createElement(Col, {sm: 10}, 
                   React.createElement(FormControl, {type: "password", name: "password", required: true, value: this.state.password, placeholder: "Password", onChange: this.handleChangeValue})
+                )
+              ), 
+              React.createElement(FormGroup, {controlId: "formHorizontalDepartment"}, 
+                React.createElement(Col, {className: "form-labelSU", sm: 2}, 
+                  "Department"
+                ), 
+                React.createElement(Col, {sm: 10}, 
+                  React.createElement(FormControl, {type: "text", name: "dep", required: true, value: this.state.dep, placeholder: "Department", onChange: this.handleChangeValue})
                 )
               ), 
 
