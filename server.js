@@ -164,9 +164,10 @@ app.post("/sign-up", function(request, response) {
                                   if(document.length == 0) {
                                            //hash password
                                             bcrypt.hash(request.body["password"], saltRounds, function(err, hash) {
-                                            // create a user
-                                                let obj = {inspname: request.body["inspname"], email: request.body["email"], password: hash, dep: ""};
+                                            
                                               //, street: "", books: [], income: [], outcome: []
+                          // create a user
+                    let obj = {inspname: request.body["inspname"], email: request.body["email"], password: hash, dep: ""};                    
                                                 let user = new userModel(obj);
                                                 user.save(function (err) {
                                                   if (!err) console.log('Success!');
@@ -228,38 +229,36 @@ app.post("/log-out", function(request, response) {
 /***********************************/
  //, street: document.street, books: document.books, income: document.income, outcome: document.outcome
   // in addition to check is loged in user also we get user inspname
-  /*
+ 
 app.post("/is-loged-in", function(request, response) {
  
   if(request.session.hasOwnProperty("passport")) {
    userModel.findById(request.session.passport.user, (err, document) => {
-     if(!err) {
-       response.json({isLogedIn: request.isAuthenticated(), inspname: document.inspname, dep: document.dep});
-      
-     } 
-     else {
-       console.log("ERROR!: ", err);
-     } 
-        });
+ 
+        );
   } 
          
   else {
         response.json({isLogedIn: request.isAuthenticated(), inspname: "0"}); 
     }
-});*/
+});
 /***********************************/
-app.post("/set-depcity", function(request, response) {
+/*
+app.post("/set-dep", function(request, response) {
       userModel.findById(request.session.passport.user, (err, user) => {
       if (err) throw err;
 
-      user.set({city: request.body["city"]});
+      user.set({dep: request.body["dep"]});
       user.save(function (err, updatedUser) {
         if (err) throw err;
         response.json({update: true});
       });
     });
 });
+*/
+
 /***********************************/
+/*
 app.post("/set-street", function(request, response) {
       reportModel.findById(request.session.passport.user, (err, user) => {
       if (err) throw err;
@@ -272,6 +271,7 @@ app.post("/set-street", function(request, response) {
     });
 });
 /***********************************/
+/*
 app.post("/get-street-city-by-nick", function(request, response) {
       reportModel.findOne({inspname: request.body["inspname"]}, (err, user) => {
       if (err) throw err;
