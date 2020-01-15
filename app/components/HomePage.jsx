@@ -145,27 +145,31 @@ class HomePage extends React.Component {
           return;
         }
         let response = JSON.parse(this.responseText);
+        /*
         let income = response.income.map((e) => {
           return <IncomeProposal reportnumber1={e.chosenBook} reportnumber2={e.chosenAnotherUserBook} nickname={e.anotherUserNickname}/>;
         });
         let outcome = response.outcome.map((e) => {
           return <OutcomeProposal reportnumber1={e.chosenBook} reportnumber2={e.chosenAnotherUserBook} nickname={e.anotherUserNickname}/>;
         });
-        let books = response.books.map((e) => {
-          return <UserBook img_url={e.img_url} reportnumber={e.reportnumber}/>;
+*/
+        let reports = response.reports.map((e) => {
+        {/* return <UserBook img_url={e.img_url} reportnumber={e.reportnumber}/>;*/}  
+        return <UserBook  reportnumber={e.reportnumber}/>;
         });
           if(response.isLogedIn == true) {
              that.setState({
-            ["nickname"]: response.nickname,
-            ["city"]: response.city,
-            ["street"]: response.street,
-            ["user_books"]: books,
+            ["inspname"]: response.inspname,
+            ["dep"]: response.dep,
+           // ["street"]: response.street,
+            ["user_reports"]: reports
+            /*,
             ["income"]: <div className="proposals-container">
                            {income}
                         </div>,
             ["outcome"]: <div className="proposals-container">
                            {outcome}
-                        </div>
+                        </div>*/
            });
           }
         }
@@ -183,8 +187,8 @@ class HomePage extends React.Component {
 
     <form className="input-label">
       <FormGroup controlId="formBasicText" >
-        <ControlLabel>Your nickname</ControlLabel>
-        <FormControl type="text" value={this.state.nickname}  readonly  />
+        <ControlLabel>Your name</ControlLabel>
+        <FormControl type="text" value={this.state.inspname}  readonly  />
         <FormControl.Feedback />
       </FormGroup>
     </form>
@@ -192,12 +196,13 @@ class HomePage extends React.Component {
 
     <form className="input-label">
       <FormGroup controlId="formBasicText" >
-        <ControlLabel>Your city</ControlLabel>
+        <ControlLabel>Your dep</ControlLabel>
         <FormControl type="text" value={this.state.dep} placeholder="enter your dep" onChange={this.depChanged} />
         <FormControl.Feedback />
       </FormGroup>
     </form>
-                    <div className="profile-line"></div>
+    <div className="profile-line"></div>
+    {/* 
     <form className="input-label">
       <FormGroup controlId="formBasicText" >
         <ControlLabel>Your street</ControlLabel>
@@ -205,15 +210,15 @@ class HomePage extends React.Component {
         <FormControl.Feedback />
       </FormGroup>
     </form>
-                    
-    <div className="proposal-label">Proposals to exchange</div>
+        */}            
+    <div className="proposal-label">New RI report </div>
     <div className="profile-line"></div>
     <Tabs defaultActiveKey={1} id="uncontrolled-tab" className="tabs">
       <Tab eventKey={1} title="Income">   {this.state.income}  </Tab>
       <Tab eventKey={2} title="Outcome">  {this.state.outcome}       </Tab>
     </Tabs>   </Col>
   <Col xs={12} md={8} className="right-col">
-    <div className="library-label">Your library</div>
+    <div className="library-label">Your RI Reports</div>
       <Form inline className="input-label add-form">
       <FormGroup controlId="addBookForm"  >
         <FormControl  type="text"  value={this.state.ri_report_to_add}  placeholder="enter P/N"
@@ -227,7 +232,7 @@ class HomePage extends React.Component {
   </FormGroup>
 </Form>
 <div className="library">
-  {this.state.user_books}
+  {this.state.user_reports}
 </div>
                   </Col>
                 </Row>

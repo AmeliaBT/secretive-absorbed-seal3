@@ -48587,27 +48587,31 @@ class HomePage extends React.Component {
           return;
         }
         let response = JSON.parse(this.responseText);
+        /*
         let income = response.income.map((e) => {
-          return React.createElement(IncomeProposal, {reportnumber1: e.chosenBook, reportnumber2: e.chosenAnotherUserBook, nickname: e.anotherUserNickname});
+          return <IncomeProposal reportnumber1={e.chosenBook} reportnumber2={e.chosenAnotherUserBook} nickname={e.anotherUserNickname}/>;
         });
         let outcome = response.outcome.map((e) => {
-          return React.createElement(OutcomeProposal, {reportnumber1: e.chosenBook, reportnumber2: e.chosenAnotherUserBook, nickname: e.anotherUserNickname});
+          return <OutcomeProposal reportnumber1={e.chosenBook} reportnumber2={e.chosenAnotherUserBook} nickname={e.anotherUserNickname}/>;
         });
-        let books = response.books.map((e) => {
-          return React.createElement(UserBook, {img_url: e.img_url, reportnumber: e.reportnumber});
+*/
+        let reports = response.reports.map((e) => {
+        {/* return <UserBook img_url={e.img_url} reportnumber={e.reportnumber}/>;*/}  
+        return React.createElement(UserBook, {reportnumber: e.reportnumber});
         });
           if(response.isLogedIn == true) {
              that.setState({
-            ["nickname"]: response.nickname,
-            ["city"]: response.city,
-            ["street"]: response.street,
-            ["user_books"]: books,
-            ["income"]: React.createElement("div", {className: "proposals-container"}, 
-                           income
-                        ),
-            ["outcome"]: React.createElement("div", {className: "proposals-container"}, 
-                           outcome
-                        )
+            ["inspname"]: response.inspname,
+            ["dep"]: response.dep,
+           // ["street"]: response.street,
+            ["user_reports"]: reports
+            /*,
+            ["income"]: <div className="proposals-container">
+                           {income}
+                        </div>,
+            ["outcome"]: <div className="proposals-container">
+                           {outcome}
+                        </div>*/
            });
           }
         }
@@ -48625,8 +48629,8 @@ class HomePage extends React.Component {
 
     React.createElement("form", {className: "input-label"}, 
       React.createElement(FormGroup, {controlId: "formBasicText"}, 
-        React.createElement(ControlLabel, null, "Your nickname"), 
-        React.createElement(FormControl, {type: "text", value: this.state.nickname, readonly: true}), 
+        React.createElement(ControlLabel, null, "Your name"), 
+        React.createElement(FormControl, {type: "text", value: this.state.inspname, readonly: true}), 
         React.createElement(FormControl.Feedback, null)
       )
     ), 
@@ -48634,28 +48638,29 @@ class HomePage extends React.Component {
 
     React.createElement("form", {className: "input-label"}, 
       React.createElement(FormGroup, {controlId: "formBasicText"}, 
-        React.createElement(ControlLabel, null, "Your city"), 
+        React.createElement(ControlLabel, null, "Your dep"), 
         React.createElement(FormControl, {type: "text", value: this.state.dep, placeholder: "enter your dep", onChange: this.depChanged}), 
         React.createElement(FormControl.Feedback, null)
       )
     ), 
-                    React.createElement("div", {className: "profile-line"}), 
-    React.createElement("form", {className: "input-label"}, 
-      React.createElement(FormGroup, {controlId: "formBasicText"}, 
-        React.createElement(ControlLabel, null, "Your street"), 
-        React.createElement(FormControl, {type: "text", value: this.state.street, placeholder: "enter your street", onChange: this.streetChanged}), 
-        React.createElement(FormControl.Feedback, null)
-      )
-    ), 
-                    
-    React.createElement("div", {className: "proposal-label"}, "Proposals to exchange"), 
+    React.createElement("div", {className: "profile-line"}), 
+    /* 
+    <form className="input-label">
+      <FormGroup controlId="formBasicText" >
+        <ControlLabel>Your street</ControlLabel>
+        <FormControl type="text" value={this.state.street} placeholder="enter your street" onChange={this.streetChanged}/>
+        <FormControl.Feedback />
+      </FormGroup>
+    </form>
+        */
+    React.createElement("div", {className: "proposal-label"}, "New RI report "), 
     React.createElement("div", {className: "profile-line"}), 
     React.createElement(Tabs, {defaultActiveKey: 1, id: "uncontrolled-tab", className: "tabs"}, 
       React.createElement(Tab, {eventKey: 1, title: "Income"}, "   ", this.state.income, "  "), 
       React.createElement(Tab, {eventKey: 2, title: "Outcome"}, "  ", this.state.outcome, "       ")
     ), "   "), 
   React.createElement(Col, {xs: 12, md: 8, className: "right-col"}, 
-    React.createElement("div", {className: "library-label"}, "Your library"), 
+    React.createElement("div", {className: "library-label"}, "Your RI Reports"), 
       React.createElement(Form, {inline: true, className: "input-label add-form"}, 
       React.createElement(FormGroup, {controlId: "addBookForm"}, 
         React.createElement(FormControl, {type: "text", value: this.state.ri_report_to_add, placeholder: "enter P/N", 
@@ -48669,7 +48674,7 @@ class HomePage extends React.Component {
   )
 ), 
 React.createElement("div", {className: "library"}, 
-  this.state.user_books
+  this.state.user_reports
 )
                   )
                 )
