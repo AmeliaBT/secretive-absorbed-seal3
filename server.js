@@ -234,8 +234,12 @@ app.post("/is-loged-in", function(request, response) {
  
   if(request.session.hasOwnProperty("passport")) {
    userModel.findById(request.session.passport.user, (err, document) => {
+    if(!err) { response.json({isLogedIn: request.isAuthenticated(), inspname: document.inspname, dep: document.dep});  } 
+    else { console.log("ERROR!: ", err);} 
+
+   }
  
-        );
+ );
   } 
          
   else {
@@ -243,26 +247,23 @@ app.post("/is-loged-in", function(request, response) {
     }
 });
 /***********************************/
-/*
 app.post("/set-dep", function(request, response) {
-      userModel.findById(request.session.passport.user, (err, user) => {
-      if (err) throw err;
+  userModel.findById(request.session.passport.user, (err, user) => {
+  if (err) throw err;
+  user.set({dep: request.body["dep"]});
+  user.save(function (err, updatedUser) {
+  if (err) throw err;
+  response.json({update: true});
+  });
+ });
+ });
 
-      user.set({dep: request.body["dep"]});
-      user.save(function (err, updatedUser) {
-        if (err) throw err;
-        response.json({update: true});
-      });
-    });
-});
-*/
 
-/***********************************/
+/* ********************************* */
 /*
 app.post("/set-street", function(request, response) {
       reportModel.findById(request.session.passport.user, (err, user) => {
       if (err) throw err;
-
       user.set({street: request.body["street"]});
       user.save(function (err, updatedUser) {
         if (err) throw err;
@@ -270,7 +271,8 @@ app.post("/set-street", function(request, response) {
       });
     });
 });
-/***********************************/
+*/
+/* ********************************* */
 /*
 app.post("/get-street-city-by-nick", function(request, response) {
       reportModel.findOne({inspname: request.body["inspname"]}, (err, user) => {
