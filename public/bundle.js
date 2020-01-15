@@ -48130,7 +48130,7 @@ class SignUp extends React.Component {
     this.state = {
       email: "",
       password: "",
-      nickname: ""
+      inspname: ""
     };
     this.handleChangeValue = this.handleChangeValue.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -48153,7 +48153,7 @@ class SignUp extends React.Component {
       
       let body = 'email=' + encodeURIComponent(this.state.email) +
       '&password=' + encodeURIComponent(this.state.password) +
-      '&nickname=' + encodeURIComponent(this.state.nickname);
+      '&inspname=' + encodeURIComponent(this.state.inspname);
 
 
       xhr.send(body);
@@ -48170,13 +48170,13 @@ class SignUp extends React.Component {
           that.setState({
           ["email"]: "Succsess",
           ["password"]: "Succsess",
-          ["nickname"]: "Success"
+          ["inspname"]: "Success"
            });
         }
         else {
           that.setState({
-          ["email"]: "Email or nickname already exists",
-          ["nickname"]: "Email or nickname already exists"
+          ["email"]: "Email or inspname already exists",
+          ["inspname"]: "Email or inspname already exists"
            });
          }
         }
@@ -48187,12 +48187,12 @@ class SignUp extends React.Component {
       React.createElement("div", null, 
             React.createElement(Header, null), 
             React.createElement(Form, {className: "FormSU", horizontal: true, method: "post", action: "/signup", name: "signup", onSubmit: this.handleSubmit}, 
-              React.createElement(FormGroup, {controlId: "formHorizontalNickname"}, 
+              React.createElement(FormGroup, {controlId: "formHorizontalinspname"}, 
                 React.createElement(Col, {className: "form-labelSU", sm: 2}, 
                   "Name"
                 ), 
                 React.createElement(Col, {sm: 10}, 
-                  React.createElement(FormControl, {type: "text", name: "nickname", required: true, value: this.state.nickname, placeholder: "Name", onChange: this.handleChangeValue})
+                  React.createElement(FormControl, {type: "text", name: "inspname", required: true, value: this.state.inspname, placeholder: "Name", onChange: this.handleChangeValue})
                 )
               ), 
 

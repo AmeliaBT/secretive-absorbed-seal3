@@ -14,7 +14,7 @@ class SignUp extends React.Component {
     this.state = {
       email: "",
       password: "",
-      nickname: ""
+      inspname: ""
     };
     this.handleChangeValue = this.handleChangeValue.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -37,7 +37,7 @@ class SignUp extends React.Component {
       
       let body = 'email=' + encodeURIComponent(this.state.email) +
       '&password=' + encodeURIComponent(this.state.password) +
-      '&nickname=' + encodeURIComponent(this.state.nickname);
+      '&inspname=' + encodeURIComponent(this.state.inspname);
 
 
       xhr.send(body);
@@ -54,13 +54,13 @@ class SignUp extends React.Component {
           that.setState({
           ["email"]: "Succsess",
           ["password"]: "Succsess",
-          ["nickname"]: "Success"
+          ["inspname"]: "Success"
            });
         }
         else {
           that.setState({
-          ["email"]: "Email or nickname already exists",
-          ["nickname"]: "Email or nickname already exists"
+          ["email"]: "Email or inspname already exists",
+          ["inspname"]: "Email or inspname already exists"
            });
          }
         }
@@ -71,12 +71,12 @@ class SignUp extends React.Component {
       <div>
             <Header/>
             <Form className="FormSU" horizontal method="post" action="/signup" name="signup" onSubmit={this.handleSubmit}>
-              <FormGroup controlId="formHorizontalNickname">
+              <FormGroup controlId="formHorizontalinspname">
                 <Col className="form-labelSU" sm={2}>
                   Name
                 </Col>
                 <Col sm={10}>
-                  <FormControl type="text" name="nickname" required value={this.state.nickname} placeholder="Name" onChange={this.handleChangeValue} />
+                  <FormControl type="text" name="inspname" required value={this.state.inspname} placeholder="Name" onChange={this.handleChangeValue} />
                 </Col>
               </FormGroup>
 
