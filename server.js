@@ -281,15 +281,16 @@ app.post("/get-street-city-by-nick", function(request, response) {
     });
 });
 /***********************************/
-app.post("/add-book", function(request, response) {
+app.post("/add-report", function(request, response) {
       reportModel.findById(request.session.passport.user, (err, user) => {
       if (err) throw err;
         //search book img
         reports.search(request.body["reportnumber"], function(error, results) {
             if ( ! error ) {
                 let arrayOfBooks = user.reports;
-                arrayOfBooks.push({reportnumber:request.body["reportnumber"], img_url: results[0].thumbnail, inspname: user.inspname});
-                user.set({reports: arrayOfBooks});
+              //  arrayOfBooks.push({reportnumber:request.body["reportnumber"], img_url: results[0].thumbnail, inspname: user.inspname});
+              arrayOfBooks.push({reportnumber:request.body["reportnumber"],  inspname: user.inspname});
+              user.set({reports: arrayOfBooks});
                 user.save(function (err, updatedUser) {
                   if (err) throw err;
                   response.json({update: true});

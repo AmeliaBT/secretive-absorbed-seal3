@@ -27,7 +27,7 @@ class HomePage extends React.Component {
       income: null,
       outcome: null*/
     };
-  //  this.depChanged = this.cityChanged.bind(this);
+   this.depChanged = this.depChanged.bind(this);
   //  this.streetChanged = this.streetChanged.bind(this);
    // this.reportChanged = this.reportChanged.bind(this);
    // this.addRIreport = this.addRIreport.bind(this);
@@ -35,18 +35,18 @@ class HomePage extends React.Component {
   /****************************/
   // Handlers
   /****************************/
-  cityChanged(event) {
+  depChanged(event) {
       const value = event.target.value;
           this.setState({
-            ["city"]: value
+            ["dep"]: value
            });
-    // set city in DB
+    // set dep in DB
       let that = this;
       const xhr = new XMLHttpRequest();
       
-      xhr.open('POST', '/set-city', true);
+      xhr.open('POST', '/set-dep', true);
       xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-      let body = 'city=' + encodeURIComponent(value);
+      let body = 'dep=' + encodeURIComponent(value);
 
       xhr.send(body);
 
