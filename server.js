@@ -170,7 +170,7 @@ app.post("/sign-up", function(request, response) {
                                                 user.save(function (err) {
                                                   if (!err) console.log('Success!');
                                                       // login after registration
-                                                      userModel.find({inspname: request.body["inspname"], email: request.body["email"], password: hash}, function (err, document) {
+                                                      Model.find({inspname: request.body["inspname"], email: request.body["email"], password: hash}, function (err, document) {
                                                         if(!err) {
                                                           let user_id = document[0]["id"];
                                                           request.login(user_id, () => {
@@ -196,7 +196,7 @@ app.post("/sign-up", function(request, response) {
 });
 /***********************************/
 app.post("/log-in", function(request, response) {
-  userModel.find({ email: request.body["email"]}, function (err, document) {
+              reportModel.find({ email: request.body["email"]}, function (err, document) {
               if(!err) {
                 if(document.length == 0) {
                   response.json({"error": "error0"});
@@ -228,7 +228,7 @@ app.post("/log-out", function(request, response) {
 app.post("/is-loged-in", function(request, response) {
   // in addition to check is loged in user also we get user inspname
   if(request.session.hasOwnProperty("passport")) {
-   userModel.findById(request.session.passport.user, (err, document) => {
+   reportModel.findById(request.session.passport.user, (err, document) => {
      if(!err) {
        response.json({isLogedIn: request.isAuthenticated(), inspname: document.inspname, city: document.city, street: document.street, books: document.books, income: document.income, outcome: document.outcome});
      } 
