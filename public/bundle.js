@@ -48459,18 +48459,20 @@ class HomePage extends React.Component {
     super(props);
     this.state = {
       inspname: "",
-      city: "",
+      dep: ""
+     /*
+     
       street: "",
       ri_report_to_add: "",
      
       user_reports: "loading...",
       income: null,
-      outcome: null
+      outcome: null*/
     };
-    this.cityChanged = this.cityChanged.bind(this);
-    this.streetChanged = this.streetChanged.bind(this);
-    this.reportChanged = this.reportChanged.bind(this);
-    this.addRIreport = this.addRIreport.bind(this);
+  //  this.depChanged = this.cityChanged.bind(this);
+  //  this.streetChanged = this.streetChanged.bind(this);
+   // this.reportChanged = this.reportChanged.bind(this);
+   // this.addRIreport = this.addRIreport.bind(this);
   }
   /****************************/
   // Handlers
@@ -48544,10 +48546,11 @@ class HomePage extends React.Component {
       let that = this;
       const xhr = new XMLHttpRequest();
       
-      xhr.open('POST', '/add-book', true);
+      xhr.open('POST', '/add-report', true);
       xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
-      let body = 'bookname=' + encodeURIComponent(this.state.ri_report_to_add) ;
+     // let body = 'reportnumber=' + encodeURIComponent(this.state.ri_report_to_add) ;
+      let body = 'reportnumber=' + encodeURIComponent(this.state.ri_report_to_add) ;
 
       xhr.send(body);
 
@@ -48585,13 +48588,13 @@ class HomePage extends React.Component {
         }
         let response = JSON.parse(this.responseText);
         let income = response.income.map((e) => {
-          return React.createElement(IncomeProposal, {bookname1: e.chosenBook, bookname2: e.chosenAnotherUserBook, nickname: e.anotherUserNickname});
+          return React.createElement(IncomeProposal, {reportnumber1: e.chosenBook, reportnumber2: e.chosenAnotherUserBook, nickname: e.anotherUserNickname});
         });
         let outcome = response.outcome.map((e) => {
-          return React.createElement(OutcomeProposal, {bookname1: e.chosenBook, bookname2: e.chosenAnotherUserBook, nickname: e.anotherUserNickname});
+          return React.createElement(OutcomeProposal, {reportnumber1: e.chosenBook, reportnumber2: e.chosenAnotherUserBook, nickname: e.anotherUserNickname});
         });
         let books = response.books.map((e) => {
-          return React.createElement(UserBook, {img_url: e.img_url, bookname: e.bookname});
+          return React.createElement(UserBook, {img_url: e.img_url, reportnumber: e.reportnumber});
         });
           if(response.isLogedIn == true) {
              that.setState({
@@ -48632,7 +48635,7 @@ class HomePage extends React.Component {
     React.createElement("form", {className: "input-label"}, 
       React.createElement(FormGroup, {controlId: "formBasicText"}, 
         React.createElement(ControlLabel, null, "Your city"), 
-        React.createElement(FormControl, {type: "text", value: this.state.city, placeholder: "enter your city", onChange: this.cityChanged}), 
+        React.createElement(FormControl, {type: "text", value: this.state.dep, placeholder: "enter your dep", onChange: this.depChanged}), 
         React.createElement(FormControl.Feedback, null)
       )
     ), 

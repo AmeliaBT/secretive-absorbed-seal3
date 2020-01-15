@@ -285,10 +285,10 @@ app.post("/add-book", function(request, response) {
       reportModel.findById(request.session.passport.user, (err, user) => {
       if (err) throw err;
         //search book img
-        reports.search(request.body["bookname"], function(error, results) {
+        reports.search(request.body["reportnumber"], function(error, results) {
             if ( ! error ) {
                 let arrayOfBooks = user.reports;
-                arrayOfBooks.push({bookname:request.body["bookname"], img_url: results[0].thumbnail, inspname: user.inspname});
+                arrayOfBooks.push({reportnumber:request.body["reportnumber"], img_url: results[0].thumbnail, inspname: user.inspname});
                 user.set({reports: arrayOfBooks});
                 user.save(function (err, updatedUser) {
                   if (err) throw err;
@@ -310,7 +310,7 @@ app.post("/get-all-users-reports", function(request, response) {
             for(let j = 0; j < users[i].reports.length; j++) {
               // function for filtering
                function checkBookName(el) {
-                 return el.chosenBook == users[i].reports[j].bookname;
+                 return el.chosenBook == users[i].reports[j].reportnumber;
                }
               let filteredIncome = users[i].income.filter(checkBookName);
               let filteredOutcome = users[i].outcome.filter(checkBookName);
@@ -331,7 +331,7 @@ app.post("/get-user-filtered-reports", function(request, response) {
             for(let j = 0; j < user.reports.length; j++) {
               // function for filtering
                function checkBookName(el) {
-                 return el.chosenBook == user.reports[j].bookname;
+                 return el.chosenBook == user.reports[j].reportnumber;
                }
               let filteredIncome = user.income.filter(checkBookName);
               let filteredOutcome = user.outcome.filter(checkBookName);
@@ -414,7 +414,7 @@ app.post("/accept-proposal", function(request, response) {
               }
             }
         function checkBooknameUser(element, index, array) {
-                  if(element.bookname == request.body["chosenBook"]) {
+                  if(element.reportnumber == request.body["chosenBook"]) {
                       return true
                   }
                   else {
@@ -422,7 +422,7 @@ app.post("/accept-proposal", function(request, response) {
                   }
                 }
         function checkBooknameAnotherUser(element, index, array) {
-                      if(element.bookname == request.body["chosenAnotherUserBook"]) {
+                      if(element.reportnumber == request.body["chosenAnotherUserBook"]) {
                           return true
                       }
                       else {
@@ -435,7 +435,7 @@ app.post("/accept-proposal", function(request, response) {
             if ( ! error ) {
                 let arrayOfBooks = user.reports;
                 arrayOfBooks.splice(arrayOfBooks.findIndex(checkBooknameUser), 1);
-                arrayOfBooks.push({bookname:request.body["chosenAnotherUserBook"], img_url: results[0].thumbnail, inspname: user.inspname});
+                arrayOfBooks.push({reportnumber:request.body["chosenAnotherUserBook"], img_url: results[0].thumbnail, inspname: user.inspname});
                 user.set({reports: arrayOfBooks});
                 
                 arrayOfIncome.splice(arrayOfIncome.findIndex(checkProposal), 1);
@@ -452,7 +452,7 @@ app.post("/accept-proposal", function(request, response) {
                                       
                                         arrayOfBooks.splice(arrayOfBooks.findIndex(checkBooknameAnotherUser), 1);
                                       
-                                        arrayOfBooks.push({bookname:request.body["chosenBook"], img_url: results[0].thumbnail, inspname: anotherUser.inspname});
+                                        arrayOfBooks.push({reportnumber:request.body["chosenBook"], img_url: results[0].thumbnail, inspname: anotherUser.inspname});
                                         anotherUser.set({reports: arrayOfBooks});
                                       
                                         let arrayOfOutcome = anotherUser.outcome;

@@ -17,18 +17,20 @@ class HomePage extends React.Component {
     super(props);
     this.state = {
       inspname: "",
-      city: "",
+      dep: ""
+     /*
+     
       street: "",
       ri_report_to_add: "",
      
       user_reports: "loading...",
       income: null,
-      outcome: null
+      outcome: null*/
     };
-    this.cityChanged = this.cityChanged.bind(this);
-    this.streetChanged = this.streetChanged.bind(this);
-    this.reportChanged = this.reportChanged.bind(this);
-    this.addRIreport = this.addRIreport.bind(this);
+  //  this.depChanged = this.cityChanged.bind(this);
+  //  this.streetChanged = this.streetChanged.bind(this);
+   // this.reportChanged = this.reportChanged.bind(this);
+   // this.addRIreport = this.addRIreport.bind(this);
   }
   /****************************/
   // Handlers
@@ -102,10 +104,11 @@ class HomePage extends React.Component {
       let that = this;
       const xhr = new XMLHttpRequest();
       
-      xhr.open('POST', '/add-book', true);
+      xhr.open('POST', '/add-report', true);
       xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
-      let body = 'bookname=' + encodeURIComponent(this.state.ri_report_to_add) ;
+     // let body = 'reportnumber=' + encodeURIComponent(this.state.ri_report_to_add) ;
+      let body = 'reportnumber=' + encodeURIComponent(this.state.ri_report_to_add) ;
 
       xhr.send(body);
 
@@ -143,13 +146,13 @@ class HomePage extends React.Component {
         }
         let response = JSON.parse(this.responseText);
         let income = response.income.map((e) => {
-          return <IncomeProposal bookname1={e.chosenBook} bookname2={e.chosenAnotherUserBook} nickname={e.anotherUserNickname}/>;
+          return <IncomeProposal reportnumber1={e.chosenBook} reportnumber2={e.chosenAnotherUserBook} nickname={e.anotherUserNickname}/>;
         });
         let outcome = response.outcome.map((e) => {
-          return <OutcomeProposal bookname1={e.chosenBook} bookname2={e.chosenAnotherUserBook} nickname={e.anotherUserNickname}/>;
+          return <OutcomeProposal reportnumber1={e.chosenBook} reportnumber2={e.chosenAnotherUserBook} nickname={e.anotherUserNickname}/>;
         });
         let books = response.books.map((e) => {
-          return <UserBook img_url={e.img_url} bookname={e.bookname}/>;
+          return <UserBook img_url={e.img_url} reportnumber={e.reportnumber}/>;
         });
           if(response.isLogedIn == true) {
              that.setState({
@@ -190,7 +193,7 @@ class HomePage extends React.Component {
     <form className="input-label">
       <FormGroup controlId="formBasicText" >
         <ControlLabel>Your city</ControlLabel>
-        <FormControl type="text" value={this.state.city} placeholder="enter your city" onChange={this.cityChanged} />
+        <FormControl type="text" value={this.state.dep} placeholder="enter your dep" onChange={this.depChanged} />
         <FormControl.Feedback />
       </FormGroup>
     </form>
