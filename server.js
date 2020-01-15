@@ -139,11 +139,11 @@ let userModel = mongoose.model('usersri', userSchema);
 // getting the layout(page) of application
 app.get("*", function(request, response) {
   // prevent user from getting the wrong page when user is authenticated or not
-  if((request.path == "/books" || request.path == "/profile") && request.isAuthenticated() === false) {
+  if((request.path == "/reports" || request.path == "/homepage") && request.isAuthenticated() === false) {
     response.redirect("/login");
   }
   else if((request.path == "/signup" || request.path == "/login") && request.isAuthenticated() === true) {
-    response.redirect("/books"); 
+    response.redirect("/reports"); 
   }
   else {
    response.sendFile(__dirname + '/app/index.html');
