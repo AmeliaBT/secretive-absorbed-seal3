@@ -76,7 +76,7 @@ class SignUp extends React.Component {
                   Name
                 </Col>
                 <Col sm={10}>
-                  <FormControl type="text" name="inspname" required value={this.state.inspname} placeholder="Name" onChange={this.handleChangeValue} />
+                  <FormControl type="text" name="inspname" required value={this.state.inspname} placeholder="RI Inspector Name" onChange={this.handleChangeValue} />
                 </Col>
               </FormGroup>
 
@@ -85,7 +85,7 @@ class SignUp extends React.Component {
                   Email
                 </Col>
                 <Col sm={10}>
-                  <FormControl type="email" name="email" required value={this.state.email} placeholder="Email" onChange={this.handleChangeValue} />
+                  <FormControl type="email" name="email" required value={this.state.email} placeholder="Email at ATI" onChange={this.handleChangeValue} />
                 </Col>
               </FormGroup>
 

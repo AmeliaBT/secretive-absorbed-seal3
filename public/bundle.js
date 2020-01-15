@@ -48192,7 +48192,7 @@ class SignUp extends React.Component {
                   "Name"
                 ), 
                 React.createElement(Col, {sm: 10}, 
-                  React.createElement(FormControl, {type: "text", name: "inspname", required: true, value: this.state.inspname, placeholder: "Name", onChange: this.handleChangeValue})
+                  React.createElement(FormControl, {type: "text", name: "inspname", required: true, value: this.state.inspname, placeholder: "RI Inspector Name", onChange: this.handleChangeValue})
                 )
               ), 
 
@@ -48201,7 +48201,7 @@ class SignUp extends React.Component {
                   "Email"
                 ), 
                 React.createElement(Col, {sm: 10}, 
-                  React.createElement(FormControl, {type: "email", name: "email", required: true, value: this.state.email, placeholder: "Email", onChange: this.handleChangeValue})
+                  React.createElement(FormControl, {type: "email", name: "email", required: true, value: this.state.email, placeholder: "Email at ATI", onChange: this.handleChangeValue})
                 )
               ), 
 
