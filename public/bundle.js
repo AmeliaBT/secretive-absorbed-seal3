@@ -48460,7 +48460,8 @@ class HomePage extends React.Component {
     this.state = {
       inspname: "Me2",
       dep: "d2",
-      ri_report_to_add: "RI-5358",
+      //ri_report_to_add: "RI-5358",
+      reportnumber: "RI-5358",
       supplier: "oem2",
       daterec: "",
       dateinsp: "",
@@ -48561,7 +48562,8 @@ class HomePage extends React.Component {
 
      // let body = 'reportnumber=' + encodeURIComponent(this.state.ri_report_to_add)  ;
      //inspname: "",       dep: 
-     let body = 'reportnumber=' + encodeURIComponent(this.state.reportnumber) ;
+     let body = 'reportnumber=' + encodeURIComponent(this.state.reportnumber) 
+     + 'inspname=' + encodeURIComponent(this.state.inspname) ;
      /*
      let body = 'inspname  =  '   + encodeURIComponent(this.state.inspname) +
      ', dep  =  '   + encodeURIComponent(this.state.dep) +
@@ -48693,7 +48695,7 @@ class HomePage extends React.Component {
 
       React.createElement(Form, {inline: true, className: "input-label add-form"}, 
       React.createElement(FormGroup, {controlId: "addBookForm"}, 
-        React.createElement(FormControl, {type: "text", value: this.state.ri_report_to_add, placeholder: "enter P/N", 
+        React.createElement(FormControl, {type: "text", value: this.state.reportnumber, placeholder: "enter reportnumber", 
           onChange: this.reportChanged, style: {"width": "100%"}}), 
             
 React.createElement(FormControl, {type: "text", value: this.state.inspname, placeholder: "enter inspname", 

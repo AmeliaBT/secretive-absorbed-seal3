@@ -287,7 +287,8 @@ app.post("/add-report", function(request, response) {
    
     // create a report
     
-   let obj = {reportnumber: request.body["reportnumber"],  supplier: "oem",    daterec:"",     dateinsp:"",     wopomtt: "PO",     no: "123",   destination:"ata",     pn: "990-1212",     description: "AT-9224",    lotsize: 100,     samplesize: 5};
+   let obj = {reportnumber: request.body["reportnumber"], inspname: request.body["inspname"]   };
+   //let obj = {reportnumber: request.body["reportnumber"],  supplier: "oem",    daterec:"",     dateinsp:"",     wopomtt: "PO",     no: "123",   destination:"ata",     pn: "990-1212",     description: "AT-9224",    lotsize: 100,     samplesize: 5};
 console.log("insp and dep: ");
     console.log(request.body["inspname"]);
     console.log(request.body["dep"] );
