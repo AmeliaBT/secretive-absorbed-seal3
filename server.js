@@ -287,14 +287,14 @@ app.post("/add-report", function(request, response) {
    
     // create a report
     
-   // let obj2 = {reportnumber: request.body["reportnumber"],  supplier: "oem",    daterec:"",     dateinsp:"",     wopomtt: "PO",     no: "123",   destination:"ata",     pn: "990-1212",     description: "AT-9224",    lotsize: 100,     samplesize: 5};
+   let obj = {reportnumber: request.body["reportnumber"],  supplier: "oem",    daterec:"",     dateinsp:"",     wopomtt: "PO",     no: "123",   destination:"ata",     pn: "990-1212",     description: "AT-9224",    lotsize: 100,     samplesize: 5};
 console.log("insp and dep: ");
     console.log(request.body["inspname"]);
     console.log(request.body["dep"] );
-    let obj = {
+/*    let obj = {
 inspname: request.body["inspname"], 
 dep: request.body["dep"] 
-/*
+
 ri_report_to_add: request.body["ri_report_to_add"], 
 supplier: request.body["supplier"], 
 daterec: request.body["daterec"], 
@@ -306,8 +306,8 @@ pn: request.body["pn"], 
 description: request.body["description"], 
 lotsize: request.body["lotsize"], 
 samplesize: request.body["samplesize"] 
-*/
-    };
+
+    };*/
     let report = new reportModel(obj);
           
             report.save(function (err) {

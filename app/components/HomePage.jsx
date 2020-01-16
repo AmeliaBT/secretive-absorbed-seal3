@@ -243,6 +243,9 @@ class HomePage extends React.Component {
     </Tabs>   </Col>
   <Col xs={12} md={8} className="right-col">
     <div className="library-label">Your RI Reports</div>
+
+
+    
       <Form inline className="input-label add-form">
       <FormGroup controlId="addBookForm"  >
         <FormControl  type="text"  value={this.state.ri_report_to_add}  placeholder="enter P/N"

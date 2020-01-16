@@ -48685,6 +48685,9 @@ class HomePage extends React.Component {
     ), "   "), 
   React.createElement(Col, {xs: 12, md: 8, className: "right-col"}, 
     React.createElement("div", {className: "library-label"}, "Your RI Reports"), 
+
+
+    
       React.createElement(Form, {inline: true, className: "input-label add-form"}, 
       React.createElement(FormGroup, {controlId: "addBookForm"}, 
         React.createElement(FormControl, {type: "text", value: this.state.ri_report_to_add, placeholder: "enter P/N", 
