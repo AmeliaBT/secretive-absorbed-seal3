@@ -48458,21 +48458,20 @@ class HomePage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      inspname: "Me",
-      dep: "",
+      inspname: "Me2",
+      dep: "d2",
       ri_report_to_add: "RI-5358",
-      supplier: "oem",
+      supplier: "oem2",
       daterec: "",
       dateinsp: "",
-      wopomtt: "PO",
-      no: "123",
-      destination: "ata",
-      pn: "990-1212",
-      description: "AT-9224",
-      lotsize: 100,
-      samplesize: 5
-     /*
-     
+      wopomtt: "PO2",
+      no: "1232",
+      destination: "ata2",
+      pn: "990-12122",
+      description: "AT-92242",
+      lotsize: 1002,
+      samplesize: 52
+     /*     
       street: "",
       ri_report_to_add: "",
      
