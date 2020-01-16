@@ -198,6 +198,8 @@ app.post("/sign-up", function(request, response) {
 });
 /***********************************/
 app.post("/log-in", function(request, response) {
+  console.log("expected an email below when login: ");
+  console.log(request.body["email"]);
               userModel.find({ email: request.body["email"]}, function (err, document) {
               if(!err) {
                 if(document.length == 0) {
@@ -282,7 +284,7 @@ app.post("/get-street-city-by-nick", function(request, response) {
 });
 /***********************************/
 app.post("/add-report", function(request, response) {
- // reportModel.findById(request.session.passport.user, (err, user) => {
+ reportModel.findById(request.session.passport.user, (err, user) => {
   //if (err) throw err;   
     // create a report
     console.log("in here insp and dep: ");  
@@ -290,7 +292,7 @@ app.post("/add-report", function(request, response) {
  /* ok: */ 
 let obj = {  daterec:"",     dateinsp:"",  wopomtt: request.body["wopomtt"],     no: "1233",   destination:"ata3",     pn: "990-12123",     description: "AT-92243",    lotsize: 1003,     samplesize: 53};
 console.log("insp and dep: ");
-  console.log(request.body["inspname"]);
+  console.log(request.body.inspname);
    console.log(request.body["dep"] ); 
    /*
  let obj = {
@@ -319,7 +321,7 @@ samplesize: request.body["samplesize"] 
 
         
    
-//});
+ });
 });
 /***********************************/
 
