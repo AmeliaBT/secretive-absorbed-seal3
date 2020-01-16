@@ -48654,7 +48654,7 @@ class HomePage extends React.Component {
     React.createElement("form", {className: "input-label"}, 
       React.createElement(FormGroup, {controlId: "formBasicText"}, 
         React.createElement(ControlLabel, null, "Your name"), 
-        React.createElement(FormControl, {type: "text", value: this.state.inspname, readonly: true}), 
+        React.createElement(FormControl, {type: "text", value: this.state.inspname, readOnly: true}), 
         React.createElement(FormControl.Feedback, null)
       )
     ), 

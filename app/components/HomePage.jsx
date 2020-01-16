@@ -212,7 +212,7 @@ class HomePage extends React.Component {
     <form className="input-label">
       <FormGroup controlId="formBasicText" >
         <ControlLabel>Your name</ControlLabel>
-        <FormControl type="text" value={this.state.inspname}  readonly  />
+        <FormControl type="text" value={this.state.inspname}  readOnly  />
         <FormControl.Feedback />
       </FormGroup>
     </form>
