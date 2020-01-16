@@ -120,19 +120,19 @@ class HomePage extends React.Component {
      // let body = 'reportnumber=' + encodeURIComponent(this.state.ri_report_to_add)  ;
      //inspname: "",       dep: 
      // let body = 'reportnumber=' + encodeURIComponent(this.state.ri_report_to_add) ;
-     let body = 'inspname  =  '   + encodeURIComponent(this.state.inspname)+
-     'dep  =  '   + encodeURIComponent(this.state.dep)+
-     'ri_report_to_add  =  '   + encodeURIComponent(this.state.ri_report_to_add)+
-     'supplier  =  '   + encodeURIComponent(this.state.supplier)+
-     'daterec  =  '   + encodeURIComponent(this.state.daterec)+
-     'dateinsp  =  '   + encodeURIComponent(this.state.dateinsp)+
-     'wopomtt  =  '   + encodeURIComponent(this.state.wopomtt)+
-     'no  =  '   + encodeURIComponent(this.state.no)+
-     'destination  =  '   + encodeURIComponent(this.state.destination)+
-     'pn  =  '   + encodeURIComponent(this.state.pn)+
-     'description  =  '   + encodeURIComponent(this.state.description)+
-     'lotsize  =  '   + encodeURIComponent(this.state.lotsize)+
-     'samplesize  =  '   + encodeURIComponent(this.state.samplesize);
+     let body = 'inspname  =  '   + encodeURIComponent(this.state.inspname) +
+     ', dep  =  '   + encodeURIComponent(this.state.dep) +
+     ' , ri_report_to_add  =  '   + encodeURIComponent(this.state.ri_report_to_add) +
+     ' , supplier  =  '   + encodeURIComponent(this.state.supplier) +
+     ' , daterec  =  '   + encodeURIComponent(this.state.daterec)+
+     ' , dateinsp  =  '   + encodeURIComponent(this.state.dateinsp)+
+     ' , wopomtt  =  '   + encodeURIComponent(this.state.wopomtt)+
+     ' , no  =  '   + encodeURIComponent(this.state.no)+
+     ' , destination  =  '   + encodeURIComponent(this.state.destination)+
+     ' , pn  =  '   + encodeURIComponent(this.state.pn)+
+     ' , description  =  '   + encodeURIComponent(this.state.description)+
+     ' , lotsize  =  '   + encodeURIComponent(this.state.lotsize)+
+     ' , samplesize  =  '   + encodeURIComponent(this.state.samplesize);
      console.log(body);
       xhr.send(body);
 
