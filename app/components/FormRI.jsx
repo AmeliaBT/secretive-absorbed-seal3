@@ -13,8 +13,8 @@ class FormRI extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      //email: "",
-      //password: ""
+      //supplier: "",
+      //pn: ""
       inspname: "",
       dep: "",
       ri_report_to_add: "",
@@ -50,8 +50,8 @@ class FormRI extends React.Component {
       xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
       
       
-      let body = 'email=' + encodeURIComponent(this.state.email) +
-      '&password=' + encodeURIComponent(this.state.password);
+      let body = 'supplier=' + encodeURIComponent(this.state.supplier) +
+      '&pn=' + encodeURIComponent(this.state.pn);
 
 
       xhr.send(body);
@@ -66,13 +66,13 @@ class FormRI extends React.Component {
         if(response.error == 0) {
            window.location.href = "/books";
            that.setState({
-          ["email"]: "Succsess",
-          ["password"]: "Succsess"
+          ["supplier"]: "Succsess",
+          ["pn"]: "Succsess"
            });
         }
         else {
           that.setState({
-          ["email"]: "Wrong email and/or password"
+          ["supplier"]: "Wrong supplier and/or pn"
            });
          }
         }
@@ -82,13 +82,13 @@ class FormRI extends React.Component {
     return (
       <div>
             <Header/>
-            <Form className="Form" horizontal method="post" action="/login" name="login" onSubmit={this.handleSubmit}>   
+            <Form className="Form" horizontal method="post" action="/addRIreport" name="xlogin" onSubmit={this.handleSubmit}>   
               <FormGroup controlId="formHorizontalEmail">
                 <Col className="form-label" sm={2}>
                   Email
                 </Col>
                 <Col sm={10}>
-                  <FormControl type="email" name="email" required value={this.state.email} placeholder="Email" onChange={this.handleChangeValue} />
+                  <FormControl type="supplier" name="supplier" required value={this.state.supplier} placeholder="Email" onChange={this.handleChangeValue} />
                 </Col>
               </FormGroup>
 
@@ -97,13 +97,14 @@ class FormRI extends React.Component {
                   Password
                 </Col>
                 <Col sm={10}>
-                  <FormControl type="password" name="password" required value={this.state.password} placeholder="Password" onChange={this.handleChangeValue}/>
+                  <FormControl type="text" name="pn" required value={this.state.pn} placeholder="PN" onChange={this.handleChangeValue}/>
                 </Col>
               </FormGroup>
 
               <FormGroup>
                 <Col smOffset={2} sm={10}>
-                  <Button type="submit">Log in</Button>
+               <Button type="submit">submit RI form in</Button>
+                 {/*     <Button type="button" style={{"width": "100%"}} onClick={this.addRIreport}>Add RI Report</Button>*/}
                 </Col>
               </FormGroup>
           </Form>
