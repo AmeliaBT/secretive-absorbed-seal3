@@ -82,7 +82,7 @@ class FormRI extends React.Component {
     return (
       <div>
             <Header/>
-            <Form className="Form" horizontal method="post" action="/addRIreport" name="xlogin" onSubmit={this.handleSubmit}>   
+            <Form className="Form" horizontal method="post" action="/addRIreport" onSubmit={this.handleSubmit}>   
               <FormGroup controlId="formHorizontalEmail">
                 <Col className="form-label" sm={2}>
                   Email
