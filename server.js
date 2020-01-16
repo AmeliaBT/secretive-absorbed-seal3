@@ -283,23 +283,17 @@ app.post("/get-street-city-by-nick", function(request, response) {
 /***********************************/
 app.post("/add-report", function(request, response) {
  // reportModel.findById(request.session.passport.user, (err, user) => {
-  if (err) throw err;
-   
+  //if (err) throw err;   
     // create a report
-    //
-  // let obj = {reportnumber: request.body["reportnumber"], inspname: request.body["inspname"]   };
-//     
-  // create a user
-//let obj = {inspname: request.body["inspname"], email: request.body["email"], password: hash, dep: request.body["dep"]};                    
-                                              
-   let obj = {reportnumber: request.body["reportnumber"],  supplier: request.body["supplier"],    daterec:"",     dateinsp:"",  wopomtt: request.body["wopomtt"],     no: "1233",   destination:"ata3",     pn: "990-12123",     description: "AT-92243",    lotsize: 1003,     samplesize: 53};
-console.log("insp and dep: ");
-   console.log(request.body["inspname"]);
-    console.log(request.body["dep"] );
-/*    let obj = {
+                                               
+ /* ok: */ 
+//  let obj = {reportnumber: request.body["reportnumber"],  supplier: request.body["supplier"],    daterec:"",     dateinsp:"",  wopomtt: request.body["wopomtt"],     no: "1233",   destination:"ata3",     pn: "990-12123",     description: "AT-92243",    lotsize: 1003,     samplesize: 53};
+//console.log("insp and dep: ");
+ //  console.log(request.body["inspname"]);
+  //  console.log(request.body["dep"] ); 
+ let obj = {
 inspname: request.body["inspname"], 
-dep: request.body["dep"] 
-
+dep: request.body["dep"] ,
 ri_report_to_add: request.body["ri_report_to_add"], 
 supplier: request.body["supplier"], 
 daterec: request.body["daterec"], 
@@ -312,7 +306,7 @@ description: request.body["description"], 
 lotsize: request.body["lotsize"], 
 samplesize: request.body["samplesize"] 
 
-    };*/
+    };
     let report = new reportModel(obj);
           
             report.save(function (err) {
