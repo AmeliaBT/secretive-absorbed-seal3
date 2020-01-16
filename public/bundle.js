@@ -48575,21 +48575,19 @@ class HomePage extends React.Component {
   React.createElement(Col, {xs: 12, md: 8, className: "right-col"}, 
     React.createElement("div", {className: "library-label"}, "Your RI Reports"), 
 
-
-
-      React.createElement(Form, {inline: true, className: "input-label add-form"}, 
-      React.createElement(FormGroup, {controlId: "addBookForm"}, 
-        React.createElement(FormControl, {type: "text", value: this.state.reportnumber, placeholder: "enter reportnumber", 
-          onChange: this.reportChanged, style: {"width": "100%"}}), 
-            
-React.createElement(FormControl, {type: "text", value: this.state.inspname, placeholder: "enter inspname", 
-          onChange: this.reportChanged, style: {"width": "100%"}}), 
-
-
-      React.createElement(Button, {type: "button", style: {"width": "100%"}, onClick: this.addRIreport}, "Add RI Report"), 
-    React.createElement(FormControl.Feedback, null)
-  )
-), 
+/*
+                <Form inline className="input-label add-form">
+                  <FormGroup controlId="addBookForm"  >
+                    <FormControl type="text" value={this.state.reportnumber} placeholder="enter reportnumber"
+                      onChange={this.reportChanged} style={{ "width": "100%" }} />
+                    <FormControl type="text" value={this.state.inspname} placeholder="enter inspname"
+                      onChange={this.reportChanged} style={{ "width": "100%" }} />
+                    <Button type="button" style={{ "width": "100%" }} onClick={this.addRIreport}>Add RI Report</Button>
+                    <FormControl.Feedback />
+                  </FormGroup>
+                </Form>
+ */
+ React.createElement(FormRI, null), 
 React.createElement("div", {className: "library"}, 
   this.state.user_reports
 )
@@ -49031,7 +49029,7 @@ class FormRI extends React.Component {
     console.log(that)
       const xhr = new XMLHttpRequest();
       
-      xhr.open('POST', '/log-in', true);
+      xhr.open('POST', '/addRIreport', true);
       xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
       
       
@@ -49070,16 +49068,16 @@ class FormRI extends React.Component {
             React.createElement(Form, {className: "Form", horizontal: true, method: "post", action: "/addRIreport", onSubmit: this.handleSubmit}, 
               React.createElement(FormGroup, {controlId: "formHorizontalEmail"}, 
                 React.createElement(Col, {className: "form-label", sm: 2}, 
-                  "Email"
+                "supplier"
                 ), 
                 React.createElement(Col, {sm: 10}, 
-                  React.createElement(FormControl, {type: "supplier", name: "supplier", required: true, value: this.state.supplier, placeholder: "Email", onChange: this.handleChangeValue})
+                  React.createElement(FormControl, {type: "text", name: "supplier", required: true, value: this.state.supplier, placeholder: "supplier", onChange: this.handleChangeValue})
                 )
               ), 
 
               React.createElement(FormGroup, {controlId: "formHorizontalPassword"}, 
                 React.createElement(Col, {className: "form-label", sm: 2}, 
-                  "Password"
+                  "PN"
                 ), 
                 React.createElement(Col, {sm: 10}, 
                   React.createElement(FormControl, {type: "text", name: "pn", required: true, value: this.state.pn, placeholder: "PN", onChange: this.handleChangeValue})
@@ -49088,7 +49086,7 @@ class FormRI extends React.Component {
 
               React.createElement(FormGroup, null, 
                 React.createElement(Col, {smOffset: 2, sm: 10}, 
-               React.createElement(Button, {type: "submit"}, "submit RI form in")
+               React.createElement(Button, {type: "submit"}, "submit RI form")
                  /*     <Button type="button" style={{"width": "100%"}} onClick={this.addRIreport}>Add RI Report</Button>*/
                 )
               )

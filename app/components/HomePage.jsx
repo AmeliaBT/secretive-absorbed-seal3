@@ -133,21 +133,19 @@ class HomePage extends React.Component {
   <Col xs={12} md={8} className="right-col">
     <div className="library-label">Your RI Reports</div>
 
-
-
-      <Form inline className="input-label add-form">
-      <FormGroup controlId="addBookForm"  >
-        <FormControl  type="text"  value={this.state.reportnumber}  placeholder="enter reportnumber"
-          onChange={this.reportChanged} style={{"width": "100%"}} />
-            
-<FormControl  type="text"  value={this.state.inspname}  placeholder="enter inspname"
-          onChange={this.reportChanged} style={{"width": "100%"}} />
-
-
-      <Button type="button" style={{"width": "100%"}} onClick={this.addRIreport}>Add RI Report</Button>
-    <FormControl.Feedback />
-  </FormGroup>
-</Form>
+{/*
+                <Form inline className="input-label add-form">
+                  <FormGroup controlId="addBookForm"  >
+                    <FormControl type="text" value={this.state.reportnumber} placeholder="enter reportnumber"
+                      onChange={this.reportChanged} style={{ "width": "100%" }} />
+                    <FormControl type="text" value={this.state.inspname} placeholder="enter inspname"
+                      onChange={this.reportChanged} style={{ "width": "100%" }} />
+                    <Button type="button" style={{ "width": "100%" }} onClick={this.addRIreport}>Add RI Report</Button>
+                    <FormControl.Feedback />
+                  </FormGroup>
+                </Form>
+ */}
+ <FormRI />
 <div className="library">
   {this.state.user_reports}
 </div>

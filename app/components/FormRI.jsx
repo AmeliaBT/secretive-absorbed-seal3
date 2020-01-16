@@ -46,7 +46,7 @@ class FormRI extends React.Component {
     console.log(that)
       const xhr = new XMLHttpRequest();
       
-      xhr.open('POST', '/log-in', true);
+      xhr.open('POST', '/addRIreport', true);
       xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
       
       
@@ -85,16 +85,16 @@ class FormRI extends React.Component {
             <Form className="Form" horizontal method="post" action="/addRIreport" onSubmit={this.handleSubmit}>   
               <FormGroup controlId="formHorizontalEmail">
                 <Col className="form-label" sm={2}>
-                  Email
+                supplier
                 </Col>
                 <Col sm={10}>
-                  <FormControl type="supplier" name="supplier" required value={this.state.supplier} placeholder="Email" onChange={this.handleChangeValue} />
+                  <FormControl type="text" name="supplier" required value={this.state.supplier} placeholder="supplier" onChange={this.handleChangeValue} />
                 </Col>
               </FormGroup>
 
               <FormGroup controlId="formHorizontalPassword">
                 <Col className="form-label" sm={2}>
-                  Password
+                  PN
                 </Col>
                 <Col sm={10}>
                   <FormControl type="text" name="pn" required value={this.state.pn} placeholder="PN" onChange={this.handleChangeValue}/>
@@ -103,7 +103,7 @@ class FormRI extends React.Component {
 
               <FormGroup>
                 <Col smOffset={2} sm={10}>
-               <Button type="submit">submit RI form in</Button>
+               <Button type="submit">submit RI form</Button>
                  {/*     <Button type="button" style={{"width": "100%"}} onClick={this.addRIreport}>Add RI Report</Button>*/}
                 </Col>
               </FormGroup>
