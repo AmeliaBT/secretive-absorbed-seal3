@@ -18,7 +18,8 @@ class HomePage extends React.Component {
     this.state = {
       inspname: "Me2",
       dep: "d2",
-      ri_report_to_add: "RI-5358",
+      //ri_report_to_add: "RI-5358",
+      reportnumber: 
       supplier: "oem2",
       daterec: "",
       dateinsp: "",
@@ -119,7 +120,8 @@ class HomePage extends React.Component {
 
      // let body = 'reportnumber=' + encodeURIComponent(this.state.ri_report_to_add)  ;
      //inspname: "",       dep: 
-     // let body = 'reportnumber=' + encodeURIComponent(this.state.ri_report_to_add) ;
+     let body = 'reportnumber=' + encodeURIComponent(this.state.reportnumber) ;
+     /*
      let body = 'inspname  =  '   + encodeURIComponent(this.state.inspname) +
      ', dep  =  '   + encodeURIComponent(this.state.dep) +
      ' , ri_report_to_add  =  '   + encodeURIComponent(this.state.ri_report_to_add) +
@@ -133,6 +135,8 @@ class HomePage extends React.Component {
      ' , description  =  '   + encodeURIComponent(this.state.description)+
      ' , lotsize  =  '   + encodeURIComponent(this.state.lotsize)+
      ' , samplesize  =  '   + encodeURIComponent(this.state.samplesize);
+
+*/
      console.log(body);
       xhr.send(body);
 
@@ -245,13 +249,14 @@ class HomePage extends React.Component {
     <div className="library-label">Your RI Reports</div>
 
 
-    
+
       <Form inline className="input-label add-form">
       <FormGroup controlId="addBookForm"  >
         <FormControl  type="text"  value={this.state.ri_report_to_add}  placeholder="enter P/N"
           onChange={this.reportChanged} style={{"width": "100%"}} />
             
-
+<FormControl  type="text"  value={this.state.inspname}  placeholder="enter inspname"
+          onChange={this.reportChanged} style={{"width": "100%"}} />
 
 
       <Button type="button" style={{"width": "100%"}} onClick={this.addRIreport}>Add RI Report</Button>

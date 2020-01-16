@@ -48561,7 +48561,8 @@ class HomePage extends React.Component {
 
      // let body = 'reportnumber=' + encodeURIComponent(this.state.ri_report_to_add)  ;
      //inspname: "",       dep: 
-     // let body = 'reportnumber=' + encodeURIComponent(this.state.ri_report_to_add) ;
+     let body = 'reportnumber=' + encodeURIComponent(this.state.reportnumber) ;
+     /*
      let body = 'inspname  =  '   + encodeURIComponent(this.state.inspname) +
      ', dep  =  '   + encodeURIComponent(this.state.dep) +
      ' , ri_report_to_add  =  '   + encodeURIComponent(this.state.ri_report_to_add) +
@@ -48575,6 +48576,8 @@ class HomePage extends React.Component {
      ' , description  =  '   + encodeURIComponent(this.state.description)+
      ' , lotsize  =  '   + encodeURIComponent(this.state.lotsize)+
      ' , samplesize  =  '   + encodeURIComponent(this.state.samplesize);
+
+*/
      console.log(body);
       xhr.send(body);
 
@@ -48687,13 +48690,14 @@ class HomePage extends React.Component {
     React.createElement("div", {className: "library-label"}, "Your RI Reports"), 
 
 
-    
+
       React.createElement(Form, {inline: true, className: "input-label add-form"}, 
       React.createElement(FormGroup, {controlId: "addBookForm"}, 
         React.createElement(FormControl, {type: "text", value: this.state.ri_report_to_add, placeholder: "enter P/N", 
           onChange: this.reportChanged, style: {"width": "100%"}}), 
             
-
+React.createElement(FormControl, {type: "text", value: this.state.inspname, placeholder: "enter inspname", 
+          onChange: this.reportChanged, style: {"width": "100%"}}), 
 
 
       React.createElement(Button, {type: "button", style: {"width": "100%"}, onClick: this.addRIreport}, "Add RI Report"), 
