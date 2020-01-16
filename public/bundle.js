@@ -48574,8 +48574,8 @@ class HomePage extends React.Component {
      'pn  =  '   + encodeURIComponent(this.state.pn)+
      'description  =  '   + encodeURIComponent(this.state.description)+
      'lotsize  =  '   + encodeURIComponent(this.state.lotsize)+
-     'samplesize  =  '   + encodeURIComponent(this.state.samplesize)
-     
+     'samplesize  =  '   + encodeURIComponent(this.state.samplesize);
+     console.log(body);
       xhr.send(body);
 
       xhr.onreadystatechange = function() {
