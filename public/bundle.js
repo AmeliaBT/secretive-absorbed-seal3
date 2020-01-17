@@ -48493,19 +48493,16 @@ class HomePage extends React.Component {
           return;
         }
         let response = JSON.parse(this.responseText);
+        console.log("respon parsed ")
         /*
-        let income = response.income.map((e) => {
-          return <IncomeProposal reportnumber1={e.chosenBook} reportnumber2={e.chosenAnotherUserBook} nickname={e.anotherUserNickname}/>;
-        });
-        let outcome = response.outcome.map((e) => {
-          return <OutcomeProposal reportnumber1={e.chosenBook} reportnumber2={e.chosenAnotherUserBook} nickname={e.anotherUserNickname}/>;
-        });
+        to do -list RIs for Inspector
 */
        // let reports = response.reports.map((e) => {
         {/* return <UserBook img_url={e.img_url} reportnumber={e.reportnumber}/>;*/}  
       //  return <UserBook  reportnumber={e.reportnumber}/>;
        // });
           if(response.isLogedIn == true) {
+            console.log(" loged in ok")
              that.setState({
             ["inspname"]: response.inspname,
             ["dep"]: response.dep
@@ -48546,15 +48543,19 @@ class HomePage extends React.Component {
       )
     ), 
     React.createElement("div", {className: "profile-line"}), 
+                
+    React.createElement("div", {className: "proposal-label"}, "Your RI Reports (?) "), 
+    React.createElement("div", {className: "profile-line"})
     /* 
    
-        */
-    React.createElement("div", {className: "proposal-label"}, "New RI report "), 
-    React.createElement("div", {className: "profile-line"}), 
-    React.createElement(Tabs, {defaultActiveKey: 1, id: "uncontrolled-tab", className: "tabs"}, 
-      React.createElement(Tab, {eventKey: 1, title: "Income"}, "  old "), 
-      React.createElement(Tab, {eventKey: 2, title: "Outcome"}, "   old     ")
-    ), "   "), 
+       
+    <Tabs defaultActiveKey={1} id="uncontrolled-tab" className="tabs">
+      <Tab eventKey={1} title="Income">  old </Tab>
+      <Tab eventKey={2} title="Outcome">   old     </Tab>
+    </Tabs>  
+     */
+    
+     ), 
   React.createElement(Col, {xs: 12, md: 8, className: "right-col"}, 
     React.createElement("div", {className: "library-label"}, "Your RI Reports"), 
 
