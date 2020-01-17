@@ -120,7 +120,7 @@ class HomePage extends React.Component {
     
      </Col>
   {/* <Col xs={12} md={8} className="left-col"> */}
-  <Col  md={16} className="right-col">
+  <Col  md={10} className="right-col">
  {/*   <div className="library-label">Your RI Reports</div>
                 <Form inline className="input-label add-form">
                   <FormGroup controlId="addBookForm"  >

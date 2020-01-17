@@ -48562,7 +48562,7 @@ class HomePage extends React.Component {
     
      ), 
   /* <Col xs={12} md={8} className="left-col"> */
-  React.createElement(Col, {md: 16, className: "right-col"}, 
+  React.createElement(Col, {md: 10, className: "right-col"}, 
  /*   <div className="library-label">Your RI Reports</div>
                 <Form inline className="input-label add-form">
                   <FormGroup controlId="addBookForm"  >
