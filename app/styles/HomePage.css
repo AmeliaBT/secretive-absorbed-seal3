@@ -1,6 +1,6 @@
 .profile {
   background-color: blue;
-  width: 90%;
+  width: 95%;
   height: 1000px;
   margin: auto;
   border: #9d9d9d 1px solid;
@@ -13,8 +13,8 @@
 }
 
 .right-col {
-  background: white; /* #2a2a2a;*/
-  width: 60.7%;
+  background: white; /* #2a2a2a;   width: 60.7%;*/
+  width: 80.7%;
   height: 980px;
 }
 

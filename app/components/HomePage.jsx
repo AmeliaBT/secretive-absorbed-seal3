@@ -6,8 +6,8 @@ const style = require('../styles/HomePage');
 // other components and etc
 const Header = require('./Header');
 const UserBook = require('./UserBook');
-const IncomeProposal = require('./IncomeProposal');
-const OutcomeProposal = require('./OutcomeProposal');
+//const IncomeProposal = require('./IncomeProposal');
+//const OutcomeProposal = require('./OutcomeProposal');
 const FormRI =require('./FormRI');
 // react-bootstrap
 const {Grid, Row, Col, FormControl, ControlLabel, FormGroup, HelpBlock, Tabs, Tab, Form, Button} = require('react-bootstrap');
@@ -103,7 +103,7 @@ class HomePage extends React.Component {
                   </FormGroup>
                 </form>
                 <div className="profile-line"></div>                            
-                <div className="proposal-label">Your RI Reps </div>
+                <div className="proposal-label">Your Reps </div>
                 <div className="profile-line"></div>
   {/*
  <div className="library">
@@ -120,7 +120,7 @@ class HomePage extends React.Component {
     
      </Col>
   {/* <Col xs={12} md={8} className="left-col"> */}
-  <Col  md={10} className="right-col">
+  <Col  md={16} className="right-col">
  {/*   <div className="library-label">Your RI Reports</div>
                 <Form inline className="input-label add-form">
                   <FormGroup controlId="addBookForm"  >
