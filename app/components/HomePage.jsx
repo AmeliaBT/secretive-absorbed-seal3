@@ -82,8 +82,9 @@ class HomePage extends React.Component {
                 <Row className="show-grid">
  {/* <Col xs={6} md={4} className="left-col"> */}
      <Col xs={3} md={2} className="left-col">
-                    <div className="profile-label">Your profile</div>
-                    <div className="profile-line"></div>
+                   {/* <div className="profile-label">Your profile</div>*/}
+
+                    <div className="profile-line"></div> 
 
                 <form className="input-label">
                   <FormGroup controlId="formBasicText" >
@@ -97,7 +98,7 @@ class HomePage extends React.Component {
                 <form className="input-label">
                   <FormGroup controlId="formBasicText" >
                     <ControlLabel>Your dep</ControlLabel>
-                    <FormControl type="text" value={this.state.dep} placeholder="enter your dep" onChange={this.depChanged} />
+                    <FormControl type="text" value={this.state.dep} readOnly />
                     <FormControl.Feedback />
                   </FormGroup>
                 </form>

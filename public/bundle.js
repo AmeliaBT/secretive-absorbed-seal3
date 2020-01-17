@@ -2397,7 +2397,7 @@ class Header extends React.Component {
           ["navBtns"]: React.createElement(Nav, {pullLeft: true, className: "link span"}, 
                         React.createElement(NavItem, {className: "span"}, 
                        /*   <Link  to='/homepage' className="link">Welcome Inspector, {response.nickname}{response.name} {response.inspector} </Link>*/
-                           React.createElement(Link, {to: "/homepage", className: "link"}, "Welcome Inspector ", response.inspname)
+                           React.createElement(Link, {to: "/homepage", className: "link"}, response.inspname, "'s Home Page")
                         ), 
                         React.createElement(NavItem, {className: "span"}, 
                           React.createElement("div", {onClick: that.handleLogOut, className: "link"}, "Log out")
@@ -48524,7 +48524,8 @@ class HomePage extends React.Component {
                 React.createElement(Row, {className: "show-grid"}, 
  /* <Col xs={6} md={4} className="left-col"> */
      React.createElement(Col, {xs: 3, md: 2, className: "left-col"}, 
-                    React.createElement("div", {className: "profile-label"}, "Your profile"), 
+                   /* <div className="profile-label">Your profile</div>*/
+
                     React.createElement("div", {className: "profile-line"}), 
 
                 React.createElement("form", {className: "input-label"}, 
@@ -48539,7 +48540,7 @@ class HomePage extends React.Component {
                 React.createElement("form", {className: "input-label"}, 
                   React.createElement(FormGroup, {controlId: "formBasicText"}, 
                     React.createElement(ControlLabel, null, "Your dep"), 
-                    React.createElement(FormControl, {type: "text", value: this.state.dep, placeholder: "enter your dep", onChange: this.depChanged}), 
+                    React.createElement(FormControl, {type: "text", value: this.state.dep, readOnly: true}), 
                     React.createElement(FormControl.Feedback, null)
                   )
                 ), 
