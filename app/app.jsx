@@ -29,12 +29,13 @@ render((
      
        
         <Route exact path="/" component={Main}/>
-        <Route path="/books" component={RIreports}/>
+        <Route path="/reports" component={RIreports}/>
         
         <Route path="/signup" component={SignUp}/>
         <Route path="/login" component={LogIn}/>
         <Route path="/homepage" component={HomePage}/>
-       {/*  < DisplayMessages />*/}
+       {/*  < DisplayMessages />
+        <Route path="/books" component={RIreports}/>*/}
       </div>
     </BrowserRouter>
   </Provider>), document.getElementById('main'));

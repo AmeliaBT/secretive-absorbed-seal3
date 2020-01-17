@@ -1,5 +1,5 @@
-.show-grid .profile {
-  background-color: blue;
+.profile {
+  background-color: green;
   width: 95%;
   height: 1000px;
   margin: auto;
@@ -13,7 +13,7 @@
 }
 
 .right-col {
-  background: white; /* #2a2a2a;   width: 60.7%;*/
+  background-color: white; /* #2a2a2a;   width: 60.7%;*/
   width: 80.7%;
   height: 980px;
 }
@@ -101,3 +101,5 @@
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
+.show-grid { background-color: red;
+  width: 95%;}

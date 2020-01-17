@@ -12622,12 +12622,13 @@ render((
      
        
         React.createElement(Route, {exact: true, path: "/", component: Main}), 
-        React.createElement(Route, {path: "/books", component: RIreports}), 
+        React.createElement(Route, {path: "/reports", component: RIreports}), 
         
         React.createElement(Route, {path: "/signup", component: SignUp}), 
         React.createElement(Route, {path: "/login", component: LogIn}), 
         React.createElement(Route, {path: "/homepage", component: HomePage})
-       /*  < DisplayMessages />*/
+       /*  < DisplayMessages />
+        <Route path="/books" component={RIreports}/>*/
       )
     )
   )), document.getElementById('main'));
@@ -48545,7 +48546,7 @@ class HomePage extends React.Component {
                   )
                 ), 
                 React.createElement("div", {className: "profile-line"}), 
-                React.createElement("div", {className: "proposal-label"}, "Your Reps "), 
+                React.createElement("div", {className: "proposal-label"}, "Your Reps ... "), 
                 React.createElement("div", {className: "profile-line"})
   /*
  <div className="library">
@@ -48628,7 +48629,7 @@ exports = module.exports = __webpack_require__(21)(false);
 
 
 // module
-exports.push([module.i, ".profile {\n  background-color: blue;\n  width: 95%;\n  height: 1000px;\n  margin: auto;\n  border: #9d9d9d 1px solid;\n}\n\n.left-col {\n  background: #987D00;  /*#2a2a2a;*/\n  height: 980px;\n  border-right: #9d9d9d 10px solid;\n}\n\n.right-col {\n  background: white; /* #2a2a2a;   width: 60.7%;*/\n  width: 80.7%;\n  height: 980px;\n}\n\n.profile-label {\n  text-align: center;\n  font-size: 30px;\n  color: black; /* #f6ff67;*/\n  margin: 3%;\n  margin-top: 30px;\n}\n\n.proposal-label {\n  text-align: center;\n  font-size: 30px;\n  color:  black; /* #f6ff67;#f6ff67;*/ \n  margin: 3%;\n  margin-top: 60px;\n}\n\n.profile-line {\n    background-color: #44708f;\n    width: 90%;\n    height: 3px;\n    margin: auto;\n    margin-bottom: 10px\n}\n\n.input-label {\n  width: 90%;\n  margin: auto;\n  color: rgb(157, 157, 157);\n}\n\n.tabs {\n  width: 90%;\n  margin: auto;\n  margin-top: 20px;\n}\n\n.nav-tabs>li>a {\n  color: #44708f;\n}\n\n.proposals-container {\n  height: 400px;\n  background: #2a2a2a;\n  border: 5px solid white;\n  overflow: auto;\n}\n\n.library {\n  background: #6ca9d4;\n  width: 94.2%;\n  height: 815px;\n  margin: auto;\n  margin-top: 140px;\n  overflow: auto;\n  border: 10px #9d9d9d solid;\n  border-top-right-radius: 10px;\n  border-bottom-left-radius: 10px;\n  border-bottom-right-radius: 10px;\n}\n\n.add-form {\n  float: right;\n  margin-top: 20px;\n  margin-right: 25px;\n  background: #3f6e8e;\n  border-radius: 10px;\n  padding: 20px;\n  width: 50%;\n}\n\n.library-label {\n  color: #f6ff67;\n  float: left;\n  font-size: 16px;\n  padding: 30px;\n  background: #3f6e8e;\n  margin-top: 10px;\n  margin-left: 20px;\n  height: 140px;\n  border: 1px #9d9d9d solid;\n  border-top-left-radius: 10px;\n  border-top-right-radius: 10px;\n}", ""]);
+exports.push([module.i, ".profile {\n  background-color: green;\n  width: 95%;\n  height: 1000px;\n  margin: auto;\n  border: #9d9d9d 1px solid;\n}\n\n.left-col {\n  background: #987D00;  /*#2a2a2a;*/\n  height: 980px;\n  border-right: #9d9d9d 10px solid;\n}\n\n.right-col {\n  background-color: white; /* #2a2a2a;   width: 60.7%;*/\n  width: 80.7%;\n  height: 980px;\n}\n\n.profile-label {\n  text-align: center;\n  font-size: 30px;\n  color: black; /* #f6ff67;*/\n  margin: 3%;\n  margin-top: 30px;\n}\n\n.proposal-label {\n  text-align: center;\n  font-size: 30px;\n  color:  black; /* #f6ff67;#f6ff67;*/ \n  margin: 3%;\n  margin-top: 60px;\n}\n\n.profile-line {\n    background-color: #44708f;\n    width: 90%;\n    height: 3px;\n    margin: auto;\n    margin-bottom: 10px\n}\n\n.input-label {\n  width: 90%;\n  margin: auto;\n  color: rgb(157, 157, 157);\n}\n\n.tabs {\n  width: 90%;\n  margin: auto;\n  margin-top: 20px;\n}\n\n.nav-tabs>li>a {\n  color: #44708f;\n}\n\n.proposals-container {\n  height: 400px;\n  background: #2a2a2a;\n  border: 5px solid white;\n  overflow: auto;\n}\n\n.library {\n  background: #6ca9d4;\n  width: 94.2%;\n  height: 815px;\n  margin: auto;\n  margin-top: 140px;\n  overflow: auto;\n  border: 10px #9d9d9d solid;\n  border-top-right-radius: 10px;\n  border-bottom-left-radius: 10px;\n  border-bottom-right-radius: 10px;\n}\n\n.add-form {\n  float: right;\n  margin-top: 20px;\n  margin-right: 25px;\n  background: #3f6e8e;\n  border-radius: 10px;\n  padding: 20px;\n  width: 50%;\n}\n\n.library-label {\n  color: #f6ff67;\n  float: left;\n  font-size: 16px;\n  padding: 30px;\n  background: #3f6e8e;\n  margin-top: 10px;\n  margin-left: 20px;\n  height: 140px;\n  border: 1px #9d9d9d solid;\n  border-top-left-radius: 10px;\n  border-top-right-radius: 10px;\n}\n.show-grid { background-color: red;\n  width: 95%;}", ""]);
 
 // exports
 

@@ -103,7 +103,7 @@ class HomePage extends React.Component {
                   </FormGroup>
                 </form>
                 <div className="profile-line"></div>                            
-                <div className="proposal-label">Your Reps </div>
+                <div className="proposal-label">Your Reps ... </div>
                 <div className="profile-line"></div>
   {/*
  <div className="library">
