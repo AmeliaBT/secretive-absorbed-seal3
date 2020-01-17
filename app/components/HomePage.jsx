@@ -81,7 +81,7 @@ class HomePage extends React.Component {
               <Grid>
                 <Row className="show-grid">
  {/* <Col xs={6} md={4} className="left-col"> */}
-     <Col xs={3} md={2} className="left-col">
+     <Col md={2} className="left-col">
                    {/* <div className="profile-label">Your profile</div>*/}
 
                     <div className="profile-line"></div> 
@@ -103,7 +103,7 @@ class HomePage extends React.Component {
                   </FormGroup>
                 </form>
                 <div className="profile-line"></div>                            
-                <div className="proposal-label">Your RI Reports (?) </div>
+                <div className="proposal-label">Your RI Reports </div>
                 <div className="profile-line"></div>
   {/*
  <div className="library">
@@ -120,7 +120,7 @@ class HomePage extends React.Component {
     
      </Col>
   {/* <Col xs={12} md={8} className="left-col"> */}
-  <Col xs={9} md={10} className="right-col">
+  <Col  md={10} className="right-col">
  {/*   <div className="library-label">Your RI Reports</div>
                 <Form inline className="input-label add-form">
                   <FormGroup controlId="addBookForm"  >

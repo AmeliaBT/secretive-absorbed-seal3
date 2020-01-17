@@ -48523,7 +48523,7 @@ class HomePage extends React.Component {
               React.createElement(Grid, null, 
                 React.createElement(Row, {className: "show-grid"}, 
  /* <Col xs={6} md={4} className="left-col"> */
-     React.createElement(Col, {xs: 3, md: 2, className: "left-col"}, 
+     React.createElement(Col, {md: 2, className: "left-col"}, 
                    /* <div className="profile-label">Your profile</div>*/
 
                     React.createElement("div", {className: "profile-line"}), 
@@ -48545,7 +48545,7 @@ class HomePage extends React.Component {
                   )
                 ), 
                 React.createElement("div", {className: "profile-line"}), 
-                React.createElement("div", {className: "proposal-label"}, "Your RI Reports (?) "), 
+                React.createElement("div", {className: "proposal-label"}, "Your RI Reports "), 
                 React.createElement("div", {className: "profile-line"})
   /*
  <div className="library">
@@ -48562,7 +48562,7 @@ class HomePage extends React.Component {
     
      ), 
   /* <Col xs={12} md={8} className="left-col"> */
-  React.createElement(Col, {xs: 9, md: 10, className: "right-col"}, 
+  React.createElement(Col, {md: 10, className: "right-col"}, 
  /*   <div className="library-label">Your RI Reports</div>
                 <Form inline className="input-label add-form">
                   <FormGroup controlId="addBookForm"  >

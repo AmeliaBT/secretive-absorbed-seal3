@@ -1,9 +1,9 @@
 .profile {
   background-color: blue;
-  width: 70%;
+  width: 90%;
   height: 1000px;
   margin: auto;
-  border: #9d9d9d 10px solid;
+  border: #9d9d9d 1px solid;
 }
 
 .left-col {
@@ -91,13 +91,13 @@
 .library-label {
   color: #f6ff67;
   float: left;
-  font-size: 30px;
+  font-size: 16px;
   padding: 30px;
   background: #3f6e8e;
   margin-top: 10px;
   margin-left: 20px;
   height: 140px;
-  border: 10px #9d9d9d solid;
+  border: 1px #9d9d9d solid;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
