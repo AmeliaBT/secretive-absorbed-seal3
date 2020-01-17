@@ -292,8 +292,8 @@ app.post("/add-report", function(request, response) {
  /* ok: */ 
 let obj = {  daterec:"",     dateinsp:"",  wopomtt: request.body["supplier"],     no: "1233",   destination:"ata3",     pn: "990-12123",     description: "AT-92243",    lotsize: 1003,     samplesize: 53};
 console.log("supplier and pn: ");
-  console.log(request.body.supplier);
-   console.log(request.body["pn"] ); 
+  console.log(request.body.supplier); //ok format
+   console.log(request.body["pn"] ); //ok format
    /*
  let obj = {
 inspname: request.body["inspname"], 
