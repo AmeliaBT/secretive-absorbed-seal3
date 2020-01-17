@@ -7,13 +7,13 @@
 }
 
 .left-col {
-  background: #2a2a2a;
+  background: #987D00;  /*#2a2a2a;*/
   height: 980px;
   border-right: #9d9d9d 10px solid;
 }
 
 .right-col {
-  background: #2a2a2a;
+  background: white; /* #2a2a2a;*/
   width: 60.7%;
   height: 980px;
 }
@@ -21,7 +21,7 @@
 .profile-label {
   text-align: center;
   font-size: 30px;
-  color: #f6ff67;
+  color: black; /* #f6ff67;*/
   margin: 3%;
   margin-top: 30px;
 }
@@ -29,7 +29,7 @@
 .proposal-label {
   text-align: center;
   font-size: 30px;
-  color: #f6ff67;
+  color:  black; /* #f6ff67;#f6ff67;*/ 
   margin: 3%;
   margin-top: 60px;
 }
