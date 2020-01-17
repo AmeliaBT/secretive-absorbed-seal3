@@ -48426,7 +48426,7 @@ class FormRI extends React.Component {
     return (
       React.createElement("div", null, 
           /*  <Header/>*/
-            React.createElement(Form, {className: "Form", horizontal: true, method: "post", action: "/addRIreport", onSubmit: this.handleSubmit}, 
+            React.createElement(Form, {className: "Form", method: "post", action: "/addRIreport", onSubmit: this.handleSubmit}, 
               React.createElement(FormGroup, {controlId: "formBasicText"}, 
                 React.createElement(Col, {className: "form-label", sm: 2}, 
                 "supplier"
