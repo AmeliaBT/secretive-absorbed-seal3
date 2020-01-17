@@ -83,16 +83,17 @@ class FormRI extends React.Component {
       <div>
           {/*  <Header/>*/} 
             <Form className="Form" horizontal method="post" action="/addRIreport" onSubmit={this.handleSubmit}>   
-              <FormGroup controlId="formHorizontalEmail">
+              <FormGroup controlId="formBasicText">
                 <Col className="form-label" sm={2}>
                 supplier
                 </Col>
+                <div className="profile-line"></div> 
                 <Col sm={10}>
                   <FormControl type="text" name="supplier" required value={this.state.supplier} placeholder="supplier" onChange={this.handleChangeValue} />
                 </Col>
               </FormGroup>
-
-              <FormGroup controlId="formHorizontalPassword">
+              <div className="profile-line"></div>
+              <FormGroup controlId="formBasicText">
                 <Col className="form-label" sm={2}>
                   PN
                 </Col>
