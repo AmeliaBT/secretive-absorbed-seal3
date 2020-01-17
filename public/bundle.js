@@ -48460,32 +48460,12 @@ class HomePage extends React.Component {
     super(props);
     this.state = {
       inspname: "",
-      dep: ""
-       /* 
-      ,
-      //ri_report_to_add: "RI-5358",
-      reportnumber: "RI-5358",
-      supplier: "oem2",
-      daterec: "",
-      dateinsp: "",
-      wopomtt: "PO2",
-      no: "1232",
-      destination: "ata2",
-      pn: "990-12122",
-      description: "AT-92242",
-      lotsize: 1002,
-      samplesize: 52
-        
-      street: "",
-      ri_report_to_add: "",
-     
-      user_reports: "loading...",
-      income: null,
-      outcome: null*/
+      dep: ""        
+      
     };
- //  this.depChanged = this.depChanged.bind(this);
+ // this.depChanged = this.depChanged.bind(this);
   
-   // this.addRIreport = this.addRIreport.bind(this);
+   
   }
   /****************************/
   // Handlers
