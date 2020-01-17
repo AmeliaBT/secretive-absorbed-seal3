@@ -49029,7 +49029,7 @@ class FormRI extends React.Component {
     console.log(that)
       const xhr = new XMLHttpRequest();
       
-      xhr.open('POST', '/addRIreport', true);
+      xhr.open('POST', '/add-report', true);
       xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
       
       
