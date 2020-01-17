@@ -34,7 +34,7 @@ class HomePage extends React.Component {
     }
   /****************************/
   componentWillMount() {
-     // get user nickname
+     // get user inspname 
       let that = this;
       const xhr = new XMLHttpRequest();
       
@@ -59,14 +59,15 @@ class HomePage extends React.Component {
           return <OutcomeProposal reportnumber1={e.chosenBook} reportnumber2={e.chosenAnotherUserBook} nickname={e.anotherUserNickname}/>;
         });
 */
-        let reports = response.reports.map((e) => {
+       // let reports = response.reports.map((e) => {
         {/* return <UserBook img_url={e.img_url} reportnumber={e.reportnumber}/>;*/}  
-        return <UserBook  reportnumber={e.reportnumber}/>;
-        });
+      //  return <UserBook  reportnumber={e.reportnumber}/>;
+       // });
           if(response.isLogedIn == true) {
              that.setState({
             ["inspname"]: response.inspname,
-            ["dep"]: response.dep,
+            ["dep"]: response.dep
+             /*,
            
             ["user_reports"]: reports
             /*
