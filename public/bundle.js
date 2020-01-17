@@ -48522,44 +48522,47 @@ class HomePage extends React.Component {
           React.createElement("div", {className: "profile"}, 
               React.createElement(Grid, null, 
                 React.createElement(Row, {className: "show-grid"}, 
-                  React.createElement(Col, {xs: 6, md: 4, className: "left-col"}, 
+ /* <Col xs={6} md={4} className="left-col"> */
+     React.createElement(Col, {xs: 3, md: 2, className: "left-col"}, 
                     React.createElement("div", {className: "profile-label"}, "Your profile"), 
                     React.createElement("div", {className: "profile-line"}), 
 
-    React.createElement("form", {className: "input-label"}, 
-      React.createElement(FormGroup, {controlId: "formBasicText"}, 
-        React.createElement(ControlLabel, null, "Your name"), 
-        React.createElement(FormControl, {type: "text", value: this.state.inspname, readOnly: true}), 
-        React.createElement(FormControl.Feedback, null)
-      )
-    ), 
-                    React.createElement("div", {className: "profile-line"}), 
+                React.createElement("form", {className: "input-label"}, 
+                  React.createElement(FormGroup, {controlId: "formBasicText"}, 
+                    React.createElement(ControlLabel, null, "Your name"), 
+                    React.createElement(FormControl, {type: "text", value: this.state.inspname, readOnly: true}), 
+                    React.createElement(FormControl.Feedback, null)
+                  )
+                ), 
+                                React.createElement("div", {className: "profile-line"}), 
 
-    React.createElement("form", {className: "input-label"}, 
-      React.createElement(FormGroup, {controlId: "formBasicText"}, 
-        React.createElement(ControlLabel, null, "Your dep"), 
-        React.createElement(FormControl, {type: "text", value: this.state.dep, placeholder: "enter your dep", onChange: this.depChanged}), 
-        React.createElement(FormControl.Feedback, null)
-      )
-    ), 
-    React.createElement("div", {className: "profile-line"}), 
-                
-    React.createElement("div", {className: "proposal-label"}, "Your RI Reports (?) "), 
-    React.createElement("div", {className: "profile-line"})
-    /* 
-   
-       
-    <Tabs defaultActiveKey={1} id="uncontrolled-tab" className="tabs">
-      <Tab eventKey={1} title="Income">  old </Tab>
-      <Tab eventKey={2} title="Outcome">   old     </Tab>
-    </Tabs>  
-     */
+                React.createElement("form", {className: "input-label"}, 
+                  React.createElement(FormGroup, {controlId: "formBasicText"}, 
+                    React.createElement(ControlLabel, null, "Your dep"), 
+                    React.createElement(FormControl, {type: "text", value: this.state.dep, placeholder: "enter your dep", onChange: this.depChanged}), 
+                    React.createElement(FormControl.Feedback, null)
+                  )
+                ), 
+                React.createElement("div", {className: "profile-line"}), 
+                React.createElement("div", {className: "proposal-label"}, "Your RI Reports (?) "), 
+                React.createElement("div", {className: "profile-line"})
+  /*
+ <div className="library">
+  {this.state.user_reports}
+</div>  */
+                /* 
+              
+                  
+                <Tabs defaultActiveKey={1} id="uncontrolled-tab" className="tabs">
+                  <Tab eventKey={1} title="Income">  old </Tab>
+                  <Tab eventKey={2} title="Outcome">   old     </Tab>
+                </Tabs>  
+                */
     
      ), 
-  React.createElement(Col, {xs: 12, md: 8, className: "right-col"}, 
-    React.createElement("div", {className: "library-label"}, "Your RI Reports"), 
-
-/*
+  /* <Col xs={12} md={8} className="left-col"> */
+  React.createElement(Col, {xs: 9, md: 10, className: "right-col"}, 
+ /*   <div className="library-label">Your RI Reports</div>
                 <Form inline className="input-label add-form">
                   <FormGroup controlId="addBookForm"  >
                     <FormControl type="text" value={this.state.reportnumber} placeholder="enter reportnumber"
@@ -48571,10 +48574,9 @@ class HomePage extends React.Component {
                   </FormGroup>
                 </Form>
  */
- React.createElement(FormRI, null), 
-React.createElement("div", {className: "library"}, 
-  this.state.user_reports
-)
+ React.createElement(FormRI, null)
+
+
                   )
                 )
               )
