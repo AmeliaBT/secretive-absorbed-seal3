@@ -81,7 +81,7 @@ class FormRI extends React.Component {
   render() {
     return (
       <div>
-            <Header/>
+          {/*  <Header/>*/} 
             <Form className="Form" horizontal method="post" action="/addRIreport" onSubmit={this.handleSubmit}>   
               <FormGroup controlId="formHorizontalEmail">
                 <Col className="form-label" sm={2}>

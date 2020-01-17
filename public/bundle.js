@@ -48459,8 +48459,10 @@ class HomePage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      /*  inspname: "Me2",
-      dep: "d2",
+      inspname: "",
+      dep: ""
+       /* 
+      ,
       //ri_report_to_add: "RI-5358",
       reportnumber: "RI-5358",
       supplier: "oem2",
@@ -49064,7 +49066,7 @@ class FormRI extends React.Component {
   render() {
     return (
       React.createElement("div", null, 
-            React.createElement(Header, null), 
+          /*  <Header/>*/
             React.createElement(Form, {className: "Form", horizontal: true, method: "post", action: "/addRIreport", onSubmit: this.handleSubmit}, 
               React.createElement(FormGroup, {controlId: "formHorizontalEmail"}, 
                 React.createElement(Col, {className: "form-label", sm: 2}, 

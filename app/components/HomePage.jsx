@@ -17,8 +17,10 @@ class HomePage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      /*  inspname: "Me2",
-      dep: "d2",
+      inspname: "",
+      dep: ""
+       /* 
+      ,
       //ri_report_to_add: "RI-5358",
       reportnumber: "RI-5358",
       supplier: "oem2",
