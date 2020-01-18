@@ -84,8 +84,8 @@ class FormRI extends React.Component {
           {/*  <Header/>*/} 
             <Form className="Form" method="post" action="/addRIreport" onSubmit={this.handleSubmit}>   
               <FormGroup controlId="formBasicText">
-                <Col className="form-label" sm={2}>
-                supplier
+                <Col className="input-label" sm={2}>
+                Supplier
                 </Col>
                 <div className="profile-line"></div> 
                 <Col sm={10}>
