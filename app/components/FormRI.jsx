@@ -17,8 +17,8 @@ class FormRI extends React.Component {
       dep: "",
       ri_report_to_add: "",
       supplier: "",
-      daterec: "",
-      dateinsp: "",
+      daterec: new Date().toLocaleString(),
+      dateinsp: new Date().toLocaleString(),
       wopomtt: "",
       no: "",
       destination: "",
@@ -111,6 +111,8 @@ componentWillMount() {
     <FormControl type="text" name="inspector" required value={this.state.inspname} readOnly />
   </FormGroup>        
 
+  <div className="profile-line"></div>
+  {this.state.daterec}
   <div className="profile-line"></div>
   <FormGroup ><ControlLabel> Supplier</ControlLabel>
     <FormControl type="text" name="supplier" required value={this.state.supplier} placeholder="supplier" onChange={this.handleChangeValue} />

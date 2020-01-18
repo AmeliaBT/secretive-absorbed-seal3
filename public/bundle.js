@@ -48357,8 +48357,8 @@ class FormRI extends React.Component {
       dep: "",
       ri_report_to_add: "",
       supplier: "",
-      daterec: "",
-      dateinsp: "",
+      daterec: new Date().toLocaleString(),
+      dateinsp: new Date().toLocaleString(),
       wopomtt: "",
       no: "",
       destination: "",
@@ -48452,6 +48452,7 @@ React.createElement(FormGroup, null, React.createElement(ControlLabel, null, "In
   ), 
 
   React.createElement("div", {className: "profile-line"}), 
+  "daterec", 
   React.createElement(FormGroup, null, React.createElement(ControlLabel, null, " Supplier"), 
     React.createElement(FormControl, {type: "text", name: "supplier", required: true, value: this.state.supplier, placeholder: "supplier", onChange: this.handleChangeValue})
   ), 
