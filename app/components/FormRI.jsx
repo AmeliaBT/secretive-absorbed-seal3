@@ -76,7 +76,7 @@ componentWillMount() {
       let body =
       'inspector=' + encodeURIComponent(this.state.inspname) +
       'supplier=' + encodeURIComponent(this.state.supplier) +
-      'daterec='+ encodeURIComponent(this.state.daterec) ,
+      'daterec='+ encodeURIComponent(this.state.daterec) +
       '&pn=' + encodeURIComponent(this.state.pn);
 
 
@@ -111,8 +111,7 @@ componentWillMount() {
            
 <Col  sm={5}>
 <FormGroup ><ControlLabel>Inspector</ControlLabel>
-    <FormControl type="text" name="inspector" required value={this.state.inspname} readOnly />
-    <FormControl type="text" name="dep" required value={this.state.dep}  />
+    <FormControl type="text" name="inspector" required value={this.state.inspname} readOnly />   
   </FormGroup>        
 
   <div className="profile-line"></div>
