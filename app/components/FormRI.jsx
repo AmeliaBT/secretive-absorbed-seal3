@@ -73,7 +73,9 @@ componentWillMount() {
       xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
       
       
-      let body = 'supplier=' + encodeURIComponent(this.state.supplier) +
+      let body =
+      'inspector=' + encodeURIComponent(this.state.inspector) +
+      'supplier=' + encodeURIComponent(this.state.supplier) +
       '&pn=' + encodeURIComponent(this.state.pn);
 
 
@@ -109,24 +111,27 @@ componentWillMount() {
 <Col  sm={5}>
 <FormGroup ><ControlLabel>Inspector</ControlLabel>
     <FormControl type="text" name="inspector" required value={this.state.inspname} readOnly />
+    <FormControl type="text" name="inspector" required value={this.state.dep} readOnly />
   </FormGroup>        
 
   <div className="profile-line"></div>
-  {this.state.daterec}
-  <div className="profile-line"></div>
-  <FormGroup ><ControlLabel> Supplier</ControlLabel>
-    <FormControl type="text" name="supplier" required value={this.state.supplier} placeholder="supplier" onChange={this.handleChangeValue} />
-  </FormGroup>        
-  <div className="profile-line"></div>
- 
+  
+  <FormGroup ><ControlLabel> Date Received</ControlLabel>
+    <FormControl type="text" name="daterec" required value={this.state.daterec} placeholder={this.state.daterec} onChange={this.handleChangeValue} />
+  </FormGroup>   
+  <div className="profile-line"></div> 
+  <div className="profile-line"></div> 
   <FormGroup > <ControlLabel> Part Numberx</ControlLabel>                
   <FormControl type="text" name="pn" required value={this.state.pn} placeholder="PN" onChange={this.handleChangeValue}/>  </FormGroup>
   <div className="profile-line"></div>
 
+  </Col>
 
-
-
-
+  <Col  sm={5}>
+  <FormGroup ><ControlLabel> Supplier</ControlLabel>
+    <FormControl type="text" name="supplier" required value={this.state.supplier} placeholder="supplier" onChange={this.handleChangeValue} />
+  </FormGroup>        
+  <div className="profile-line"></div>
 
 </Col>
        

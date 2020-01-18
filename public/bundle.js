@@ -48413,7 +48413,9 @@ componentWillMount() {
       xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
       
       
-      let body = 'supplier=' + encodeURIComponent(this.state.supplier) +
+      let body =
+      'supplier=' + encodeURIComponent(this.state.supplier) +
+      'supplier=' + encodeURIComponent(this.state.supplier) +
       '&pn=' + encodeURIComponent(this.state.pn);
 
 
@@ -48448,25 +48450,28 @@ React.createElement(Form, {className: "input-label", method: "post", action: "/a
            
 React.createElement(Col, {sm: 5}, 
 React.createElement(FormGroup, null, React.createElement(ControlLabel, null, "Inspector"), 
-    React.createElement(FormControl, {type: "text", name: "inspector", required: true, value: this.state.inspname, readOnly: true})
+    React.createElement(FormControl, {type: "text", name: "inspector", required: true, value: this.state.inspname, readOnly: true}), 
+    React.createElement(FormControl, {type: "text", name: "inspector", required: true, value: this.state.dep, readOnly: true})
   ), 
 
   React.createElement("div", {className: "profile-line"}), 
-  this.state.daterec, 
-  React.createElement("div", {className: "profile-line"}), 
-  React.createElement(FormGroup, null, React.createElement(ControlLabel, null, " Supplier"), 
-    React.createElement(FormControl, {type: "text", name: "supplier", required: true, value: this.state.supplier, placeholder: "supplier", onChange: this.handleChangeValue})
+  
+  React.createElement(FormGroup, null, React.createElement(ControlLabel, null, " Date Received"), 
+    React.createElement(FormControl, {type: "text", name: "daterec", required: true, value: this.state.daterec, placeholder: this.state.daterec, onChange: this.handleChangeValue})
   ), 
   React.createElement("div", {className: "profile-line"}), 
- 
+  React.createElement("div", {className: "profile-line"}), 
   React.createElement(FormGroup, null, " ", React.createElement(ControlLabel, null, " Part Numberx"), 
   React.createElement(FormControl, {type: "text", name: "pn", required: true, value: this.state.pn, placeholder: "PN", onChange: this.handleChangeValue}), "  "), 
   React.createElement("div", {className: "profile-line"})
 
+  ), 
 
-
-
-
+  React.createElement(Col, {sm: 5}, 
+  React.createElement(FormGroup, null, React.createElement(ControlLabel, null, " Supplier"), 
+    React.createElement(FormControl, {type: "text", name: "supplier", required: true, value: this.state.supplier, placeholder: "supplier", onChange: this.handleChangeValue})
+  ), 
+  React.createElement("div", {className: "profile-line"})
 
 ), 
        
