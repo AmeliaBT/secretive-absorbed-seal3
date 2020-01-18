@@ -81,11 +81,11 @@ class FormRI extends React.Component {
     return (
       <div>
           {/*  <Header/>*/} 
-            <Form className="Form" method="post" action="/addRIreport" onSubmit={this.handleSubmit}>   
+            <Form className="input-label" method="post" action="/addRIreport" onSubmit={this.handleSubmit}>   
            
-     <Col className="input-label" sm={10}>
+     <Col  sm={5}>
             <FormGroup controlId="formBasicText">
-              <ControlLabel> Supplier new</ControlLabel>
+              <ControlLabel> Supplier</ControlLabel>
               <FormControl type="text" name="supplier" required value={this.state.supplier} placeholder="supplier" onChange={this.handleChangeValue} />
             </FormGroup>        
 

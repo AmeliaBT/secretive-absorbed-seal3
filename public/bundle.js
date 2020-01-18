@@ -48425,11 +48425,11 @@ class FormRI extends React.Component {
     return (
       React.createElement("div", null, 
           /*  <Header/>*/
-            React.createElement(Form, {className: "Form", method: "post", action: "/addRIreport", onSubmit: this.handleSubmit}, 
+            React.createElement(Form, {className: "input-label", method: "post", action: "/addRIreport", onSubmit: this.handleSubmit}, 
            
-     React.createElement(Col, {className: "input-label", sm: 10}, 
+     React.createElement(Col, {sm: 5}, 
             React.createElement(FormGroup, {controlId: "formBasicText"}, 
-              React.createElement(ControlLabel, null, " Supplier new"), 
+              React.createElement(ControlLabel, null, " Supplier"), 
               React.createElement(FormControl, {type: "text", name: "supplier", required: true, value: this.state.supplier, placeholder: "supplier", onChange: this.handleChangeValue})
             ), 
 
@@ -48496,7 +48496,7 @@ exports = module.exports = __webpack_require__(24)(false);
 
 
 // module
-exports.push([module.i, ".Form {\n \n  margin: auto;\n  margin-top: 100px;\n \n}\n/* \n.Form {\n  width: 600px;\n background: antiquewhite; \n padding: 50px;\n border: 1px solid #9d9d8e;\n*/\n.form-label {\n  color: black; /*#f6ff67;*/\n  font-weight: bold\n}\n\n.profile-line {\n  background-color: #44708f;\n  width: 90%;\n  height: 3px;\n  margin: auto;\n  margin-bottom: 10px\n}\n\n.input-label {\nwidth: 90%;\nmargin: auto;\ncolor: rgb(157, 157, 157);\n}\n\n.profile-label {\n  text-align: center;\n  font-size: 30px;\n  color: black; /* #f6ff67;*/\n  margin: 3%;\n  margin-top: 30px;\n}", ""]);
+exports.push([module.i, ".Form {\n \n  margin: auto;\n  margin-top: 50px;\n \n}\n/* \n.Form {\n  width: 600px;\n background: antiquewhite; \n padding: 50px;\n border: 1px solid #9d9d8e;\n*/\n.form-label {\n  color: black; /*#f6ff67;*/\n  font-weight: bold\n}\n\n.profile-line {\n  background-color: #44708f;\n  width: 100%;\n  height: 3px;\n  margin: auto;\n  margin-bottom: 10px\n}\n\n.input-label {\nwidth: 90%;\nmargin: auto;\ncolor: rgb(157, 157, 157);\n}\n\n.profile-label {\n  text-align: center;\n  font-size: 30px;\n  color: black; /* #f6ff67;*/\n  margin: 3%;\n  margin-top: 30px;\n}", ""]);
 
 // exports
 
