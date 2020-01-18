@@ -36,15 +36,10 @@ class FormRI extends React.Component {
      const target = event.target;
       const value = target.value;
       const name = target.name;
-      this.setState({
-        [name]: value
-      });
+      this.setState({ [name]: value  });
   }
-  handleSubmit(event) {
-      let that = this;
-    console.log(that)
-      const xhr = new XMLHttpRequest();
-      
+  handleSubmit(event) { let that = this; console.log(that)
+      const xhr = new XMLHttpRequest();      
       xhr.open('POST', '/add-report', true);
       xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
       
@@ -83,20 +78,23 @@ class FormRI extends React.Component {
           {/*  <Header/>*/} 
             <Form className="input-label" method="post" action="/addRIreport" onSubmit={this.handleSubmit}>   
            
-     <Col  sm={5}>
-            <FormGroup >
-              <ControlLabel> Supplier</ControlLabel>
-              <FormControl type="text" name="supplier" required value={this.state.supplier} placeholder="supplier" onChange={this.handleChangeValue} />
-            </FormGroup>        
+<Col  sm={5}>
+  <FormGroup ><ControlLabel> Supplier</ControlLabel>
+    <FormControl type="text" name="supplier" required value={this.state.supplier} placeholder="supplier" onChange={this.handleChangeValue} />
+  </FormGroup>        
 
-              <div className="profile-line"></div>
+  <div className="profile-line"></div>
 
-            <FormGroup >
-            <ControlLabel> Part Numberx</ControlLabel>                
-            <FormControl type="text" name="pn" required value={this.state.pn} placeholder="PN" onChange={this.handleChangeValue}/>
-            </FormGroup>
-            <div className="profile-line"></div>
-        </Col>
+  <FormGroup > <ControlLabel> Part Numberx</ControlLabel>                
+  <FormControl type="text" name="pn" required value={this.state.pn} placeholder="PN" onChange={this.handleChangeValue}/>  </FormGroup>
+  <div className="profile-line"></div>
+
+
+
+
+
+
+</Col>
        
               <FormGroup>
                 <Col smOffset={2} sm={10}>

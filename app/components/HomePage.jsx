@@ -87,7 +87,7 @@ class HomePage extends React.Component {
                     <div className="profile-line"></div> 
 
                 <form className="input-label">
-                  <FormGroup controlId="formBasicText" >
+                  <FormGroup  >
                     <ControlLabel>Your name</ControlLabel>
                     <FormControl type="text" value={this.state.inspname}  readOnly  />
                     <FormControl.Feedback />
@@ -96,7 +96,7 @@ class HomePage extends React.Component {
                                 <div className="profile-line"></div>
 
                 <form className="input-label">
-                  <FormGroup controlId="formBasicText" >
+                  <FormGroup  >
                     <ControlLabel>Your dep</ControlLabel>
                     <FormControl type="text" value={this.state.dep} readOnly />
                     <FormControl.Feedback />

@@ -48160,7 +48160,7 @@ class HomePage extends React.Component {
                     React.createElement("div", {className: "profile-line"}), 
 
                 React.createElement("form", {className: "input-label"}, 
-                  React.createElement(FormGroup, {controlId: "formBasicText"}, 
+                  React.createElement(FormGroup, null, 
                     React.createElement(ControlLabel, null, "Your name"), 
                     React.createElement(FormControl, {type: "text", value: this.state.inspname, readOnly: true}), 
                     React.createElement(FormControl.Feedback, null)
@@ -48169,7 +48169,7 @@ class HomePage extends React.Component {
                                 React.createElement("div", {className: "profile-line"}), 
 
                 React.createElement("form", {className: "input-label"}, 
-                  React.createElement(FormGroup, {controlId: "formBasicText"}, 
+                  React.createElement(FormGroup, null, 
                     React.createElement(ControlLabel, null, "Your dep"), 
                     React.createElement(FormControl, {type: "text", value: this.state.dep, readOnly: true}), 
                     React.createElement(FormControl.Feedback, null)
@@ -48380,15 +48380,10 @@ class FormRI extends React.Component {
      const target = event.target;
       const value = target.value;
       const name = target.name;
-      this.setState({
-        [name]: value
-      });
+      this.setState({ [name]: value  });
   }
-  handleSubmit(event) {
-      let that = this;
-    console.log(that)
-      const xhr = new XMLHttpRequest();
-      
+  handleSubmit(event) { let that = this; console.log(that)
+      const xhr = new XMLHttpRequest();      
       xhr.open('POST', '/add-report', true);
       xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
       
@@ -48427,20 +48422,23 @@ class FormRI extends React.Component {
           /*  <Header/>*/
             React.createElement(Form, {className: "input-label", method: "post", action: "/addRIreport", onSubmit: this.handleSubmit}, 
            
-     React.createElement(Col, {sm: 5}, 
-            React.createElement(FormGroup, null, 
-              React.createElement(ControlLabel, null, " Supplier"), 
-              React.createElement(FormControl, {type: "text", name: "supplier", required: true, value: this.state.supplier, placeholder: "supplier", onChange: this.handleChangeValue})
-            ), 
+React.createElement(Col, {sm: 5}, 
+  React.createElement(FormGroup, null, React.createElement(ControlLabel, null, " Supplier"), 
+    React.createElement(FormControl, {type: "text", name: "supplier", required: true, value: this.state.supplier, placeholder: "supplier", onChange: this.handleChangeValue})
+  ), 
 
-              React.createElement("div", {className: "profile-line"}), 
+  React.createElement("div", {className: "profile-line"}), 
 
-            React.createElement(FormGroup, null, 
-            React.createElement(ControlLabel, null, " Part Numberx"), 
-            React.createElement(FormControl, {type: "text", name: "pn", required: true, value: this.state.pn, placeholder: "PN", onChange: this.handleChangeValue})
-            ), 
-            React.createElement("div", {className: "profile-line"})
-        ), 
+  React.createElement(FormGroup, null, " ", React.createElement(ControlLabel, null, " Part Numberx"), 
+  React.createElement(FormControl, {type: "text", name: "pn", required: true, value: this.state.pn, placeholder: "PN", onChange: this.handleChangeValue}), "  "), 
+  React.createElement("div", {className: "profile-line"})
+
+
+
+
+
+
+), 
        
               React.createElement(FormGroup, null, 
                 React.createElement(Col, {smOffset: 2, sm: 10}, 
