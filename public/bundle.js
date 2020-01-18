@@ -48452,7 +48452,8 @@ React.createElement(FormGroup, null, React.createElement(ControlLabel, null, "In
   ), 
 
   React.createElement("div", {className: "profile-line"}), 
-  "daterec", 
+  this.state.daterec, 
+  React.createElement("div", {className: "profile-line"}), 
   React.createElement(FormGroup, null, React.createElement(ControlLabel, null, " Supplier"), 
     React.createElement(FormControl, {type: "text", name: "supplier", required: true, value: this.state.supplier, placeholder: "supplier", onChange: this.handleChangeValue})
   ), 
