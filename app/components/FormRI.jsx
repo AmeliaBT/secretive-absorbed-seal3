@@ -7,6 +7,7 @@ const Header = require('./Header');
 // react-bootstrap
 const {Form, FormGroup, Col, FormControl, Button, Grid, Row, ControlLabel} = require('react-bootstrap');
 
+
 /* the books page that shows all books */
 class FormRI extends React.Component {
   constructor(props) {
@@ -83,7 +84,8 @@ class FormRI extends React.Component {
   </FormGroup>        
 
   <div className="profile-line"></div>
-
+  
+  <div className="profile-line"></div>
   <FormGroup > <ControlLabel> Part Numberx</ControlLabel>                
   <FormControl type="text" name="pn" required value={this.state.pn} placeholder="PN" onChange={this.handleChangeValue}/>  </FormGroup>
   <div className="profile-line"></div>

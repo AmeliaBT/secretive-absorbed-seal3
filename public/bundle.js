@@ -48109,14 +48109,10 @@ class HomePage extends React.Component {
   componentWillMount() {
      // get user inspname 
       let that = this;
-      const xhr = new XMLHttpRequest();
-      
+      const xhr = new XMLHttpRequest();      
       xhr.open('POST', '/is-loged-in', true);
       xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-
-
       xhr.send();
-
       xhr.onreadystatechange = function() {
         if (this.readyState != 4) return;
         if (this.status != 200) {
@@ -48351,6 +48347,7 @@ const Header = __webpack_require__(42);
 // react-bootstrap
 const {Form, FormGroup, Col, FormControl, Button, Grid, Row, ControlLabel} = __webpack_require__(30);
 
+
 /* the books page that shows all books */
 class FormRI extends React.Component {
   constructor(props) {
@@ -48427,7 +48424,8 @@ React.createElement(Col, {sm: 5},
   ), 
 
   React.createElement("div", {className: "profile-line"}), 
-
+  
+  React.createElement("div", {className: "profile-line"}), 
   React.createElement(FormGroup, null, " ", React.createElement(ControlLabel, null, " Part Numberx"), 
   React.createElement(FormControl, {type: "text", name: "pn", required: true, value: this.state.pn, placeholder: "PN", onChange: this.handleChangeValue}), "  "), 
   React.createElement("div", {className: "profile-line"})

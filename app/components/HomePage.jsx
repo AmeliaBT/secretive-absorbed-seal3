@@ -36,14 +36,10 @@ class HomePage extends React.Component {
   componentWillMount() {
      // get user inspname 
       let that = this;
-      const xhr = new XMLHttpRequest();
-      
+      const xhr = new XMLHttpRequest();      
       xhr.open('POST', '/is-loged-in', true);
       xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-
-
       xhr.send();
-
       xhr.onreadystatechange = function() {
         if (this.readyState != 4) return;
         if (this.status != 200) {
