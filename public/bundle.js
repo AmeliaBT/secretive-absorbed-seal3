@@ -48373,6 +48373,36 @@ class FormRI extends React.Component {
     this.handleChangeValue = this.handleChangeValue.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
+//** %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+componentWillMount() {
+  // get user inspname 
+   let that = this;
+   const xhr = new XMLHttpRequest();      
+   xhr.open('POST', '/is-loged-in', true);
+   xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+   xhr.send();
+   xhr.onreadystatechange = function() {
+     if (this.readyState != 4) return;
+     if (this.status != 200) {
+       alert( 'error: ' + (this.status ? this.statusText : 'request has not been set') );
+       return;
+     }
+     let response = JSON.parse(this.responseText);
+     
+     
+       if(response.isLogedIn == true) {
+         console.log(" loged in ok")
+          that.setState({
+         ["inspname"]: response.inspname,
+         ["dep"]: response.dep      
+        });
+       }
+     }
+} 
+
+
+//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
    handleChangeValue(event) {
      const target = event.target;
       const value = target.value;
@@ -48424,7 +48454,7 @@ React.createElement(Col, {sm: 5},
   ), 
 
   React.createElement("div", {className: "profile-line"}), 
-  
+  this.state.supplier, 
   React.createElement("div", {className: "profile-line"}), 
   React.createElement(FormGroup, null, " ", React.createElement(ControlLabel, null, " Part Numberx"), 
   React.createElement(FormControl, {type: "text", name: "pn", required: true, value: this.state.pn, placeholder: "PN", onChange: this.handleChangeValue}), "  "), 
