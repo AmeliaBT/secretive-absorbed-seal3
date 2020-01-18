@@ -48353,8 +48353,6 @@ class FormRI extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      //supplier: "",
-      //pn: ""
       inspname: "",
       dep: "",
       ri_report_to_add: "",
@@ -48449,13 +48447,16 @@ componentWillMount() {
 React.createElement(Form, {className: "input-label", method: "post", action: "/addRIreport", onSubmit: this.handleSubmit}, 
            
 React.createElement(Col, {sm: 5}, 
-  React.createElement(FormGroup, null, React.createElement(ControlLabel, null, " Supplier"), 
-    React.createElement(FormControl, {type: "text", name: "supplier", required: true, value: this.state.supplier, placeholder: "supplier", onChange: this.handleChangeValue})
+React.createElement(FormGroup, null, React.createElement(ControlLabel, null, "Inspector"), 
+    React.createElement(FormControl, {type: "text", name: "inspector", required: true, value: this.state.inspname, readOnly: true})
   ), 
 
   React.createElement("div", {className: "profile-line"}), 
-  this.state.supplier, 
+  React.createElement(FormGroup, null, React.createElement(ControlLabel, null, " Supplier"), 
+    React.createElement(FormControl, {type: "text", name: "supplier", required: true, value: this.state.supplier, placeholder: "supplier", onChange: this.handleChangeValue})
+  ), 
   React.createElement("div", {className: "profile-line"}), 
+ 
   React.createElement(FormGroup, null, " ", React.createElement(ControlLabel, null, " Part Numberx"), 
   React.createElement(FormControl, {type: "text", name: "pn", required: true, value: this.state.pn, placeholder: "PN", onChange: this.handleChangeValue}), "  "), 
   React.createElement("div", {className: "profile-line"})

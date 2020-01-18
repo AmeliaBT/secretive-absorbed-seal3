@@ -13,8 +13,6 @@ class FormRI extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      //supplier: "",
-      //pn: ""
       inspname: "",
       dep: "",
       ri_report_to_add: "",
@@ -109,13 +107,16 @@ componentWillMount() {
 <Form className="input-label" method="post" action="/addRIreport" onSubmit={this.handleSubmit}>   
            
 <Col  sm={5}>
-  <FormGroup ><ControlLabel> Supplier</ControlLabel>
-    <FormControl type="text" name="supplier" required value={this.state.supplier} placeholder="supplier" onChange={this.handleChangeValue} />
+<FormGroup ><ControlLabel>Inspector</ControlLabel>
+    <FormControl type="text" name="inspector" required value={this.state.inspname} readOnly />
   </FormGroup>        
 
   <div className="profile-line"></div>
-  {this.state.supplier} 
+  <FormGroup ><ControlLabel> Supplier</ControlLabel>
+    <FormControl type="text" name="supplier" required value={this.state.supplier} placeholder="supplier" onChange={this.handleChangeValue} />
+  </FormGroup>        
   <div className="profile-line"></div>
+ 
   <FormGroup > <ControlLabel> Part Numberx</ControlLabel>                
   <FormControl type="text" name="pn" required value={this.state.pn} placeholder="PN" onChange={this.handleChangeValue}/>  </FormGroup>
   <div className="profile-line"></div>
