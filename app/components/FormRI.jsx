@@ -58,7 +58,7 @@ class FormRI extends React.Component {
         }
         let response = JSON.parse(this.responseText);
         if(response.error == 0) {
-           window.location.href = "/books";
+           window.location.href = "/reports";
            that.setState({
           ["supplier"]: "Succsess",
           ["pn"]: "Succsess"
@@ -74,9 +74,8 @@ class FormRI extends React.Component {
      }
   render() {
     return (
-      <div>
-          {/*  <Header/>*/} 
-            <Form className="input-label" method="post" action="/addRIreport" onSubmit={this.handleSubmit}>   
+      <div>        
+<Form className="input-label" method="post" action="/addRIreport" onSubmit={this.handleSubmit}>   
            
 <Col  sm={5}>
   <FormGroup ><ControlLabel> Supplier</ControlLabel>
