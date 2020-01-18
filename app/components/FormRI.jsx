@@ -5,8 +5,7 @@ const style = require('../styles/FormRI');
 // other components and etc
 const Header = require('./Header');
 // react-bootstrap
-const {Form, FormGroup, Col, FormControl, Button} = require('react-bootstrap');
-
+const {Form, FormGroup, Col, FormControl, Button, Grid, Row, ControlLabel} = require('react-bootstrap');
 
 /* the books page that shows all books */
 class FormRI extends React.Component {
@@ -86,14 +85,14 @@ class FormRI extends React.Component {
            
      <Col className="input-label" sm={10}>
             <FormGroup controlId="formBasicText">
-              <ControlLabel> Supplier</ControlLabel>
+              <ControlLabel> Supplier new</ControlLabel>
               <FormControl type="text" name="supplier" required value={this.state.supplier} placeholder="supplier" onChange={this.handleChangeValue} />
             </FormGroup>        
 
               <div className="profile-line"></div>
 
             <FormGroup controlId="formBasicText">
-            <ControlLabel> PN</ControlLabel>                
+            <ControlLabel> Part Number</ControlLabel>                
             <FormControl type="text" name="pn" required value={this.state.pn} placeholder="PN" onChange={this.handleChangeValue}/>
             </FormGroup>
             <div className="profile-line"></div>

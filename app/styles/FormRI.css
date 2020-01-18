@@ -1,15 +1,15 @@
 .Form {
  
   margin: auto;
-  margin-top: 100px;
-  background: antiquewhite; /* #2f2f2f;*/
-  padding: 50px;
-  border: 1px solid #9d9d8e;
+  margin-top: 50px;
+ 
 }
 /* 
 .Form {
   width: 600px;
-
+ background: antiquewhite; 
+ padding: 50px;
+ border: 1px solid #9d9d8e;
 */
 .form-label {
   color: black; /*#f6ff67;*/
