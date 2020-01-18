@@ -83,25 +83,22 @@ class FormRI extends React.Component {
       <div>
           {/*  <Header/>*/} 
             <Form className="Form" method="post" action="/addRIreport" onSubmit={this.handleSubmit}>   
-              <FormGroup controlId="formBasicText">
-                <Col className="input-label" sm={2}>
-                Supplier
-                </Col>
-                <div className="profile-line"></div> 
-                <Col sm={10}>
-                  <FormControl type="text" name="supplier" required value={this.state.supplier} placeholder="supplier" onChange={this.handleChangeValue} />
-                </Col>
-              </FormGroup>
-              <div className="profile-line"></div>
-              <FormGroup controlId="formBasicText">
-                <Col className="form-label" sm={2}>
-                  PN
-                </Col>
-                <Col sm={10}>
-                  <FormControl type="text" name="pn" required value={this.state.pn} placeholder="PN" onChange={this.handleChangeValue}/>
-                </Col>
-              </FormGroup>
+           
+     <Col className="input-label" sm={10}>
+            <FormGroup controlId="formBasicText">
+              <ControlLabel> Supplier</ControlLabel>
+              <FormControl type="text" name="supplier" required value={this.state.supplier} placeholder="supplier" onChange={this.handleChangeValue} />
+            </FormGroup>        
 
+              <div className="profile-line"></div>
+
+            <FormGroup controlId="formBasicText">
+            <ControlLabel> PN</ControlLabel>                
+            <FormControl type="text" name="pn" required value={this.state.pn} placeholder="PN" onChange={this.handleChangeValue}/>
+            </FormGroup>
+            <div className="profile-line"></div>
+        </Col>
+       
               <FormGroup>
                 <Col smOffset={2} sm={10}>
                <Button type="submit">submit RI form</Button>
