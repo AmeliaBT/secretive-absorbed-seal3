@@ -48428,15 +48428,15 @@ class FormRI extends React.Component {
             React.createElement(Form, {className: "input-label", method: "post", action: "/addRIreport", onSubmit: this.handleSubmit}, 
            
      React.createElement(Col, {sm: 5}, 
-            React.createElement(FormGroup, {controlId: "formBasicText"}, 
+            React.createElement(FormGroup, null, 
               React.createElement(ControlLabel, null, " Supplier"), 
               React.createElement(FormControl, {type: "text", name: "supplier", required: true, value: this.state.supplier, placeholder: "supplier", onChange: this.handleChangeValue})
             ), 
 
               React.createElement("div", {className: "profile-line"}), 
 
-            React.createElement(FormGroup, {controlId: "formBasicText"}, 
-            React.createElement(ControlLabel, null, " Part Number"), 
+            React.createElement(FormGroup, null, 
+            React.createElement(ControlLabel, null, " Part Numberx"), 
             React.createElement(FormControl, {type: "text", name: "pn", required: true, value: this.state.pn, placeholder: "PN", onChange: this.handleChangeValue})
             ), 
             React.createElement("div", {className: "profile-line"})

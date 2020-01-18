@@ -84,15 +84,15 @@ class FormRI extends React.Component {
             <Form className="input-label" method="post" action="/addRIreport" onSubmit={this.handleSubmit}>   
            
      <Col  sm={5}>
-            <FormGroup controlId="formBasicText">
+            <FormGroup >
               <ControlLabel> Supplier</ControlLabel>
               <FormControl type="text" name="supplier" required value={this.state.supplier} placeholder="supplier" onChange={this.handleChangeValue} />
             </FormGroup>        
 
               <div className="profile-line"></div>
 
-            <FormGroup controlId="formBasicText">
-            <ControlLabel> Part Number</ControlLabel>                
+            <FormGroup >
+            <ControlLabel> Part Numberx</ControlLabel>                
             <FormControl type="text" name="pn" required value={this.state.pn} placeholder="PN" onChange={this.handleChangeValue}/>
             </FormGroup>
             <div className="profile-line"></div>
