@@ -340,12 +340,13 @@ app.post("/add-report", function(request, response) {
 
 
 app.post("/get-all-users-reports", function(request, response) {
-       reportModel.find({}, (err, users) => {
+       reportModel.find({}, (err, docs) => {
           if(err) throw err;
-          let reports = []          
-         
-          for(let i = 0; i < users.length; i++) {
-            for(let j = 0; j < users[i].reports.length; j++) {
+          let reports = []   ;
+         console.log("get-all-users-reports");
+         console.log(docs.length);
+          for(let i = 0; i < docs.length; i++) {
+         //   for(let j = 0; j < users[i].reports.length; j++) {
               
                /* // function for filtering
                function checkBookName(el) {
@@ -356,8 +357,10 @@ app.post("/get-all-users-reports", function(request, response) {
               if((filteredIncome.length == 0) && (filteredOutcome.length == 0)) {
                 reports.push(users[i].reports[j]);
               } */
-            }
-            if(i == users.length - 1) response.json({reports: reports});
+           // }
+            
+            reports.push(docs[i]);
+            if(i == docs.length - 1) response.json({reports: reports});
           }
        });
 });
