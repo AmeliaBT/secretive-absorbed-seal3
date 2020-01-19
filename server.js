@@ -277,37 +277,17 @@ app.post("/get-street-city-by-nick", function(request, response) {
 });
 /***********************************/
 app.post("/add-report", function(request, response) {
- reportModel.findById(request.session.passport.user, (err, user) => {
+// reportModel.findById(request.session.passport.user, (err, user) => {
   //if (err) throw err;   
     // create a report
     console.log("in here insp and dep: ");  
-  //reportnumber: request.body["reportnumber"],  supplier: request.body["supplier"],  
- /* ok: */ 
-
-
+ 
 let obj = {inspector: request.body["inspector"], dep: request.body["dep"],    supplier: request.body["supplier"],
   daterec:request.body["daterec"],   pn: request.body["pn"],
     dateinsp:"",      
  no: "junk",   destination:"junk2",         description: "junk3",    lotsize: 1003,     samplesize: 88};
 
  
-   /*
- let obj = {
-inspname: request.body["inspname"], 
-dep: request.body["dep"] ,
-ri_report_to_add: request.body["ri_report_to_add"], 
-supplier: request.body["supplier"], 
-daterec: request.body["daterec"], 
-dateinsp: request.body["dateinsp"], 
-wopomtt: request.body["wopomtt"], 
-no: request.body["no"], 
-destination: request.body["destination"], 
-pn: request.body["pn"], 
-description: request.body["description"], 
-lotsize: request.body["lotsize"], 
-samplesize: request.body["samplesize"] 
-
-    };*/
     let report = new reportModel(obj);
           
             report.save(function (err) {
@@ -318,7 +298,7 @@ samplesize: request.body["samplesize"] 
 
         
    
- });
+// });
 });
 /***********************************/
 
@@ -577,3 +557,21 @@ passport.deserializeUser(function(user_id, done) {
 const listener = app.listen(process.env.PORT, function () {
   console.log('Your app is listening on port ' + listener.address().port);
 });
+
+   /*
+ let obj = {
+inspname: request.body["inspname"], 
+dep: request.body["dep"] ,
+ri_report_to_add: request.body["ri_report_to_add"], 
+supplier: request.body["supplier"], 
+daterec: request.body["daterec"], 
+dateinsp: request.body["dateinsp"], 
+wopomtt: request.body["wopomtt"], 
+no: request.body["no"], 
+destination: request.body["destination"], 
+pn: request.body["pn"], 
+description: request.body["description"], 
+lotsize: request.body["lotsize"], 
+samplesize: request.body["samplesize"] 
+
+    };*/
