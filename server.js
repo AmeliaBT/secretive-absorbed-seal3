@@ -290,10 +290,12 @@ app.post("/add-report", function(request, response) {
     console.log("in here insp and dep: ");  
   //reportnumber: request.body["reportnumber"],  supplier: request.body["supplier"],  
  /* ok: */ 
-let obj = {  daterec:"",     dateinsp:"",  wopomtt: request.body["supplier"],     no: "1233",   destination:"ata3",     pn: "990-12123",     description: "AT-92243",    lotsize: 1003,     samplesize: 53};
-console.log("supplier and pn: ");
+ console.log("supplier and pn: ");
   console.log(request.body.supplier); //ok format
    console.log(request.body["pn"] ); //ok format
+let obj = {  daterec:"",     dateinsp:"",  wopomtt: request.body["supplier"],     no: "888",   destination:"888",     pn: "990-888",     description: "AT-92243",    lotsize: 1003,     samplesize: 88};
+console.log("supplier and pn: ");
+ 
    /*
  let obj = {
 inspname: request.body["inspname"], 
