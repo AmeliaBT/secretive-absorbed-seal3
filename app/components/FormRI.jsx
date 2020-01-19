@@ -49,7 +49,7 @@ componentWillMount() {
      
      
        if(response.isLogedIn == true) {
-         console.log(" loged in ok")
+         console.log(" loged in ok");
           that.setState({
          ["inspname"]: response.inspname,
          ["dep"]: response.dep      
@@ -67,18 +67,19 @@ componentWillMount() {
       const name = target.name;
       this.setState({ [name]: value  });
   }
-  handleSubmit(event) { let that = this; console.log(that)
+  handleSubmit(event) { let that = this; 
+    console.log(that)
       const xhr = new XMLHttpRequest();      
       xhr.open('POST', '/add-report', true);
       xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
       
       
-      let body =
+      let body =           
+      'supplier=' + encodeURIComponent(this.state.supplier) +     
+      '&pn=' + encodeURIComponent(this.state.pn) +    
       'inspector=' + encodeURIComponent(this.state.inspname) +
-      'dep=' + encodeURIComponent(this.state.dep) +
-      'supplier=' + encodeURIComponent(this.state.supplier) +
       'daterec='+ encodeURIComponent(this.state.daterec) +
-      '&pn=' + encodeURIComponent(this.state.pn);
+      'dep=' + encodeURIComponent(this.state.dep) ;
 
 
       xhr.send(body);

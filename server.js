@@ -109,20 +109,11 @@ let userSchema = new Schema({
       dep: String});
   
 let reportSchema = new Schema({
-   /* inspname: String,
-    email: String,
-    password: String,
-    city: String,
-    street: String,
-    books: [],
-    income: [],
-    outcome: []*/
     inspector: String,
     dep: String,
-    
     supplier: String,
-    daterec:Date,
-    dateinsp:Date,
+    daterec: Date,
+    dateinsp: Date,
     wopomtt: String,
     no: String,
     destination:String,
@@ -296,8 +287,8 @@ app.post("/add-report", function(request, response) {
   console.log(request.body["dep"]); 
   console.log(request.body["supplier"]); 
    console.log(request.body["pn"] ); //ok format
-let obj = {  daterec:request.body["daterec"],     dateinsp:"",  supplier: request.body["supplier"],    
- no: "888",   destination:"888",     pn: request.body["pn"],     description: "AT-92243",    lotsize: 1003,     samplesize: 88};
+let obj = {pn: request.body["pn"], supplier: request.body["supplier"],  daterec:request.body["daterec"],     dateinsp:"",      
+ no: "10mmuber",   destination:"dest",         description: "AT-model",    lotsize: 1003,     samplesize: 88};
 console.log("supplier and pn: ");
  
    /*
