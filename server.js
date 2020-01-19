@@ -24,6 +24,8 @@ const mongodb = require('mongodb');
 const MongoClient = mongodb.MongoClient;
 // using Node.js `require()`
 const mongoose = require('mongoose');
+//to fix error: DeprecationWarning: Mongoose: mpromise 
+mongoose.Promise = global.Promise;
 // connection URL
 const url = process.env.MONGOLAB_URI;      
 // connection
