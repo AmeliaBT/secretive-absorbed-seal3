@@ -118,8 +118,8 @@ let reportSchema = new Schema({
     income: [],
     outcome: []*/
     inspector: String,
-    email: String,
-    password: String,
+    dep: String,
+    
     supplier: String,
     daterec:Date,
     dateinsp:Date,
@@ -291,10 +291,12 @@ app.post("/add-report", function(request, response) {
   //reportnumber: request.body["reportnumber"],  supplier: request.body["supplier"],  
  /* ok: */ 
  console.log("supplier and pn: ");
-  console.log(request.body.supplier); //ok format
-  console.log(request.body[supplier]); 
+  console.log(request.body.daterec); //ok format
+  console.log(request.body["inspector"]); 
+  console.log(request.body["dep"]); 
+  console.log(request.body["supplier"]); 
    console.log(request.body["pn"] ); //ok format
-let obj = {  daterec:"",     dateinsp:"",  supplier: request.body["supplier"],    
+let obj = {  daterec:request.body["daterec"],     dateinsp:"",  supplier: request.body["supplier"],    
  no: "888",   destination:"888",     pn: request.body["pn"],     description: "AT-92243",    lotsize: 1003,     samplesize: 88};
 console.log("supplier and pn: ");
  
