@@ -48120,7 +48120,7 @@ class HomePage extends React.Component {
           return;
         }
         let response = JSON.parse(this.responseText);
-        console.log("respon parsed ")
+        console.log("respond parsed ")
         /*
         to do -list RIs for Inspector
 */
