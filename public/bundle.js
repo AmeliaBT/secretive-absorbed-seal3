@@ -48417,9 +48417,9 @@ componentWillMount() {
       let body =           
       'supplier=' + encodeURIComponent(this.state.supplier) +     
       '&pn=' + encodeURIComponent(this.state.pn) +    
-      'inspector=' + encodeURIComponent(this.state.inspname) +
-      'daterec='+ encodeURIComponent(this.state.daterec) +
-      'dep=' + encodeURIComponent(this.state.dep) ;
+      '&inspector=' + encodeURIComponent(this.state.inspname) +
+      '&daterec='+ encodeURIComponent(this.state.daterec) +
+      '&dep=' + encodeURIComponent(this.state.dep) ;
 
 
       xhr.send(body);

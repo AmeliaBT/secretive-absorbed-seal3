@@ -287,9 +287,11 @@ app.post("/add-report", function(request, response) {
   console.log(request.body["dep"]); 
   console.log(request.body["supplier"]); 
    console.log(request.body["pn"] ); //ok format
+//pnjan18inspector=RI-person1daterec=1/18/2020, 8:50:14 PMdep=WH
+
 let obj = {pn: request.body["pn"], supplier: request.body["supplier"],  daterec:request.body["daterec"],     dateinsp:"",      
  no: "10mmuber",   destination:"dest",         description: "AT-model",    lotsize: 1003,     samplesize: 88};
-console.log("supplier and pn: ");
+console.log(" pn: ");
  
    /*
  let obj = {
