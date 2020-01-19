@@ -346,15 +346,16 @@ app.post("/get-all-users-reports", function(request, response) {
          
           for(let i = 0; i < users.length; i++) {
             for(let j = 0; j < users[i].reports.length; j++) {
-              // function for filtering
+              
+               /* // function for filtering
                function checkBookName(el) {
                  return el.chosenBook == users[i].reports[j].reportnumber;
-               }
-              let filteredIncome = users[i].income.filter(checkBookName);
+               }              
+            let filteredIncome = users[i].income.filter(checkBookName);
               let filteredOutcome = users[i].outcome.filter(checkBookName);
               if((filteredIncome.length == 0) && (filteredOutcome.length == 0)) {
                 reports.push(users[i].reports[j]);
-              }
+              } */
             }
             if(i == users.length - 1) response.json({reports: reports});
           }
