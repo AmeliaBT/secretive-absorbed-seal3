@@ -281,17 +281,13 @@ app.post("/add-report", function(request, response) {
     console.log("in here insp and dep: ");  
   //reportnumber: request.body["reportnumber"],  supplier: request.body["supplier"],  
  /* ok: */ 
- console.log("supplier and pn: ");
-  console.log(request.body.daterec); //ok format
-  console.log(request.body["inspector"]); 
-  console.log(request.body["dep"]); 
-  console.log(request.body["supplier"]); 
-   console.log(request.body["pn"] ); //ok format
-//pnjan18inspector=RI-person1daterec=1/18/2020, 8:50:14 PMdep=WH
 
-let obj = {pn: request.body["pn"], supplier: request.body["supplier"],  daterec:request.body["daterec"],     dateinsp:"",      
- no: "10mmuber",   destination:"dest",         description: "AT-model",    lotsize: 1003,     samplesize: 88};
-console.log(" pn: ");
+
+let obj = {inspector: request.body["inspector"], dep: request.body["dep"],    supplier: request.body["supplier"],
+  daterec:request.body["daterec"],   pn: request.body["pn"],
+    dateinsp:"",      
+ no: "junk",   destination:"junk2",         description: "junk3",    lotsize: 1003,     samplesize: 88};
+
  
    /*
  let obj = {
