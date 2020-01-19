@@ -75,6 +75,7 @@ componentWillMount() {
       
       let body =
       'inspector=' + encodeURIComponent(this.state.inspname) +
+      'dep=' + encodeURIComponent(this.state.dep) +
       'supplier=' + encodeURIComponent(this.state.supplier) +
       'daterec='+ encodeURIComponent(this.state.daterec) +
       '&pn=' + encodeURIComponent(this.state.pn);
