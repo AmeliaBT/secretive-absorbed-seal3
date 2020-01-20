@@ -48126,7 +48126,8 @@ class HomePage extends React.Component {
 */
        // let reports = response.reports.map((e) => {
         {/* return <UserReport img_url={e.img_url} reportnumber={e.reportnumber}/>;*/}  
-      //  return <UserReport  reportnumber={e.reportnumber}/>;
+
+        //  return <UserReport  reportnumber={e.reportnumber}/>;
        // });
           if(response.isLogedIn == true) {
             console.log(" loged in ok")
@@ -48288,6 +48289,8 @@ class UserReport extends React.Component {
   }
 }
 module.exports = UserReport;
+//HomePage requests this:
+//<UserReport  reportnumber={e.reportnumber}/>;
 
 /***/ }),
 /* 429 */

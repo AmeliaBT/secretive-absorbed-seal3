@@ -22,3 +22,5 @@ class UserReport extends React.Component {
   }
 }
 module.exports = UserReport;
+//HomePage requests this:
+//<UserReport  reportnumber={e.reportnumber}/>;

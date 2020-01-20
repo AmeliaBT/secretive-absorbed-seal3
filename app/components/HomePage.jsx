@@ -53,7 +53,8 @@ class HomePage extends React.Component {
 */
        // let reports = response.reports.map((e) => {
         {/* return <UserReport img_url={e.img_url} reportnumber={e.reportnumber}/>;*/}  
-      //  return <UserReport  reportnumber={e.reportnumber}/>;
+
+        //  return <UserReport  reportnumber={e.reportnumber}/>;
        // });
           if(response.isLogedIn == true) {
             console.log(" loged in ok")
