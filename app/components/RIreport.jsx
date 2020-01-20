@@ -3,19 +3,19 @@ const Link = require('react-router-dom').Link
 // react-bootstrap
 const {OverlayTrigger, Popover} = require('react-bootstrap');
 // style for BOOK
-const style = require('../styles/Book');
+const style = require('../styles/Report');
 
 /* component for displaying book */
 class Book extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      img_url: this.props.img_url,
-      nickname: this.props.nickname,
-      bookname: this.props.bookname,
+      //img_url: this.props.img_url,
+      inspector: this.props.inspector,
+      reportID: this.props.reportID,
       tooltip: <Popover id="popover" title="User location">
                             <div>
-                            Street: 
+                            PN: 
                            </div>
                            <div>
                              City: 
