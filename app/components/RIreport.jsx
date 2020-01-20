@@ -6,34 +6,34 @@ const {OverlayTrigger, Popover} = require('react-bootstrap');
 const style = require('../styles/Report');
 
 /* component for displaying book */
-class Book extends React.Component {
+class RIreport extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       //img_url: this.props.img_url,
       inspector: this.props.inspector,
       reportID: this.props.reportID,
-      tooltip: <Popover id="popover" title="User location">
+      tooltip: <Popover id="popover" title="some info">
                             <div>
-                            PN: 
+                            inspector: 
                            </div>
                            <div>
-                             City: 
+                             dp: 
                            </div>
                         </Popover>
     };
   }
   /***********************/
   componentWillMount() {
-    //get street and city of user by nickname
+    //get   supplier and city of user by nickname
     let that = this;
       const xhr = new XMLHttpRequest();
       
-      xhr.open('POST', '/get-street-city-by-nick', true);
+      xhr.open('POST', '/get-  supplier-city-by-nick', true);
       xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
       
       
-      let body = 'nickname=' + encodeURIComponent(this.props.nickname);
+      let body = 'inspector=' + encodeURIComponent(this.props.inspector);
 
 
       xhr.send(body);
@@ -45,14 +45,14 @@ class Book extends React.Component {
           return;
         }
         let response = JSON.parse(this.responseText);
-        let street = response.street;
+        let   supplier = response.  supplier;
         let city = response.city;
-        if(response.street.length == 0)  street = "not specified";
+        if(response.  supplier.length == 0)    supplier = "not specified";
         if(response.city.length == 0)  city = "not specified";
            that.setState({
           ["tooltip"]: <Popover id="popover" title="User location">
                             <div>
-                            Street: {street}
+                            supplier: {  supplier}
                            </div>
                            <div>
                              City: {city}
@@ -65,18 +65,18 @@ class Book extends React.Component {
   render() {
     return(
       <div className="book-all">
-        <img src={this.state.img_url} alt="book pic" className="img-all"/>
-        <div className="bookname-all">{this.state.bookname}</div>
-        <div className="exchange-btn-all" onClick={() => this.props.showModal(this.props.bookname, this.props.nickname)}>Exchange</div>
+      {/*   <img src={this.state.img_url} alt="book pic" className="img-all"/>*/}
+        <div className="bookname-all">{this.state.reportID}</div>
+        <div className="exchange-btn-all" onClick={() => this.props.showModal(this.props.reportID, this.props.nickname)}>xExchange</div>
          <OverlayTrigger
             trigger={['hover', 'focus']}
             placement="bottom"
             overlay={this.state.tooltip}
           >
-              <div className="nickname-all">Added by {this.state.nickname}</div>
+              <div className="nickname-all">Added by {this.state.inspector}</div>
           </OverlayTrigger>
       </div>
     );
   }
 }
-module.exports = Book;
+module.exports = RIreport;
