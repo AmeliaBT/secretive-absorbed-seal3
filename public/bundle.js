@@ -48078,7 +48078,7 @@ const Link = __webpack_require__(17).Link
 const style = __webpack_require__(426);
 // other components and etc
 const Header = __webpack_require__(42);
-const UserBook = __webpack_require__(428);
+const UserReport = __webpack_require__(428);
 //const IncomeProposal = require('./IncomeProposal');
 //const OutcomeProposal = require('./OutcomeProposal');
 const FormRI =__webpack_require__(431);
@@ -48125,8 +48125,8 @@ class HomePage extends React.Component {
         to do -list RIs for Inspector
 */
        // let reports = response.reports.map((e) => {
-        {/* return <UserBook img_url={e.img_url} reportnumber={e.reportnumber}/>;*/}  
-      //  return <UserBook  reportnumber={e.reportnumber}/>;
+        {/* return <UserReport img_url={e.img_url} reportnumber={e.reportnumber}/>;*/}  
+      //  return <UserReport  reportnumber={e.reportnumber}/>;
        // });
           if(response.isLogedIn == true) {
             console.log(" loged in ok")
@@ -48270,7 +48270,7 @@ const Link = __webpack_require__(17).Link
 const style = __webpack_require__(429);
 
 /* component for displaying books in user library */
-class UserBook extends React.Component {
+class UserReport extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -48287,7 +48287,7 @@ class UserBook extends React.Component {
     );
   }
 }
-module.exports = UserBook;
+module.exports = UserReport;
 
 /***/ }),
 /* 429 */
@@ -48310,8 +48310,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../node_modules/css-loader/index.js!./UserBook.css", function() {
-			var newContent = require("!!../../node_modules/css-loader/index.js!./UserBook.css");
+		module.hot.accept("!!../../node_modules/css-loader/index.js!./UserReport.css", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js!./UserReport.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});

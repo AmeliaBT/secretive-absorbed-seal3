@@ -5,7 +5,7 @@ const Link = require('react-router-dom').Link
 const style = require('../styles/HomePage');
 // other components and etc
 const Header = require('./Header');
-const UserBook = require('./UserBook');
+const UserReport = require('./UserReport');
 //const IncomeProposal = require('./IncomeProposal');
 //const OutcomeProposal = require('./OutcomeProposal');
 const FormRI =require('./FormRI');
@@ -52,8 +52,8 @@ class HomePage extends React.Component {
         to do -list RIs for Inspector
 */
        // let reports = response.reports.map((e) => {
-        {/* return <UserBook img_url={e.img_url} reportnumber={e.reportnumber}/>;*/}  
-      //  return <UserBook  reportnumber={e.reportnumber}/>;
+        {/* return <UserReport img_url={e.img_url} reportnumber={e.reportnumber}/>;*/}  
+      //  return <UserReport  reportnumber={e.reportnumber}/>;
        // });
           if(response.isLogedIn == true) {
             console.log(" loged in ok")

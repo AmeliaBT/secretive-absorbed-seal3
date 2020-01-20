@@ -392,16 +392,16 @@ app.post("/create-proposals", function(request, response) {
        let arrayOfOutcome = user.outcome;
        arrayOfOutcome.push({chosenBook: request.body["chosenBook"], 
                             anotherUserinspname: request.body["anotherUserinspname"], 
-                            chosenAnotherUserBook: request.body["chosenAnotherUserBook"]});
+                            chosenAnotherUserReport: request.body["chosenAnotherUserReport"]});
       user.set({outcome: arrayOfOutcome});
       user.save(function (err, updatedUser) {
                   if (err) response.json({error: 2});
                   reportModel.findOne({inspname: request.body["anotherUserinspname"]}, (err, anotherUser) => {
                       if (err) response.json({error: 3});
                     let arrayOfIncome = anotherUser.income;
-                     arrayOfIncome.push({chosenBook: request.body["chosenAnotherUserBook"], 
+                     arrayOfIncome.push({chosenBook: request.body["chosenAnotherUserReport"], 
                                           anotherUserinspname: user.inspname, 
-                                          chosenAnotherUserBook: request.body["chosenBook"]});
+                                          chosenAnotherUserReport: request.body["chosenBook"]});
                     anotherUser.set({income: arrayOfIncome});
                     anotherUser.save((err, updatedAnotherUser) => {
                       response.json({error: 0});
@@ -417,7 +417,7 @@ app.post("/refuse-proposal", function(request, response) {
         function checkProposal(element, index, array) {
               if((element.chosenBook == request.body["chosenBook"]) &&
                  (element.anotherUserinspname == request.body["anotherUserinspname"]) &&
-                 (element.chosenAnotherUserBook == request.body["chosenAnotherUserBook"])) {
+                 (element.chosenAnotherUserReport == request.body["chosenAnotherUserReport"])) {
                   return true
               }
               else {
@@ -448,7 +448,7 @@ app.post("/accept-proposal", function(request, response) {
         function checkProposal(element, index, array) {
               if((element.chosenBook == request.body["chosenBook"]) &&
                  (element.anotherUserinspname == request.body["anotherUserinspname"]) &&
-                 (element.chosenAnotherUserBook == request.body["chosenAnotherUserBook"])) {
+                 (element.chosenAnotherUserReport == request.body["chosenAnotherUserReport"])) {
                   return true
               }
               else {
@@ -464,7 +464,7 @@ app.post("/accept-proposal", function(request, response) {
                   }
                 }
         function checkBooknameAnotherUser(element, index, array) {
-                      if(element.reportnumber == request.body["chosenAnotherUserBook"]) {
+                      if(element.reportnumber == request.body["chosenAnotherUserReport"]) {
                           return true
                       }
                       else {
@@ -473,11 +473,11 @@ app.post("/accept-proposal", function(request, response) {
                     }
         let arrayOfIncome = user.income;
         //search book img
-        reports.search(request.body["chosenAnotherUserBook"], function(error, results) {
+        reports.search(request.body["chosenAnotherUserReport"], function(error, results) {
             if ( ! error ) {
                 let arrayOfBooks = user.reports;
                 arrayOfBooks.splice(arrayOfBooks.findIndex(checkBooknameUser), 1);
-                arrayOfBooks.push({reportnumber:request.body["chosenAnotherUserBook"], img_url: results[0].thumbnail, inspname: user.inspname});
+                arrayOfBooks.push({reportnumber:request.body["chosenAnotherUserReport"], img_url: results[0].thumbnail, inspname: user.inspname});
                 user.set({reports: arrayOfBooks});
                 
                 arrayOfIncome.splice(arrayOfIncome.findIndex(checkProposal), 1);
@@ -524,7 +524,7 @@ app.post("/refuse-proposal-income", function(request, response) {
         function checkProposal(element, index, array) {
               if((element.chosenBook == request.body["chosenBook"]) &&
                  (element.anotherUserinspname == request.body["anotherUserinspname"]) &&
-                 (element.chosenAnotherUserBook == request.body["chosenAnotherUserBook"])) {
+                 (element.chosenAnotherUserReport == request.body["chosenAnotherUserReport"])) {
                   return true
               }
               else {

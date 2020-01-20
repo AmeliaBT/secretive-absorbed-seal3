@@ -1,10 +1,10 @@
 const React = require('react');
 const Link = require('react-router-dom').Link
 // style for BOOK
-const style = require('../styles/UserBook');
+const style = require('../styles/UserReport');
 
 /* component for displaying books in user library */
-class UserBook extends React.Component {
+class UserReport extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -21,4 +21,4 @@ class UserBook extends React.Component {
     );
   }
 }
-module.exports = UserBook;
+module.exports = UserReport;
