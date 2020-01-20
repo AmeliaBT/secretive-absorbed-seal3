@@ -8,18 +8,18 @@ const {Modal, Button, form, FormGroup, FormControl, ControlLabel, option} = requ
 const Header = require('./Header');
 const RIreport = require('./RIreport');
 
-/* the books page that shows all books */
+/* the reports page that shows all reports */
 class RIreports extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
        show: false,
-       modal_label: "Choose a book from your library to exchange",
+       modal_label: "Choose a report from your library to view ",
        chosenAnotherUserBook: "",
        chosenBook: "",
        anotherUserNickname: "",
        disabled: true,
-       books: "loading...",
+       reports: "loading...",
        modal_content: "loading..."
     };
     
@@ -45,6 +45,7 @@ class RIreports extends React.Component {
   /***********************/
   handleExchange() {
      // post request to create proposals
+     /*
       let that = this;
       const xhr = new XMLHttpRequest();
       
@@ -67,7 +68,7 @@ class RIreports extends React.Component {
         }
         let response = JSON.parse(this.responseText);
         if(response.error == 0) {
-           window.location.href = "/books";
+           window.location.href = "/reports";
            that.setState({
           ["modal_label"]: "Succsess"
            });
@@ -78,6 +79,7 @@ class RIreports extends React.Component {
            });
          }
         }
+        */
   }
   /***********************/
   handleSelectChange(event) {
@@ -100,11 +102,11 @@ class RIreports extends React.Component {
   }
    /***********************/
   componentWillMount() {
-    // load books
+    // load reports
       let that = this;
       let xhr = new XMLHttpRequest();
       
-      xhr.open('POST', '/get-all-users-books', true);
+      xhr.open('POST', '/get-all-users-reports', true);
       xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
       xhr.send();
@@ -116,19 +118,19 @@ class RIreports extends React.Component {
           return;
         }
         let response = JSON.parse(this.responseText);
-        let books = response.books.map((el) => {
+        let reports = response.reports.map((el) => {
           return <RIreport showModal={that.handleShowModal} bookname={el.bookname} nickname={el.nickname} img_url={el.img_url}/> 
         });
            that.setState({
-          ["books"]: <div className="books">
-                      {books}     
+          ["reports"]: <div className="reports">
+                      {reports}     
                     </div>
            });
        }
-      // getl user's filtered books
+      // getl user's filtered reports
       xhr = new XMLHttpRequest();
       
-      xhr.open('POST', '/get-user-filtered-books', true);
+      xhr.open('POST', '/get-user-filtered-reports', true);
       xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
       xhr.send();
@@ -140,7 +142,7 @@ class RIreports extends React.Component {
           return;
         }
         let response = JSON.parse(this.responseText);
-        let options = response.books.map((el) => {
+        let options = response.reports.map((el) => {
           return <option value={el.bookname} key={el.bookname}>{el.bookname}</option>;
         });
         if(options.length > 0) {
@@ -154,7 +156,7 @@ class RIreports extends React.Component {
         }
         else {
            that.setState({
-            ["modal_content"]: "You do not have books: add the one before exchanging!"
+            ["modal_content"]: "You do not have reports: add the one before exchanging!"
              });
         }
        }
@@ -163,7 +165,7 @@ class RIreports extends React.Component {
     return (
       <div>
         <Header/>
-        {this.state.books}
+        {this.state.reports}
          <Modal show={this.state.show} onHide={this.handleClose}>
           <Modal.Header closeButton>
             <Modal.Title>{this.state.modal_label}</Modal.Title>
