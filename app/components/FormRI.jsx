@@ -13,6 +13,7 @@ class FormRI extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      reportID:"",
       inspname: "",
       dep: "",
       ri_report_to_add: "",
@@ -75,12 +76,14 @@ componentWillMount() {
       
       
       let body =           
+      
       'supplier=' + encodeURIComponent(this.state.supplier) +     
       '&pn=' + encodeURIComponent(this.state.pn) +    
       '&inspector=' + encodeURIComponent(this.state.inspname) +
       '&daterec='+ encodeURIComponent(this.state.daterec) +
-      '&dep=' + encodeURIComponent(this.state.dep) ;
-
+      //reportID
+      '&dep=' + encodeURIComponent(this.state.dep) +
+      '&reportID=' + encodeURIComponent(this.state.reportID) ;
 
       xhr.send(body);
 
@@ -112,6 +115,11 @@ componentWillMount() {
 <Form className="input-label" method="post" action="/addRIreport" onSubmit={this.handleSubmit}>   
            
 <Col  sm={5}>
+<FormGroup ><ControlLabel>reportID</ControlLabel>
+    <FormControl type="text" name="reportID" required value={this.state.reportID } placeholder="RI number" onChange={this.handleChangeValue}  />   
+  </FormGroup>        
+
+  <div className="profile-line"></div>
 <FormGroup ><ControlLabel>Inspector</ControlLabel>
     <FormControl type="text" name="inspector" required value={this.state.inspname} readOnly />   
   </FormGroup>        

@@ -48275,15 +48275,15 @@ class UserReport extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      img_url: this.props.img_url,
-      bookname: this.props.bookname
+     // img_url: this.props.img_url,
+      reportID: this.props.reportID
     };
   }
   render() {
     return(
       React.createElement("div", {className: "book"}, 
-        React.createElement("img", {src: this.state.img_url, alt: "book pic", className: "img-user"}), 
-        React.createElement("div", {className: "bookname"}, this.state.bookname)
+  /*     <img src={this.state.img_url} alt="book pic" className="img-user"/>*/
+        React.createElement("div", {className: "reportID"}, this.state.reportID)
       )
     );
   }
@@ -48356,6 +48356,7 @@ class FormRI extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      reportID:"",
       inspname: "",
       dep: "",
       ri_report_to_add: "",
@@ -48418,12 +48419,14 @@ componentWillMount() {
       
       
       let body =           
+      
       'supplier=' + encodeURIComponent(this.state.supplier) +     
       '&pn=' + encodeURIComponent(this.state.pn) +    
       '&inspector=' + encodeURIComponent(this.state.inspname) +
       '&daterec='+ encodeURIComponent(this.state.daterec) +
-      '&dep=' + encodeURIComponent(this.state.dep) ;
-
+      //reportID
+      '&dep=' + encodeURIComponent(this.state.dep) +
+      '&reportID=' + encodeURIComponent(this.state.reportID) ;
 
       xhr.send(body);
 
@@ -48455,6 +48458,11 @@ componentWillMount() {
 React.createElement(Form, {className: "input-label", method: "post", action: "/addRIreport", onSubmit: this.handleSubmit}, 
            
 React.createElement(Col, {sm: 5}, 
+React.createElement(FormGroup, null, React.createElement(ControlLabel, null, "reportID"), 
+    React.createElement(FormControl, {type: "text", name: "reportID", required: true, value: this.state.reportID, placeholder: "RI number", onChange: this.handleChangeValue})
+  ), 
+
+  React.createElement("div", {className: "profile-line"}), 
 React.createElement(FormGroup, null, React.createElement(ControlLabel, null, "Inspector"), 
     React.createElement(FormControl, {type: "text", name: "inspector", required: true, value: this.state.inspname, readOnly: true})
   ), 
