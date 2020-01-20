@@ -111,6 +111,7 @@ let userSchema = new Schema({
       dep: String});
   
 let reportSchema = new Schema({
+    reportID: String,
     inspector: String,
     dep: String,
     supplier: String,
@@ -281,8 +282,8 @@ app.post("/add-report", function(request, response) {
   //if (err) throw err;   
     // create a report
     console.log("in here insp and dep: ");  
- 
-let obj = {inspector: request.body["inspector"], dep: request.body["dep"],    supplier: request.body["supplier"],
+ //
+let obj = {reportID: request.body["reportID"], inspector: request.body["inspector"], dep: request.body["dep"],    supplier: request.body["supplier"],
   daterec:request.body["daterec"],   pn: request.body["pn"],
     dateinsp:"",      
  no: "junk",   destination:"junk2",         description: "junk3",    lotsize: 1003,     samplesize: 88};
