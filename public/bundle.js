@@ -12627,6 +12627,7 @@ render((
         React.createElement(Route, {path: "/signup", component: SignUp}), 
         React.createElement(Route, {path: "/login", component: LogIn}), 
         React.createElement(Route, {path: "/homepage", component: HomePage})
+        
        /*  < DisplayMessages />
          <Route path="/reports" component={RIreports}/>
         <Route path="/books" component={RIreports}/>*/

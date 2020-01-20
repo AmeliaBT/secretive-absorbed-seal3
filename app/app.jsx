@@ -34,6 +34,7 @@ render((
         <Route path="/signup" component={SignUp}/>
         <Route path="/login" component={LogIn}/>
         <Route path="/homepage" component={HomePage}/>
+        
        {/*  < DisplayMessages />
          <Route path="/reports" component={RIreports}/>
         <Route path="/books" component={RIreports}/>*/}
