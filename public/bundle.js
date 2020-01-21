@@ -48356,7 +48356,7 @@ class LogIn extends React.Component {
         }
         let response = JSON.parse(this.responseText);
         if(response.error == 0) {
-           window.location.href = "/books";
+           window.location.href = "/reports";
            that.setState({
           ["email"]: "Succsess",
           ["password"]: "Succsess"
