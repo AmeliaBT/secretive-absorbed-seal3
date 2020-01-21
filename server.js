@@ -370,7 +370,7 @@ app.post("/get-user-filtered-reports", function(request, response) {
        reportModel.findById(request.session.passport.user, (err, user) => {
           if (err) throw err;
           let reports = []          
-
+//
             for(let j = 0; j < user.reports.length; j++) {
               // function for filtering
                function checkBookName(el) {
@@ -381,6 +381,8 @@ app.post("/get-user-filtered-reports", function(request, response) {
               if((filteredIncome.length == 0) && (filteredOutcome.length == 0)) {
                 reports.push(user.reports[j]);
               }
+              
+              
             }
          
           response.json({reports: reports});

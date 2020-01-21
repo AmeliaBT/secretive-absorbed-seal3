@@ -25,7 +25,7 @@ class RIreport extends React.Component {
   }
   /***********************/
   componentWillMount() {
-    //get   supplier and city of user by nickname
+    //get   supplier and pn of user by nickname
     let that = this;
       const xhr = new XMLHttpRequest();
       
@@ -46,16 +46,16 @@ class RIreport extends React.Component {
         }
         let response = JSON.parse(this.responseText);
         let   supplier = response.  supplier;
-        let city = response.city;
+        let pn = response.pn;
         if(response.  supplier.length == 0)    supplier = "not specified";
-        if(response.city.length == 0)  city = "not specified";
+        if(response.pn.length == 0)  pn = "not specified";
            that.setState({
           ["tooltip"]: <Popover id="popover" title="User location">
                             <div>
                             supplier: {  supplier}
                            </div>
                            <div>
-                             City: {city}
+                             PN: {pn}
                            </div>
                         </Popover>
            });
