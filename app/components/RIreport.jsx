@@ -12,7 +12,7 @@ class RIreport extends React.Component {
     this.state = {
       //img_url: this.props.img_url,
       inspector: this.props.inspector,
-      reportID: this.props.reportID,
+      reportID: this.props.reportnumber,
       tooltip: <Popover id="popover" title="some info">
                             <div>
                             inspector: 
@@ -74,6 +74,7 @@ class RIreport extends React.Component {
             overlay={this.state.tooltip}
           >
               <div className="nickname-all">Inspector: {this.state.inspector}</div>
+             
           </OverlayTrigger>
       </div>
     );

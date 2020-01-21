@@ -48004,7 +48004,7 @@ class RIreport extends React.Component {
     this.state = {
       //img_url: this.props.img_url,
       inspector: this.props.inspector,
-      reportID: this.props.reportID,
+      reportID: this.props.reportnumber,
       tooltip: React.createElement(Popover, {id: "popover", title: "some info"}, 
                             React.createElement("div", null, 
                             "inspector:" 
@@ -48065,7 +48065,8 @@ class RIreport extends React.Component {
             placement: "bottom", 
             overlay: this.state.tooltip
           }, 
-              React.createElement("div", {className: "nickname-all"}, "Added by ", this.state.inspector)
+              React.createElement("div", {className: "nickname-all"}, "Inspector: ", this.state.inspector)
+             
           )
       )
     );
