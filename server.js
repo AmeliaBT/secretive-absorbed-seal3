@@ -365,28 +365,29 @@ app.post("/get-all-users-reports", function(request, response) {
           }
        });
 });
-/***********************************/
+/**  here err1  *********************************/
 app.post("/get-user-filtered-reports", function(request, response) {
-       reportModel.findById(request.session.passport.user, (err, user) => {
-          if (err) throw err;
+    //   reportModel.findById(request.session.passport.user, (err, user) => {
+        //  if (err) throw err;
           let reports = []          
-//
-            for(let j = 0; j < user.reports.length; j++) {
+//recivinginspb.reportsforris
+            for(let j = 0; j < request.reportsforris.length; j++) {
+              
               // function for filtering
-               function checkBookName(el) {
-                 return el.chosenBook == user.reports[j].reportnumber;
-               }
-              let filteredIncome = user.income.filter(checkBookName);
-              let filteredOutcome = user.outcome.filter(checkBookName);
-              if((filteredIncome.length == 0) && (filteredOutcome.length == 0)) {
-                reports.push(user.reports[j]);
-              }
+             //  function checkBookName(el) {
+             //    return el.chosenBook == user.reports[j].reportnumber;
+            //   }
+            //  let filteredIncome = user.income.filter(checkBookName);
+            //  let filteredOutcome = user.outcome.filter(checkBookName);
+              //if((filteredIncome.length == 0) && (filteredOutcome.length == 0)) {
+                reports.push(reports[j]);
+             // }
               
               
             }
          
           response.json({reports: reports});
-     });
+     //});
 });
 /***********************************/
 app.post("/create-proposals", function(request, response) { 
