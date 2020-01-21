@@ -47981,7 +47981,7 @@ exports = module.exports = __webpack_require__(21)(false);
 
 
 // module
-exports.push([module.i, ".books {\n  width: 90%;\n  margin: auto;\n  padding: 20px;\n  background: #2d2d2d;\n  border: 10px solid #416f8e;\n  height: 1000px;\n  overflow: auto;\n}\n.btn-modal {\n  width: 49.5% !important;\n  float: right;\n}", ""]);
+exports.push([module.i, ".books {\n  width: 90%;\n  margin: auto;\n  padding: 20px;\n  background: #2d2d2d;\n  border: 10px solid #416f8e;\n  height: 1000px;\n  overflow: auto;\n}\n.btn-modal {\n  width: 49.5% !important;\n  float: right;\n}\n/*\n.books {\n  width: 90%;\n  margin: auto;\n  padding: 20px;\n  background: #2d2d2d;\n  border: 10px solid #416f8e;\n  height: 1000px;\n  overflow: auto;\n}\n.btn-modal {\n  width: 49.5% !important;\n  float: right;\n} */", ""]);
 
 // exports
 
@@ -48059,7 +48059,7 @@ class RIreport extends React.Component {
       React.createElement("div", {className: "book-all"}, 
       /*   <img src={this.state.img_url} alt="book pic" className="img-all"/>*/
         React.createElement("div", {className: "bookname-all"}, this.state.reportID), 
-        React.createElement("div", {className: "exchange-btn-all", onClick: () => this.props.showModal(this.props.reportID, this.props.nickname)}, "xExchange"), 
+        React.createElement("div", {className: "exchange-btn-all", onClick: () => this.props.showModal(this.props.reportID, this.props.nickname)}, "Update"), 
          React.createElement(OverlayTrigger, {
             trigger: ['hover', 'focus'], 
             placement: "bottom", 
@@ -48114,7 +48114,7 @@ exports = module.exports = __webpack_require__(21)(false);
 
 
 // module
-exports.push([module.i, ".book-all {\n  background: black;\n  width: 13.5%;\n  float: left;\n  margin-left: 10px;\n  border: 10px solid #9d9d80;\n  margin-bottom: 20px;\n}\n\n.img-all {\n  width: 100%;\n  max-height: 200px;\n  min-height: 200px;\n}\n\n.bookname-all {\n  padding: 10px;\n  text-align: center;\n  font-size: 30px;\n  overflow: auto;\n  white-space: nowrap;\n  color: #f0ff00;\n}\n\n.nickname-all {\n  padding: 10px;\n  text-align: center;\n  color: rgba(239, 255, 0, 0.42);\n  overflow: auto;\n}\n\n.nickname-all:hover {\n  cursor: help;\n}\n\n.exchange-btn-all {\n  color: yellow;\n  width: 100%;\n  background: #ff006a;\n  padding: 5px;\n  text-align: center;\n}\n\n.exchange-btn-all:hover {\n  color: black;\n  width: 100%;\n  background: yellow;\n  font-weight: bold;\n  cursor: pointer;\n}", ""]);
+exports.push([module.i, ".book-all {\n  background: antiquewhite;\n  width: 13.5%;\n  float: left;\n  margin-left: 10px;\n  border: 5px solid  #987D00;\n  margin-bottom: 20px;\n}\n\n.img-all {\n  width: 100%;\n  max-height: 200px;\n  min-height: 200px;\n}\n\n.bookname-all {\n  padding: 10px;\n  text-align: center;\n  font-size: 30px;\n  overflow: auto;\n  white-space: nowrap;\n  color: black;\n}\n\n.nickname-all {\n  padding: 10px;\n  text-align: center;\n  color:black;\n  overflow: auto;\n}\n\n.nickname-all:hover {\n  cursor: help;\n}\n\n.exchange-btn-all {\n  color: #987D00; \n  width: 100%;\n  background: black;\n  padding: 5px;\n  text-align: center;\n}\n\n.exchange-btn-all:hover {\n  color: black;\n  width: 100%;\n  background: yellow;\n  font-weight: bold;\n  cursor: pointer;\n}", ""]);
 
 // exports
 

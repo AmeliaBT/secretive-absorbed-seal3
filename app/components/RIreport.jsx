@@ -67,7 +67,7 @@ class RIreport extends React.Component {
       <div className="book-all">
       {/*   <img src={this.state.img_url} alt="book pic" className="img-all"/>*/}
         <div className="bookname-all">{this.state.reportID}</div>
-        <div className="exchange-btn-all" onClick={() => this.props.showModal(this.props.reportID, this.props.nickname)}>xExchange</div>
+        <div className="exchange-btn-all" onClick={() => this.props.showModal(this.props.reportID, this.props.nickname)}>Update</div>
          <OverlayTrigger
             trigger={['hover', 'focus']}
             placement="bottom"

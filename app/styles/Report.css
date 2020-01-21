@@ -34,9 +34,9 @@
 }
 
 .exchange-btn-all {
-  color: yellow;
+  color: #987D00; 
   width: 100%;
-  background: #ff006a;
+  background: black;
   padding: 5px;
   text-align: center;
 }
