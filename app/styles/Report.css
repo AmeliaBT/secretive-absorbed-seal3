@@ -34,17 +34,17 @@
 }
 
 .exchange-btn-all {
-  color: #987D00; 
+  color: white; /*#987D00; */
   width: 100%;
-  background: black;
+  background: #231F20; /*black;*/
   padding: 5px;
   text-align: center;
 }
 
 .exchange-btn-all:hover {
-  color: black;
+  color: #231F20 ;/* black;*/
   width: 100%;
-  background: yellow;
+  background:  white; ; /yellow;*/
   font-weight: bold;
   cursor: pointer;
 }
