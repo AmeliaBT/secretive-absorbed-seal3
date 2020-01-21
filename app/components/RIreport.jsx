@@ -28,10 +28,12 @@ class RIreport extends React.Component {
     //get   supplier and pn of user by nickname
     let that = this;
       const xhr = new XMLHttpRequest();
-      
+     /* 
       xhr.open('POST', '/get-  supplier-city-by-nick', true);
-      xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-      
+ */
+xhr.open('POST',  true);
+ xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+     
       
       let body = 'inspector=' + encodeURIComponent(this.props.inspector);
 
