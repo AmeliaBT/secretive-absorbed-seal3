@@ -146,7 +146,10 @@ class RIreports extends React.Component {
         let response = JSON.parse(this.responseText);
         let options = response.reports.map((el) => {
           //added .toString() below
-          return <option value={el.reportnumber} key={el.reportnumber}>{el.reportnumber}</option>;
+      //    return <option value={el.reportnumber} key={el.reportnumber}>{el.reportnumber}</option>;
+console.log(el);
+      return <option value={el.reportnumber} key={el.toString()}>{el.reportnumber}</option>;
+
         });
         if(options.length > 0) {
            that.setState({
