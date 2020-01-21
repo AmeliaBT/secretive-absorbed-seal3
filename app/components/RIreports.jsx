@@ -121,7 +121,7 @@ class RIreports extends React.Component {
         let reports = response.reports.map((el) => {
         //  return <RIreport showModal={that.handleShowModal} reportnumber={el.reportnumber} nickname={el.nickname} img_url={el.img_url}/> 
 
-          return <RIreport  reportnumber={el.reportID}  inspector={el.inspector} /> 
+          return <RIreport key={el.reportnumber} reportnumber={el.reportID}  inspector={el.inspector} /> 
         });
            that.setState({
           ["reports"]: <div className="reports">
@@ -145,7 +145,8 @@ class RIreports extends React.Component {
         }
         let response = JSON.parse(this.responseText);
         let options = response.reports.map((el) => {
-          return <option value={el.reportnumber} key={el.reportnumber.toString()}>{el.reportnumber}</option>;
+          //added .toString() below
+          return <option value={el.reportnumber} key={el.reportnumber}>{el.reportnumber}</option>;
         });
         if(options.length > 0) {
            that.setState({

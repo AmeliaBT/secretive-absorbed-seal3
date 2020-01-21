@@ -47870,7 +47870,7 @@ class RIreports extends React.Component {
         let reports = response.reports.map((el) => {
         //  return <RIreport showModal={that.handleShowModal} reportnumber={el.reportnumber} nickname={el.nickname} img_url={el.img_url}/> 
 
-          return React.createElement(RIreport, {reportnumber: el.reportID, inspector: el.inspector}) 
+          return React.createElement(RIreport, {key: el.reportnumber, reportnumber: el.reportID, inspector: el.inspector}) 
         });
            that.setState({
           ["reports"]: React.createElement("div", {className: "reports"}, 
@@ -47894,6 +47894,7 @@ class RIreports extends React.Component {
         }
         let response = JSON.parse(this.responseText);
         let options = response.reports.map((el) => {
+          //added .toString() below
           return React.createElement("option", {value: el.reportnumber, key: el.reportnumber}, el.reportnumber);
         });
         if(options.length > 0) {

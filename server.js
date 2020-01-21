@@ -371,8 +371,9 @@ app.post("/get-user-filtered-reports", function(request, response) {
         //  if (err) throw err;
           let reports = []          
 //recivinginspb.reportsforris
-            for(let j = 0; j < request.reportsforris.length; j++) {
-              
+//TypeError: Cannot read property 'length' of undefined
+          //  for(let j = 0; j < request.reportsforris.length; j++) {
+          for(let j = 0; j < 10; j++) {     
               // function for filtering
              //  function checkBookName(el) {
              //    return el.chosenBook == user.reports[j].reportnumber;
