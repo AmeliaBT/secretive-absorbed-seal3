@@ -73,7 +73,7 @@ class RIreport extends React.Component {
             placement="bottom"
             overlay={this.state.tooltip}
           >
-              <div className="nickname-all">Added by {this.state.inspector}</div>
+              <div className="nickname-all">Inspector: {this.state.inspector}</div>
           </OverlayTrigger>
       </div>
     );
