@@ -121,7 +121,7 @@ class RIreports extends React.Component {
         let reports = response.reports.map((el) => {
         //  return <RIreport showModal={that.handleShowModal} reportnumber={el.reportnumber} nickname={el.nickname} img_url={el.img_url}/> 
 
-          return <RIreport key={el.reportnumber} reportnumber={el.reportID}  inspector={el.inspector} /> 
+          return <RIreport key={el.reportID} reportnumber={el.reportID}  inspector={el.inspector} /> 
         });
            that.setState({
           ["reports"]: <div className="reports">
