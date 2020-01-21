@@ -31,7 +31,8 @@ class RIreport extends React.Component {
      /* 
       xhr.open('POST', '/get-  supplier-city-by-nick', true);
  */
-xhr.open('POST',  true);
+//xhr.open('POST',  true);
+xhr.open('POST', '/get-all-users-reports', true);
  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
      
       

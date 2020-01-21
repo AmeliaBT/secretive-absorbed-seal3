@@ -44,7 +44,7 @@
 .exchange-btn-all:hover {
   color: #231F20 ;/* black;*/
   width: 100%;
-  background:  white; ; /yellow;*/
+  background:  white; ; /*yellow;*/
   font-weight: bold;
   cursor: pointer;
 }
