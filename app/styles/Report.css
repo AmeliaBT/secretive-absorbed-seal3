@@ -1,9 +1,9 @@
 .book-all {
-  background: black;
+  background: antiquewhite;
   width: 13.5%;
   float: left;
   margin-left: 10px;
-  border: 10px solid #9d9d80;
+  border: 5px solid  #987D00;
   margin-bottom: 20px;
 }
 
@@ -19,13 +19,13 @@
   font-size: 30px;
   overflow: auto;
   white-space: nowrap;
-  color: #f0ff00;
+  color: black;
 }
 
 .nickname-all {
   padding: 10px;
   text-align: center;
-  color: rgba(239, 255, 0, 0.42);
+  color:black;
   overflow: auto;
 }
 
