@@ -256,6 +256,34 @@ app.post("/set-dep", function(request, response) {
 
 
 /* ********************************* */
+
+
+
+app.post("/add-report", function(request, response) {
+  // reportModel.findById(request.session.passport.user, (err, user) => {
+    //if (err) throw err;   
+      // create a report
+      console.log("in here insp and dep: ");  
+   //
+  let obj = {reportID: request.body["reportID"], inspector: request.body["inspector"], dep: request.body["dep"],    supplier: request.body["supplier"],
+    daterec:request.body["daterec"],   pn: request.body["pn"],
+      dateinsp:"",      
+   no: "junk",   destination:"junk2",         description: "junk3",    lotsize: 1003,     samplesize: 88};
+  
+   
+      let report = new reportModel(obj);
+            
+              report.save(function (err) {
+                //if (err) throw err;
+                if (!err) console.log('Success!');
+                response.json({"error": 0});
+              });
+  
+          
+     
+  // });
+  });
+  /***********************************/
 /*
 app.post("/set-street", function(request, response) {
       reportModel.findById(request.session.passport.user, (err, user) => {
@@ -277,31 +305,7 @@ app.post("/get-street-city-by-nick", function(request, response) {
     });
 });
 /***********************************/
-app.post("/add-report", function(request, response) {
-// reportModel.findById(request.session.passport.user, (err, user) => {
-  //if (err) throw err;   
-    // create a report
-    console.log("in here insp and dep: ");  
- //
-let obj = {reportID: request.body["reportID"], inspector: request.body["inspector"], dep: request.body["dep"],    supplier: request.body["supplier"],
-  daterec:request.body["daterec"],   pn: request.body["pn"],
-    dateinsp:"",      
- no: "junk",   destination:"junk2",         description: "junk3",    lotsize: 1003,     samplesize: 88};
 
- 
-    let report = new reportModel(obj);
-          
-            report.save(function (err) {
-              //if (err) throw err;
-              if (!err) console.log('Success!');
-              response.json({"error": 0});
-            });
-
-        
-   
-// });
-});
-/***********************************/
 
 
 

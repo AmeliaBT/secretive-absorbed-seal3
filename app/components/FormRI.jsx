@@ -94,6 +94,7 @@ componentWillMount() {
           return;
         }
         let response = JSON.parse(this.responseText);
+
         if(response.error == 0) {
            window.location.href = "/reports";
            that.setState({
@@ -106,6 +107,7 @@ componentWillMount() {
           ["supplier"]: "Wrong supplier and/or pn"
            });
          }
+         
         }
       event.preventDefault();
      }
