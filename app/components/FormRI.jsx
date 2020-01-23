@@ -48,7 +48,7 @@ componentWillMount() {
      }
      let response = JSON.parse(this.responseText);
      
-     
+    //note: from user schema!  
        if(response.isLogedIn == true) {
          console.log(" loged in ok");
           that.setState({
