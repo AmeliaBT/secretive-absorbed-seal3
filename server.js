@@ -1,5 +1,10 @@
 // init project
 const express = require('express');
+// for file upload
+const multer  = require('multer');
+
+//react-html-table-to-excel
+
 const app = express();
 // book search "engine"
 const reports = require('google-books-search');
@@ -27,11 +32,14 @@ const mongoose = require('mongoose');
 //to fix error: DeprecationWarning: Mongoose: mpromise 
 mongoose.Promise = global.Promise;
 // connection URL
-const url = process.env.MONGOLAB_URI;      
+const url = process.env.MONGOLAB_URI;   
+
 // connection
 //error here below
 const promise_connection = mongoose.connect(url, { 	useMongoClient: true });
-
+//const storage = new GridFsStorage({ url: url});
+const GridFsStorage = require('multer-gridfs-storage');
+const storage = new GridFsStorage({ db: promise_connection });
 /* To Do: see Anon Message Board https://impossible-petalite.glitch.me/ for good connection
 
 try
@@ -93,13 +101,19 @@ app.use(passport.session());
 /***/
 app.use(express.static('public'));
 /***********************************/
+//using the middleware Multer to upload the photo on the server side.
+
+//app.use(multer({ dest: "./uploads/",  rename: function (fieldname, filename) { return filename; },}));
+app.use(multer({dest:'./public/images/uploads'}).any());
+
+
 
 /******************************/
 // mongoDB models and schemas
 /******************************/
 // if connection is success
 promise_connection.then(function(db){
-	console.log('Connected to mongodb');
+	//console.log('Connected to mongodb');
 });
 // describe the schema
 let Schema = mongoose.Schema,
@@ -111,19 +125,34 @@ let userSchema = new Schema({
       dep: String});
   
 let reportSchema = new Schema({
-    reportID: String,
-    inspector: String,
-    dep: String,
-    supplier: String,
-    daterec: Date,
-    dateinsp: Date,
-    wopomtt: String,
-    no: String,
-    destination:String,
-    pn: String,
-    description: String,
-    lotsize: Number,
-    samplesize: Number
+  reportID: String,
+  inspector: String, 
+  daterec:Date,
+   Gwo: String,
+//created: Date,
+cwo: Date,
+dwo: String,
+ewo: String,
+fwo: String,
+hwo: String,
+
+iwo: String,
+jwo: Date,
+kwo: String,
+lwo: String,  
+
+mwo: String,
+nwo: String,
+owo:Number,
+pwo:Number,
+qwo:Number,
+record: String,
+rwo:Number,
+swo: String,
+//title: String,
+two: String,
+uwo:  {data: Buffer, contentType: String },
+  record:String
 });
 // get the model
 let reportModel = mongoose.model('reportsforri', reportSchema);
@@ -133,7 +162,7 @@ let userModel = mongoose.model('usersri', userSchema);
 // getting the layout(page) of application
 app.get("*", function(request, response) {
   // prevent user from getting the wrong page when user is authenticated or not
-  if((request.path == "/reports" || request.path == "/homepage") && request.isAuthenticated() === false) {
+  if((request.path == "/list" || request.path == "/reports" || request.path == "/homepage") && request.isAuthenticated() === false) {
     response.redirect("/login");
   }
   else if((request.path == "/signup" || request.path == "/login") && request.isAuthenticated() === true) {
@@ -256,45 +285,6 @@ app.post("/set-dep", function(request, response) {
 
 
 /* ********************************* */
-
-
-
-app.post("/add-report", function(request, response) {
-  // reportModel.findById(request.session.passport.user, (err, user) => {
-    //if (err) throw err;   
-      // create a report
-      console.log("in here insp and reportID: ");
-      console.log(request.body["reportID"], + " " + request.body["inspector"]);
-      
-   //
-  let obj = {
-    reportID: request.body["reportID"],
-     inspector: request.body["inspector"], 
-     dep: request.body["dep"],    
-     supplier: request.body["supplier"],
-    daterec:request.body["daterec"],
-    pn: request.body["pn"],
-    dateinsp:"",      
-   no: "junk",
-    destination:"junk2", 
-     description: "junk3", 
-      lotsize: 1003, 
-      samplesize: 88};
-  
-   
-      let report = new reportModel(obj);
-            
-              report.save(function (err) {
-                //if (err) throw err;
-                if (!err) console.log('Success!');
-                response.json({"error": 0});
-              });
-  
-          
-     
-  // });
-  });
-  /***********************************/
 /*
 app.post("/set-street", function(request, response) {
       reportModel.findById(request.session.passport.user, (err, user) => {
@@ -316,6 +306,99 @@ app.post("/get-street-city-by-nick", function(request, response) {
     });
 });
 /***********************************/
+let nDocs; 
+app.post("/add-report", function(request, response) {
+// reportModel.findById(request.session.passport.user, (err, user) => {
+  //if (err) throw err; 
+   //get the number of documents
+reportModel.find({}, (err, docs) => {
+  if (err) throw err;        
+ nDocs= docs.length +6000;
+ console.log(" nDoc= "  +nDocs) ;
+//_____________________________
+
+console.log(" nDoc1= "  +nDocs) ;
+    // create a report
+
+let obj =  {
+//reportID: request.body["reportID"],   request.body._id;
+
+reportID:  nDocs, 
+daterec: request.body["daterec"], 
+inspector: request.body["inspector"], 
+Gwo: request.body["Gwo"], 
+
+cwo: request.body["cwo"], 
+dwo: request.body["dwo"], 
+ewo: request.body["ewo"], 
+fwo: request.body["fwo"], 
+hwo: request.body["hwo"], 
+
+iwo: request.body["iwo"], 
+jwo: request.body["jwo"], 
+kwo: request.body["kwo"],
+lwo: request.body["lwo"], //photo string
+mwo: request.body["mwo"], 
+nwo: request.body["nwo"], 
+owo: request.body["owo"], 
+pwo: request.body["pwo"], 
+qwo: request.body["qwo"], 
+rwo: request.body["rwo"], 
+swo: request.body["swo"], 
+two: request.body["two"], 
+record: request.body["record"],
+uwo: request.body["uwo"] //photo file
+ 
+
+};
+
+console.log(obj);
+ 
+    let report = new reportModel(obj);
+          
+            report.save(function (err) {
+              //if (err) throw err;
+              if (!err) console.log('Success!');
+              response.json({"error": 0});
+              
+            });
+//_____________________________
+
+    });
+
+
+        
+   
+// });
+});
+/***********************************/
+//add-upload'
+
+app.post("/add-upload", function(request, response) {
+reportModel.find({}, (err, docs) => {
+  if (err) throw err;        
+ nDocs= docs.length +6000;
+ console.log(" nDoc= "  +nDocs) ;
+
+
+let obj =  {
+
+reportID:  nDocs, 
+uwo: request.body["image"] //photo file 
+
+};
+
+//console.log(obj);
+ 
+    let report = new reportModel(obj);          
+            report.save(function (err) {
+              //if (err) throw err;
+              if (!err) console.log('Success!');
+              response.json({"error": 0});              
+            });
+    });
+
+});
 
 
 
@@ -359,9 +442,9 @@ app.post("/get-all-users-reports", function(request, response) {
        reportModel.find({}, (err, docs) => {
           if(err) throw err;
           let reports = []   ;
-        // console.log("get-all-users-reports");ok
-        // console.log(docs.length);
-          for(let i = 0; i < docs.length; i++) {
+       
+         // for(let i = 0; i < docs.length; i++) {
+          for(let i = docs.length-1; i > -1; i--) {
          //   for(let j = 0; j < users[i].reports.length; j++) {              
                /* // function for filtering
                function checkBookName(el) {
@@ -374,36 +457,135 @@ app.post("/get-all-users-reports", function(request, response) {
               } */
            // }            
             reports.push(docs[i]);
-            if(i == docs.length - 1) response.json({reports: reports});
+           // if(i == docs.length - 1) response.json({reports: reports});
+            if(i == 0) response.json({reports: reports});
+
           }
        });
 });
-/**  here err1  *********************************/
+/**  here err1  ********************************
+ * get-user-filtered-reports for listLink  edit/delete
+ * userModel.findById(request.session.passport.user
+*/
 app.post("/get-user-filtered-reports", function(request, response) {
-    //   reportModel.findById(request.session.passport.user, (err, user) => {
-        //  if (err) throw err;
-          let reports = []          
-//recivinginspb.reportsforris
-//TypeError: Cannot read property 'length' of undefined
-          //  for(let j = 0; j < request.reportsforris.length; j++) {
-          for(let j = 0; j < 10; j++) {     
-              // function for filtering
-             //  function checkBookName(el) {
-             //    return el.chosenBook == user.reports[j].reportnumber;
-            //   }
-            //  let filteredIncome = user.income.filter(checkBookName);
-            //  let filteredOutcome = user.outcome.filter(checkBookName);
-              //if((filteredIncome.length == 0) && (filteredOutcome.length == 0)) {
-                reports.push(reports[j]);
-             // }
-              
-              
-            }
-         
-          response.json({reports: reports});
-     //});
+   userModel.findById(request.session.passport.user, (err, user) => {
+       if (err) throw err;
+     let NN=user.inspname;     
+     // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+         reportModel.find({}, (err, docs) => {
+          if(err) throw err;
+          let reports = []   ;
+          for(let i = docs.length-1; i > -1; i--) {
+         if(docs[i].inspector === NN) { reports.push(docs[i]);}   
+            /* 
+              ["reportsLink"]: "/reports",
+             ["listLink"]: "/reports"            */              
+            if(i == 0) response.json({reports: reports});
+
+          }
+       });
+    
+     });
 });
 /***********************************/
+
+  app.post("/report-edit", function(request, response) {  
+   reportModel.findOne({"reportID":request.body["reportID"]}, (err, doc) => {
+  console.log("request: ");
+    console.log(request);    
+            response.json(doc);
+          }        
+     );
+});
+/***********************************/
+
+app.post("/set-report", function(request, response) {  
+   reportModel.findOne({"_id":request.body["_id"]}, (err, doc) => {
+  if (err) throw err;
+  doc.set({   
+//  reportID:  nDocs, 
+daterec: request.body["daterec"], 
+//inspector: request.body["inspector"], 
+Gwo: request.body["Gwo"], 
+cwo: request.body["cwo"], 
+dwo: request.body["dwo"], 
+ewo: request.body["ewo"], 
+fwo: request.body["fwo"], 
+hwo: request.body["hwo"], 
+
+iwo: request.body["iwo"], 
+jwo: request.body["jwo"], 
+kwo: request.body["kwo"],
+lwo: request.body["lwo"], //photo string
+mwo: request.body["mwo"], 
+nwo: request.body["nwo"], 
+owo: request.body["owo"], 
+pwo: request.body["pwo"], 
+qwo: request.body["qwo"], 
+rwo: request.body["rwo"], 
+swo: request.body["swo"], 
+two: request.body["two"], 
+record: request.body["record"],
+uwo: request.body["uwo"] //photo file   
+  });
+     
+   doc.save()(function (err, updatedDoc) {
+  if (err) throw err;
+ // console.log(updatedDoc);
+   response.json({error: 0})
+  });
+   });
+});
+
+
+
+
+
+
+/***********************************/
+
+  app.post("/report-view", function(request, response) {  
+   reportModel.findOne({"reportID":request.body["reportID"]}, (err, doc) => {
+  console.log("request: ");
+  response.json(doc);
+          });
+});
+/***********************************/
+
+app.post("/up-many-records", function(request, response) {  
+   reportModel.create(request, (err, doc) => {
+  console.log("request: ");   
+    console.log(request);    
+     
+            response.json(doc);
+
+          }
+        
+     );
+});
+/* 
+var createManyPeople = function(arrayOfPeople, done) {
+Person.create(arrayOfPeople, function (err, data) {
+if (err) {done(err);}
+done(null, data);
+});
+
+};
+
+
+
+
+
+*/
+
+
+
+
+/***********************************/
+
+
+
+
 app.post("/create-proposals", function(request, response) { 
   reportModel.findById(request.session.passport.user, (err, user) => {
       if (err) response.json({error: 1});
@@ -580,20 +762,4 @@ const listener = app.listen(process.env.PORT, function () {
   console.log('Your app is listening on port ' + listener.address().port);
 });
 
-   /*
- let obj = {
-inspname: request.body["inspname"], 
-dep: request.body["dep"] ,
-ri_report_to_add: request.body["ri_report_to_add"], 
-supplier: request.body["supplier"], 
-daterec: request.body["daterec"], 
-dateinsp: request.body["dateinsp"], 
-wopomtt: request.body["wopomtt"], 
-no: request.body["no"], 
-destination: request.body["destination"], 
-pn: request.body["pn"], 
-description: request.body["description"], 
-lotsize: request.body["lotsize"], 
-samplesize: request.body["samplesize"] 
-
-    };*/
+   

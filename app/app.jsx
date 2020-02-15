@@ -16,11 +16,18 @@ let store = createStore(reducers);
 /* Import Components */
 const Main = require('./components/Main');
 const RIreports = require('./components/RIreports');
+const RIlist = require('./components/RIlist');
+const RIlistAll = require('./components/RIlistAll'); //change
+const RIedit = require('./components/RIedit');
+const RIview = require('./components/RIview');
 const SignUp = require('./components/SignUp');
 const LogIn = require('./components/LogIn');
 const HomePage = require('./components/HomePage');
-const DisplayMessages= require('./components/DisplayMessages');
-const DisplayMessagesB= require('./components/DisplayMessagesB');
+//const DisplayMessages= require('./components/DisplayMessages');
+//const DisplayMessagesB= require('./components/DisplayMessagesB');
+const ManyRecords =require('./components/ManyRecords');
+//  <Route path="/report-edit" component={RIedit}/>
+//<Route path='/:handle' component={Profile} />
 render((
   
   <Provider store={store}>
@@ -35,6 +42,11 @@ render((
         <Route path="/login" component={LogIn}/>
         <Route path="/homepage" component={HomePage}/>
         <Route path="/reports" component={RIreports}/>
+         <Route path="/list" component={RIlist}/>
+         <Route path="/list-all" component={RIlistAll}/>
+        <Route path="/report-edit" component={RIedit}/>
+        <Route path="/report-view" component={RIview}/>
+          <Route path="/up-many-records" component={ManyRecords}/>
        {/*  < DisplayMessages />
          <Route path="/reports" component={RIreports}/>
         <Route path="/books" component={RIreports}/>*/}
