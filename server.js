@@ -543,11 +543,10 @@ record: request.body["record"],
 uwo: request.body["uwo"] //photo file   
   });
      
-   doc.save()(function (err, updatedDoc) {
-  if (err) throw err;
-
-   response.json({error: 0})
-  });
+   doc.save();
+ //    (function (err, updatedDoc) {  if (err) throw err;
+  // response.json({error: 0})
+ // });
      
      
    });
