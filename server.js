@@ -499,14 +499,39 @@ app.post("/get-user-filtered-reports", function(request, response) {
 });
 /***********************************/
 
+/*app.post("/set-dep", function(request, response) {
+  userModel.findById(request.session.passport.user, (err, user) => {
+  if (err) throw err;
+  user.set({dep: request.body["dep"]});
+  user.save(function (err, updatedUser) {
+  if (err) throw err;
+  response.json({update: true});
+  });
+ });
+ }); */
+
 app.post("/set-report", function(request, response) {  
    reportModel.findOne({"_id":request.body["_id"]}, (err, doc) => {
   if (err) throw err;
       console.log("set-report: " );
-     
+     console.log(request.body["_id"] );
     // console.log(doc);
      
+  
     /* 
+    doc.set({ 
+    record: request.body["record"] 
+  });
+     
+   doc.save()(function (err, updatedDoc) {
+  if (err) throw err;
+
+   response.json({error: 0})
+  });
+    
+    
+    
+    
   doc.set({   
 
 daterec: request.body["daterec"], 
