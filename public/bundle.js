@@ -59044,15 +59044,75 @@ this.state = {
   /*;
   */
   
-  handleSubmit(event){
-    alert("hi")
-  }
+  
    handleChangeValue(event) {
      const target = event.target;
       const value = target.value;
       const name = target.name;
       this.setState({ [name]: value  });
   };
+  
+   handleSubmit(event) { let that = this; 
+   // console.log(that)
+      const xhr = new XMLHttpRequest();      
+      xhr.open('POST', '/set-report', true);
+      xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+    let body = 
+        '_id=' +encodeURIComponent(this.state._id)+
+'&reportID='   + encodeURIComponent(this.state.reportID)+
+'&inspector='   + encodeURIComponent(this.state.inspector)+
+'&daterec='   + encodeURIComponent(this.state.cwo)+
+'&Gwo='   + encodeURIComponent(this.state.Gwo)+
+'&cwo='   + encodeURIComponent(this.state.cwo)+
+'&dwo='   + encodeURIComponent(this.state.dwo)+
+'&ewo='   + encodeURIComponent(this.state.ewo)+
+'&fwo='   + encodeURIComponent(this.state.fwo)+
+'&hwo='   + encodeURIComponent(this.state.hwo)+
+
+'&iwo='   + encodeURIComponent(this.state.iwo)+
+'&jwo='   + encodeURIComponent(this.state.jwo)+
+'&kwo='   + encodeURIComponent(this.state.kwo)+ 
+'&lwo='   + encodeURIComponent(this.state.lwo)+
+'&mwo='   + encodeURIComponent(this.state.mwo)+
+'&nwo='   + encodeURIComponent(this.state.nwo)+
+'&owo='   + encodeURIComponent(this.state.owo)+
+'&pwo='   + encodeURIComponent(this.state.pwo)+
+'&qwo='   + encodeURIComponent(this.state.qwo)+
+'&rwo='   + encodeURIComponent(this.state.rwo)+
+'&swo='   + encodeURIComponent(this.state.swo)+
+'&two='   + encodeURIComponent(this.state.two)+
+'&uwo='   + encodeURIComponent(this.state.uwo)+ 
+'&record='   + encodeURIComponent(this.state.record) 
+;
+      xhr.send(body);
+
+      xhr.onreadystatechange = function() {
+        if (this.readyState != 4) return;
+        if (this.status != 200) {
+          alert( 'error: ' + (this.status ? this.statusText : 'request has not been set') );
+          return;
+        }
+        let response = JSON.parse(this.responseText);
+        if(response.error == 0) {
+           window.location.href = "/reports";
+           that.setState({
+          ["ewo"]: "Succsess",
+        //  ["fwo"]: "Succsess"
+           });
+        }
+        else {
+          that.setState({
+          ["ewo"]: "Error "
+           });
+         }
+        }
+      event.preventDefault();
+     }
+
+  
+  
+  
    /**/
   customValidateText(text) {
       return (text.length > 0 && text.length < 17);

@@ -513,22 +513,6 @@ app.post("/get-user-filtered-reports", function(request, response) {
 app.post("/set-report", function(request, response) {  
    reportModel.findOne({"_id":request.body["_id"]}, (err, doc) => {
   if (err) throw err;
-      console.log("set-report: " );
-     console.log(request.body["_id"] );
-    // console.log(doc);
-     
-  
-    /* 
-    doc.set({ 
-    record: request.body["record"] 
-  });
-     
-   doc.save()(function (err, updatedDoc) {
-  if (err) throw err;
-
-   response.json({error: 0})
-  });
-    
     
     
     
@@ -563,7 +547,7 @@ uwo: request.body["uwo"] //photo file
   if (err) throw err;
 
    response.json({error: 0})
-  });*/
+  });
      
      
    });
