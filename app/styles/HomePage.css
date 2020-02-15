@@ -1,91 +1,86 @@
-.profile {
-  background-color: green;
-  width: 95%;
-  height: 1000px;
-  margin: auto;
-  border: #9d9d9d 1px solid;
+/*used:
+className="profile"
+className="show-grid"
+className="profile-line">
+className="home-title"
+*/
+.title-line {
+  width:100%;
+  text-align: center; }
+.title-line p{
+    width:100%;
+    text-align: center;
+  }
+span{ 
+  background-color: white;
+  font-size: 24px; 
+  font-weight: bold;
+  color:#44708f;}
+
+.myForm{ 
+width: 80%;
+margin-left: 10%;
+background-color: white;
+border: 1px #F9F9F9 solid;
+  border-radius: 5px;
+  
 }
 
+.profile {
+  background-color: white;
+  width:80.7%;
+  margin: auto; 
+}
+.show-grid {  
+  width:100%;  
+  margin: auto 0;
+}
+
+  .profile-line {
+    background-color: #44708f;
+    width:80.7%;
+    height: 1px;    
+    margin-bottom: 1px;
+    margin-top: 1px
+}
+
+
+
+
+
+
+  /*
+  
 .left-col {
-  background: #987D00;  /*#2a2a2a;*/
-  height: 980px;
-  border-right: #9d9d9d 10px solid;
+  background:  white;   
+  width: 50%;
+  border: 1px #F9F9F9 solid;
+  border-top-right-radius: 1px;
+  border-bottom-left-radius: 1px;
+  border-bottom-left-radius: 1px;
 }
 
 .right-col {
-  background-color: white; /* #2a2a2a;   width: 60.7%;*/
-  width: 80.7%;
-  height: 980px;
+  background-color: white; 
+  width: 50%;
+  border: 1px #F9F9F9 solid;
+  border-top-right-radius: 1px;
+  border-bottom-left-radius: 1px;
+  border-bottom-right-radius: 1px;
 }
 
 .profile-label {
   text-align: center;
   font-size: 30px;
-  color: black; /* #f6ff67;*/
+  color: black;
   margin: 3%;
   margin-top: 30px;
-}
-
-.proposal-label {
-  text-align: center;
-  font-size: 30px;
-  color:  black; /* #f6ff67;#f6ff67;*/ 
-  margin: 3%;
-  margin-top: 60px;
-}
-
-.profile-line {
-    background-color: #44708f;
-    width: 90%;
-    height: 3px;
-    margin: auto;
-    margin-bottom: 10px
 }
 
 .input-label {
   width: 90%;
   margin: auto;
   color: rgb(157, 157, 157);
-}
-
-.tabs {
-  width: 90%;
-  margin: auto;
-  margin-top: 20px;
-}
-
-.nav-tabs>li>a {
-  color: #44708f;
-}
-
-.proposals-container {
-  height: 400px;
-  background: #2a2a2a;
-  border: 5px solid white;
-  overflow: auto;
-}
-
-.library {
-  background: #6ca9d4;
-  width: 94.2%;
-  height: 815px;
-  margin: auto;
-  margin-top: 140px;
-  overflow: auto;
-  border: 10px #9d9d9d solid;
-  border-top-right-radius: 10px;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-}
-
-.add-form {
-  float: right;
-  margin-top: 20px;
-  margin-right: 25px;
-  background: #3f6e8e;
-  border-radius: 10px;
-  padding: 20px;
-  width: 50%;
 }
 
 .library-label {
@@ -101,5 +96,6 @@
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
-.show-grid { background-color: red;
-  width: 95%;}
+   background-color: red;
+  
+  */
