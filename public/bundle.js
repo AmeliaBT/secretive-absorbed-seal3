@@ -48727,7 +48727,7 @@ exports.push([module.i, ".book {\n  background: black;\n  width: 31.2%;\n  float
 
 const React = __webpack_require__(0);
 const Link = __webpack_require__(16).Link
-// style for BOOKS
+// style for BOOKS ...
 const style = __webpack_require__(438);
 // other components and etc
 const Header = __webpack_require__(31);
