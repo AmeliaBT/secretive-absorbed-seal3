@@ -502,10 +502,14 @@ app.post("/get-user-filtered-reports", function(request, response) {
 app.post("/set-report", function(request, response) {  
    reportModel.findOne({"_id":request.body["_id"]}, (err, doc) => {
   if (err) throw err;
+      console.log("set-report: " );
+     console.log(doc);
+     
+    /* 
   doc.set({   
-//  reportID:  nDocs, 
+
 daterec: request.body["daterec"], 
-//inspector: request.body["inspector"], 
+ 
 Gwo: request.body["Gwo"], 
 cwo: request.body["cwo"], 
 dwo: request.body["dwo"], 
@@ -531,9 +535,11 @@ uwo: request.body["uwo"] //photo file
      
    doc.save()(function (err, updatedDoc) {
   if (err) throw err;
- // console.log(updatedDoc);
+
    response.json({error: 0})
-  });
+  });*/
+     
+     
    });
 });
 
