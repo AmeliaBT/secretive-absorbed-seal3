@@ -2256,87 +2256,6 @@ module.exports = exports['default'];
 /* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var anObject = __webpack_require__(33);
-var IE8_DOM_DEFINE = __webpack_require__(139);
-var toPrimitive = __webpack_require__(79);
-var dP = Object.defineProperty;
-
-exports.f = __webpack_require__(35) ? Object.defineProperty : function defineProperty(O, P, Attributes) {
-  anObject(O);
-  P = toPrimitive(P, true);
-  anObject(Attributes);
-  if (IE8_DOM_DEFINE) try {
-    return dP(O, P, Attributes);
-  } catch (e) { /* empty */ }
-  if ('get' in Attributes || 'set' in Attributes) throw TypeError('Accessors not supported!');
-  if ('value' in Attributes) O[P] = Attributes.value;
-  return O;
-};
-
-
-/***/ }),
-/* 28 */
-/***/ (function(module, exports) {
-
-var hasOwnProperty = {}.hasOwnProperty;
-module.exports = function (it, key) {
-  return hasOwnProperty.call(it, key);
-};
-
-
-/***/ }),
-/* 29 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// to indexed object, toObject with fallback for non-array-like ES3 strings
-var IObject = __webpack_require__(142);
-var defined = __webpack_require__(81);
-module.exports = function (it) {
-  return IObject(defined(it));
-};
-
-
-/***/ }),
-/* 30 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-exports.__esModule = true;
-
-var _createUncontrollable = __webpack_require__(308);
-
-var _createUncontrollable2 = _interopRequireDefault(_createUncontrollable);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var mixin = {
-  shouldComponentUpdate: function shouldComponentUpdate() {
-    //let the forceUpdate trigger the update
-    return !this._notifying;
-  }
-};
-
-function set(component, propName, handler, value, args) {
-  if (handler) {
-    component._notifying = true;
-    handler.call.apply(handler, [component, value].concat(args));
-    component._notifying = false;
-  }
-
-  component._values[propName] = value;
-
-  if (!component.unmounted) component.forceUpdate();
-}
-
-exports.default = (0, _createUncontrollable2.default)(mixin, set);
-module.exports = exports['default'];
-
-/***/ }),
-/* 31 */
-/***/ (function(module, exports, __webpack_require__) {
-
 const React = __webpack_require__(0);
 const Link = __webpack_require__(17).Link
 // style for HEADER
@@ -2458,10 +2377,91 @@ module.exports = Header;
 */
 
 /***/ }),
+/* 28 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var anObject = __webpack_require__(33);
+var IE8_DOM_DEFINE = __webpack_require__(139);
+var toPrimitive = __webpack_require__(79);
+var dP = Object.defineProperty;
+
+exports.f = __webpack_require__(35) ? Object.defineProperty : function defineProperty(O, P, Attributes) {
+  anObject(O);
+  P = toPrimitive(P, true);
+  anObject(Attributes);
+  if (IE8_DOM_DEFINE) try {
+    return dP(O, P, Attributes);
+  } catch (e) { /* empty */ }
+  if ('get' in Attributes || 'set' in Attributes) throw TypeError('Accessors not supported!');
+  if ('value' in Attributes) O[P] = Attributes.value;
+  return O;
+};
+
+
+/***/ }),
+/* 29 */
+/***/ (function(module, exports) {
+
+var hasOwnProperty = {}.hasOwnProperty;
+module.exports = function (it, key) {
+  return hasOwnProperty.call(it, key);
+};
+
+
+/***/ }),
+/* 30 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// to indexed object, toObject with fallback for non-array-like ES3 strings
+var IObject = __webpack_require__(142);
+var defined = __webpack_require__(81);
+module.exports = function (it) {
+  return IObject(defined(it));
+};
+
+
+/***/ }),
+/* 31 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+exports.__esModule = true;
+
+var _createUncontrollable = __webpack_require__(308);
+
+var _createUncontrollable2 = _interopRequireDefault(_createUncontrollable);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var mixin = {
+  shouldComponentUpdate: function shouldComponentUpdate() {
+    //let the forceUpdate trigger the update
+    return !this._notifying;
+  }
+};
+
+function set(component, propName, handler, value, args) {
+  if (handler) {
+    component._notifying = true;
+    handler.call.apply(handler, [component, value].concat(args));
+    component._notifying = false;
+  }
+
+  component._values[propName] = value;
+
+  if (!component.unmounted) component.forceUpdate();
+}
+
+exports.default = (0, _createUncontrollable2.default)(mixin, set);
+module.exports = exports['default'];
+
+/***/ }),
 /* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var dP = __webpack_require__(27);
+var dP = __webpack_require__(28);
 var createDesc = __webpack_require__(44);
 module.exports = __webpack_require__(35) ? function (object, key, value) {
   return dP.f(object, key, createDesc(1, value));
@@ -3330,7 +3330,7 @@ module.exports = exports['default'];
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_prop_types_extra_lib_elementType___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_13_prop_types_extra_lib_elementType__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_prop_types_extra_lib_isRequiredForA11y__ = __webpack_require__(56);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_prop_types_extra_lib_isRequiredForA11y___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_14_prop_types_extra_lib_isRequiredForA11y__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_uncontrollable__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_uncontrollable__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_uncontrollable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_15_uncontrollable__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_warning__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_warning___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_16_warning__);
@@ -5092,8 +5092,8 @@ module.exports = Object.create || function create(O, Properties) {
 /* 91 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var def = __webpack_require__(27).f;
-var has = __webpack_require__(28);
+var def = __webpack_require__(28).f;
+var has = __webpack_require__(29);
 var TAG = __webpack_require__(20)('toStringTag');
 
 module.exports = function (it, tag, stat) {
@@ -5116,7 +5116,7 @@ var global = __webpack_require__(25);
 var core = __webpack_require__(19);
 var LIBRARY = __webpack_require__(89);
 var wksExt = __webpack_require__(92);
-var defineProperty = __webpack_require__(27).f;
+var defineProperty = __webpack_require__(28).f;
 module.exports = function (name) {
   var $Symbol = core.Symbol || (core.Symbol = LIBRARY ? {} : global.Symbol || {});
   if (name.charAt(0) != '_' && !(name in $Symbol)) defineProperty($Symbol, name, { value: wksExt.f(name) });
@@ -5996,7 +5996,7 @@ exports.default = (0, _createChainableTypeChecker2.default)(elementType);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_prop_types__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_prop_types__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_uncontrollable__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_uncontrollable__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_uncontrollable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_uncontrollable__);
 
 
@@ -8562,8 +8562,8 @@ module.exports = function (it) {
 /* 141 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var has = __webpack_require__(28);
-var toIObject = __webpack_require__(29);
+var has = __webpack_require__(29);
+var toIObject = __webpack_require__(30);
 var arrayIndexOf = __webpack_require__(278)(false);
 var IE_PROTO = __webpack_require__(83)('IE_PROTO');
 
@@ -8639,7 +8639,7 @@ var LIBRARY = __webpack_require__(89);
 var $export = __webpack_require__(24);
 var redefine = __webpack_require__(146);
 var hide = __webpack_require__(32);
-var has = __webpack_require__(28);
+var has = __webpack_require__(29);
 var Iterators = __webpack_require__(47);
 var $iterCreate = __webpack_require__(283);
 var setToStringTag = __webpack_require__(91);
@@ -8732,9 +8732,9 @@ exports.f = Object.getOwnPropertyNames || function getOwnPropertyNames(O) {
 
 var pIE = __webpack_require__(46);
 var createDesc = __webpack_require__(44);
-var toIObject = __webpack_require__(29);
+var toIObject = __webpack_require__(30);
 var toPrimitive = __webpack_require__(79);
-var has = __webpack_require__(28);
+var has = __webpack_require__(29);
 var IE8_DOM_DEFINE = __webpack_require__(139);
 var gOPD = Object.getOwnPropertyDescriptor;
 
@@ -8769,7 +8769,7 @@ exports.f = __webpack_require__(35) ? gOPD : function getOwnPropertyDescriptor(O
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_prop_types__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_uncontrollable__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_uncontrollable__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_uncontrollable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_uncontrollable__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__utils_bootstrapUtils__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__utils_ValidComponentChildren__ = __webpack_require__(16);
@@ -8941,7 +8941,7 @@ module.exports = { "default": __webpack_require__(310), __esModule: true };
 /***/ (function(module, exports, __webpack_require__) {
 
 var getKeys = __webpack_require__(45);
-var toIObject = __webpack_require__(29);
+var toIObject = __webpack_require__(30);
 var isEnum = __webpack_require__(46).f;
 module.exports = function (isEntries) {
   return function (it) {
@@ -12592,11 +12592,11 @@ const Main = __webpack_require__(267);
 const RIreports = __webpack_require__(419);
 const RIlist = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./components/RIlist\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 const RIlistAll = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./components/RIlistAll\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())); //change
-const RIedit = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./components/RIedit\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+const RIedit = __webpack_require__(425);
 const RIview = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./components/RIview\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
-const SignUp = __webpack_require__(425);
-const LogIn = __webpack_require__(428);
-const HomePage = __webpack_require__(431);
+const SignUp = __webpack_require__(426);
+const LogIn = __webpack_require__(429);
+const HomePage = __webpack_require__(432);
 //const DisplayMessages= require('./components/DisplayMessages');
 //const DisplayMessagesB= require('./components/DisplayMessagesB');
 const ManyRecords =__webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./components/ManyRecords\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
@@ -36069,7 +36069,7 @@ const Link = __webpack_require__(17).Link
 const style = __webpack_require__(268);
 // other components and etc
 //const RINav = require('./RINav');
-const Header = __webpack_require__(31);
+const Header = __webpack_require__(27);
 
 // react-bootstrap
 const {Jumbotron} = __webpack_require__(23);
@@ -36417,7 +36417,7 @@ module.exports = !$assign || __webpack_require__(43)(function () {
 
 // false -> Array#indexOf
 // true  -> Array#includes
-var toIObject = __webpack_require__(29);
+var toIObject = __webpack_require__(30);
 var toLength = __webpack_require__(143);
 var toAbsoluteIndex = __webpack_require__(279);
 module.exports = function (IS_INCLUDES) {
@@ -36515,7 +36515,7 @@ module.exports = function (Constructor, NAME, next) {
 /* 284 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var dP = __webpack_require__(27);
+var dP = __webpack_require__(28);
 var anObject = __webpack_require__(33);
 var getKeys = __webpack_require__(45);
 
@@ -36543,7 +36543,7 @@ module.exports = document && document.documentElement;
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.9 / 15.2.3.2 Object.getPrototypeOf(O)
-var has = __webpack_require__(28);
+var has = __webpack_require__(29);
 var toObject = __webpack_require__(87);
 var IE_PROTO = __webpack_require__(83)('IE_PROTO');
 var ObjectProto = Object.prototype;
@@ -36591,7 +36591,7 @@ for (var i = 0; i < DOMIterables.length; i++) {
 var addToUnscopables = __webpack_require__(289);
 var step = __webpack_require__(290);
 var Iterators = __webpack_require__(47);
-var toIObject = __webpack_require__(29);
+var toIObject = __webpack_require__(30);
 
 // 22.1.3.4 Array.prototype.entries()
 // 22.1.3.13 Array.prototype.keys()
@@ -36664,7 +36664,7 @@ module.exports = __webpack_require__(19).Symbol;
 
 // ECMAScript 6 symbols shim
 var global = __webpack_require__(25);
-var has = __webpack_require__(28);
+var has = __webpack_require__(29);
 var DESCRIPTORS = __webpack_require__(35);
 var $export = __webpack_require__(24);
 var redefine = __webpack_require__(146);
@@ -36680,13 +36680,13 @@ var enumKeys = __webpack_require__(295);
 var isArray = __webpack_require__(296);
 var anObject = __webpack_require__(33);
 var isObject = __webpack_require__(34);
-var toIObject = __webpack_require__(29);
+var toIObject = __webpack_require__(30);
 var toPrimitive = __webpack_require__(79);
 var createDesc = __webpack_require__(44);
 var _create = __webpack_require__(90);
 var gOPNExt = __webpack_require__(297);
 var $GOPD = __webpack_require__(148);
-var $DP = __webpack_require__(27);
+var $DP = __webpack_require__(28);
 var $keys = __webpack_require__(45);
 var gOPD = $GOPD.f;
 var dP = $DP.f;
@@ -36903,8 +36903,8 @@ setToStringTag(global.JSON, 'JSON', true);
 
 var META = __webpack_require__(52)('meta');
 var isObject = __webpack_require__(34);
-var has = __webpack_require__(28);
-var setDesc = __webpack_require__(27).f;
+var has = __webpack_require__(29);
+var setDesc = __webpack_require__(28).f;
 var id = 0;
 var isExtensible = Object.isExtensible || function () {
   return true;
@@ -36993,7 +36993,7 @@ module.exports = Array.isArray || function isArray(arg) {
 /***/ (function(module, exports, __webpack_require__) {
 
 // fallback for IE11 buggy Object.getOwnPropertyNames with iframe and window
-var toIObject = __webpack_require__(29);
+var toIObject = __webpack_require__(30);
 var gOPN = __webpack_require__(147).f;
 var toString = {}.toString;
 
@@ -39547,7 +39547,7 @@ module.exports = function (it) {
 
 "use strict";
 
-var $defineProperty = __webpack_require__(27);
+var $defineProperty = __webpack_require__(28);
 var createDesc = __webpack_require__(44);
 
 module.exports = function (object, index, value) {
@@ -43285,7 +43285,7 @@ ModalDialog.propTypes = propTypes;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_prop_types__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_prop_types_extra_lib_elementType__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_prop_types_extra_lib_elementType___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_prop_types_extra_lib_elementType__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_uncontrollable__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_uncontrollable__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_uncontrollable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_uncontrollable__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__Grid__ = __webpack_require__(162);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__NavbarBrand__ = __webpack_require__(173);
@@ -45466,7 +45466,7 @@ var Last = createButton('Last', '\xBB');
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_prop_types__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_uncontrollable__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_uncontrollable__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_uncontrollable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_uncontrollable__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_warning__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_warning___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10_warning__);
@@ -47096,7 +47096,7 @@ Table.defaultProps = defaultProps;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_prop_types__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_prop_types_extra_lib_isRequiredForA11y__ = __webpack_require__(56);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_prop_types_extra_lib_isRequiredForA11y___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_prop_types_extra_lib_isRequiredForA11y__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_uncontrollable__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_uncontrollable__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_uncontrollable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_uncontrollable__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__Nav__ = __webpack_require__(172);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__NavItem__ = __webpack_require__(174);
@@ -47392,7 +47392,7 @@ Thumbnail.propTypes = propTypes;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_invariant__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_invariant___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_invariant__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_uncontrollable__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_uncontrollable__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_uncontrollable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_uncontrollable__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__utils_createChainedFunction__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__utils_ValidComponentChildren__ = __webpack_require__(16);
@@ -47766,7 +47766,7 @@ const style = __webpack_require__(420);
 // react-bootstrap
 const {Modal, Button, form, FormGroup, FormControl, ControlLabel, option} = __webpack_require__(23);
 // other components and etc
-const Header = __webpack_require__(31);
+const Header = __webpack_require__(27);
 const RIreport = __webpack_require__(422);
 
 /* the reports page that shows all reports */
@@ -48142,12 +48142,338 @@ exports.push([module.i, ".book-all {\n  background: #FAFAFA; /*antiquewhite;*/\n
 /* 425 */
 /***/ (function(module, exports, __webpack_require__) {
 
+
+const React = __webpack_require__(0);
+const ReactDOM = __webpack_require__(13);
+const Link = __webpack_require__(17).Link
+const Header = __webpack_require__(27);
+// react-bootstrap
+const {Grid, Row, Col, FormControl, ControlLabel, FormGroup, HelpBlock, Tabs, Tab, Form, Button} = __webpack_require__(23);
+
+class RIedit extends React.Component {
+  constructor(props) {   
+    super(props);
+this.state = {
+  _id:"",
+  reportID:"",
+      inspector: "",  // Inspector:
+      daterec: "",  //Date Received
+      Gwo: "",  // Description:      
+      cwo: "" ,// Date Received:      
+      dwo: "",  // WO / PO / MTT: mySel, //      
+      ewo: "",  // Supplier:
+      fwo: "",  // P/N:
+      hwo: "",  // Documentation Revision:     
+      iwo: "",  // Received SW:
+      jwo: "", // Date Inspected:
+      kwo: "",  // NO:
+      lwo: "", 
+      mwo: "",  // Source:
+      nwo: "",  // Destination:
+      owo: "",  // Lot Size:
+      pwo: "",  // Sample Size:
+      qwo: "",  // Qty Defective:
+      rwo: "",  // Qty Rejected:
+      swo: "",  // DMR #:
+      two: "",  // Pass / Fail:
+      record: "", // comment -note
+      uwo: ""  // old extra; new file -photo 
+}
+      this.handleChangeValue = this.handleChangeValue.bind(this);
+  }
+
+   /****************************/
+  // Handlers
+  /****************************/
+  /*;
+  */
+  
+  
+   handleChangeValue(event) {
+     const target = event.target;
+      const value = target.value;
+      const name = target.name;
+      this.setState({ [name]: value  });
+  };
+   /**/
+  customValidateText(text) {
+      return (text.length > 0 && text.length < 17);
+    }
+  /****************************/
+  
+  componentWillMount() {
+     // get report data
+      let that = this;
+      const xhr = new XMLHttpRequest();
+      let repPath= this.props.location.pathname;
+    let pageID=  repPath.substring(13); // report-edit/6032 12 pageID: /6031
+//alert("pageID: " +pageID); 
+   xhr.open('POST',"/report-edit" , true); 
+      xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');    
+ let body = 'reportID=' + encodeURIComponent(pageID) ;
+      xhr.send(body);
+      xhr.onreadystatechange = function() {
+        if (this.readyState != 4) return;
+        if (this.status != 200) {
+          alert( 'error: ' + (this.status ? this.statusText : 'request has not been set') );
+          return;
+        }
+        let response = JSON.parse(this.responseText);               
+     // if(response.isLogedIn == true) {
+             that.setState({
+                ["_id"]: response._id,
+            ["reportID"]: response.reportID,
+             ["inspector"]  : response.inspector ,
+              ["daterec"]  : response.daterec ,  
+                 ["Gwo"]: response.Gwo,
+                 ["cwo"]  : response.cwo ,    
+                 ["dwo"]  : response.dwo ,    
+                 ["ewo"]  : response.ewo ,    
+            ["fwo"]: response.fwo,
+           ["hwo"]  : response.hwo ,   
+                ["iwo"]  : response.iwo ,   
+             ["jwo"]: response.jwo,
+                ["kwo"]  : response.kwo ,   
+                ["lwo"]  : response.lwo ,   
+                ["mwo"]  : response.mwo ,   
+                ["nwo"]  : response.nwo , 
+               ["owo"]: response.owo,
+                ["pwo"]  : response.pwo ,  
+                ["qwo"]  : response.qwo,  
+                ["rwo"]  : response.rwo ,  
+                ["swo"]  : response.swo ,  
+                ["two"]: response.two,
+                ["record"]  : response.record ,   
+                ["uwo"]  : response.uwo   
+           });     
+        }
+  }
+
+  
+  render() {
+  
+    
+    return (
+      React.createElement("div", null, 
+     React.createElement(Header, null), 
+   React.createElement("p", null, " doc id:  ", this.state._id, "  "), 
+  React.createElement(Form, {method: "post", action: "/set-report", onSubmit: this.handleSubmit, enctype: "multipart/form-data"}, 
+
+    React.createElement(Grid, null, 
+   React.createElement(Row, null, "  ", React.createElement(Col, { smOffset: 7,  sm: 4}, 
+      React.createElement(FormGroup, null, 
+     React.createElement(Button, {className: "btn btn-primary btn-block", type: "submit"}, React.createElement("i", {className: "fa fa-paper-plane"}), " Submit")
+      )
+)), 
+      React.createElement(Row, null, 
+React.createElement(Col, {sm: 3}, "  ", React.createElement("div", {className: "well"}, " ",   
+ React.createElement(FormGroup, {className: "input-row"}, React.createElement(ControlLabel, null, "Inspector:"), " ", React.createElement(FormControl, {   readOnly: true, type: "text",  name: "inspector", value: this.state.inspector, 	 placeholder: this.state.inspector	 }  ), " "), "    ", 
+
+  React.createElement(FormGroup, {className: "input-row"}, React.createElement(ControlLabel, null, "Supplier:"), "    ", React.createElement(FormControl, {  className: "input-row", type: "text",  name: "ewo", value: this.state.ewo, onChange: this.handleChangeValue} ), "  "), " " 
+ 
+  )), 
+  React.createElement(Col, {sm: 2}, "  ", React.createElement("div", {className: "well"}, " ",    
+   React.createElement(FormGroup, null , React.createElement(ControlLabel, null, "WO / PO / MTT:"), " ", React.createElement(FormControl, {   className: "input-row3", type: "text",  name: "dwo", value: this.state.dwo, onChange: this.handleChangeValue}), "      "), " ", 
+   React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "   NO:"), " ", React.createElement(FormControl, { type: "text",  name: "kwo",       value: this.state.kwo, 	 placeholder: this.state.kwo, 	 onChange: this.handleChangeValue} ), "  "), " "
+ )), 
+        React.createElement(Col, {sm: 3}, " ", React.createElement("div", {className: "well"}, " ", 
+  React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "Date Received: "), " ", React.createElement(FormControl, { type: "date",  name: "cwo",      value: this.state.cwo, 	 placeholder: this.state.cwo, 	 onChange: this.handleChangeValue} ), "  "), " " + " " +
+"  ", React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, " Date Inspected: "), React.createElement(FormControl, { type: "date",  name: "jwo",   value: this.state.jwo, 	 placeholder: this.state.jwo, 	 onChange: this.handleChangeValue} ), "  "), " "
+  )), 
+React.createElement(Col, {sm: 3}, " ", React.createElement("div", {className: "well"}, " ", 
+React.createElement(FormGroup, null , React.createElement(ControlLabel, null, "Source:"), 
+  React.createElement(FormControl, {  className: "input-row3", type: "text",  name: "mwo", value: this.state.mwo, onChange: this.handleChangeValue}), "  "), " ", 
+React.createElement(FormGroup, null , React.createElement(ControlLabel, null, "Destination:"), " ", React.createElement(FormControl, {  className: "input-row3", type: "text",  name: "nwo", value: this.state.nwo, onChange: this.handleChangeValue}), "  "), " "
+  ))
+  ), 
+ React.createElement(Row, null, " ", React.createElement(Col, {  sm: 11}, "  ", React.createElement("div", {className: "profile-line"})), "  "), 
+   React.createElement(Row, null, 
+     
+
+React.createElement(Col, {sm: 4}, React.createElement("div", {className: "well"}, 
+React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "   P/N: "), React.createElement(FormControl, { type: "text",  name: "fwo",   value: this.state.fwo, 	 placeholder: this.state.fwo, 	 onChange: this.handleChangeValue} ), "  "), " " + " " +
+"  ")), 
+React.createElement(Col, {sm: 4}, React.createElement("div", {className: "well"}, 
+React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "   Description: "), React.createElement(FormControl, { type: "text",  name: "Gwo",   value: this.state.Gwo, 	 placeholder: this.state.Gwo, 	 onChange: this.handleChangeValue} ), "  "), " " + " " +
+"  ")), 
+
+   React.createElement(Col, {sm: 3}, React.createElement("div", {className: "well"}, 
+   
+  React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "   Received SW: "), React.createElement(FormControl, { type: "text",  name: "iwo",   value: this.state.iwo, 	 placeholder: this.state.iwo, 	 onChange: this.handleChangeValue} ), "  "), " "
+  ))
+  ), 
+   
+   
+ React.createElement(Row, null, " ", React.createElement(Col, {  sm: 11}, "  ", React.createElement("div", {className: "profile-line"})), "  "), 
+
+  React.createElement(Row, null, 
+  React.createElement(Col, {sm: 2}, "    ", React.createElement("div", {className: "well"}, 
+ React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "   Lot Size: "), React.createElement(FormControl, { type: "number",  name: "owo",   value: this.state.owo, 	 placeholder: this.state.owo, 	 onChange: this.handleChangeValue} ), "  "), " " + " " +
+"  ", React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "   Sample Size: "), React.createElement(FormControl, { type: "number",  name: "pwo",   value: this.state.pwo, 	 placeholder: this.state.pwo, 	 onChange: this.handleChangeValue} ), "  "), " " + " " +
+" ")), 
+
+ React.createElement(Col, {sm: 2}, "    ", React.createElement("div", {className: "well"}, 
+React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "   Qty Defective: "), React.createElement(FormControl, { type: "number",  name: "qwo",   value: this.state.qwo, 	 placeholder: this.state.qwo, 	 onChange: this.handleChangeValuePF} ), "  "), " ", 
+    React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "   Qty Rejected: "), React.createElement(FormControl, { type: "number",  name: "rwo",   value: this.state.rwo, 	 placeholder: this.state.rwo, 	 onChange: this.handleChangeValue} ), "  "), " "
+ )), 
+     React.createElement(Col, {sm: 2}, "    ", React.createElement("div", {className: "well"}, 
+React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "   Pass / Fail: "), React.createElement(FormControl, { type: "text",  name: "two",   value: this.state.two, 	 placeholder: this.state.two, 	 onChange: this.handleChangeValue}   ), "  "), " ", 
+React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "   DMR #: "), React.createElement(FormControl, { type: "text",  name: "swo",   value: this.state.swo, 	 placeholder: this.state.swo, 	 onChange: this.handleChangeValue} ), "  "), " "
+)), 
+
+  React.createElement(Col, {sm: 5}, 
+ React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, " Comment:"), 
+  React.createElement("textarea", {rows: "3",  type: "textarea",   className: "input-rowC", name: "record",   value: this.state.record, 	 placeholder: this.state.record, 	 onChange: this.handleChangeValue}  ), " "
+  ), " "
+   )
+  ), 
+ React.createElement(Row, null, " ", React.createElement(Col, {  sm: 11}, "  ", React.createElement("div", {className: "profile-line"})), "  "), 
+ React.createElement(Row, null, 
+React.createElement(Col, {sm: 6}, 
+React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "  Photo link "), React.createElement(FormControl, { type: "file", name: "lwo", value: this.state.lwo, placeholder: this.state.lwo, 	 onChange: this.handleChangeValue}), "   "), "  "
+), 
+ React.createElement(Col, {sm: 5}, 
+React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "  Photo extra: "), React.createElement(FormControl, { type: "file",  name: "uwo",   value: this.state.uwo, 	 placeholder: this.state.uwo, 	 onChange: this.handleChangeValue} ), "  "), " "
+ )
+)
+    
+      
+  )
+    ), 
+  React.createElement("br", null)
+   
+   
+    /* 
+        
+  <Form  method="post" action="/addRIreport" onSubmit={this.handleSubmit} enctype="multipart/form-data" >       
+ <Grid>  
+
+   <Row>  <Col smOffset={7}  sm={4} > 
+      <FormGroup > 
+     <Button className="btn btn-primary btn-block" type="submit"><i className="fa fa-paper-plane"></i> Submit</Button>
+      </FormGroup>
+</Col></Row>
+   
+<Row >
+<Col sm={3} >	 <div className="well">   
+ <FormGroup className="input-row"><ControlLabel>Inspector:</ControlLabel> <FormControl   readOnly type="text" name="inspector" value={this.state.inspector	} placeholder={this.state.inspector	 }  /> </FormGroup>    
+
+  <FormGroup className="input-row"><ControlLabel>Supplier:</ControlLabel>    <FormControl  className="input-row" type="text" name="ewo" value={this.state.ewo}   onChange={this.handleChangeValue} />  </FormGroup>  
+ 
+  </div></Col>  
+  <Col sm={2} >	 <div className="well">    
+   <FormGroup ><ControlLabel>WO / PO / MTT:</ControlLabel>
+   
+     <FormControl 
+      className="input-row3" type="text" name="dwo" 
+       value={this.state.dwo} 
+       onChange={this.handleChangeValue}> 
+     </FormControl>  </FormGroup> 
+    
+  
+  <FormGroup className="input-row"><ControlLabel> 	 NO:</ControlLabel> <FormControl type="text" name="kwo"       value={this.state.kwo	} placeholder={this.state.kwo	} onChange={this.handleChangeValue} />  </FormGroup> 
+ </div></Col>
+ ----------------------------------------
+<Col sm={3} >	<div className="well"> 
+  <FormGroup className="input-row"><ControlLabel>Date Received:	</ControlLabel> <FormControl type="date" name="cwo"      value={this.state.cwo	} placeholder={this.state.cwo	} onChange={this.handleChangeValue} />  </FormGroup> 
+  <FormGroup className="input-row"><ControlLabel> Date Inspected: </ControlLabel><FormControl type="date" name="jwo"   value={this.state.jwo	} placeholder={this.state.jwo	} onChange={this.handleChangeValue} />  </FormGroup> 
+  </div></Col>
+<Col sm={3} >	<div className="well"> 
+<FormGroup ><ControlLabel>Source:</ControlLabel> 
+  <FormControl  className="input-row3" type="text" name="mwo" value={this.state.mwo}  onChange={this.handleChangeValue}>  </FormControl> </FormGroup> 
+<FormGroup ><ControlLabel>Destination:</ControlLabel> <FormControl  className="input-row3" type="text" name="nwo" value={this.state.nwo}  onChange={this.handleChangeValue}> </FormControl> </FormGroup> 
+  </div></Col>
+  </Row>
+ <Row> <Col  sm={11} >  <div className="profile-line"></div></Col>  </Row>   
+   <Row>
+     
+
+<Col sm={4} ><div className="well">   
+<FormGroup className="input-row"><ControlLabel> 	 P/N:	</ControlLabel><FormControl type="text" name="fwo"   value={this.state.fwo	} placeholder={this.state.fwo	} onChange={this.handleChangeValue} />  </FormGroup> 
+  </div></Col>
+<Col sm={4} ><div className="well">   
+<FormGroup className="input-row"><ControlLabel> 	 Description:	</ControlLabel><FormControl type="text" name="Gwo"   value={this.state.Gwo	} placeholder={this.state.Gwo	} onChange={this.handleChangeValue} />  </FormGroup> 
+  </div></Col>
+
+   <Col sm={3} ><div className="well">    
+   
+  <FormGroup className="input-row"><ControlLabel> 	 Received SW:	</ControlLabel><FormControl type="text" name="iwo"   value={this.state.iwo	} placeholder={this.state.iwo	} onChange={this.handleChangeValue} />  </FormGroup> 
+  </div></Col>
+  </Row>
+   
+   
+ <Row> <Col  sm={11} >  <div className="profile-line"></div></Col>  </Row>
+
+  <Row>
+  <Col sm={2} >	   <div className="well">
+ <FormGroup className="input-row"><ControlLabel> 	 Lot Size:	</ControlLabel><FormControl type="number" name="owo"   value={this.state.owo	} placeholder={this.state.owo	} onChange={this.handleChangeValue} />  </FormGroup> 
+  <FormGroup  className="input-row"><ControlLabel> 	 Sample Size:	</ControlLabel><FormControl type="number" name="pwo"   value={this.state.pwo	} placeholder={this.state.pwo	} onChange={this.handleChangeValue} />  </FormGroup> 
+ </div></Col>
+
+ <Col sm={2} >	   <div className="well">
+<FormGroup className="input-row"><ControlLabel> 	 Qty Defective:	</ControlLabel><FormControl type="number" name="qwo"   value={this.state.qwo	} placeholder={this.state.qwo	} onChange={this.handleChangeValuePF} />  </FormGroup> 
+    <FormGroup className="input-row"><ControlLabel> 	 Qty Rejected:	</ControlLabel><FormControl type="number" name="rwo"   value={this.state.rwo	} placeholder={this.state.rwo	} onChange={this.handleChangeValue} />  </FormGroup> 
+ </div></Col>
+     <Col sm={2} >	   <div className="well">
+<FormGroup className="input-row"><ControlLabel> 	 Pass / Fail:	</ControlLabel><FormControl type="text" name="two"   value={this.state.two	} placeholder={this.state.two	} onChange={this.handleChangeValue}   />  </FormGroup> 
+<FormGroup className="input-row"><ControlLabel> 	 DMR #:	</ControlLabel><FormControl type="text" name="swo"   value={this.state.swo	} placeholder={this.state.swo	} onChange={this.handleChangeValue} />  </FormGroup> 
+</div></Col>
+
+  <Col sm={5} > 
+ <FormGroup className="input-row"><ControlLabel > Comment:</ControlLabel> 
+  <textarea rows="3" type="textarea"  className="input-rowC" name="record"   value={this.state.record	} placeholder={this.state.record	} onChange={this.handleChangeValue}  /> 
+  </FormGroup> 
+   </Col>
+  </Row>
+ <Row> <Col  sm={11} >  <div className="profile-line"></div></Col>  </Row>
+ <Row> 
+<Col sm={6} >
+<FormGroup className="input-row"><ControlLabel> 	Photo link	</ControlLabel><FormControl type="file"  name="lwo"    value={this.state.lwo }  placeholder={this.state.lwo	} onChange={this.handleChangeValue}  />   </FormGroup>  
+</Col>
+ <Col sm={5} >
+<FormGroup className="input-row"><ControlLabel> 	Photo extra:	</ControlLabel><FormControl type="file" name="uwo"   value={this.state.uwo	} placeholder={this.state.uwo	} onChange={this.handleChangeValue} />  </FormGroup> 
+ </Col> 
+</Row>  
+   
+  </Grid>     
+   </Form>  
+        <Col  sm={5} >	
+  <FormGroup className="input-row"><ControlLabel > 	 PN:	</ControlLabel><FormControl type="text" name="fwo"   value={this.state.fwo	} placeholder={this.state.fwo	} onChange={this.fwoChanged} />  </FormGroup> 
+  <FormGroup className="input-row" ><ControlLabel > 	Description :	</ControlLabel><FormControl type="text" name="Gwo"   value={this.state.Gwo	} placeholder={this.state.Gwo	} onChange={this.GwoChanged} />  </FormGroup> 
+  <FormGroup className="input-row" ><ControlLabel> 	 Date:	</ControlLabel><FormControl type="text" name="jwo"   value={this.state.jwo	} placeholder={this.state.jwo	} onChange={this.jwoChanged} />  </FormGroup> 
+  <div className="profile-line"></div>
+        </Col> 
+        <br/>
+   
+   
+   
+        */
+        
+        
+      )
+    );
+  }
+
+ 
+
+}
+
+
+
+module.exports = RIedit;
+
+
+
+/***/ }),
+/* 426 */
+/***/ (function(module, exports, __webpack_require__) {
+
 const React = __webpack_require__(0);
 const Link = __webpack_require__(17).Link
 // style for BOOKS
-const style = __webpack_require__(426);
+const style = __webpack_require__(427);
 // other components and etc
-const Header = __webpack_require__(31);
+const Header = __webpack_require__(27);
 // react-bootstrap
 const {Form, FormGroup, Col, FormControl, Button} = __webpack_require__(23);
 
@@ -48268,13 +48594,13 @@ class SignUp extends React.Component {
 module.exports = SignUp;
 
 /***/ }),
-/* 426 */
+/* 427 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(427);
+var content = __webpack_require__(428);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -48299,7 +48625,7 @@ if(false) {
 }
 
 /***/ }),
-/* 427 */
+/* 428 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(21)(false);
@@ -48313,15 +48639,15 @@ exports.push([module.i, ".FormSU {\n  width: 600px;\n  margin: auto;\n  margin-t
 
 
 /***/ }),
-/* 428 */
+/* 429 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const React = __webpack_require__(0);
 const Link = __webpack_require__(17).Link
 // style for BOOKS
-const style = __webpack_require__(429);
+const style = __webpack_require__(430);
 // other components and etc
-const Header = __webpack_require__(31);
+const Header = __webpack_require__(27);
 // react-bootstrap
 const {Form, FormGroup, Col, FormControl, Button} = __webpack_require__(23);
 
@@ -48419,13 +48745,13 @@ class LogIn extends React.Component {
 module.exports = LogIn;
 
 /***/ }),
-/* 429 */
+/* 430 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(430);
+var content = __webpack_require__(431);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -48450,7 +48776,7 @@ if(false) {
 }
 
 /***/ }),
-/* 430 */
+/* 431 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(21)(false);
@@ -48464,20 +48790,20 @@ exports.push([module.i, ".Form {\n  width: 600px;\n  margin: auto;\n  margin-top
 
 
 /***/ }),
-/* 431 */
+/* 432 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const React = __webpack_require__(0);
 const ReactDOM = __webpack_require__(13);
 const Link = __webpack_require__(17).Link
 // style for BOOK
-const style = __webpack_require__(432);
+const style = __webpack_require__(433);
 // other components and etc
-const Header = __webpack_require__(31);
-const UserReport = __webpack_require__(434);
+const Header = __webpack_require__(27);
+const UserReport = __webpack_require__(435);
 //const IncomeProposal = require('./IncomeProposal');
 //const OutcomeProposal = require('./OutcomeProposal');
-const FormRI =__webpack_require__(437);
+const FormRI =__webpack_require__(438);
 // react-bootstrap
 const {Grid, Row, Col, FormControl, ControlLabel, FormGroup, HelpBlock, Tabs, Tab, Form, Button} = __webpack_require__(23);
 
@@ -48613,13 +48939,13 @@ class HomePage extends React.Component {
 module.exports = HomePage;
 
 /***/ }),
-/* 432 */
+/* 433 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(433);
+var content = __webpack_require__(434);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -48644,7 +48970,7 @@ if(false) {
 }
 
 /***/ }),
-/* 433 */
+/* 434 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(21)(false);
@@ -48658,13 +48984,13 @@ exports.push([module.i, ".profile {\n  background-color: green;\n  width: 95%;\n
 
 
 /***/ }),
-/* 434 */
+/* 435 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const React = __webpack_require__(0);
 const Link = __webpack_require__(17).Link
 // style for BOOK
-const style = __webpack_require__(435);
+const style = __webpack_require__(436);
 
 /* component for displaying books in user library */
 class UserReport extends React.Component {
@@ -48689,13 +49015,13 @@ module.exports = UserReport;
 //<UserReport  reportnumber={e.reportnumber}/>;
 
 /***/ }),
-/* 435 */
+/* 436 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(436);
+var content = __webpack_require__(437);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -48720,7 +49046,7 @@ if(false) {
 }
 
 /***/ }),
-/* 436 */
+/* 437 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(21)(false);
@@ -48734,15 +49060,15 @@ exports.push([module.i, ".book {\n  background: black;\n  width: 31.2%;\n  float
 
 
 /***/ }),
-/* 437 */
+/* 438 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const React = __webpack_require__(0);
 const Link = __webpack_require__(17).Link
 // style for BOOKS ...
-const style = __webpack_require__(438);
+const style = __webpack_require__(439);
 // other components and etc
-const Header = __webpack_require__(31);
+const Header = __webpack_require__(27);
 // react-bootstrap
 const {Form, FormGroup, Col, FormControl, Button, Grid, Row, ControlLabel} = __webpack_require__(23);
 
@@ -48901,13 +49227,13 @@ React.createElement(FormGroup, null, React.createElement(ControlLabel, null, "In
 module.exports = FormRI;
 
 /***/ }),
-/* 438 */
+/* 439 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(439);
+var content = __webpack_require__(440);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -48932,7 +49258,7 @@ if(false) {
 }
 
 /***/ }),
-/* 439 */
+/* 440 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(21)(false);
