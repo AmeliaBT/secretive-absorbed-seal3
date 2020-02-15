@@ -1,29 +1,21 @@
 const React = require('react');
-const ReactDOM = require('react-dom');
-const Link = require('react-router-dom').Link
-// style for BOOK
+
 const style = require('../styles/HomePage');
 // other components and etc
 const Header = require('./Header');
-const UserReport = require('./UserReport');
-//const IncomeProposal = require('./IncomeProposal');
-//const OutcomeProposal = require('./OutcomeProposal');
 const FormRI =require('./FormRI');
 // react-bootstrap
-const {Grid, Row, Col, FormControl, ControlLabel, FormGroup, HelpBlock, Tabs, Tab, Form, Button} = require('react-bootstrap');
+const {Grid, Row, Col, FormControl} = require('react-bootstrap');
 
-/* component for user profile */
+/* component for ri home page */
 class HomePage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       inspname: "",
-      dep: ""      
-      
+      dep: ""  
     };
- // this.depChanged = this.depChanged.bind(this);
-  
-   
+ 
   }
   /****************************/
   // Handlers
@@ -48,21 +40,13 @@ class HomePage extends React.Component {
         }
         let response = JSON.parse(this.responseText);
         console.log("respond parsed ")
-        /*
-        to do -list RIs for Inspector
-*/
-       // let reports = response.reports.map((e) => {
-        {/* return <UserReport img_url={e.img_url} reportnumber={e.reportnumber}/>;*/}  
-
-        //  return <UserReport  reportnumber={e.reportnumber}/>;
-       // });
+     
           if(response.isLogedIn == true) {
             console.log(" loged in ok")
              that.setState({
             ["inspname"]: response.inspname,
             ["dep"]: response.dep
              /*,
-           
             ["user_reports"]: reports
             /*
            */
@@ -74,68 +58,27 @@ class HomePage extends React.Component {
     return(
         <div>
           <Header/>
-          <div className="profile">
-              <Grid>
-                <Row className="show-grid">
- {/* <Col xs={6} md={4} className="left-col"> */}
-     <Col md={2} className="left-col">
-                   {/* <div className="profile-label">Your profile</div>*/}
+  <div className="profile">
+            
+ <Row className="show-grid">
+ 
 
-                    <div className="profile-line"></div> 
+ <div className="title-line"> 
+  <p>Receiving Inspection Report Form for: <span>  {this.state.inspname}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span> department: 
+  <span>  { this.state.dep} </span>  </p>
+  </div>
+  <div className="profile-line"></div> 
+ 
+</Row>
+</div>
+        
+<div className="myForm">
 
-                <form className="input-label">
-                  <FormGroup  >
-                    <ControlLabel>Your name</ControlLabel>
-                    <FormControl type="text" value={this.state.inspname}  readOnly  />
-                    <FormControl.Feedback />
-                  </FormGroup>
-                </form>
-                                <div className="profile-line"></div>
-
-                <form className="input-label">
-                  <FormGroup  >
-                    <ControlLabel>Your dep</ControlLabel>
-                    <FormControl type="text" value={this.state.dep} readOnly />
-                    <FormControl.Feedback />
-                  </FormGroup>
-                </form>
-                <div className="profile-line"></div>                            
-                <div className="proposal-label">Your Reps ... </div>
-                <div className="profile-line"></div>
-  {/*
- <div className="library">
-  {this.state.user_reports}
-</div>  */}
-                {/* 
-              
-                  
-                <Tabs defaultActiveKey={1} id="uncontrolled-tab" className="tabs">
-                  <Tab eventKey={1} title="Income">  old </Tab>
-                  <Tab eventKey={2} title="Outcome">   old     </Tab>
-                </Tabs>  
-                */}
-    
-     </Col>
-  {/* <Col xs={12} md={8} className="left-col"> */}
-  <Col  md={10} className="right-col">
- {/*   <div className="library-label">Your RI Reports</div>
-                <Form inline className="input-label add-form">
-                  <FormGroup controlId="addBookForm"  >
-                    <FormControl type="text" value={this.state.reportnumber} placeholder="enter reportnumber"
-                      onChange={this.reportChanged} style={{ "width": "100%" }} />
-                    <FormControl type="text" value={this.state.inspname} placeholder="enter inspname"
-                      onChange={this.reportChanged} style={{ "width": "100%" }} />
-                    <Button type="button" style={{ "width": "100%" }} onClick={this.addRIreport}>Add RI Report</Button>
-                    <FormControl.Feedback />
-                  </FormGroup>
-                </Form>
- */}
- <FormRI />
-
-
-                  </Col>
-                </Row>
-              </Grid>
+   {/* *********************************** */}
+        <FormRI /> 
+   {/* *********************************** */}
+ 
+     
           </div>
         </div>
     );
