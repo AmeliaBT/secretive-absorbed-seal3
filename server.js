@@ -503,7 +503,8 @@ app.post("/set-report", function(request, response) {
    reportModel.findOne({"_id":request.body["_id"]}, (err, doc) => {
   if (err) throw err;
       console.log("set-report: " );
-     console.log(doc);
+     
+    // console.log(doc);
      
     /* 
   doc.set({   

@@ -59035,6 +59035,7 @@ this.state = {
       uwo: ""  // old extra; new file -photo 
 }
       this.handleChangeValue = this.handleChangeValue.bind(this);
+    this.handleSubmit= this.handleSubmit.bind(this);
   }
 
    /****************************/
@@ -59043,7 +59044,9 @@ this.state = {
   /*;
   */
   
-  
+  handleSubmit(event){
+    alert("hi")
+  }
    handleChangeValue(event) {
      const target = event.target;
       const value = target.value;
