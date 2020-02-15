@@ -19,13 +19,13 @@ const RIreports = require('./components/RIreports');
 const RIlist = require('./components/RIlist');
 const RIlistAll = require('./components/RIlistAll'); //change
 const RIedit = require('./components/RIedit');
-//const RIview = require('./components/RIview');
+const RIview = require('./components/RIview');
 const SignUp = require('./components/SignUp');
 const LogIn = require('./components/LogIn');
 const HomePage = require('./components/HomePage');
 //const DisplayMessages= require('./components/DisplayMessages');
 //const DisplayMessagesB= require('./components/DisplayMessagesB');
-const ManyRecords =require('./components/ManyRecords');
+//const ManyRecords =require('./components/ManyRecords');
 //  <Route path="/report-edit" component={RIedit}/>
 //<Route path='/:handle' component={Profile} />
 render((
