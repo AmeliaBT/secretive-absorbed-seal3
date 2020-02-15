@@ -46,8 +46,8 @@ render((
          <Route path="/list-all" component={RIlistAll}/>
         <Route path="/report-edit" component={RIedit}/>
         <Route path="/report-view" component={RIview}/>
-          <Route path="/up-many-records" component={ManyRecords}/>
-       {/*  < DisplayMessages />
+       {/*   <Route path="/up-many-records" component={ManyRecords}/>
+         < DisplayMessages />
          <Route path="/reports" component={RIreports}/>
         <Route path="/books" component={RIreports}/>*/}
       </div>

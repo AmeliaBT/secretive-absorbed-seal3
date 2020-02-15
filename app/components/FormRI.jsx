@@ -1,12 +1,75 @@
 const React = require('react');
 const Link = require('react-router-dom').Link
-// style for BOOKS ...
+// style for BOOKS
 const style = require('../styles/FormRI');
 // other components and etc
 const Header = require('./Header');
-// react-bootstrap
-const {Form, FormGroup, Col, FormControl, Button, Grid, Row, ControlLabel} = require('react-bootstrap');
+//const CreatableSelect= require('react-select');
+//const { Creatable }= require('react-select');
 
+// react-bootstrap
+const { InputGroup, option, Form, FormGroup, Col, FormControl, Button, Grid, Row, ControlLabel} = require('react-bootstrap');
+
+const mySel = [
+  { id: 1, selname: "WO" },
+  { id: 2, selname: "PO" },
+  { id: 3, selname: "Other" },
+   { id: 4, selname: "" }
+];
+const mySelT = [
+  { id: 1, selname: "Pass" },
+  { id: 2, selname: "Fail" } 
+];
+//supplier name
+
+const mySelE = [
+  { id: 1, selname: "ATDG" },
+  { id: 2, selname: "CAMEO" } ,
+  { id: 3, selname: "" } 
+];
+
+
+  //Source
+const mySelM = [
+  { id: 1, selname: "FACTORY" },
+  { id: 2, selname: "FAS" } ,
+   { id: 3, selname: "TFGI" },
+  { id: 4, selname: "OOBA" },
+  { id: 5, selname: "OEM" },
+  { id: 6, selname: "PR" } ,
+  { id: 7, selname: "RCF" },
+  { id: 8, selname: "RMA" },
+  { id: 9, selname: "SR" } ,
+    { id: 10, selname: "" }
+];
+
+  //destination
+const mySelN = [
+  { id: 1, selname: "FGI" },
+  { id: 2, selname: "FAS" } ,
+   { id: 3, selname: "EST" },
+  { id: 4, selname: "RCF" },
+  { id: 5, selname: "ENG" },
+  { id: 6, selname: "Other" } ,
+    { id: 7, selname: "" }
+];
+
+
+let options = mySel.map((el) => {
+          return <option value={el.selname} key={el.selname}>{el.selname}</option>;
+        });
+let optionsE = mySelE.map((el) => {
+          return <option value={el.selname} key={el.selname}>{el.selname}</option>;
+        });
+      
+let optionsM = mySelM.map((el) => {
+          return <option value={el.selname} key={el.selname}>{el.selname}</option>;
+        });
+     
+let optionsN = mySelN.map((el) => {
+          return <option value={el.selname} key={el.selname}>{el.selname}</option>;
+        });
+//const renderOptions = (options) => {return options.map((i) => {return <option key={i.name} name={i.name} value={i.value}>{i.value}</option>;  }); };
 
 /* the books page that shows all books */
 class FormRI extends React.Component {
@@ -14,23 +77,35 @@ class FormRI extends React.Component {
     super(props);
     this.state = {
       reportID:"",
-      inspname: "",
-      dep: "",
-      ri_report_to_add: "",
-      supplier: "",
-      daterec: new Date().toLocaleString(),
-      dateinsp: new Date().toLocaleString(),
-      wopomtt: "",
-      no: "",
-      destination: "",
-      pn: "",
-      description: "",
-      lotsize: "",
-      samplesize: "",
+      inspector: "",  // Inspector:
+      daterec: "",  //Date Received
+      Gwo: "",  // Description:      
+      cwo: new Date().toLocaleString(),  // Date Received:      
+      dwo: "",  // WO / PO / MTT: mySel, //      
+      ewo: "",  // Supplier:
+      fwo: "",  // P/N:
+      hwo: "",  // Documentation Revision:     
+      iwo: "",  // Received SW:
+      jwo: new Date().toLocaleString(),  // Date Inspected:
+      kwo: "",  // NO:
+      lwo: "", 
+      mwo: "",  // Source:
+      nwo: "",  // Destination:
+      owo: "",  // Lot Size:
+      pwo: "",  // Sample Size:
+      qwo: "",  // Qty Defective:
+      rwo: "",  // Qty Rejected:
+      swo: "",  // DMR #:
+      two: "",  // Pass / Fail:
+      record: "", // comment -note
+      uwo: ""  // old extra; new file -photo 
 
     };
     this.handleChangeValue = this.handleChangeValue.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);   
+    this.handleChangeValuePF= this.handleChangeValuePF.bind(this);
+    
+    
   }
 //** %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 componentWillMount() {
@@ -48,15 +123,17 @@ componentWillMount() {
      }
      let response = JSON.parse(this.responseText);
      
-    //note: from user schema!  
        if(response.isLogedIn == true) {
-         console.log(" loged in ok");
+       //  console.log(" loged in ok");
           that.setState({
-         ["inspname"]: response.inspname,
+        ["inspname"]: response.inspname,
+         ["inspector"]: response.inspname,
          ["dep"]: response.dep      
         });
        }
      }
+  
+  
 } 
 
 
@@ -67,24 +144,49 @@ componentWillMount() {
       const value = target.value;
       const name = target.name;
       this.setState({ [name]: value  });
-  }
+  };
+ handleChangeValuePF(event) {
+     const target = event.target;
+      const value = target.value;
+      const name = target.name;  
+    if(value > 0 ) {    
+      this.setState({ two: "Fail", [name]: value })}else{
+        this.setState({two: "Pass", [name]: value })}   
+  };
+  
+    
   handleSubmit(event) { let that = this; 
-    console.log(that)
+   // console.log(that)
       const xhr = new XMLHttpRequest();      
       xhr.open('POST', '/add-report', true);
       xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-      
-      
-      let body =           
-      
-      'supplier=' + encodeURIComponent(this.state.supplier) +     
-      '&pn=' + encodeURIComponent(this.state.pn) +    
-      '&inspector=' + encodeURIComponent(this.state.inspname) +
-      '&daterec='+ encodeURIComponent(this.state.daterec) +
-      //reportID
-      '&dep=' + encodeURIComponent(this.state.dep) +
-      '&reportID=' + encodeURIComponent(this.state.reportID) ;
 
+    let body =   
+'reportID='   + encodeURIComponent(this.state.reportID)+
+'&inspector='   + encodeURIComponent(this.state.inspector)+
+'&daterec='   + encodeURIComponent(this.state.cwo)+
+'&Gwo='   + encodeURIComponent(this.state.Gwo)+
+'&cwo='   + encodeURIComponent(this.state.cwo)+
+'&dwo='   + encodeURIComponent(this.state.dwo)+
+'&ewo='   + encodeURIComponent(this.state.ewo)+
+'&fwo='   + encodeURIComponent(this.state.fwo)+
+'&hwo='   + encodeURIComponent(this.state.hwo)+
+
+'&iwo='   + encodeURIComponent(this.state.iwo)+
+'&jwo='   + encodeURIComponent(this.state.jwo)+
+'&kwo='   + encodeURIComponent(this.state.kwo)+ 
+'&lwo='   + encodeURIComponent(this.state.lwo)+
+'&mwo='   + encodeURIComponent(this.state.mwo)+
+'&nwo='   + encodeURIComponent(this.state.nwo)+
+'&owo='   + encodeURIComponent(this.state.owo)+
+'&pwo='   + encodeURIComponent(this.state.pwo)+
+'&qwo='   + encodeURIComponent(this.state.qwo)+
+'&rwo='   + encodeURIComponent(this.state.rwo)+
+'&swo='   + encodeURIComponent(this.state.swo)+
+'&two='   + encodeURIComponent(this.state.two)+
+'&uwo='   + encodeURIComponent(this.state.uwo)+ 
+'&record='   + encodeURIComponent(this.state.record) 
+;
       xhr.send(body);
 
       xhr.onreadystatechange = function() {
@@ -94,69 +196,155 @@ componentWillMount() {
           return;
         }
         let response = JSON.parse(this.responseText);
-
         if(response.error == 0) {
            window.location.href = "/reports";
            that.setState({
-          ["supplier"]: "Succsess",
-          ["pn"]: "Succsess"
+          ["ewo"]: "Succsess",
+        //  ["fwo"]: "Succsess"
            });
         }
         else {
           that.setState({
-          ["supplier"]: "Wrong supplier and/or pn"
+          ["ewo"]: "Error "
            });
          }
-         
         }
       event.preventDefault();
      }
   render() {
     return (
-      <div>        
-<Form className="input-label" method="post" action="/addRIreport" onSubmit={this.handleSubmit}>   
-           
-<Col  sm={5}>
-<FormGroup ><ControlLabel>reportID</ControlLabel>
-    <FormControl type="text" name="reportID" required value={this.state.reportID } placeholder="RI number" onChange={this.handleChangeValue}  />   
-  </FormGroup>        
-
-  <div className="profile-line"></div>
-<FormGroup ><ControlLabel>Inspector</ControlLabel>
-    <FormControl type="text" name="inspector" required value={this.state.inspname} readOnly />   
-  </FormGroup>        
-
-  <div className="profile-line"></div>
+      <div >        
+<Form  method="post" action="/addRIreport" onSubmit={this.handleSubmit} encType="multipart/form-data" >       
+ <Grid>  
+   {/* 
+<FormGroup className="input-row" ><ControlLabel> 	 reportID:	</ControlLabel><FormControl type="text" name="reportID"   value={this.state.reportID	} placeholder={this.state.reportID	} onChange={this.handleChangeValue} />  </FormGroup> 
+Submit RI form  
+  <Row> <Col  sm={11} >  <div className="profile-line"></div></Col>  </Row>*/}
+   <Row>  <Col smOffset={7}  sm={4} > 
+      <FormGroup > 
+     <Button className="btn btn-primary btn-block" type="submit"><i className="fa fa-paper-plane"></i> Submit</Button>
+      </FormGroup>
+</Col></Row>
+   
+<Row >
+<Col sm={3} >	 <div className="well">   
+ <FormGroup className="input-row"><ControlLabel>Inspector:</ControlLabel> <FormControl   readOnly type="text" name="inspector" value={this.state.inspector	} placeholder={this.state.inspector	 }  /> </FormGroup>    
+ {/* <FormGroup ><ControlLabel>Supplier:</ControlLabel> <FormControl  className="input-row3" type="text" name="ewo" value={this.state.ewo} componentClass="select"  placeholder="select" onChange={this.handleSelectChangeE}> {optionsE} </FormControl> </FormGroup> 
+   */}
+  <FormGroup className="input-row"><ControlLabel>Supplier:</ControlLabel>    <FormControl  className="input-row" type="text" name="ewo" value={this.state.ewo}   onChange={this.handleChangeValue} />  </FormGroup>  
+ 
+  </div></Col>  <Col sm={2} >	 <div className="well">    
+   <FormGroup ><ControlLabel>WO / PO / MTT:</ControlLabel>
+   
+     <FormControl 
+      className="input-row3" type="text" name="dwo" 
+       value={this.state.dwo} componentClass="select"  placeholder="select" 
+       onChange={this.handleChangeValue}> {options}  
+     </FormControl>
+        {/* 
+     <FormControl 
+      className="input-row3" type="text" name="dwo" 
+       value={this.state.dwo} componentClass="select"  placeholder="select" 
+       onChange={this.handleSelectChange}> {options} 
+       onInputChange={this.handleChangeValue}
+       isClearable
+     </FormControl>     
+          */} 
+    
+  </FormGroup> 
+    
   
-  <FormGroup ><ControlLabel> Date Received</ControlLabel>
-    <FormControl type="text" name="daterec" required value={this.state.daterec} placeholder={this.state.daterec} onChange={this.handleChangeValue} />
-  </FormGroup>   
-  <div className="profile-line"></div> 
-  <div className="profile-line"></div> 
-  <FormGroup > <ControlLabel> Part Numberx</ControlLabel>                
-  <FormControl type="text" name="pn" required value={this.state.pn} placeholder="PN" onChange={this.handleChangeValue}/>  </FormGroup>
-  <div className="profile-line"></div>
+  <FormGroup className="input-row"><ControlLabel> 	 NO:</ControlLabel> <FormControl type="text" name="kwo"       value={this.state.kwo	} placeholder={this.state.kwo	} onChange={this.handleChangeValue} />  </FormGroup> 
+ </div></Col>
+<Col sm={3} >	<div className="well"> 
+  <FormGroup className="input-row"><ControlLabel>Date Received:	</ControlLabel> <FormControl type="date" name="cwo"      value={this.state.cwo	} placeholder={this.state.cwo	} onChange={this.handleChangeValue} />  </FormGroup> 
+  <FormGroup className="input-row"><ControlLabel> Date Inspected: </ControlLabel><FormControl type="date" name="jwo"   value={this.state.jwo	} placeholder={this.state.jwo	} onChange={this.handleChangeValue} />  </FormGroup> 
+  </div></Col>
+<Col sm={3} >	<div className="well"> 
+<FormGroup ><ControlLabel>Source:</ControlLabel> 
+  <FormControl  className="input-row3" type="text" name="mwo" value={this.state.mwo} componentClass="select"  placeholder="select"
+    onChange={this.handleChangeValue}> {optionsM} </FormControl> </FormGroup> 
+<FormGroup ><ControlLabel>Destination:</ControlLabel> <FormControl  className="input-row3" type="text" name="nwo" value={this.state.nwo} componentClass="select"  placeholder="select" onChange={this.handleChangeValue}> {optionsN} </FormControl> </FormGroup> 
+  </div></Col>
+  </Row>
+ <Row> <Col  sm={11} >  <div className="profile-line"></div></Col>  </Row>   
+   <Row>
+     
 
-  </Col>
+<Col sm={4} ><div className="well">   
+<FormGroup className="input-row"><ControlLabel> 	 P/N:	</ControlLabel><FormControl type="text" name="fwo"   value={this.state.fwo	} placeholder={this.state.fwo	} onChange={this.handleChangeValue} />  </FormGroup> 
+  </div></Col>
+<Col sm={4} ><div className="well">   
+<FormGroup className="input-row"><ControlLabel> 	 Description:	</ControlLabel><FormControl type="text" name="Gwo"   value={this.state.Gwo	} placeholder={this.state.Gwo	} onChange={this.handleChangeValue} />  </FormGroup> 
+  </div></Col>
 
-  <Col  sm={5}>
-  <FormGroup ><ControlLabel> Supplier</ControlLabel>
-    <FormControl type="text" name="supplier" required value={this.state.supplier} placeholder="supplier" onChange={this.handleChangeValue} />
-  </FormGroup>        
-  <div className="profile-line"></div>
+   <Col sm={3} ><div className="well">    
+{/* 
+  <FormGroup className="input-row"><ControlLabel> 	 Documentation Revision:	</ControlLabel><FormControl type="text" name="hwo"   value={this.state.hwo	} placeholder={this.state.hwo	} onChange={this.handleChangeValue} />  </FormGroup> 
+  */}     
+  <FormGroup className="input-row"><ControlLabel> 	 Received SW:	</ControlLabel><FormControl type="text" name="iwo"   value={this.state.iwo	} placeholder={this.state.iwo	} onChange={this.handleChangeValue} />  </FormGroup> 
+  </div></Col>
+  </Row>
+   
+   
+ <Row> <Col  sm={11} >  <div className="profile-line"></div></Col>  </Row>
 
+  <Row>
+  <Col sm={2} >	   <div className="well">
+ <FormGroup className="input-row"><ControlLabel> 	 Lot Size:	</ControlLabel><FormControl type="number" name="owo"   value={this.state.owo	} placeholder={this.state.owo	} onChange={this.handleChangeValue} />  </FormGroup> 
+  <FormGroup  className="input-row"><ControlLabel> 	 Sample Size:	</ControlLabel><FormControl type="number" name="pwo"   value={this.state.pwo	} placeholder={this.state.pwo	} onChange={this.handleChangeValue} />  </FormGroup> 
+ </div></Col>
+
+ <Col sm={2} >	   <div className="well">
+<FormGroup className="input-row"><ControlLabel> 	 Qty Defective:	</ControlLabel><FormControl type="number" name="qwo"   value={this.state.qwo	} placeholder={this.state.qwo	} onChange={this.handleChangeValuePF} />  </FormGroup> 
+    <FormGroup className="input-row"><ControlLabel> 	 Qty Rejected:	</ControlLabel><FormControl type="number" name="rwo"   value={this.state.rwo	} placeholder={this.state.rwo	} onChange={this.handleChangeValue} />  </FormGroup> 
+ </div></Col>
+     <Col sm={2} >	   <div className="well">
+<FormGroup className="input-row"><ControlLabel> 	 Pass / Fail:	</ControlLabel><FormControl type="text" name="two"   value={this.state.two	} placeholder={this.state.two	} onChange={this.handleChangeValue}   />  </FormGroup> 
+<FormGroup className="input-row"><ControlLabel> 	 DMR #:	</ControlLabel><FormControl type="text" name="swo"   value={this.state.swo	} placeholder={this.state.swo	} onChange={this.handleChangeValue} />  </FormGroup> 
+</div></Col>
+
+  <Col sm={5} > 
+ <FormGroup className="input-row"><ControlLabel > Comment:</ControlLabel> 
+  <textarea rows="3" type="textarea"  className="input-rowC" name="record"   value={this.state.record	} placeholder={this.state.record	} onChange={this.handleChangeValue}  /> 
+  </FormGroup> 
+   </Col>
+  </Row>
+ <Row> <Col  sm={11} >  <div className="profile-line"></div></Col>  </Row>
+ <Row> 
+<Col sm={6} >
+<FormGroup className="input-row"><ControlLabel> 	Photo link	</ControlLabel><FormControl type="file"  name="lwo"    value={this.state.lwo }  placeholder={this.state.lwo	} onChange={this.handleChangeValue}  />   </FormGroup>  
 </Col>
-       
-              <FormGroup>
-                <Col smOffset={2} sm={10}>
-               <Button type="submit">submit RI form</Button>
-                 {/*     <Button type="button" style={{"width": "100%"}} onClick={this.addRIreport}>Add RI Report</Button>*/}
-                </Col>
-              </FormGroup>
-          </Form>
+ <Col sm={5} >
+<FormGroup className="input-row"><ControlLabel> 	Photo extra:	</ControlLabel><FormControl type="file" name="uwo"   value={this.state.uwo	} placeholder={this.state.uwo	} onChange={this.handleChangeValue} />  </FormGroup> 
+ </Col> 
+</Row>  
+   {/* 
+   <InputGroup>
+        <FormControl
+          type="text"
+          placeholder="Search..."
+          onChange={this.handleChange.bind(this)}
+        />
+        <div className="search-icon">
+          <i class="fas fa-search" />
         </div>
+      </InputGroup>   */}
+
+
+                        
+  </Grid>     
+   </Form>
+  </div>
     );
   }
 };
 
 module.exports = FormRI;
+/* 
+<FontAwesomeIcon icon="search" />
+
+<FormGroup className="input-row"><ControlLabel> 	Photo 	</ControlLabel>
+    
+    <FormControl type="file"  name="uwo"  ref="imageInput" accept="image/png, image/jpeg" value={this.state.uwo }  onChange={ this.uploadFile }   />   </FormGroup>  
+*/

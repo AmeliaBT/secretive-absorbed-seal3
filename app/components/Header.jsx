@@ -11,7 +11,9 @@ class Header extends React.Component {
     super(props);
     this.state = {
       navBtns: null,
-      reportsLink: ""
+      reportsLink: "",
+      listLink: "",
+      listLinkAll: ""
     };
     this.handleLogOut = this.handleLogOut.bind(this);
   }
@@ -58,13 +60,15 @@ class Header extends React.Component {
           ["navBtns"]: <Nav pullLeft className="link span">
                         <NavItem className='span'>
                        {/*   <Link  to='/homepage' className="link">Welcome Inspector, {response.nickname}{response.name} {response.inspector} </Link>*/}  
-                           <Link  to='/homepage' className="link">{response.inspname}'s Home Page</Link>
+                           <Link  to='/homepage' className="link">{response.inspname}'s RI Form</Link>
                         </NavItem> 
                         <NavItem className='span'>
                           <div  onClick={that.handleLogOut} className="link">Log out</div>
                         </NavItem>
                       </Nav>,
-            ["reportsLink"]: "/reports"
+            ["reportsLink"]: "/reports",
+             ["listLink"]: "/list",
+             ["listLinkAll"]: "/list-all"
            });
         }
         else {
@@ -90,8 +94,17 @@ class Header extends React.Component {
       <div  className="link span">
        <Navbar collapseOnSelect>
         <Navbar.Header>
-          <Navbar.Brand >            
-            <Link to={this.state.reportsLink} ><p  className="link">RI Reports </p></Link>
+          <Navbar.Brand >           
+            <Link to={this.state.reportsLink} ><p  className="link">RI Gallery</p></Link>
+            
+          </Navbar.Brand>
+          <Navbar.Brand >           
+            <Link to={this.state.listLink} ><p  className="link">Edit   </p></Link>
+            
+          </Navbar.Brand>
+          
+          <Navbar.Brand >           
+            <Link to={this.state.listLinkAll} ><p  className="link">Table View  </p></Link>
             
           </Navbar.Brand>
           <Navbar.Toggle />

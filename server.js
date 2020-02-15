@@ -38,8 +38,8 @@ const url = process.env.MONGOLAB_URI;
 //error here below
 const promise_connection = mongoose.connect(url, { 	useMongoClient: true });
 //const storage = new GridFsStorage({ url: url});
-const GridFsStorage = require('multer-gridfs-storage');
-const storage = new GridFsStorage({ db: promise_connection });
+//const GridFsStorage = require('multer-gridfs-storage');
+//const storage = new GridFsStorage({ db: promise_connection });
 /* To Do: see Anon Message Board https://impossible-petalite.glitch.me/ for good connection
 
 try
