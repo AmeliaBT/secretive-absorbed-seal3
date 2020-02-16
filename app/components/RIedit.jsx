@@ -137,7 +137,8 @@ this.state = {
           return;
         }
         let response = JSON.parse(this.responseText);               
-     // if(response.isLogedIn == true) {
+     if(response.isLogedIn == true) {
+       
              that.setState({
                 ["_id"]: response._id,
             ["reportID"]: response.reportID,
@@ -163,7 +164,8 @@ this.state = {
                 ["two"]: response.two,
                 ["record"]  : response.record ,   
                 ["uwo"]  : response.uwo   
-           });     
+           }); 
+     } //if is logged
         }
   }
 
