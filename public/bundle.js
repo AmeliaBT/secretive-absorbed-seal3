@@ -58665,8 +58665,7 @@ class RIlistItem extends React.Component {
      let jwo=this.props.jwo;//Date Inspected:
     let two=this.props.two; //Pass / Fail
     let owo=this.props.owo; //Lot Size
-    // for pass the data to the form for editing
-   // this.child = React.createRef();      
+      
   
         this.state = {
           //img_url: this.props.img_url,
@@ -58718,14 +58717,9 @@ class RIlistItem extends React.Component {
         React.createElement(Col, {  sm: 1}, 
           React.createElement(Link, {to: 'report-edit/' + this.state.reportID}, 
             
-           /*  <Link to={{ pathname: 'report-edit/' + this.state.reportID }}>*/
-            React.createElement(Button, {bsSize: "xsmall"}, "Edit ", React.createElement(Glyphicon, {glyph: "edit"}), " ")), " ")
-       /*     
-        <Col  sm={1} ><Button bsSize="xsmall" className="report-delete" onClick={() => showDelete(report)}>
-            Delete <Glyphicon glyph="remove-circle"/>  </Button> </Col>
       
-         <Col  sm={1} ><Button bsSize="xsmall"  onClick={this.handleOnClick}>
-            Edit2 <Glyphicon glyph="edit"/>  </Button> </Col>*/
+            React.createElement(Button, {bsSize: "xsmall"}, "Edit ", React.createElement(Glyphicon, {glyph: "edit"}), " ")), " ")
+       
               
         )
         
