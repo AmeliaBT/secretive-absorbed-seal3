@@ -120,35 +120,10 @@ this.state = {
   /****************************/
   
   componentWillMount() {
-    // get user status
+     // get report data
       let that = this;
-    const xhr = new XMLHttpRequest();      
-      xhr.open('POST', '/is-loged-in', true);
-      xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-      xhr.send();
-
-      xhr.onreadystatechange = function() {
-        if (this.readyState != 4) return;
-        
-        if (this.status != 200) {
-          alert( 'error: ' + (this.status ? this.statusText : 'request has not been set') );
-          return;
-        }
-        let response = JSON.parse(this.responseText);
-        
-if(response.isLogedIn == true) {
-  alert("is LogedIn: " +response.isLogedIn )
-            // that.setState({ });
-          }
-        }    
     
-    
-    // get report data
-      //let that = this;
-    
-    
-    
-      xhr = new XMLHttpRequest();
+      const xhr = new XMLHttpRequest();
       let repPath= this.props.location.pathname;
     let pageID=  repPath.substring(13); // report-edit/6032 12 pageID: /6031
 //alert("pageID: " +pageID); 
@@ -163,8 +138,7 @@ if(response.isLogedIn == true) {
           return;
         }
         let response = JSON.parse(this.responseText);               
-// if(response.isLogedIn == true) {
-       
+   
              that.setState({
                 ["_id"]: response._id,
             ["reportID"]: response.reportID,
@@ -191,7 +165,7 @@ if(response.isLogedIn == true) {
                 ["record"]  : response.record ,   
                 ["uwo"]  : response.uwo   
            }); 
-    // } //if is logged
+     
         }
   }
 
