@@ -95,18 +95,18 @@ this.state = {
      
       <Row >
 <Col sm={3} >	 <div className="well">   
- <FormGroup className="input-row"><ControlLabel>Inspector:</ControlLabel> <FormControl   readOnly type="text" name="inspector" value={this.state.inspector	} placeholder={this.state.inspector	 }  /> </FormGroup>    
+ <FormGroup className="input-row"><ControlLabel>Inspector:</ControlLabel> <FormControl   readOnly type="text" name="inspector" value={this.state.inspector	}  /> </FormGroup>    
 
   <FormGroup className="input-row"><ControlLabel>Supplier:</ControlLabel>    <FormControl  className="input-row" type="text" name="ewo" value={this.state.ewo}   readOnly />  </FormGroup>  
  
   </div></Col> 
   <Col sm={2} >	 <div className="well">    
    <FormGroup ><ControlLabel>WO / PO / MTT:</ControlLabel> <FormControl   className="input-row3" type="text" name="dwo"  value={this.state.dwo}   readOnly   />      </FormGroup> 
-   <FormGroup className="input-row"><ControlLabel> 	 NO:</ControlLabel> <FormControl type="text" name="kwo"       value={this.state.kwo	} placeholder={this.state.kwo	} readOnly  />  </FormGroup> 
+   <FormGroup className="input-row"><ControlLabel> 	 NO:</ControlLabel> <FormControl type="text" name="kwo"       value={this.state.kwo	}  readOnly  />  </FormGroup> 
  </div></Col>
         <Col sm={3} >	<div className="well"> 
-  <FormGroup className="input-row"><ControlLabel>Date Received:	</ControlLabel> <FormControl type="date" name="cwo"      value={this.state.cwo	} placeholder={this.state.cwo	} readOnly  />  </FormGroup> 
-  <FormGroup className="input-row"><ControlLabel> Date Inspected: </ControlLabel><FormControl type="date" name="jwo"   value={this.state.jwo	} placeholder={this.state.jwo	} readOnly  />  </FormGroup> 
+  <FormGroup className="input-row"><ControlLabel>Date Received:	</ControlLabel> <FormControl type="date" name="cwo"      value={this.state.cwo	}  readOnly  />  </FormGroup> 
+  <FormGroup className="input-row"><ControlLabel> Date Inspected: </ControlLabel><FormControl type="date" name="jwo"   value={this.state.jwo	} readOnly  />  </FormGroup> 
   </div></Col>
 <Col sm={3} >	<div className="well"> 
 <FormGroup ><ControlLabel>Source:</ControlLabel> 
@@ -119,15 +119,15 @@ this.state = {
      
 
 <Col sm={4} ><div className="well">   
-<FormGroup className="input-row"><ControlLabel> 	 P/N:	</ControlLabel><FormControl type="text" name="fwo"   value={this.state.fwo	} placeholder={this.state.fwo	} readOnly  />  </FormGroup> 
+<FormGroup className="input-row"><ControlLabel> 	 P/N:	</ControlLabel><FormControl type="text" name="fwo"   value={this.state.fwo	} readOnly  />  </FormGroup> 
   </div></Col>
 <Col sm={4} ><div className="well">   
-<FormGroup className="input-row"><ControlLabel> 	 Description:	</ControlLabel><FormControl type="text" name="Gwo"   value={this.state.Gwo	} placeholder={this.state.Gwo	} readOnly />  </FormGroup> 
+<FormGroup className="input-row"><ControlLabel> 	 Description:	</ControlLabel><FormControl type="text" name="Gwo"   value={this.state.Gwo	}  readOnly />  </FormGroup> 
   </div></Col>
 
    <Col sm={3} ><div className="well">    
    
-  <FormGroup className="input-row"><ControlLabel> 	 Received SW:	</ControlLabel><FormControl type="text" name="iwo"   value={this.state.iwo	} placeholder={this.state.iwo	} readOnly  />  </FormGroup> 
+  <FormGroup className="input-row"><ControlLabel> 	 Received SW:	</ControlLabel><FormControl type="text" name="iwo"   value={this.state.iwo	}  readOnly  />  </FormGroup> 
   </div></Col>
   </Row>
    
@@ -136,32 +136,32 @@ this.state = {
 
   <Row>
   <Col sm={2} >	   <div className="well">
- <FormGroup className="input-row"><ControlLabel> 	 Lot Size:	</ControlLabel><FormControl type="number" name="owo"   value={this.state.owo	} placeholder={this.state.owo	} readOnly  />  </FormGroup> 
-  <FormGroup  className="input-row"><ControlLabel> 	 Sample Size:	</ControlLabel><FormControl type="number" name="pwo"   value={this.state.pwo	} placeholder={this.state.pwo	} readOnly  />  </FormGroup> 
+ <FormGroup className="input-row"><ControlLabel> 	 Lot Size:	</ControlLabel><FormControl type="number" name="owo"   value={this.state.owo	} readOnly  />  </FormGroup> 
+  <FormGroup  className="input-row"><ControlLabel> 	 Sample Size:	</ControlLabel><FormControl type="number" name="pwo"   value={this.state.pwo	} readOnly  />  </FormGroup> 
  </div></Col>
 
  <Col sm={2} >	   <div className="well">
-<FormGroup className="input-row"><ControlLabel> 	 Qty Defective:	</ControlLabel><FormControl type="number" name="qwo"   value={this.state.qwo	} placeholder={this.state.qwo	} readOnly  />  </FormGroup> 
-    <FormGroup className="input-row"><ControlLabel> 	 Qty Rejected:	</ControlLabel><FormControl type="number" name="rwo"   value={this.state.rwo	} placeholder={this.state.rwo	} readOnly  />  </FormGroup> 
+<FormGroup className="input-row"><ControlLabel> 	 Qty Defective:	</ControlLabel><FormControl type="number" name="qwo"   value={this.state.qwo	} readOnly  />  </FormGroup> 
+    <FormGroup className="input-row"><ControlLabel> 	 Qty Rejected:	</ControlLabel><FormControl type="number" name="rwo"   value={this.state.rwo	} readOnly  />  </FormGroup> 
  </div></Col>
      <Col sm={2} >	   <div className="well">
-<FormGroup className="input-row"><ControlLabel> 	 Pass / Fail:	</ControlLabel><FormControl type="text" name="two"   value={this.state.two	} placeholder={this.state.two	} readOnly    />  </FormGroup> 
-<FormGroup className="input-row"><ControlLabel> 	 DMR #:	</ControlLabel><FormControl type="text" name="swo"   value={this.state.swo	} placeholder={this.state.swo	} readOnly  />  </FormGroup> 
+<FormGroup className="input-row"><ControlLabel> 	 Pass / Fail:	</ControlLabel><FormControl type="text" name="two"   value={this.state.two	}  readOnly    />  </FormGroup> 
+<FormGroup className="input-row"><ControlLabel> 	 DMR #:	</ControlLabel><FormControl type="text" name="swo"   value={this.state.swo	}  readOnly  />  </FormGroup> 
 </div></Col>
 
   <Col sm={5} > 
  <FormGroup className="input-row"><ControlLabel > Comment:</ControlLabel> 
-  <textarea rows="3" type="textarea"  className="input-rowC" name="record"   value={this.state.record	} placeholder={this.state.record	} readOnly   /> 
+  <textarea rows="3" type="textarea"  className="input-rowC" name="record"   value={this.state.record	}  readOnly   /> 
   </FormGroup> 
    </Col>
   </Row>
  <Row> <Col  sm={11} >  <div className="profile-line"></div></Col>  </Row>
  <Row> 
 <Col sm={6} >
-<FormGroup className="input-row"><ControlLabel> 	Photo link	</ControlLabel><FormControl type="text"  name="lwo"    value={this.state.lwo }  placeholder={this.state.lwo	} readOnly  />   </FormGroup>  
+<FormGroup className="input-row"><ControlLabel> 	Photo 1:	</ControlLabel><FormControl type="text"  name="lwo"    value={this.state.lwo }  placeholder={this.state.lwo	} readOnly  />   </FormGroup>  
 </Col>
  <Col sm={5} >
-<FormGroup className="input-row"><ControlLabel> 	Photo extra:	</ControlLabel><FormControl type="file" name="uwo"   value={this.state.uwo	} placeholder={this.state.uwo	} readOnly />  </FormGroup> 
+<FormGroup className="input-row"><ControlLabel> 	Photo 2:	</ControlLabel><FormControl type="text" name="uwo"   value={this.state.uwo	} placeholder={this.state.uwo	} readOnly />  </FormGroup> 
  </Col> 
 </Row>  
     

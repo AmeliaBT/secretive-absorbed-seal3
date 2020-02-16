@@ -59376,18 +59376,18 @@ this.state = {
      
       React.createElement(Row, null, 
 React.createElement(Col, {sm: 3}, "  ", React.createElement("div", {className: "well"}, " ",   
- React.createElement(FormGroup, {className: "input-row"}, React.createElement(ControlLabel, null, "Inspector:"), " ", React.createElement(FormControl, {   readOnly: true, type: "text",  name: "inspector", value: this.state.inspector, 	 placeholder: this.state.inspector	 }  ), " "), "    ", 
+ React.createElement(FormGroup, {className: "input-row"}, React.createElement(ControlLabel, null, "Inspector:"), " ", React.createElement(FormControl, {   readOnly: true, type: "text",  name: "inspector", value: this.state.inspector	}  ), " "), "    ", 
 
   React.createElement(FormGroup, {className: "input-row"}, React.createElement(ControlLabel, null, "Supplier:"), "    ", React.createElement(FormControl, {  className: "input-row", type: "text",  name: "ewo", value: this.state.ewo, readOnly: true}), "  "), " " 
  
   )), 
   React.createElement(Col, {sm: 2}, "  ", React.createElement("div", {className: "well"}, " ",    
    React.createElement(FormGroup, null , React.createElement(ControlLabel, null, "WO / PO / MTT:"), " ", React.createElement(FormControl, {   className: "input-row3", type: "text",  name: "dwo", value: this.state.dwo, readOnly: true}), "      "), " ", 
-   React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "   NO:"), " ", React.createElement(FormControl, { type: "text",  name: "kwo",       value: this.state.kwo, 	 placeholder: this.state.kwo, 	 readOnly: true} ), "  "), " "
+   React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "   NO:"), " ", React.createElement(FormControl, { type: "text",  name: "kwo",       value: this.state.kwo, 	  readOnly: true} ), "  "), " "
  )), 
         React.createElement(Col, {sm: 3}, " ", React.createElement("div", {className: "well"}, " ", 
-  React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "Date Received: "), " ", React.createElement(FormControl, { type: "date",  name: "cwo",      value: this.state.cwo, 	 placeholder: this.state.cwo, 	 readOnly: true} ), "  "), " " + " " +
-"  ", React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, " Date Inspected: "), React.createElement(FormControl, { type: "date",  name: "jwo",   value: this.state.jwo, 	 placeholder: this.state.jwo, 	 readOnly: true} ), "  "), " "
+  React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "Date Received: "), " ", React.createElement(FormControl, { type: "date",  name: "cwo",      value: this.state.cwo, 	  readOnly: true} ), "  "), " " + " " +
+"  ", React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, " Date Inspected: "), React.createElement(FormControl, { type: "date",  name: "jwo",   value: this.state.jwo, 	 readOnly: true} ), "  "), " "
   )), 
 React.createElement(Col, {sm: 3}, " ", React.createElement("div", {className: "well"}, " ", 
 React.createElement(FormGroup, null , React.createElement(ControlLabel, null, "Source:"), 
@@ -59400,15 +59400,15 @@ React.createElement(FormGroup, null , React.createElement(ControlLabel, null, "
      
 
 React.createElement(Col, {sm: 4}, React.createElement("div", {className: "well"}, 
-React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "   P/N: "), React.createElement(FormControl, { type: "text",  name: "fwo",   value: this.state.fwo, 	 placeholder: this.state.fwo, 	 readOnly: true} ), "  "), " " + " " +
+React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "   P/N: "), React.createElement(FormControl, { type: "text",  name: "fwo",   value: this.state.fwo, 	 readOnly: true} ), "  "), " " + " " +
 "  ")), 
 React.createElement(Col, {sm: 4}, React.createElement("div", {className: "well"}, 
-React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "   Description: "), React.createElement(FormControl, { type: "text",  name: "Gwo",   value: this.state.Gwo, 	 placeholder: this.state.Gwo, 	 readOnly: true}), "  "), " " + " " +
+React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "   Description: "), React.createElement(FormControl, { type: "text",  name: "Gwo",   value: this.state.Gwo, 	  readOnly: true}), "  "), " " + " " +
 "  ")), 
 
    React.createElement(Col, {sm: 3}, React.createElement("div", {className: "well"}, 
    
-  React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "   Received SW: "), React.createElement(FormControl, { type: "text",  name: "iwo",   value: this.state.iwo, 	 placeholder: this.state.iwo, 	 readOnly: true} ), "  "), " "
+  React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "   Received SW: "), React.createElement(FormControl, { type: "text",  name: "iwo",   value: this.state.iwo, 	  readOnly: true} ), "  "), " "
   ))
   ), 
    
@@ -59417,32 +59417,32 @@ React.createElement(FormGroup, { className: "input-row"}, React.createElement(C
 
   React.createElement(Row, null, 
   React.createElement(Col, {sm: 2}, "    ", React.createElement("div", {className: "well"}, 
- React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "   Lot Size: "), React.createElement(FormControl, { type: "number",  name: "owo",   value: this.state.owo, 	 placeholder: this.state.owo, 	 readOnly: true} ), "  "), " " + " " +
-"  ", React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "   Sample Size: "), React.createElement(FormControl, { type: "number",  name: "pwo",   value: this.state.pwo, 	 placeholder: this.state.pwo, 	 readOnly: true} ), "  "), " " + " " +
+ React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "   Lot Size: "), React.createElement(FormControl, { type: "number",  name: "owo",   value: this.state.owo, 	 readOnly: true} ), "  "), " " + " " +
+"  ", React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "   Sample Size: "), React.createElement(FormControl, { type: "number",  name: "pwo",   value: this.state.pwo, 	 readOnly: true} ), "  "), " " + " " +
 " ")), 
 
  React.createElement(Col, {sm: 2}, "    ", React.createElement("div", {className: "well"}, 
-React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "   Qty Defective: "), React.createElement(FormControl, { type: "number",  name: "qwo",   value: this.state.qwo, 	 placeholder: this.state.qwo, 	 readOnly: true} ), "  "), " ", 
-    React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "   Qty Rejected: "), React.createElement(FormControl, { type: "number",  name: "rwo",   value: this.state.rwo, 	 placeholder: this.state.rwo, 	 readOnly: true} ), "  "), " "
+React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "   Qty Defective: "), React.createElement(FormControl, { type: "number",  name: "qwo",   value: this.state.qwo, 	 readOnly: true} ), "  "), " ", 
+    React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "   Qty Rejected: "), React.createElement(FormControl, { type: "number",  name: "rwo",   value: this.state.rwo, 	 readOnly: true} ), "  "), " "
  )), 
      React.createElement(Col, {sm: 2}, "    ", React.createElement("div", {className: "well"}, 
-React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "   Pass / Fail: "), React.createElement(FormControl, { type: "text",  name: "two",   value: this.state.two, 	 placeholder: this.state.two, 	 readOnly: true}   ), "  "), " ", 
-React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "   DMR #: "), React.createElement(FormControl, { type: "text",  name: "swo",   value: this.state.swo, 	 placeholder: this.state.swo, 	 readOnly: true} ), "  "), " "
+React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "   Pass / Fail: "), React.createElement(FormControl, { type: "text",  name: "two",   value: this.state.two, 	  readOnly: true}   ), "  "), " ", 
+React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "   DMR #: "), React.createElement(FormControl, { type: "text",  name: "swo",   value: this.state.swo, 	  readOnly: true} ), "  "), " "
 )), 
 
   React.createElement(Col, {sm: 5}, 
  React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, " Comment:"), 
-  React.createElement("textarea", {rows: "3",  type: "textarea",   className: "input-rowC", name: "record",   value: this.state.record, 	 placeholder: this.state.record, 	 readOnly: true}  ), " "
+  React.createElement("textarea", {rows: "3",  type: "textarea",   className: "input-rowC", name: "record",   value: this.state.record, 	  readOnly: true}  ), " "
   ), " "
    )
   ), 
  React.createElement(Row, null, " ", React.createElement(Col, {  sm: 11}, "  ", React.createElement("div", {className: "profile-line"})), "  "), 
  React.createElement(Row, null, 
 React.createElement(Col, {sm: 6}, 
-React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "  Photo link "), React.createElement(FormControl, { type: "file", name: "lwo", value: this.state.lwo, placeholder: this.state.lwo, 	 readOnly: true}), "   "), "  "
+React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "  Photo 1: "), React.createElement(FormControl, { type: "text", name: "lwo", value: this.state.lwo, placeholder: this.state.lwo, 	 readOnly: true}), "   "), "  "
 ), 
  React.createElement(Col, {sm: 5}, 
-React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "  Photo extra: "), React.createElement(FormControl, { type: "file",  name: "uwo",   value: this.state.uwo, 	 placeholder: this.state.uwo, 	 readOnly: true}), "  "), " "
+React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "  Photo 2: "), React.createElement(FormControl, { type: "text",  name: "uwo",   value: this.state.uwo, 	 placeholder: this.state.uwo, 	 readOnly: true}), "  "), " "
  )
 )
     
