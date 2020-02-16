@@ -11,13 +11,30 @@ class RIview extends React.Component {
   constructor(props) {   
     super(props);
 this.state = {
-         inspector: "", // this.props.inspector,
-           reportID: "", // this.props.reportnumber,
-          fwo: "", // this.props.fwo,
-          Gwo: "", // this.props.Gwo,
-           jwo: "", // this.props.jwo, //Date Inspected:
-          two: "", // this.props.two, //Pass / Fail:
-           owo: "" // this.props.owo,
+         
+      reportID: "", // this.props.reportnumber,
+     inspector: "",  // Inspector:
+      daterec: "",  //Date Received
+      Gwo: "",  // Description:      
+      cwo: "" ,// Date Received:      
+      dwo: "",  // WO / PO / MTT: mySel, //      
+      ewo: "",  // Supplier:
+      fwo: "",  // P/N:
+      hwo: "",  // Documentation Revision:     
+      iwo: "",  // Received SW:
+      jwo: "", // Date Inspected:
+      kwo: "",  // NO:
+      lwo: "", 
+      mwo: "",  // Source:
+      nwo: "",  // Destination:
+      owo: "",  // Lot Size:
+      pwo: "",  // Sample Size:
+      qwo: "",  // Qty Defective:
+      rwo: "",  // Qty Rejected:
+      swo: "",  // DMR #:
+      two: "",  // Pass / Fail:
+      record: "", // comment -note
+      uwo: ""  // old extra; new file -photo
 }
        
   }
