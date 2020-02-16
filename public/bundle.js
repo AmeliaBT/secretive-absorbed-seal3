@@ -59131,6 +59131,7 @@ this.state = {
         }
         let response = JSON.parse(this.responseText);               
      if(response.isLogedIn == true) {
+       alert("is LogedIn: " +response.isLogedIn )
              that.setState({
                 ["_id"]: response._id,
             ["reportID"]: response.reportID,
