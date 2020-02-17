@@ -138,7 +138,8 @@ this.state = {
           return;
         }
         let response = JSON.parse(this.responseText);               
-   
+  // if(response.error == 0) {
+        //   window.location.href = "/reports";
              that.setState({
                 ["_id"]: response._id,
             ["reportID"]: response.reportID,
@@ -167,8 +168,9 @@ this.state = {
            }); 
      
         }
-  }
-
+ // }
+// event.preventDefault();
+     }
   
   render() {
   

@@ -56,15 +56,7 @@ this.state = {
         }
         let response = JSON.parse(this.responseText);               
      // if(response.isLogedIn == true) {
- if(response.error == 0) {
-           window.location.href = "/reports";
-           that.setState({
-          ["ewo"]: "Succsess",
-        //  ["fwo"]: "Succsess"
-           });
-        }
-        else {        
-        
+
         
              that.setState({
                 ["_id"]: response._id,
@@ -93,7 +85,7 @@ this.state = {
                 ["uwo"]  : response.uwo   
            });     
         }
-  }
+  
   }
   
   render() {
