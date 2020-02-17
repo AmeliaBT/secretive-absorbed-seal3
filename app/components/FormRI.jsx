@@ -322,9 +322,9 @@ Submit RI form
    {/*  */}                        
   </Grid>     
    </Form>
-   
+   <p>https://www.pexels.com/search/nature/ </p>
         <div style={{width: 660, height: 'auto'}}>
-            <Image src="https://www.pexels.com/search/nature/"+ this.state.lwo  responsive />    
+            <Image src={this.state.lwo } responsive />    
             </div>
         
   </div>
@@ -334,9 +334,11 @@ Submit RI form
 
 module.exports = FormRI;
 /* 
+https://static.pexels.com/photos/807598/pexels-photo-807598.jpeg
+https://www.pexels.com/photo/close-up-photography-of-leaves-with-droplets-807598/
+https://static.pexels.com/photos/296886/pexels-photo-296886.jpeg
 https://www.pexels.com/search/nature/
-https://drive.google.com/file/d/19Ol1VZu646JIQE20-iSmI5Wma0I1_a_2/view
-https://drive.google.com/file/d/19Ol1VZu646JIQE20-iSmI5Wma0I1_a_2/view?usp=sharing
+
 <ResponsiveEmbed a16by9>
                     <embed type="image/href+xml" href = "https://static.pexels.com/photos/296886/pexels-photo-296886.jpeg"/>
                 </ResponsiveEmbed>
