@@ -139,9 +139,9 @@ this.state = {
           return;
         }
         let response = JSON.parse(this.responseText);  
-        alert("hi3  id= ");
-         alert(response._id )
-        alert(response.record )
+       // alert("hi3  id= ");
+        // alert(response._id )
+        //alert(response.record )
   // if(response.error == 0) {
         //   window.location.href = "/reports";
              that.setState({
@@ -187,6 +187,8 @@ this.state = {
 
     <Grid>  
    <Row>  <Col smOffset={7}  sm={4} > 
+     <Col sm={7} >	</Col>
+
       <FormGroup > 
      <Button className="btn btn-primary btn-block" type="submit"><i className="fa fa-paper-plane"></i> Submit</Button>
       </FormGroup>

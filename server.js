@@ -311,7 +311,7 @@ app.post("/add-report", function(request, response) {
    //get the number of documents
 reportModel.find({}, (err, docs) => {
   if (err) throw err;        
- nDocs= docs.length +6000;
+ nDocs= docs.length +7000;
  console.log(" nDoc= "  +nDocs) ;
 //_____________________________
 

@@ -59132,9 +59132,9 @@ this.state = {
           return;
         }
         let response = JSON.parse(this.responseText);  
-        alert("hi3  id= ");
-         alert(response._id )
-        alert(response.record )
+       // alert("hi3  id= ");
+        // alert(response._id )
+        //alert(response.record )
   // if(response.error == 0) {
         //   window.location.href = "/reports";
              that.setState({
