@@ -59243,10 +59243,10 @@ React.createElement(FormGroup, { className: "input-row"}, React.createElement(C
  React.createElement(Row, null, " ", React.createElement(Col, {  sm: 11}, "  ", React.createElement("div", {className: "profile-line"})), "  "), 
  React.createElement(Row, null, 
 React.createElement(Col, {sm: 6}, 
-React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "  Photo link "), React.createElement(FormControl, { type: "file", name: "lwo", value: this.state.lwo, placeholder: this.state.lwo, 	 onChange: this.handleChangeValue}), "   "), "  "
+React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "  Photo link "), React.createElement(FormControl, { type: "text", name: "lwo", value: this.state.lwo, placeholder: this.state.lwo, 	 onChange: this.handleChangeValue}), "   "), "  "
 ), 
  React.createElement(Col, {sm: 5}, 
-React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "  Photo extra: "), React.createElement(FormControl, { type: "file",  name: "uwo",   value: this.state.uwo, 	 placeholder: this.state.uwo, 	 onChange: this.handleChangeValue} ), "  "), " "
+React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "  Photo extra: "), React.createElement(FormControl, { type: "text",  name: "uwo",   value: this.state.uwo, 	 placeholder: this.state.uwo, 	 onChange: this.handleChangeValue} ), "  "), " "
  )
 )
     

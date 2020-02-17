@@ -250,10 +250,10 @@ this.state = {
  <Row> <Col  sm={11} >  <div className="profile-line"></div></Col>  </Row>
  <Row> 
 <Col sm={6} >
-<FormGroup className="input-row"><ControlLabel> 	Photo link	</ControlLabel><FormControl type="file"  name="lwo"    value={this.state.lwo }  placeholder={this.state.lwo	} onChange={this.handleChangeValue}  />   </FormGroup>  
+<FormGroup className="input-row"><ControlLabel> 	Photo link	</ControlLabel><FormControl type="text"  name="lwo"    value={this.state.lwo }  placeholder={this.state.lwo	} onChange={this.handleChangeValue}  />   </FormGroup>  
 </Col>
  <Col sm={5} >
-<FormGroup className="input-row"><ControlLabel> 	Photo extra:	</ControlLabel><FormControl type="file" name="uwo"   value={this.state.uwo	} placeholder={this.state.uwo	} onChange={this.handleChangeValue} />  </FormGroup> 
+<FormGroup className="input-row"><ControlLabel> 	Photo extra:	</ControlLabel><FormControl type="text" name="uwo"   value={this.state.uwo	} placeholder={this.state.uwo	} onChange={this.handleChangeValue} />  </FormGroup> 
  </Col> 
 </Row>  
     
