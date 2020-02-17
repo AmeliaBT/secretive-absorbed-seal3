@@ -261,17 +261,14 @@ this.state = {
 <FormGroup className="input-row"><ControlLabel> 	Photo link	</ControlLabel><FormControl type="text"  name="lwo"    value={this.state.lwo }  placeholder={this.state.lwo	} onChange={this.handleChangeValue}  />   </FormGroup>  
 </Col>
  <Col sm={5} >
-<FormGroup className="input-row"><ControlLabel> 	Photo extra:	</ControlLabel><FormControl type="text" name="uwo"   value={this.state.uwo	} placeholder={this.state.uwo	} onChange={this.handleChangeValue} />  </FormGroup> 
+<FormGroup className="input-row"><ControlLabel> 	Photo by # (enter 2318555 or 807598 or  1382393):	</ControlLabel><FormControl type="text" name="uwo"   value={this.state.uwo	} placeholder={this.state.uwo	} onChange={this.handleChangeValue} />  </FormGroup> 
  </Col> 
 </Row>     
       
   </Grid>  
     </Form>  
   <br/>
-    <div style={{width: 660, height: 'auto'}}>
-          <p> </p>
-            <Image src={"https://static.pexels.com/photos/" + this.state.uwo + "/pexels-photo-" + this.state.uwo +".jpeg"	} responsive />    
-            </div>
+    
     {/* 
         
  
@@ -291,3 +288,10 @@ this.state = {
 
 module.exports = RIedit;
 
+/* 
+<div style={{width: 660, height: 'auto'}}>
+          <p> </p>
+            <Image src={"https://static.pexels.com/photos/" + this.state.uwo + "/pexels-photo-" + this.state.uwo +".jpeg"	} responsive />    
+            </div>
+
+*/
