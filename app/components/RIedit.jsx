@@ -205,8 +205,8 @@ this.state = {
    <FormGroup className="input-row"><ControlLabel> 	 NO:</ControlLabel> <FormControl type="text" name="kwo"       value={this.state.kwo	} placeholder={this.state.kwo	} onChange={this.handleChangeValue} />  </FormGroup> 
  </div></Col>
         <Col sm={3} >	<div className="well"> 
-  <FormGroup className="input-row"><ControlLabel>Date Received:	</ControlLabel> <FormControl type="date" name="cwo"      value={this.state.cwo	} placeholder={this.state.cwo	} onChange={this.handleChangeValue} />  </FormGroup> 
-  <FormGroup className="input-row"><ControlLabel> Date Inspected: </ControlLabel><FormControl type="date" name="jwo"   value={this.state.jwo	} placeholder={this.state.jwo	} onChange={this.handleChangeValue} />  </FormGroup> 
+  <FormGroup className="input-row"><ControlLabel>Date Received:	</ControlLabel> <FormControl type="text" name="cwo"      value={this.state.cwo	} placeholder={this.state.cwo	} onChange={this.handleChangeValue} />  </FormGroup> 
+  <FormGroup className="input-row"><ControlLabel> Date Inspected: </ControlLabel><FormControl type="text" name="jwo"   value={this.state.jwo	} placeholder={this.state.jwo	} onChange={this.handleChangeValue} />  </FormGroup> 
   </div></Col>
 <Col sm={3} >	<div className="well"> 
 <FormGroup ><ControlLabel>Source:</ControlLabel> 

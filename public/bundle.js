@@ -59198,8 +59198,8 @@ React.createElement(Col, {sm: 3}, "  ", React.createElement("div", {className: "
    React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "   NO:"), " ", React.createElement(FormControl, { type: "text",  name: "kwo",       value: this.state.kwo, 	 placeholder: this.state.kwo, 	 onChange: this.handleChangeValue} ), "  "), " "
  )), 
         React.createElement(Col, {sm: 3}, " ", React.createElement("div", {className: "well"}, " ", 
-  React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "Date Received: "), " ", React.createElement(FormControl, { type: "date",  name: "cwo",      value: this.state.cwo, 	 placeholder: this.state.cwo, 	 onChange: this.handleChangeValue} ), "  "), " " + " " +
-"  ", React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, " Date Inspected: "), React.createElement(FormControl, { type: "date",  name: "jwo",   value: this.state.jwo, 	 placeholder: this.state.jwo, 	 onChange: this.handleChangeValue} ), "  "), " "
+  React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "Date Received: "), " ", React.createElement(FormControl, { type: "text",  name: "cwo",      value: this.state.cwo, 	 placeholder: this.state.cwo, 	 onChange: this.handleChangeValue} ), "  "), " " + " " +
+"  ", React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, " Date Inspected: "), React.createElement(FormControl, { type: "text",  name: "jwo",   value: this.state.jwo, 	 placeholder: this.state.jwo, 	 onChange: this.handleChangeValue} ), "  "), " "
   )), 
 React.createElement(Col, {sm: 3}, " ", React.createElement("div", {className: "well"}, " ", 
 React.createElement(FormGroup, null , React.createElement(ControlLabel, null, "Source:"), 
