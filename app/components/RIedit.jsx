@@ -268,7 +268,9 @@ this.state = {
   </Grid>  
     </Form>  
   <br/>
-   
+   <div style={{width: 660, height: 'auto'}}>
+            <Image src={this.state.lwo } responsive />    
+            </div>
    
     {/* 
         

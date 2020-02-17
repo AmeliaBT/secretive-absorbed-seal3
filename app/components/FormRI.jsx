@@ -98,7 +98,7 @@ class FormRI extends React.Component {
       swo: "",  // DMR #:
       two: "",  // Pass / Fail:
       record: "", // comment -note
-      uwo: ""  // old extra; new file -photo 
+      uwo: "807598.jpeg"  // old extra; new file -photo https://static.pexels.com/photos/807598/pexels-photo-807598.jpeg
 
     };
     this.handleChangeValue = this.handleChangeValue.bind(this);
@@ -316,7 +316,7 @@ Submit RI form
 <FormGroup className="input-row"><ControlLabel> 	Photo link	</ControlLabel><FormControl type="file"  name="lwo"    value={this.state.lwo }  placeholder={this.state.lwo	} onChange={this.handleChangeValue}  />   </FormGroup>  
 </Col>
  <Col sm={5} >
-<FormGroup className="input-row"><ControlLabel> 	Photo extra:	</ControlLabel><FormControl type="file" name="uwo"   value={this.state.uwo	} placeholder={this.state.uwo	} onChange={this.handleChangeValue} />  </FormGroup> 
+<FormGroup className="input-row"><ControlLabel> 	Photo extra:	</ControlLabel><FormControl type="file" name="text"   value={this.state.uwo	} placeholder={this.state.uwo	} onChange={this.handleChangeValue} />  </FormGroup> 
  </Col> 
 </Row>  
    {/*  */}                        
@@ -324,7 +324,7 @@ Submit RI form
    </Form>
    <p>https://www.pexels.com/search/nature/ </p>
         <div style={{width: 660, height: 'auto'}}>
-            <Image src={this.state.lwo } responsive />    
+            <Image src={"https://static.pexels.com/photos/807598/pexels-photo-" +this.state.uwo } responsive />    
             </div>
         
   </div>

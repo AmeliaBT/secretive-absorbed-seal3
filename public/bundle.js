@@ -59260,8 +59260,10 @@ React.createElement(FormGroup, { className: "input-row"}, React.createElement(C
       
   )
     ), 
-  React.createElement("br", null)
-   
+  React.createElement("br", null), 
+   React.createElement("div", {style: {width: 660, height: 'auto'}}, 
+            React.createElement(Image, {src: this.state.lwo, responsive: true})
+            )
    
     /* 
         
@@ -60037,7 +60039,7 @@ class FormRI extends React.Component {
       swo: "",  // DMR #:
       two: "",  // Pass / Fail:
       record: "", // comment -note
-      uwo: ""  // old extra; new file -photo 
+      uwo: "807598.jpeg"  // old extra; new file -photo https://static.pexels.com/photos/807598/pexels-photo-807598.jpeg
 
     };
     this.handleChangeValue = this.handleChangeValue.bind(this);
@@ -60255,7 +60257,7 @@ React.createElement(Col, {sm: 6},
 React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "  Photo link "), React.createElement(FormControl, { type: "file", name: "lwo", value: this.state.lwo, placeholder: this.state.lwo, 	 onChange: this.handleChangeValue}), "   "), "  "
 ), 
  React.createElement(Col, {sm: 5}, 
-React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "  Photo extra: "), React.createElement(FormControl, { type: "file",  name: "uwo",   value: this.state.uwo, 	 placeholder: this.state.uwo, 	 onChange: this.handleChangeValue} ), "  "), " "
+React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "  Photo extra: "), React.createElement(FormControl, { type: "file",  name: "text",   value: this.state.uwo, 	 placeholder: this.state.uwo, 	 onChange: this.handleChangeValue} ), "  "), " "
  )
 )
    /*  */
@@ -60263,7 +60265,7 @@ React.createElement(FormGroup, { className: "input-row"}, React.createElement(C
    ), 
    React.createElement("p", null, "https://www.pexels.com/search/nature/ "), 
         React.createElement("div", {style: {width: 660, height: 'auto'}}, 
-            React.createElement(Image, {src: "https://www.pexels.com/search/nature/"+ this.state.lwo, responsive: true})
+            React.createElement(Image, {src: "https://static.pexels.com/photos/807598/pexels-photo-" +this.state.lwo, responsive: true})
             )
         
   )
