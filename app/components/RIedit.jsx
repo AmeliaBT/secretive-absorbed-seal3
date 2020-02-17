@@ -122,7 +122,6 @@ this.state = {
   componentWillMount() {
      // get report data
       let that = this;
-    alert("hi");
       const xhr = new XMLHttpRequest();
       let repPath= this.props.location.pathname;
     let pageID=  repPath.substring(13); // report-edit/6032 12 pageID: /6031
@@ -182,13 +181,14 @@ this.state = {
     return (
       <div >
      <Header/>  
-   <p> doc id:  {this.state._id}  Rep#  {this.state.reportID}  </p>
+   
   <Form  method="post" action="/set-report" onSubmit={this.handleSubmit} enctype="multipart/form-data" >       
 
     <Grid>  
-   <Row>  <Col smOffset={7}  sm={4} > 
-     <Col sm={7} >	</Col>
-
+   <Row>  
+     <Col sm={7} ><h4>  RI Number:  {this.state.reportID}  </h4>
+     </Col>
+<Col sm={4} > 
       <FormGroup > 
      <Button className="btn btn-primary btn-block" type="submit"><i className="fa fa-paper-plane"></i> Submit</Button>
       </FormGroup>
@@ -263,8 +263,7 @@ this.state = {
  <Col sm={5} >
 <FormGroup className="input-row"><ControlLabel> 	Photo extra:	</ControlLabel><FormControl type="text" name="uwo"   value={this.state.uwo	} placeholder={this.state.uwo	} onChange={this.handleChangeValue} />  </FormGroup> 
  </Col> 
-</Row>  
-    
+</Row>     
       
   </Grid>  
     </Form>  

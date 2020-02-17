@@ -59115,7 +59115,6 @@ this.state = {
   componentWillMount() {
      // get report data
       let that = this;
-    alert("hi");
       const xhr = new XMLHttpRequest();
       let repPath= this.props.location.pathname;
     let pageID=  repPath.substring(13); // report-edit/6032 12 pageID: /6031
@@ -59175,11 +59174,14 @@ this.state = {
     return (
       React.createElement("div", null, 
      React.createElement(Header, null), 
-   React.createElement("p", null, " doc id:  ", this.state._id, "  Rep#  ", this.state.reportID, "  "), 
+   
   React.createElement(Form, {method: "post", action: "/set-report", onSubmit: this.handleSubmit, enctype: "multipart/form-data"}, 
 
     React.createElement(Grid, null, 
-   React.createElement(Row, null, "  ", React.createElement(Col, { smOffset: 7,  sm: 4}, 
+   React.createElement(Row, null, "  ", 
+     React.createElement(Col, {sm: 7}, React.createElement("h4", null, "  RI Number:  ", this.state.reportID, "  ")
+     ), 
+React.createElement(Col, { sm: 4}, 
       React.createElement(FormGroup, null, 
      React.createElement(Button, {className: "btn btn-primary btn-block", type: "submit"}, React.createElement("i", {className: "fa fa-paper-plane"}), " Submit")
       )
@@ -59255,7 +59257,6 @@ React.createElement(FormGroup, { className: "input-row"}, React.createElement(C
 React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "  Photo extra: "), React.createElement(FormControl, { type: "text",  name: "uwo",   value: this.state.uwo, 	 placeholder: this.state.uwo, 	 onChange: this.handleChangeValue} ), "  "), " "
  )
 )
-    
       
   )
     ), 
@@ -60272,6 +60273,7 @@ React.createElement(FormGroup, { className: "input-row"}, React.createElement(C
 
 module.exports = FormRI;
 /* 
+https://www.pexels.com/search/nature/
 https://drive.google.com/file/d/19Ol1VZu646JIQE20-iSmI5Wma0I1_a_2/view
 https://drive.google.com/file/d/19Ol1VZu646JIQE20-iSmI5Wma0I1_a_2/view?usp=sharing
 <ResponsiveEmbed a16by9>
