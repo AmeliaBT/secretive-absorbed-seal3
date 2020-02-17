@@ -325,7 +325,7 @@ Submit RI form
    
         <div style={{width: 660, height: 'auto'}}>
                 <ResponsiveEmbed a16by9>
-                    <embed type="image/href+xml" href = "https://drive.google.com/file/d/19Ol1VZu646JIQE20-iSmI5Wma0I1_a_2/view?usp=sharing"/>
+                    <embed type="image/href+xml" href = "https://static.pexels.com/photos/296886/pexels-photo-296886.jpeg"/>
                 </ResponsiveEmbed>
             </div>
         
@@ -336,6 +336,8 @@ Submit RI form
 
 module.exports = FormRI;
 /* 
+href = "https://drive.google.com/file/d/19Ol1VZu646JIQE20-iSmI5Wma0I1_a_2/view?usp=sharing"/>
+            
  <embed type="image/href+xml" href = "https://static.pexels.com/photos/296886/pexels-photo-296886.jpeg"/>
              
 
