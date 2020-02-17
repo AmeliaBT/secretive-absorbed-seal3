@@ -268,10 +268,10 @@ this.state = {
   </Grid>  
     </Form>  
   <br/>
-   <div style={{width: 660, height: 'auto'}}>
-            <Image src={this.state.lwo } responsive />    
+    <div style={{width: 660, height: 'auto'}}>
+          <p> </p>
+            <Image src={"https://static.pexels.com/photos/" + this.state.uwo + "/pexels-photo-" + this.state.uwo +".jpeg"	} responsive />    
             </div>
-   
     {/* 
         
  

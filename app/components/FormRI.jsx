@@ -316,7 +316,7 @@ Submit RI form
 <FormGroup className="input-row"><ControlLabel> 	Photo link	</ControlLabel><FormControl type="file"  name="lwo"    value={this.state.lwo }  placeholder={this.state.lwo	} onChange={this.handleChangeValue}  />   </FormGroup>  
 </Col>
  <Col sm={5} >
-<FormGroup className="input-row"><ControlLabel> 	Photo extra:	</ControlLabel><FormControl type="text" name="uwo"   value={this.state.uwo	} placeholder={this.state.uwo	} onChange={this.handleChangeValue} />  </FormGroup> 
+<FormGroup className="input-row"><ControlLabel> 	Photo by # (enter 2318555 or 807598 or  1382393):	</ControlLabel><FormControl type="text" name="uwo"   value={this.state.uwo	} placeholder={this.state.uwo	} onChange={this.handleChangeValue} />  </FormGroup> 
  </Col> 
 </Row>  
    {/*  */}                        
@@ -324,8 +324,8 @@ Submit RI form
    </Form>
    
         <div style={{width: 660, height: 'auto'}}>
-          <p>2318555.jpeg 807598.jpeg  1382393.jpeg </p>
-            <Image src="https://static.pexels.com/photos/807598/pexels-photo-" +{} responsive />    
+          <p> </p>
+            <Image src={"https://static.pexels.com/photos/" + this.state.uwo + "/pexels-photo-" + this.state.uwo +".jpeg"	} responsive />    
             </div>
         
   </div>
