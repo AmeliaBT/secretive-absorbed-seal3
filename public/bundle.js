@@ -59115,7 +59115,7 @@ this.state = {
   componentWillMount() {
      // get report data
       let that = this;
-    
+    alert("hi");
       const xhr = new XMLHttpRequest();
       let repPath= this.props.location.pathname;
     let pageID=  repPath.substring(13); // report-edit/6032 12 pageID: /6031
@@ -59125,12 +59125,16 @@ this.state = {
  let body = 'reportID=' + encodeURIComponent(pageID) ;
       xhr.send(body);
       xhr.onreadystatechange = function() {
+        alert("hi2");
+       
         if (this.readyState != 4) return;
         if (this.status != 200) {
           alert( 'error: ' + (this.status ? this.statusText : 'request has not been set') );
           return;
         }
-        let response = JSON.parse(this.responseText);               
+        let response = JSON.parse(this.responseText);  
+        alert("hi3  id= ");
+         alert(response._id )
   // if(response.error == 0) {
         //   window.location.href = "/reports";
              that.setState({
@@ -59171,7 +59175,7 @@ this.state = {
     return (
       React.createElement("div", null, 
      React.createElement(Header, null), 
-   React.createElement("p", null, " doc id:  ", this.state._id, "  "), 
+   React.createElement("p", null, " doc id:  ", this.state._id, "  Rep#  ", this.state.reportID, "  "), 
   React.createElement(Form, {method: "post", action: "/set-report", onSubmit: this.handleSubmit, enctype: "multipart/form-data"}, 
 
     React.createElement(Grid, null, 

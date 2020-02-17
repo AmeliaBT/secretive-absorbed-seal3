@@ -489,8 +489,8 @@ app.post("/get-user-filtered-reports", function(request, response) {
 
   app.post("/report-edit", function(request, response) {  
    reportModel.findOne({"reportID":request.body["reportID"]}, (err, doc) => {
-  console.log("request: ");
-    console.log(request);    
+ // console.log("request: ");
+  //  console.log(request);    
             response.json(doc);
           }        
      );
@@ -559,16 +559,16 @@ uwo: request.body["uwo"] //photo file
 
   app.post("/report-view", function(request, response) {  
    reportModel.findOne({"reportID":request.body["reportID"]}, (err, doc) => {
-  console.log("request: ");
-  response.json(doc);
+//  console.log("request: ");
+ // response.json(doc);
           });
 });
 /***********************************/
 
 app.post("/up-many-records", function(request, response) {  
    reportModel.create(request, (err, doc) => {
-  console.log("request: ");   
-    console.log(request);    
+ // console.log("request: ");   
+  //  console.log(request);    
      
             response.json(doc);
 

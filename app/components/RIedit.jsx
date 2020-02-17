@@ -133,13 +133,15 @@ this.state = {
       xhr.send(body);
       xhr.onreadystatechange = function() {
         alert("hi2");
+       
         if (this.readyState != 4) return;
         if (this.status != 200) {
           alert( 'error: ' + (this.status ? this.statusText : 'request has not been set') );
           return;
         }
         let response = JSON.parse(this.responseText);  
-        alert("hi3");
+        alert("hi3  id= ");
+         alert(response._id )
   // if(response.error == 0) {
         //   window.location.href = "/reports";
              that.setState({
@@ -180,7 +182,7 @@ this.state = {
     return (
       <div >
      <Header/>  
-   <p> doc id:  {this.state._id}  </p>
+   <p> doc id:  {this.state._id}  Rep#  {this.state.reportID}  </p>
   <Form  method="post" action="/set-report" onSubmit={this.handleSubmit} enctype="multipart/form-data" >       
 
     <Grid>  
