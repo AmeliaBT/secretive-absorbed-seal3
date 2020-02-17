@@ -8,7 +8,7 @@ const Header = require('./Header');
 //const { Creatable }= require('react-select');
 
 // react-bootstrap
-const { InputGroup, option, Form, FormGroup, Col, FormControl, Button, Grid, Row, ControlLabel} = require('react-bootstrap');
+const {ResponsiveEmbed, Image, InputGroup, option, Form, FormGroup, Col, FormControl, Button, Grid, Row, ControlLabel} = require('react-bootstrap');
 
 const mySel = [
   { id: 1, selname: "WO" },
@@ -319,7 +319,26 @@ Submit RI form
 <FormGroup className="input-row"><ControlLabel> 	Photo extra:	</ControlLabel><FormControl type="file" name="uwo"   value={this.state.uwo	} placeholder={this.state.uwo	} onChange={this.handleChangeValue} />  </FormGroup> 
  </Col> 
 </Row>  
-   {/* 
+   {/*  */}                        
+  </Grid>     
+   </Form>
+   
+        <div style={{width: 660, height: 'auto'}}>
+                <ResponsiveEmbed a16by9>
+                    <embed type="image/href+xml" href = "https://drive.google.com/file/d/19Ol1VZu646JIQE20-iSmI5Wma0I1_a_2/view?usp=sharing"/>
+                </ResponsiveEmbed>
+            </div>
+        
+  </div>
+    );
+  }
+};
+
+module.exports = FormRI;
+/* 
+ <embed type="image/href+xml" href = "https://static.pexels.com/photos/296886/pexels-photo-296886.jpeg"/>
+             
+
    <InputGroup>
         <FormControl
           type="text"
@@ -329,19 +348,7 @@ Submit RI form
         <div className="search-icon">
           <i class="fas fa-search" />
         </div>
-      </InputGroup>   */}
-
-
-                        
-  </Grid>     
-   </Form>
-  </div>
-    );
-  }
-};
-
-module.exports = FormRI;
-/* 
+      </InputGroup>  
 <FontAwesomeIcon icon="search" />
 
 <FormGroup className="input-row"><ControlLabel> 	Photo 	</ControlLabel>

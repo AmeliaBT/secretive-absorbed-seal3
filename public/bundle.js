@@ -59942,7 +59942,7 @@ const Header = __webpack_require__(23);
 //const { Creatable }= require('react-select');
 
 // react-bootstrap
-const { InputGroup, option, Form, FormGroup, Col, FormControl, Button, Grid, Row, ControlLabel} = __webpack_require__(14);
+const {ResponsiveEmbed, Image, InputGroup, option, Form, FormGroup, Col, FormControl, Button, Grid, Row, ControlLabel} = __webpack_require__(14);
 
 const mySel = [
   { id: 1, selname: "WO" },
@@ -60253,7 +60253,26 @@ React.createElement(FormGroup, { className: "input-row"}, React.createElement(C
 React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "  Photo extra: "), React.createElement(FormControl, { type: "file",  name: "uwo",   value: this.state.uwo, 	 placeholder: this.state.uwo, 	 onChange: this.handleChangeValue} ), "  "), " "
  )
 )
-   /* 
+   /*  */
+  )
+   ), 
+   
+        React.createElement("div", {style: {width: 660, height: 'auto'}}, 
+                React.createElement(ResponsiveEmbed, {a16b9: true}, 
+                    React.createElement("embed", {type: "image/href+xml", href: "https://drive.google.com/file/d/19Ol1VZu646JIQE20-iSmI5Wma0I1_a_2/view?usp=sharing"})
+                )
+            )
+        
+  )
+    );
+  }
+};
+
+module.exports = FormRI;
+/* 
+ <embed type="image/href+xml" href = "https://static.pexels.com/photos/296886/pexels-photo-296886.jpeg"/>
+             
+
    <InputGroup>
         <FormControl
           type="text"
@@ -60263,19 +60282,7 @@ React.createElement(FormGroup, { className: "input-row"}, React.createElement(C
         <div className="search-icon">
           <i class="fas fa-search" />
         </div>
-      </InputGroup>   */
-
-
-                        
-  )
-   )
-  )
-    );
-  }
-};
-
-module.exports = FormRI;
-/* 
+      </InputGroup>  
 <FontAwesomeIcon icon="search" />
 
 <FormGroup className="input-row"><ControlLabel> 	Photo 	</ControlLabel>
