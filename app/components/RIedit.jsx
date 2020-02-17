@@ -122,7 +122,7 @@ this.state = {
   componentWillMount() {
      // get report data
       let that = this;
-    
+    alert("hi");
       const xhr = new XMLHttpRequest();
       let repPath= this.props.location.pathname;
     let pageID=  repPath.substring(13); // report-edit/6032 12 pageID: /6031
@@ -132,12 +132,14 @@ this.state = {
  let body = 'reportID=' + encodeURIComponent(pageID) ;
       xhr.send(body);
       xhr.onreadystatechange = function() {
+        alert("hi2");
         if (this.readyState != 4) return;
         if (this.status != 200) {
           alert( 'error: ' + (this.status ? this.statusText : 'request has not been set') );
           return;
         }
-        let response = JSON.parse(this.responseText);               
+        let response = JSON.parse(this.responseText);  
+        alert("hi3");
   // if(response.error == 0) {
         //   window.location.href = "/reports";
              that.setState({
