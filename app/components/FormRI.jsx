@@ -98,7 +98,7 @@ class FormRI extends React.Component {
       swo: "",  // DMR #:
       two: "",  // Pass / Fail:
       record: "", // comment -note
-      uwo: "807598.jpeg"  // old extra; new file -photo https://static.pexels.com/photos/807598/pexels-photo-807598.jpeg
+      uwo: "807598"  // old extra; new file -photo "https://static.pexels.com/photos/807598/pexels-photo-807598.jpeg"
 
     };
     this.handleChangeValue = this.handleChangeValue.bind(this);
@@ -316,15 +316,16 @@ Submit RI form
 <FormGroup className="input-row"><ControlLabel> 	Photo link	</ControlLabel><FormControl type="file"  name="lwo"    value={this.state.lwo }  placeholder={this.state.lwo	} onChange={this.handleChangeValue}  />   </FormGroup>  
 </Col>
  <Col sm={5} >
-<FormGroup className="input-row"><ControlLabel> 	Photo extra:	</ControlLabel><FormControl type="file" name="text"   value={this.state.uwo	} placeholder={this.state.uwo	} onChange={this.handleChangeValue} />  </FormGroup> 
+<FormGroup className="input-row"><ControlLabel> 	Photo extra:	</ControlLabel><FormControl type="text" name="uwo"   value={this.state.uwo	} placeholder={this.state.uwo	} onChange={this.handleChangeValue} />  </FormGroup> 
  </Col> 
 </Row>  
    {/*  */}                        
   </Grid>     
    </Form>
-   <p>https://www.pexels.com/search/nature/ </p>
+   
         <div style={{width: 660, height: 'auto'}}>
-            <Image src={"https://static.pexels.com/photos/807598/pexels-photo-" +this.state.uwo } responsive />    
+          <p>2318555.jpeg 807598.jpeg  1382393.jpeg </p>
+            <Image src="https://static.pexels.com/photos/807598/pexels-photo-" +{} responsive />    
             </div>
         
   </div>
@@ -334,11 +335,7 @@ Submit RI form
 
 module.exports = FormRI;
 /* 
-https://static.pexels.com/photos/807598/pexels-photo-807598.jpeg
-https://www.pexels.com/photo/close-up-photography-of-leaves-with-droplets-807598/
-https://static.pexels.com/photos/296886/pexels-photo-296886.jpeg
-https://www.pexels.com/search/nature/
-
+807598 
 <ResponsiveEmbed a16by9>
                     <embed type="image/href+xml" href = "https://static.pexels.com/photos/296886/pexels-photo-296886.jpeg"/>
                 </ResponsiveEmbed>

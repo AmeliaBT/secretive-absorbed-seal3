@@ -60039,7 +60039,7 @@ class FormRI extends React.Component {
       swo: "",  // DMR #:
       two: "",  // Pass / Fail:
       record: "", // comment -note
-      uwo: "807598.jpeg"  // old extra; new file -photo https://static.pexels.com/photos/807598/pexels-photo-807598.jpeg
+      uwo: "807598"  // old extra; new file -photo "https://static.pexels.com/photos/807598/pexels-photo-807598.jpeg"
 
     };
     this.handleChangeValue = this.handleChangeValue.bind(this);
@@ -60257,15 +60257,16 @@ React.createElement(Col, {sm: 6},
 React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "  Photo link "), React.createElement(FormControl, { type: "file", name: "lwo", value: this.state.lwo, placeholder: this.state.lwo, 	 onChange: this.handleChangeValue}), "   "), "  "
 ), 
  React.createElement(Col, {sm: 5}, 
-React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "  Photo extra: "), React.createElement(FormControl, { type: "file",  name: "text",   value: this.state.uwo, 	 placeholder: this.state.uwo, 	 onChange: this.handleChangeValue} ), "  "), " "
+React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "  Photo extra: "), React.createElement(FormControl, { type: "text",  name: "uwo",   value: this.state.uwo, 	 placeholder: this.state.uwo, 	 onChange: this.handleChangeValue} ), "  "), " "
  )
 )
    /*  */
   )
    ), 
-   React.createElement("p", null, "https://www.pexels.com/search/nature/ "), 
+   
         React.createElement("div", {style: {width: 660, height: 'auto'}}, 
-            React.createElement(Image, {src: "https://static.pexels.com/photos/807598/pexels-photo-" +this.state.lwo, responsive: true})
+          React.createElement("p", null, "2318555 807598  1382393"), 
+            React.createElement(Image, {src: "https://static.pexels.com/photos/807598/pexels-photo-807598.jpeg", responsive: true})
             )
         
   )
@@ -60275,11 +60276,7 @@ React.createElement(FormGroup, { className: "input-row"}, React.createElement(C
 
 module.exports = FormRI;
 /* 
-https://static.pexels.com/photos/807598/pexels-photo-807598.jpeg
-https://www.pexels.com/photo/close-up-photography-of-leaves-with-droplets-807598/
-https://static.pexels.com/photos/296886/pexels-photo-296886.jpeg
-https://www.pexels.com/search/nature/
-
+807598 
 <ResponsiveEmbed a16by9>
                     <embed type="image/href+xml" href = "https://static.pexels.com/photos/296886/pexels-photo-296886.jpeg"/>
                 </ResponsiveEmbed>
