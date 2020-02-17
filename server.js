@@ -490,7 +490,8 @@ app.post("/get-user-filtered-reports", function(request, response) {
   app.post("/report-edit", function(request, response) {  
    reportModel.findOne({"reportID":request.body["reportID"]}, (err, doc) => {
  // console.log("request: ");
-  //  console.log(request);    
+  //  console.log(request); 
+      if (err) throw err;
             response.json(doc);
           }        
      );

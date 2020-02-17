@@ -59125,8 +59125,7 @@ this.state = {
  let body = 'reportID=' + encodeURIComponent(pageID) ;
       xhr.send(body);
       xhr.onreadystatechange = function() {
-        alert("hi2");
-       
+              
         if (this.readyState != 4) return;
         if (this.status != 200) {
           alert( 'error: ' + (this.status ? this.statusText : 'request has not been set') );
@@ -59135,6 +59134,7 @@ this.state = {
         let response = JSON.parse(this.responseText);  
         alert("hi3  id= ");
          alert(response._id )
+        alert(response.record )
   // if(response.error == 0) {
         //   window.location.href = "/reports";
              that.setState({
