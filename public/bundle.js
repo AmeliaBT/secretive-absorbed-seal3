@@ -60258,9 +60258,7 @@ React.createElement(FormGroup, { className: "input-row"}, React.createElement(C
    ), 
    
         React.createElement("div", {style: {width: 660, height: 'auto'}}, 
-                React.createElement(ResponsiveEmbed, {a16by9: true}, 
-                    React.createElement("embed", {type: "image/href+xml", href: "https://static.pexels.com/photos/296886/pexels-photo-296886.jpeg"})
-                )
+            React.createElement(Image, {src: "https://drive.google.com/file/d/19Ol1VZu646JIQE20-iSmI5Wma0I1_a_2/view?usp=sharing", responsive: true})
             )
         
   )
@@ -60270,6 +60268,11 @@ React.createElement(FormGroup, { className: "input-row"}, React.createElement(C
 
 module.exports = FormRI;
 /* 
+https://drive.google.com/file/d/19Ol1VZu646JIQE20-iSmI5Wma0I1_a_2/view?usp=sharing
+<ResponsiveEmbed a16by9>
+                    <embed type="image/href+xml" href = "https://static.pexels.com/photos/296886/pexels-photo-296886.jpeg"/>
+                </ResponsiveEmbed>
+                
 href = "https://drive.google.com/file/d/19Ol1VZu646JIQE20-iSmI5Wma0I1_a_2/view?usp=sharing"/>
             
  <embed type="image/href+xml" href = "https://static.pexels.com/photos/296886/pexels-photo-296886.jpeg"/>
