@@ -5,7 +5,7 @@ const Link = require('react-router-dom').Link
 //const style = require('../styles/Profile');
 const Header = require('./Header');
 const {Grid, Row, Col, FormControl, ControlLabel, FormGroup, HelpBlock, Tabs, Tab, Form, Button} = require('react-bootstrap');
-
+  const img1 ;
 class RIview extends React.Component {
   
   constructor(props) {   
@@ -87,9 +87,14 @@ this.state = {
         }
   
   }
+
   componentDidMount(){
-    
-    
+     img1 = new Image(); 
+    img1 = this.state.lwo; 
+    img1.onload = () => {
+    // when it finishes loading, update the component state
+    this.setState({ imageIsReady: true });
+  }
   }
   render() {
     return (
@@ -166,8 +171,9 @@ this.state = {
 <FormGroup className="input-row"><ControlLabel> 	Photo 1:	</ControlLabel><FormControl type="text"  name="lwo"    placeholder={this.state.lwo	} readOnly  />   </FormGroup>  
 
   <div style={{width: 400, height: 'auto'}}>
-    {/*    
-            <Image src={this.state.lwo } responsive />    */}  
+    {/*    <Image src={this.state.lwo } responsive />   
+      */}  
+            <Image src={ img1} responsive />   
     
             </div>
    
