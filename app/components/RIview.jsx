@@ -164,7 +164,9 @@ this.state = {
 </Col>
  <Col sm={5} >
 <FormGroup className="input-row"><ControlLabel> 	Photo 2:	</ControlLabel><FormControl type="text" name="uwo"   value={this.state.uwo	} placeholder={this.state.uwo	} readOnly />  </FormGroup> 
- </Col> 
+ 
+   
+   </Col> 
 </Row>  
     
       

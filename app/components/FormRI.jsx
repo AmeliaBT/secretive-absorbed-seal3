@@ -157,16 +157,12 @@ componentWillMount() {
   handleChangeValueImg(event) {
      const target = event.target;
       const value = target.value;
-      const name = target.name;
-     alert("hi");
-     alert(value);
+      const name = target.name;    
     //replace C:/fakepath/ with
     //       http://10.4.5.6/Intranet/data/QualityAssurance/QC-Reports/RI_Photos/
     //str.substring(2)
- let   value2=value.substring(12) ;
-    alert(value2);
-  let  value3="http://10.4.5.6/Intranet/data/QualityAssurance/QC-Reports/RI_Photos/" + value2;
-    alert(value3);
+ let   value2=value.substring(12) ;    
+  let  value3="http://10.4.5.6/Intranet/data/QualityAssurance/QC-Reports/RI_Photos/" + value2;   
       this.setState({ [name]: value3  });
   };
     
@@ -336,23 +332,20 @@ Submit RI form
    
    </Col>
  <Col sm={5} >
-<FormGroup className="input-row"><ControlLabel> 	Photo 2	</ControlLabel><FormControl type="file" name="uwo"   placeholder={this.state.uwo	} onChange={this.handleChangeValue} />  </FormGroup> 
- </Col> 
+<FormGroup className="input-row"><ControlLabel> 	Photo 2	</ControlLabel>           <FormControl type="file" name="uwo"   placeholder={this.state.uwo	} onChange={this.handleChangeValueImg} />  </FormGroup> 
+
+   <div style={{width: 330, height: 'auto'}}>         
+            <Image src={this.state.uwo } responsive />    
+            </div>
+   
+   </Col> 
 </Row>  
-   {/*  */}  
-   
-   
-   
-   
+     
   </Grid>     
    </Form>
    
-       
         
-        <div style={{width: 330, height: 'auto'}}>
-          <p> </p>
-            <Image src="http://10.4.5.6/Intranet/data/QualityAssurance/QC-Reports/RI_Photos/IMG_20120229_144557.jpg" responsive />    
-            </div>
+        
         
   </div>
     );

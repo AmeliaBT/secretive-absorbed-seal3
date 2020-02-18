@@ -59463,7 +59463,9 @@ React.createElement(FormGroup, { className: "input-row"}, React.createElement(C
 ), 
  React.createElement(Col, {sm: 5}, 
 React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "  Photo 2: "), React.createElement(FormControl, { type: "text",  name: "uwo",   value: this.state.uwo, 	 placeholder: this.state.uwo, 	 readOnly: true}), "  "), " "
- )
+ 
+   
+   )
 )
     
       
@@ -60105,16 +60107,12 @@ componentWillMount() {
   handleChangeValueImg(event) {
      const target = event.target;
       const value = target.value;
-      const name = target.name;
-     alert("hi");
-     alert(value);
+      const name = target.name;    
     //replace C:/fakepath/ with
     //       http://10.4.5.6/Intranet/data/QualityAssurance/QC-Reports/RI_Photos/
     //str.substring(2)
- let   value2=value.substring(12) ;
-    alert(value2);
-  let  value3="http://10.4.5.6/Intranet/data/QualityAssurance/QC-Reports/RI_Photos/" + value2;
-    alert(value3);
+ let   value2=value.substring(12) ;    
+  let  value3="http://10.4.5.6/Intranet/data/QualityAssurance/QC-Reports/RI_Photos/" + value2;   
       this.setState({ [name]: value3  });
   };
     
@@ -60284,23 +60282,20 @@ React.createElement(FormGroup, { className: "input-row"}, React.createElement(C
    
    ), 
  React.createElement(Col, {sm: 5}, 
-React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "  Photo 2 "), React.createElement(FormControl, { type: "file",  name: "uwo",   placeholder: this.state.uwo, 	 onChange: this.handleChangeValue} ), "  "), " "
- )
-)
-   /*  */
-   
-   
-   
-   
-  )
-   ), 
-   
-       
-        
-        React.createElement("div", {style: {width: 330, height: 'auto'}}, 
-          React.createElement("p", null, " "), 
-            React.createElement(Image, {src: "http://10.4.5.6/Intranet/data/QualityAssurance/QC-Reports/RI_Photos/IMG_20120229_144557.jpg", responsive: true})
+React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "  Photo 2 "), "           ", React.createElement(FormControl, { type: "file",  name: "uwo",   placeholder: this.state.uwo, 	 onChange: this.handleChangeValueImg} ), "  "), " ", 
+
+   React.createElement("div", {style: {width: 330, height: 'auto'}}, 
+            React.createElement(Image, {src: this.state.uwo, responsive: true})
             )
+   
+   )
+)
+     
+  )
+   )
+   
+        
+        
         
   )
     );
