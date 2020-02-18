@@ -328,7 +328,7 @@ Submit RI form
  <Row> <Col  sm={11} >  <div className="profile-line"></div></Col>  </Row>
  <Row> 
 <Col sm={6} >
-<FormGroup className="input-row"><ControlLabel> 	Photo1 (I:\QC-Reports\RI_Photos\) 	</ControlLabel><FormControl type="file"  name="lwo"    value={this.state.lwo }  placeholder={this.state.lwo	} onChange={this.handleChangeValueImg}  />   </FormGroup>  
+<FormGroup className="input-row"><ControlLabel> 	Photo1 (I:\QC-Reports\RI_Photos\) 	</ControlLabel><FormControl type="file"  name="lwo"     placeholder={this.state.lwo	} onChange={this.handleChangeValueImg}  />   </FormGroup>  
 </Col>
  <Col sm={5} >
 <FormGroup className="input-row"><ControlLabel> 	Photo by # (enter 2318555 or 807598 or  1382393):	</ControlLabel><FormControl type="text" name="uwo"   value={this.state.uwo	} placeholder={this.state.uwo	} onChange={this.handleChangeValue} />  </FormGroup> 
@@ -340,7 +340,7 @@ Submit RI form
    
         <div style={{width: 330, height: 'auto'}}>
           <p> </p>
-            <Image src={"http://10.4.5.6/Intranet/data/QualityAssurance/QC-Reports/RI_Photos/" + this.state.lwo } responsive />    
+            <Image src={this.state.lwo } responsive />    
             </div>
         
         <div style={{width: 330, height: 'auto'}}>
@@ -355,6 +355,7 @@ Submit RI form
 
 module.exports = FormRI;
 /* 
+  <Image src={"http://10.4.5.6/Intranet/data/QualityAssurance/QC-Reports/RI_Photos/" + this.state.lwo } responsive />   
 <div style={{width: 660, height: 'auto'}}>
           <p> </p>
             <Image src={"https://static.pexels.com/photos/" + this.state.uwo + "/pexels-photo-" + this.state.uwo +".jpeg"	} responsive />    
