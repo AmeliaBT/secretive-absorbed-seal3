@@ -60101,7 +60101,14 @@ componentWillMount() {
      const target = event.target;
       const value = target.value;
       const name = target.name;
-    
+     alert("hi");
+    //replace C:/fakepath/ with
+    //       http://10.4.5.6/Intranet/data/QualityAssurance/QC-Reports/RI_Photos/
+    //str.substring(2)
+    value=value.substring(11) ;
+    alert(value);
+    value="http://10.4.5.6/Intranet/data/QualityAssurance/QC-Reports/RI_Photos/" + value;
+    alert(value);
       this.setState({ [name]: value  });
   };
     
