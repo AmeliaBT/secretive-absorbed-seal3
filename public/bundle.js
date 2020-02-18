@@ -60257,7 +60257,7 @@ React.createElement(FormGroup, { className: "input-row"}, React.createElement(C
  React.createElement(Row, null, " ", React.createElement(Col, {  sm: 11}, "  ", React.createElement("div", {className: "profile-line"})), "  "), 
  React.createElement(Row, null, 
 React.createElement(Col, {sm: 6}, 
-React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "  Photo link "), React.createElement(FormControl, { type: "file", name: "lwo", value: this.state.lwo, placeholder: this.state.lwo, 	 onChange: this.handleChangeValue}), "   "), "  "
+React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "  Photo1 (I:\\QC-Reports\\RI_Photos\\)  "), React.createElement(FormControl, { type: "file", name: "lwo", value: this.state.lwo, placeholder: this.state.lwo, 	 onChange: this.handleChangeValue}), "   "), "  "
 ), 
  React.createElement(Col, {sm: 5}, 
 React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "  Photo by # (enter 2318555 or 807598 or  1382393): "), React.createElement(FormControl, { type: "text",  name: "uwo",   value: this.state.uwo, 	 placeholder: this.state.uwo, 	 onChange: this.handleChangeValue} ), "  "), " "
@@ -60267,14 +60267,14 @@ React.createElement(FormGroup, { className: "input-row"}, React.createElement(C
   )
    ), 
    
-        React.createElement("div", {style: {width: 660, height: 'auto'}}, 
+        React.createElement("div", {style: {width: 330, height: 'auto'}}, 
           React.createElement("p", null, " "), 
-            React.createElement(Image, {src: "https://static.pexels.com/photos/" + this.state.uwo + "/pexels-photo-" + this.state.uwo +".jpeg", 	responsive: true})
+            React.createElement(Image, {src: "http://10.4.5.6/Intranet/data/QualityAssurance/QC-Reports/RI_Photos/" + this.state.uwo  +".jpeg", 	responsive: true})
             ), 
         
-        React.createElement("div", {style: {width: 660, height: 'auto'}}, 
+        React.createElement("div", {style: {width: 330, height: 'auto'}}, 
           React.createElement("p", null, " "), 
-            React.createElement(Image, {src: "http://10.4.5.6/QAT/img/chart-men.png", responsive: true})
+            React.createElement(Image, {src: "http://10.4.5.6/Intranet/data/QualityAssurance/QC-Reports/RI_Photos/IMG_20120229_144557.jpg", responsive: true})
             )
         
   )
@@ -60284,6 +60284,11 @@ React.createElement(FormGroup, { className: "input-row"}, React.createElement(C
 
 module.exports = FormRI;
 /* 
+<div style={{width: 660, height: 'auto'}}>
+          <p> </p>
+            <Image src={"https://static.pexels.com/photos/" + this.state.uwo + "/pexels-photo-" + this.state.uwo +".jpeg"	} responsive />    
+            </div>
+
 807598 
 <ResponsiveEmbed a16by9>
                     <embed type="image/href+xml" href = "https://static.pexels.com/photos/296886/pexels-photo-296886.jpeg"/>
