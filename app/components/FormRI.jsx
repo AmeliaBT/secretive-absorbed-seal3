@@ -329,19 +329,25 @@ Submit RI form
  <Row> 
 <Col sm={6} >
 <FormGroup className="input-row"><ControlLabel> 	Photo1 (I:\QC-Reports\RI_Photos\) 	</ControlLabel><FormControl type="file"  name="lwo"     placeholder={this.state.lwo	} onChange={this.handleChangeValueImg}  />   </FormGroup>  
-</Col>
+ <div style={{width: 400, height: 'auto'}}>
+         
+            <Image src={this.state.lwo } responsive />    
+            </div>
+   
+   </Col>
  <Col sm={5} >
 <FormGroup className="input-row"><ControlLabel> 	Photo by # (enter 2318555 or 807598 or  1382393):	</ControlLabel><FormControl type="text" name="uwo"   value={this.state.uwo	} placeholder={this.state.uwo	} onChange={this.handleChangeValue} />  </FormGroup> 
  </Col> 
 </Row>  
-   {/*  */}                        
+   {/*  */}  
+   
+   
+   
+   
   </Grid>     
    </Form>
    
-        <div style={{width: 330, height: 'auto'}}>
-          <p> </p>
-            <Image src={this.state.lwo } responsive />    
-            </div>
+       
         
         <div style={{width: 330, height: 'auto'}}>
           <p> </p>

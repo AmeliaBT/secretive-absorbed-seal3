@@ -60272,20 +60272,26 @@ React.createElement(FormGroup, { className: "input-row"}, React.createElement(C
  React.createElement(Row, null, " ", React.createElement(Col, {  sm: 11}, "  ", React.createElement("div", {className: "profile-line"})), "  "), 
  React.createElement(Row, null, 
 React.createElement(Col, {sm: 6}, 
-React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "  Photo1 (I:\\QC-Reports\\RI_Photos\\)  "), React.createElement(FormControl, { type: "file", name: "lwo", placeholder: this.state.lwo, 	 onChange: this.handleChangeValueImg}), "   "), "  "
-), 
+React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "  Photo1 (I:\\QC-Reports\\RI_Photos\\)  "), React.createElement(FormControl, { type: "file", name: "lwo", placeholder: this.state.lwo, 	 onChange: this.handleChangeValueImg}), "   "), "  ", 
+ React.createElement("div", {style: {width: 400, height: 'auto'}}, 
+         
+            React.createElement(Image, {src: this.state.lwo, responsive: true})
+            )
+   
+   ), 
  React.createElement(Col, {sm: 5}, 
 React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "  Photo by # (enter 2318555 or 807598 or  1382393): "), React.createElement(FormControl, { type: "text",  name: "uwo",   value: this.state.uwo, 	 placeholder: this.state.uwo, 	 onChange: this.handleChangeValue} ), "  "), " "
  )
 )
    /*  */
+   
+   
+   
+   
   )
    ), 
    
-        React.createElement("div", {style: {width: 330, height: 'auto'}}, 
-          React.createElement("p", null, " "), 
-            React.createElement(Image, {src: this.state.lwo, responsive: true})
-            ), 
+       
         
         React.createElement("div", {style: {width: 330, height: 'auto'}}, 
           React.createElement("p", null, " "), 
