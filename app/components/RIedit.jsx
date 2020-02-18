@@ -258,8 +258,12 @@ this.state = {
  <Row> <Col  sm={11} >  <div className="profile-line"></div></Col>  </Row>
  <Row> 
 <Col sm={6} >
-<FormGroup className="input-row"><ControlLabel> 	Photo link	</ControlLabel><FormControl type="text"  name="lwo"    value={this.state.lwo }  placeholder={this.state.lwo	} onChange={this.handleChangeValue}  />   </FormGroup>  
-</Col>
+<FormGroup className="input-row"><ControlLabel> 	Photo 1	</ControlLabel><FormControl type="text"  name="lwo"      placeholder={this.state.lwo	} onChange={this.handleChangeValue}  />   </FormGroup>  
+ <div style={{width: 400, height: 'auto'}}>         
+            <Image src={this.state.lwo } responsive />    
+            </div>
+   
+   </Col>
  <Col sm={5} >
 <FormGroup className="input-row"><ControlLabel> 	Photo by # (enter 2318555 or 807598 or  1382393):	</ControlLabel><FormControl type="text" name="uwo"   value={this.state.uwo	} placeholder={this.state.uwo	} onChange={this.handleChangeValue} />  </FormGroup> 
  </Col> 
