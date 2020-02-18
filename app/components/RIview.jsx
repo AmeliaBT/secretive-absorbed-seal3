@@ -5,13 +5,12 @@ const Link = require('react-router-dom').Link
 //const style = require('../styles/Profile');
 const Header = require('./Header');
 const {Grid, Row, Col, FormControl, ControlLabel, FormGroup, HelpBlock, Tabs, Tab, Form, Button} = require('react-bootstrap');
-  const img1 ;
+
 class RIview extends React.Component {
   
   constructor(props) {   
     super(props);
-this.state = {
-         
+this.state = {         
       reportID: "", // this.props.reportnumber,
      inspector: "",  // Inspector:
       daterec: "",  //Date Received
@@ -173,7 +172,7 @@ this.state = {
   <div style={{width: 400, height: 'auto'}}>
     {/*    <Image src={this.state.lwo } responsive />   
       */}  
-            <Image src={ img1} responsive />   
+         
     
             </div>
    
