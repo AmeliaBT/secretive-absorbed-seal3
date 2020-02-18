@@ -98,7 +98,7 @@ class FormRI extends React.Component {
       swo: "",  // DMR #:
       two: "",  // Pass / Fail:
       record: "", // comment -note
-      uwo: "807598"  // old extra; new file -photo "https://static.pexels.com/photos/807598/pexels-photo-807598.jpeg"
+      uwo: ""  // old extra; new file -photo "https://static.pexels.com/photos/807598/pexels-photo-807598.jpeg"
 
     };
     this.handleChangeValue = this.handleChangeValue.bind(this);
@@ -153,7 +153,13 @@ componentWillMount() {
       this.setState({ two: "Fail", [name]: value })}else{
         this.setState({two: "Pass", [name]: value })}   
   };
-  
+  handleChangeValueImg(event) {
+     const target = event.target;
+      const value = target.value;
+      const name = target.name;
+    
+      this.setState({ [name]: value  });
+  };
     
   handleSubmit(event) { let that = this; 
    // console.log(that)
@@ -313,7 +319,7 @@ Submit RI form
  <Row> <Col  sm={11} >  <div className="profile-line"></div></Col>  </Row>
  <Row> 
 <Col sm={6} >
-<FormGroup className="input-row"><ControlLabel> 	Photo1 (I:\QC-Reports\RI_Photos\) 	</ControlLabel><FormControl type="file"  name="lwo"    value={this.state.lwo }  placeholder={this.state.lwo	} onChange={this.handleChangeValue}  />   </FormGroup>  
+<FormGroup className="input-row"><ControlLabel> 	Photo1 (I:\QC-Reports\RI_Photos\) 	</ControlLabel><FormControl type="file"  name="lwo"    value={this.state.lwo }  placeholder={this.state.lwo	} onChange={this.handleChangeValueImg}  />   </FormGroup>  
 </Col>
  <Col sm={5} >
 <FormGroup className="input-row"><ControlLabel> 	Photo by # (enter 2318555 or 807598 or  1382393):	</ControlLabel><FormControl type="text" name="uwo"   value={this.state.uwo	} placeholder={this.state.uwo	} onChange={this.handleChangeValue} />  </FormGroup> 
@@ -325,7 +331,7 @@ Submit RI form
    
         <div style={{width: 330, height: 'auto'}}>
           <p> </p>
-            <Image src={"http://10.4.5.6/Intranet/data/QualityAssurance/QC-Reports/RI_Photos/" + this.state.uwo  +".jpeg"	} responsive />    
+            <Image src={"http://10.4.5.6/Intranet/data/QualityAssurance/QC-Reports/RI_Photos/" + this.state.lwo } responsive />    
             </div>
         
         <div style={{width: 330, height: 'auto'}}>

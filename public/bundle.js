@@ -60042,7 +60042,7 @@ class FormRI extends React.Component {
       swo: "",  // DMR #:
       two: "",  // Pass / Fail:
       record: "", // comment -note
-      uwo: "807598"  // old extra; new file -photo "https://static.pexels.com/photos/807598/pexels-photo-807598.jpeg"
+      uwo: ""  // old extra; new file -photo "https://static.pexels.com/photos/807598/pexels-photo-807598.jpeg"
 
     };
     this.handleChangeValue = this.handleChangeValue.bind(this);
@@ -60097,7 +60097,13 @@ componentWillMount() {
       this.setState({ two: "Fail", [name]: value })}else{
         this.setState({two: "Pass", [name]: value })}   
   };
-  
+  handleChangeValueImg(event) {
+     const target = event.target;
+      const value = target.value;
+      const name = target.name;
+    
+      this.setState({ [name]: value  });
+  };
     
   handleSubmit(event) { let that = this; 
    // console.log(that)
@@ -60257,7 +60263,7 @@ React.createElement(FormGroup, { className: "input-row"}, React.createElement(C
  React.createElement(Row, null, " ", React.createElement(Col, {  sm: 11}, "  ", React.createElement("div", {className: "profile-line"})), "  "), 
  React.createElement(Row, null, 
 React.createElement(Col, {sm: 6}, 
-React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "  Photo1 (I:\\QC-Reports\\RI_Photos\\)  "), React.createElement(FormControl, { type: "file", name: "lwo", value: this.state.lwo, placeholder: this.state.lwo, 	 onChange: this.handleChangeValue}), "   "), "  "
+React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "  Photo1 (I:\\QC-Reports\\RI_Photos\\)  "), React.createElement(FormControl, { type: "file", name: "lwo", value: this.state.lwo, placeholder: this.state.lwo, 	 onChange: this.handleChangeValueImg}), "   "), "  "
 ), 
  React.createElement(Col, {sm: 5}, 
 React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "  Photo by # (enter 2318555 or 807598 or  1382393): "), React.createElement(FormControl, { type: "text",  name: "uwo",   value: this.state.uwo, 	 placeholder: this.state.uwo, 	 onChange: this.handleChangeValue} ), "  "), " "
@@ -60269,7 +60275,7 @@ React.createElement(FormGroup, { className: "input-row"}, React.createElement(C
    
         React.createElement("div", {style: {width: 330, height: 'auto'}}, 
           React.createElement("p", null, " "), 
-            React.createElement(Image, {src: "http://10.4.5.6/Intranet/data/QualityAssurance/QC-Reports/RI_Photos/" + this.state.uwo  +".jpeg", 	responsive: true})
+            React.createElement(Image, {src: "http://10.4.5.6/Intranet/data/QualityAssurance/QC-Reports/RI_Photos/" + this.state.lwo, responsive: true})
             ), 
         
         React.createElement("div", {style: {width: 330, height: 'auto'}}, 
