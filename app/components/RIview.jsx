@@ -87,14 +87,7 @@ this.state = {
   
   }
 
-  componentDidMount(){
-     img1 = new Image(); 
-    img1 = this.state.lwo; 
-    img1.onload = () => {
-    // when it finishes loading, update the component state
-    this.setState({ imageIsReady: true });
-  }
-  }
+
   render() {
     return (
       <div >
@@ -178,7 +171,7 @@ this.state = {
    
    </Col>
  <Col sm={5} >
-<FormGroup className="input-row"><ControlLabel> 	Photo 2:	</ControlLabel><FormControl type="text" name="uwo"   value={this.state.uwo	} placeholder={this.state.uwo	} readOnly />  </FormGroup> 
+<FormGroup className="input-row"><ControlLabel> 	Photo 2:	</ControlLabel><FormControl type="text" name="uwo"   placeholder={this.state.uwo	} readOnly />  </FormGroup> 
  
    
    </Col> 

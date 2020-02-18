@@ -259,13 +259,11 @@ this.state = {
  <Row> 
 <Col sm={6} >
 <FormGroup className="input-row"><ControlLabel> 	Photo 1	</ControlLabel><FormControl type="text"  name="lwo"      placeholder={this.state.lwo	} onChange={this.handleChangeValue}  />   </FormGroup>  
- <div style={{width: 400, height: 'auto'}}>         
-            <Image src={this.state.lwo } responsive />    
-            </div>
+
    
    </Col>
  <Col sm={5} >
-<FormGroup className="input-row"><ControlLabel> 	Photo by # (enter 2318555 or 807598 or  1382393):	</ControlLabel><FormControl type="text" name="uwo"   value={this.state.uwo	} placeholder={this.state.uwo	} onChange={this.handleChangeValue} />  </FormGroup> 
+<FormGroup className="input-row"><ControlLabel> 	Photo 2 	</ControlLabel><FormControl type="text" name="uwo"    placeholder={this.state.uwo	} onChange={this.handleChangeValue} />  </FormGroup> 
  </Col> 
 </Row>     
       

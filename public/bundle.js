@@ -59251,14 +59251,12 @@ React.createElement(FormGroup, { className: "input-row"}, React.createElement(C
  React.createElement(Row, null, " ", React.createElement(Col, {  sm: 11}, "  ", React.createElement("div", {className: "profile-line"})), "  "), 
  React.createElement(Row, null, 
 React.createElement(Col, {sm: 6}, 
-React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "  Photo 1 "), React.createElement(FormControl, { type: "text", name: "lwo", placeholder: this.state.lwo, 	 onChange: this.handleChangeValue}), "   "), "  ", 
- React.createElement("div", {style: {width: 400, height: 'auto'}}, 
-            React.createElement(Image, {src: this.state.lwo, responsive: true})
-            )
+React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "  Photo 1 "), React.createElement(FormControl, { type: "text", name: "lwo", placeholder: this.state.lwo, 	 onChange: this.handleChangeValue}), "   "), "  "
+
    
    ), 
  React.createElement(Col, {sm: 5}, 
-React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "  Photo by # (enter 2318555 or 807598 or  1382393): "), React.createElement(FormControl, { type: "text",  name: "uwo",   value: this.state.uwo, 	 placeholder: this.state.uwo, 	 onChange: this.handleChangeValue} ), "  "), " "
+React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "  Photo 2  "), React.createElement(FormControl, { type: "text",  name: "uwo",    placeholder: this.state.uwo, 	 onChange: this.handleChangeValue} ), "  "), " "
  )
 )
       
@@ -59386,14 +59384,7 @@ this.state = {
   
   }
 
-  componentDidMount(){
-     img1 = new Image(); 
-    img1 = this.state.lwo; 
-    img1.onload = () => {
-    // when it finishes loading, update the component state
-    this.setState({ imageIsReady: true });
-  }
-  }
+
   render() {
     return (
       React.createElement("div", null, 
@@ -59477,7 +59468,7 @@ React.createElement(FormGroup, { className: "input-row"}, React.createElement(C
    
    ), 
  React.createElement(Col, {sm: 5}, 
-React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "  Photo 2: "), React.createElement(FormControl, { type: "text",  name: "uwo",   value: this.state.uwo, 	 placeholder: this.state.uwo, 	 readOnly: true}), "  "), " "
+React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "  Photo 2: "), React.createElement(FormControl, { type: "text",  name: "uwo",   placeholder: this.state.uwo, 	 readOnly: true}), "  "), " "
  
    
    )
