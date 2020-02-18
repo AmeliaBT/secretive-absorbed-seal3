@@ -60270,6 +60270,11 @@ React.createElement(FormGroup, { className: "input-row"}, React.createElement(C
         React.createElement("div", {style: {width: 660, height: 'auto'}}, 
           React.createElement("p", null, " "), 
             React.createElement(Image, {src: "https://static.pexels.com/photos/" + this.state.uwo + "/pexels-photo-" + this.state.uwo +".jpeg", 	responsive: true})
+            ), 
+        
+        React.createElement("div", {style: {width: 660, height: 'auto'}}, 
+          React.createElement("p", null, " "), 
+            React.createElement(Image, {src: "http://10.4.5.6/QAT/img/chart-men.png", responsive: true})
             )
         
   )

@@ -328,6 +328,11 @@ Submit RI form
             <Image src={"https://static.pexels.com/photos/" + this.state.uwo + "/pexels-photo-" + this.state.uwo +".jpeg"	} responsive />    
             </div>
         
+        <div style={{width: 660, height: 'auto'}}>
+          <p> </p>
+            <Image src="http://10.4.5.6/QAT/img/chart-men.png" responsive />    
+            </div>
+        
   </div>
     );
   }
