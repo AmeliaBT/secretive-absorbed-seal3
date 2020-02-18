@@ -59386,7 +59386,10 @@ this.state = {
         }
   
   }
-  
+  componentDidMount(){
+    
+    
+  }
   render() {
     return (
       React.createElement("div", null, 
@@ -59459,8 +59462,15 @@ React.createElement(FormGroup, { className: "input-row"}, React.createElement(C
  React.createElement(Row, null, " ", React.createElement(Col, {  sm: 11}, "  ", React.createElement("div", {className: "profile-line"})), "  "), 
  React.createElement(Row, null, 
 React.createElement(Col, {sm: 6}, 
-React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "  Photo 1: "), React.createElement(FormControl, { type: "text", name: "lwo", value: this.state.lwo, placeholder: this.state.lwo, 	 readOnly: true}), "   "), "  "
-), 
+React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "  Photo 1: "), React.createElement(FormControl, { type: "text", name: "lwo", placeholder: this.state.lwo, 	 readOnly: true}), "   "), "  ", 
+
+  React.createElement("div", {style: {width: 400, height: 'auto'}}
+    /*    
+            <Image src={this.state.lwo } responsive />    */
+    
+            )
+   
+   ), 
  React.createElement(Col, {sm: 5}, 
 React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "  Photo 2: "), React.createElement(FormControl, { type: "text",  name: "uwo",   value: this.state.uwo, 	 placeholder: this.state.uwo, 	 readOnly: true}), "  "), " "
  
