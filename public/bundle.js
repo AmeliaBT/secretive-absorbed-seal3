@@ -60046,6 +60046,7 @@ class FormRI extends React.Component {
 
     };
     this.handleChangeValue = this.handleChangeValue.bind(this);
+     this.handleChangeValueImg = this.handleChangeValueImg.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);   
     this.handleChangeValuePF= this.handleChangeValuePF.bind(this);
     
@@ -60102,14 +60103,15 @@ componentWillMount() {
       const value = target.value;
       const name = target.name;
      alert("hi");
+     alert(value);
     //replace C:/fakepath/ with
     //       http://10.4.5.6/Intranet/data/QualityAssurance/QC-Reports/RI_Photos/
     //str.substring(2)
-    value=value.substring(11) ;
-    alert(value);
-    value="http://10.4.5.6/Intranet/data/QualityAssurance/QC-Reports/RI_Photos/" + value;
-    alert(value);
-      this.setState({ [name]: value  });
+ let   value2=value.substring(12) ;
+    alert(value2);
+  let  value3="http://10.4.5.6/Intranet/data/QualityAssurance/QC-Reports/RI_Photos/" + value2;
+    alert(value3);
+      this.setState({ [name]: value3  });
   };
     
   handleSubmit(event) { let that = this; 
