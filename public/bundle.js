@@ -12257,10 +12257,10 @@ const RIreports = __webpack_require__(372);
 const RIlist = __webpack_require__(378);
 const RIlistAll = __webpack_require__(382); //change
 const RIedit = __webpack_require__(384);
-const RIview = __webpack_require__(385);
-const SignUp = __webpack_require__(386);
-const LogIn = __webpack_require__(389);
-const HomePage = __webpack_require__(392);
+const RIview = __webpack_require__(386);
+const SignUp = __webpack_require__(387);
+const LogIn = __webpack_require__(390);
+const HomePage = __webpack_require__(393);
 //const DisplayMessages= require('./components/DisplayMessages');
 //const DisplayMessagesB= require('./components/DisplayMessagesB');
 //const ManyRecords =require('./components/ManyRecords');
@@ -58996,6 +58996,7 @@ const React = __webpack_require__(0);
 const ReactDOM = __webpack_require__(11);
 const Link = __webpack_require__(12).Link
 const Header = __webpack_require__(23);
+const RIphoto = __webpack_require__(385);
 // react-bootstrap
 const {image, Grid, Row, Col, FormControl, ControlLabel, FormGroup, HelpBlock, Tabs, Tab, Form, Button} = __webpack_require__(14);
 class RIedit extends React.Component {
@@ -59302,6 +59303,23 @@ module.exports = RIedit;
 /* 385 */
 /***/ (function(module, exports, __webpack_require__) {
 
+const React = __webpack_require__(0);
+const Link = __webpack_require__(12).Link
+class RIphoto extends React.Component {
+  constructor(props) {
+   super(props);
+  alert("hi from photo");
+  }
+  render() {
+    return(React.createElement("div", null, " a photo "))
+  }
+}
+module.exports = RIphoto;
+
+/***/ }),
+/* 386 */
+/***/ (function(module, exports, __webpack_require__) {
+
 
 const React = __webpack_require__(0);
 const ReactDOM = __webpack_require__(11);
@@ -59495,13 +59513,13 @@ module.exports = RIview;
 
 
 /***/ }),
-/* 386 */
+/* 387 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const React = __webpack_require__(0);
 const Link = __webpack_require__(12).Link
 // style for BOOKS
-const style = __webpack_require__(387);
+const style = __webpack_require__(388);
 // other components and etc
 const Header = __webpack_require__(23);
 // react-bootstrap
@@ -59624,13 +59642,13 @@ class SignUp extends React.Component {
 module.exports = SignUp;
 
 /***/ }),
-/* 387 */
+/* 388 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(388);
+var content = __webpack_require__(389);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -59655,7 +59673,7 @@ if(false) {
 }
 
 /***/ }),
-/* 388 */
+/* 389 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(21)(false);
@@ -59669,13 +59687,13 @@ exports.push([module.i, ".FormSU {\n  width: 600px;\n  margin: auto;\n  margin-t
 
 
 /***/ }),
-/* 389 */
+/* 390 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const React = __webpack_require__(0);
 const Link = __webpack_require__(12).Link
 // style for BOOKS
-const style = __webpack_require__(390);
+const style = __webpack_require__(391);
 // other components and etc
 const Header = __webpack_require__(23);
 // react-bootstrap
@@ -59775,13 +59793,13 @@ class LogIn extends React.Component {
 module.exports = LogIn;
 
 /***/ }),
-/* 390 */
+/* 391 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(391);
+var content = __webpack_require__(392);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -59806,7 +59824,7 @@ if(false) {
 }
 
 /***/ }),
-/* 391 */
+/* 392 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(21)(false);
@@ -59820,15 +59838,15 @@ exports.push([module.i, ".Form {\n  width: 600px;\n  margin: auto;\n  margin-top
 
 
 /***/ }),
-/* 392 */
+/* 393 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const React = __webpack_require__(0);
 
-const style = __webpack_require__(393);
+const style = __webpack_require__(394);
 // other components and etc
 const Header = __webpack_require__(23);
-const FormRI =__webpack_require__(395);
+const FormRI =__webpack_require__(396);
 // react-bootstrap
 const {Grid, Row, Col, FormControl} = __webpack_require__(14);
 
@@ -59913,13 +59931,13 @@ module.exports = HomePage;
 
 
 /***/ }),
-/* 393 */
+/* 394 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(394);
+var content = __webpack_require__(395);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -59944,7 +59962,7 @@ if(false) {
 }
 
 /***/ }),
-/* 394 */
+/* 395 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(21)(false);
@@ -59958,13 +59976,13 @@ exports.push([module.i, "/*used:\nclassName=\"profile\"\nclassName=\"show-grid\"
 
 
 /***/ }),
-/* 395 */
+/* 396 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const React = __webpack_require__(0);
 const Link = __webpack_require__(12).Link
 // style for BOOKS
-const style = __webpack_require__(396);
+const style = __webpack_require__(397);
 // other components and etc
 const Header = __webpack_require__(23);
 //const CreatableSelect= require('react-select');
@@ -60351,13 +60369,13 @@ href = "https://drive.google.com/file/d/19Ol1VZu646JIQE20-iSmI5Wma0I1_a_2/view?u
 */
 
 /***/ }),
-/* 396 */
+/* 397 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(397);
+var content = __webpack_require__(398);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -60382,7 +60400,7 @@ if(false) {
 }
 
 /***/ }),
-/* 397 */
+/* 398 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(21)(false);
