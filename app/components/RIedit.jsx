@@ -272,7 +272,7 @@ this.state = {
    </Col>
  <Col sm={5} >
 <FormGroup className="input-row"><ControlLabel> 	Photo 2 	</ControlLabel><FormControl type="text" name="uwo"    placeholder={this.state.uwo	} onChange={this.handleChangeValue} />  </FormGroup> 
-  <RIphoto2 img_url= {this.state.lwo} /> 
+  
    
    </Col> 
 </Row>     
@@ -283,7 +283,7 @@ this.state = {
     
     {/* 
         
- 
+ <RIphoto2 img_url= {this.state.lwo} /> <RIphoto2 img_url= {this.state.lwo} /> 
    
         */}   
         
