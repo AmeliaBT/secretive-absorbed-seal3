@@ -10,7 +10,15 @@ class RIphoto extends React.Component {
   }
   render() {
     
-    return(<div> <img src= this.state.img_url  /> </div>)
+    return(<div> 
+       <p> see this ri photo: </p> <br/>
+        <ResponsiveEmbed a16by9>
+                    <embed type="image/href+xml" href = "https://static.pexels.com/photos/296886/pexels-photo-296886.jpeg"/>
+                </ResponsiveEmbed>
+        <br/>
+        <img src= {this.state.img_url }  alt="ri1 pic"/> 
+      
+      </div>)
   }
 }
 module.exports = RIphoto;
