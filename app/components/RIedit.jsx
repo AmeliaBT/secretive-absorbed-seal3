@@ -260,15 +260,16 @@ this.state = {
  <Row> 
 <Col sm={6} >
 <FormGroup className="input-row"><ControlLabel> 	Photo 1	</ControlLabel><FormControl type="text"  name="lwo"      placeholder={this.state.lwo	}   />   </FormGroup>  
- <RIphoto2 img_url= {this.state.lwo} /> 
+ 
   
-  {/* 
+  {/* <RIphoto2 img_url= {this.state.lwo} /> 
+  <Image src="/assets/igloo-Mars.jpg" responsive />    */}
   
   <div style={{width: 400, height: 'auto'}}>
-         
-            <Image src="/assets/igloo-Mars.jpg" responsive />    
+          <Image src="https://static.pexels.com/photos/296886/pexels-photo-296886.jpeg"  alt="ri1 pic"/> 
+             
             </div>
-   */}
+
  
    </Col>
  <Col sm={5} >
@@ -302,6 +303,7 @@ this.state = {
 module.exports = RIedit;
 
 /* 
+ <img src="https://static.pexels.com/photos/296886/pexels-photo-296886.jpeg"  alt="ri1 pic"/> 
 <div style={{width: 660, height: 'auto'}}>
           <p> </p>
             <Image src={"https://static.pexels.com/photos/" + this.state.uwo + "/pexels-photo-" + this.state.uwo +".jpeg"	} responsive />    

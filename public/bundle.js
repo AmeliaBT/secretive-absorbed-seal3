@@ -59253,15 +59253,16 @@ React.createElement(FormGroup, { className: "input-row"}, React.createElement(C
  React.createElement(Row, null, 
 React.createElement(Col, {sm: 6}, 
 React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "  Photo 1 "), React.createElement(FormControl, { type: "text", name: "lwo", placeholder: this.state.lwo	}), "   "), "  ", 
- React.createElement(RIphoto2, {img_url: this.state.lwo})
+ 
   
-  /* 
+  /* <RIphoto2 img_url= {this.state.lwo} /> 
+  <Image src="/assets/igloo-Mars.jpg" responsive />    */
   
-  <div style={{width: 400, height: 'auto'}}>
-         
-            <Image src="/assets/igloo-Mars.jpg" responsive />    
-            </div>
-   */
+  React.createElement("div", {style: {width: 400, height: 'auto'}}, 
+          React.createElement(Image, {src: "https://static.pexels.com/photos/296886/pexels-photo-296886.jpeg", alt: "ri1 pic"})
+             
+            )
+
  
    ), 
  React.createElement(Col, {sm: 5}, 
@@ -59295,6 +59296,7 @@ React.createElement(FormGroup, { className: "input-row"}, React.createElement(C
 module.exports = RIedit;
 
 /* 
+ <img src="https://static.pexels.com/photos/296886/pexels-photo-296886.jpeg"  alt="ri1 pic"/> 
 <div style={{width: 660, height: 'auto'}}>
           <p> </p>
             <Image src={"https://static.pexels.com/photos/" + this.state.uwo + "/pexels-photo-" + this.state.uwo +".jpeg"	} responsive />    
@@ -59320,8 +59322,8 @@ class RIphoto2 extends React.Component {
     
     return(React.createElement("div", null, 
        React.createElement("p", null, " see this ri2 photo: "), " ", React.createElement("br", null), 
-        React.createElement("p", null, "ffff  "), " ", React.createElement("br", null)
-     
+        React.createElement("p", null, "url:  ", this.state.img_url, "  "), " ", React.createElement("br", null), 
+     React.createElement("img", {src: "https://static.pexels.com/photos/296886/pexels-photo-296886.jpeg", alt: "ri1 pic"})
       ))
   }
 }
