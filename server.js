@@ -512,7 +512,8 @@ app.post("/get-user-filtered-reports", function(request, response) {
 app.post("/set-report", function(request, response) {  
    reportModel.findOne({"_id":request.body["_id"]}, (err, doc) => {
   if (err) throw err;
-    
+    console.log("doc: ");
+     console.log(doc);
   doc.set({   
 daterec: request.body["daterec"],  
 Gwo: request.body["Gwo"], 
@@ -542,9 +543,12 @@ uwo: request.body["uwo"] //photo file
      
      doc.save(function (err) {
               
-           //   if (!err) console.log('Success! on saving edited RIfile');
+         
                 if (!err){ doc.save(); 
-              response.json({"error": 0}); }else{}             
+              response.json({"error": 0}); }else{
+                response.json({"error": 55})
+                console.log('not Success! on saving edited RIfile');
+                                                }             
             });
      
      
@@ -552,12 +556,31 @@ uwo: request.body["uwo"] //photo file
     
   // response.json({error: 0})
      
-    /* 
+    /* user.save(function (err, updatedUser) {
+  if (err) throw err;
+  response.json({update: true});
+  });
+    
+    
+    
      doc.save(function (err) {
               
               if (!err) console.log('Success!');
               response.json({"error": 0});              
             });
+            
+   ---------------------------------
+    doc.save(function (err) {
+              
+           //   if (!err) console.log('Success! on saving edited RIfile');
+                if (!err){ doc.save(); 
+              response.json({"error": 0}); }else{
+                response.json({"error": 55})
+                console.log('not Success! on saving edited RIfile');
+                                                }             
+            });
+     
+            
     */ 
      
      
