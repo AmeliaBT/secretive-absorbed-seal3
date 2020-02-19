@@ -58997,7 +58997,7 @@ const ReactDOM = __webpack_require__(11);
 const Link = __webpack_require__(12).Link
 const Header = __webpack_require__(23);
 const RIphoto2 = __webpack_require__(385);
-const myLink ="";
+const myLink ="test link";
 // react-bootstrap
 const {image, Grid, Row, Col, FormControl, ControlLabel, FormGroup, HelpBlock, Tabs, Tab, Form, Button} = __webpack_require__(14);
 class RIedit extends React.Component {
@@ -59135,6 +59135,8 @@ this.state = {
         let response = JSON.parse(this.responseText);
         
       //  alert(response.lwo);
+         myLink=response.lwo;
+        alert(" in willMount, myLink is: " + myLink);
   // if(response.error == 0) {
         //   window.location.href = "/reports";
              that.setState({
@@ -59163,12 +59165,20 @@ this.state = {
                 ["record"]  : response.record ,   
                 ["uwo"]  : response.uwo   
            }); 
-     myLink=response.lwo;
+    
         }
 // get photo
     
 // event.preventDefault();
      }
+  
+   componentDidMount() {
+     alert(" componentDidMount ");
+     alert(myLink);
+      alert(this.state.lwo);
+     
+   }
+  
   
   render() {
   
@@ -59324,8 +59334,8 @@ class RIphoto2 extends React.Component {
     
     return(React.createElement("div", null, 
        React.createElement("p", null, " see this ri2 photo: "), " ", React.createElement("br", null), 
-        React.createElement("p", null, "url:  ", this.state.img_url, "  "), " ", React.createElement("br", null), 
-     React.createElement("img", {src: "https://static.pexels.com/photos/296886/pexels-photo-296886.jpeg", alt: "ri1 pic"})
+        React.createElement("p", null, "url1:  ", this.state.img_url, "  "), " ", React.createElement("br", null), 
+      React.createElement("p", null, "url2:  ", this.props.img_url, "  "), " ", React.createElement("br", null)
       ))
   }
 }

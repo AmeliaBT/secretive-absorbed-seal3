@@ -4,7 +4,7 @@ const ReactDOM = require('react-dom');
 const Link = require('react-router-dom').Link
 const Header = require('./Header');
 const RIphoto2 = require('./RIphoto2');
-const myLink ="";
+const myLink ="test link";
 // react-bootstrap
 const {image, Grid, Row, Col, FormControl, ControlLabel, FormGroup, HelpBlock, Tabs, Tab, Form, Button} = require('react-bootstrap');
 class RIedit extends React.Component {
@@ -142,6 +142,8 @@ this.state = {
         let response = JSON.parse(this.responseText);
         
       //  alert(response.lwo);
+         myLink=response.lwo;
+        alert(" in willMount, myLink is: " + myLink);
   // if(response.error == 0) {
         //   window.location.href = "/reports";
              that.setState({
@@ -170,12 +172,20 @@ this.state = {
                 ["record"]  : response.record ,   
                 ["uwo"]  : response.uwo   
            }); 
-     myLink=response.lwo;
+    
         }
 // get photo
     
 // event.preventDefault();
      }
+  
+   componentDidMount() {
+     alert(" componentDidMount ");
+     alert(myLink);
+      alert(this.state.lwo);
+     
+   }
+  
   
   render() {
   
