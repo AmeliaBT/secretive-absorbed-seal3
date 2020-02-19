@@ -33,8 +33,7 @@ this.state = {
       swo: "",  // DMR #:
       two: "",  // Pass / Fail:
       record: "", // comment -note
-      uwo: "" ,
-  photo: ""// old extra; new file -photo 
+      uwo: ""   // old extra; new file -photo 
 }
       this.handleChangeValue = this.handleChangeValue.bind(this);
     this.handleSubmit= this.handleSubmit.bind(this);

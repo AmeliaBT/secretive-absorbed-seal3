@@ -12,8 +12,8 @@ class RIphoto2 extends React.Component {
     
     return(<div> 
        <p> see this ri2 photo: </p> <br/>
-        <p>ffff  </p> <br/>
-     
+        <p>url:  {this.props.img_url}  </p> <br/>
+     <img src="https://static.pexels.com/photos/296886/pexels-photo-296886.jpeg"  alt="ri1 pic"/> 
       </div>)
   }
 }
