@@ -6,7 +6,7 @@ const Header = require('./Header');
 const RIphoto2 = require('./RIphoto2');
 let myLink ="test link";
 // react-bootstrap
-const {image, Grid, Row, Col, FormControl, ControlLabel, FormGroup, HelpBlock, Tabs, Tab, Form, Button} = require('react-bootstrap');
+const {Image, Grid, Row, Col, FormControl, ControlLabel, FormGroup, HelpBlock, Tabs, Tab, Form, Button} = require('react-bootstrap');
 class RIedit extends React.Component {
   constructor(props) {   
     super(props);
@@ -143,7 +143,7 @@ this.state = {
         
       //  alert(response.lwo);
          myLink=response.lwo;
-        alert(" in willMount, myLink is: " + myLink);
+      
   // if(response.error == 0) {
         //   window.location.href = "/reports";
              that.setState({
@@ -179,12 +179,7 @@ this.state = {
 // event.preventDefault();
      }
   
-   componentDidMount() {
-     alert(" componentDidMount ");
-     alert(myLink);
-      alert(this.state.lwo);
-     
-   }
+   
   
   
   render() {

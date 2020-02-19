@@ -58999,7 +58999,7 @@ const Header = __webpack_require__(23);
 const RIphoto2 = __webpack_require__(385);
 let myLink ="test link";
 // react-bootstrap
-const {image, Grid, Row, Col, FormControl, ControlLabel, FormGroup, HelpBlock, Tabs, Tab, Form, Button} = __webpack_require__(14);
+const {Image, Grid, Row, Col, FormControl, ControlLabel, FormGroup, HelpBlock, Tabs, Tab, Form, Button} = __webpack_require__(14);
 class RIedit extends React.Component {
   constructor(props) {   
     super(props);
@@ -59136,7 +59136,7 @@ this.state = {
         
       //  alert(response.lwo);
          myLink=response.lwo;
-        alert(" in willMount, myLink is: " + myLink);
+      
   // if(response.error == 0) {
         //   window.location.href = "/reports";
              that.setState({
@@ -59172,12 +59172,7 @@ this.state = {
 // event.preventDefault();
      }
   
-   componentDidMount() {
-     alert(" componentDidMount ");
-     alert(myLink);
-      alert(this.state.lwo);
-     
-   }
+   
   
   
   render() {
@@ -59322,6 +59317,7 @@ module.exports = RIedit;
 
 const React = __webpack_require__(0);
 const Link = __webpack_require__(12).Link
+const {Image} = __webpack_require__(14);
 class RIphoto2 extends React.Component {
   constructor(props) {
    super(props); 
@@ -59329,13 +59325,16 @@ class RIphoto2 extends React.Component {
   render() {    
     return(React.createElement("div", null, 
      React.createElement("br", null), 
-        React.createElement("img", {src: this.props.img_url, alt: "ri photo 1"})
+        
+         React.createElement(Image, {src: this.props.img_url, responsive: true})
       ))
   }
 }
 module.exports = RIphoto2;
 
 /* 
+
+<img src={this.props.img_url} alt="ri photo 1"/> 
 <ResponsiveEmbed a16by9>
                     <embed type="image/href+xml" href = "https://static.pexels.com/photos/296886/pexels-photo-296886.jpeg"/>
                 </ResponsiveEmbed>
