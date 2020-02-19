@@ -59131,7 +59131,9 @@ this.state = {
           alert( 'error: ' + (this.status ? this.statusText : 'request has not been set') );
           return;
         }
-        let response = JSON.parse(this.responseText);         
+        let response = JSON.parse(this.responseText);
+        return React.createElement(RIphoto, {img_url: response.lwo}) 
+        alert(response.lwo);
   // if(response.error == 0) {
         //   window.location.href = "/reports";
              that.setState({
