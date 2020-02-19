@@ -3,7 +3,7 @@ const Link = require('react-router-dom').Link
 class RIphoto2 extends React.Component {
   constructor(props) {
    super(props);
-  alert("hi from photo this.props.img_url: ");
+  alert("hi from photo2 this.props.img_url: ");
     alert(this.props.img_url) ;
      this.state = {
       img_url: this.props.img_url}
@@ -11,9 +11,9 @@ class RIphoto2 extends React.Component {
   render() {
     
     return(<div> 
-       <p> see this ri photo: </p> <br/>
-        <p>  </p> <br/>
-      
+       <p> see this ri2 photo: </p> <br/>
+        <p>ffff  </p> <br/>
+     
       </div>)
   }
 }

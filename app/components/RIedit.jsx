@@ -268,11 +268,13 @@ this.state = {
             <Image src="/assets/igloo-Mars.jpg" responsive />    
             </div>
    */}
-   <RIphoto2 img_url= {this.state.lwo} /> 
+ 
    </Col>
  <Col sm={5} >
 <FormGroup className="input-row"><ControlLabel> 	Photo 2 	</ControlLabel><FormControl type="text" name="uwo"    placeholder={this.state.uwo	} onChange={this.handleChangeValue} />  </FormGroup> 
- </Col> 
+  <RIphoto2 img_url= {this.state.lwo} /> 
+   
+   </Col> 
 </Row>     
       
   </Grid>  
