@@ -176,8 +176,9 @@ this.state = {
 // event.preventDefault();
      }
   componentDidMount() {
+    alert("hi");
     let myLink= this.state.lwo;
-    this.setState({photo:myLink })
+    this.setState({photo:myLink });
   }
   render() {
   
@@ -262,7 +263,7 @@ this.state = {
  <Row> <Col  sm={11} >  <div className="profile-line"></div></Col>  </Row>
  <Row> 
 <Col sm={6} >
-<FormGroup className="input-row"><ControlLabel> 	Photo 1	</ControlLabel><FormControl type="text"  name="lwo"      placeholder={this.state.lwo	} onChange={this.handleChangeValue}  />   </FormGroup>  
+<FormGroup className="input-row"><ControlLabel> 	Photo 1	</ControlLabel><FormControl type="text"  name="lwo"      placeholder={this.state.lwo	} value={this.state.lwo	}  onChange={this.handleChangeValue}  />   </FormGroup>  
 <div style={{width: 400, height: 'auto'}}>
          
             <Image src={this.state.photo } responsive />    
