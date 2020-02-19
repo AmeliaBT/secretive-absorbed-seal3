@@ -59080,6 +59080,7 @@ this.state = {
 '&uwo='   + encodeURIComponent(this.state.uwo)+ 
 '&record='   + encodeURIComponent(this.state.record) 
 ;
+                        alert(body);
       xhr.send(body);
 
       xhr.onreadystatechange = function() {
@@ -59090,6 +59091,7 @@ this.state = {
         }
         let response = JSON.parse(this.responseText);
         if(response.error == 0) {
+          alert("here1");
            window.location.href = "/reports";
            that.setState({
           ["ewo"]: "Succsess",
@@ -59097,6 +59099,7 @@ this.state = {
            });
         }
         else {
+           alert("here2 -error");
           that.setState({
           ["ewo"]: "Error "
            });
@@ -59258,7 +59261,7 @@ React.createElement(FormGroup, { className: "input-row"}, React.createElement(C
  React.createElement(Row, null, " ", React.createElement(Col, {  sm: 11}, "  ", React.createElement("div", {className: "profile-line"})), "  "), 
  React.createElement(Row, null, 
 React.createElement(Col, {sm: 6}, 
-React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "  Photo 1 "), React.createElement(FormControl, { type: "text", name: "lwo", placeholder: this.state.lwo	}), "   "), "  "
+React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "  Photo 1 "), React.createElement(FormControl, { type: "text", name: "lwo", value: this.state.lwo, 	placeholder: this.state.lwo, 	 onChange: this.handleChangeValue}), "   "), "  "
  
   
   /* <RIphoto2 img_url= {this.state.lwo} /> 
@@ -59268,7 +59271,7 @@ React.createElement(FormGroup, { className: "input-row"}, React.createElement(C
  
    ), 
  React.createElement(Col, {sm: 5}, 
-React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "  Photo 2  "), React.createElement(FormControl, { type: "text",  name: "uwo",    placeholder: this.state.uwo, 	 onChange: this.handleChangeValue} ), "  "), " "
+React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "  Photo 2  "), React.createElement(FormControl, { type: "text",  name: "uwo",  value: this.state.uwo, 	  placeholder: this.state.uwo, 	 onChange: this.handleChangeValue} ), "  "), " "
   
    
    )

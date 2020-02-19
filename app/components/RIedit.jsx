@@ -87,6 +87,7 @@ this.state = {
 '&uwo='   + encodeURIComponent(this.state.uwo)+ 
 '&record='   + encodeURIComponent(this.state.record) 
 ;
+                        alert(body);
       xhr.send(body);
 
       xhr.onreadystatechange = function() {
@@ -97,6 +98,7 @@ this.state = {
         }
         let response = JSON.parse(this.responseText);
         if(response.error == 0) {
+          alert("here1");
            window.location.href = "/reports";
            that.setState({
           ["ewo"]: "Succsess",
@@ -104,6 +106,7 @@ this.state = {
            });
         }
         else {
+           alert("here2 -error");
           that.setState({
           ["ewo"]: "Error "
            });
@@ -265,7 +268,7 @@ this.state = {
  <Row> <Col  sm={11} >  <div className="profile-line"></div></Col>  </Row>
  <Row> 
 <Col sm={6} >
-<FormGroup className="input-row"><ControlLabel> 	Photo 1	</ControlLabel><FormControl type="text"  name="lwo"      placeholder={this.state.lwo	}   />   </FormGroup>  
+<FormGroup className="input-row"><ControlLabel> 	Photo 1	</ControlLabel><FormControl type="text"  name="lwo" value={this.state.lwo	}     placeholder={this.state.lwo	 }  onChange={this.handleChangeValue} />   </FormGroup>  
  
   
   {/* <RIphoto2 img_url= {this.state.lwo} /> 
@@ -275,7 +278,7 @@ this.state = {
  
    </Col>
  <Col sm={5} >
-<FormGroup className="input-row"><ControlLabel> 	Photo 2 	</ControlLabel><FormControl type="text" name="uwo"    placeholder={this.state.uwo	} onChange={this.handleChangeValue} />  </FormGroup> 
+<FormGroup className="input-row"><ControlLabel> 	Photo 2 	</ControlLabel><FormControl type="text" name="uwo"  value={this.state.uwo	}  placeholder={this.state.uwo	} onChange={this.handleChangeValue} />  </FormGroup> 
   
    
    </Col> 
