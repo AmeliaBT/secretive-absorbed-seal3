@@ -58997,7 +58997,7 @@ const ReactDOM = __webpack_require__(11);
 const Link = __webpack_require__(12).Link
 const Header = __webpack_require__(23);
 // react-bootstrap
-const {Grid, Row, Col, FormControl, ControlLabel, FormGroup, HelpBlock, Tabs, Tab, Form, Button} = __webpack_require__(14);
+const {image, Grid, Row, Col, FormControl, ControlLabel, FormGroup, HelpBlock, Tabs, Tab, Form, Button} = __webpack_require__(14);
 class RIedit extends React.Component {
   constructor(props) {   
     super(props);
@@ -59026,7 +59026,7 @@ this.state = {
       two: "",  // Pass / Fail:
       record: "", // comment -note
       uwo: "" ,
-  photo: "loading photo ..."// old extra; new file -photo 
+  photo: ""// old extra; new file -photo 
 }
       this.handleChangeValue = this.handleChangeValue.bind(this);
     this.handleSubmit= this.handleSubmit.bind(this);
@@ -59169,9 +59169,10 @@ this.state = {
 // event.preventDefault();
      }
   componentDidMount() {
-    alert("hi");
+    alert("hi myLink ");
     let myLink= this.state.lwo;
-    this.setState({photo:myLink });
+    alert(myLink);
+    //this.setState({photo:myLink });
   }
   render() {
   
@@ -59256,7 +59257,7 @@ React.createElement(FormGroup, { className: "input-row"}, React.createElement(C
  React.createElement(Row, null, " ", React.createElement(Col, {  sm: 11}, "  ", React.createElement("div", {className: "profile-line"})), "  "), 
  React.createElement(Row, null, 
 React.createElement(Col, {sm: 6}, 
-React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "  Photo 1 "), React.createElement(FormControl, { type: "text", name: "lwo", placeholder: this.state.lwo, 	value: this.state.lwo, 	  onChange: this.handleChangeValue}), "   "), "  ", 
+React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "  Photo 1 "), React.createElement(FormControl, { type: "text", name: "lwo", placeholder: this.state.lwo	}), "   "), "  ", 
 React.createElement("div", {style: {width: 400, height: 'auto'}}, 
          
             React.createElement(Image, {src: this.state.photo, responsive: true})

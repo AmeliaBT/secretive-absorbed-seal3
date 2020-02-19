@@ -4,7 +4,7 @@ const ReactDOM = require('react-dom');
 const Link = require('react-router-dom').Link
 const Header = require('./Header');
 // react-bootstrap
-const {Grid, Row, Col, FormControl, ControlLabel, FormGroup, HelpBlock, Tabs, Tab, Form, Button} = require('react-bootstrap');
+const {image, Grid, Row, Col, FormControl, ControlLabel, FormGroup, HelpBlock, Tabs, Tab, Form, Button} = require('react-bootstrap');
 class RIedit extends React.Component {
   constructor(props) {   
     super(props);
@@ -33,7 +33,7 @@ this.state = {
       two: "",  // Pass / Fail:
       record: "", // comment -note
       uwo: "" ,
-  photo: "loading photo ..."// old extra; new file -photo 
+  photo: ""// old extra; new file -photo 
 }
       this.handleChangeValue = this.handleChangeValue.bind(this);
     this.handleSubmit= this.handleSubmit.bind(this);
@@ -176,9 +176,10 @@ this.state = {
 // event.preventDefault();
      }
   componentDidMount() {
-    alert("hi");
+    alert("hi myLink ");
     let myLink= this.state.lwo;
-    this.setState({photo:myLink });
+    alert(myLink);
+    //this.setState({photo:myLink });
   }
   render() {
   
@@ -263,7 +264,7 @@ this.state = {
  <Row> <Col  sm={11} >  <div className="profile-line"></div></Col>  </Row>
  <Row> 
 <Col sm={6} >
-<FormGroup className="input-row"><ControlLabel> 	Photo 1	</ControlLabel><FormControl type="text"  name="lwo"      placeholder={this.state.lwo	} value={this.state.lwo	}  onChange={this.handleChangeValue}  />   </FormGroup>  
+<FormGroup className="input-row"><ControlLabel> 	Photo 1	</ControlLabel><FormControl type="text"  name="lwo"      placeholder={this.state.lwo	}   />   </FormGroup>  
 <div style={{width: 400, height: 'auto'}}>
          
             <Image src={this.state.photo } responsive />    
