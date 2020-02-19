@@ -537,14 +537,24 @@ record: request.body["record"],
 uwo: request.body["uwo"] //photo file   
   });
      
-   doc.save();
+  // doc.save();
+
+     
+     doc.save(function (err) {
+              
+           //   if (!err) console.log('Success! on saving edited RIfile');
+                if (!err){ doc.save(); 
+              response.json({"error": 0}); }else{}             
+            });
+     
+     
  //    (function (err, updatedDoc) {  if (err) throw err;
-     if (err) throw err;
-   response.json({error: 0})
+    
+  // response.json({error: 0})
      
     /* 
-      report.save(function (err) {
-              //if (err) throw err;
+     doc.save(function (err) {
+              
               if (!err) console.log('Success!');
               response.json({"error": 0});              
             });

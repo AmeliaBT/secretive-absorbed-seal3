@@ -59091,7 +59091,7 @@ this.state = {
         }
         let response = JSON.parse(this.responseText);
         if(response.error == 0) {
-          alert("here1");
+         
            window.location.href = "/reports";
            that.setState({
           ["ewo"]: "Succsess",
@@ -59099,7 +59099,7 @@ this.state = {
            });
         }
         else {
-           alert("here2 -error");
+          
           that.setState({
           ["ewo"]: "Error "
            });
