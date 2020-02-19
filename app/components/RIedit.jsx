@@ -4,7 +4,7 @@ const ReactDOM = require('react-dom');
 const Link = require('react-router-dom').Link
 const Header = require('./Header');
 const RIphoto2 = require('./RIphoto2');
-let myLink ="test link";
+let myLink, myLink2;;
 // react-bootstrap
 const {Image, Grid, Row, Col, FormControl, ControlLabel, FormGroup, HelpBlock, Tabs, Tab, Form, Button} = require('react-bootstrap');
 class RIedit extends React.Component {
@@ -146,7 +146,7 @@ this.state = {
         
       //  alert(response.lwo);
          myLink=response.lwo;
-      
+      myLink2=response.uwo;
   // if(response.error == 0) {
         //   window.location.href = "/reports";
              that.setState({
@@ -215,8 +215,8 @@ this.state = {
    <FormGroup className="input-row"><ControlLabel> 	 NO:</ControlLabel> <FormControl type="text" name="kwo"       value={this.state.kwo	} placeholder={this.state.kwo	} onChange={this.handleChangeValue} />  </FormGroup> 
  </div></Col>
         <Col sm={3} >	<div className="well"> 
-  <FormGroup className="input-row"><ControlLabel>Date Received:	</ControlLabel> <FormControl type="text" name="cwo"      value={this.state.cwo	} placeholder={this.state.cwo	} onChange={this.handleChangeValue} />  </FormGroup> 
-  <FormGroup className="input-row"><ControlLabel> Date Inspected: </ControlLabel><FormControl type="text" name="jwo"   value={this.state.jwo	} placeholder={this.state.jwo	} onChange={this.handleChangeValue} />  </FormGroup> 
+  <FormGroup className="input-row"><ControlLabel>Date Received:	</ControlLabel> <FormControl type="text" name="cwo"  readOnly     value={this.state.cwo	} placeholder={this.state.cwo	} onChange={this.handleChangeValue} />  </FormGroup> 
+  <FormGroup className="input-row"><ControlLabel> Date Inspected: </ControlLabel><FormControl type="text" name="jwo"  readOnly  value={this.state.jwo	} placeholder={this.state.jwo	} onChange={this.handleChangeValue} />  </FormGroup> 
   </div></Col>
 <Col sm={3} >	<div className="well"> 
 <FormGroup ><ControlLabel>Source:</ControlLabel> 
@@ -269,7 +269,10 @@ this.state = {
  <Row> 
 <Col sm={6} >
 <FormGroup className="input-row"><ControlLabel> 	Photo 1	</ControlLabel><FormControl type="text"  name="lwo" value={this.state.lwo	}     placeholder={this.state.lwo	 }  onChange={this.handleChangeValue} />   </FormGroup>  
- 
+      
+  <div style={{width: 400, height: 'auto'}}>       
+         <RIphoto2 img_url= {myLink } />  
+            </div>
   
   {/* <RIphoto2 img_url= {this.state.lwo} /> 
      <Image src="https://static.pexels.com/photos/296886/pexels-photo-296886.jpeg"  alt="ri1 pic"/> 
@@ -279,7 +282,10 @@ this.state = {
    </Col>
  <Col sm={5} >
 <FormGroup className="input-row"><ControlLabel> 	Photo 2 	</ControlLabel><FormControl type="text" name="uwo"  value={this.state.uwo	}  placeholder={this.state.uwo	} onChange={this.handleChangeValue} />  </FormGroup> 
-  
+       
+  <div style={{width: 400, height: 'auto'}}>       
+         <RIphoto2 img_url= {myLink2 } />  
+            </div>
    
    </Col> 
 </Row>     
@@ -287,11 +293,7 @@ this.state = {
   </Grid>  
     </Form>  
         
-     
-  <div style={{width: 400, height: 'auto'}}>
-       
-         <RIphoto2 img_url= {myLink } />  
-            </div>
+
     
         
   <br/>

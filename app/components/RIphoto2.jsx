@@ -7,8 +7,7 @@ class RIphoto2 extends React.Component {
   }
   render() {    
     return(<div> 
-     <br/>    
-        
+     <br/>  
          <Image src={this.props.img_url} responsive />   
       </div>)
   }

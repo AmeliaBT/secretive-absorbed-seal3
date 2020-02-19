@@ -58997,7 +58997,7 @@ const ReactDOM = __webpack_require__(11);
 const Link = __webpack_require__(12).Link
 const Header = __webpack_require__(23);
 const RIphoto2 = __webpack_require__(385);
-let myLink ="test link";
+let myLink, myLink2;;
 // react-bootstrap
 const {Image, Grid, Row, Col, FormControl, ControlLabel, FormGroup, HelpBlock, Tabs, Tab, Form, Button} = __webpack_require__(14);
 class RIedit extends React.Component {
@@ -59139,7 +59139,7 @@ this.state = {
         
       //  alert(response.lwo);
          myLink=response.lwo;
-      
+      myLink2=response.uwo;
   // if(response.error == 0) {
         //   window.location.href = "/reports";
              that.setState({
@@ -59208,8 +59208,8 @@ React.createElement(Col, {sm: 3}, "  ", React.createElement("div", {className: "
    React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "   NO:"), " ", React.createElement(FormControl, { type: "text",  name: "kwo",       value: this.state.kwo, 	 placeholder: this.state.kwo, 	 onChange: this.handleChangeValue} ), "  "), " "
  )), 
         React.createElement(Col, {sm: 3}, " ", React.createElement("div", {className: "well"}, " ", 
-  React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "Date Received: "), " ", React.createElement(FormControl, { type: "text",  name: "cwo",      value: this.state.cwo, 	 placeholder: this.state.cwo, 	 onChange: this.handleChangeValue} ), "  "), " " + " " +
-"  ", React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, " Date Inspected: "), React.createElement(FormControl, { type: "text",  name: "jwo",   value: this.state.jwo, 	 placeholder: this.state.jwo, 	 onChange: this.handleChangeValue} ), "  "), " "
+  React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "Date Received: "), " ", React.createElement(FormControl, { type: "text",  name: "cwo",  readOnly: true,     value: this.state.cwo, 	 placeholder: this.state.cwo, 	 onChange: this.handleChangeValue} ), "  "), " " + " " +
+"  ", React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, " Date Inspected: "), React.createElement(FormControl, { type: "text",  name: "jwo",  readOnly: true,  value: this.state.jwo, 	 placeholder: this.state.jwo, 	 onChange: this.handleChangeValue} ), "  "), " "
   )), 
 React.createElement(Col, {sm: 3}, " ", React.createElement("div", {className: "well"}, " ", 
 React.createElement(FormGroup, null , React.createElement(ControlLabel, null, "Source:"), 
@@ -59261,8 +59261,11 @@ React.createElement(FormGroup, { className: "input-row"}, React.createElement(C
  React.createElement(Row, null, " ", React.createElement(Col, {  sm: 11}, "  ", React.createElement("div", {className: "profile-line"})), "  "), 
  React.createElement(Row, null, 
 React.createElement(Col, {sm: 6}, 
-React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "  Photo 1 "), React.createElement(FormControl, { type: "text", name: "lwo", value: this.state.lwo, 	placeholder: this.state.lwo, 	 onChange: this.handleChangeValue}), "   "), "  "
- 
+React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "  Photo 1 "), React.createElement(FormControl, { type: "text", name: "lwo", value: this.state.lwo, 	placeholder: this.state.lwo, 	 onChange: this.handleChangeValue}), "   "), "  ", 
+      
+  React.createElement("div", {style: {width: 400, height: 'auto'}}, 
+         React.createElement(RIphoto2, {img_url: myLink })
+            )
   
   /* <RIphoto2 img_url= {this.state.lwo} /> 
      <Image src="https://static.pexels.com/photos/296886/pexels-photo-296886.jpeg"  alt="ri1 pic"/> 
@@ -59271,8 +59274,11 @@ React.createElement(FormGroup, { className: "input-row"}, React.createElement(C
  
    ), 
  React.createElement(Col, {sm: 5}, 
-React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "  Photo 2  "), React.createElement(FormControl, { type: "text",  name: "uwo",  value: this.state.uwo, 	  placeholder: this.state.uwo, 	 onChange: this.handleChangeValue} ), "  "), " "
-  
+React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "  Photo 2  "), React.createElement(FormControl, { type: "text",  name: "uwo",  value: this.state.uwo, 	  placeholder: this.state.uwo, 	 onChange: this.handleChangeValue} ), "  "), " ", 
+       
+  React.createElement("div", {style: {width: 400, height: 'auto'}}, 
+         React.createElement(RIphoto2, {img_url: myLink2 })
+            )
    
    )
 )
@@ -59280,11 +59286,7 @@ React.createElement(FormGroup, { className: "input-row"}, React.createElement(C
   )
     ), 
         
-     
-  React.createElement("div", {style: {width: 400, height: 'auto'}}, 
-       
-         React.createElement(RIphoto2, {img_url: myLink })
-            ), 
+
     
         
   React.createElement("br", null)
@@ -59331,7 +59333,6 @@ class RIphoto2 extends React.Component {
   render() {    
     return(React.createElement("div", null, 
      React.createElement("br", null), 
-        
          React.createElement(Image, {src: this.props.img_url, responsive: true})
       ))
   }
