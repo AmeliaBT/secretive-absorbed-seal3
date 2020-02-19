@@ -32,7 +32,8 @@ this.state = {
       swo: "",  // DMR #:
       two: "",  // Pass / Fail:
       record: "", // comment -note
-      uwo: ""  // old extra; new file -photo 
+      uwo: "" ,
+  photo: "loading photo ..."// old extra; new file -photo 
 }
       this.handleChangeValue = this.handleChangeValue.bind(this);
     this.handleSubmit= this.handleSubmit.bind(this);
@@ -174,7 +175,10 @@ this.state = {
  // }
 // event.preventDefault();
      }
-  
+  componentDidMount() {
+    let myLink= this.state.lwo;
+    this.setState({photo:myLink })
+  }
   render() {
   
     
@@ -259,7 +263,11 @@ this.state = {
  <Row> 
 <Col sm={6} >
 <FormGroup className="input-row"><ControlLabel> 	Photo 1	</ControlLabel><FormControl type="text"  name="lwo"      placeholder={this.state.lwo	} onChange={this.handleChangeValue}  />   </FormGroup>  
-
+<div style={{width: 400, height: 'auto'}}>
+         
+            <Image src={this.state.photo } responsive />    
+            </div>
+   
    
    </Col>
  <Col sm={5} >
