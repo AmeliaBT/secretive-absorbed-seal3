@@ -3,7 +3,7 @@ const React = require('react');
 const ReactDOM = require('react-dom');
 const Link = require('react-router-dom').Link
 const Header = require('./Header');
-const RIphoto = require('./RIphoto');
+const RIphoto2 = require('./RIphoto');
 // react-bootstrap
 const {image, Grid, Row, Col, FormControl, ControlLabel, FormGroup, HelpBlock, Tabs, Tab, Form, Button} = require('react-bootstrap');
 class RIedit extends React.Component {
@@ -141,7 +141,7 @@ this.state = {
         }
         let response = JSON.parse(this.responseText);
         
-        alert(response.lwo);
+      //  alert(response.lwo);
   // if(response.error == 0) {
         //   window.location.href = "/reports";
              that.setState({
@@ -268,7 +268,7 @@ this.state = {
             <Image src="/assets/igloo-Mars.jpg" responsive />    
             </div>
    */}
-   <RIphoto img_url= {this.state.lwo} /> 
+   <RIphoto2 img_url= {this.state.lwo} /> 
    </Col>
  <Col sm={5} >
 <FormGroup className="input-row"><ControlLabel> 	Photo 2 	</ControlLabel><FormControl type="text" name="uwo"    placeholder={this.state.uwo	} onChange={this.handleChangeValue} />  </FormGroup> 
