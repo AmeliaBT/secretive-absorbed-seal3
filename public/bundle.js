@@ -59258,18 +59258,13 @@ React.createElement(FormGroup, { className: "input-row"}, React.createElement(C
  React.createElement(Row, null, " ", React.createElement(Col, {  sm: 11}, "  ", React.createElement("div", {className: "profile-line"})), "  "), 
  React.createElement(Row, null, 
 React.createElement(Col, {sm: 6}, 
-React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "  Photo 1 "), React.createElement(FormControl, { type: "text", name: "lwo", placeholder: this.state.lwo	}), "   "), "  ", 
+React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "  Photo 1 "), React.createElement(FormControl, { type: "text", name: "lwo", placeholder: this.state.lwo	}), "   "), "  "
  
   
   /* <RIphoto2 img_url= {this.state.lwo} /> 
      <Image src="https://static.pexels.com/photos/296886/pexels-photo-296886.jpeg"  alt="ri1 pic"/> 
   <Image src="/assets/igloo-Mars.jpg" responsive />    */
-  
-  React.createElement("div", {style: {width: 400, height: 'auto'}}, 
-       
-         React.createElement(RIphoto2, {img_url: myLink })
-            )
-
+ 
  
    ), 
  React.createElement(Col, {sm: 5}, 
@@ -59281,6 +59276,14 @@ React.createElement(FormGroup, { className: "input-row"}, React.createElement(C
       
   )
     ), 
+        
+     
+  React.createElement("div", {style: {width: 400, height: 'auto'}}, 
+       
+         React.createElement(RIphoto2, {img_url: myLink })
+            ), 
+    
+        
   React.createElement("br", null)
     
     /* 

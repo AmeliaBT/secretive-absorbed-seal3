@@ -271,12 +271,7 @@ this.state = {
   {/* <RIphoto2 img_url= {this.state.lwo} /> 
      <Image src="https://static.pexels.com/photos/296886/pexels-photo-296886.jpeg"  alt="ri1 pic"/> 
   <Image src="/assets/igloo-Mars.jpg" responsive />    */}
-  
-  <div style={{width: 400, height: 'auto'}}>
-       
-         <RIphoto2 img_url= {myLink } />  
-            </div>
-
+ 
  
    </Col>
  <Col sm={5} >
@@ -288,6 +283,14 @@ this.state = {
       
   </Grid>  
     </Form>  
+        
+     
+  <div style={{width: 400, height: 'auto'}}>
+       
+         <RIphoto2 img_url= {myLink } />  
+            </div>
+    
+        
   <br/>
     
     {/* 
