@@ -2,18 +2,12 @@ const React = require('react');
 const Link = require('react-router-dom').Link
 class RIphoto2 extends React.Component {
   constructor(props) {
-   super(props);
-  alert("hi from photo2 this.props.img_url: ");
-    alert(this.props.img_url) ;
-     this.state = {
-      img_url: this.props.img_url}
+   super(props); 
   }
-  render() {
-    
+  render() {    
     return(<div> 
-       <p> see this ri2 photo: </p> <br/>
-        <p>url1:  {this.state.img_url}  </p> <br/>
-      <p>url2:  {this.props.img_url}  </p> <br/>
+     <br/>    
+        <img src={this.props.img_url} alt="ri photo 1"/> 
       </div>)
   }
 }

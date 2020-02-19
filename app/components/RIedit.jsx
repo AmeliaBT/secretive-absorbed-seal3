@@ -4,7 +4,7 @@ const ReactDOM = require('react-dom');
 const Link = require('react-router-dom').Link
 const Header = require('./Header');
 const RIphoto2 = require('./RIphoto2');
-const myLink ="test link";
+let myLink ="test link";
 // react-bootstrap
 const {image, Grid, Row, Col, FormControl, ControlLabel, FormGroup, HelpBlock, Tabs, Tab, Form, Button} = require('react-bootstrap');
 class RIedit extends React.Component {

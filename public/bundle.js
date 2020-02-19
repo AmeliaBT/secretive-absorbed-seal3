@@ -58997,7 +58997,7 @@ const ReactDOM = __webpack_require__(11);
 const Link = __webpack_require__(12).Link
 const Header = __webpack_require__(23);
 const RIphoto2 = __webpack_require__(385);
-const myLink ="test link";
+let myLink ="test link";
 // react-bootstrap
 const {image, Grid, Row, Col, FormControl, ControlLabel, FormGroup, HelpBlock, Tabs, Tab, Form, Button} = __webpack_require__(14);
 class RIedit extends React.Component {
@@ -59324,18 +59324,12 @@ const React = __webpack_require__(0);
 const Link = __webpack_require__(12).Link
 class RIphoto2 extends React.Component {
   constructor(props) {
-   super(props);
-  alert("hi from photo2 this.props.img_url: ");
-    alert(this.props.img_url) ;
-     this.state = {
-      img_url: this.props.img_url}
+   super(props); 
   }
-  render() {
-    
+  render() {    
     return(React.createElement("div", null, 
-       React.createElement("p", null, " see this ri2 photo: "), " ", React.createElement("br", null), 
-        React.createElement("p", null, "url1:  ", this.state.img_url, "  "), " ", React.createElement("br", null), 
-      React.createElement("p", null, "url2:  ", this.props.img_url, "  "), " ", React.createElement("br", null)
+     React.createElement("br", null), 
+        React.createElement("img", {src: this.props.img_url, alt: "ri photo 1"})
       ))
   }
 }
