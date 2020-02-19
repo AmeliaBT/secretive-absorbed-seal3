@@ -59131,10 +59131,7 @@ this.state = {
           alert( 'error: ' + (this.status ? this.statusText : 'request has not been set') );
           return;
         }
-        let response = JSON.parse(this.responseText);  
-       // alert("hi3  id= ");
-        // alert(response._id )
-        //alert(response.record )
+        let response = JSON.parse(this.responseText);         
   // if(response.error == 0) {
         //   window.location.href = "/reports";
              that.setState({
@@ -59165,17 +59162,11 @@ this.state = {
            }); 
      
         }
- // }
+// get photo
+    
 // event.preventDefault();
      }
-  componentDidMount() {
-    alert("hi myLink ");
-    let myLink= this.state.lwo;
-    alert(myLink);
-    alert("this.state.lwo ");
-     alert(myLink);
-    //this.setState({photo:myLink });
-  }
+  
   render() {
   
     
