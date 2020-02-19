@@ -179,6 +179,8 @@ this.state = {
     alert("hi myLink ");
     let myLink= this.state.lwo;
     alert(myLink);
+    alert("this.state.lwo ");
+     alert(myLink);
     //this.setState({photo:myLink });
   }
   render() {
@@ -265,11 +267,13 @@ this.state = {
  <Row> 
 <Col sm={6} >
 <FormGroup className="input-row"><ControlLabel> 	Photo 1	</ControlLabel><FormControl type="text"  name="lwo"      placeholder={this.state.lwo	}   />   </FormGroup>  
-<div style={{width: 400, height: 'auto'}}>
+{/* 
+  
+  <div style={{width: 400, height: 'auto'}}>
          
-            <Image src={this.state.photo } responsive />    
+            <Image src="/assets/igloo-Mars.jpg" responsive />    
             </div>
-   
+   */}
    
    </Col>
  <Col sm={5} >

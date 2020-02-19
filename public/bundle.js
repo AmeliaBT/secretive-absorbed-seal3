@@ -59172,6 +59172,8 @@ this.state = {
     alert("hi myLink ");
     let myLink= this.state.lwo;
     alert(myLink);
+    alert("this.state.lwo ");
+     alert(myLink);
     //this.setState({photo:myLink });
   }
   render() {
@@ -59257,12 +59259,14 @@ React.createElement(FormGroup, { className: "input-row"}, React.createElement(C
  React.createElement(Row, null, " ", React.createElement(Col, {  sm: 11}, "  ", React.createElement("div", {className: "profile-line"})), "  "), 
  React.createElement(Row, null, 
 React.createElement(Col, {sm: 6}, 
-React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "  Photo 1 "), React.createElement(FormControl, { type: "text", name: "lwo", placeholder: this.state.lwo	}), "   "), "  ", 
-React.createElement("div", {style: {width: 400, height: 'auto'}}, 
+React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "  Photo 1 "), React.createElement(FormControl, { type: "text", name: "lwo", placeholder: this.state.lwo	}), "   "), "  "
+/* 
+  
+  <div style={{width: 400, height: 'auto'}}>
          
-            React.createElement(Image, {src: this.state.photo, responsive: true})
-            )
-   
+            <Image src="/assets/igloo-Mars.jpg" responsive />    
+            </div>
+   */
    
    ), 
  React.createElement(Col, {sm: 5}, 
