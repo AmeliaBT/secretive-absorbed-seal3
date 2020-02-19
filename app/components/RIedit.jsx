@@ -140,7 +140,7 @@ this.state = {
           return;
         }
         let response = JSON.parse(this.responseText);
-        return <RIphoto img_url= {response.lwo} /> 
+        
         alert(response.lwo);
   // if(response.error == 0) {
         //   window.location.href = "/reports";
@@ -268,7 +268,7 @@ this.state = {
             <Image src="/assets/igloo-Mars.jpg" responsive />    
             </div>
    */}
-   
+   <RIphoto img_url= {this.state.lwo} /> 
    </Col>
  <Col sm={5} >
 <FormGroup className="input-row"><ControlLabel> 	Photo 2 	</ControlLabel><FormControl type="text" name="uwo"    placeholder={this.state.uwo	} onChange={this.handleChangeValue} />  </FormGroup> 

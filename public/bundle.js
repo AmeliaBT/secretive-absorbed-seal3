@@ -59133,7 +59133,7 @@ this.state = {
           return;
         }
         let response = JSON.parse(this.responseText);
-        return React.createElement(RIphoto, {img_url: response.lwo}) 
+        
         alert(response.lwo);
   // if(response.error == 0) {
         //   window.location.href = "/reports";
@@ -59253,7 +59253,7 @@ React.createElement(FormGroup, { className: "input-row"}, React.createElement(C
  React.createElement(Row, null, " ", React.createElement(Col, {  sm: 11}, "  ", React.createElement("div", {className: "profile-line"})), "  "), 
  React.createElement(Row, null, 
 React.createElement(Col, {sm: 6}, 
-React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "  Photo 1 "), React.createElement(FormControl, { type: "text", name: "lwo", placeholder: this.state.lwo	}), "   "), "  "
+React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "  Photo 1 "), React.createElement(FormControl, { type: "text", name: "lwo", placeholder: this.state.lwo	}), "   "), "  ", 
 /* 
   
   <div style={{width: 400, height: 'auto'}}>
@@ -59261,7 +59261,7 @@ React.createElement(FormGroup, { className: "input-row"}, React.createElement(C
             <Image src="/assets/igloo-Mars.jpg" responsive />    
             </div>
    */
-   
+   React.createElement(RIphoto, {img_url: this.state.lwo})
    ), 
  React.createElement(Col, {sm: 5}, 
 React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "  Photo 2  "), React.createElement(FormControl, { type: "text",  name: "uwo",    placeholder: this.state.uwo, 	 onChange: this.handleChangeValue} ), "  "), " "
@@ -59308,10 +59308,13 @@ const Link = __webpack_require__(12).Link
 class RIphoto extends React.Component {
   constructor(props) {
    super(props);
-  alert("hi from photo");
+  alert("hi from photo this.props.img_url: ");
+    alert(this.props.img_url) 
+     this.state = {
+      img_url: this.props.img_url}
   }
   render() {
-    return(React.createElement("div", null, " a photo "))
+    return(React.createElement("div", null, " src= "))
   }
 }
 module.exports = RIphoto;
