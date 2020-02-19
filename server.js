@@ -529,9 +529,9 @@ lwo: request.body["lwo"], //photo string
 mwo: request.body["mwo"], 
 nwo: request.body["nwo"], 
 owo: request.body["owo"], 
-pwo: request.body["pwo"], 
+//pwo: request.body["pwo"], 
 qwo: request.body["qwo"], 
-rwo: request.body["rwo"], 
+//rwo: request.body["rwo"], 
 swo: request.body["swo"], 
 two: request.body["two"], 
 record: request.body["record"],
@@ -543,12 +543,8 @@ uwo: request.body["uwo"] //photo file
      
      doc.save(function (err) {
               
-         
-                if (!err){ doc.save(); 
-              response.json({"error": 0}); }else{
-                response.json({"error": 55})
-                console.log('not Success! on saving edited RIfile');
-                                                }             
+         if (err) throw err;
+           response.json({error: 0})               
             });
      
      
