@@ -12,7 +12,7 @@ class RIphoto2 extends React.Component {
     
     return(<div> 
        <p> see this ri photo: </p> <br/>
-        
+        <p>  </p> <br/>
       
       </div>)
   }
