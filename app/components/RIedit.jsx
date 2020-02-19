@@ -261,7 +261,9 @@ this.state = {
  <Row> 
 <Col sm={6} >
 <FormGroup className="input-row"><ControlLabel> 	Photo 1	</ControlLabel><FormControl type="text"  name="lwo"      placeholder={this.state.lwo	}   />   </FormGroup>  
-{/* 
+ <RIphoto2 img_url= {this.state.lwo} /> 
+  
+  {/* 
   
   <div style={{width: 400, height: 'auto'}}>
          

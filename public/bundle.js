@@ -58996,7 +58996,7 @@ const React = __webpack_require__(0);
 const ReactDOM = __webpack_require__(11);
 const Link = __webpack_require__(12).Link
 const Header = __webpack_require__(23);
-const RIphoto = __webpack_require__(385);
+const RIphoto2 = __webpack_require__(385);
 // react-bootstrap
 const {image, Grid, Row, Col, FormControl, ControlLabel, FormGroup, HelpBlock, Tabs, Tab, Form, Button} = __webpack_require__(14);
 class RIedit extends React.Component {
@@ -59134,7 +59134,7 @@ this.state = {
         }
         let response = JSON.parse(this.responseText);
         
-        alert(response.lwo);
+      //  alert(response.lwo);
   // if(response.error == 0) {
         //   window.location.href = "/reports";
              that.setState({
@@ -59254,18 +59254,22 @@ React.createElement(FormGroup, { className: "input-row"}, React.createElement(C
  React.createElement(Row, null, 
 React.createElement(Col, {sm: 6}, 
 React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "  Photo 1 "), React.createElement(FormControl, { type: "text", name: "lwo", placeholder: this.state.lwo	}), "   "), "  ", 
-/* 
+ React.createElement(RIphoto2, {img_url: this.state.lwo})
+  
+  /* 
   
   <div style={{width: 400, height: 'auto'}}>
          
             <Image src="/assets/igloo-Mars.jpg" responsive />    
             </div>
    */
-   React.createElement(RIphoto, {img_url: this.state.lwo})
+ 
    ), 
  React.createElement(Col, {sm: 5}, 
 React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "  Photo 2  "), React.createElement(FormControl, { type: "text",  name: "uwo",    placeholder: this.state.uwo, 	 onChange: this.handleChangeValue} ), "  "), " "
- )
+  
+   
+   )
 )
       
   )
@@ -59274,7 +59278,7 @@ React.createElement(FormGroup, { className: "input-row"}, React.createElement(C
     
     /* 
         
- 
+ <RIphoto2 img_url= {this.state.lwo} /> <RIphoto2 img_url= {this.state.lwo} /> 
    
         */
         
@@ -59305,19 +59309,35 @@ module.exports = RIedit;
 
 const React = __webpack_require__(0);
 const Link = __webpack_require__(12).Link
-class RIphoto extends React.Component {
+class RIphoto2 extends React.Component {
   constructor(props) {
    super(props);
-  alert("hi from photo this.props.img_url: ");
-    alert(this.props.img_url) 
+  alert("hi from photo2 this.props.img_url: ");
+    alert(this.props.img_url) ;
      this.state = {
       img_url: this.props.img_url}
   }
   render() {
-    return(React.createElement("div", null, " src= "))
+    
+    return(React.createElement("div", null, 
+       React.createElement("p", null, " see this ri2 photo: "), " ", React.createElement("br", null), 
+        React.createElement("p", null, "ffff  "), " ", React.createElement("br", null)
+     
+      ))
   }
 }
-module.exports = RIphoto;
+module.exports = RIphoto2;
+
+/* 
+<ResponsiveEmbed a16by9>
+                    <embed type="image/href+xml" href = "https://static.pexels.com/photos/296886/pexels-photo-296886.jpeg"/>
+                </ResponsiveEmbed>
+        <br/>
+        <img src="https://static.pexels.com/photos/296886/pexels-photo-296886.jpeg"  alt="ri1 pic"/> 
+
+
+
+*/
 
 /***/ }),
 /* 386 */
