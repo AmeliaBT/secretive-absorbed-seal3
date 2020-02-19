@@ -513,19 +513,14 @@ app.post("/set-report", function(request, response) {
    reportModel.findOne({"_id":request.body["_id"]}, (err, doc) => {
   if (err) throw err;
     
-    
-    
   doc.set({   
-
-daterec: request.body["daterec"], 
- 
+daterec: request.body["daterec"],  
 Gwo: request.body["Gwo"], 
 cwo: request.body["cwo"], 
 dwo: request.body["dwo"], 
 ewo: request.body["ewo"], 
 fwo: request.body["fwo"], 
 hwo: request.body["hwo"], 
-
 iwo: request.body["iwo"], 
 jwo: request.body["jwo"], 
 kwo: request.body["kwo"],
@@ -544,7 +539,18 @@ uwo: request.body["uwo"] //photo file
      
    doc.save();
  //    (function (err, updatedDoc) {  if (err) throw err;
-  // response.json({error: 0})
+     if (err) throw err;
+   response.json({error: 0})
+     
+    /* 
+      report.save(function (err) {
+              //if (err) throw err;
+              if (!err) console.log('Success!');
+              response.json({"error": 0});              
+            });
+    */ 
+     
+     
  // });
      
      
