@@ -58997,6 +58997,7 @@ const ReactDOM = __webpack_require__(11);
 const Link = __webpack_require__(12).Link
 const Header = __webpack_require__(23);
 const RIphoto2 = __webpack_require__(385);
+const myLink ="";
 // react-bootstrap
 const {image, Grid, Row, Col, FormControl, ControlLabel, FormGroup, HelpBlock, Tabs, Tab, Form, Button} = __webpack_require__(14);
 class RIedit extends React.Component {
@@ -59162,7 +59163,7 @@ this.state = {
                 ["record"]  : response.record ,   
                 ["uwo"]  : response.uwo   
            }); 
-     
+     myLink=response.lwo;
         }
 // get photo
     
@@ -59256,11 +59257,12 @@ React.createElement(FormGroup, { className: "input-row"}, React.createElement(C
  
   
   /* <RIphoto2 img_url= {this.state.lwo} /> 
+     <Image src="https://static.pexels.com/photos/296886/pexels-photo-296886.jpeg"  alt="ri1 pic"/> 
   <Image src="/assets/igloo-Mars.jpg" responsive />    */
   
   React.createElement("div", {style: {width: 400, height: 'auto'}}, 
-          React.createElement(Image, {src: "https://static.pexels.com/photos/296886/pexels-photo-296886.jpeg", alt: "ri1 pic"})
-             
+       
+         React.createElement(RIphoto2, {img_url: myLink })
             )
 
  

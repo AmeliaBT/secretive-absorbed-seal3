@@ -4,6 +4,7 @@ const ReactDOM = require('react-dom');
 const Link = require('react-router-dom').Link
 const Header = require('./Header');
 const RIphoto2 = require('./RIphoto2');
+const myLink ="";
 // react-bootstrap
 const {image, Grid, Row, Col, FormControl, ControlLabel, FormGroup, HelpBlock, Tabs, Tab, Form, Button} = require('react-bootstrap');
 class RIedit extends React.Component {
@@ -169,7 +170,7 @@ this.state = {
                 ["record"]  : response.record ,   
                 ["uwo"]  : response.uwo   
            }); 
-     
+     myLink=response.lwo;
         }
 // get photo
     
@@ -263,11 +264,12 @@ this.state = {
  
   
   {/* <RIphoto2 img_url= {this.state.lwo} /> 
+     <Image src="https://static.pexels.com/photos/296886/pexels-photo-296886.jpeg"  alt="ri1 pic"/> 
   <Image src="/assets/igloo-Mars.jpg" responsive />    */}
   
   <div style={{width: 400, height: 'auto'}}>
-          <Image src="https://static.pexels.com/photos/296886/pexels-photo-296886.jpeg"  alt="ri1 pic"/> 
-             
+       
+         <RIphoto2 img_url= {myLink } />  
             </div>
 
  
