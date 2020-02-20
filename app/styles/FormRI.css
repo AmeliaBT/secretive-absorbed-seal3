@@ -1,11 +1,4 @@
-.FormRI { 
-  margin: auto;
-  margin-top: 50px; 
-  width: 83%;
-  margin: auto 0;
-  border: 1px solid #9d9d8e;
-  background: antiquewhite; 
-}
+
 .search-icon {
   position: absolute;
   right: 5px;
@@ -60,6 +53,17 @@ padding: 0%;
 }
 
 /*
+
+
+.FormRI { 
+  margin: auto;
+  margin-top: 50px; 
+  width: 83%;
+  margin: auto 0;
+  border: 1px solid #9d9d8e;
+  background: antiquewhite; 
+}
+
 background-color: azure;
 width: 600px;
 .input-label {

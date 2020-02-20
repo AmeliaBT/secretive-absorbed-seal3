@@ -1,7 +1,8 @@
 const React = require('react');
 const Link = require('react-router-dom').Link
 // style for RIlist
-const style = require('../styles/RIlist');
+
+const style = require('../styles/HomePage');
 // react-bootstrap
 const {Table , Row, Col} = require('react-bootstrap');
 // other components and etc
@@ -83,13 +84,13 @@ class RIlist extends React.Component {
     return (
       <div>
         <Header/>       
-        <Table>
+         <Table className="myForm">
             <Row>
       
              <Col sm={1}> <b>Rep # </b>  </Col> 
                 <Col sm={1} > <b>PN </b></Col> 
                 <Col sm={1} ><b>Des </b></Col> 
-               <Col  sm={3} > <b>Date Inspected </b></Col> 
+               <Col  sm={1} > <b>Date Inspected </b></Col> 
               <Col  sm={1} ><b>Pass / Fail  </b></Col> 
                <Col sm={1} > <b>Lot Size </b></Col> 
               <Col sm={1} ><b>Edit  </b></Col> 
