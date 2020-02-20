@@ -60089,8 +60089,13 @@ let optionsN = mySelN.map((el) => {
           return React.createElement("option", {value: el.selname, key: el.selname}, el.selname);
         });
 //const renderOptions = (options) => {return options.map((i) => {return <option key={i.name} name={i.name} value={i.value}>{i.value}</option>;  }); };
-
-/* the books page that shows all books */
+ let optionsDate = {
+        weekday: "short",
+        year: "numeric",
+        month: "2-digit",
+        day: "numeric"
+    };
+/* the rep page that shows all reps */
 class FormRI extends React.Component {
   constructor(props) {
     super(props);
@@ -60099,13 +60104,13 @@ class FormRI extends React.Component {
       inspector: "",  // Inspector:
       daterec: "",  //Date Received
       Gwo: "",  // Description:      
-      cwo: new Date().toLocaleString(),  // Date Received:  .format("DD/MM/YYYY")    
+      cwo: new Date().toLocaleDateString("en", optionsDate),  // Date Received:  .format("DD/MM/YYYY")    toLocaleDateString() toLocaleString() toLocaleDateString("en", options)
       dwo: "",  // WO / PO / MTT: mySel, //      
       ewo: "",  // Supplier:
       fwo: "",  // P/N:
       hwo: "",  // Documentation Revision:     
       iwo: "",  // Received SW:
-      jwo: new Date().toLocaleString(),  // Date Inspected:
+      jwo: new Date().toLocaleDateString("en", optionsDate),  // Date Inspected:
       kwo: "",  // NO:
       lwo: "", 
       mwo: "",  // Source:
