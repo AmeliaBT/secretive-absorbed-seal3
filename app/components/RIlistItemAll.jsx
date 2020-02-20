@@ -11,7 +11,8 @@ class RIlistItemAll extends React.Component {
     super(props);  
      let  fwo=this.props.fwo; //P/N: 
     let  Gwo=this.props.Gwo; //Description
-     let jwo=this.props.jwo;
+     let jwo=this.props.jwo.substring(13); //.slice(0,-14);
+    
  // let   jwo2=  jwo.format("DD/MM/YYYY")  ;
    // alert(jwo2);
     //Date Inspected: .format("DD/MM/YYYY")
@@ -26,7 +27,7 @@ class RIlistItemAll extends React.Component {
        reportID: this.props.reportnumber,
       fwo: this.props.fwo,
       Gwo: this.props.Gwo,
-       jwo: this.props.jwo, //Date Inspected:
+       jwo: this.props.jwo.slice(0,-14), //Date Inspected:
       two: this.props.two, //Pass / Fail:
        owo: this.props.owo,
       record: this.props.record,
