@@ -58891,7 +58891,10 @@ class RIlistItemAll extends React.Component {
     super(props);  
      let  fwo=this.props.fwo; //P/N: 
     let  Gwo=this.props.Gwo; //Description
-     let jwo=this.props.jwo;//Date Inspected: .format("DD/MM/YYYY")
+     let jwo=this.props.jwo;
+ // let   jwo2=  jwo.format("DD/MM/YYYY")  ;
+   // alert(jwo2);
+    //Date Inspected: .format("DD/MM/YYYY")
     let two=this.props.two; //Pass / Fail
     let owo=this.props.owo; //Lot Size
     let  record=this.props.record; 
@@ -60104,13 +60107,13 @@ class FormRI extends React.Component {
       inspector: "",  // Inspector:
       daterec: "",  //Date Received
       Gwo: "",  // Description:      
-      cwo: new Date().toLocaleDateString("en", optionsDate),  // Date Received:  .format("DD/MM/YYYY")    toLocaleDateString() toLocaleString() toLocaleDateString("en", options)
+      cwo: new Date().toLocaleDateString("en-US"),  // Date Received:  .format("DD/MM/YYYY")    toLocaleDateString() toLocaleString() toLocaleDateString("en", options)toLocaleDateString("en-US")
       dwo: "",  // WO / PO / MTT: mySel, //      
       ewo: "",  // Supplier:
       fwo: "",  // P/N:
       hwo: "",  // Documentation Revision:     
       iwo: "",  // Received SW:
-      jwo: new Date().toLocaleDateString("en", optionsDate),  // Date Inspected:
+      jwo: new Date().toLocaleDateString("en-US"),  // Date Inspected:
       kwo: "",  // NO:
       lwo: "", 
       mwo: "",  // Source:

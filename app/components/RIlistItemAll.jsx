@@ -11,7 +11,10 @@ class RIlistItemAll extends React.Component {
     super(props);  
      let  fwo=this.props.fwo; //P/N: 
     let  Gwo=this.props.Gwo; //Description
-     let jwo=this.props.jwo;//Date Inspected: .format("DD/MM/YYYY")
+     let jwo=this.props.jwo;
+ // let   jwo2=  jwo.format("DD/MM/YYYY")  ;
+   // alert(jwo2);
+    //Date Inspected: .format("DD/MM/YYYY")
     let two=this.props.two; //Pass / Fail
     let owo=this.props.owo; //Lot Size
     let  record=this.props.record; 
