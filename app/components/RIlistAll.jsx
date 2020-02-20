@@ -2,7 +2,7 @@ const React = require('react');
 const Link = require('react-router-dom').Link
 // style for list
 
-const style = require('../styles/RIlist');
+const style = require('../styles/FormRI');
 // react-bootstrap
 const {Table , Row, Col, Modal} = require('react-bootstrap');
 // other components and etc
@@ -94,8 +94,8 @@ class RIlistAll extends React.Component {
     return (
       <div>
         <Header/>   
-        <Table>
-           <Grid>  
+        <Table className="FormRI">
+          
             <Row>
              <Col sm={1}> <b>RI </b>  </Col> 
                 <Col sm={1} ><b> Inspector</b> </Col> 
@@ -110,7 +110,6 @@ class RIlistAll extends React.Component {
        
         
         {this.state.reports}
-          </Grid>  
        </Table>  
          <Modal show={this.state.show} onHide={this.handleClose}>         
         </Modal>

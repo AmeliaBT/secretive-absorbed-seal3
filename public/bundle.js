@@ -12177,38 +12177,7 @@ ToggleButton.propTypes = propTypes;
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(379);
-if(typeof content === 'string') content = [[module.i, content, '']];
-// Prepare cssTransformation
-var transform;
-
-var options = {"hmr":true}
-options.transform = transform
-// add the styles to the DOM
-var update = __webpack_require__(22)(content, options);
-if(content.locals) module.exports = content.locals;
-// Hot Module Replacement
-if(false) {
-	// When the styles change, update the <style> tags
-	if(!content.locals) {
-		module.hot.accept("!!../../../rbd/pnpm-volume/a76b2c00-ecc4-4ded-92d7-bf2069646570/node_modules/.registry.npmjs.org/css-loader/0.28.11/node_modules/css-loader/index.js!./RIlist.css", function() {
-			var newContent = require("!!../../../rbd/pnpm-volume/a76b2c00-ecc4-4ded-92d7-bf2069646570/node_modules/.registry.npmjs.org/css-loader/0.28.11/node_modules/css-loader/index.js!./RIlist.css");
-			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-			update(newContent);
-		});
-	}
-	// When the module is disposed, remove the <style> tags
-	module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 153 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(381);
+var content = __webpack_require__(382);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -12224,6 +12193,37 @@ if(false) {
 	if(!content.locals) {
 		module.hot.accept("!!../../../rbd/pnpm-volume/a76b2c00-ecc4-4ded-92d7-bf2069646570/node_modules/.registry.npmjs.org/css-loader/0.28.11/node_modules/css-loader/index.js!./RIlistItem.css", function() {
 			var newContent = require("!!../../../rbd/pnpm-volume/a76b2c00-ecc4-4ded-92d7-bf2069646570/node_modules/.registry.npmjs.org/css-loader/0.28.11/node_modules/css-loader/index.js!./RIlistItem.css");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 153 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(384);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// Prepare cssTransformation
+var transform;
+
+var options = {"hmr":true}
+options.transform = transform
+// add the styles to the DOM
+var update = __webpack_require__(22)(content, options);
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../../rbd/pnpm-volume/a76b2c00-ecc4-4ded-92d7-bf2069646570/node_modules/.registry.npmjs.org/css-loader/0.28.11/node_modules/css-loader/index.js!./FormRI.css", function() {
+			var newContent = require("!!../../../rbd/pnpm-volume/a76b2c00-ecc4-4ded-92d7-bf2069646570/node_modules/.registry.npmjs.org/css-loader/0.28.11/node_modules/css-loader/index.js!./FormRI.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -12255,12 +12255,12 @@ let store = createStore(reducers);
 const Main = __webpack_require__(220);
 const RIreports = __webpack_require__(372);
 const RIlist = __webpack_require__(378);
-const RIlistAll = __webpack_require__(382); //change
-const RIedit = __webpack_require__(384);
-const RIview = __webpack_require__(386);
-const SignUp = __webpack_require__(387);
-const LogIn = __webpack_require__(390);
-const HomePage = __webpack_require__(393);
+const RIlistAll = __webpack_require__(383); //change
+const RIedit = __webpack_require__(386);
+const RIview = __webpack_require__(388);
+const SignUp = __webpack_require__(389);
+const LogIn = __webpack_require__(392);
+const HomePage = __webpack_require__(395);
 //const DisplayMessages= require('./components/DisplayMessages');
 //const DisplayMessagesB= require('./components/DisplayMessagesB');
 //const ManyRecords =require('./components/ManyRecords');
@@ -58520,13 +58520,13 @@ exports.push([module.i, ".book-all {\n  background: #FAFAFA; /*antiquewhite;*/\n
 const React = __webpack_require__(0);
 const Link = __webpack_require__(12).Link
 // style for RIlist
-const style = __webpack_require__(152);
+const style = __webpack_require__(379);
 // react-bootstrap
 const {Table , Row, Col} = __webpack_require__(14);
 // other components and etc
 const Header = __webpack_require__(23);
 
-const RIlistItem = __webpack_require__(380);
+const RIlistItem = __webpack_require__(381);
 
 /* the page that shows all RI reports */
 class RIlist extends React.Component {
@@ -58632,6 +58632,37 @@ module.exports = RIlist;
 /* 379 */
 /***/ (function(module, exports, __webpack_require__) {
 
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(380);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// Prepare cssTransformation
+var transform;
+
+var options = {"hmr":true}
+options.transform = transform
+// add the styles to the DOM
+var update = __webpack_require__(22)(content, options);
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../../rbd/pnpm-volume/a76b2c00-ecc4-4ded-92d7-bf2069646570/node_modules/.registry.npmjs.org/css-loader/0.28.11/node_modules/css-loader/index.js!./RIlist.css", function() {
+			var newContent = require("!!../../../rbd/pnpm-volume/a76b2c00-ecc4-4ded-92d7-bf2069646570/node_modules/.registry.npmjs.org/css-loader/0.28.11/node_modules/css-loader/index.js!./RIlist.css");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 380 */
+/***/ (function(module, exports, __webpack_require__) {
+
 exports = module.exports = __webpack_require__(21)(false);
 // imports
 
@@ -58643,7 +58674,7 @@ exports.push([module.i, "\n.btn-modal {\n  width: 49.5% !important;\n  float: ri
 
 
 /***/ }),
-/* 380 */
+/* 381 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const React = __webpack_require__(0);
@@ -58651,7 +58682,7 @@ const Link = __webpack_require__(12).Link
 // react-bootstrap
 const {Col, Grid, Row, Button, Glyphicon , OverlayTrigger, Popover} = __webpack_require__(14);
 
-const style = __webpack_require__(153);
+const style = __webpack_require__(152);
 
 
 /* component for displaying one line of list  */
@@ -58734,7 +58765,7 @@ module.exports = RIlistItem ;
 
 
 /***/ }),
-/* 381 */
+/* 382 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(21)(false);
@@ -58748,20 +58779,20 @@ exports.push([module.i, "\n\n.myTable{  border: 1px solid #F8F8F8; /*#000000' */
 
 
 /***/ }),
-/* 382 */
+/* 383 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const React = __webpack_require__(0);
 const Link = __webpack_require__(12).Link
 // style for list
 
-const style = __webpack_require__(152);
+const style = __webpack_require__(153);
 // react-bootstrap
 const {Table , Row, Col, Modal} = __webpack_require__(14);
 // other components and etc
 const Header = __webpack_require__(23);
 //const ExportData = require('./ExportData');
-const RIlistItemAll = __webpack_require__(383);
+const RIlistItemAll = __webpack_require__(385);
 
 /* the  page that shows all reports */
 class RIlistAll extends React.Component {
@@ -58847,8 +58878,8 @@ class RIlistAll extends React.Component {
     return (
       React.createElement("div", null, 
         React.createElement(Header, null), 
-        React.createElement(Table, null, 
-           React.createElement(Grid, null, 
+        React.createElement(Table, {className: "FormRI"}, 
+          
             React.createElement(Row, null, 
              React.createElement(Col, {sm: 1}, " ", React.createElement("b", null, "RI "), "  "), 
                 React.createElement(Col, {sm: 1}, React.createElement("b", null, " Inspector"), " "), 
@@ -58863,7 +58894,6 @@ class RIlistAll extends React.Component {
        
         
         this.state.reports
-          )
        ), 
          React.createElement(Modal, {show: this.state.show, onHide: this.handleClose}
         )
@@ -58877,7 +58907,21 @@ class RIlistAll extends React.Component {
 module.exports = RIlistAll;
 
 /***/ }),
-/* 383 */
+/* 384 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(21)(false);
+// imports
+
+
+// module
+exports.push([module.i, ".FormRI { \n  margin: auto;\n  margin-top: 50px; \n  width: 83%;\n  margin: auto 0;\n  border: 1px solid #9d9d8e;\n  background: antiquewhite; \n}\n.search-icon {\n  position: absolute;\n  right: 5px;\n  top: 5px;\n  z-index: 9999; /*this will keep the icon appearing all time, even when on input::focus*/\n}\n/* \n.Form {\n  width: 600px;\n background: antiquewhite; \n padding: 50px;\n border: 1px solid #9d9d8e;\n*/\n\n.profile-line {\n  background-color: #44708f;\n  width: 100%;\n  height: 5px;\n  margin: auto;\n  margin-bottom: 2px;\n  margin-top: 2px;\n    padding: 0%;\n}\n.input-rowC{\n padding: 5px;\n  width: 100%; \n  height: 120px;\npadding: 0%;}\n\n \n.input-row {\n  width: 100%; \n  margin-top: 0;\n  margin-bottom: 0;\n  height: 40px;\n\npadding: 0%;\n}\n.input-row3 {\n  height: 40px;\n  margin-top: 0;\n  margin-bottom: 0;\n  padding: 0%;\n}\n.input-row2 {\n  width: 100%; \n  margin-top: 0;\n  margin-bottom: 0;\n  height: 40px;\n  background-color: white; \npadding: 0%;\n}\n\n/*\nbackground-color: azure;\nwidth: 600px;\n.input-label {\nwidth: 90%;\nmargin-top: 0;\nmargin-bottom: 0;\ncolor: rgb(157, 157, 157);\nbackground-color: red;\n}\n\n.profile-label {\n  text-align: center;\n  font-size: 10px;\n  color: black;\n  margin-top: 0px;\n  background-color: green;\n}\n.profile-label {\n  text-align: center;\n  font-size: 30px;\n  color: black; \n  margin: 3%;\n  margin-top: 30px;\n}\n\n.profile-label {\n  text-align: center;\n  font-size: 30px;\n  color: black; \n  margin: 3%;\n  margin-top: 30px;\n}\n\n.input-label {\nwidth: 90%;\nmargin: auto;\ncolor: rgb(157, 157, 157);\n}\n*/", ""]);
+
+// exports
+
+
+/***/ }),
+/* 385 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const React = __webpack_require__(0);
@@ -58885,7 +58929,7 @@ const Link = __webpack_require__(12).Link
 // react-bootstrap
 const {Col, Grid, Row, Button, Glyphicon , OverlayTrigger} = __webpack_require__(14);
 // style 
-const style = __webpack_require__(153);
+const style = __webpack_require__(152);
 /* component for displaying one line of list  */
 class RIlistItemAll extends React.Component {
  
@@ -58991,7 +59035,7 @@ module.exports = RIlistItemAll ;
 */
 
 /***/ }),
-/* 384 */
+/* 386 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -58999,7 +59043,7 @@ const React = __webpack_require__(0);
 const ReactDOM = __webpack_require__(11);
 const Link = __webpack_require__(12).Link
 const Header = __webpack_require__(23);
-const RIphoto2 = __webpack_require__(385);
+const RIphoto2 = __webpack_require__(387);
 let myLink, myLink2;;
 // react-bootstrap
 const {Image, Grid, Row, Col, FormControl, ControlLabel, FormGroup, HelpBlock, Tabs, Tab, Form, Button} = __webpack_require__(14);
@@ -59318,7 +59362,7 @@ module.exports = RIedit;
 */
 
 /***/ }),
-/* 385 */
+/* 387 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const React = __webpack_require__(0);
@@ -59351,7 +59395,7 @@ module.exports = RIphoto2;
 */
 
 /***/ }),
-/* 386 */
+/* 388 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -59547,13 +59591,13 @@ module.exports = RIview;
 
 
 /***/ }),
-/* 387 */
+/* 389 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const React = __webpack_require__(0);
 const Link = __webpack_require__(12).Link
 // style for BOOKS
-const style = __webpack_require__(388);
+const style = __webpack_require__(390);
 // other components and etc
 const Header = __webpack_require__(23);
 // react-bootstrap
@@ -59676,13 +59720,13 @@ class SignUp extends React.Component {
 module.exports = SignUp;
 
 /***/ }),
-/* 388 */
+/* 390 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(389);
+var content = __webpack_require__(391);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -59707,7 +59751,7 @@ if(false) {
 }
 
 /***/ }),
-/* 389 */
+/* 391 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(21)(false);
@@ -59721,13 +59765,13 @@ exports.push([module.i, ".FormSU {\n  width: 600px;\n  margin: auto;\n  margin-t
 
 
 /***/ }),
-/* 390 */
+/* 392 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const React = __webpack_require__(0);
 const Link = __webpack_require__(12).Link
 // style for BOOKS
-const style = __webpack_require__(391);
+const style = __webpack_require__(393);
 // other components and etc
 const Header = __webpack_require__(23);
 // react-bootstrap
@@ -59827,13 +59871,13 @@ class LogIn extends React.Component {
 module.exports = LogIn;
 
 /***/ }),
-/* 391 */
+/* 393 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(392);
+var content = __webpack_require__(394);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -59858,7 +59902,7 @@ if(false) {
 }
 
 /***/ }),
-/* 392 */
+/* 394 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(21)(false);
@@ -59872,15 +59916,15 @@ exports.push([module.i, ".Form {\n  width: 600px;\n  margin: auto;\n  margin-top
 
 
 /***/ }),
-/* 393 */
+/* 395 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const React = __webpack_require__(0);
 
-const style = __webpack_require__(394);
+const style = __webpack_require__(396);
 // other components and etc
 const Header = __webpack_require__(23);
-const FormRI =__webpack_require__(396);
+const FormRI =__webpack_require__(398);
 // react-bootstrap
 const {Grid, Row, Col, FormControl} = __webpack_require__(14);
 
@@ -59965,13 +60009,13 @@ module.exports = HomePage;
 
 
 /***/ }),
-/* 394 */
+/* 396 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(395);
+var content = __webpack_require__(397);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -59996,7 +60040,7 @@ if(false) {
 }
 
 /***/ }),
-/* 395 */
+/* 397 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(21)(false);
@@ -60010,13 +60054,13 @@ exports.push([module.i, "/*used:\nclassName=\"profile\"\nclassName=\"show-grid\"
 
 
 /***/ }),
-/* 396 */
+/* 398 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const React = __webpack_require__(0);
 const Link = __webpack_require__(12).Link
 // style for BOOKS
-const style = __webpack_require__(397);
+const style = __webpack_require__(153);
 // other components and etc
 const Header = __webpack_require__(23);
 //const CreatableSelect= require('react-select');
@@ -60408,51 +60452,6 @@ href = "https://drive.google.com/file/d/19Ol1VZu646JIQE20-iSmI5Wma0I1_a_2/view?u
     
     <FormControl type="file"  name="uwo"  ref="imageInput" accept="image/png, image/jpeg" value={this.state.uwo }  onChange={ this.uploadFile }   />   </FormGroup>  
 */
-
-/***/ }),
-/* 397 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(398);
-if(typeof content === 'string') content = [[module.i, content, '']];
-// Prepare cssTransformation
-var transform;
-
-var options = {"hmr":true}
-options.transform = transform
-// add the styles to the DOM
-var update = __webpack_require__(22)(content, options);
-if(content.locals) module.exports = content.locals;
-// Hot Module Replacement
-if(false) {
-	// When the styles change, update the <style> tags
-	if(!content.locals) {
-		module.hot.accept("!!../../../rbd/pnpm-volume/a76b2c00-ecc4-4ded-92d7-bf2069646570/node_modules/.registry.npmjs.org/css-loader/0.28.11/node_modules/css-loader/index.js!./FormRI.css", function() {
-			var newContent = require("!!../../../rbd/pnpm-volume/a76b2c00-ecc4-4ded-92d7-bf2069646570/node_modules/.registry.npmjs.org/css-loader/0.28.11/node_modules/css-loader/index.js!./FormRI.css");
-			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-			update(newContent);
-		});
-	}
-	// When the module is disposed, remove the <style> tags
-	module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 398 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(21)(false);
-// imports
-
-
-// module
-exports.push([module.i, ".FormRI { \n  margin: auto;\n  margin-top: 50px; \n  width: 83%;\n  margin: auto 0;\n  border: 1px solid #9d9d8e;\n  background: antiquewhite; \n}\n.search-icon {\n  position: absolute;\n  right: 5px;\n  top: 5px;\n  z-index: 9999; /*this will keep the icon appearing all time, even when on input::focus*/\n}\n/* \n.Form {\n  width: 600px;\n background: antiquewhite; \n padding: 50px;\n border: 1px solid #9d9d8e;\n*/\n\n.profile-line {\n  background-color: #44708f;\n  width: 100%;\n  height: 5px;\n  margin: auto;\n  margin-bottom: 2px;\n  margin-top: 2px;\n    padding: 0%;\n}\n.input-rowC{\n padding: 5px;\n  width: 100%; \n  height: 120px;\npadding: 0%;}\n\n \n.input-row {\n  width: 100%; \n  margin-top: 0;\n  margin-bottom: 0;\n  height: 40px;\n\npadding: 0%;\n}\n.input-row3 {\n  height: 40px;\n  margin-top: 0;\n  margin-bottom: 0;\n  padding: 0%;\n}\n.input-row2 {\n  width: 100%; \n  margin-top: 0;\n  margin-bottom: 0;\n  height: 40px;\n  background-color: white; \npadding: 0%;\n}\n\n/*\nbackground-color: azure;\nwidth: 600px;\n.input-label {\nwidth: 90%;\nmargin-top: 0;\nmargin-bottom: 0;\ncolor: rgb(157, 157, 157);\nbackground-color: red;\n}\n\n.profile-label {\n  text-align: center;\n  font-size: 10px;\n  color: black;\n  margin-top: 0px;\n  background-color: green;\n}\n.profile-label {\n  text-align: center;\n  font-size: 30px;\n  color: black; \n  margin: 3%;\n  margin-top: 30px;\n}\n\n.profile-label {\n  text-align: center;\n  font-size: 30px;\n  color: black; \n  margin: 3%;\n  margin-top: 30px;\n}\n\n.input-label {\nwidth: 90%;\nmargin: auto;\ncolor: rgb(157, 157, 157);\n}\n*/", ""]);
-
-// exports
-
 
 /***/ })
 /******/ ]);
