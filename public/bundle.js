@@ -59080,7 +59080,7 @@ this.state = {
 '&uwo='   + encodeURIComponent(this.state.uwo)+ 
 '&record='   + encodeURIComponent(this.state.record) 
 ;
-                        alert(body);
+                       
       xhr.send(body);
 
       xhr.onreadystatechange = function() {
@@ -59244,7 +59244,7 @@ React.createElement(FormGroup, { className: "input-row"}, React.createElement(C
 " ")), 
 
  React.createElement(Col, {sm: 2}, "    ", React.createElement("div", {className: "well"}, 
-React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "   Qty Defective: "), React.createElement(FormControl, { type: "number",  name: "qwo",   value: this.state.qwo, 	 placeholder: this.state.qwo, 	 onChange: this.handleChangeValuePF} ), "  "), " ", 
+React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "   Qty Defective: "), React.createElement(FormControl, { type: "number",  name: "qwo",   value: this.state.qwo, 	 placeholder: this.state.qwo, 	 onChange: this.handleChangeValue} ), "  "), " ", 
     React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "   Qty Rejected: "), React.createElement(FormControl, { type: "number",  name: "rwo",   value: this.state.rwo, 	 placeholder: this.state.rwo, 	 onChange: this.handleChangeValue} ), "  "), " "
  )), 
      React.createElement(Col, {sm: 2}, "    ", React.createElement("div", {className: "well"}, 

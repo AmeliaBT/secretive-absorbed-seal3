@@ -87,7 +87,7 @@ this.state = {
 '&uwo='   + encodeURIComponent(this.state.uwo)+ 
 '&record='   + encodeURIComponent(this.state.record) 
 ;
-                        alert(body);
+                       
       xhr.send(body);
 
       xhr.onreadystatechange = function() {
@@ -251,7 +251,7 @@ this.state = {
  </div></Col>
 
  <Col sm={2} >	   <div className="well">
-<FormGroup className="input-row"><ControlLabel> 	 Qty Defective:	</ControlLabel><FormControl type="number" name="qwo"   value={this.state.qwo	} placeholder={this.state.qwo	} onChange={this.handleChangeValuePF} />  </FormGroup> 
+<FormGroup className="input-row"><ControlLabel> 	 Qty Defective:	</ControlLabel><FormControl type="number" name="qwo"   value={this.state.qwo	} placeholder={this.state.qwo	} onChange={this.handleChangeValue} />  </FormGroup> 
     <FormGroup className="input-row"><ControlLabel> 	 Qty Rejected:	</ControlLabel><FormControl type="number" name="rwo"   value={this.state.rwo	} placeholder={this.state.rwo	} onChange={this.handleChangeValue} />  </FormGroup> 
  </div></Col>
      <Col sm={2} >	   <div className="well">
