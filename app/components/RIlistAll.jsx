@@ -74,7 +74,8 @@ class RIlistAll extends React.Component {
            jwo={el.jwo}
            two={el.two}
            owo={el.owo}
-          record={el.record}
+           record={el.record}
+           lwo ={el.lwo}       
             /> 
         });
         
@@ -99,10 +100,11 @@ class RIlistAll extends React.Component {
                 <Col sm={1} ><b> Inspector</b> </Col> 
                 <Col sm={1} ><b> PN </b></Col> 
                 <Col sm={1} ><b>Description  </b></Col> 
-               <Col  sm={3} ><b> Date Inspected</b> </Col> 
+               <Col  sm={1} ><b> Date Inspected</b> </Col> 
               <Col  sm={1} ><b>Pass / Fail </b> </Col> 
                <Col sm={1} > <b>Lot Size </b> </Col> 
               <Col sm={2} > <b>Comment</b> </Col> 
+              <Col sm={2} > <b>Photo 1</b> </Col> 
            </Row>
        
         

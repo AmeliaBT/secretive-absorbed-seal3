@@ -58826,7 +58826,9 @@ class RIlistAll extends React.Component {
            Gwo: el.Gwo, 
            jwo: el.jwo, 
            two: el.two, 
-           owo: el.owo}
+           owo: el.owo, 
+           record: el.record, 
+           lwo: el.lwo}
             ) 
         });
         
@@ -58851,10 +58853,11 @@ class RIlistAll extends React.Component {
                 React.createElement(Col, {sm: 1}, React.createElement("b", null, " Inspector"), " "), 
                 React.createElement(Col, {sm: 1}, React.createElement("b", null, " PN ")), 
                 React.createElement(Col, {sm: 1}, React.createElement("b", null, "Description  ")), 
-               React.createElement(Col, { sm: 3}, React.createElement("b", null, " Date Inspected"), " "), 
+               React.createElement(Col, { sm: 1}, React.createElement("b", null, " Date Inspected"), " "), 
               React.createElement(Col, { sm: 1}, React.createElement("b", null, "Pass / Fail "), " "), 
                React.createElement(Col, {sm: 1}, " ", React.createElement("b", null, "Lot Size "), " "), 
-              React.createElement(Col, {sm: 2}, " ", React.createElement("b", null, "Comment"), " ")
+              React.createElement(Col, {sm: 2}, " ", React.createElement("b", null, "Comment"), " "), 
+              React.createElement(Col, {sm: 2}, " ", React.createElement("b", null, "Photo 1"), " ")
            ), 
        
         
@@ -58891,7 +58894,9 @@ class RIlistItemAll extends React.Component {
      let jwo=this.props.jwo;//Date Inspected:
     let two=this.props.two; //Pass / Fail
     let owo=this.props.owo; //Lot Size
-    
+    let  record=this.props.record; 
+    let lwo=this.props.lwo; 
+   
     this.state = {
       //img_url: this.props.img_url,
       inspector: this.props.inspector,
@@ -58900,7 +58905,10 @@ class RIlistItemAll extends React.Component {
       Gwo: this.props.Gwo,
        jwo: this.props.jwo, //Date Inspected:
       two: this.props.two, //Pass / Fail:
-       owo: this.props.owo
+       owo: this.props.owo,
+      record: this.props.record,
+      lwo: this.props.lwo
+      
       /*,
       tooltip:
     <Popover id="popover" title="some info">
@@ -58915,8 +58923,8 @@ class RIlistItemAll extends React.Component {
 
    componentWillMount() {
     //get   supplier and pn of user by nickname
-    let that = this;
-      const xhr = new XMLHttpRequest();
+    //let that = this;
+    //  const xhr = new XMLHttpRequest();
      
   }
   /***********************/
@@ -58931,12 +58939,11 @@ class RIlistItemAll extends React.Component {
        React.createElement(Col, { sm: 1}, " ", this.state.inspector), 
        React.createElement(Col, { sm: 1}, " ", this.state.fwo), 
        React.createElement(Col, {  sm: 1}, " ", this.state.Gwo), 
-        React.createElement(Col, {  sm: 3}, " ", this.state.jwo), 
+        React.createElement(Col, {  sm: 1}, " ", this.state.jwo), 
         React.createElement(Col, {  sm: 1}, " ", this.state.two), 
         React.createElement(Col, {  sm: 1}, " ", this.state.owo), 
-            React.createElement(Col, {  sm: 2}, 
-          React.createElement(Link, {to: 'report-view/' + this.state.reportID}, 
-            React.createElement(Button, {bsSize: "xsmall"}, "View ", React.createElement(Glyphicon, {glyph: "eye-open"}), " ")), " ")
+        React.createElement(Col, {  sm: 2}, " ", this.state.record), 
+        React.createElement(Col, {  sm: 2}, " ", React.createElement(Link, {to: 'report-view/' + this.state.reportID}, "  ", React.createElement(Button, {bsSize: "xsmall"}, "View ", React.createElement(Glyphicon, {glyph: "eye-open"}), " ")), " ")
         
               
         )

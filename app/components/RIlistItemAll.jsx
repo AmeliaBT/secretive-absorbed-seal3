@@ -14,7 +14,9 @@ class RIlistItemAll extends React.Component {
      let jwo=this.props.jwo;//Date Inspected:
     let two=this.props.two; //Pass / Fail
     let owo=this.props.owo; //Lot Size
-    
+    let  record=this.props.record; 
+    let lwo=this.props.lwo; 
+   
     this.state = {
       //img_url: this.props.img_url,
       inspector: this.props.inspector,
@@ -23,7 +25,10 @@ class RIlistItemAll extends React.Component {
       Gwo: this.props.Gwo,
        jwo: this.props.jwo, //Date Inspected:
       two: this.props.two, //Pass / Fail:
-       owo: this.props.owo
+       owo: this.props.owo,
+      record: this.props.record,
+      lwo: this.props.lwo
+      
       /*,
       tooltip:
     <Popover id="popover" title="some info">
@@ -38,8 +43,8 @@ class RIlistItemAll extends React.Component {
 
    componentWillMount() {
     //get   supplier and pn of user by nickname
-    let that = this;
-      const xhr = new XMLHttpRequest();
+    //let that = this;
+    //  const xhr = new XMLHttpRequest();
      
   }
   /***********************/
@@ -54,12 +59,11 @@ class RIlistItemAll extends React.Component {
        <Col sm={1} > {this.state.inspector}</Col>
        <Col sm={1} > {this.state.fwo}</Col>
        <Col  sm={1} > {this.state.Gwo}</Col>
-        <Col  sm={3} > {this.state.jwo}</Col>
+        <Col  sm={1} > {this.state.jwo}</Col>
         <Col  sm={1} > {this.state.two}</Col>
         <Col  sm={1} > {this.state.owo}</Col>
-            <Col  sm={2} >
-          <Link to={'report-view/' + this.state.reportID  }>          
-            <Button bsSize="xsmall" >View <Glyphicon glyph="eye-open"/> </Button></Link> </Col>
+        <Col  sm={2} > {this.state.record}</Col>
+        <Col  sm={2} > <Link to={'report-view/' + this.state.reportID  }>  <Button bsSize="xsmall" >View <Glyphicon glyph="eye-open"/> </Button></Link> </Col>
         
               
         </Row>
