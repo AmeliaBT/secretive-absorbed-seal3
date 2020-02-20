@@ -95,6 +95,7 @@ class RIlistAll extends React.Component {
       <div>
         <Header/>   
         <Table>
+           <Grid>  
             <Row>
              <Col sm={1}> <b>RI </b>  </Col> 
                 <Col sm={1} ><b> Inspector</b> </Col> 
@@ -109,6 +110,7 @@ class RIlistAll extends React.Component {
        
         
         {this.state.reports}
+          </Grid>  
        </Table>  
          <Modal show={this.state.show} onHide={this.handleClose}>         
         </Modal>

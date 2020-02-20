@@ -58848,6 +58848,7 @@ class RIlistAll extends React.Component {
       React.createElement("div", null, 
         React.createElement(Header, null), 
         React.createElement(Table, null, 
+           React.createElement(Grid, null, 
             React.createElement(Row, null, 
              React.createElement(Col, {sm: 1}, " ", React.createElement("b", null, "RI "), "  "), 
                 React.createElement(Col, {sm: 1}, React.createElement("b", null, " Inspector"), " "), 
@@ -58862,6 +58863,7 @@ class RIlistAll extends React.Component {
        
         
         this.state.reports
+          )
        ), 
          React.createElement(Modal, {show: this.state.show, onHide: this.handleClose}
         )
@@ -58889,17 +58891,7 @@ class RIlistItemAll extends React.Component {
  
   constructor(props) {
     super(props);  
-     let  fwo=this.props.fwo; //P/N: 
-    let  Gwo=this.props.Gwo; //Description
-     let jwo=this.props.jwo.substring(13); //.slice(0,-14);
-    
- // let   jwo2=  jwo.format("DD/MM/YYYY")  ;
-   // alert(jwo2);
-    //Date Inspected: .format("DD/MM/YYYY")
-    let two=this.props.two; //Pass / Fail
-    let owo=this.props.owo; //Lot Size
-    let  record=this.props.record; 
-    let lwo=this.props.lwo; 
+     
    
     this.state = {
       //img_url: this.props.img_url,
@@ -58946,8 +58938,8 @@ class RIlistItemAll extends React.Component {
         React.createElement(Col, {  sm: 1}, " ", this.state.jwo), 
         React.createElement(Col, {  sm: 1}, " ", this.state.two), 
         React.createElement(Col, {  sm: 1}, " ", this.state.owo), 
-        React.createElement(Col, {  sm: 2}, " ", this.state.record), 
-        React.createElement(Col, {  sm: 2}, " ", React.createElement(Link, {to: 'report-view/' + this.state.reportID}, "  ", React.createElement(Button, {bsSize: "xsmall"}, "View ", React.createElement(Glyphicon, {glyph: "eye-open"}), " ")), " ")
+        React.createElement(Col, {  sm: 3}, " ", this.state.record), 
+        React.createElement(Col, {  sm: 1}, " ", React.createElement(Link, {to: 'report-view/' + this.state.reportID}, "  ", React.createElement(Button, {bsSize: "xsmall"}, "View ", React.createElement(Glyphicon, {glyph: "eye-open"}), " ")), " ")
         
               
         )
