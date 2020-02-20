@@ -58891,7 +58891,7 @@ class RIlistItemAll extends React.Component {
     super(props);  
      let  fwo=this.props.fwo; //P/N: 
     let  Gwo=this.props.Gwo; //Description
-     let jwo=this.props.jwo;//Date Inspected:
+     let jwo=this.props.jwo;//Date Inspected: .format("DD/MM/YYYY")
     let two=this.props.two; //Pass / Fail
     let owo=this.props.owo; //Lot Size
     let  record=this.props.record; 
@@ -60099,7 +60099,7 @@ class FormRI extends React.Component {
       inspector: "",  // Inspector:
       daterec: "",  //Date Received
       Gwo: "",  // Description:      
-      cwo: new Date().toLocaleString(),  // Date Received:      
+      cwo: new Date().toLocaleString(),  // Date Received:  .format("DD/MM/YYYY")    
       dwo: "",  // WO / PO / MTT: mySel, //      
       ewo: "",  // Supplier:
       fwo: "",  // P/N:

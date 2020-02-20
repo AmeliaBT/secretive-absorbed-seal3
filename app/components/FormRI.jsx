@@ -80,7 +80,7 @@ class FormRI extends React.Component {
       inspector: "",  // Inspector:
       daterec: "",  //Date Received
       Gwo: "",  // Description:      
-      cwo: new Date().toLocaleString(),  // Date Received:      
+      cwo: new Date().toLocaleString(),  // Date Received:  .format("DD/MM/YYYY")    
       dwo: "",  // WO / PO / MTT: mySel, //      
       ewo: "",  // Supplier:
       fwo: "",  // P/N:
