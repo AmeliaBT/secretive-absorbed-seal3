@@ -59267,11 +59267,6 @@ React.createElement(FormGroup, { className: "input-row"}, React.createElement(C
          React.createElement(RIphoto2, {img_url: myLink })
             )
   
-  /* <RIphoto2 img_url= {this.state.lwo} /> 
-     <Image src="https://static.pexels.com/photos/296886/pexels-photo-296886.jpeg"  alt="ri1 pic"/> 
-  <Image src="/assets/igloo-Mars.jpg" responsive />    */
- 
- 
    ), 
  React.createElement(Col, {sm: 5}, 
 React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "  Photo 2  "), React.createElement(FormControl, { type: "text",  name: "uwo",  value: this.state.uwo, 	  placeholder: this.state.uwo, 	 onChange: this.handleChangeValue} ), "  "), " ", 
@@ -60341,7 +60336,7 @@ React.createElement(FormGroup, { className: "input-row"}, React.createElement(C
  React.createElement(Row, null, " ", React.createElement(Col, {  sm: 11}, "  ", React.createElement("div", {className: "profile-line"})), "  "), 
  React.createElement(Row, null, 
 React.createElement(Col, {sm: 6}, 
-React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "  Photo 1 (I:\\QC-Reports\\RI_Photos\\)  "), React.createElement(FormControl, { type: "file", name: "lwo", placeholder: this.state.lwo, 	 onChange: this.handleChangeValueImg}), "   "), "  ", 
+React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "Photo 1 (I:\\QC-Reports\\RI_Photos\\)  "), React.createElement(FormControl, { type: "file", name: "lwo", placeholder: this.state.lwo, 	 onChange: this.handleChangeValueImg}), "   "), "  ", 
  React.createElement("div", {style: {width: 400, height: 'auto'}}, 
          
             React.createElement(Image, {src: this.state.lwo, responsive: true})

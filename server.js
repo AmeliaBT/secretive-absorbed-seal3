@@ -149,7 +149,8 @@ rwo:Number,
 swo: String,
 //title: String,
 two: String,
-uwo:  {data: Buffer, contentType: String },
+  uwo:  String,
+//uwo:  {data: Buffer, contentType: String },
   record:String
 });
 // get the model

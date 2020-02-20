@@ -274,11 +274,6 @@ this.state = {
          <RIphoto2 img_url= {myLink } />  
             </div>
   
-  {/* <RIphoto2 img_url= {this.state.lwo} /> 
-     <Image src="https://static.pexels.com/photos/296886/pexels-photo-296886.jpeg"  alt="ri1 pic"/> 
-  <Image src="/assets/igloo-Mars.jpg" responsive />    */}
- 
- 
    </Col>
  <Col sm={5} >
 <FormGroup className="input-row"><ControlLabel> 	Photo 2 	</ControlLabel><FormControl type="text" name="uwo"  value={this.state.uwo	}  placeholder={this.state.uwo	} onChange={this.handleChangeValue} />  </FormGroup> 
