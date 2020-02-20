@@ -69,11 +69,12 @@ class RIlistAll extends React.Component {
           return <RIlistItemAll  key={el.reportID}
            reportnumber={el.reportID}  
            inspector={el.inspector}
-             fwo={el.fwo}      
+             fwo={el.fwo}     
            Gwo={el.Gwo}
            jwo={el.jwo}
            two={el.two}
            owo={el.owo}
+          record={el.record}
             /> 
         });
         
@@ -101,7 +102,7 @@ class RIlistAll extends React.Component {
                <Col  sm={3} ><b> Date Inspected</b> </Col> 
               <Col  sm={1} ><b>Pass / Fail </b> </Col> 
                <Col sm={1} > <b>Lot Size </b> </Col> 
-              
+              <Col sm={2} > <b>Comment</b> </Col> 
            </Row>
        
         
