@@ -143,12 +143,12 @@ mwo: String,
 nwo: String,
 owo:Number,
 pwo:Number,
-qwo:Number,
+qwo:Number, //qty fail
 record: String,
 rwo:Number,
 swo: String,
 //title: String,
-two: String,
+two: String, //pass-fail
 //  uwo:  String,
 uwo:  {data: Buffer, contentType: String },
   record:String

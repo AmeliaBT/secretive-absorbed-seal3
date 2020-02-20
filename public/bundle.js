@@ -60159,12 +60159,14 @@ componentWillMount() {
       this.setState({ [name]: value  });
   };
  handleChangeValuePF(event) {
+   //qwo
      const target = event.target;
       const value = target.value;
-      const name = target.name;  
+      const name = target.name;
+  
     if(value > 0 ) {    
-      this.setState({ two: "Fail", [name]: value })}else{
-        this.setState({two: "Pass", [name]: value })}   
+      this.setState({ two: "Fail", qwo: value })}else{
+        this.setState({two: "Pass", qwo: value })}   
   };
   handleChangeValueImg(event) {
      const target = event.target;
