@@ -17,17 +17,19 @@ class RIlistItem extends React.Component {
      let jwo=this.props.jwo;//Date Inspected:
     let two=this.props.two; //Pass / Fail
     let owo=this.props.owo; //Lot Size
-      
-  
+       let record=this.props.record;
+   let lwo=this.props.lwo;
         this.state = {
           //img_url: this.props.img_url,
           inspector: this.props.inspector,
            reportID: this.props.reportnumber,
           fwo: this.props.fwo,
-          Gwo: this.props.Gwo,
-           jwo: this.props.jwo, //Date Inspected:
+          Gwo: this.props.Gwo,           
+           jwo: this.props.jwo.slice(0,-14),//Date Inspected:
           two: this.props.two, //Pass / Fail:
            owo: this.props.owo,
+              record: this.props.record,
+      lwo: this.props.lwo
                     }
     //this.handleOnClick = this.handleOnClick.bind(this);
         }
@@ -62,10 +64,10 @@ class RIlistItem extends React.Component {
    
      <Col sm={1} > {this.state.fwo}</Col>
        <Col  sm={1} > {this.state.Gwo}</Col>
-        <Col  sm={3} > {this.state.jwo}</Col>
+        <Col  sm={1} > {this.state.jwo}</Col>
         <Col  sm={1} > {this.state.two}</Col>
         <Col  sm={1} > {this.state.owo}</Col>
-          
+          <Col  sm={3} > {this.state.record}</Col>
         <Col  sm={1} >
           <Link to={'report-edit/' + this.state.reportID  }>
             

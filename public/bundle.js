@@ -58584,7 +58584,9 @@ class RIlist extends React.Component {
            Gwo: el.Gwo, 
            jwo: el.jwo, 
            two: el.two, 
-           owo: el.owo}
+           owo: el.owo, 
+                    record: el.record, 
+                    lwo: el.lwo}
             ) 
         });
         
@@ -58612,6 +58614,8 @@ class RIlist extends React.Component {
                React.createElement(Col, { sm: 1}, " ", React.createElement("b", null, "Date Inspected ")), 
               React.createElement(Col, { sm: 1}, React.createElement("b", null, "Pass / Fail  ")), 
                React.createElement(Col, {sm: 1}, " ", React.createElement("b", null, "Lot Size ")), 
+              React.createElement(Col, {sm: 2}, " ", React.createElement("b", null, "Comment"), " "), 
+              React.createElement(Col, {sm: 2}, " ", React.createElement("b", null, "Photo 1"), " "), 
               React.createElement(Col, {sm: 1}, React.createElement("b", null, "Edit  "))
               
            
@@ -58666,17 +58670,19 @@ class RIlistItem extends React.Component {
      let jwo=this.props.jwo;//Date Inspected:
     let two=this.props.two; //Pass / Fail
     let owo=this.props.owo; //Lot Size
-      
-  
+       let record=this.props.record;
+   let lwo=this.props.lwo;
         this.state = {
           //img_url: this.props.img_url,
           inspector: this.props.inspector,
            reportID: this.props.reportnumber,
           fwo: this.props.fwo,
-          Gwo: this.props.Gwo,
-           jwo: this.props.jwo, //Date Inspected:
+          Gwo: this.props.Gwo,           
+           jwo: this.props.jwo.slice(0,-14),//Date Inspected:
           two: this.props.two, //Pass / Fail:
            owo: this.props.owo,
+              record: this.props.record,
+      lwo: this.props.lwo
                     }
     //this.handleOnClick = this.handleOnClick.bind(this);
         }
@@ -58711,10 +58717,10 @@ class RIlistItem extends React.Component {
    
      React.createElement(Col, { sm: 1}, " ", this.state.fwo), 
        React.createElement(Col, {  sm: 1}, " ", this.state.Gwo), 
-        React.createElement(Col, {  sm: 3}, " ", this.state.jwo), 
+        React.createElement(Col, {  sm: 1}, " ", this.state.jwo), 
         React.createElement(Col, {  sm: 1}, " ", this.state.two), 
         React.createElement(Col, {  sm: 1}, " ", this.state.owo), 
-          
+          React.createElement(Col, {  sm: 3}, " ", this.state.record), 
         React.createElement(Col, {  sm: 1}, 
           React.createElement(Link, {to: 'report-edit/' + this.state.reportID}, 
             
