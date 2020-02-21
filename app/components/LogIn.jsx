@@ -1,7 +1,7 @@
 const React = require('react');
 const Link = require('react-router-dom').Link
 // style for BOOKS
-const style = require('../styles/LogIn');
+const style = require('../styles/SignUp');
 // other components and etc
 const Header = require('./Header');
 // react-bootstrap
@@ -68,9 +68,9 @@ class LogIn extends React.Component {
     return (
       <div>
             <Header/>
-            <Form className="Form" horizontal method="post" action="/login" name="login" onSubmit={this.handleSubmit}>   
+            <Form className="FormSU" horizontal method="post" action="/login" name="login" onSubmit={this.handleSubmit}>   
               <FormGroup controlId="formHorizontalEmail">
-                <Col className="form-label" sm={2}>
+                <Col className="form-labelSU" sm={2}>
                   Email
                 </Col>
                 <Col sm={10}>
@@ -79,7 +79,7 @@ class LogIn extends React.Component {
               </FormGroup>
 
               <FormGroup controlId="formHorizontalPassword">
-                <Col className="form-label" sm={2}>
+                <Col className="form-labelSU" sm={2}>
                   Password
                 </Col>
                 <Col sm={10}>
@@ -89,7 +89,8 @@ class LogIn extends React.Component {
 
               <FormGroup>
                 <Col smOffset={2} sm={10}>
-                  <Button type="submit">Log in</Button>
+                 
+                  <Button className="btn btn-primary btn-block" type="submit"><i className="fa fa-paper-plane"></i> Sign up</Button>
                 </Col>
               </FormGroup>
           </Form>
