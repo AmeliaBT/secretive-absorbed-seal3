@@ -5,7 +5,7 @@ const style = require('../styles/Main');
 // other components and etc
 //const RINav = require('./RINav');
 const Header = require('./Header');
-
+const ManyRecords = require('./ManyRecords');
 // react-bootstrap
 const {Jumbotron} = require('react-bootstrap');
 
@@ -39,6 +39,7 @@ class Main extends React.Component {
         </p>
         
       </Jumbotron>
+        < ManyRecords/>
       </div>
     );
   }

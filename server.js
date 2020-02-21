@@ -604,10 +604,10 @@ uwo: request.body["uwo"] //photo file
 
 app.post("/up-many-records", function(request, response) {  
    reportModel.create(request, (err, doc) => {
- // console.log("request: ");   
-  //  console.log(request);    
+  console.log("request: ");   
+   console.log(request);    
      
-            response.json(doc);
+            response.json();
 
           }
         
@@ -692,6 +692,7 @@ app.post("/refuse-proposal", function(request, response) {
     });
 });
 /***********************************/
+/*
 app.post("/accept-proposal", function(request, response) { 
   reportModel.findById(request.session.passport.user, (err, user) => {
       if (err) response.json({error: 1});
@@ -767,6 +768,8 @@ app.post("/accept-proposal", function(request, response) {
         }); 
     });
 });
+
+*/
 /***********************************/
 app.post("/refuse-proposal-income", function(request, response) { 
   reportModel.findById(request.session.passport.user, (err, user) => {
