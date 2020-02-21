@@ -1554,13 +1554,9 @@ class Header extends React.Component {
         if(response.isLogedIn == true) {
            that.setState({
           ["navBtns"]: React.createElement(Nav, {pullLeft: true, className: "link span"}, 
-                        React.createElement(NavItem, {className: "span"}, 
-                       /*   <Link  to='/homepage' className="link">Welcome Inspector, {response.nickname}{response.name} {response.inspector} </Link>*/
-                           React.createElement(Link, {to: "/homepage", className: "link"}, response.inspname, "'s RI Form")
-                        ), 
-                        React.createElement(NavItem, {className: "span"}, 
-                          React.createElement("div", {onClick: that.handleLogOut, className: "link"}, "Log out")
-                        )
+                       React.createElement(NavItem, {className: "span"}, " ", React.createElement(Link, {to: "/homepage", className: "link"}, response.inspname, "'s RI Form"), " "), 
+                      React.createElement(NavItem, {className: "span"}, " ", React.createElement(Link, {to: "/homepage2", className: "link"}, response.inspname, "'s RI Form"), " "), 
+                       React.createElement(NavItem, {className: "span"}, " ", React.createElement("div", {onClick: that.handleLogOut, className: "link"}, "Log out"), " ")
                       ),
             ["reportsLink"]: "/reports",
              ["listLink"]: "/list",
@@ -1615,9 +1611,13 @@ class Header extends React.Component {
 };
 
 module.exports = Header;
+                    
 
+
+{/*   <Link  to='/homepage' className="link">Welcome Inspector, {response.nickname}{response.name} {response.inspector} </Link>*/}  
 
 /* 
+
  <Link  to='/signup' className="link"><h5>^Sign^ [uP]</h5></Link>
                         </NavItem> 
                         <NavItem componentClass='span'>

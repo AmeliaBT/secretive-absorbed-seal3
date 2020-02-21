@@ -58,13 +58,9 @@ class Header extends React.Component {
         if(response.isLogedIn == true) {
            that.setState({
           ["navBtns"]: <Nav pullLeft className="link span">
-                        <NavItem className='span'>
-                       {/*   <Link  to='/homepage' className="link">Welcome Inspector, {response.nickname}{response.name} {response.inspector} </Link>*/}  
-                           <Link  to='/homepage' className="link">{response.inspname}'s RI Form</Link>
-                        </NavItem> 
-                        <NavItem className='span'>
-                          <div  onClick={that.handleLogOut} className="link">Log out</div>
-                        </NavItem>
+                       <NavItem className='span'> <Link  to='/homepage' className="link">{response.inspname}'s RI Form</Link> </NavItem> 
+                      <NavItem className='span'> <Link  to='/homepage2' className="link">{response.inspname}'s  Form</Link> </NavItem> 
+                       <NavItem className='span'> <div  onClick={that.handleLogOut} className="link">Log out</div> </NavItem>
                       </Nav>,
             ["reportsLink"]: "/reports",
              ["listLink"]: "/list",
@@ -119,9 +115,13 @@ class Header extends React.Component {
 };
 
 module.exports = Header;
+                    
 
+
+{/*   <Link  to='/homepage' className="link">Welcome Inspector, {response.nickname}{response.name} {response.inspector} </Link>*/}  
 
 /* 
+
  <Link  to='/signup' className="link"><h5>^Sign^ [uP]</h5></Link>
                         </NavItem> 
                         <NavItem componentClass='span'>
