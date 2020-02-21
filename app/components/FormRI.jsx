@@ -85,13 +85,13 @@ class FormRI extends React.Component {
       inspector: "",  // Inspector:
       daterec: "",  //Date Received
       Gwo: "",  // Description:      
-      cwo: new Date().toLocaleDateString("en-US"),  // Date Received:  .format("DD/MM/YYYY")    toLocaleDateString() toLocaleString() toLocaleDateString("en", options)toLocaleDateString("en-US")
+      cwo: new Date().toLocaleString(),  // Date Received:  .format("DD/MM/YYYY")    toLocaleDateString() toLocaleString() toLocaleDateString("en", options)toLocaleDateString("en-US")
       dwo: "",  // WO / PO / MTT: mySel, //      
       ewo: "",  // Supplier:
       fwo: "",  // P/N:
       hwo: "",  // Documentation Revision:     
       iwo: "",  // Received SW:
-      jwo: new Date().toLocaleDateString("en-US"),  // Date Inspected:
+      jwo: new Date().toLocaleString(),  // Date Inspected:
       kwo: "",  // NO:
       lwo: "", 
       mwo: "",  // Source:
