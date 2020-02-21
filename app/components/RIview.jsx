@@ -4,8 +4,9 @@ const ReactDOM = require('react-dom');
 const Link = require('react-router-dom').Link
 //const style = require('../styles/Profile');
 const Header = require('./Header');
+const RIphoto2 = require('./RIphoto2');
 const {Grid, Row, Col, FormControl, ControlLabel, FormGroup, HelpBlock, Tabs, Tab, Form, Button} = require('react-bootstrap');
-
+let myLink, myLink2;
 class RIview extends React.Component {
   
   constructor(props) {   
@@ -55,7 +56,8 @@ this.state = {
         }
         let response = JSON.parse(this.responseText);               
      // if(response.isLogedIn == true) {
-
+      myLink=response.lwo;// props for photos
+      myLink2=response.uwo;
         
              that.setState({
                 ["_id"]: response._id,
@@ -162,17 +164,16 @@ this.state = {
 <Col sm={6} >
 <FormGroup className="input-row"><ControlLabel> 	Photo 1:	</ControlLabel><FormControl type="text"  name="lwo"    placeholder={this.state.lwo	} readOnly  />   </FormGroup>  
 
-  <div style={{width: 400, height: 'auto'}}>
-    {/*    <Image src={this.state.lwo } responsive />   
-      */}  
-         
-    
+  <div style={{width: 400, height: 'auto'}}>     
+         <RIphoto2 img_url= {myLink } />  
             </div>
    
    </Col>
  <Col sm={5} >
 <FormGroup className="input-row"><ControlLabel> 	Photo 2:	</ControlLabel><FormControl type="text" name="uwo"   placeholder={this.state.uwo	} readOnly />  </FormGroup> 
- 
+ <div style={{width: 400, height: 'auto'}}>       
+         <RIphoto2 img_url= {myLink2 } />  
+            </div>
    
    </Col> 
 </Row>  

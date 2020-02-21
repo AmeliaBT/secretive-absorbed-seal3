@@ -72,7 +72,7 @@ class RIlistItem extends React.Component {
           <Link to={'report-edit/' + this.state.reportID  }>
             
       
-            <Button bsSize="xsmall" >Edit <Glyphicon glyph="edit"/> </Button></Link> </Col>
+            <Button bsSize="xsmall" ><Glyphicon glyph="edit"/> </Button></Link> </Col>
        
               
         </Row>
