@@ -606,15 +606,12 @@ app.post("/up-many-records", function(request, response) {
    reportModel.create(request, (err, doc) => {
   //console.log("up-many-records request: ");   
   // console.log(request.body.record); 
-   let  arrayOfPeople=request.body.record;
-     
-     let createManyPeople = function(arrayOfPeople, done) {
-Person.create(arrayOfPeople, function (err, data) {
-if (err) {
-done(err);
-}done(null, data);
-});
-};
+   let  arrayOfReps=request.body.record;     
+let createManyReps = function(arrayOfReps, done) {
+reportModel.create(arrayOfReps, function (err, data) {
+        if (err) { done(err);
+        }done(null, data); });
+        };
 
             response.json();
 
