@@ -607,13 +607,14 @@ app.post("/up-many-records", function(request, response) {
   //console.log("up-many-records request: ");   
   // console.log(request.body.record); 
    let  arrayOfReps=request.body.record;     
-let createManyReps = function(arrayOfReps, done) {
-reportModel.create(arrayOfReps, function (err, data) {
+    let createManyReps = function(arrayOfReps, done) {
+        reportModel.create(arrayOfReps, function (err, data) {
         if (err) { done(err);
         }done(null, data); });
         };
 
-            response.json();
+ 
+     response.json();
 
           }
         
