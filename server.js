@@ -604,9 +604,8 @@ uwo: request.body["uwo"] //photo file
 
 app.post("/up-many-records", function(request, response) {  
    reportModel.create(request, (err, doc) => {
-  console.log("request: ");   
-   console.log(request);    
-     
+  console.log("up-many-records request: ");   
+   console.log(request.body); 
             response.json();
 
           }

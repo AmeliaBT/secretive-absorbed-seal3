@@ -1,6 +1,6 @@
 const React = require('react');
 const Link = require('react-router-dom').Link
-//const style = require('../styles/FormRI');
+const style = require('../styles/FormRI');
 const Header = require('./Header');
 
 const { option, Form, FormGroup, Col, FormControl, Button, Grid, Row, ControlLabel} = require('react-bootstrap');
