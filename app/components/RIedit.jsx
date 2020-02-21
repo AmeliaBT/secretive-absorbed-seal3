@@ -153,9 +153,9 @@ this.state = {
                 ["_id"]: response._id,
             ["reportID"]: response.reportID,
              ["inspector"]  : response.inspector ,
-              ["daterec"]  : response.daterec.slice(0,-14),  
+              ["daterec"]  : response.daterec ,  
                  ["Gwo"]: response.Gwo,
-                 ["cwo"]  : response.cwo ,    
+             ["cwo"]  : response.cwo.slice(0,-14) ,    
                  ["dwo"]  : response.dwo ,    
                  ["ewo"]  : response.ewo ,    
             ["fwo"]: response.fwo,
@@ -270,7 +270,7 @@ this.state = {
 <Col sm={6} >
 <FormGroup className="input-row"><ControlLabel> 	Photo 1	</ControlLabel><FormControl type="text"  name="lwo" value={this.state.lwo	}     placeholder={this.state.lwo	 }  onChange={this.handleChangeValue} />   </FormGroup>  
       
-  <div style={{width: 400, height: 'auto'}}>       
+  <div style={{width: 400, height: 'auto'}}>     
          <RIphoto2 img_url= {myLink } />  
             </div>
   
