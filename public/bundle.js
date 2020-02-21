@@ -58678,8 +58678,8 @@ class RIlist extends React.Component {
                React.createElement(Col, { sm: 1}, " ", React.createElement("b", null, "Date Inspected ")), 
               React.createElement(Col, { sm: 1}, React.createElement("b", null, "Pass / Fail  ")), 
                React.createElement(Col, {sm: 1}, " ", React.createElement("b", null, "Lot Size ")), 
-              React.createElement(Col, {sm: 2}, " ", React.createElement("b", null, "Comment"), " "), 
-              React.createElement(Col, {sm: 2}, " ", React.createElement("b", null, "Photo 1"), " "), 
+              React.createElement(Col, {sm: 3}, " ", React.createElement("b", null, "Comment"), " "), 
+              
               React.createElement(Col, {sm: 1}, React.createElement("b", null, "Edit  "))
               
            
@@ -58785,10 +58785,7 @@ class RIlistItem extends React.Component {
         React.createElement(Col, {  sm: 1}, " ", this.state.two), 
         React.createElement(Col, {  sm: 1}, " ", this.state.owo), 
           React.createElement(Col, {  sm: 3}, " ", this.state.record), 
-        React.createElement(Col, {  sm: 1}, 
-          React.createElement(Link, {to: 'report-edit/' + this.state.reportID}, 
-            
-      
+        React.createElement(Col, {  sm: 1}, "  ", React.createElement(Link, {to: 'report-edit/' + this.state.reportID}, 
             React.createElement(Button, {bsSize: "xsmall"}, React.createElement(Glyphicon, {glyph: "edit"}), " ")), " ")
        
               
@@ -58929,8 +58926,8 @@ class RIlistAll extends React.Component {
                React.createElement(Col, { sm: 1}, React.createElement("b", null, " Date Inspected"), " "), 
               React.createElement(Col, { sm: 1}, React.createElement("b", null, "Pass / Fail "), " "), 
                React.createElement(Col, {sm: 1}, " ", React.createElement("b", null, "Lot Size "), " "), 
-              React.createElement(Col, {sm: 2}, " ", React.createElement("b", null, "Comment"), " "), 
-              React.createElement(Col, {sm: 2}, " ", React.createElement("b", null, "Photo 1"), " ")
+              React.createElement(Col, {sm: 3}, " ", React.createElement("b", null, "Comment"), " "), 
+               React.createElement(Col, {sm: 1}, " ", React.createElement("b", null, "View "), " ")
            ), 
        
         
