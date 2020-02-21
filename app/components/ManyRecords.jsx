@@ -30,22 +30,24 @@ class ManyRecords extends React.Component {
   render() {
     return (
       <div >  
-        <p>  sample: 
-          [  reportID : "6028" ,  Gwo : "AT-2914SP" , dwo : "WO" , ewo : "Supplier:" , fwo : "9901" , hwo : "" , iwo : "gg" ,  kwo : "" , lwo : "" , mwo : "OOBA" , nwo : "FAS" , owo : 15 , pwo : 10 , qwo : 1 , rwo : 1 , swo : "gg" , two : "Fail" , record : "fail "   </p>
-            <p> 
-          <br/> 
-           reportID : "6029" , daterec : "" , inspector : "RI-person2" , Gwo : "AT-2914SP" , cwo : 2020-02-13T16:05:57.000+00:00 , dwo : "WO" , ewo : "Supplier:" , fwo : "9901" , hwo : "" , iwo : "gg" , jwo : 2020-02-13T16:05:57.000+00:00 , kwo : "" , lwo : "" , mwo : "OOBA" , nwo : "FAS" , owo : 15 , pwo : 10 , qwo : 1 , rwo : 1 , swo : "gg" , two : "Fail" , record : "fail "     ] 
-        </p>
-        <code>{` {[name:'Eva', age: 5, favoriteFoods: ["apple", "milk"]}, 
-                   {name:'Eva2', age: 6, favoriteFoods: ["apple2", "milk2"]},
-                  {name:'Eva3', age: 7, favoriteFoods: ["apple3", "milk3"]}] ;  `}</code>
         
+            
+         <p>  sample1:  </p>
+<code>{`
+[
+{name:'Eva', age: 5, favoriteFoods: ["apple", "milk"]}, 
+{name:'Eva2', age: 6, favoriteFoods: ["apple2", "milk2"]},
+{name:'Eva3', age: 7, favoriteFoods: ["apple3", "milk3"]}
+] 
+`}</code>
         
+    <p>  sample2:  </p>    
    <code>{`  
+[
 {reportID : "8028" , daterec : "" , inspector : "RI-person2" , Gwo : "AT-2914SP" , cwo : 2020-02-13T16:05:57.000+00:00 , dwo : "WO" , ewo : "Supplier:" , fwo : "9901" , hwo : "" , iwo : "gg" , jwo : 2020-02-13T16:05:57.000+00:00 , kwo : "" , lwo : "" , mwo : "OOBA" , nwo : "FAS" , owo : 15 , pwo : 10 , qwo : 1 , rwo : 1 , swo : "gg" , two : "Fail" , record : "fail " },
 
 {reportID : "8029" , daterec : "" , inspector : "RI-person2" , Gwo : "AT-2914SP" , cwo : 2020-02-13T16:05:57.000+00:00 , dwo : "WO" , ewo : "Supplier:" , fwo : "9901" , hwo : "" , iwo : "gg" , jwo : 2020-02-13T16:05:57.000+00:00 , kwo : "" , lwo : "" , mwo : "OOBA" , nwo : "FAS" , owo : 15 , pwo : 10 , qwo : 1 , rwo : 1 , swo : "gg" , two : "Fail" , record : "fail " }
-
+]
 
 `}</code>   
         
