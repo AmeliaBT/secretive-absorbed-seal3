@@ -12243,27 +12243,20 @@ class ManyRecords extends React.Component {
           React.createElement("br", null), 
            "reportID : \"6029\" , daterec : \"\" , inspector : \"RI-person2\" , Gwo : \"AT-2914SP\" , cwo : 2020-02-13T16:05:57.000+00:00 , dwo : \"WO\" , ewo : \"Supplier:\" , fwo : \"9901\" , hwo : \"\" , iwo : \"gg\" , jwo : 2020-02-13T16:05:57.000+00:00 , kwo : \"\" , lwo : \"\" , mwo : \"OOBA\" , nwo : \"FAS\" , owo : 15 , pwo : 10 , qwo : 1 , rwo : 1 , swo : \"gg\" , two : \"Fail\" , record : \"fail \"     ]" 
         ), 
-        React.createElement(Form, {className: "Form", horizontal: true, method: "post", action: "/up-many-records", name: "many-records", onSubmit: this.handleSubmit}, 
- React.createElement(Row, null, 
-               React.createElement(FormGroup, null, 
+React.createElement(Form, {className: "Form", horizontal: true, method: "post", action: "/up-many-records", name: "many-records", onSubmit: this.handleSubmit}, 
+ React.createElement(Row, null, React.createElement(Col, {smOffset: 6, sm: 2}, 	
+React.createElement(FormGroup, null, 
      React.createElement(Button, {className: "btn btn-primary btn-block", type: "submit"}, React.createElement("i", {className: "fa fa-paper-plane"}), " Submit")
       )
+   )
    ), 
-          
-          
-          
-          React.createElement(Row, null, 
-            
- 
-    React.createElement(Col, {smOffset: 2, sm: 6}, 	 
+React.createElement(Row, null, 
+    React.createElement(Col, {smOffset: 2, sm: 8}, 	 
  React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, " Enter json  objects  "), 
   React.createElement("textarea", {rows: "50",  type: "textarea",   className: "input-rowC", name: "record",   value: this.state.record, 	 placeholder: this.state.record, 	 onChange: this.handleChangeValue}  ), " "
-  ), " "
-      
+  ), " "      
    )
-       )
- 
-          )
+       ), "   ")
 
   )
     );

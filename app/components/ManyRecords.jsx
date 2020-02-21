@@ -37,26 +37,19 @@ class ManyRecords extends React.Component {
            reportID : "6029" , daterec : "" , inspector : "RI-person2" , Gwo : "AT-2914SP" , cwo : 2020-02-13T16:05:57.000+00:00 , dwo : "WO" , ewo : "Supplier:" , fwo : "9901" , hwo : "" , iwo : "gg" , jwo : 2020-02-13T16:05:57.000+00:00 , kwo : "" , lwo : "" , mwo : "OOBA" , nwo : "FAS" , owo : 15 , pwo : 10 , qwo : 1 , rwo : 1 , swo : "gg" , two : "Fail" , record : "fail "     ] 
         </p>
 <Form className="Form" horizontal method="post" action="/up-many-records" name="many-records" onSubmit={this.handleSubmit}>   
- <Row>
-  <FormGroup > 
+ <Row><Col smOffset={6} sm={2} >	
+<FormGroup > 
      <Button className="btn btn-primary btn-block" type="submit"><i className="fa fa-paper-plane"></i> Submit</Button>
       </FormGroup>
+   </Col>
    </Row>     
-          
-          
-          
-          <Row>  
-            
- 
-    <Col smOffset={2} sm={6} >	 
+<Row>  
+    <Col smOffset={2} sm={8} >	 
  <FormGroup className="input-row"><ControlLabel > Enter json  objects  </ControlLabel> 
   <textarea rows="50" type="textarea"  className="input-rowC" name="record"   value={this.state.record	} placeholder={this.state.record	} onChange={this.handleChangeValue}  /> 
-  </FormGroup> 
-      
+  </FormGroup>       
    </Col>
-       </Row>         
- 
-          </Form>
+       </Row>   </Form>
 
   </div>
     );
