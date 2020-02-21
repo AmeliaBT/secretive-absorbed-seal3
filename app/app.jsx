@@ -25,7 +25,7 @@ const LogIn = require('./components/LogIn');
 const HomePage = require('./components/HomePage');
 //const DisplayMessages= require('./components/DisplayMessages');
 //const DisplayMessagesB= require('./components/DisplayMessagesB');
-//const ManyRecords =require('./components/ManyRecords');
+const ManyRecords =require('./components/ManyRecords');
 //  <Route path="/report-edit" component={RIedit}/>
 //<Route path='/:handle' component={Profile} />
 render((
@@ -46,8 +46,8 @@ render((
          <Route path="/list-all" component={RIlistAll}/>
         <Route path="/report-edit" component={RIedit}/>
         <Route path="/report-view" component={RIview}/>
-       {/*   <Route path="/up-many-records" component={ManyRecords}/>
-         < DisplayMessages />
+         <Route path="/up-many-records" component={ManyRecords}/>
+          {/*< DisplayMessages />
          <Route path="/reports" component={RIreports}/>
         <Route path="/books" component={RIreports}/>*/}
       </div>
