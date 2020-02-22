@@ -1555,12 +1555,13 @@ class Header extends React.Component {
            that.setState({
           ["navBtns"]: React.createElement(Nav, {pullLeft: true, className: "link span"}, 
                        React.createElement(NavItem, {className: "span"}, " ", React.createElement(Link, {to: "/homepage", className: "link"}, response.inspname, "'s RI Form"), " "), 
-                      React.createElement(NavItem, {className: "span"}, " ", React.createElement(Link, {to: "/homepage2", className: "link"}, response.inspname, "'s RI Form"), " "), 
+                      React.createElement(NavItem, {className: "span"}, " ", React.createElement(Link, {to: "/up-many-records", className: "link"}, "Admin's- Initial data Form"), " "), 
                        React.createElement(NavItem, {className: "span"}, " ", React.createElement("div", {onClick: that.handleLogOut, className: "link"}, "Log out"), " ")
                       ),
             ["reportsLink"]: "/reports",
              ["listLink"]: "/list",
              ["listLinkAll"]: "/list-all"
+             
            });
         }
         else {
@@ -12237,7 +12238,7 @@ class ManyRecords extends React.Component {
   render() {
     return (
       React.createElement("div", null, 
-        
+          React.createElement(Header, null), 
             
          React.createElement("p", null, "  sample1:  "), 
 React.createElement("code", null, `
@@ -12413,6 +12414,7 @@ const RIview = __webpack_require__(388);
 const SignUp = __webpack_require__(389);
 const LogIn = __webpack_require__(391);
 const HomePage = __webpack_require__(392);
+
 //const DisplayMessages= require('./components/DisplayMessages');
 //const DisplayMessagesB= require('./components/DisplayMessagesB');
 const ManyRecords =__webpack_require__(153);
@@ -47816,8 +47818,8 @@ class Main extends React.Component {
 
         )
         
-      ), 
-        React.createElement(ManyRecords, null)
+      )
+    
       )
     );
   }

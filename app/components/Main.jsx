@@ -39,7 +39,7 @@ class Main extends React.Component {
         </p>
         
       </Jumbotron>
-        < ManyRecords/>
+    
       </div>
     );
   }

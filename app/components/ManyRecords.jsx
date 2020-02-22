@@ -30,7 +30,7 @@ class ManyRecords extends React.Component {
   render() {
     return (
       <div >  
-        
+          <Header/> 
             
          <p>  sample1:  </p>
 <code>{`
