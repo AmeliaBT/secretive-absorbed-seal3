@@ -603,12 +603,12 @@ uwo: request.body["uwo"] //photo file
 /***********************************/
 
 app.post("/up-many-records", function(request, response) {  
-   reportModel.create(request, (err, arrayOfReps) => {
+   reportModel.create(request, (err, doc) => {
   console.log("up-many-records request: ");   
   
- arrayOfReps=request.body.record;  
+ let arrayOfReps=request.body.record;  
        console.log(arrayOfReps); 
-        reportModel.create(arrayOfReps, err) 
+        reportModel.create(arrayOfReps, doc, err) 
      if (err) throw err;
         
    });
