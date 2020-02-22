@@ -606,16 +606,19 @@ app.post("/up-many-records", function(request, response) {
    reportModel.create(request, (err, doc) => {
   console.log("up-many-records request: ");   
   // console.log(request.body.record); 
-   let  arrayOfReps=request.body.record;     
+   let  arrayOfReps=request.body.record;  
+       console.log(arrayOfReps); 
+
     let createManyReps = function(arrayOfReps, done) {
         reportModel.create(arrayOfReps, function (err, data) {
         if (err) { done(err);
-                  console.log("an error in create ")
+                  console.log("an error in create ");
         }done(null, data); 
         console.log("ok no err in create")});
         };
 
- 
+ createManyReps();
+     console.log("created ");
      response.json();
 
           }
@@ -623,6 +626,10 @@ app.post("/up-many-records", function(request, response) {
      );
 });
 /* 
+[ {reportID : "8027" ,Gwo : "AT-2914SP" },[ {reportID : "8028" ,Gwo : "AT-2914SP" }]
+created 
+
+
 var createManyPeople = function(arrayOfPeople, done) {
 Person.create(arrayOfPeople, function (err, data) {
 if (err) {done(err);}
