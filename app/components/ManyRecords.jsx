@@ -31,7 +31,7 @@ class ManyRecords extends React.Component {
 handleSubmit(event) { let that = this; 
    // console.log(that)
       const xhr = new XMLHttpRequest();      
-      xhr.open('POST', '/add-report', true);
+      xhr.open('POST', '/up-many-records', true);
       xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
     let body =  'record='   + encodeURIComponent(this.state.record) ;
