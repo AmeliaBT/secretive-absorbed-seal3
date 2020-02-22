@@ -604,7 +604,10 @@ uwo: request.body["uwo"] //photo file
 app.post("/up-many-records", function(request, response) {  
    //let arrayOfReps=request.body.record;  
     console.log(request.body.record)
-  reportModel.create(request.body.record, function(err) {
+ // reportModel.create(request.body.record, function(err) {
+    reportModel.create('{reportID:"8027",Gwo:"AT-2914SP"}', function(err) {
+  
+    
   console.log(err); // No error, unless index was already built
 });
           }
