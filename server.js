@@ -605,13 +605,9 @@ uwo: request.body["uwo"] //photo file
 app.post("/up-many-records", function(request, response) {  
    //let arrayOfReps=request.body.record;  
     
-  reportModel.insertMany(request.body.record)
-    .then(function (docs) {
-        response.json(docs);
-    })
-    .catch(function (err) {
-        response.status(500).send(err);
-    });
+  reportModel.create(request.body.record, function(err) {
+  console.log(err); // No error, unless index was already built
+});
 
   
   
@@ -621,6 +617,15 @@ app.post("/up-many-records", function(request, response) {
      );
 
 /* 
+
+reportModel.insertMany(request.body.record)
+    .then(function (docs) {
+        response.json(docs);
+    })
+    .catch(function (err) {
+        response.status(500).send(err);
+    });
+
 app.post("/up-many-records", function(request, response) {  
    reportModel.create(request, (err, doc) => {
   console.log("up-many-records request: ");   
