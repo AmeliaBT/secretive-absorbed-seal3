@@ -603,29 +603,33 @@ uwo: request.body["uwo"] //photo file
 /***********************************/
 
 app.post("/up-many-records", function(request, response) {  
-   reportModel.create(request, (err, doc) => {
+   reportModel.create(request, (err, arrayOfReps) => {
   console.log("up-many-records request: ");   
-  // console.log(request.body.record); 
-   let  arrayOfReps=request.body.record;  
+  
+ arrayOfReps=request.body.record;  
        console.log(arrayOfReps); 
+        reportModel.create(arrayOfReps, err) 
+     if (err) throw err;
+        
+   });
+  
 
-    let createManyReps = function(arrayOfReps, done) {
-        reportModel.create(arrayOfReps, function (err, data) {
-        if (err) { done(err);
-                  console.log("an error in create ");
-        }done(null, data); 
-        console.log("ok no err in create")});
-        };
-
- createManyReps();
+ 
      console.log("created ");
-     response.json();
+     response.json({error: 0});
 
           }
         
      );
-});
+
 /* 
+
+  
+     doc.save(function (err) {
+              
+         if (err) throw err;
+           response.json({error: 0})               
+            });
 [ {reportID : "8027" ,Gwo : "AT-2914SP" },[ {reportID : "8028" ,Gwo : "AT-2914SP" }]
 created 
 
