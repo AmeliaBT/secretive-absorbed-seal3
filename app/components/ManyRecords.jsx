@@ -18,6 +18,8 @@ class ManyRecords extends React.Component {
  record: "", // comment -note
     };
     this.handleChangeValue = this.handleChangeValue.bind(this);
+     this.handleSubmit = this.handleSubmit.bind(this);
+    
     };   
    handleChangeValue(event) {
      const target = event.target;
@@ -25,7 +27,43 @@ class ManyRecords extends React.Component {
       const name = target.name;
       this.setState({ [name]: value  });
   };   
-    
+  
+handleSubmit(event) { let that = this; 
+   // console.log(that)
+      const xhr = new XMLHttpRequest();      
+      xhr.open('POST', '/add-report', true);
+      xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+    let body =  'record='   + encodeURIComponent(this.state.record) ;
+                     alert("record: ");
+                     alert(body);
+      xhr.send(body);
+
+      xhr.onreadystatechange = function() {
+        if (this.readyState != 4) return;
+        if (this.status != 200) {
+          alert( 'error: ' + (this.status ? this.statusText : 'request has not been set') );
+          return;
+        }
+        let response = JSON.parse(this.responseText);
+        if(response.error == 0) {
+           window.location.href = "/reports";
+           that.setState({
+          ["record"]: "Succsess"      
+           });
+        }
+        else {
+          that.setState({
+          ["record"]: "Error "
+           });
+         }
+        }
+      event.preventDefault();
+     }  
+  
+  
+  
+  
      
   render() {
     return (
