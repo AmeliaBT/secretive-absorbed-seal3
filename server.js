@@ -596,22 +596,17 @@ uwo: request.body["uwo"] //photo file
 
   app.post("/report-view", function(request, response) {  
    reportModel.findOne({"reportID":request.body["reportID"]}, (err, doc) => {
-//  console.log("request: ");
- // response.json(doc);
+
           });
 });
 /***********************************/
-
+//MyModel.create(docs) does new MyModel(doc).save() for every doc in docs
 app.post("/up-many-records", function(request, response) {  
    //let arrayOfReps=request.body.record;  
-    
+    console.log(request.body.record)
   reportModel.create(request.body.record, function(err) {
   console.log(err); // No error, unless index was already built
 });
-
-  
-  
-
           }
         
      );
