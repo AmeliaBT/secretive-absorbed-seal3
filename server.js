@@ -604,13 +604,15 @@ uwo: request.body["uwo"] //photo file
 
 app.post("/up-many-records", function(request, response) {  
    reportModel.create(request, (err, doc) => {
-  //console.log("up-many-records request: ");   
+  console.log("up-many-records request: ");   
   // console.log(request.body.record); 
    let  arrayOfReps=request.body.record;     
     let createManyReps = function(arrayOfReps, done) {
         reportModel.create(arrayOfReps, function (err, data) {
         if (err) { done(err);
-        }done(null, data); });
+                  console.log("an error in create ")
+        }done(null, data); 
+        console.log("ok no err in create")});
         };
 
  
