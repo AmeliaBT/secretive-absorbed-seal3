@@ -11,7 +11,7 @@ class RIlistItemAll extends React.Component {
     super(props);  
     let jwo2;
      let jwo=this.props.jwo;//Date Inspected:
-    if(jwo.length <14){jwo2=""}else{jwo2= jwo.slice(0,-14)};
+    if(jwo == null){jwo2=""}else{jwo2= jwo.slice(0,-14)};
    
     this.state = {
       //img_url: this.props.img_url,

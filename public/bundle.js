@@ -58862,7 +58862,7 @@ class RIlistItem extends React.Component {
     let  Gwo=this.props.Gwo; //Description
      let jwo=this.props.jwo;//Date Inspected:
     let jwo2;     
-    if(jwo.length <14){jwo2=""}else{jwo2=jwo.slice(0,-14)};
+    if(jwo == null <14){jwo2=""}else{jwo2=jwo.slice(0,-14)};
     let two=this.props.two; //Pass / Fail
     let owo=this.props.owo; //Lot Size
        let record=this.props.record;
@@ -59092,7 +59092,7 @@ class RIlistItemAll extends React.Component {
     super(props);  
     let jwo2;
      let jwo=this.props.jwo;//Date Inspected:
-    if(jwo.length <14){jwo2=""}else{jwo2= jwo.slice(0,-14)};
+    if(jwo == null){jwo2=""}else{jwo2= jwo.slice(0,-14)};
    
     this.state = {
       //img_url: this.props.img_url,
