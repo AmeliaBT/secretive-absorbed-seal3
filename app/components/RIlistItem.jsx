@@ -15,6 +15,8 @@ class RIlistItem extends React.Component {
      let  fwo=this.props.fwo; //P/N: 
     let  Gwo=this.props.Gwo; //Description
      let jwo=this.props.jwo;//Date Inspected:
+    let jwo2;     
+    if(jwo.length <14){jwo2=""}else{jwo2=jwo.slice(0,-14)};
     let two=this.props.two; //Pass / Fail
     let owo=this.props.owo; //Lot Size
        let record=this.props.record;
@@ -25,7 +27,7 @@ class RIlistItem extends React.Component {
            reportID: this.props.reportnumber,
           fwo: this.props.fwo,
           Gwo: this.props.Gwo,           
-           jwo: this.props.jwo.slice(0,-14),//Date Inspected:
+           jwo: jwo2, //this.props.jwo.slice(0,-14),//Date Inspected:
           two: this.props.two, //Pass / Fail:
            owo: this.props.owo,
               record: this.props.record,

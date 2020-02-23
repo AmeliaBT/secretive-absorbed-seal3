@@ -9,7 +9,9 @@ class RIlistItemAll extends React.Component {
  
   constructor(props) {
     super(props);  
-     
+    let jwo2;
+     let jwo=this.props.jwo;//Date Inspected:
+    if(jwo.length <14){jwo2=""}else{jwo2= jwo.slice(0,-14)};
    
     this.state = {
       //img_url: this.props.img_url,
@@ -17,7 +19,7 @@ class RIlistItemAll extends React.Component {
        reportID: this.props.reportnumber,
       fwo: this.props.fwo,
       Gwo: this.props.Gwo,
-       jwo: this.props.jwo.slice(0,-14), //Date Inspected:
+       jwo: jwo2, //this.props.jwo.slice(0,-14), //Date Inspected:
       two: this.props.two, //Pass / Fail:
        owo: this.props.owo,
       record: this.props.record,
