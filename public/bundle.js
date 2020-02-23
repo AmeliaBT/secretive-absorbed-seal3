@@ -58862,7 +58862,7 @@ class RIlistItem extends React.Component {
     let  Gwo=this.props.Gwo; //Description
      let jwo=this.props.jwo;//Date Inspected:
     let jwo2;     
-    if(jwo == null <14){jwo2=""}else{jwo2=jwo.slice(0,-14)};
+    if(jwo == null ){jwo2=""}else{jwo2=jwo.slice(0,-14)};
     let two=this.props.two; //Pass / Fail
     let owo=this.props.owo; //Lot Size
        let record=this.props.record;
@@ -59346,19 +59346,22 @@ this.state = {
       myLink2=response.uwo;
   // if(response.error == 0) {
         //   window.location.href = "/reports";
+        let cwo2, jwo2;
+        if(response.cwo == null){ cwo2=""}else {cwo2= response.cwo.slice(0,-14) };
+        if(response.jwo == null){ jwo2=""}else {jwo2= response.cwo.slice(0,-14) };
              that.setState({
                 ["_id"]: response._id,
             ["reportID"]: response.reportID,
              ["inspector"]  : response.inspector ,
               ["daterec"]  : response.daterec ,  
                  ["Gwo"]: response.Gwo,
-             ["cwo"]  : response.cwo.slice(0,-14) ,    
+             ["cwo"]  : cwo2, //response.cwo.slice(0,-14) ,    
                  ["dwo"]  : response.dwo ,    
                  ["ewo"]  : response.ewo ,    
             ["fwo"]: response.fwo,
            ["hwo"]  : response.hwo ,   
                 ["iwo"]  : response.iwo ,   
-             ["jwo"]: response.jwo.slice(0,-14),
+             ["jwo"]: jwo2, //response.jwo.slice(0,-14),
                 ["kwo"]  : response.kwo ,   
                 ["lwo"]  : response.lwo ,   
                 ["mwo"]  : response.mwo ,   
@@ -59583,19 +59586,23 @@ this.state = {
       myLink=response.lwo;// props for photos
       myLink2=response.uwo;
         
+        let cwo2, jwo2;
+        if(response.cwo == null){ cwo2=""}else {cwo2= response.cwo.slice(0,-14) };
+        if(response.jwo == null){ jwo2=""}else {jwo2= response.cwo.slice(0,-14) };
+        
              that.setState({
                 ["_id"]: response._id,
             ["reportID"]: response.reportID,
              ["inspector"]  : response.inspector ,
-              ["daterec"]  : response.daterec.slice(0,-14),  
+              ["daterec"]  : response.daterec,  
                  ["Gwo"]: response.Gwo,
-                 ["cwo"]  : response.cwo.slice(0,-14) ,    
+                 ["cwo"]  : cwo2 , //response.cwo.slice(0,-14) ,    
                  ["dwo"]  : response.dwo ,    
                  ["ewo"]  : response.ewo ,    
             ["fwo"]: response.fwo,
            ["hwo"]  : response.hwo ,   
                 ["iwo"]  : response.iwo ,   
-             ["jwo"]: response.jwo.slice(0,-14) ,
+             ["jwo"]: jwo2, //response.jwo.slice(0,-14) ,
                 ["kwo"]  : response.kwo ,   
                 ["lwo"]  : response.lwo ,   
                 ["mwo"]  : response.mwo ,   
