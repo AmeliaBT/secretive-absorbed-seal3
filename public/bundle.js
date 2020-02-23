@@ -12277,17 +12277,18 @@ handleSubmit(event) { let that = this;
     return (
       React.createElement("div", null, 
           React.createElement(Header, null), 
-            
-         React.createElement("p", null, "  sample1:  "), 
-React.createElement("code", null, `
-[
-{name:'Eva', age: 5, favoriteFoods: ["apple", "milk"]}, 
-{name:'Eva2', age: 6, favoriteFoods: ["apple2", "milk2"]},
-{name:'Eva3', age: 7, favoriteFoods: ["apple3", "milk3"]}
-] 
-`), 
+    
+   
         
-    React.createElement("p", null, "  sample2:  "), 
+
+React.createElement(Form, {className: "Form", horizontal: true, method: "post", action: "/up-many-records", name: "many-records", onSubmit: this.handleSubmit}, 
+  React.createElement(Row, null, 
+    React.createElement(Col, {smOffset: 2, sm: 8}, 	 
+        React.createElement("p", null, "  sample 1:  "), 
+  React.createElement("code", null, `         
+ [{"reportID":"8028","Gwo":"AT-2914SP"}, {"reportID":"8029","Gwo":"AT-2914SP2"}]
+  `), 
+       React.createElement("p", null, "  sample2:  "), 
    React.createElement("code", null, `  
 [
 {reportID : "8028" , daterec : "" , inspector : "RI-person2" , Gwo : "AT-2914SP" , cwo : 2020-02-13T16:05:57.000+00:00 , dwo : "WO" , ewo : "Supplier:" , fwo : "9901" , hwo : "" , iwo : "gg" , jwo : 2020-02-13T16:05:57.000+00:00 , kwo : "" , lwo : "" , mwo : "OOBA" , nwo : "FAS" , owo : 15 , pwo : 10 , qwo : 1 , rwo : 1 , swo : "gg" , two : "Fail" , record : "fail " },
@@ -12295,11 +12296,11 @@ React.createElement("code", null, `
 {reportID : "8029" , daterec : "" , inspector : "RI-person2" , Gwo : "AT-2914SP" , cwo : 2020-02-13T16:05:57.000+00:00 , dwo : "WO" , ewo : "Supplier:" , fwo : "9901" , hwo : "" , iwo : "gg" , jwo : 2020-02-13T16:05:57.000+00:00 , kwo : "" , lwo : "" , mwo : "OOBA" , nwo : "FAS" , owo : 15 , pwo : 10 , qwo : 1 , rwo : 1 , swo : "gg" , two : "Fail" , record : "fail " }
 ]
 
-`), 
+`)
         
-        
-
-React.createElement(Form, {className: "Form", horizontal: true, method: "post", action: "/up-many-records", name: "many-records", onSubmit: this.handleSubmit}, 
+      
+   )
+       ), 
  React.createElement(Row, null, React.createElement(Col, {smOffset: 6, sm: 2}, 	
 React.createElement(FormGroup, null, 
      React.createElement(Button, {className: "btn btn-primary btn-block", type: "submit"}, React.createElement("i", {className: "fa fa-paper-plane"}), " Submit")
@@ -12326,6 +12327,15 @@ module.exports = ManyRecords;
 <FormGroup className="input-row"><ControlLabel> 	Photo 	</ControlLabel>
     
     <FormControl type="file"  name="uwo"  ref="imageInput" accept="image/png, image/jpeg" value={this.state.uwo }  onChange={ this.uploadFile }   />   </FormGroup>  
+    
+            <p>  sample1:  </p>
+<code>{`
+[
+{name:'Eva', age: 5, favoriteFoods: ["apple", "milk"]}, 
+{name:'Eva2', age: 6, favoriteFoods: ["apple2", "milk2"]},
+{name:'Eva3', age: 7, favoriteFoods: ["apple3", "milk3"]}
+] 
+`}</code>
 */
 
 /***/ }),
