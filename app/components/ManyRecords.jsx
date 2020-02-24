@@ -76,21 +76,69 @@ handleSubmit(event) { let that = this;
 <Form className="Form" horizontal method="post" action="/up-many-records" name="many-records" onSubmit={this.handleSubmit}> 
   <Row>  
     <Col  smOffset={2} sm={8} >	 
-      <p> 1. get data from the tablet as .json file and replace   "title" with "reportID"  and  "_id" with "xid" </p>
+      <p> 1. Export Android tablet data from the sqlite.db as .json file (recordsT.json) <br/>
+        2. In recordsT.json, replace  "title" with "reportID"  and  "_id" with "xid" </p>
+      3. Paste 
         <p>  sample 1:  </p>    
   <code>{`         
- [{"reportID":"8028","Gwo":"AT-2914SP"}, {"reportID":"8029","Gwo":"AT-2914SP2"}]
-  `}</code>     
-       <p>  sample2:  </p>    
-   <code>{`  
-[
-{"reportID" : "8028" , daterec : "" , inspector : "RI-person2" , Gwo : "AT-2914SP" , cwo : 2020-02-13T16:05:57.000+00:00 , dwo : "WO" , ewo : "Supplier:" , fwo : "9901" , hwo : "" , iwo : "gg" , jwo : 2020-02-13T16:05:57.000+00:00 , kwo : "" , lwo : "" , mwo : "OOBA" , nwo : "FAS" , owo : 15 , pwo : 10 , qwo : 1 , rwo : 1 , swo : "gg" , two : "Fail" , record : "fail " },
+ [
+{
+        "Gwo": "XyzT-iYZG2524Â ",
+        "xid": "44",
+        "created": "1377273226699",
+        "cwo": "8/23/2013",
+        "dwo": " WO",
+        "ewo": "XyzTUUG",
+        "fwo": "123-003256-00",
+        "hwo": "J",
+        "inspector": "Jim J.",
+        "iwo": "4.2.2",
+        "jwo": "8/23/2013",
+        "kwo": "24897, 24898 & 25377",
+        "lwo": "/sdcard/Pictures/Photos_QXyz_NNIT/IYZG_20130823_085641.jpg",
+        "modified": "1377273800641",
+        "mwo": " NNCF",
+        "nwo": " FGI",
+        "owo": "350",
+        "pwo": "47",
+        "qwo": "0",
+        "record": "UU004650 applied.",
+        "rwo": "0",
+        "swo": "",
+       "reportID": "10000044",
+        "two": "Pass",
+        "uwo": ""
+    },
+    {
+        "Gwo": "XyzT-2701FX/YZT-901",
+        "xid": "45",
+        "created": "1377274755746",
+        "cwo": "8/23/2013",
+        "dwo": " WO",
+        "ewo": "XyzTI XyzMMIXyz",
+        "fwo": "123-002609-901",
+        "hwo": "J",
+        "inspector": "Jim J.",
+        "iwo": "na",
+        "jwo": "8/23/2013",
+        "kwo": "25357",
+        "lwo": "/sdcard/Pictures/Photos_QXyz_NNIT/IYZG_20130823_092706.jpg",
+        "modified": "1377275463523",
+        "mwo": " NNCF",
+        "nwo": " FGI",
+        "owo": "140",
+        "pwo": "20",
+        "qwo": "0",
+        "record": "Convert fr MMT to YZT version. ",
+        "rwo": "0",
+        "swo": "",
+       "reportID": "10000045",
+        "two": "Pass",
+        "uwo": ""
+    }
 
-{reportID : "8029" , daterec : "" , inspector : "RI-person2" , Gwo : "AT-2914SP" , cwo : 2020-02-13T16:05:57.000+00:00 , dwo : "WO" , ewo : "Supplier:" , fwo : "9901" , hwo : "" , iwo : "gg" , jwo : 2020-02-13T16:05:57.000+00:00 , kwo : "" , lwo : "" , mwo : "OOBA" , nwo : "FAS" , owo : 15 , pwo : 10 , qwo : 1 , rwo : 1 , swo : "gg" , two : "Fail" , record : "fail " }
 ]
-
-`}</code>   
-        
+  `}</code>           
       
    </Col>
        </Row> 
