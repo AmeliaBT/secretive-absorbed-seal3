@@ -58866,10 +58866,7 @@ class RIlist extends React.Component {
         });
         
  // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!           
-// 
-        
-        
-        !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!    
+//  className="pull-right"  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!    
         
         
         
@@ -58903,9 +58900,8 @@ class RIlist extends React.Component {
            ), 
        
         
-        this.state.reports, 
-           "filter=",  filterFactory(), 
-  "filterPosition=\"top\""
+        this.state.reports
+
        )
        
      
