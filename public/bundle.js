@@ -12284,7 +12284,8 @@ handleSubmit(event) { let that = this;
 React.createElement(Form, {className: "Form", horizontal: true, method: "post", action: "/up-many-records", name: "many-records", onSubmit: this.handleSubmit}, 
   React.createElement(Row, null, 
     React.createElement(Col, {smOffset: 2, sm: 8}, 	 
-      React.createElement("p", null, " 1. Export Android tablet data from the sqlite.db as .json file (recordsT.json) ", React.createElement("br", null), 
+      React.createElement("p", null, " This is WIP", React.createElement("br", null), 
+        "1. Export Android tablet data from the sqlite.db as .json file (recordsT.json) ", React.createElement("br", null), 
         "2.Open recordsT.json as .txt file. In MS Word. Replace  \"title\" with \"reportID\", \"_id\" with \"xid\" ;  verifiy that the format matches the sample and  enter json objects"), 
      
         React.createElement("p", null, "  Sample format  "), 

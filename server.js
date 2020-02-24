@@ -593,7 +593,7 @@ uwo: request.body["uwo"] //photo file
 /***********************************/
 
 app.post("/up-many-records", function(request, response) {   
-   console.log(request.body.record)
+   console.log(request.body.record);
    // reportModel.create( request.body.record, function(err) {   
   //reportModel.create( [ ]    , function(err) {    console.log(err); // });
   
