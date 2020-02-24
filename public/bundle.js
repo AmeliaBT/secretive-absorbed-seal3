@@ -59637,7 +59637,8 @@ this.state = {
      React.createElement(Header, null), 
         
        React.createElement(Grid, null, 
-     
+        React.createElement(Row, null, "  ", 
+     React.createElement(Col, {sm: 11}, React.createElement("h4", null, "  RI Number:  ", this.state.reportID, "  "), "  ")), 
       React.createElement(Row, null, 
 React.createElement(Col, {sm: 3}, "  ", React.createElement("div", {className: "well"}, " ",   
  React.createElement(FormGroup, {className: "input-row"}, React.createElement(ControlLabel, null, "Inspector:"), " ", React.createElement(FormControl, {   readOnly: true, type: "text",  name: "inspector", value: this.state.inspector	}  ), " "), "    ", 
