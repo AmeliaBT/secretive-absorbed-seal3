@@ -1555,7 +1555,7 @@ class Header extends React.Component {
            that.setState({
           ["navBtns"]: React.createElement(Nav, {pullLeft: true, className: "link span"}, 
                        React.createElement(NavItem, {className: "span"}, " ", React.createElement(Link, {to: "/homepage", className: "link"}, response.inspname, "'s RI Form"), " "), 
-                      React.createElement(NavItem, {className: "span"}, " ", React.createElement(Link, {to: "/up-many-records", className: "link"}, "Admin's- Initial data Form"), " "), 
+                      React.createElement(NavItem, {className: "span"}, " ", React.createElement(Link, {to: "/up-many-records", className: "link"}, "Admin"), " "), 
                        React.createElement(NavItem, {className: "span"}, " ", React.createElement("div", {onClick: that.handleLogOut, className: "link"}, "Log out"), " ")
                       ),
             ["reportsLink"]: "/reports",
@@ -12285,7 +12285,7 @@ React.createElement(Form, {className: "Form", horizontal: true, method: "post", 
   React.createElement(Row, null, 
     React.createElement(Col, {smOffset: 2, sm: 8}, 	 
       React.createElement("p", null, " 1. Export Android tablet data from the sqlite.db as .json file (recordsT.json) ", React.createElement("br", null), 
-        "2.Open recordsT.json as .txt file. In MS Word. Replace  \"title\" with \"reportID\", \"_id\" with \"xid\" ; remove ^p paragraph marks and \"        \" spaces strings; verifiy that the format matches the sample and  enter json objects"), 
+        "2.Open recordsT.json as .txt file. In MS Word. Replace  \"title\" with \"reportID\", \"_id\" with \"xid\" ;  verifiy that the format matches the sample and  enter json objects"), 
      
         React.createElement("p", null, "  Sample format  "), 
   React.createElement("code", null, `         

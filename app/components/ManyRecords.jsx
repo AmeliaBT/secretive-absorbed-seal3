@@ -76,8 +76,9 @@ handleSubmit(event) { let that = this;
 <Form className="Form" horizontal method="post" action="/up-many-records" name="many-records" onSubmit={this.handleSubmit}> 
   <Row>  
     <Col  smOffset={2} sm={8} >	 
-      <p> 1. Export Android tablet data from the sqlite.db as .json file (recordsT.json) <br/>
-        2.Open recordsT.json as .txt file. In MS Word. Replace  "title" with "reportID", "_id" with "xid" ; remove ^p paragraph marks and "        " spaces strings; verifiy that the format matches the sample and  enter json objects</p>
+      <p> This is WIP
+        1. Export Android tablet data from the sqlite.db as .json file (recordsT.json) <br/>
+        2.Open recordsT.json as .txt file. In MS Word. Replace  "title" with "reportID", "_id" with "xid" ;  verifiy that the format matches the sample and  enter json objects</p>
      
         <p>  Sample format  </p>    
   <code>{`         
