@@ -4,8 +4,11 @@ const Link = require('react-router-dom').Link
 
 const style = require('../styles/HomePage');
 // react-bootstrap
-const {Table , Row, Col} = require('react-bootstrap');
+const {Table ,filterFactory, Row, Col} = require('react-bootstrap');
 // other components and etc
+//import BootstrapTable from 'react-bootstrap-table-next';
+//import filterFactory, { textFilter } from 'react-bootstrap-table2-filter';
+
 const Header = require('./Header');
 
 const RIlistItem = require('./RIlistItem');
@@ -72,6 +75,12 @@ class RIlist extends React.Component {
         });
         
  // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!           
+// 
+        
+        
+        !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!    
+        
+        
         
            that.setState({
           ["reports"]: <div className="reports">
@@ -104,6 +113,8 @@ class RIlist extends React.Component {
        
         
         {this.state.reports}
+           filter={ filterFactory() }
+  filterPosition="top"
        </Table> 
        
      

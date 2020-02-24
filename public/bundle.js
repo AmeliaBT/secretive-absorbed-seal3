@@ -58795,8 +58795,11 @@ const Link = __webpack_require__(10).Link
 
 const style = __webpack_require__(60);
 // react-bootstrap
-const {Table , Row, Col} = __webpack_require__(13);
+const {Table ,filterFactory, Row, Col} = __webpack_require__(13);
 // other components and etc
+//import BootstrapTable from 'react-bootstrap-table-next';
+//import filterFactory, { textFilter } from 'react-bootstrap-table2-filter';
+
 const Header = __webpack_require__(20);
 
 const RIlistItem = __webpack_require__(383);
@@ -58863,6 +58866,12 @@ class RIlist extends React.Component {
         });
         
  // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!           
+// 
+        
+        
+        !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!    
+        
+        
         
            that.setState({
           ["reports"]: React.createElement("div", {className: "reports"}, 
@@ -58894,7 +58903,9 @@ class RIlist extends React.Component {
            ), 
        
         
-        this.state.reports
+        this.state.reports, 
+           "filter=",  filterFactory(), 
+  "filterPosition=\"top\""
        )
        
      
