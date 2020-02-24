@@ -12284,6 +12284,7 @@ handleSubmit(event) { let that = this;
 React.createElement(Form, {className: "Form", horizontal: true, method: "post", action: "/up-many-records", name: "many-records", onSubmit: this.handleSubmit}, 
   React.createElement(Row, null, 
     React.createElement(Col, {smOffset: 2, sm: 8}, 	 
+      React.createElement("p", null, " 1. get data from the tablet as .json file and replace   \"title\" with \"reportID\"  "), 
         React.createElement("p", null, "  sample 1:  "), 
   React.createElement("code", null, `         
  [{"reportID":"8028","Gwo":"AT-2914SP"}, {"reportID":"8029","Gwo":"AT-2914SP2"}]
