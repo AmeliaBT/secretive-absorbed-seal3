@@ -77,9 +77,9 @@ handleSubmit(event) { let that = this;
   <Row>  
     <Col  smOffset={2} sm={8} >	 
       <p> 1. Export Android tablet data from the sqlite.db as .json file (recordsT.json) <br/>
-        2. In recordsT.json, replace  "title" with "reportID"  and  "_id" with "xid" </p>
-      3. Paste 
-        <p>  sample 1:  </p>    
+        2.Open recordsT.json as .txt file. Replace  "title" with "reportID"  and  "_id" with "xid"; verifiy that the format matches the sample and  enter json objects</p>
+     
+        <p>  Sample format  </p>    
   <code>{`         
  [
 {
@@ -142,6 +142,7 @@ handleSubmit(event) { let that = this;
       
    </Col>
        </Row> 
+  <br/><br/>
  <Row><Col smOffset={6} sm={2} >	
 <FormGroup > 
      <Button className="btn btn-primary btn-block" type="submit"><i className="fa fa-paper-plane"></i> Submit</Button>

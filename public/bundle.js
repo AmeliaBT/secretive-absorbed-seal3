@@ -12285,9 +12285,9 @@ React.createElement(Form, {className: "Form", horizontal: true, method: "post", 
   React.createElement(Row, null, 
     React.createElement(Col, {smOffset: 2, sm: 8}, 	 
       React.createElement("p", null, " 1. Export Android tablet data from the sqlite.db as .json file (recordsT.json) ", React.createElement("br", null), 
-        "2. In recordsT.json, replace   \"title\" with \"reportID\"  and  \"_id\" with \"xid\" "), 
-      "3. Paste",  
-        React.createElement("p", null, "  sample 1:  "), 
+        "2.Open recordsT.json as .txt file. Replace  \"title\" with \"reportID\"  and  \"_id\" with \"xid\"; verifiy that the format matches the sample and  enter json objects"), 
+     
+        React.createElement("p", null, "  Sample format  "), 
   React.createElement("code", null, `         
  [
 {
@@ -12350,6 +12350,7 @@ React.createElement(Form, {className: "Form", horizontal: true, method: "post", 
       
    )
        ), 
+  React.createElement("br", null), React.createElement("br", null), 
  React.createElement(Row, null, React.createElement(Col, {smOffset: 6, sm: 2}, 	
 React.createElement(FormGroup, null, 
      React.createElement(Button, {className: "btn btn-primary btn-block", type: "submit"}, React.createElement("i", {className: "fa fa-paper-plane"}), " Submit")
