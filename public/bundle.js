@@ -12285,7 +12285,7 @@ React.createElement(Form, {className: "Form", horizontal: true, method: "post", 
   React.createElement(Row, null, 
     React.createElement(Col, {smOffset: 2, sm: 8}, 	 
       React.createElement("p", null, " 1. Export Android tablet data from the sqlite.db as .json file (recordsT.json) ", React.createElement("br", null), 
-        "2.Open recordsT.json as .txt file. Replace  \"title\" with \"reportID\"  and  \"_id\" with \"xid\"; verifiy that the format matches the sample and  enter json objects"), 
+        "2.Open recordsT.json as .txt file. In MS Word. Replace  \"title\" with \"reportID\", \"_id\" with \"xid\" and remove ^p paragraph marks; verifiy that the format matches the sample and  enter json objects"), 
      
         React.createElement("p", null, "  Sample format  "), 
   React.createElement("code", null, `         

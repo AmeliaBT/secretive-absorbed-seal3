@@ -77,7 +77,7 @@ handleSubmit(event) { let that = this;
   <Row>  
     <Col  smOffset={2} sm={8} >	 
       <p> 1. Export Android tablet data from the sqlite.db as .json file (recordsT.json) <br/>
-        2.Open recordsT.json as .txt file. Replace  "title" with "reportID"  and  "_id" with "xid"; verifiy that the format matches the sample and  enter json objects</p>
+        2.Open recordsT.json as .txt file. In MS Word. Replace  "title" with "reportID", "_id" with "xid" and remove ^p paragraph marks; verifiy that the format matches the sample and  enter json objects</p>
      
         <p>  Sample format  </p>    
   <code>{`         
