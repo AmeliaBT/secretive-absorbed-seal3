@@ -94,7 +94,7 @@ class RIlist extends React.Component {
         <Header/>       
          <Table className="myForm">
             <Row>
-      
+        
              <Col sm={1}> <b>Rep # </b>  </Col> 
                 <Col sm={1} > <b>PN </b></Col> 
                 <Col sm={1} ><b>Des </b></Col> 
@@ -104,7 +104,7 @@ class RIlist extends React.Component {
               <Col sm={3} > <b>Comment</b> </Col> 
               
               <Col sm={1} ><b>Edit  </b></Col> 
-              
+          
            
            </Row>
        
@@ -120,3 +120,4 @@ class RIlist extends React.Component {
 };
 
 module.exports = RIlist;
+//  <TableHeaderColumn>

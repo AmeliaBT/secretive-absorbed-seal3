@@ -58885,7 +58885,7 @@ class RIlist extends React.Component {
         React.createElement(Header, null), 
          React.createElement(Table, {className: "myForm"}, 
             React.createElement(Row, null, 
-      
+        
              React.createElement(Col, {sm: 1}, " ", React.createElement("b", null, "Rep # "), "  "), 
                 React.createElement(Col, {sm: 1}, " ", React.createElement("b", null, "PN ")), 
                 React.createElement(Col, {sm: 1}, React.createElement("b", null, "Des ")), 
@@ -58895,7 +58895,7 @@ class RIlist extends React.Component {
               React.createElement(Col, {sm: 3}, " ", React.createElement("b", null, "Comment"), " "), 
               
               React.createElement(Col, {sm: 1}, React.createElement("b", null, "Edit  "))
-              
+          
            
            ), 
        
@@ -58911,6 +58911,7 @@ class RIlist extends React.Component {
 };
 
 module.exports = RIlist;
+//  <TableHeaderColumn>
 
 /***/ }),
 /* 383 */
