@@ -14,4 +14,10 @@ The new look is intended to be easier to navigate ....<br/>
   Hosting, managing, and runing MongoDB on the AWS Cloud with MongoDB Atlas  <br/>
   1.Import Data into Cluster - bring data from existing JSON/CSV files into Atlas<br/>
   To load data from a JSON or a CSV file into an Atlas cluster. See the tutorial Load File with mongoimport. 
+  Feb 24, 2020
+  Seeded MongoDB (on AWS with MongoDB Atlas) with initial data, 152 files; 
+  Result:   recivinginspb.reportsforris
+  COLLECTION SIZE: 65.1KB
+  TOTAL DOCUMENTS: 152
+
        

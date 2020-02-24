@@ -47911,9 +47911,13 @@ class Main extends React.Component {
           "A. Authentication: middleware for Node.js Passport", React.createElement("br", null), 
           "B. Information Security: middleware HelmetJS (to prevent sensitive information from" + " " + 
           "unintentially being passed between the server and client)", React.createElement("br", null), 
-          "C. Hash and Compare Passwords: cryptography BCrypt hashes (saltRounds = 10)", React.createElement("br", null)
+          "C. Hash and Compare Passwords: cryptography BCrypt hashes (saltRounds = 10)", React.createElement("br", null), 
 
-
+"Feb 24, 2020", React.createElement("br", null), 
+  "Seeded MongoDB (on AWS with MongoDB Atlas) with initial data, 152 files; ", React.createElement("br", null), 
+  "Result:   recivinginspb.reportsforris", React.createElement("br", null), 
+  "COLLECTION SIZE: 65.1KB", React.createElement("br", null), 
+  "TOTAL DOCUMENTS: 152", React.createElement("br", null)
         )
         
       )

@@ -35,7 +35,11 @@ class Main extends React.Component {
           unintentially being passed between the server and client)<br/>
           C. Hash and Compare Passwords: cryptography BCrypt hashes (saltRounds = 10)<br/>
 
-
+Feb 24, 2020<br/>
+  Seeded MongoDB (on AWS with MongoDB Atlas) with initial data, 152 files; <br/>
+  Result:   recivinginspb.reportsforris<br/>
+  COLLECTION SIZE: 65.1KB<br/>
+  TOTAL DOCUMENTS: 152<br/>
         </p>
         
       </Jumbotron>
