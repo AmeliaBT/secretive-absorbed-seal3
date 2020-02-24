@@ -313,7 +313,7 @@ app.post("/add-report", function(request, response) {
    //get the number of documents
 reportModel.find({}, (err, docs) => {
   if (err) throw err;        
- nDocs= docs.length +7000;
+ nDocs= docs.length +100000200 ;//7000;
  console.log(" nDoc= "  +nDocs) ;
 //_____________________________
 
@@ -372,24 +372,18 @@ console.log(obj);
 // });
 });
 /***********************************/
-//add-upload'
+//add-upload' not used does not work;
 
 app.post("/add-upload", function(request, response) {
 reportModel.find({}, (err, docs) => {
   if (err) throw err;        
- nDocs= docs.length +6000;
- console.log(" nDoc= "  +nDocs) ;
-
-
+ nDocs= docs.length + 100000200 ; //6000;
+ //console.log(" nDoc= "  +nDocs) ;
 let obj =  {
-
 reportID:  nDocs, 
-uwo: request.body["image"] //photo file 
-
+uwo: request.body["image"] //photo file
 };
-
-//console.log(obj);
- 
+//console.log(obj); 
     let report = new reportModel(obj);          
             report.save(function (err) {
               //if (err) throw err;
@@ -399,10 +393,6 @@ uwo: request.body["image"] //photo file
     });
 
 });
-
-
-
-
 
 /***********************************/
 /*
@@ -603,11 +593,11 @@ uwo: request.body["uwo"] //photo file
 /***********************************/
 
 app.post("/up-many-records", function(request, response) {   
-   // console.log(request.body.record)
+   console.log(request.body.record)
    // reportModel.create( request.body.record, function(err) {   
   //reportModel.create( [ ]    , function(err) {    console.log(err); // });
   
-  
+   response.json({error: 0});
       }        
      );
 
