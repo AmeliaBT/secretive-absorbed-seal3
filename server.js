@@ -151,7 +151,8 @@ swo: String,
 two: String, //pass-fail
 uwo:  String,
 //uwo:  {data: Buffer, contentType: String },
-  record:String
+  record:String,
+  modified:Number
 });
 // get the model
 let reportModel = mongoose.model('reportsforri', reportSchema);
@@ -606,9 +607,9 @@ app.post("/up-many-records", function(request, response) {
     console.log(request.body.record)
  // reportModel.create(request.body.record, function(err) {
     reportModel.create([
-      {
+    {
         "Gwo": "AT-iMG746MOD-PKG3",
-        "_id": "1",
+        "xid": "1",
         "created": "1354294261591",
         "cwo": "11/30/2012",
         "dwo": " WO",
@@ -635,7 +636,7 @@ app.post("/up-many-records", function(request, response) {
     },
     {
         "Gwo": "AT-iMG746MOD-PKG3",
-        "_id": "2",
+        "xid": "2",
         "created": "1354295052084",
         "cwo": "11/30/2012",
         "dwo": " WO",
@@ -662,7 +663,7 @@ app.post("/up-many-records", function(request, response) {
     },
     {
         "Gwo": "AT-8100S/24POE-10",
-        "_id": "3",
+        "xid": "3",
         "created": "1357940982106",
         "cwo": "1/11/2013",
         "dwo": " PO",
@@ -689,7 +690,7 @@ app.post("/up-many-records", function(request, response) {
     },
     {
         "Gwo": "AT-27MINI-AA-001",
-        "_id": "4",
+        "xid": "4",
         "created": "1359500056187",
         "cwo": "1/29/2013",
         "dwo": " PO",
@@ -714,6 +715,7 @@ app.post("/up-many-records", function(request, response) {
         "two": "Pass",
         "uwo": ""
     }
+
 
     ], function(err) {
   

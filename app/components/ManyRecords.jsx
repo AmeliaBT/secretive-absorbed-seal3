@@ -76,7 +76,7 @@ handleSubmit(event) { let that = this;
 <Form className="Form" horizontal method="post" action="/up-many-records" name="many-records" onSubmit={this.handleSubmit}> 
   <Row>  
     <Col  smOffset={2} sm={8} >	 
-      <p> 1. get data from the tablet as .json file and replace   "title" with "reportID"  </p>
+      <p> 1. get data from the tablet as .json file and replace   "title" with "reportID"  and  "_id" with "xid" </p>
         <p>  sample 1:  </p>    
   <code>{`         
  [{"reportID":"8028","Gwo":"AT-2914SP"}, {"reportID":"8029","Gwo":"AT-2914SP2"}]
