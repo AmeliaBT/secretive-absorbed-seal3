@@ -1,10 +1,19 @@
-class CustomizedTypeahead extends Component {
+
+const React = require('react');
+const Link = require('react-router-dom').Link
+//const options =require('./exampleData');
+const {Typeahead} = require('react-bootstrap-typeahead');
+
+
+class CustomizedTypeahead extends React.Component {
   render() {
     let injectedProps = {};
 
     const { options, labelKey } = this.props;
 
-    const { onChange, options, labelKey } = this.props;
+   // const { onChange, options, labelKey } = this.props;
+     const { onChange} = this.props;
+    
     injectedProps.onChange = (selected) => {
 
       /* apply interception */
@@ -31,3 +40,4 @@ class CustomizedTypeahead extends Component {
       {...injectedProps} />
   }
 }
+module.exports = CustomizedTypeahead;
