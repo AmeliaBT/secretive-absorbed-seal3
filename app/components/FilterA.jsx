@@ -3,8 +3,18 @@ const Link = require('react-router-dom').Link
 // style for BOOKS
 const style = require('../styles/FormRI');
 // other components and etc
-const options =require('./exampleData');
-const Header = require('./Header');
+//const options =require('./exampleData');
+
+let options=[
+  { name: 'Alabama', population: 4780127, capital: 'Montgomery', region: 'South' },
+  { name: 'Alaska', population: 710249, capital: 'Juneau', region: 'West' },
+  { name: 'Arizona', population: 6392307, capital: 'Phoenix', region: 'West' },
+  { name: 'Arkansas', population: 2915958, capital: 'Little Rock', region: 'South' }
+];
+
+
+
+
 //const CreatableSelect= require('react-select');
 //const { Creatable }= require('react-select');
 

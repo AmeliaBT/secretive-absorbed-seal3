@@ -99,7 +99,7 @@ class RIlistAll extends React.Component {
         <Table className="myForm">
             <Row>  
      <Col sm={11} >
-       <   FilterA />       
+       < FilterA />       
               </Col></Row>  
             <Row>
              <Col sm={1}> <b>RI </b>  </Col> 

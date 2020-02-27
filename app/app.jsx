@@ -23,7 +23,7 @@ const RIview = require('./components/RIview');
 const SignUp = require('./components/SignUp');
 const LogIn = require('./components/LogIn');
 const HomePage = require('./components/HomePage');
-
+const FilterA = require('./components/FilterA');
 //const DisplayMessages= require('./components/DisplayMessages');
 //const DisplayMessagesB= require('./components/DisplayMessagesB');
 const ManyRecords =require('./components/ManyRecords');
