@@ -6,7 +6,7 @@ const style = require('../styles/FormRI');
 const options =require('./exampleData');
 const CustomizedTypeahead =require('./CustomizedTypeahead');
 
-const {Typeahead} = require('react-bootstrap-typeahead');
+//const {Typeahead} = require('react-bootstrap-typeahead');
 
 class FilterA extends React.Component {
   constructor() {
@@ -15,13 +15,13 @@ class FilterA extends React.Component {
       name: 'xx'
     };
   }
-
+// <Typeahead
   render() {
     return (
       <div>
           <div className="px-5 py-5">
        
-      <Typeahead
+      <CustomizedTypeahead
           labelKey="name" 
         options={options}
         multiple
