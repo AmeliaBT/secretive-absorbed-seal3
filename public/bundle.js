@@ -14392,25 +14392,10 @@ const Link = __webpack_require__(11).Link
 const style = __webpack_require__(199);
 // other components and etc
 const options =__webpack_require__(473);
-/*
-let options=[
-  { name: 'Alabama', population: 4780127, capital: 'Montgomery', region: 'South' },
-  { name: 'Alaska', population: 710249, capital: 'Juneau', region: 'West' },
-  { name: 'Arizona', population: 6392307, capital: 'Phoenix', region: 'West' },
-  { name: 'Arkansas', population: 2915958, capital: 'Little Rock', region: 'South' }
-];
-*/
+const CustomizedTypeahead =__webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./CustomizedTypeahead\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 
-
-
-//const CreatableSelect= require('react-select');
-//const { Creatable }= require('react-select');
-
-// react-bootstrap react-bootstrap-typeahead
-//const {Typeahead, TableHeaderColumn, InputGroup, option, Form, FormGroup, Col, FormControl, //Button, Grid, Row, ControlLabel} = require('react-bootstrap');
-// from 'react-bootstrap-typeahead';
 const {Typeahead} = __webpack_require__(474);
-// <div className="px-5 py-5">
+
 class FilterA extends React.Component {
   constructor() {
     super();
@@ -14424,13 +14409,6 @@ class FilterA extends React.Component {
       React.createElement("div", null, 
           React.createElement("div", {className: "px-5 py-5"}, 
        
-        /* 
-        <Typeahead
-          labelKey="name"
-          options={options}
-          multiple
-          placeholder="Choose a state..."
-        />*/
       React.createElement(Typeahead, {
           labelKey: "name", 
         options: options, 
