@@ -14400,7 +14400,7 @@ class FilterA extends React.Component {
   constructor() {
     super();
     this.state = {
-      name: 'xx'
+      name: 'React'
     };
   }
 // <Typeahead

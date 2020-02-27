@@ -7,12 +7,14 @@ const options =require('./exampleData');
 const CustomizedTypeahead =require('./CustomizedTypeahead');
 
 //const {Typeahead} = require('react-bootstrap-typeahead');
+let test = {a: 1, b: 2};
+
 
 class FilterA extends React.Component {
   constructor() {
     super();
     this.state = {
-      name: 'xx'
+      name: 'React'
     };
   }
 // <Typeahead
@@ -34,3 +36,12 @@ class FilterA extends React.Component {
   }
 }
 module.exports = FilterA;
+
+/* 
+ReactDOM.render(
+    <div {...test} />,
+    document.getElementById('app')
+);
+
+
+*/
