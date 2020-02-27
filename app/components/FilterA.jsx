@@ -22,7 +22,7 @@ class FilterA extends React.Component {
   render() {
     return (
       <div>
-            <Header/>
+       
       <div className="px-5 py-5">
         <Typeahead
           labelKey="name"

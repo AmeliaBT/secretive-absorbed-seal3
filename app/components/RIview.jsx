@@ -100,9 +100,11 @@ this.state = {
      <Header/>
         
        <Grid>  
+           
         <Row>  
      <Col sm={11} ><h4>  RI Number:  {this.state.reportID}  </h4>  </Col></Row>  
-      <Row >
+      
+         <Row >
 <Col sm={3} >	 <div className="well">   
  <FormGroup className="input-row"><ControlLabel>Inspector:</ControlLabel> <FormControl   readOnly type="text" name="inspector" value={this.state.inspector	}  /> </FormGroup>    
 

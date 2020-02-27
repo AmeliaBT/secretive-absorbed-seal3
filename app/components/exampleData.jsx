@@ -1,5 +1,6 @@
 /* eslint-disable max-len, sort-keys */
-export default [
+//export default [
+ module.exports = [ 
   { name: 'Alabama', population: 4780127, capital: 'Montgomery', region: 'South' },
   { name: 'Alaska', population: 710249, capital: 'Juneau', region: 'West' },
   { name: 'Arizona', population: 6392307, capital: 'Phoenix', region: 'West' },

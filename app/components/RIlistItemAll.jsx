@@ -48,6 +48,7 @@ class RIlistItemAll extends React.Component {
     const {report, showDelete, showDelete2} = this.props;
     return(
       <div>
+       
      <div className="table-row-line"> </div>
       
         <Row > 
