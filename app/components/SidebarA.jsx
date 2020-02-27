@@ -7,7 +7,7 @@ const Link = require('react-router-dom').Link
 
 const {Radio, Col, Grid, Row, Button, Glyphicon , OverlayTrigger, Popover} = require('react-bootstrap');
 
-const style = require('../styles/RIlistItem');
+const style = require('../styles/SidebarA');
 const options =require('./exampleData');
 //const CustomizedTypeahead =require('./CustomizedTypeahead');
 const {Typeahead} = require('react-bootstrap-typeahead');
@@ -24,13 +24,13 @@ class SudebarA extends React.Component {
     this.onSubmit = this.onSubmit.bind(this);
   }
 
-   onRadioChange = (e) => {
+   onRadioChange(e){
     this.setState({
       color: e.target.value
     });
   }
 
-  onSubmit = (e) => {
+  onSubmit(e){
     e.preventDefault();
     console.log(this.state);
   }
@@ -38,6 +38,81 @@ class SudebarA extends React.Component {
   render() {
     return (
       <div>
+ <form onSubmit={this.onSubmit}>
+          <strong>Select Color:</strong>
+
+          <ul>
+            <li>
+              <label>
+                <input
+                  type="radio"
+                  value="red"
+                  checked={this.state.color === "red"}
+                  onChange={this.onRadioChange}
+                />
+                <span>Red</span>
+              </label>
+            </li>
+
+            <li>
+              <label>
+                <input
+                  type="radio"
+                  value="green"
+                  checked={this.state.color === "green"}
+                  onChange={this.onRadioChange}
+                />
+                <span>Green</span>
+              </label>
+            </li>
+
+            <li>
+              <label>
+                <input
+                  type="radio"
+                  value="blue"
+                  checked={this.state.color === "blue"}
+                  onChange={this.onRadioChange}
+                />
+                <span>Blue</span>
+              </label>
+            </li>
+
+            <li>
+              <label>
+                <input
+                  type="radio"
+                  value="orange"
+                  checked={this.state.color === "orange"}
+                  onChange={this.onRadioChange}
+                />
+                <span>Ornage</span>
+              </label>
+            </li>
+
+            <li>
+              <label>
+                <input
+                  type="radio"
+                  value="purple"
+                  checked={this.state.color === "purple"}
+                  onChange={this.onRadioChange}
+                />
+                <span>Purple</span>
+              </label>
+            </li>
+          </ul>
+
+          <button type="submit">Choose Color</button>
+        </form>
+
+         </div>
+    );
+  }
+}
+module.exports = SudebarA;
+
+/* 
            <li>
                   <ButtonGroup vertical block data-toggle="buttons">
                     <Button className="btn btn-block" onClick={this._onOptionChange.bind(this, 'optionA')} active={this.state.option === 'optionA'}>Option A</Button>
@@ -45,10 +120,5 @@ class SudebarA extends React.Component {
                     <Button className="btn btn-block" onClick={this._onOptionChange.bind(this, 'optionC')} active={this.state.option === 'optionC'}>Option C</Button>
                   </ButtonGroup>
             </li>
-
-         </div>
-    );
-  }
-}
-module.exports = SudebarA;
+*/
 

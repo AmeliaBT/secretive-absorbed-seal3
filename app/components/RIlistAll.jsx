@@ -9,6 +9,7 @@ const {Table , Row, Col, Modal} = require('react-bootstrap');
 // other components and etc
 const Header = require('./Header');
 const FilterA =require('./FilterA');
+const SidebarA =require('./SidebarA');
 //const ExportData = require('./ExportData');
 const RIlistItemAll = require('./RIlistItemAll');
 let test = {a: 1, b: 2};
@@ -96,11 +97,13 @@ class RIlistAll extends React.Component {
     return (
       <div>
         <Header/>   
-        <Table className="myForm">
-            <Row>  
+               <Row>  
      <Col sm={11} >
        < FilterA />       
-              </Col></Row> 
+              </Col></Row>    
+        
+        <Table className="myForm">
+  
           <Row>  
      <Col sm={11} >
          
