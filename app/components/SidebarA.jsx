@@ -86,7 +86,7 @@ class SudebarA extends React.Component {
                   checked={this.state.color === "orange"}
                   onChange={this.onRadioChange}
                 />
-                <span>Ornage</span>
+                <span>Oranage</span>
               </label>
             </li>
 

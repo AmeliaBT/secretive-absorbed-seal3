@@ -64340,11 +64340,16 @@ class RIlistAll extends React.Component {
     return (
       React.createElement("div", null, 
         React.createElement(Header, null), 
-        React.createElement(Table, {className: "myForm"}, 
-            React.createElement(Row, null, "  ", 
+               React.createElement(Row, null, "  ", 
      React.createElement(Col, {sm: 11}, 
        React.createElement(FilterA, null)
               )), 
+                React.createElement(Row, null, "  ", 
+     React.createElement(Col, {sm: 11}, 
+       React.createElement(SidebarA, null)
+              )), 
+        React.createElement(Table, {className: "myForm"}, 
+  
           React.createElement(Row, null, "  ", 
      React.createElement(Col, {sm: 11}
          

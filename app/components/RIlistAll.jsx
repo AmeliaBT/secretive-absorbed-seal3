@@ -101,7 +101,10 @@ class RIlistAll extends React.Component {
      <Col sm={11} >
        < FilterA />       
               </Col></Row>    
-        
+                <Row>  
+     <Col sm={11} >
+       < SidebarA />       
+              </Col></Row>     
         <Table className="myForm">
   
           <Row>  
