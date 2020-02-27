@@ -3,8 +3,17 @@ const React = require('react');
 const Link = require('react-router-dom').Link
 //const options =require('./exampleData');
 const {Typeahead} = require('react-bootstrap-typeahead');
+let test = {a: 1, b: 2};
+/* 
 
 
+ReactDOM.render(
+    <div {...test} />,
+    document.getElementById('app')
+);
+
+
+*/
 class CustomizedTypeahead extends React.Component {
   render() {
     let injectedProps = {};
@@ -41,3 +50,12 @@ class CustomizedTypeahead extends React.Component {
   }
 }
 module.exports = CustomizedTypeahead;
+
+
+/* 
+  return <Typeahead 
+      ref={(typeahead) => this.typeahead = typeahead} 
+      {...this.props} 
+      {...injectedProps} />
+*/
+//      {...this.props} 

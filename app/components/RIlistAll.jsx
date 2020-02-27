@@ -11,7 +11,7 @@ const Header = require('./Header');
 const FilterA =require('./FilterA');
 //const ExportData = require('./ExportData');
 const RIlistItemAll = require('./RIlistItemAll');
-
+let test = {a: 1, b: 2};
 /* the  page that shows all reports */
 class RIlistAll extends React.Component {
   constructor(props) {
