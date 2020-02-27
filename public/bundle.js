@@ -64348,13 +64348,8 @@ class RIlistAll extends React.Component {
      React.createElement(Col, {sm: 11}, 
        React.createElement(SidebarA, null)
               )), 
-        React.createElement(Table, {className: "myForm"}, 
-  
-          React.createElement(Row, null, "  ", 
-     React.createElement(Col, {sm: 11}
-         
-              )), 
-          
+React.createElement(Table, {className: "myForm"}, 
+          React.createElement(Row, null, "    ", React.createElement(Col, {sm: 11}, "  ")), 
             React.createElement(Row, null, 
              React.createElement(Col, {sm: 1}, " ", React.createElement("b", null, "RI "), "  "), 
                 React.createElement(Col, {sm: 1}, React.createElement("b", null, " Inspector"), " "), 
@@ -64366,12 +64361,10 @@ class RIlistAll extends React.Component {
               React.createElement(Col, {sm: 3}, " ", React.createElement("b", null, "Comment"), " "), 
                React.createElement(Col, {sm: 1}, " ", React.createElement("b", null, "View "), " ")
            ), 
-       
         
         this.state.reports
-       ), 
-         React.createElement(Modal, {show: this.state.show, onHide: this.handleClose}
-        )
+  ), 
+         React.createElement(Modal, {show: this.state.show, onHide: this.handleClose}, "  ")
        
      
       )
@@ -74822,7 +74815,7 @@ class SudebarA extends React.Component {
                   checked: this.state.color === "orange", 
                   onChange: this.onRadioChange}
                 ), 
-                React.createElement("span", null, "Ornage")
+                React.createElement("span", null, "Oranage")
               )
             ), 
 

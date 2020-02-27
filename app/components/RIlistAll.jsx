@@ -96,7 +96,8 @@ class RIlistAll extends React.Component {
   render() {
     return (
       <div>
-        <Header/>   
+        <Header/> 
+    
                <Row>  
      <Col sm={11} >
        < FilterA />       
@@ -105,13 +106,8 @@ class RIlistAll extends React.Component {
      <Col sm={11} >
        < SidebarA />       
               </Col></Row>     
-        <Table className="myForm">
-  
-          <Row>  
-     <Col sm={11} >
-         
-              </Col></Row> 
-          
+<Table className="myForm">  
+          <Row>    <Col sm={11} >  </Col></Row>           
             <Row>
              <Col sm={1}> <b>RI </b>  </Col> 
                 <Col sm={1} ><b> Inspector</b> </Col> 
@@ -123,12 +119,10 @@ class RIlistAll extends React.Component {
               <Col sm={3} > <b>Comment</b> </Col> 
                <Col sm={1} > <b>View </b> </Col> 
            </Row>
-       
         
         {this.state.reports}
-       </Table>  
-         <Modal show={this.state.show} onHide={this.handleClose}>         
-        </Modal>
+  </Table>  
+         <Modal show={this.state.show} onHide={this.handleClose}>  </Modal>
        
      
       </div>
