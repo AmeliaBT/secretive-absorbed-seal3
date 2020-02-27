@@ -13,7 +13,7 @@ const {TableHeaderColumn, InputGroup, option, Form, FormGroup, Col, FormControl,
 /* eslint no-unused-vars: 0 */
 //import React from 'react';
 //import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';
-
+//https://gist.github.com/AllenFang/01e560f343e1ba4e62c3
 const products = [];
 
 function addProducts(quantity) {
