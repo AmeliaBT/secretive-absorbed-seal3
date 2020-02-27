@@ -64192,6 +64192,11 @@ class RIlistAll extends React.Component {
      React.createElement(Col, {sm: 11}, 
        React.createElement(FilterA, null)
               )), 
+          React.createElement(Row, null, "  ", 
+     React.createElement(Col, {sm: 11}
+         
+              )), 
+          
             React.createElement(Row, null, 
              React.createElement(Col, {sm: 1}, " ", React.createElement("b", null, "RI "), "  "), 
                 React.createElement(Col, {sm: 1}, React.createElement("b", null, " Inspector"), " "), 

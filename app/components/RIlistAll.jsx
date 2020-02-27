@@ -100,7 +100,12 @@ class RIlistAll extends React.Component {
             <Row>  
      <Col sm={11} >
        < FilterA />       
-              </Col></Row>  
+              </Col></Row> 
+          <Row>  
+     <Col sm={11} >
+         
+              </Col></Row> 
+          
             <Row>
              <Col sm={1}> <b>RI </b>  </Col> 
                 <Col sm={1} ><b> Inspector</b> </Col> 
