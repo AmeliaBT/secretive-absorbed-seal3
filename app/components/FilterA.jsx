@@ -1,7 +1,7 @@
 const React = require('react');
 const Link = require('react-router-dom').Link
 // style for BOOKS
-//const style = require('../styles/FormRI');
+const style = require('../styles/FormRI');
 // other components and etc
 const options =require('./exampleData');
 /*
@@ -34,8 +34,8 @@ class FilterA extends React.Component {
   render() {
     return (
       <div>
-          <div >
-        <h5>FilterA</h5>
+          <div className="px-5 py-5">
+       
         {/* 
         <Typeahead
           labelKey="name"

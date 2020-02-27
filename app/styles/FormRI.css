@@ -1,4 +1,19 @@
+/* for Filter A */ 
+h1, p {
+  font-family: Lato;
+}
 
+.rbt-input-wrapper::before {
+  font-family: FontAwesome;
+  content: "\f0d7";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px;
+  z-index: 1;
+}
+
+/* *************************** */ 
 .search-icon {
   position: absolute;
   right: 5px;
