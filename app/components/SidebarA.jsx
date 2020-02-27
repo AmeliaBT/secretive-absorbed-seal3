@@ -16,10 +16,25 @@ class SudebarA extends React.Component {
   constructor() {
     super();
     this.state = {
-      name: 'xxReact'
+       color: 'green'
+
     };
+    
+    this.onRadioChange = this.onRadioChange.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
   }
-// <Typeahead
+
+   onRadioChange = (e) => {
+    this.setState({
+      color: e.target.value
+    });
+  }
+
+  onSubmit = (e) => {
+    e.preventDefault();
+    console.log(this.state);
+  }
+  
   render() {
     return (
       <div>
