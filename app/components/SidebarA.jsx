@@ -7,7 +7,7 @@ const Link = require('react-router-dom').Link
 
 const {Radio, Col, Grid, Row, Button, Glyphicon , OverlayTrigger, Popover} = require('react-bootstrap');
 
-//const style = require('../styles/SidebarA');
+const style = require('../styles/SidebarA');
 const options =require('./exampleData');
 //const CustomizedTypeahead =require('./CustomizedTypeahead');
 const {Typeahead} = require('react-bootstrap-typeahead');

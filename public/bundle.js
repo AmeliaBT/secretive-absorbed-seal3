@@ -14408,7 +14408,7 @@ class FilterA extends React.Component {
   render() {
     return (
       React.createElement("div", null, 
-          React.createElement("div", {className: "px-5 py-5"}, 
+          React.createElement("div", null, 
        
       React.createElement(Typeahead, {
           labelKey: "name", 
@@ -14424,7 +14424,10 @@ class FilterA extends React.Component {
 }
 module.exports = FilterA;
 
-/*<CustomizedTypeahead
+/*
+<div className="px-5 py-5">
+
+<CustomizedTypeahead
           labelKey="name" 
         options={options}
         multiple
@@ -64347,7 +64350,8 @@ class RIlistAll extends React.Component {
 React.createElement(Grid, null, 
 React.createElement(Row, {className: "show-grid"}, 
    React.createElement(Col, {xs: 1, className: "left-col"}, 
-       React.createElement(FilterA, null), 
+     /* 
+       < FilterA />   */
       React.createElement(SidebarA, null)
     ), 
   React.createElement(Col, {xs: 11, className: "right-col"}, 
@@ -76337,7 +76341,7 @@ exports = module.exports = __webpack_require__(28)(false);
 
 
 // module
-exports.push([module.i, "/* for Filter A */ \nh1, p {\n  font-family: Lato;\n}\n\n.rbt-input-wrapper::before {\n  font-family: FontAwesome;\n  content: \"\\F0D7\";\n  position: absolute;\n  top: 50%;\n  transform: translateY(-50%);\n  right: 10px;\n  z-index: 1;\n}\n\n/* *************************** */ \n.search-icon {\n  position: absolute;\n  right: 5px;\n  top: 5px;\n  z-index: 9999; /*this will keep the icon appearing all time, even when on input::focus*/\n}\n/* \n.Form {\n  width: 600px;\n background: antiquewhite; \n padding: 50px;\n border: 1px solid #9d9d8e;\n*/\n\n.profile-line {\n  background-color: #44708f;\n  width: 100%;\n  height: 5px;\n  margin: auto;\n  margin-bottom: 2px;\n  margin-top: 2px;\n    padding: 0%;\n}\n.input-rowC{\n padding: 5px;\n  width: 100%; \n  height: 120px;\npadding: 0%;}\n\n \n.input-row {\n  width: 100%; \n  margin-top: 0;\n  margin-bottom: 0;\n  height: 40px;\n\npadding: 0%;\n}\n.input-row3 {\n  height: 40px;\n  margin-top: 0;\n  margin-bottom: 0;\n  padding: 0%;\n}\n.input-row2 {\n  width: 100%; \n  margin-top: 0;\n  margin-bottom: 0;\n  height: 40px;\n  background-color: white; \npadding: 0%;\n}\n\n/*\n\n\n.FormRI { \n  margin: auto;\n  margin-top: 50px; \n  width: 83%;\n  margin: auto 0;\n  border: 1px solid #9d9d8e;\n  background: antiquewhite; \n}\n\nbackground-color: azure;\nwidth: 600px;\n.input-label {\nwidth: 90%;\nmargin-top: 0;\nmargin-bottom: 0;\ncolor: rgb(157, 157, 157);\nbackground-color: red;\n}\n\n.profile-label {\n  text-align: center;\n  font-size: 10px;\n  color: black;\n  margin-top: 0px;\n  background-color: green;\n}\n.profile-label {\n  text-align: center;\n  font-size: 30px;\n  color: black; \n  margin: 3%;\n  margin-top: 30px;\n}\n\n.profile-label {\n  text-align: center;\n  font-size: 30px;\n  color: black; \n  margin: 3%;\n  margin-top: 30px;\n}\n\n.input-label {\nwidth: 90%;\nmargin: auto;\ncolor: rgb(157, 157, 157);\n}\n*/", ""]);
+exports.push([module.i, "/* for Filter A \nh1, p {\n  font-family: Lato;\n}\n\n.rbt-input-wrapper::before {\n  font-family: FontAwesome;\n  content: \"\\f0d7\";\n  position: absolute;\n  top: 50%;\n  transform: translateY(-50%);\n  right: 10px;\n  z-index: 1;\n}\n*/ \n/* *************************** */ \n.search-icon {\n  position: absolute;\n  right: 5px;\n  top: 5px;\n  z-index: 9999; /*this will keep the icon appearing all time, even when on input::focus*/\n}\n/* \n.Form {\n  width: 600px;\n background: antiquewhite; \n padding: 50px;\n border: 1px solid #9d9d8e;\n*/\n\n.profile-line {\n  background-color: #44708f;\n  width: 100%;\n  height: 5px;\n  margin: auto;\n  margin-bottom: 2px;\n  margin-top: 2px;\n    padding: 0%;\n}\n.input-rowC{\n padding: 5px;\n  width: 100%; \n  height: 120px;\npadding: 0%;}\n\n \n.input-row {\n  width: 100%; \n  margin-top: 0;\n  margin-bottom: 0;\n  height: 40px;\n\npadding: 0%;\n}\n.input-row3 {\n  height: 40px;\n  margin-top: 0;\n  margin-bottom: 0;\n  padding: 0%;\n}\n.input-row2 {\n  width: 100%; \n  margin-top: 0;\n  margin-bottom: 0;\n  height: 40px;\n  background-color: white; \npadding: 0%;\n}\n\n/*\n\n\n.FormRI { \n  margin: auto;\n  margin-top: 50px; \n  width: 83%;\n  margin: auto 0;\n  border: 1px solid #9d9d8e;\n  background: antiquewhite; \n}\n\nbackground-color: azure;\nwidth: 600px;\n.input-label {\nwidth: 90%;\nmargin-top: 0;\nmargin-bottom: 0;\ncolor: rgb(157, 157, 157);\nbackground-color: red;\n}\n\n.profile-label {\n  text-align: center;\n  font-size: 10px;\n  color: black;\n  margin-top: 0px;\n  background-color: green;\n}\n.profile-label {\n  text-align: center;\n  font-size: 30px;\n  color: black; \n  margin: 3%;\n  margin-top: 30px;\n}\n\n.profile-label {\n  text-align: center;\n  font-size: 30px;\n  color: black; \n  margin: 3%;\n  margin-top: 30px;\n}\n\n.input-label {\nwidth: 90%;\nmargin: auto;\ncolor: rgb(157, 157, 157);\n}\n*/", ""]);
 
 // exports
 

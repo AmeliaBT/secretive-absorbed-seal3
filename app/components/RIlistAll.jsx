@@ -104,7 +104,8 @@ class RIlistAll extends React.Component {
 <Grid>      
 <Row className="show-grid"> 
    <Col xs={1} className="left-col">
-       < FilterA />   
+     {/* 
+       < FilterA />   */}
       < SidebarA />     
     </Col>
   <Col xs={11} className="right-col"> 

@@ -1,4 +1,4 @@
-/* for Filter A */ 
+/* for Filter A 
 h1, p {
   font-family: Lato;
 }
@@ -12,7 +12,7 @@ h1, p {
   right: 10px;
   z-index: 1;
 }
-
+*/ 
 /* *************************** */ 
 .search-icon {
   position: absolute;

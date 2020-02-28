@@ -20,7 +20,7 @@ class FilterA extends React.Component {
   render() {
     return (
       <div>
-          <div className="px-5 py-5">
+          <div >
        
       <Typeahead
           labelKey="name" 
@@ -36,7 +36,10 @@ class FilterA extends React.Component {
 }
 module.exports = FilterA;
 
-/*<CustomizedTypeahead
+/*
+<div className="px-5 py-5">
+
+<CustomizedTypeahead
           labelKey="name" 
         options={options}
         multiple
