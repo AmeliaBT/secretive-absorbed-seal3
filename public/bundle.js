@@ -64205,7 +64205,7 @@ class RIlistItem extends React.Component {
         React.createElement(Col, {  sm: 1}, "#", this.state.reportID, " "), 
    
      React.createElement(Col, { sm: 1}, " ", this.state.fwo), 
-       React.createElement(Col, {  sm: 1}, " ", this.state.Gwo), 
+       React.createElement(Col, {  sm: 2}, " ", this.state.Gwo), 
         React.createElement(Col, {  sm: 1}, " ", this.state.jwo), 
         React.createElement(Col, {  sm: 1}, " ", this.state.two), 
         React.createElement(Col, {  sm: 1}, " ", this.state.owo), 
@@ -74968,7 +74968,7 @@ class RIlistItemAll extends React.Component {
         React.createElement(Col, {  sm: 1}, this.state.reportID, " "), 
        React.createElement(Col, { sm: 1}, " ", this.state.inspector), 
        React.createElement(Col, { sm: 1}, " ", this.state.fwo), 
-       React.createElement(Col, {  sm: 1}, " ", this.state.Gwo), 
+       React.createElement(Col, {  sm: 2}, " ", this.state.Gwo), 
         React.createElement(Col, {  sm: 1}, " ", this.state.jwo), 
         React.createElement(Col, {  sm: 1}, " ", this.state.two), 
         React.createElement(Col, {  sm: 1}, " ", this.state.owo), 
@@ -74986,6 +74986,19 @@ module.exports = RIlistItemAll ;
 
 
    {/* 
+    <Row>
+             <Col sm={1}> <b>RI </b>  </Col> 
+                <Col sm={1} ><b> Inspector</b> </Col> 
+                <Col sm={1} ><b> PN </b></Col> 
+                <Col sm={2} ><b>Description n </b></Col> 
+               <Col  sm={1} ><b> Date Inspected</b> </Col> 
+              <Col  sm={1} ><b>Pass / Fail </b> </Col> 
+               <Col sm={1} > <b>Lot Size </b> </Col> 
+              <Col sm={3} > <b>Comment</b> </Col> 
+               <Col sm={1} > <b>View </b> </Col> 
+           </Row>
+   
+   
 <div className="book-all">
      <img src={this.state.img_url} alt="book pic" className="img-all"/>*/}
 /* 

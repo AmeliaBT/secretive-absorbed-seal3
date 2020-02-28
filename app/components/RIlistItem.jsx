@@ -65,7 +65,7 @@ class RIlistItem extends React.Component {
         <Col  sm={1} >#{this.state.reportID} </Col>       
    
      <Col sm={1} > {this.state.fwo}</Col>
-       <Col  sm={1} > {this.state.Gwo}</Col>
+       <Col  sm={2} > {this.state.Gwo}</Col>
         <Col  sm={1} > {this.state.jwo}</Col>
         <Col  sm={1} > {this.state.two}</Col>
         <Col  sm={1} > {this.state.owo}</Col>

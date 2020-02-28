@@ -55,7 +55,7 @@ class RIlistItemAll extends React.Component {
         <Col  sm={1} >{this.state.reportID} </Col>       
        <Col sm={1} > {this.state.inspector}</Col>
        <Col sm={1} > {this.state.fwo}</Col>
-       <Col  sm={1} > {this.state.Gwo}</Col>
+       <Col  sm={2} > {this.state.Gwo}</Col>
         <Col  sm={1} > {this.state.jwo}</Col>
         <Col  sm={1} > {this.state.two}</Col>
         <Col  sm={1} > {this.state.owo}</Col>
@@ -73,6 +73,19 @@ module.exports = RIlistItemAll ;
 
 
    {/* 
+    <Row>
+             <Col sm={1}> <b>RI </b>  </Col> 
+                <Col sm={1} ><b> Inspector</b> </Col> 
+                <Col sm={1} ><b> PN </b></Col> 
+                <Col sm={2} ><b>Description n </b></Col> 
+               <Col  sm={1} ><b> Date Inspected</b> </Col> 
+              <Col  sm={1} ><b>Pass / Fail </b> </Col> 
+               <Col sm={1} > <b>Lot Size </b> </Col> 
+              <Col sm={3} > <b>Comment</b> </Col> 
+               <Col sm={1} > <b>View </b> </Col> 
+           </Row>
+   
+   
 <div className="book-all">
      <img src={this.state.img_url} alt="book pic" className="img-all"/>*/}
 /* 
