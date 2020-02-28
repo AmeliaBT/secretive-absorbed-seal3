@@ -2,7 +2,6 @@ const React = require('react');
 const Link = require('react-router-dom').Link
 // style for list
 
-//const style = require('../styles/FormRI');
 const style = require('../styles/HomePage');
 // react-bootstrap
 const {Table , Grid, Row, Col, Modal} = require('react-bootstrap');

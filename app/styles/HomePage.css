@@ -18,9 +18,10 @@ span{
   color:#44708f;}
 spanB{ 
   background-color: gray;
-  font-size: 24px; 
-  font-weight: bold;
-  color:#44708f;}
+  /*font-size: 24px; 
+ font-weight: bold;
+  color:#44708f;*/
+}
 .myForm{ 
 width: 80%;
 margin-left: 10%;
@@ -49,8 +50,8 @@ border: 1px #F9F9F9 solid;
 }
 
 .left-col {
-  background:  green;   
-  width: 90%;
+  background:  blue;   
+  width: 25%;
   border: 1px #F9F9F9 solid;
   border-top-right-radius: 1px;
   border-bottom-left-radius: 1px;

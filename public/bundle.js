@@ -63618,7 +63618,7 @@ exports = module.exports = __webpack_require__(28)(false);
 
 
 // module
-exports.push([module.i, "/*used:\nclassName=\"profile\"\nclassName=\"show-grid\"\nclassName=\"profile-line\">\nclassName=\"home-title\"\n*/\n.title-line {\n  width:100%;\n  text-align: center; }\n.title-line p{\n    width:100%;\n    text-align: center;\n  }\nspan{ \n  background-color: white;\n  font-size: 24px; \n  font-weight: bold;\n  color:#44708f;}\n\n.myForm{ \nwidth: 80%;\nmargin-left: 10%;\nbackground-color: white;\nborder: 1px #F9F9F9 solid;\n  border-radius: 5px;\n  \n}\n\n.profile {\n  background-color: white;\n  width:80.7%;\n  margin: auto; \n}\n.show-grid {  \n  width:100%;  \n  margin: auto 0;\n}\n\n  .profile-line {\n    background-color: #44708f;\n    width:80.7%;\n    height: 1px;    \n    margin-bottom: 1px;\n    margin-top: 1px\n}\n\n\n\n\n\n\n  /*\n  \n.left-col {\n  background:  white;   \n  width: 50%;\n  border: 1px #F9F9F9 solid;\n  border-top-right-radius: 1px;\n  border-bottom-left-radius: 1px;\n  border-bottom-left-radius: 1px;\n}\n\n.right-col {\n  background-color: white; \n  width: 50%;\n  border: 1px #F9F9F9 solid;\n  border-top-right-radius: 1px;\n  border-bottom-left-radius: 1px;\n  border-bottom-right-radius: 1px;\n}\n\n.profile-label {\n  text-align: center;\n  font-size: 30px;\n  color: black;\n  margin: 3%;\n  margin-top: 30px;\n}\n\n.input-label {\n  width: 90%;\n  margin: auto;\n  color: rgb(157, 157, 157);\n}\n\n.library-label {\n  color: #f6ff67;\n  float: left;\n  font-size: 16px;\n  padding: 30px;\n  background: #3f6e8e;\n  margin-top: 10px;\n  margin-left: 20px;\n  height: 140px;\n  border: 1px #9d9d9d solid;\n  border-top-left-radius: 10px;\n  border-top-right-radius: 10px;\n}\n   background-color: red;\n  \n  */", ""]);
+exports.push([module.i, "/*used:\nclassName=\"profile\"\nclassName=\"show-grid\"\nclassName=\"profile-line\">\nclassName=\"home-title\"\n*/\n.title-line {\n  width:100%;\n  text-align: center; }\n.title-line p{\n    width:100%;\n    text-align: center;\n  }\nspan{ \n  background-color: white;\n  font-size: 24px; \n  font-weight: bold;\n  color:#44708f;}\nspanB{ \n  background-color: gray;\n  /*font-size: 24px; \n font-weight: bold;\n  color:#44708f;*/\n}\n.myForm{ \nwidth: 80%;\nmargin-left: 10%;\nbackground-color: white;\nborder: 1px #F9F9F9 solid;\n  border-radius: 5px;\n  \n}\n\n.profile {\n  background-color: white;\n  width:80.7%;\n  margin: auto; \n}\n.show-grid {  \n  width:100%;  \n  margin: auto 0;\n}\n\n  .profile-line {\n    background-color: #44708f;\n    width:80.7%;\n    height: 1px;    \n    margin-bottom: 1px;\n    margin-top: 1px\n}\n\n.left-col {\n  background:  blue;   \n  width: 25%;\n  border: 1px #F9F9F9 solid;\n  border-top-right-radius: 1px;\n  border-bottom-left-radius: 1px;\n  border-bottom-left-radius: 1px;\n}\n\n\n\n\n  /*\n  \n.left-col {\n  background:  white;   \n  width: 50%;\n  border: 1px #F9F9F9 solid;\n  border-top-right-radius: 1px;\n  border-bottom-left-radius: 1px;\n  border-bottom-left-radius: 1px;\n}\n\n.right-col {\n  background-color: white; \n  width: 50%;\n  border: 1px #F9F9F9 solid;\n  border-top-right-radius: 1px;\n  border-bottom-left-radius: 1px;\n  border-bottom-right-radius: 1px;\n}\n\n.profile-label {\n  text-align: center;\n  font-size: 30px;\n  color: black;\n  margin: 3%;\n  margin-top: 30px;\n}\n\n.input-label {\n  width: 90%;\n  margin: auto;\n  color: rgb(157, 157, 157);\n}\n\n.library-label {\n  color: #f6ff67;\n  float: left;\n  font-size: 16px;\n  padding: 30px;\n  background: #3f6e8e;\n  margin-top: 10px;\n  margin-left: 20px;\n  height: 140px;\n  border: 1px #9d9d9d solid;\n  border-top-left-radius: 10px;\n  border-top-right-radius: 10px;\n}\n   background-color: red;\n  \n  */", ""]);
 
 // exports
 
@@ -64248,7 +64248,6 @@ const React = __webpack_require__(0);
 const Link = __webpack_require__(11).Link
 // style for list
 
-//const style = require('../styles/FormRI');
 const style = __webpack_require__(74);
 // react-bootstrap
 const {Table , Grid, Row, Col, Modal} = __webpack_require__(13);
@@ -74788,7 +74787,7 @@ class SudebarA extends React.Component {
                   checked: this.state.color === "red", 
                   onChange: this.onRadioChange}
                 ), 
-                React.createElement("span", null, "Red")
+               "Red"
               )
             ), 
 
@@ -74800,7 +74799,7 @@ class SudebarA extends React.Component {
                   checked: this.state.color === "green", 
                   onChange: this.onRadioChange}
                 ), 
-                React.createElement("span", null, "Green")
+               "Green"
               )
             ), 
 
@@ -74812,7 +74811,7 @@ class SudebarA extends React.Component {
                   checked: this.state.color === "blue", 
                   onChange: this.onRadioChange}
                 ), 
-                React.createElement("span", null, "Blue")
+               "Blue"
               )
             ), 
 
@@ -74824,7 +74823,7 @@ class SudebarA extends React.Component {
                   checked: this.state.color === "orange", 
                   onChange: this.onRadioChange}
                 ), 
-                React.createElement("span", null, "Oranage")
+                React.createElement("spanB", null, "Oranage")
               )
             ), 
 
@@ -74836,7 +74835,7 @@ class SudebarA extends React.Component {
                   checked: this.state.color === "purple", 
                   onChange: this.onRadioChange}
                 ), 
-                React.createElement("span", null, "Purple")
+                React.createElement("spanB", null, "Purple")
               )
             )
           ), 
