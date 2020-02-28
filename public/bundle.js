@@ -74744,7 +74744,7 @@ const React = __webpack_require__(0);
 const Link = __webpack_require__(11).Link
 
 
-const {Radio, Col, Grid, Row, Button, Glyphicon, Form } = __webpack_require__(13);
+const {FormControl, FormGroup, Group, Radio, Col, Grid, Row, Button, Glyphicon, Form } = __webpack_require__(13);
 
 const style = __webpack_require__(636);
 const options =__webpack_require__(199);
@@ -74777,32 +74777,22 @@ class SudebarA extends React.Component {
   render() {
     return (
       React.createElement("div", null, 
-React.createElement("form", null, " ", React.createElement(FormGroup, null, 
-                React.createElement(ControlLabel, {id: "adminRate"}, "Inspector"), 
-                  React.createElement(Radio, {name: "adminRate", type: "integer", inline: true, 
-                    onChange: this.handleChange.bind(this), 
-                    value: this.state.form.adminRate}, "1"), ' ', 
-                  React.createElement(Radio, {name: "adminRate", type: "integer", inline: true, 
-                    onChange: this.handleChange.bind(this), 
-                    value: this.state.form.adminRate}, "2"), ' ', 
-                  React.createElement(Radio, {name: "adminRate", type: "integer", inline: true, 
-                    onChange: this.handleChange.bind(this), 
-                    value: this.state.form.adminRate}, "3"), ' '
-              ), 
-
-              React.createElement(FormGroup, null, 
-                React.createElement(ControlLabel, {id: "adminRate"}, "WO/PO/M"), 
-                  React.createElement(Radio, {name: "adminRate", type: "integer", inline: true, 
-                    onChange: this.handleChange.bind(this), 
-                    value: this.state.form.adminRate}, "1"), ' ', 
-                  React.createElement(Radio, {name: "adminRate", type: "integer", inline: true, 
-                    onChange: this.handleChange.bind(this), 
-                    value: this.state.form.adminRate}, "2"), ' ', 
-                  React.createElement(Radio, {name: "adminRate", type: "integer", inline: true, 
-                    onChange: this.handleChange.bind(this), 
-                    value: this.state.form.adminRate}, "3"), ' '
-              )
-            )
+      
+      React.createElement(Form, null, 
+  React.createElement("div", {className: "mb-3"}, 
+    React.createElement(Form.Check, {name: "radios", inline: true, label: "1", type: "radio", id: `inline-1`}), 
+    React.createElement(Form.Check, {inline: true, name: "radios", label: "2", type: "radio", id: `inline-2`}), 
+    React.createElement(Form.Check, {
+      inline: true, 
+      disabled: true, 
+      type: "radio", 
+      label: "3 (disabled)", 
+      name: "radios", 
+      id: `inline-3`}
+    )
+  )
+)
+   
 
 
          )
