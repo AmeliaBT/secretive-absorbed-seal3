@@ -12,7 +12,7 @@ const options =require('./exampleData');
 //const CustomizedTypeahead =require('./CustomizedTypeahead');
 const {Typeahead} = require('react-bootstrap-typeahead');
 
-class SudebarA extends React.Component {
+class SidebarA extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -60,7 +60,7 @@ class SudebarA extends React.Component {
     );
   }
 }
-module.exports = SudebarA;
+module.exports = SidebarA;
 
 /* 
            <li>
