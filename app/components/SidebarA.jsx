@@ -5,7 +5,7 @@ const React = require('react');
 const Link = require('react-router-dom').Link
 
 
-const {Radio, Col, Grid, Row, Button, Glyphicon , OverlayTrigger, Popover} = require('react-bootstrap');
+const {Radio, Col, Grid, Row, Button, Glyphicon, Form } = require('react-bootstrap');
 
 const style = require('../styles/SidebarA');
 const options =require('./exampleData');
@@ -38,7 +38,25 @@ class SudebarA extends React.Component {
   render() {
     return (
       <div>
- <form onSubmit={this.onSubmit}>
+
+
+         </div>
+    );
+  }
+}
+module.exports = SudebarA;
+
+/* 
+           <li>
+                  <ButtonGroup vertical block data-toggle="buttons">
+                    <Button className="btn btn-block" onClick={this._onOptionChange.bind(this, 'optionA')} active={this.state.option === 'optionA'}>Option A</Button>
+                    <Button className="btn btn-block" onClick={this._onOptionChange.bind(this, 'optionB')} active={this.state.option === 'optionB'}>Option B</Button>
+                    <Button className="btn btn-block" onClick={this._onOptionChange.bind(this, 'optionC')} active={this.state.option === 'optionC'}>Option C</Button>
+                  </ButtonGroup>
+            </li>
+            
+            
+    <form onSubmit={this.onSubmit}>
           <p>Select Inspector:</p>
 
           <ul>
@@ -105,20 +123,12 @@ class SudebarA extends React.Component {
 
           <button type="submit">Select</button>
         </form>
-
-         </div>
-    );
-  }
-}
-module.exports = SudebarA;
-
-/* 
-           <li>
-                  <ButtonGroup vertical block data-toggle="buttons">
-                    <Button className="btn btn-block" onClick={this._onOptionChange.bind(this, 'optionA')} active={this.state.option === 'optionA'}>Option A</Button>
-                    <Button className="btn btn-block" onClick={this._onOptionChange.bind(this, 'optionB')} active={this.state.option === 'optionB'}>Option B</Button>
-                    <Button className="btn btn-block" onClick={this._onOptionChange.bind(this, 'optionC')} active={this.state.option === 'optionC'}>Option C</Button>
-                  </ButtonGroup>
-            </li>
+         
+            
+            
+            
+            
+            
+            
 */
 

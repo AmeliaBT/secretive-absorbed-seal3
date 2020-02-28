@@ -74744,7 +74744,7 @@ const React = __webpack_require__(0);
 const Link = __webpack_require__(11).Link
 
 
-const {Radio, Col, Grid, Row, Button, Glyphicon , OverlayTrigger, Popover} = __webpack_require__(13);
+const {Radio, Col, Grid, Row, Button, Glyphicon, Form } = __webpack_require__(13);
 
 const style = __webpack_require__(636);
 const options =__webpack_require__(199);
@@ -74776,74 +74776,8 @@ class SudebarA extends React.Component {
   
   render() {
     return (
-      React.createElement("div", null, 
- React.createElement("form", {onSubmit: this.onSubmit}, 
-          React.createElement("p", null, "Select Inspector:"), 
+      React.createElement("div", null
 
-          React.createElement("ul", null, 
-            React.createElement("li", null, 
-              React.createElement("label", null, 
-                React.createElement("input", {
-                  type: "radio", 
-                  value: "red", 
-                  checked: this.state.color === "red", 
-                  onChange: this.onRadioChange}
-                ), 
-               "Red"
-              )
-            ), 
-
-            React.createElement("li", null, 
-              React.createElement("label", null, 
-                React.createElement("input", {
-                  type: "radio", 
-                  value: "green", 
-                  checked: this.state.color === "green", 
-                  onChange: this.onRadioChange}
-                ), 
-               "Green"
-              )
-            ), 
-
-            React.createElement("li", null, 
-              React.createElement("label", null, 
-                React.createElement("input", {
-                  type: "radio", 
-                  value: "blue", 
-                  checked: this.state.color === "blue", 
-                  onChange: this.onRadioChange}
-                ), 
-               "Blue"
-              )
-            ), 
-
-            React.createElement("li", null, 
-              React.createElement("label", null, 
-                React.createElement("input", {
-                  type: "radio", 
-                  value: "orange", 
-                  checked: this.state.color === "orange", 
-                  onChange: this.onRadioChange}
-                ), 
-               "Oranage"
-              )
-            ), 
-
-            React.createElement("li", null, 
-              React.createElement("label", null, 
-                React.createElement("input", {
-                  type: "radio", 
-                  value: "purple", 
-                  checked: this.state.color === "purple", 
-                  onChange: this.onRadioChange}
-                ), 
-              "Purple"
-              )
-            )
-          ), 
-
-          React.createElement("button", {type: "submit"}, "Select")
-        )
 
          )
     );
@@ -74859,6 +74793,82 @@ module.exports = SudebarA;
                     <Button className="btn btn-block" onClick={this._onOptionChange.bind(this, 'optionC')} active={this.state.option === 'optionC'}>Option C</Button>
                   </ButtonGroup>
             </li>
+            
+            
+    <form onSubmit={this.onSubmit}>
+          <p>Select Inspector:</p>
+
+          <ul>
+            <li>
+              <label>
+                <input
+                  type="radio"
+                  value="red"
+                  checked={this.state.color === "red"}
+                  onChange={this.onRadioChange}
+                />
+               Red
+              </label>
+            </li>
+
+            <li>
+              <label>
+                <input
+                  type="radio"
+                  value="green"
+                  checked={this.state.color === "green"}
+                  onChange={this.onRadioChange}
+                />
+               Green
+              </label>
+            </li>
+
+            <li>
+              <label>
+                <input
+                  type="radio"
+                  value="blue"
+                  checked={this.state.color === "blue"}
+                  onChange={this.onRadioChange}
+                />
+               Blue
+              </label>
+            </li>
+
+            <li>
+              <label>
+                <input
+                  type="radio"
+                  value="orange"
+                  checked={this.state.color === "orange"}
+                  onChange={this.onRadioChange}
+                />
+               Oranage
+              </label>
+            </li>
+
+            <li>
+              <label>
+                <input
+                  type="radio"
+                  value="purple"
+                  checked={this.state.color === "purple"}
+                  onChange={this.onRadioChange}
+                />
+              Purple
+              </label>
+            </li>
+          </ul>
+
+          <button type="submit">Select</button>
+        </form>
+         
+            
+            
+            
+            
+            
+            
 */
 
 
