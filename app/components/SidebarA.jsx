@@ -41,11 +41,10 @@ class SudebarA extends React.Component {
 <form> <FormGroup>
                 <ControlLabel >Inspector</ControlLabel>
                   <Radio name='inspector' type='text' 
-                    onChange={this.handleChange.bind(this)}
-                    value={this.state.form.adminRate}>1</Radio>{' '}
-                  <Radio name='adminRate' type='integer' 
-                    onChange={this.handleChange.bind(this)}
-                    value={this.state.form.adminRate}>2</Radio>{' '}
+                     value={this.state.inspector	} > 1 </Radio>
+                  
+                  <Radio  type='text' 
+                       value={this.state.form.adminRate}>2</Radio>{' '}
                   
               </FormGroup>
 
