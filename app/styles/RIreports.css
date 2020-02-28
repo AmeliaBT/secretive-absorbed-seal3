@@ -1,3 +1,10 @@
+
+.btn-modal {
+  width: 49.5% !important;
+  float: right;
+}
+/*
+
 .books {
   width: 90%;
   margin: auto;
@@ -7,11 +14,6 @@
   height: 1000px;
   overflow: auto;
 }
-.btn-modal {
-  width: 49.5% !important;
-  float: right;
-}
-/*
 .books {
   width: 90%;
   margin: auto;

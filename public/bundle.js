@@ -63865,7 +63865,7 @@ exports = module.exports = __webpack_require__(28)(false);
 
 
 // module
-exports.push([module.i, ".books {\n  width: 90%;\n  margin: auto;\n  padding: 20px;\n  background: #2d2d2d;\n  border: 10px solid #416f8e;\n  height: 1000px;\n  overflow: auto;\n}\n.btn-modal {\n  width: 49.5% !important;\n  float: right;\n}\n/*\n.books {\n  width: 90%;\n  margin: auto;\n  padding: 20px;\n  background: #2d2d2d;\n  border: 10px solid #416f8e;\n  height: 1000px;\n  overflow: auto;\n}\n.btn-modal {\n  width: 49.5% !important;\n  float: right;\n} */", ""]);
+exports.push([module.i, "\n.btn-modal {\n  width: 49.5% !important;\n  float: right;\n}\n/*\n\n.books {\n  width: 90%;\n  margin: auto;\n  padding: 20px;\n  background: #2d2d2d;\n  border: 10px solid #416f8e;\n  height: 1000px;\n  overflow: auto;\n}\n.books {\n  width: 90%;\n  margin: auto;\n  padding: 20px;\n  background: #2d2d2d;\n  border: 10px solid #416f8e;\n  height: 1000px;\n  overflow: auto;\n}\n.btn-modal {\n  width: 49.5% !important;\n  float: right;\n} */", ""]);
 
 // exports
 
@@ -64348,10 +64348,9 @@ class RIlistAll extends React.Component {
       /* 
        < FilterA />   */
       
-React.createElement(Row, {className: "show-grid"}, 
-   React.createElement(Col, {xs: 1}, React.createElement("div", {className: "well"}, "  ", React.createElement(SidebarA, null), "  ")
-    ), 
-  React.createElement(Col, {xs: 10}, " ", React.createElement("div", {className: "well"}, 
+React.createElement(Row, null, 
+   React.createElement(Col, {xs: 1}, React.createElement("div", {className: "well"}, "  ", React.createElement(SidebarA, null), "  "), " "), 
+  React.createElement(Col, {xs: 10}, " ", React.createElement("div", null, 
     
       
   
@@ -64361,7 +64360,7 @@ React.createElement(Table, {className: "myForm"},
              React.createElement(Col, {sm: 1}, " ", React.createElement("b", null, "RI "), "  "), 
                 React.createElement(Col, {sm: 1}, React.createElement("b", null, " Inspector"), " "), 
                 React.createElement(Col, {sm: 1}, React.createElement("b", null, " PN ")), 
-                React.createElement(Col, {sm: 1}, React.createElement("b", null, "Description  ")), 
+                React.createElement(Col, {sm: 2}, React.createElement("b", null, "Description n ")), 
                React.createElement(Col, { sm: 1}, React.createElement("b", null, " Date Inspected"), " "), 
               React.createElement(Col, { sm: 1}, React.createElement("b", null, "Pass / Fail "), " "), 
                React.createElement(Col, {sm: 1}, " ", React.createElement("b", null, "Lot Size "), " "), 

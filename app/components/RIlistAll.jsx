@@ -102,10 +102,9 @@ class RIlistAll extends React.Component {
       {/* 
        < FilterA />   */}   
       
-<Row className="show-grid"> 
-   <Col xs={1} ><div  className="well" >  < SidebarA />  </div>
-    </Col>
-  <Col xs={10} > <div  className="well" >  
+<Row > 
+   <Col xs={1} ><div  className="well" >  < SidebarA />  </div> </Col>
+  <Col xs={10} > <div   >  
     
       
   
@@ -115,7 +114,7 @@ class RIlistAll extends React.Component {
              <Col sm={1}> <b>RI </b>  </Col> 
                 <Col sm={1} ><b> Inspector</b> </Col> 
                 <Col sm={1} ><b> PN </b></Col> 
-                <Col sm={1} ><b>Description  </b></Col> 
+                <Col sm={2} ><b>Description n </b></Col> 
                <Col  sm={1} ><b> Date Inspected</b> </Col> 
               <Col  sm={1} ><b>Pass / Fail </b> </Col> 
                <Col sm={1} > <b>Lot Size </b> </Col> 
