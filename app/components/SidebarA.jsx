@@ -103,7 +103,7 @@ class SudebarA extends React.Component {
             </li>
           </ul>
 
-          <button type="submit">Choose Color</button>
+          <button type="submit">Select</button>
         </form>
 
          </div>

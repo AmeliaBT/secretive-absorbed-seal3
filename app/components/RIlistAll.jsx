@@ -103,7 +103,8 @@ class RIlistAll extends React.Component {
        < FilterA />   */}   
       
 <Row > 
-   <Col xs={1} ><div  className="well" >  < SidebarA />  </div> </Col>
+   <Col xs={1} ><div  className="well" >  < SidebarA /> 
+     < FilterA /> </div> </Col>
   <Col xs={10} > <div   >  
     
       

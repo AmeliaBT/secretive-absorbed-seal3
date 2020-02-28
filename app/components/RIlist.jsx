@@ -97,7 +97,7 @@ class RIlist extends React.Component {
         
              <Col sm={1}> <b>Rep # </b>  </Col> 
                 <Col sm={1} > <b>PN </b></Col> 
-                <Col sm={1} ><b>Des </b></Col> 
+                <Col sm={2} ><b>Description </b></Col> 
                <Col  sm={1} > <b>Date Inspected </b></Col> 
               <Col  sm={1} ><b>Pass / Fail  </b></Col> 
                <Col sm={1} > <b>Lot Size </b></Col> 

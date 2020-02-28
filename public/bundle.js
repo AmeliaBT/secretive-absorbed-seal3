@@ -64109,7 +64109,7 @@ class RIlist extends React.Component {
         
              React.createElement(Col, {sm: 1}, " ", React.createElement("b", null, "Rep # "), "  "), 
                 React.createElement(Col, {sm: 1}, " ", React.createElement("b", null, "PN ")), 
-                React.createElement(Col, {sm: 1}, React.createElement("b", null, "Des ")), 
+                React.createElement(Col, {sm: 2}, React.createElement("b", null, "Description ")), 
                React.createElement(Col, { sm: 1}, " ", React.createElement("b", null, "Date Inspected ")), 
               React.createElement(Col, { sm: 1}, React.createElement("b", null, "Pass / Fail  ")), 
                React.createElement(Col, {sm: 1}, " ", React.createElement("b", null, "Lot Size ")), 
@@ -64349,7 +64349,8 @@ class RIlistAll extends React.Component {
        < FilterA />   */
       
 React.createElement(Row, null, 
-   React.createElement(Col, {xs: 1}, React.createElement("div", {className: "well"}, "  ", React.createElement(SidebarA, null), "  "), " "), 
+   React.createElement(Col, {xs: 1}, React.createElement("div", {className: "well"}, "  ", React.createElement(SidebarA, null), 
+     React.createElement(FilterA, null), " "), " "), 
   React.createElement(Col, {xs: 10}, " ", React.createElement("div", null, 
     
       
@@ -74824,7 +74825,7 @@ class SudebarA extends React.Component {
                   checked: this.state.color === "orange", 
                   onChange: this.onRadioChange}
                 ), 
-                React.createElement("spanB", null, "Oranage")
+               "Oranage"
               )
             ), 
 
@@ -74836,12 +74837,12 @@ class SudebarA extends React.Component {
                   checked: this.state.color === "purple", 
                   onChange: this.onRadioChange}
                 ), 
-                React.createElement("spanB", null, "Purple")
+              "Purple"
               )
             )
           ), 
 
-          React.createElement("button", {type: "submit"}, "Choose Color")
+          React.createElement("button", {type: "submit"}, "Select")
         )
 
          )
