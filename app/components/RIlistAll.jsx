@@ -5,7 +5,7 @@ const Link = require('react-router-dom').Link
 //const style = require('../styles/FormRI');
 const style = require('../styles/HomePage');
 // react-bootstrap
-const {Table , Row, Col, Modal} = require('react-bootstrap');
+const {Table , Grid, Row, Col, Modal} = require('react-bootstrap');
 // other components and etc
 const Header = require('./Header');
 const FilterA =require('./FilterA');
@@ -98,14 +98,17 @@ class RIlistAll extends React.Component {
       <div>
         <Header/> 
     
-               <Row>  
-     <Col sm={11} >
-       < FilterA />       
-              </Col></Row>    
-                <Row>  
-     <Col sm={11} >
-       < SidebarA />       
-              </Col></Row>     
+               
+              
+        
+<Grid>      
+<Row className="show-grid"> 
+   <Col xs={1} className="left-col">
+       < FilterA />   
+      < SidebarA />     
+    </Col>
+  <Col xs={11} className="right-col"> 
+  
 <Table className="myForm">  
           <Row>    <Col sm={11} >  </Col></Row>           
             <Row>
@@ -123,8 +126,9 @@ class RIlistAll extends React.Component {
         {this.state.reports}
   </Table>  
          <Modal show={this.state.show} onHide={this.handleClose}>  </Modal>
-       
-     
+ </Col>
+</Row>     
+</Grid>     
       </div>
     );
   }

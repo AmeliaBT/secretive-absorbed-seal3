@@ -64248,7 +64248,7 @@ const Link = __webpack_require__(11).Link
 //const style = require('../styles/FormRI');
 const style = __webpack_require__(74);
 // react-bootstrap
-const {Table , Row, Col, Modal} = __webpack_require__(13);
+const {Table , Grid, Row, Col, Modal} = __webpack_require__(13);
 // other components and etc
 const Header = __webpack_require__(21);
 const FilterA =__webpack_require__(198);
@@ -64340,14 +64340,18 @@ class RIlistAll extends React.Component {
     return (
       React.createElement("div", null, 
         React.createElement(Header, null), 
-               React.createElement(Row, null, "  ", 
-     React.createElement(Col, {sm: 11}, 
-       React.createElement(FilterA, null)
-              )), 
-                React.createElement(Row, null, "  ", 
-     React.createElement(Col, {sm: 11}, 
-       React.createElement(SidebarA, null)
-              )), 
+    
+               
+              
+        
+React.createElement(Grid, null, 
+React.createElement(Row, {className: "show-grid"}, 
+   React.createElement(Col, {xs: 1, className: "left-col"}, 
+       React.createElement(FilterA, null), 
+      React.createElement(SidebarA, null)
+    ), 
+  React.createElement(Col, {xs: 11, className: "right-col"}, 
+  
 React.createElement(Table, {className: "myForm"}, 
           React.createElement(Row, null, "    ", React.createElement(Col, {sm: 11}, "  ")), 
             React.createElement(Row, null, 
@@ -64365,8 +64369,9 @@ React.createElement(Table, {className: "myForm"},
         this.state.reports
   ), 
          React.createElement(Modal, {show: this.state.show, onHide: this.handleClose}, "  ")
-       
-     
+ )
+)
+)
       )
     );
   }
