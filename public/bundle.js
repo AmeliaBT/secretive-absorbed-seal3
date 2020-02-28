@@ -74776,7 +74776,33 @@ class SudebarA extends React.Component {
   
   render() {
     return (
-      React.createElement("div", null
+      React.createElement("div", null, 
+React.createElement("form", null, " ", React.createElement(FormGroup, null, 
+                React.createElement(ControlLabel, {id: "adminRate"}, "Inspector"), 
+                  React.createElement(Radio, {name: "adminRate", type: "integer", inline: true, 
+                    onChange: this.handleChange.bind(this), 
+                    value: this.state.form.adminRate}, "1"), ' ', 
+                  React.createElement(Radio, {name: "adminRate", type: "integer", inline: true, 
+                    onChange: this.handleChange.bind(this), 
+                    value: this.state.form.adminRate}, "2"), ' ', 
+                  React.createElement(Radio, {name: "adminRate", type: "integer", inline: true, 
+                    onChange: this.handleChange.bind(this), 
+                    value: this.state.form.adminRate}, "3"), ' '
+              ), 
+
+              React.createElement(FormGroup, null, 
+                React.createElement(ControlLabel, {id: "adminRate"}, "WO/PO/M"), 
+                  React.createElement(Radio, {name: "adminRate", type: "integer", inline: true, 
+                    onChange: this.handleChange.bind(this), 
+                    value: this.state.form.adminRate}, "1"), ' ', 
+                  React.createElement(Radio, {name: "adminRate", type: "integer", inline: true, 
+                    onChange: this.handleChange.bind(this), 
+                    value: this.state.form.adminRate}, "2"), ' ', 
+                  React.createElement(Radio, {name: "adminRate", type: "integer", inline: true, 
+                    onChange: this.handleChange.bind(this), 
+                    value: this.state.form.adminRate}, "3"), ' '
+              )
+            )
 
 
          )
