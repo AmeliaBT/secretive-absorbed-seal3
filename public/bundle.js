@@ -64345,15 +64345,18 @@ class RIlistAll extends React.Component {
     
                
               
-        
+      /* 
+       < FilterA />   */
       
 React.createElement(Row, {className: "show-grid"}, 
-   React.createElement(Col, {xs: 1, className: "left-col"}, 
-     /* 
-       < FilterA />   */
-      React.createElement(SidebarA, null)
+   React.createElement(Col, {xs: 1}, React.createElement("div", {className: "well"}, "  ", React.createElement(SidebarA, null), "  ")
     ), 
-  React.createElement(Col, {xs: 10, className: "right-col"}, 
+  React.createElement(Col, {xs: 10}, " ", React.createElement("div", {className: "well"}, "  ", React.createElement(SidebarA, null), "  ")
+     )
+  
+  
+  
+), 
   
 React.createElement(Table, {className: "myForm"}, 
                  
@@ -64372,8 +64375,7 @@ React.createElement(Table, {className: "myForm"},
         this.state.reports
   ), 
          React.createElement(Modal, {show: this.state.show, onHide: this.handleClose}, "  ")
- )
-)
+   
    
       )
     );
