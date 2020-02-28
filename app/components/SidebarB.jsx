@@ -11,11 +11,9 @@ const style = require('../styles/SidebarA');
 const options =require('./exampleData');
 
 // Render Prop
-
-
 const { Formik,  Field, ErrorMessage } =require('formik');
-
-import * as Yup from 'yup';
+const {Yup} =require('yup');
+//import * as Yup from 'yup';
 
 const style1 = {
     width: '60%',
@@ -43,24 +41,7 @@ class SidebarB extends React.Component {
                     confirmPassword: '',
                     consent: false
                 }}
-                validationSchema={Yup.object().shape({
-                    firstName: Yup.string()
-                        .required('First Name is required'),
-                    lastName: Yup.string()
-                        .required('Last Name is required'),
-                    email: Yup.string()
-                        .email('Email is invalid')
-                        .required('Email is required'),
-                    role: Yup.string()
-                        .required('It will help us get started if we know a little about your background'),    
-                    password: Yup.string()
-                        .min(6, 'Password must be at least 6 characters')
-                        .required('Password is required'),
-                    confirmPassword:  Yup.string()
-                        .oneOf([Yup.ref('password'), null], 'Passwords must match')
-                        .required('Confirm Password is required')
-                })}
-
+                       
                 onSubmit={fields => {
                     alert('SUCCESS!! :-)\n\n' + JSON.stringify(fields, null, 4))
                 }}
@@ -124,18 +105,28 @@ class SidebarB extends React.Component {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 module.exports = SidebarB;
+
+
+/* 
+                validationSchema={Yup.object().shape({
+                    firstName: Yup.string()
+                        .required('First Name is required'),
+                    lastName: Yup.string()
+                        .required('Last Name is required'),
+                    email: Yup.string()
+                        .email('Email is invalid')
+                        .required('Email is required'),
+                    role: Yup.string()
+                        .required('It will help us get started if we know a little about your background'),    
+                    password: Yup.string()
+                        .min(6, 'Password must be at least 6 characters')
+                        .required('Password is required'),
+                    confirmPassword:  Yup.string()
+                        .oneOf([Yup.ref('password'), null], 'Passwords must match')
+                        .required('Confirm Password is required')
+                })}
+*/ 
+     
+
 
