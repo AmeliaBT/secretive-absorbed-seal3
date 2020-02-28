@@ -5,7 +5,7 @@ const React = require('react');
 const Link = require('react-router-dom').Link
 
 
-const {Radio, Col, Grid, Row, Button, Glyphicon, Form } = require('react-bootstrap');
+const {FormControl, FormGroup, Group, Radio, Col, Grid, Row, Button, Glyphicon, Form } = require('react-bootstrap');
 
 const style = require('../styles/SidebarA');
 const options =require('./exampleData');
