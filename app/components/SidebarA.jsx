@@ -39,7 +39,7 @@ class SudebarA extends React.Component {
     return (
       <div>
  <form onSubmit={this.onSubmit}>
-          <strong>Select Color:</strong>
+          <p>Select Inspector:</p>
 
           <ul>
             <li>

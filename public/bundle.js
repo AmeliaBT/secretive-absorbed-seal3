@@ -74777,7 +74777,7 @@ class SudebarA extends React.Component {
     return (
       React.createElement("div", null, 
  React.createElement("form", {onSubmit: this.onSubmit}, 
-          React.createElement("strong", null, "Select Color:"), 
+          React.createElement("p", null, "Select Inspector:"), 
 
           React.createElement("ul", null, 
             React.createElement("li", null, 
@@ -74902,7 +74902,7 @@ exports = module.exports = __webpack_require__(28)(false);
 
 
 // module
-exports.push([module.i, "body {\n  margin: 0;\n  font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Roboto\", \"Oxygen\",\n    \"Ubuntu\", \"Cantarell\", \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\",\n    sans-serif;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n\ncode {\n  font-family: source-code-pro, Menlo, Monaco, Consolas, \"Courier New\",\n    monospace;\n}\n\nul,\nol {\n  list-style: none;\n  margin: 0;\n  padding: 0;\n}\n\n.App {\n  max-width: 500px;\n  margin: 50px auto;\n}\n\nstrong {\n  margin-bottom: 10px;\n  display: block;\n  font-size: 25px;\n}\n\nlabel {\n  cursor: pointer;\n}\n\nlabel span {\n  display: inline-block;\n  padding: 0 0 0 10px;\n}\n", ""]);
+exports.push([module.i, "\nul,\nol {\n  list-style: none;\n  margin: 0;\n  padding: 0;\n}\n\n\nlabel {\n  cursor: pointer;\n}\n\nlabel span {\n  display: inline-block;\n  padding: 0 0 0 1px;\n}\n\n/* \nbody {\n  margin: 0;\n  font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Roboto\", \"Oxygen\",\n    \"Ubuntu\", \"Cantarell\", \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\",\n    sans-serif;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n\ncode {\n  font-family: source-code-pro, Menlo, Monaco, Consolas, \"Courier New\",\n    monospace;\n}\n\nul,\nol {\n  list-style: none;\n  margin: 0;\n  padding: 0;\n}\n\n.App {\n  max-width: 500px;\n  margin: 50px auto;\n}\n\nstrong {\n  margin-bottom: 10px;\n  display: block;\n  font-size: 25px;\n}\n\nlabel {\n  cursor: pointer;\n}\n\nlabel span {\n  display: inline-block;\n  padding: 0 0 0 10px;\n}\n\n*/", ""]);
 
 // exports
 
