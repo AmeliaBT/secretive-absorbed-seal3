@@ -30,7 +30,7 @@ const style3 = {
     marginRight: '2em'
 }
 
-class SideB extends React.Component {
+class SidebarB extends React.Component {
     render() {
         return (
             <Formik

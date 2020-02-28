@@ -25,6 +25,7 @@ dependencies:
   redux: 3.7.2
   style-loader: 0.19.1
   webpack: 3.12.0
+  yup: 0.28.1
 packages:
   /@babel/runtime-corejs2/7.8.4:
     dependencies:
@@ -1660,6 +1661,12 @@ packages:
     dev: false
     resolution:
       integrity: sha512-dVsPA/UwQ8+2uoFe5GHtiBMu48dWLTdsuEd7CKGlZlD78r1TTWBvDuFaFGKCo/ZfEr95Uk56vZoX86OsHkUeIg==
+  /fn-name/2.0.1:
+    dev: false
+    engines:
+      node: '>=0.10.0'
+    resolution:
+      integrity: sha1-UhTXU3pNBqSjAcDMJi/rhBiAAuc=
   /for-in/1.0.2:
     dev: false
     engines:
@@ -3570,6 +3577,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ==
+  /property-expr/1.5.1:
+    dev: false
+    resolution:
+      integrity: sha512-CGuc0VUTGthpJXL36ydB6jnbyOf/rAHFvmVrJlH+Rg0DqqLFQGAP6hIaxD/G0OAmBJPhXDHuEJigrp0e0wFV6g==
   /proxy-addr/2.0.5:
     dependencies:
       forwarded: 0.1.2
@@ -4611,6 +4622,10 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha512-e900nM8RRtGhlV36KGEU9k65K3mPb1WV70OdjfxlG2EAuM1noi/E/BaW/uMhL7bPEssK8QV57vN3esixjUvcXQ==
+  /synchronous-promise/2.0.10:
+    dev: false
+    resolution:
+      integrity: sha512-6PC+JRGmNjiG3kJ56ZMNWDPL8hjyghF5cMXIFOKg+NiwwEZZIvxTWd0pinWKyD227odg9ygF8xVhhz7gb8Uq7A==
   /tapable/0.2.9:
     dev: false
     engines:
@@ -4692,6 +4707,10 @@ packages:
       node: '>=0.6'
     resolution:
       integrity: sha512-yaOH/Pk/VEhBWWTlhI+qXxDFXlejDGcQipMlyxda9nthulaxLZUNcUqFxokp0vcYnvteJln5FNQDRrxj3YcbVw==
+  /toposort/2.0.2:
+    dev: false
+    resolution:
+      integrity: sha1-riF2gXXRVZ1IvvNUILL0li8JwzA=
   /tough-cookie/2.5.0:
     dependencies:
       psl: 1.7.0
@@ -5074,6 +5093,18 @@ packages:
     dev: false
     resolution:
       integrity: sha1-YpmpBVsc78lp/355wdkY3Osiw2A=
+  /yup/0.28.1:
+    dependencies:
+      '@babel/runtime': 7.8.4
+      fn-name: 2.0.1
+      lodash: 4.17.15
+      lodash-es: 4.17.15
+      property-expr: 1.5.1
+      synchronous-promise: 2.0.10
+      toposort: 2.0.2
+    dev: false
+    resolution:
+      integrity: sha512-xSHMZA7UyecSG/CCTDCtnYZMjBrYDR/C7hu0fMsZ6UcS/ngko4qCVFbw+CAmNtHlbItKkvQ3YXITODeTj/dUkw==
 registry: 'https://registry.npmjs.org/'
 shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
@@ -5104,3 +5135,4 @@ specifiers:
   redux: ^3.7.2
   style-loader: ^0.19.1
   webpack: ^3.10.0
+  yup: ^0.28.1
