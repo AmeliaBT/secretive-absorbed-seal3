@@ -38,29 +38,22 @@ class SudebarA extends React.Component {
   render() {
     return (
       <div>
-<form> <FormGroup>
-                <ControlLabel >Inspector</ControlLabel>
-                  <Radio name='inspector' type='text' 
-                     value={this.state.inspector	} > 1 </Radio>
-                  
-                  <Radio  type='text' 
-                       value={this.state.form.adminRate}>2</Radio>{' '}
-                  
-              </FormGroup>
-
-              <FormGroup>
-                <ControlLabel id='adminRate'>WO/PO/MTT</ControlLabel>
-                  <Radio name='adminRate' type='integer' inline
-                    onChange={this.handleChange.bind(this)}
-                    value={this.state.form.adminRate}>1</Radio>{' '}
-                  <Radio name='adminRate' type='integer' inline
-                    onChange={this.handleChange.bind(this)}
-                    value={this.state.form.adminRate}>2</Radio>{' '}
-                  <Radio name='adminRate' type='integer' inline
-                    onChange={this.handleChange.bind(this)}
-                    value={this.state.form.adminRate}>3</Radio>{' '}
-              </FormGroup>
-            </form>
+      
+      <Form>
+  <div className="mb-3">
+    <Form.Check name='radios' inline label="1" type='radio' id={`inline-1`} />
+    <Form.Check inline name='radios' label="2" type='radio' id={`inline-2`} />
+    <Form.Check
+      inline
+      disabled
+      type='radio'
+      label="3 (disabled)"
+      name='radios'
+      id={`inline-3`}
+    />
+  </div>
+</Form>
+   
 
 
          </div>
