@@ -100,17 +100,17 @@ class RIlistAll extends React.Component {
                
               
         
-<Grid>      
+      
 <Row className="show-grid"> 
    <Col xs={1} className="left-col">
      {/* 
        < FilterA />   */}
       < SidebarA />     
     </Col>
-  <Col xs={11} className="right-col"> 
+  <Col xs={10} className="right-col"> 
   
 <Table className="myForm">  
-          <Row>    <Col sm={11} >  </Col></Row>           
+                 
             <Row>
              <Col sm={1}> <b>RI </b>  </Col> 
                 <Col sm={1} ><b> Inspector</b> </Col> 
@@ -128,7 +128,7 @@ class RIlistAll extends React.Component {
          <Modal show={this.state.show} onHide={this.handleClose}>  </Modal>
  </Col>
 </Row>     
-</Grid>     
+   
       </div>
     );
   }
