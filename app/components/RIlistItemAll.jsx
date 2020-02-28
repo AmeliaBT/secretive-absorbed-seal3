@@ -1,7 +1,7 @@
 const React = require('react');
 const Link = require('react-router-dom').Link
 // react-bootstrap
-const {Col, Grid, Row, Button, Glyphicon , OverlayTrigger} = require('react-bootstrap');
+const {Col, Row, Button, Glyphicon , OverlayTrigger} = require('react-bootstrap');
 // style 
 const style = require('../styles/RIlistItem');
 /* component for displaying one line of list  */

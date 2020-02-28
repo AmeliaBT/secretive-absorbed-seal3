@@ -64351,12 +64351,9 @@ class RIlistAll extends React.Component {
 React.createElement(Row, {className: "show-grid"}, 
    React.createElement(Col, {xs: 1}, React.createElement("div", {className: "well"}, "  ", React.createElement(SidebarA, null), "  ")
     ), 
-  React.createElement(Col, {xs: 10}, " ", React.createElement("div", {className: "well"}, "  ", React.createElement(SidebarA, null), "  ")
-     )
-  
-  
-  
-), 
+  React.createElement(Col, {xs: 10}, " ", React.createElement("div", {className: "well"}, 
+    
+      
   
 React.createElement(Table, {className: "myForm"}, 
                  
@@ -64376,7 +64373,10 @@ React.createElement(Table, {className: "myForm"},
   ), 
          React.createElement(Modal, {show: this.state.show, onHide: this.handleClose}, "  ")
    
-   
+  
+    )
+     )
+)
       )
     );
   }
@@ -74915,7 +74915,7 @@ exports.push([module.i, "\nul,\nol {\n  list-style: none;\n  margin: 0;\n  paddi
 const React = __webpack_require__(0);
 const Link = __webpack_require__(11).Link
 // react-bootstrap
-const {Col, Grid, Row, Button, Glyphicon , OverlayTrigger} = __webpack_require__(13);
+const {Col, Row, Button, Glyphicon , OverlayTrigger} = __webpack_require__(13);
 // style 
 const style = __webpack_require__(197);
 /* component for displaying one line of list  */
