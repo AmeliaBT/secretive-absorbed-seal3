@@ -48,7 +48,43 @@ class SidebarB extends React.Component {
                 render={({ errors, status, touched }) => (
 
                     <Form style={style1}>
-                    <h1 style={style2}>Get Started</h1>
+                    <h5 style={style2}>xxx</h5>
+                      
+                        <div className="form-group">
+                        <Field component="select" name="color">
+  <option value="red">Red</option>
+  <option value="green">Green</option>
+  <option value="blue">Blue</option>
+</Field>
+                            <Field name="consent" label="Policy"  type="checkbox" className={'form-control' + (errors.consent && touched.consent ? ' is-invalid' : '')} />
+                            <ErrorMessage name="consent" component="div" className="invalid-feedback" />
+                           <Field name="consent2" label="Policy2"  type="checkbox" className={'form-control' + (errors.consent && touched.consent ? ' is-invalid' : '')} />
+                            <ErrorMessage name="consent2" component="div" className="invalid-feedback" />
+                           <Field name="consent3" label="Policy3"  type="checkbox" className={'form-control' + (errors.consent && touched.consent ? ' is-invalid' : '')} />
+                            <ErrorMessage name="consent3" component="div" className="invalid-feedback" />
+                        
+                
+                </div>
+
+
+                        <div className="form-group">
+                            <Button variant="outline-primary" type="submit" style={style3}>Register</Button>
+                        </div>
+                    </Form>
+                )}
+            />
+        )
+    }
+}
+
+
+
+module.exports = SidebarB;
+
+
+/* 
+<Form style={style1}>
+                    <h5 style={style2}>xxx</h5>
                         <div className="form-group">
                             <label htmlFor="firstName">First Name</label>
                             <Field name="firstName" type="text" className={'form-control' + (errors.firstName && touched.firstName ? ' is-invalid' : '')} />
@@ -97,18 +133,11 @@ class SidebarB extends React.Component {
                             <Button variant="outline-primary" type="submit" style={style3}>Register</Button>
                         </div>
                     </Form>
-                )}
-            />
-        )
-    }
-}
 
 
 
-module.exports = SidebarB;
 
 
-/* 
                 validationSchema={Yup.object().shape({
                     firstName: Yup.string()
                         .required('First Name is required'),

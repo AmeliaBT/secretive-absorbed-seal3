@@ -20849,49 +20849,23 @@ class SidebarB extends React.Component {
                 render: ({ errors, status, touched }) => (
 
                     React.createElement(Form, {style: style1}, 
-                    React.createElement("h1", {style: style2}, "Get Started"), 
-                        React.createElement("div", {className: "form-group"}, 
-                            React.createElement("label", {htmlFor: "firstName"}, "First Name"), 
-                            React.createElement(Field, {name: "firstName", type: "text", className: 'form-control' + (errors.firstName && touched.firstName ? ' is-invalid' : '')}), 
-                            React.createElement(ErrorMessage, {name: "firstName", component: "div", className: "invalid-feedback"})
-                        ), 
-                        React.createElement("div", {className: "form-group"}, 
-                            React.createElement("label", {htmlFor: "lastName"}, "Last Name"), 
-                            React.createElement(Field, {name: "lastName", type: "text", className: 'form-control' + (errors.lastName && touched.lastName ? ' is-invalid' : '')}), 
-                            React.createElement(ErrorMessage, {name: "lastName", component: "div", className: "invalid-feedback"})
-                        ), 
-                        React.createElement("div", {className: "form-group"}, 
-                            React.createElement("label", {htmlFor: "email"}, "Email"), 
-                            React.createElement(Field, {name: "email", type: "text", placeholder: "Please use your work email address", className: 'form-control' + (errors.email && touched.email ? ' is-invalid' : '')}), 
-                            React.createElement(ErrorMessage, {name: "email", component: "div", className: "invalid-feedback"})
-                        ), 
-
-                        React.createElement("div", {className: "form-group"}, 
-                            React.createElement("label", {htmlFor: "role"}, "Which role best describes yours?"), 
-                            React.createElement(Field, {name: "role", type: "text", placeholder: "eg, academic, industry R&D, policy, funder", className: 'form-control' + (errors.role && touched.role ? ' is-invalid' : '')}
-                            ), 
-                            React.createElement(ErrorMessage, {name: "role", component: "div", className: "invalid-feedback"})
-                        ), 
-                        React.createElement("div", {className: "form-group"}, 
-                            React.createElement("label", {htmlFor: "password"}, "Password"), 
-                            React.createElement(Field, {name: "password", type: "password", className: 'form-control' + (errors.password && touched.password ? ' is-invalid' : '')}), 
-                            React.createElement(ErrorMessage, {name: "password", component: "div", className: "invalid-feedback"})
-                        ), 
-                        React.createElement("div", {className: "form-group"}, 
-                            React.createElement("label", {htmlFor: "confirmPassword"}, "Confirm Password"), 
-                            React.createElement(Field, {name: "confirmPassword", type: "password", className: 'form-control' + (errors.confirmPassword && touched.confirmPassword ? ' is-invalid' : '')}), 
-                            React.createElement(ErrorMessage, {name: "confirmPassword", component: "div", className: "invalid-feedback"})
-                        ), 
-
+                    React.createElement("h5", {style: style2}, "xxx"), 
+                      
                         React.createElement("div", {className: "form-group"}, 
                         React.createElement(Field, {component: "select", name: "color"}, 
   React.createElement("option", {value: "red"}, "Red"), 
   React.createElement("option", {value: "green"}, "Green"), 
   React.createElement("option", {value: "blue"}, "Blue")
 ), 
-                            React.createElement(Field, {name: "consent", label: "You must accept the  and Privacy Policy", type: "checkbox", className: 'form-control' + (errors.consent && touched.consent ? ' is-invalid' : '')}), 
-                            React.createElement(ErrorMessage, {name: "consent", component: "div", className: "invalid-feedback"})
-                        ), 
+                            React.createElement(Field, {name: "consent", label: "Policy", type: "checkbox", className: 'form-control' + (errors.consent && touched.consent ? ' is-invalid' : '')}), 
+                            React.createElement(ErrorMessage, {name: "consent", component: "div", className: "invalid-feedback"}), 
+                           React.createElement(Field, {name: "consent2", label: "Policy2", type: "checkbox", className: 'form-control' + (errors.consent && touched.consent ? ' is-invalid' : '')}), 
+                            React.createElement(ErrorMessage, {name: "consent2", component: "div", className: "invalid-feedback"}), 
+                           React.createElement(Field, {name: "consent3", label: "Policy3", type: "checkbox", className: 'form-control' + (errors.consent && touched.consent ? ' is-invalid' : '')}), 
+                            React.createElement(ErrorMessage, {name: "consent3", component: "div", className: "invalid-feedback"})
+                        
+                
+                ), 
 
 
                         React.createElement("div", {className: "form-group"}, 
@@ -20910,6 +20884,61 @@ module.exports = SidebarB;
 
 
 /* 
+<Form style={style1}>
+                    <h5 style={style2}>xxx</h5>
+                        <div className="form-group">
+                            <label htmlFor="firstName">First Name</label>
+                            <Field name="firstName" type="text" className={'form-control' + (errors.firstName && touched.firstName ? ' is-invalid' : '')} />
+                            <ErrorMessage name="firstName" component="div" className="invalid-feedback" />
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="lastName">Last Name</label>
+                            <Field name="lastName" type="text" className={'form-control' + (errors.lastName && touched.lastName ? ' is-invalid' : '')} />
+                            <ErrorMessage name="lastName" component="div" className="invalid-feedback" />
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="email">Email</label>
+                            <Field name="email" type="text" placeholder="Please use your work email address" className={'form-control' + (errors.email && touched.email ? ' is-invalid' : '')} />
+                            <ErrorMessage name="email" component="div" className="invalid-feedback" />
+                        </div>
+
+                        <div className="form-group">
+                            <label htmlFor="role">Which role best describes yours?</label>
+                            <Field name="role" type="text"  placeholder="eg, academic, industry R&D, policy, funder" className={'form-control' + (errors.role && touched.role ? ' is-invalid' : '')} >
+                            </Field>
+                            <ErrorMessage name="role" component="div" className="invalid-feedback" />
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="password">Password</label>
+                            <Field name="password" type="password" className={'form-control' + (errors.password && touched.password ? ' is-invalid' : '')} />
+                            <ErrorMessage name="password" component="div" className="invalid-feedback" />
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="confirmPassword">Confirm Password</label>
+                            <Field name="confirmPassword" type="password" className={'form-control' + (errors.confirmPassword && touched.confirmPassword ? ' is-invalid' : '')} />
+                            <ErrorMessage name="confirmPassword" component="div" className="invalid-feedback" />
+                        </div>
+
+                        <div className="form-group">
+                        <Field component="select" name="color">
+  <option value="red">Red</option>
+  <option value="green">Green</option>
+  <option value="blue">Blue</option>
+</Field>
+                            <Field name="consent" label="You must accept the  and Privacy Policy"  type="checkbox" className={'form-control' + (errors.consent && touched.consent ? ' is-invalid' : '')} />
+                            <ErrorMessage name="consent" component="div" className="invalid-feedback" />
+                        </div>
+
+
+                        <div className="form-group">
+                            <Button variant="outline-primary" type="submit" style={style3}>Register</Button>
+                        </div>
+                    </Form>
+
+
+
+
+
                 validationSchema={Yup.object().shape({
                     firstName: Yup.string()
                         .required('First Name is required'),
