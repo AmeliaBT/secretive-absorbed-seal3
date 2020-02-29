@@ -117,7 +117,7 @@ class RIlistAll extends React.Component {
                 <Col sm={1} ><b> Part Number </b></Col> 
                 <Col sm={2} ><b>Description </b></Col> 
                <Col  sm={1} ><b> Date Inspected</b> </Col> 
-              <Col  sm={1} ><b>Pass / Fail </b> </Col> 
+              <Col  sm={1} ><b>Pass /Fail </b> </Col> 
                <Col sm={1} > <b>Lot Size </b> </Col> 
               <Col sm={3} > <b>Comment</b> </Col> 
                <Col sm={1} > <b>View </b> </Col> 
