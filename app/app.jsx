@@ -18,6 +18,7 @@ const Main = require('./components/Main');
 const RIreports = require('./components/RIreports');
 const RIlist = require('./components/RIlist');
 const RIlistAll = require('./components/RIlistAll'); //change
+const RIlistAll2 = require('./components/RIlistAll2'); 
 const RIedit = require('./components/RIedit');
 const RIview = require('./components/RIview');
 const SignUp = require('./components/SignUp');
@@ -45,6 +46,7 @@ render((
         <Route path="/reports" component={RIreports}/>
          <Route path="/list" component={RIlist}/>
          <Route path="/list-all" component={RIlistAll}/>
+         <Route path="/list-all2" component={RIlistAll2}/>
         <Route path="/report-edit" component={RIedit}/>
         <Route path="/report-view" component={RIview}/>
          <Route path="/up-many-records" component={ManyRecords}/>
