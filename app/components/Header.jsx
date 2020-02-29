@@ -13,7 +13,8 @@ class Header extends React.Component {
       navBtns: null,
       reportsLink: "",
       listLink: "",
-      listLinkAll: ""
+      listLinkAll: "",
+      listLinkAll2: ""
     };
     this.handleLogOut = this.handleLogOut.bind(this);
   }
@@ -64,7 +65,8 @@ class Header extends React.Component {
                       </Nav>,
             ["reportsLink"]: "/reports",
              ["listLink"]: "/list",
-             ["listLinkAll"]: "/list-all"
+             ["listLinkAll"]: "/list-all",
+                ["listLinkAll2"]: "/list-all2"
              
            });
         }
@@ -92,18 +94,20 @@ class Header extends React.Component {
        <Navbar collapseOnSelect>
         <Navbar.Header>
           <Navbar.Brand >           
-            <Link to={this.state.reportsLink} ><p  className="link">RI Gallery</p></Link>
-            
-          </Navbar.Brand>
-          <Navbar.Brand >           
-            <Link to={this.state.listLink} ><p  className="link">Edit   </p></Link>
-            
+            <Link to={this.state.reportsLink} ><p  className="link">RI Gallery</p></Link>            
           </Navbar.Brand>
           
           <Navbar.Brand >           
-            <Link to={this.state.listLinkAll} ><p  className="link">Table View  </p></Link>
-            
+            <Link to={this.state.listLink} ><p  className="link">Edit   </p></Link>            
           </Navbar.Brand>
+          
+          <Navbar.Brand >           
+            <Link to={this.state.listLinkAll} ><p  className="link">Table View  </p></Link>            
+          </Navbar.Brand>
+          <Navbar.Brand >           
+            <Link to={this.state.listLinkAll2} ><p  className="link">Filters  </p></Link>            
+          </Navbar.Brand>
+          
           <Navbar.Toggle />
         </Navbar.Header>
         <Navbar.Collapse>

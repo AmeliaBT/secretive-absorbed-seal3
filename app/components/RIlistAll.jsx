@@ -102,10 +102,10 @@ class RIlistAll extends React.Component {
       {/* 
        < FilterA />   */}   
       
-<Row > 
-   <Col xs={1} ><div  className="well" >  < SidebarB /> 
-     < FilterA /> </div> </Col>
-  <Col xs={11} > <div   >  
+
+
+
+    <div   >  
     
       
   
@@ -129,8 +129,8 @@ class RIlistAll extends React.Component {
    
   
     </div>
-     </Col>
-</Row> 
+   
+
       </div>
     );
   }

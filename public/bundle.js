@@ -1457,7 +1457,8 @@ class Header extends React.Component {
       navBtns: null,
       reportsLink: "",
       listLink: "",
-      listLinkAll: ""
+      listLinkAll: "",
+      listLinkAll2: ""
     };
     this.handleLogOut = this.handleLogOut.bind(this);
   }
@@ -1508,7 +1509,8 @@ class Header extends React.Component {
                       ),
             ["reportsLink"]: "/reports",
              ["listLink"]: "/list",
-             ["listLinkAll"]: "/list-all"
+             ["listLinkAll"]: "/list-all",
+                ["listLinkAll2"]: "/list-all2"
              
            });
         }
@@ -1537,17 +1539,19 @@ class Header extends React.Component {
         React.createElement(Navbar.Header, null, 
           React.createElement(Navbar.Brand, null, 
             React.createElement(Link, {to: this.state.reportsLink}, React.createElement("p", {className: "link"}, "RI Gallery"))
-            
           ), 
+          
           React.createElement(Navbar.Brand, null, 
             React.createElement(Link, {to: this.state.listLink}, React.createElement("p", {className: "link"}, "Edit   "))
-            
           ), 
           
           React.createElement(Navbar.Brand, null, 
             React.createElement(Link, {to: this.state.listLinkAll}, React.createElement("p", {className: "link"}, "Table View  "))
-            
           ), 
+          React.createElement(Navbar.Brand, null, 
+            React.createElement(Link, {to: this.state.listLinkAll2}, React.createElement("p", {className: "link"}, "Filters  "))
+          ), 
+          
           React.createElement(Navbar.Toggle, null)
         ), 
         React.createElement(Navbar.Collapse, null, 
@@ -68587,10 +68591,10 @@ class RIlistAll extends React.Component {
       /* 
        < FilterA />   */
       
-React.createElement(Row, null, 
-   React.createElement(Col, {xs: 1}, React.createElement("div", {className: "well"}, "  ", React.createElement(SidebarB, null), 
-     React.createElement(FilterA, null), " "), " "), 
-  React.createElement(Col, {xs: 11}, " ", React.createElement("div", null, 
+
+
+
+    React.createElement("div", null, 
     
       
   
@@ -68614,8 +68618,8 @@ React.createElement(Table, {className: "myForm"},
    
   
     )
-     )
-)
+   
+
       )
     );
   }
