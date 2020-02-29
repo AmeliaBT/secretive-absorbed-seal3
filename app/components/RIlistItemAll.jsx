@@ -60,7 +60,7 @@ class RIlistItemAll extends React.Component {
         <Col  sm={1} > {this.state.two}</Col>
         <Col  sm={1} > {this.state.owo}</Col>
         <Col  sm={3} > {this.state.record}</Col>
-        <Col  sm={1} > <Link to={'report-view/' + this.state.reportID  }>  <Button bsSize="xsmall" ><Glyphicon glyph="eye-open"/> </Button></Link> </Col>
+        <Col  sm={1} > <Link to={'report-view/' + this.state.reportID  }>  <Button className="btn-xs" ><Glyphicon glyph="eye-open"/> </Button></Link> </Col>
               
         </Row>
                </div>
@@ -73,6 +73,8 @@ module.exports = RIlistItemAll ;
 
 
    {/* 
+   <Button bsSize="xsmall" >
+   class="btn btn-primary btn-xs"
     <Row>
              <Col sm={1}> <b>RI </b>  </Col> 
                 <Col sm={1} ><b> Inspector</b> </Col> 
