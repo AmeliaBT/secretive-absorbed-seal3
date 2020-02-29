@@ -12,16 +12,18 @@ class RIlistItem extends React.Component {
   constructor(props) {
     super(props); 
    // this.myRef = React.createRef();
-     let  fwo=this.props.fwo; //P/N: 
-    let  Gwo=this.props.Gwo; //Description
+    
+   //  let  fwo=this.props.fwo; //P/N: 
+    //let  Gwo=this.props.Gwo; //Description
      let jwo=this.props.jwo;//Date Inspected:
     let jwo2;     
     if(jwo == null ){jwo2=""}else{jwo2=jwo.slice(0,-14)};
-    let two=this.props.two; //Pass / Fail
-    let owo=this.props.owo; //Lot Size
-       let record=this.props.record;
-   let lwo=this.props.lwo;
-        this.state = {
+   // let two=this.props.two; //Pass / Fail
+   // let owo=this.props.owo; //Lot Size
+   //    let record=this.props.record;
+   //let lwo=this.props.lwo;
+
+    this.state = {
           //img_url: this.props.img_url,
           inspector: this.props.inspector,
            reportID: this.props.reportnumber,
@@ -63,7 +65,7 @@ class RIlistItem extends React.Component {
        
         <Row > 
         <Col  sm={1} >#{this.state.reportID} </Col>       
-   
+    <Col  sm={1} >#{this.state.inspector} </Col>   
      <Col sm={1} > {this.state.fwo}</Col>
        <Col  sm={2} > {this.state.Gwo}</Col>
         <Col  sm={1} > {this.state.jwo}</Col>

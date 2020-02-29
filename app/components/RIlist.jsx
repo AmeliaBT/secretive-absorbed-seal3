@@ -61,15 +61,16 @@ class RIlist extends React.Component {
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  
           
          let reports = response.reports.map((el) => {
-          return <RIlistItem  key={el.reportID}
-           reportnumber={el.reportID}  
-           inspector={el.inspector}
-           fwo={el.fwo}      
-           Gwo={el.Gwo}
-           jwo={el.jwo}
-           two={el.two}
-           owo={el.owo}
-                    record={el.record}
+          return <RIlistItem 
+                   key={el.reportID}
+                   reportnumber={el.reportID}  
+                   inspector={el.inspector}
+                   fwo={el.fwo}      
+                   Gwo={el.Gwo}
+                   jwo={el.jwo}
+                   two={el.two}
+                   owo={el.owo}
+                    ={el.record}
                     lwo={el.lwo}
             /> 
         });
@@ -96,13 +97,13 @@ class RIlist extends React.Component {
             <Row>
         
              <Col sm={1}> <b>RI </b>  </Col> 
+              <Col sm={1} ><b> Inspector</b> </Col> 
                 <Col sm={1} > <b>PN </b></Col> 
                 <Col sm={2} ><b>Description </b></Col> 
                <Col  sm={1} > <b>Date Inspected </b></Col> 
               <Col  sm={1} ><b>Pass / Fail  </b></Col> 
                <Col sm={1} > <b>Lot Size </b></Col> 
               <Col sm={3} > <b>Comment</b> </Col> 
-              
               <Col sm={1} ><b>Edit  </b></Col> 
           
            

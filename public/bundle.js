@@ -68075,14 +68075,14 @@ class RIlist extends React.Component {
          React.createElement(Table, {className: "myForm"}, 
             React.createElement(Row, null, 
         
-             React.createElement(Col, {sm: 1}, " ", React.createElement("b", null, "Rep # "), "  "), 
+             React.createElement(Col, {sm: 1}, " ", React.createElement("b", null, "RI "), "  "), 
+              React.createElement(Col, {sm: 1}, React.createElement("b", null, " Inspector"), " "), 
                 React.createElement(Col, {sm: 1}, " ", React.createElement("b", null, "PN ")), 
                 React.createElement(Col, {sm: 2}, React.createElement("b", null, "Description ")), 
                React.createElement(Col, { sm: 1}, " ", React.createElement("b", null, "Date Inspected ")), 
               React.createElement(Col, { sm: 1}, React.createElement("b", null, "Pass / Fail  ")), 
                React.createElement(Col, {sm: 1}, " ", React.createElement("b", null, "Lot Size ")), 
               React.createElement(Col, {sm: 3}, " ", React.createElement("b", null, "Comment"), " "), 
-              
               React.createElement(Col, {sm: 1}, React.createElement("b", null, "Edit  "))
           
            
@@ -68120,16 +68120,18 @@ class RIlistItem extends React.Component {
   constructor(props) {
     super(props); 
    // this.myRef = React.createRef();
-     let  fwo=this.props.fwo; //P/N: 
-    let  Gwo=this.props.Gwo; //Description
+    
+   //  let  fwo=this.props.fwo; //P/N: 
+    //let  Gwo=this.props.Gwo; //Description
      let jwo=this.props.jwo;//Date Inspected:
     let jwo2;     
     if(jwo == null ){jwo2=""}else{jwo2=jwo.slice(0,-14)};
-    let two=this.props.two; //Pass / Fail
-    let owo=this.props.owo; //Lot Size
-       let record=this.props.record;
-   let lwo=this.props.lwo;
-        this.state = {
+   // let two=this.props.two; //Pass / Fail
+   // let owo=this.props.owo; //Lot Size
+   //    let record=this.props.record;
+   //let lwo=this.props.lwo;
+
+    this.state = {
           //img_url: this.props.img_url,
           inspector: this.props.inspector,
            reportID: this.props.reportnumber,
@@ -68171,7 +68173,7 @@ class RIlistItem extends React.Component {
        
         React.createElement(Row, null, 
         React.createElement(Col, {  sm: 1}, "#", this.state.reportID, " "), 
-   
+    React.createElement(Col, {  sm: 1}, "#", this.state.inspector, " "), 
      React.createElement(Col, { sm: 1}, " ", this.state.fwo), 
        React.createElement(Col, {  sm: 2}, " ", this.state.Gwo), 
         React.createElement(Col, {  sm: 1}, " ", this.state.jwo), 
