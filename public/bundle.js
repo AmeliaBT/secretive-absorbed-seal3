@@ -68203,7 +68203,7 @@ exports = module.exports = __webpack_require__(32)(false);
 
 
 // module
-exports.push([module.i, "\n\n.myTable{  border: 1px solid #F8F8F8; /*#000000' */\n}\n.Form {\n \n  margin: auto;\n  margin-top: 50px;\n \n}\n\n/* \n.Form {\n  width: 600px;\n background: antiquewhite; \n padding: 50px;\n border: 1px solid #9d9d8e;\n*/\n.form-label {\n  color: black; /*#f6ff67;*/\n  font-weight: bold\n}\n\n.profile-line {\n  background-color: #44708f;\n  width: 100%;\n  height: 10px;\n  margin: auto;\n  margin-bottom: 10px;\n}\n\n.input-label {\nwidth: 90%;\nmargin-top: 0;\nmargin-bottom: 0;\ncolor: rgb(157, 157, 157);\nbackground-color: red;\n}\n\n.profile-label {\n  text-align: center;\n  font-size: 30px;\n  color: black; /* #f6ff67;*/  \n  margin-top: 0px;\n  background-color: green;\n}\n.table-row-line {\n  \n border: 1px solid #9d9d8e;  \n  margin-top: 0;\n  margin-bottom: 0;\n  height: 0;\n  color:blue;\n  font-size:small;\n  backgroung-color: pink;\n}\n/*\n.input-row {\n  padding: 50px;\n border: 1px solid #9d9d8e;  \n  margin-top: 0;\n  margin-bottom: 0;\n  height: 1px;\nbackground-color: azure;\npadding: 0%;\n}\n.profile-label {\n  text-align: center;\n  font-size: 30px;\n  color: black; \n  margin: 3%;\n  margin-top: 30px;\n}\n\n.profile-label {\n  text-align: center;\n  font-size: 30px;\n  color: black; \n  margin: 3%;\n  margin-top: 30px;\n}\n\n.input-label {\nwidth: 90%;\nmargin: auto;\ncolor: rgb(157, 157, 157);\n}\n*/", ""]);
+exports.push([module.i, "\n\n.myTable{  border: 1px solid #F8F8F8; /*#000000' */\n}\n.Form {\n \n  margin: auto;\n  margin-top: 50px;\n \n}\n\n/* \n.Form {\n  width: 600px;\n background: antiquewhite; \n padding: 50px;\n border: 1px solid #9d9d8e;\n*/\n.form-label {\n  color: black; /*#f6ff67;*/\n  font-weight: bold\n}\n\n.profile-line {\n  background-color: #44708f;\n  width: 100%;\n  height: 10px;\n  margin: auto;\n  margin-bottom: 10px;\n}\n\n.input-label {\nwidth: 90%;\nmargin-top: 0;\nmargin-bottom: 0;\ncolor: rgb(157, 157, 157);\nbackground-color: red;\n}\n\n.profile-label {\n  text-align: center;\n  font-size: 30px;\n  color: black; /* #f6ff67;*/  \n  margin-top: 0px;\n  background-color: green;\n}\n.table-row-line {\n  \n border: 1px solid #9d9d8e;  \n  margin-top: 0;\n  margin-bottom: 0;\n  color:blue;\n  font-size: small;\n  backgroung-color: pink;\n}\n/*\n.input-row {\n  padding: 50px;\n border: 1px solid #9d9d8e;  \n  margin-top: 0;\n  margin-bottom: 0;\n  height: 1px;\nbackground-color: azure;\npadding: 0%;\n}\n.profile-label {\n  text-align: center;\n  font-size: 30px;\n  color: black; \n  margin: 3%;\n  margin-top: 30px;\n}\n\n.profile-label {\n  text-align: center;\n  font-size: 30px;\n  color: black; \n  margin: 3%;\n  margin-top: 30px;\n}\n\n.input-label {\nwidth: 90%;\nmargin: auto;\ncolor: rgb(157, 157, 157);\n}\n*/", ""]);
 
 // exports
 
@@ -86891,7 +86891,7 @@ class RIlistItemAll extends React.Component {
     return(
       React.createElement("div", null, 
        
-     React.createElement("div", {className: "table-row-line"}, " "), 
+     React.createElement("div", {className: "table-row-line"}, 
       
         React.createElement(Row, null, 
         React.createElement(Col, {  sm: 1}, this.state.reportID, " "), 
@@ -86903,10 +86903,10 @@ class RIlistItemAll extends React.Component {
         React.createElement(Col, {  sm: 1}, " ", this.state.owo), 
         React.createElement(Col, {  sm: 3}, " ", this.state.record), 
         React.createElement(Col, {  sm: 1}, " ", React.createElement(Link, {to: 'report-view/' + this.state.reportID}, "  ", React.createElement(Button, {bsSize: "xsmall"}, React.createElement(Glyphicon, {glyph: "eye-open"}), " ")), " ")
-        
               
         )
-       
+               )
+
       )
     );
   }
