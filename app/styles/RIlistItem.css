@@ -50,6 +50,9 @@ background-color: red;
   margin-top: 0;
   margin-bottom: 0;
   height: 0;
+  color:blue;
+  font-size:small;
+  backgroung-color: pink;
 }
 /*
 .input-row {
