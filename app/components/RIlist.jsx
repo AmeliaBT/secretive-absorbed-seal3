@@ -57,10 +57,8 @@ class RIlist extends React.Component {
           return;
         }
         let response = JSON.parse(this.responseText);
-        
-// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  
-          
-         let reports = response.reports.map((el) => {
+
+        let reports = response.reports.map((el) => {
           return <RIlistItem 
                    key={el.reportID}
                    reportnumber={el.reportID}  
@@ -70,25 +68,18 @@ class RIlist extends React.Component {
                    jwo={el.jwo}
                    two={el.two}
                    owo={el.owo}
-                    ={el.record}
-                    lwo={el.lwo}
+                   record={el.record}
+                   lwo={el.lwo}
             /> 
-        });
-        
- // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!           
+        });    
 //  className="pull-right"  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!    
-        
-        
-        
            that.setState({
           ["reports"]: <div className="reports">
                       {reports}     
                     </div>
            });
-       }
-    
-  }
- 
+       }    
+  } 
   render() {
     return (
       <div>

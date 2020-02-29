@@ -68037,37 +68037,29 @@ class RIlist extends React.Component {
           return;
         }
         let response = JSON.parse(this.responseText);
-        
-// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  
-          
-         let reports = response.reports.map((el) => {
-          return React.createElement(RIlistItem, {key: el.reportID, 
-           reportnumber: el.reportID, 
-           inspector: el.inspector, 
-           fwo: el.fwo, 
-           Gwo: el.Gwo, 
-           jwo: el.jwo, 
-           two: el.two, 
-           owo: el.owo, 
-                    record: el.record, 
-                    lwo: el.lwo}
+
+        let reports = response.reports.map((el) => {
+          return React.createElement(RIlistItem, {
+                   key: el.reportID, 
+                   reportnumber: el.reportID, 
+                   inspector: el.inspector, 
+                   fwo: el.fwo, 
+                   Gwo: el.Gwo, 
+                   jwo: el.jwo, 
+                   two: el.two, 
+                   owo: el.owo, 
+                   record: el.record, 
+                   lwo: el.lwo}
             ) 
-        });
-        
- // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!           
+        });    
 //  className="pull-right"  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!    
-        
-        
-        
            that.setState({
           ["reports"]: React.createElement("div", {className: "reports"}, 
                       reports
                     )
            });
-       }
-    
-  }
- 
+       }    
+  } 
   render() {
     return (
       React.createElement("div", null, 
@@ -68321,7 +68313,7 @@ class RIlistAll extends React.Component {
 React.createElement(Row, null, 
    React.createElement(Col, {xs: 1}, React.createElement("div", {className: "well"}, "  ", React.createElement(SidebarB, null), 
      React.createElement(FilterA, null), " "), " "), 
-  React.createElement(Col, {xs: 10}, " ", React.createElement("div", null, 
+  React.createElement(Col, {xs: 11}, " ", React.createElement("div", null, 
     
       
   
@@ -68331,7 +68323,7 @@ React.createElement(Table, {className: "myForm"},
              React.createElement(Col, {sm: 1}, " ", React.createElement("b", null, "RI "), "  "), 
                 React.createElement(Col, {sm: 1}, React.createElement("b", null, " Inspector"), " "), 
                 React.createElement(Col, {sm: 1}, React.createElement("b", null, " Part Number ")), 
-                React.createElement(Col, {sm: 2}, React.createElement("b", null, "Description n ")), 
+                React.createElement(Col, {sm: 2}, React.createElement("b", null, "Description ")), 
                React.createElement(Col, { sm: 1}, React.createElement("b", null, " Date Inspected"), " "), 
               React.createElement(Col, { sm: 1}, React.createElement("b", null, "Pass / Fail "), " "), 
                React.createElement(Col, {sm: 1}, " ", React.createElement("b", null, "Lot Size "), " "), 

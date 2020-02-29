@@ -105,7 +105,7 @@ class RIlistAll extends React.Component {
 <Row > 
    <Col xs={1} ><div  className="well" >  < SidebarB /> 
      < FilterA /> </div> </Col>
-  <Col xs={10} > <div   >  
+  <Col xs={11} > <div   >  
     
       
   
@@ -115,7 +115,7 @@ class RIlistAll extends React.Component {
              <Col sm={1}> <b>RI </b>  </Col> 
                 <Col sm={1} ><b> Inspector</b> </Col> 
                 <Col sm={1} ><b> Part Number </b></Col> 
-                <Col sm={2} ><b>Description n </b></Col> 
+                <Col sm={2} ><b>Description </b></Col> 
                <Col  sm={1} ><b> Date Inspected</b> </Col> 
               <Col  sm={1} ><b>Pass / Fail </b> </Col> 
                <Col sm={1} > <b>Lot Size </b> </Col> 

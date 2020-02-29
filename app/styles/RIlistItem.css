@@ -45,6 +45,13 @@ background-color: red;
   background-color: green;
 }
 .table-row-line {
+   color:red;
+  font-size: 4px;
+  
+}
+/*
+
+.table-row-line {
   
  border: 1px solid #9d9d8e;  
   margin-top: 0;
@@ -53,7 +60,6 @@ background-color: red;
   font-size: small;
   backgroung-color: pink;
 }
-/*
 .input-row {
   padding: 50px;
  border: 1px solid #9d9d8e;  
