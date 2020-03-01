@@ -9,12 +9,12 @@ const style = require('../styles/SidebarA');
 //const options =require('./exampleData');
 const {Yup} =require('yup');
 const style1 = {
-    width: '60%',
+    width: '100%',
     margin: 'auto'}
 const style2 = {
-    paddingTop: '2em',}
+    paddingTop: '1em',}
 const style3 = {
-    marginRight: '2em'}
+    marginRight: '1em'}
 
 // Render Prop
 const { Formik,  Field, ErrorMessage } =require('formik');
@@ -36,54 +36,26 @@ class SidebarB extends React.Component {
                 }}
                 render={({ errors, status, touched }) => (
                  <Form style={style1}>
-                    <h1 style={style2}>Get Started</h1>
+                    <h5 style={style2}>Get Started</h5>
                         <div className="form-group">
-                            <label htmlFor="firstName">First Name</label>
+                            <label htmlFor="firstName">Name</label>
                             <Field name="firstName" type="text" className={'form-control' + (errors.firstName && touched.firstName ? ' is-invalid' : '')} />
                             <ErrorMessage name="firstName" component="div" className="invalid-feedback" />
                         </div>
-                        <div className="form-group">
-                            <label htmlFor="lastName">Last Name</label>
-                            <Field name="lastName" type="text" className={'form-control' + (errors.lastName && touched.lastName ? ' is-invalid' : '')} />
-                            <ErrorMessage name="lastName" component="div" className="invalid-feedback" />
-                        </div>
-                        <div className="form-group">
-                            <label htmlFor="email">Email</label>
-                            <Field name="email" type="text" placeholder="Please use your work email address" className={'form-control' + (errors.email && touched.email ? ' is-invalid' : '')} />
-                            <ErrorMessage name="email" component="div" className="invalid-feedback" />
-                        </div>
+                    
+                    
 
                         <div className="form-group">
-                            <label htmlFor="role">Which role best describes yours?</label>
+                            <label htmlFor="role">role</label>
                             <Field name="role" type="text"  placeholder="eg, academic, industry R&D, policy, funder" className={'form-control' + (errors.role && touched.role ? ' is-invalid' : '')} >
                             </Field>
                             <ErrorMessage name="role" component="div" className="invalid-feedback" />
                         </div>
+                  
+                    
+                
                         <div className="form-group">
-                            <label htmlFor="password">Password</label>
-                            <Field name="password" type="password" className={'form-control' + (errors.password && touched.password ? ' is-invalid' : '')} />
-
-<ErrorMessage name="password" component="div" className="invalid-feedback" />
-                        </div>
-                        <  div className="form-group">
-                            <label htmlFor="confirmPassword">Confirm Password</label>
-                            <Field name="confirmPassword" type="password" className={'form-control' + (errors.confirmPassword && touched.confirmPassword ? ' is-invalid' : '')} />
-                            <ErrorMessage name="confirmPassword" component="div" className="invalid-feedback" />
-                        </div>
-
-                        <div className="form-group">
-                        <Field component="select" name="color">
-  <option value="red">Red</option>
-  <option value="green">Green</option>
-  <option value="blue">Blue</option>
-</Field>
-                            <Field name="consent" label="You must accept the  and Privacy Policy"  type="checkbox" className={'form-control' + (errors.consent && touched.consent ? ' is-invalid' : '')} />
-                            <ErrorMessage name="consent" component="div" className="invalid-feedback" />
-                        </div>
-
-
-                        <div className="form-group">
-                            <Button variant="outline-primary" type="submit" style={style3}>Register</Button>
+                            <Button variant="outline-primary" type="submit" style={style3}>submit</Button>
                         </div>
                     </Form>
                 )}

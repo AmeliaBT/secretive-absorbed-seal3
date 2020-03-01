@@ -20751,12 +20751,12 @@ const style = __webpack_require__(294);
 //const options =require('./exampleData');
 const {Yup} =__webpack_require__(783);
 const style1 = {
-    width: '60%',
+    width: '100%',
     margin: 'auto'}
 const style2 = {
-    paddingTop: '2em',}
+    paddingTop: '1em',}
 const style3 = {
-    marginRight: '2em'}
+    marginRight: '1em'}
 
 // Render Prop
 const { Formik,  Field, ErrorMessage } =__webpack_require__(295);
@@ -20778,54 +20778,26 @@ class SidebarB extends React.Component {
                 }, 
                 render: ({ errors, status, touched }) => (
                  React.createElement(Form, {style: style1}, 
-                    React.createElement("h1", {style: style2}, "Get Started"), 
+                    React.createElement("h5", {style: style2}, "Get Started"), 
                         React.createElement("div", {className: "form-group"}, 
-                            React.createElement("label", {htmlFor: "firstName"}, "First Name"), 
+                            React.createElement("label", {htmlFor: "firstName"}, "Name"), 
                             React.createElement(Field, {name: "firstName", type: "text", className: 'form-control' + (errors.firstName && touched.firstName ? ' is-invalid' : '')}), 
                             React.createElement(ErrorMessage, {name: "firstName", component: "div", className: "invalid-feedback"})
                         ), 
-                        React.createElement("div", {className: "form-group"}, 
-                            React.createElement("label", {htmlFor: "lastName"}, "Last Name"), 
-                            React.createElement(Field, {name: "lastName", type: "text", className: 'form-control' + (errors.lastName && touched.lastName ? ' is-invalid' : '')}), 
-                            React.createElement(ErrorMessage, {name: "lastName", component: "div", className: "invalid-feedback"})
-                        ), 
-                        React.createElement("div", {className: "form-group"}, 
-                            React.createElement("label", {htmlFor: "email"}, "Email"), 
-                            React.createElement(Field, {name: "email", type: "text", placeholder: "Please use your work email address", className: 'form-control' + (errors.email && touched.email ? ' is-invalid' : '')}), 
-                            React.createElement(ErrorMessage, {name: "email", component: "div", className: "invalid-feedback"})
-                        ), 
+                    
+                    
 
                         React.createElement("div", {className: "form-group"}, 
-                            React.createElement("label", {htmlFor: "role"}, "Which role best describes yours?"), 
+                            React.createElement("label", {htmlFor: "role"}, "role"), 
                             React.createElement(Field, {name: "role", type: "text", placeholder: "eg, academic, industry R&D, policy, funder", className: 'form-control' + (errors.role && touched.role ? ' is-invalid' : '')}
                             ), 
                             React.createElement(ErrorMessage, {name: "role", component: "div", className: "invalid-feedback"})
                         ), 
+                  
+                    
+                
                         React.createElement("div", {className: "form-group"}, 
-                            React.createElement("label", {htmlFor: "password"}, "Password"), 
-                            React.createElement(Field, {name: "password", type: "password", className: 'form-control' + (errors.password && touched.password ? ' is-invalid' : '')}), 
-
-React.createElement(ErrorMessage, {name: "password", component: "div", className: "invalid-feedback"})
-                        ), 
-                        React.createElement("div", {className: "form-group"}, 
-                            React.createElement("label", {htmlFor: "confirmPassword"}, "Confirm Password"), 
-                            React.createElement(Field, {name: "confirmPassword", type: "password", className: 'form-control' + (errors.confirmPassword && touched.confirmPassword ? ' is-invalid' : '')}), 
-                            React.createElement(ErrorMessage, {name: "confirmPassword", component: "div", className: "invalid-feedback"})
-                        ), 
-
-                        React.createElement("div", {className: "form-group"}, 
-                        React.createElement(Field, {component: "select", name: "color"}, 
-  React.createElement("option", {value: "red"}, "Red"), 
-  React.createElement("option", {value: "green"}, "Green"), 
-  React.createElement("option", {value: "blue"}, "Blue")
-), 
-                            React.createElement(Field, {name: "consent", label: "You must accept the  and Privacy Policy", type: "checkbox", className: 'form-control' + (errors.consent && touched.consent ? ' is-invalid' : '')}), 
-                            React.createElement(ErrorMessage, {name: "consent", component: "div", className: "invalid-feedback"})
-                        ), 
-
-
-                        React.createElement("div", {className: "form-group"}, 
-                            React.createElement(Button, {variant: "outline-primary", type: "submit", style: style3}, "Register")
+                            React.createElement(Button, {variant: "outline-primary", type: "submit", style: style3}, "submit")
                         )
                     )
                 )}
@@ -87315,7 +87287,7 @@ class RIlistAll2 extends React.Component {
       
 React.createElement(Row, null, 
    React.createElement(Col, {xs: 1}, React.createElement("div", {className: "well"}, 
-     React.createElement(FilterA, null), " "), " "), 
+    React.createElement(SidebarB, null), "  "), " "), 
   React.createElement(Col, {xs: 11}, " ", React.createElement("div", null, 
     
       
@@ -87348,7 +87320,7 @@ React.createElement(Table, {className: "myForm"},
 };
 
 module.exports = RIlistAll2;
-//< SidebarB /> 
+//< SidebarB />  < FilterA />
 
 /***/ }),
 /* 846 */
