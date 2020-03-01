@@ -20759,9 +20759,14 @@ const style3 = {
     marginRight: '1em'}
 
 // Render Prop
+//https://stackoverflow.com/questions/55910688/formik-with-react-bootstrap-styling
 const { Formik,  Field, ErrorMessage } =__webpack_require__(295);
 class SidebarB extends React.Component {
-    render() {
+    
+  
+  
+  
+  render() {
         return (
             React.createElement(Formik, {
                 initialValues: {
