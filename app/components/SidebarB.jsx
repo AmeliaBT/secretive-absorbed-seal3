@@ -10,32 +10,40 @@ const style = require('../styles/SidebarA');
 
 // Render Prop
 const { Formik,  Field, ErrorMessage } =require('formik');
-const {Yup} =require('yup');
-//import * as Yup from 'yup';
 
-const style1 = {
-    width: '60%',
-    margin: 'auto'
-}
-
-const style2 = {
-    paddingTop: '2em',
-}
-
-const style3 = {
-    marginRight: '2em'
-}
-
-class SidebarB extends React.Component {
-    render() {
-        return (
-          
-            <Formik
-     
-            />
-        )
+function SidebarB() {
+  const validateForm = values => {
+    let errors = {};
+    if (values.radioGroup === "") {
+      errors.radioGroup = "You must select a value.";
     }
+    return errors;
+  };
+  return (
+   
+ <Formik
+      initialValues={{ radioGroup: "" }}
+      validate={validateForm}
+      render={() => (
+        <Form>
+          <Field
+            name="radioGroup"
+            options={["Yes", "No"]}
+            component={FormikRadioGroup}
+          />
+
+          <div className="activation-buttons">
+            <Button color="primary" type="submit">
+              Submit
+            </Button>
+          </div>
+        </Form>
+      )}
+    />
+  );
 }
+
+
 
 
 
