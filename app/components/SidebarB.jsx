@@ -26,9 +26,10 @@ class SidebarB extends React.Component {
                     firstName: '',                    
                     role: ''
                 }}                       
-                onSubmit={fields => {
-                    alert('SUCCESS!! :-)\n\n' + JSON.stringify(fields, null, 2))
-                }}
+                //onSubmit={fields => {alert('SUCCESS!! :-)\n\n' + JSON.stringify(fields, null, 2))}}
+              
+            // onSubmit={fields => { alert('SUCCESS!! ') }   }
+              onSubmit={fields => { console.log('SUCCESS!! ') }   }
                 render={({ errors, status, touched }) => (
                  <Form style={style1}>
                     <h5 style={style2}>Start</h5>
