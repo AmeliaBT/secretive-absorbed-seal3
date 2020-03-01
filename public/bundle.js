@@ -20771,47 +20771,9 @@ const style3 = {
 class SidebarB extends React.Component {
     render() {
         return (
-            React.createElement(Formik, {
-                initialValues: {
-                    firstName: '',
-                    lastName: '',
-                    email: '',
-                    role: '',
-                    password: '',
-                    confirmPassword: '',
-                    consent: false
-                }, 
-                       
-                onSubmit: fields => {
-                    alert('SUCCESS!! :-)\n\n' + JSON.stringify(fields, null, 4))
-                }, 
-                render: ({ errors, status, touched }) => (
-
-                    React.createElement(Form, {style: style1}, 
-                    React.createElement("h5", {style: style2}, "xxx"), 
-                      
-                        React.createElement("div", {className: "form-group"}, 
-                        React.createElement(Field, {component: "select", name: "color"}, 
-  React.createElement("option", {value: "red"}, "Red"), 
-  React.createElement("option", {value: "green"}, "Green"), 
-  React.createElement("option", {value: "blue"}, "Blue")
-), 
-                            React.createElement(Field, {name: "consent", label: "Policy", type: "checkbox", className: 'form-control' + (errors.consent && touched.consent ? ' is-invalid' : '')}), 
-                            React.createElement(ErrorMessage, {name: "consent", component: "div", className: "invalid-feedback"}), 
-                           React.createElement(Field, {name: "consent2", label: "Policy2", type: "checkbox", className: 'form-control' + (errors.consent && touched.consent ? ' is-invalid' : '')}), 
-                            React.createElement(ErrorMessage, {name: "consent2", component: "div", className: "invalid-feedback"}), 
-                           React.createElement(Field, {name: "consent3", label: "Policy3", type: "checkbox", className: 'form-control' + (errors.consent && touched.consent ? ' is-invalid' : '')}), 
-                            React.createElement(ErrorMessage, {name: "consent3", component: "div", className: "invalid-feedback"})
-                        
-                
-                ), 
-
-
-                        React.createElement("div", {className: "form-group"}, 
-                            React.createElement(Button, {variant: "outline-primary", type: "submit", style: style3}, "Register")
-                        )
-                    )
-                )}
+          
+            React.createElement(Formik, null
+     
             )
         )
     }
@@ -20823,6 +20785,39 @@ module.exports = SidebarB;
 
 
 /* 
+render={({ errors, status, touched }) => (
+
+                    <Form style={style1}>
+                    <h5 style={style2}>xxx</h5>
+                      
+                        <div className="form-group">
+                        <Field component="select" name="color">
+  <option value="red">Red</option>
+  <option value="green">Green</option>
+  <option value="blue">Blue</option>
+</Field>
+                            <Field name="consent" label="Policy"  type="checkbox" className={'form-control' + (errors.consent && touched.consent ? ' is-invalid' : '')} />
+                            <ErrorMessage name="consent" component="div" className="invalid-feedback" />
+                           <Field name="consent2" label="Policy2"  type="checkbox" className={'form-control' + (errors.consent && touched.consent ? ' is-invalid' : '')} />
+                            <ErrorMessage name="consent2" component="div" className="invalid-feedback" />
+                           <Field name="consent3" label="Policy3"  type="checkbox" className={'form-control' + (errors.consent && touched.consent ? ' is-invalid' : '')} />
+                            <ErrorMessage name="consent3" component="div" className="invalid-feedback" />
+                        
+                
+                </div>
+
+
+                        <div className="form-group">
+                            <Button variant="outline-primary" type="submit" style={style3}>Register</Button>
+                        </div>
+                    </Form>
+                )}
+            />
+        )
+    }
+}
+
+
 <Form style={style1}>
                     <h5 style={style2}>xxx</h5>
                         <div className="form-group">
@@ -79136,7 +79131,7 @@ exports = module.exports = __webpack_require__(32)(false);
 
 
 // module
-exports.push([module.i, "\nul,\nol {\n  list-style: none;\n  margin: 0;\n  padding: 0;\n}\n\n\nlabel {\n  cursor: pointer;\n}\n\nlabel span {\n  display: inline-block;\n  padding: 0 0 0 1px;\n}\n\n/* \nbody {\n  margin: 0;\n  font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Roboto\", \"Oxygen\",\n    \"Ubuntu\", \"Cantarell\", \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\",\n    sans-serif;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n\ncode {\n  font-family: source-code-pro, Menlo, Monaco, Consolas, \"Courier New\",\n    monospace;\n}\n\nul,\nol {\n  list-style: none;\n  margin: 0;\n  padding: 0;\n}\n\n.App {\n  max-width: 500px;\n  margin: 50px auto;\n}\n\nstrong {\n  margin-bottom: 10px;\n  display: block;\n  font-size: 25px;\n}\n\nlabel {\n  cursor: pointer;\n}\n\nlabel span {\n  display: inline-block;\n  padding: 0 0 0 10px;\n}\n\n*/", ""]);
+exports.push([module.i, "\nul,\nol {\n  list-style: none;\n  margin: 0;\n  padding: 0;\n}\n\n\nlabel {\n  cursor: pointer;\n}\n\nlabel span {\n  display: inline-block;\n  padding: 0 0 0 1px;\n}\n\n/* \n\n font-family: sans-serif;\n  text-align: center;\nbody {\n\n  margin: 0;\n  font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Roboto\", \"Oxygen\",\n    \"Ubuntu\", \"Cantarell\", \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\",\n    sans-serif;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n\ncode {\n  font-family: source-code-pro, Menlo, Monaco, Consolas, \"Courier New\",\n    monospace;\n}\n\nul,\nol {\n  list-style: none;\n  margin: 0;\n  padding: 0;\n}\n\n.App {\n  max-width: 500px;\n  margin: 50px auto;\n}\n\nstrong {\n  margin-bottom: 10px;\n  display: block;\n  font-size: 25px;\n}\n\nlabel {\n  cursor: pointer;\n}\n\nlabel span {\n  display: inline-block;\n  padding: 0 0 0 10px;\n}\n\n*/", ""]);
 
 // exports
 

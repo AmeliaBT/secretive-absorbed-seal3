@@ -29,21 +29,21 @@ const style3 = {
 class SidebarB extends React.Component {
     render() {
         return (
+          
             <Formik
-                initialValues={{
-                    firstName: '',
-                    lastName: '',
-                    email: '',
-                    role: '',
-                    password: '',
-                    confirmPassword: '',
-                    consent: false
-                }}
-                       
-                onSubmit={fields => {
-                    alert('SUCCESS!! :-)\n\n' + JSON.stringify(fields, null, 4))
-                }}
-                render={({ errors, status, touched }) => (
+     
+            />
+        )
+    }
+}
+
+
+
+module.exports = SidebarB;
+
+
+/* 
+render={({ errors, status, touched }) => (
 
                     <Form style={style1}>
                     <h5 style={style2}>xxx</h5>
@@ -76,11 +76,6 @@ class SidebarB extends React.Component {
 }
 
 
-
-module.exports = SidebarB;
-
-
-/* 
 <Form style={style1}>
                     <h5 style={style2}>xxx</h5>
                         <div className="form-group">
