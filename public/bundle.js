@@ -81388,7 +81388,7 @@ class RIlistAll2 extends React.Component {
        < FilterA />   */
       
 React.createElement(Row, null, 
-   React.createElement(Col, {xs: 1}, React.createElement("div", {className: "well"}, "  ", React.createElement(SidebarB, null), 
+   React.createElement(Col, {xs: 1}, React.createElement("div", {className: "well"}, 
      React.createElement(FilterA, null), " "), " "), 
   React.createElement(Col, {xs: 11}, " ", React.createElement("div", null, 
     
@@ -81422,6 +81422,7 @@ React.createElement(Table, {className: "myForm"},
 };
 
 module.exports = RIlistAll2;
+//< SidebarB /> 
 
 /***/ }),
 /* 753 */
