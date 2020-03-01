@@ -23,20 +23,15 @@ class SidebarB extends React.Component {
         return (
             <Formik
                 initialValues={{
-                    firstName: '',
-                    lastName: '',
-                    email: '',
-                    role: '',
-                    password: '',
-                    confirmPassword: '',
-                    consent: false
+                    firstName: '',                    
+                    role: ''
                 }}                       
                 onSubmit={fields => {
-                    alert('SUCCESS!! :-)\n\n' + JSON.stringify(fields, null, 4))
+                    alert('SUCCESS!! :-)\n\n' + JSON.stringify(fields, null, 2))
                 }}
                 render={({ errors, status, touched }) => (
                  <Form style={style1}>
-                    <h5 style={style2}>Get Started</h5>
+                    <h5 style={style2}>Start</h5>
                         <div className="form-group">
                             <label htmlFor="firstName">Name</label>
                             <Field name="firstName" type="text" className={'form-control' + (errors.firstName && touched.firstName ? ' is-invalid' : '')} />
@@ -47,7 +42,7 @@ class SidebarB extends React.Component {
 
                         <div className="form-group">
                             <label htmlFor="role">role</label>
-                            <Field name="role" type="text"  placeholder="eg, academic, industry R&D, policy, funder" className={'form-control' + (errors.role && touched.role ? ' is-invalid' : '')} >
+                            <Field name="role" type="text"  placeholder="eg" className={'form-control' + (errors.role && touched.role ? ' is-invalid' : '')} >
                             </Field>
                             <ErrorMessage name="role" component="div" className="invalid-feedback" />
                         </div>

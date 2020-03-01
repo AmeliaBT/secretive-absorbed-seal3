@@ -20765,20 +20765,15 @@ class SidebarB extends React.Component {
         return (
             React.createElement(Formik, {
                 initialValues: {
-                    firstName: '',
-                    lastName: '',
-                    email: '',
-                    role: '',
-                    password: '',
-                    confirmPassword: '',
-                    consent: false
+                    firstName: '',                    
+                    role: ''
                 }, 
                 onSubmit: fields => {
-                    alert('SUCCESS!! :-)\n\n' + JSON.stringify(fields, null, 4))
+                    alert('SUCCESS!! :-)\n\n' + JSON.stringify(fields, null, 2))
                 }, 
                 render: ({ errors, status, touched }) => (
                  React.createElement(Form, {style: style1}, 
-                    React.createElement("h5", {style: style2}, "Get Started"), 
+                    React.createElement("h5", {style: style2}, "Start"), 
                         React.createElement("div", {className: "form-group"}, 
                             React.createElement("label", {htmlFor: "firstName"}, "Name"), 
                             React.createElement(Field, {name: "firstName", type: "text", className: 'form-control' + (errors.firstName && touched.firstName ? ' is-invalid' : '')}), 
@@ -20789,7 +20784,7 @@ class SidebarB extends React.Component {
 
                         React.createElement("div", {className: "form-group"}, 
                             React.createElement("label", {htmlFor: "role"}, "role"), 
-                            React.createElement(Field, {name: "role", type: "text", placeholder: "eg, academic, industry R&D, policy, funder", className: 'form-control' + (errors.role && touched.role ? ' is-invalid' : '')}
+                            React.createElement(Field, {name: "role", type: "text", placeholder: "eg", className: 'form-control' + (errors.role && touched.role ? ' is-invalid' : '')}
                             ), 
                             React.createElement(ErrorMessage, {name: "role", component: "div", className: "invalid-feedback"})
                         ), 
