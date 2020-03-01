@@ -7,41 +7,91 @@ const {FormControlLabel, FormControl, FormGroup, Group, Radio, Col, Grid, Row, B
 const FormikRadioGroup =require('./FormikRadioGroup');
 const style = require('../styles/SidebarA');
 //const options =require('./exampleData');
+const {Yup} =require('yup');
+const style1 = {
+    width: '60%',
+    margin: 'auto'}
+const style2 = {
+    paddingTop: '2em',}
+const style3 = {
+    marginRight: '2em'}
 
 // Render Prop
 const { Formik,  Field, ErrorMessage } =require('formik');
+class SidebarB extends React.Component {
+    render() {
+        return (
+            <Formik
+                initialValues={{
+                    firstName: '',
+                    lastName: '',
+                    email: '',
+                    role: '',
+                    password: '',
+                    confirmPassword: '',
+                    consent: false
+                }}                       
+                onSubmit={fields => {
+                    alert('SUCCESS!! :-)\n\n' + JSON.stringify(fields, null, 4))
+                }}
+                render={({ errors, status, touched }) => (
+                 <Form style={style1}>
+                    <h1 style={style2}>Get Started</h1>
+                        <div className="form-group">
+                            <label htmlFor="firstName">First Name</label>
+                            <Field name="firstName" type="text" className={'form-control' + (errors.firstName && touched.firstName ? ' is-invalid' : '')} />
+                            <ErrorMessage name="firstName" component="div" className="invalid-feedback" />
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="lastName">Last Name</label>
+                            <Field name="lastName" type="text" className={'form-control' + (errors.lastName && touched.lastName ? ' is-invalid' : '')} />
+                            <ErrorMessage name="lastName" component="div" className="invalid-feedback" />
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="email">Email</label>
+                            <Field name="email" type="text" placeholder="Please use your work email address" className={'form-control' + (errors.email && touched.email ? ' is-invalid' : '')} />
+                            <ErrorMessage name="email" component="div" className="invalid-feedback" />
+                        </div>
 
-function SidebarB() {
-  const validateForm = values => {
-    let errors = {};
-    if (values.radioGroup === "") {
-      errors.radioGroup = "You must select a value.";
+                        <div className="form-group">
+                            <label htmlFor="role">Which role best describes yours?</label>
+                            <Field name="role" type="text"  placeholder="eg, academic, industry R&D, policy, funder" className={'form-control' + (errors.role && touched.role ? ' is-invalid' : '')} >
+                            </Field>
+                            <ErrorMessage name="role" component="div" className="invalid-feedback" />
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="password">Password</label>
+                            <Field name="password" type="password" className={'form-control' + (errors.password && touched.password ? ' is-invalid' : '')} />
+
+<ErrorMessage name="password" component="div" className="invalid-feedback" />
+                        </div>
+                        <  div className="form-group">
+                            <label htmlFor="confirmPassword">Confirm Password</label>
+                            <Field name="confirmPassword" type="password" className={'form-control' + (errors.confirmPassword && touched.confirmPassword ? ' is-invalid' : '')} />
+                            <ErrorMessage name="confirmPassword" component="div" className="invalid-feedback" />
+                        </div>
+
+                        <div className="form-group">
+                        <Field component="select" name="color">
+  <option value="red">Red</option>
+  <option value="green">Green</option>
+  <option value="blue">Blue</option>
+</Field>
+                            <Field name="consent" label="You must accept the  and Privacy Policy"  type="checkbox" className={'form-control' + (errors.consent && touched.consent ? ' is-invalid' : '')} />
+                            <ErrorMessage name="consent" component="div" className="invalid-feedback" />
+                        </div>
+
+
+                        <div className="form-group">
+                            <Button variant="outline-primary" type="submit" style={style3}>Register</Button>
+                        </div>
+                    </Form>
+                )}
+            />
+        )
     }
-    return errors;
-  };
-  return (
-   
- <Formik
-      initialValues={{ radioGroup: "" }}
-      validate={validateForm}
-      render={() => (
-        <Form>
-          <Field
-            name="radioGroup"
-            options={["Yes", "No"]}
-            component={FormikRadioGroup}
-          />
-
-          <div className="activation-buttons">
-            <Button color="primary" type="submit">
-              Submit
-            </Button>
-          </div>
-        </Form>
-      )}
-    />
-  );
 }
+
 
 
 
