@@ -3,12 +3,10 @@ Sidebar component that displays a list of options, and receives a callback funct
 *************************************************** */
 const React = require('react');
 const Link = require('react-router-dom').Link
-
-
-const {FormControl, FormGroup, Group, Radio, Col, Grid, Row, Button, Glyphicon, Form } = require('react-bootstrap');
-
+const {FormControlLabel, FormControl, FormGroup, Group, Radio, Col, Grid, Row, Button, Glyphicon, Form } = require('react-bootstrap');
+const FormikRadioGroup =require('./FormikRadioGroup');
 const style = require('../styles/SidebarA');
-const options =require('./exampleData');
+//const options =require('./exampleData');
 
 // Render Prop
 const { Formik,  Field, ErrorMessage } =require('formik');
