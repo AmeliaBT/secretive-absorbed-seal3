@@ -2,19 +2,23 @@
 
 //https://formik-form.surge.sh
 //https://github.com/Nicknyr/Formik_Example 
-
+//===============================================
 //import styled from 'styled-components';
 //import { Form, Button } from 'react-bootstrap';
-import { Formik, ErrorMessage } from 'formik';
-import * as Yup from 'yup';
+//import { Formik, ErrorMessage } from 'formik';
+//import * as Yup from 'yup';
 
+//import styled from 'styled-components';
+const styled=require('styled-components');
+const {Yup} =require('yup');
+const { Formik,  Field, ErrorMessage } =require('formik');
 const React = require('react');
 const Link = require('react-router-dom').Link
 const {FormControlLabel, FormControl, FormGroup, Group, Radio, Col, Grid, Row, Button, Glyphicon, Form } = require('react-bootstrap');
 //const FormikRadioGroup =require('./FormikRadioGroup');
+//styled
 
-
-const CONTAINER = styled.div`
+const CONTAINER = styled(div)`
   background: #F7F9FA;
   height: auto;
   width: 90%;
