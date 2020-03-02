@@ -87401,26 +87401,26 @@ const Form = (props) => {
     }, 
       ({
         values,
-        //errors,
+        errors,
         touched,
-       handleChange,
-       // handleBlur,
-        handleSubmit
-       // isSubmitting,
+        handleChange,
+        handleBlur,
+        handleSubmit,
+        isSubmitting,
         /* and other goodies */
       }) => (
           React.createElement("form", {onSubmit: handleSubmit}, 
             React.createElement("input", {
               type: "email", 
               name: "email", 
-              onChange: handleChange, 
+             
               value: values.email}
             ), 
             
             React.createElement("input", {
               type: "password", 
               name: "password", 
-              onChange: handleChange, 
+              //onChange={handleChange}
               //onBlur={handleBlur}
               value: values.password}
             ), 
@@ -87450,7 +87450,6 @@ class SidebarD extends React.Component {
     
 
      handleSubmit() {
-       alert("hi from handle Submit  neme is!!! " + this.state.name);
     this.setState({
       isLoading: false ,
       success: true
