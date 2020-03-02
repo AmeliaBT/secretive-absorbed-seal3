@@ -87447,7 +87447,7 @@ class SidebarD extends React.Component {
     };
   }
 
-//  delay = () => {
+
      delay() {
     const that = this;
     return new Promise(function (resolve, reject) {
@@ -87457,7 +87457,7 @@ class SidebarD extends React.Component {
     });
   }
 
- // handleSubmit = () => {
+
      handleSubmit() {
     this.setState({
       isLoading: true
