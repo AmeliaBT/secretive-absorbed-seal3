@@ -32,7 +32,7 @@ class SidebarD extends React.Component {
   render() {
 
     return (
-      <>
+      <div>
         <Alert variant='light'>
           <p>
             We'll be in touch with login details shortly.
@@ -44,7 +44,7 @@ class SidebarD extends React.Component {
               </Button>
           </div>
         </Alert>
-      </>
+      </div>
     );
   }
 }
