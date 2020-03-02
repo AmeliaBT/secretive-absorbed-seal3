@@ -20,8 +20,8 @@ const style3 = {
 
 // Render Prop
 //https://stackoverflow.com/questions/55910688/formik-with-react-bootstrap-styling
-
-class SidebarD extends React.Component {
+//<AlertDismissible />
+class AlertDismissible extends React.Component {
     
   constructor(props) {
     super(props);
@@ -104,8 +104,8 @@ const Form = (props) => {
   )
 }
 
-/*
-class App extends Component {
+
+class SidebarD extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -115,7 +115,8 @@ class App extends Component {
     };
   }
 
-  delay = () => {
+//  delay = () => {
+     delay() {
     const that = this;
     return new Promise(function (resolve, reject) {
       setTimeout(() => {
@@ -124,7 +125,8 @@ class App extends Component {
     });
   }
 
-  handleSubmit = () => {
+ // handleSubmit = () => {
+     handleSubmit() {
     this.setState({
       isLoading: true
     });
@@ -148,7 +150,7 @@ class App extends Component {
   }
 }
   
-  */
+  
   
 
 module.exports = SidebarD;
