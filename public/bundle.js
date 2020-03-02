@@ -24422,7 +24422,7 @@ module.exports = RIphoto2;
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(849);
+var content = __webpack_require__(850);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -24471,11 +24471,11 @@ const RIreports = __webpack_require__(540);
 const RIlist = __webpack_require__(546);
 const RIlistAll = __webpack_require__(549); //change
 const RIlistAll2 = __webpack_require__(845); 
-const RIedit = __webpack_require__(846);
-const RIview = __webpack_require__(847);
-const SignUp = __webpack_require__(848);
-const LogIn = __webpack_require__(850);
-const HomePage = __webpack_require__(851);
+const RIedit = __webpack_require__(847);
+const RIview = __webpack_require__(848);
+const SignUp = __webpack_require__(849);
+const LogIn = __webpack_require__(851);
+const HomePage = __webpack_require__(852);
 const FilterA = __webpack_require__(139);
 //const DisplayMessages= require('./components/DisplayMessages');
 //const DisplayMessagesB= require('./components/DisplayMessagesB');
@@ -87194,6 +87194,7 @@ const {Table , Grid, Row, Col, Modal} = __webpack_require__(12);
 const Header = __webpack_require__(19);
 const FilterA =__webpack_require__(139);
 const SidebarB =__webpack_require__(293);
+const SidebarD =__webpack_require__(846);
 //const ExportData = require('./ExportData');
 const RIlistItemAll = __webpack_require__(329);
 let test = {a: 1, b: 2};
@@ -87291,7 +87292,7 @@ React.createElement(Row, null,
    React.createElement(Col, {xs: 3}, React.createElement("div", {className: "well"}, 
     React.createElement(SidebarB, null), "  "), " "), 
   React.createElement(Col, {xs: 8}, " ", React.createElement("div", null, 
-    
+     React.createElement(SidebarD, null), 
       /* 
   
 <Table className="myForm">  
@@ -87327,6 +87328,12 @@ module.exports = RIlistAll2;
 
 /***/ }),
 /* 846 */
+/***/ (function(module, exports) {
+
+throw new Error("Module build failed: Error: Parse Error: Line 35: Unexpected token >\n    at throwError (/rbd/pnpm-volume/6266db50-e2b2-4681-87a0-a8b5fe873e64/node_modules/.registry.npmjs.org/esprima-fb/15001.1.0-dev-harmony-fb/node_modules/esprima-fb/esprima.js:2818:21)\n    at throwUnexpected (/rbd/pnpm-volume/6266db50-e2b2-4681-87a0-a8b5fe873e64/node_modules/.registry.npmjs.org/esprima-fb/15001.1.0-dev-harmony-fb/node_modules/esprima-fb/esprima.js:2880:9)\n    at parseJSXIdentifier (/rbd/pnpm-volume/6266db50-e2b2-4681-87a0-a8b5fe873e64/node_modules/.registry.npmjs.org/esprima-fb/15001.1.0-dev-harmony-fb/node_modules/esprima-fb/esprima.js:6960:13)\n    at parseJSXElementName (/rbd/pnpm-volume/6266db50-e2b2-4681-87a0-a8b5fe873e64/node_modules/.registry.npmjs.org/esprima-fb/15001.1.0-dev-harmony-fb/node_modules/esprima-fb/esprima.js:6997:16)\n    at parseJSXOpeningElement (/rbd/pnpm-volume/6266db50-e2b2-4681-87a0-a8b5fe873e64/node_modules/.registry.npmjs.org/esprima-fb/15001.1.0-dev-harmony-fb/node_modules/esprima-fb/esprima.js:7156:16)\n    at parseJSXElement (/rbd/pnpm-volume/6266db50-e2b2-4681-87a0-a8b5fe873e64/node_modules/.registry.npmjs.org/esprima-fb/15001.1.0-dev-harmony-fb/node_modules/esprima-fb/esprima.js:7186:26)\n    at parsePrimaryExpression (/rbd/pnpm-volume/6266db50-e2b2-4681-87a0-a8b5fe873e64/node_modules/.registry.npmjs.org/esprima-fb/15001.1.0-dev-harmony-fb/node_modules/esprima-fb/esprima.js:3589:20)\n    at parseLeftHandSideExpressionAllowCall (/rbd/pnpm-volume/6266db50-e2b2-4681-87a0-a8b5fe873e64/node_modules/.registry.npmjs.org/esprima-fb/15001.1.0-dev-harmony-fb/node_modules/esprima-fb/esprima.js:3682:61)\n    at parsePostfixExpression (/rbd/pnpm-volume/6266db50-e2b2-4681-87a0-a8b5fe873e64/node_modules/.registry.npmjs.org/esprima-fb/15001.1.0-dev-harmony-fb/node_modules/esprima-fb/esprima.js:3722:20)\n    at parseUnaryExpression (/rbd/pnpm-volume/6266db50-e2b2-4681-87a0-a8b5fe873e64/node_modules/.registry.npmjs.org/esprima-fb/15001.1.0-dev-harmony-fb/node_modules/esprima-fb/esprima.js:3789:16)\n    at parseBinaryExpression (/rbd/pnpm-volume/6266db50-e2b2-4681-87a0-a8b5fe873e64/node_modules/.registry.npmjs.org/esprima-fb/15001.1.0-dev-harmony-fb/node_modules/esprima-fb/esprima.js:3879:16)\n    at parseConditionalExpression (/rbd/pnpm-volume/6266db50-e2b2-4681-87a0-a8b5fe873e64/node_modules/.registry.npmjs.org/esprima-fb/15001.1.0-dev-harmony-fb/node_modules/esprima-fb/esprima.js:3939:16)\n    at parseAssignmentExpression (/rbd/pnpm-volume/6266db50-e2b2-4681-87a0-a8b5fe873e64/node_modules/.registry.npmjs.org/esprima-fb/15001.1.0-dev-harmony-fb/node_modules/esprima-fb/esprima.js:4192:16)\n    at parseExpression (/rbd/pnpm-volume/6266db50-e2b2-4681-87a0-a8b5fe873e64/node_modules/.registry.npmjs.org/esprima-fb/15001.1.0-dev-harmony-fb/node_modules/esprima-fb/esprima.js:4249:16)\n    at parseGroupExpression (/rbd/pnpm-volume/6266db50-e2b2-4681-87a0-a8b5fe873e64/node_modules/.registry.npmjs.org/esprima-fb/15001.1.0-dev-harmony-fb/node_modules/esprima-fb/esprima.js:3481:16)\n    at parsePrimaryExpression (/rbd/pnpm-volume/6266db50-e2b2-4681-87a0-a8b5fe873e64/node_modules/.registry.npmjs.org/esprima-fb/15001.1.0-dev-harmony-fb/node_modules/esprima-fb/esprima.js:3574:20)\n    at parseLeftHandSideExpressionAllowCall (/rbd/pnpm-volume/6266db50-e2b2-4681-87a0-a8b5fe873e64/node_modules/.registry.npmjs.org/esprima-fb/15001.1.0-dev-harmony-fb/node_modules/esprima-fb/esprima.js:3682:61)\n    at parsePostfixExpression (/rbd/pnpm-volume/6266db50-e2b2-4681-87a0-a8b5fe873e64/node_modules/.registry.npmjs.org/esprima-fb/15001.1.0-dev-harmony-fb/node_modules/esprima-fb/esprima.js:3722:20)\n    at parseUnaryExpression (/rbd/pnpm-volume/6266db50-e2b2-4681-87a0-a8b5fe873e64/node_modules/.registry.npmjs.org/esprima-fb/15001.1.0-dev-harmony-fb/node_modules/esprima-fb/esprima.js:3789:16)\n    at parseBinaryExpression (/rbd/pnpm-volume/6266db50-e2b2-4681-87a0-a8b5fe873e64/node_modules/.registry.npmjs.org/esprima-fb/15001.1.0-dev-harmony-fb/node_modules/esprima-fb/esprima.js:3879:16)\n    at parseConditionalExpression (/rbd/pnpm-volume/6266db50-e2b2-4681-87a0-a8b5fe873e64/node_modules/.registry.npmjs.org/esprima-fb/15001.1.0-dev-harmony-fb/node_modules/esprima-fb/esprima.js:3939:16)\n    at parseAssignmentExpression (/rbd/pnpm-volume/6266db50-e2b2-4681-87a0-a8b5fe873e64/node_modules/.registry.npmjs.org/esprima-fb/15001.1.0-dev-harmony-fb/node_modules/esprima-fb/esprima.js:4192:16)\n    at parseExpression (/rbd/pnpm-volume/6266db50-e2b2-4681-87a0-a8b5fe873e64/node_modules/.registry.npmjs.org/esprima-fb/15001.1.0-dev-harmony-fb/node_modules/esprima-fb/esprima.js:4249:16)\n    at parseReturnStatement (/rbd/pnpm-volume/6266db50-e2b2-4681-87a0-a8b5fe873e64/node_modules/.registry.npmjs.org/esprima-fb/15001.1.0-dev-harmony-fb/node_modules/esprima-fb/esprima.js:5453:28)\n    at parseStatement (/rbd/pnpm-volume/6266db50-e2b2-4681-87a0-a8b5fe873e64/node_modules/.registry.npmjs.org/esprima-fb/15001.1.0-dev-harmony-fb/node_modules/esprima-fb/esprima.js:5679:24)\n    at parseSourceElement (/rbd/pnpm-volume/6266db50-e2b2-4681-87a0-a8b5fe873e64/node_modules/.registry.npmjs.org/esprima-fb/15001.1.0-dev-harmony-fb/node_modules/esprima-fb/esprima.js:6443:24)\n    at parseFunctionSourceElements (/rbd/pnpm-volume/6266db50-e2b2-4681-87a0-a8b5fe873e64/node_modules/.registry.npmjs.org/esprima-fb/15001.1.0-dev-harmony-fb/node_modules/esprima-fb/esprima.js:5780:29)\n    at parseConciseBody (/rbd/pnpm-volume/6266db50-e2b2-4681-87a0-a8b5fe873e64/node_modules/.registry.npmjs.org/esprima-fb/15001.1.0-dev-harmony-fb/node_modules/esprima-fb/esprima.js:5727:20)\n    at parsePropertyFunction (/rbd/pnpm-volume/6266db50-e2b2-4681-87a0-a8b5fe873e64/node_modules/.registry.npmjs.org/esprima-fb/15001.1.0-dev-harmony-fb/node_modules/esprima-fb/esprima.js:3095:16)\n    at parsePropertyMethodFunction (/rbd/pnpm-volume/6266db50-e2b2-4681-87a0-a8b5fe873e64/node_modules/.registry.npmjs.org/esprima-fb/15001.1.0-dev-harmony-fb/node_modules/esprima-fb/esprima.js:3130:18)");
+
+/***/ }),
+/* 847 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -87656,7 +87663,7 @@ module.exports = RIedit;
 */
 
 /***/ }),
-/* 847 */
+/* 848 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -87860,7 +87867,7 @@ module.exports = RIview;
 
 
 /***/ }),
-/* 848 */
+/* 849 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const React = __webpack_require__(0);
@@ -87989,7 +87996,7 @@ class SignUp extends React.Component {
 module.exports = SignUp;
 
 /***/ }),
-/* 849 */
+/* 850 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(32)(false);
@@ -88003,7 +88010,7 @@ exports.push([module.i, ".FormSU {\n  width: 600px;\n  margin: auto;\n  margin-t
 
 
 /***/ }),
-/* 850 */
+/* 851 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const React = __webpack_require__(0);
@@ -88110,7 +88117,7 @@ class LogIn extends React.Component {
 module.exports = LogIn;
 
 /***/ }),
-/* 851 */
+/* 852 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const React = __webpack_require__(0);
@@ -88118,7 +88125,7 @@ const React = __webpack_require__(0);
 const style = __webpack_require__(69);
 // other components and etc
 const Header = __webpack_require__(19);
-const FormRI =__webpack_require__(852);
+const FormRI =__webpack_require__(853);
 // react-bootstrap
 const {Grid, Row, Col, FormControl} = __webpack_require__(12);
 
@@ -88203,13 +88210,13 @@ module.exports = HomePage;
 
 
 /***/ }),
-/* 852 */
+/* 853 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const React = __webpack_require__(0);
 const Link = __webpack_require__(11).Link
 // style for BOOKS
-const style = __webpack_require__(853);
+const style = __webpack_require__(854);
 // other components and etc
 const Header = __webpack_require__(19);
 //const CreatableSelect= require('react-select');
@@ -88603,13 +88610,13 @@ href = "https://drive.google.com/file/d/19Ol1VZu646JIQE20-iSmI5Wma0I1_a_2/view?u
 */
 
 /***/ }),
-/* 853 */
+/* 854 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(854);
+var content = __webpack_require__(855);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -88634,7 +88641,7 @@ if(false) {
 }
 
 /***/ }),
-/* 854 */
+/* 855 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(32)(false);
