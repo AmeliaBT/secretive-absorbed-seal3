@@ -87288,7 +87288,7 @@ class RIlistAll2 extends React.Component {
       
 React.createElement(Row, null, 
    React.createElement(Col, {xs: 3}, React.createElement("div", {className: "well"}, 
-    React.createElement(SidebarC, null), "  "), " "), 
+    React.createElement(SidebarB, null), "  "), " "), 
   React.createElement(Col, {xs: 8}, " ", React.createElement("div", null, 
     
       
@@ -87338,7 +87338,7 @@ module.exports = RIlistAll2;
 //import * as Yup from 'yup';
 
 //import styled from 'styled-components';
-const styled=__webpack_require__(847);
+const styled = __webpack_require__(847);
 const {Yup} =__webpack_require__(310);
 const { Formik,  Field, ErrorMessage } =__webpack_require__(161);
 const React = __webpack_require__(0);
@@ -87346,8 +87346,8 @@ const Link = __webpack_require__(11).Link
 const {FormControlLabel, FormControl, FormGroup, Group, Radio, Col, Grid, Row, Button, Glyphicon, Form } = __webpack_require__(12);
 //const FormikRadioGroup =require('./FormikRadioGroup');
 //styled
-
-const CONTAINER = styled(div)`
+/*
+const CONTAINER = styled(<div></div>)`
   background: #F7F9FA;
   height: auto;
   width: 90%;
@@ -87359,6 +87359,7 @@ const CONTAINER = styled(div)`
   @media(min-width: 786px) {
     width: 60%;
   }
+
   label {
     color: #24B9B6;
     font-size: 1.2em;
@@ -87402,12 +87403,14 @@ const BUTTON = styled(Button)`
     background: #1D3461;
   }
 `;
-
+*/
 // RegEx for phone number validation
 const phoneRegExp = /^(\+?\d{0,4})?\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{4}\)?)?$/
 
 // Schema for yup
-const validationSchema = Yup.object().shape({
+const validationSchema = {};
+/*
+Yup.object().shape({
   name: Yup.string()
   .min(2, "*Names must have at least 2 characters")
   .max(100, "*Names can't be longer than 100 characters")
@@ -87422,11 +87425,11 @@ const validationSchema = Yup.object().shape({
   blog: Yup.string()
   .url("*Must enter URL in http://www.example.com format")
   .required("*URL required")
-});
+});*/
 
 const SidebarC = () => {
   return(
-    React.createElement(CONTAINER, null, 
+    React.createElement("div", null, 
     React.createElement("h1", null, "Example Formik Form"), 
     React.createElement(Formik, {
       initialValues: { name:"", email:"", phone:"", blog:""}, 
@@ -87450,7 +87453,7 @@ const SidebarC = () => {
           handleBlur,
           handleSubmit,
           isSubmitting }) => (
-        React.createElement(MYFORM, {onSubmit: handleSubmit, className: "mx-auto"}, 
+        React.createElement(Form, {onSubmit: handleSubmit, className: "mx-auto"}, 
           React.createElement(Form.Group, {controlId: "formName"}, 
             React.createElement(Form.Label, null, "Name :"), 
             React.createElement(Form.Control, {

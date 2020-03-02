@@ -9,7 +9,7 @@
 //import * as Yup from 'yup';
 
 //import styled from 'styled-components';
-const styled=require('styled-components');
+const styled = require('styled-components');
 const {Yup} =require('yup');
 const { Formik,  Field, ErrorMessage } =require('formik');
 const React = require('react');
@@ -17,8 +17,8 @@ const Link = require('react-router-dom').Link
 const {FormControlLabel, FormControl, FormGroup, Group, Radio, Col, Grid, Row, Button, Glyphicon, Form } = require('react-bootstrap');
 //const FormikRadioGroup =require('./FormikRadioGroup');
 //styled
-
-const CONTAINER = styled(div)`
+/*
+const CONTAINER = styled(<div></div>)`
   background: #F7F9FA;
   height: auto;
   width: 90%;
@@ -30,6 +30,7 @@ const CONTAINER = styled(div)`
   @media(min-width: 786px) {
     width: 60%;
   }
+
   label {
     color: #24B9B6;
     font-size: 1.2em;
@@ -73,12 +74,14 @@ const BUTTON = styled(Button)`
     background: #1D3461;
   }
 `;
-
+*/
 // RegEx for phone number validation
 const phoneRegExp = /^(\+?\d{0,4})?\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{4}\)?)?$/
 
 // Schema for yup
-const validationSchema = Yup.object().shape({
+const validationSchema = {};
+/*
+Yup.object().shape({
   name: Yup.string()
   .min(2, "*Names must have at least 2 characters")
   .max(100, "*Names can't be longer than 100 characters")
@@ -93,11 +96,11 @@ const validationSchema = Yup.object().shape({
   blog: Yup.string()
   .url("*Must enter URL in http://www.example.com format")
   .required("*URL required")
-});
+});*/
 
 const SidebarC = () => {
   return(
-    <CONTAINER>
+    <div>
     <h1>Example Formik Form</h1>
     <Formik
       initialValues={{ name:"", email:"", phone:"", blog:""}}
@@ -121,7 +124,7 @@ const SidebarC = () => {
           handleBlur,
           handleSubmit,
           isSubmitting }) => (
-        <MYFORM onSubmit={handleSubmit} className="mx-auto">
+        <Form onSubmit={handleSubmit} className="mx-auto">
           <Form.Group controlId="formName">
             <Form.Label>Name :</Form.Label>
             <Form.Control
@@ -186,10 +189,10 @@ const SidebarC = () => {
           <BUTTON variant="primary" type="submit" disabled={isSubmitting}>
             Submit
           </BUTTON>
-        </MYFORM>
+        </Form>
       )}
     </Formik>
-    </CONTAINER>
+    </div>
   );
 }
 

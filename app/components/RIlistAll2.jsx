@@ -104,7 +104,7 @@ class RIlistAll2 extends React.Component {
       
 <Row > 
    <Col xs={3} ><div  className="well" >  
-    < SidebarC />  </div> </Col>
+    < SidebarB />  </div> </Col>
   <Col xs={8} > <div   >  
     
       
