@@ -59,13 +59,7 @@ const Form = (props) => {
       initialValues={{ email: '', password: '' }}
       validate={values => {
         let errors = {};
-        if (!values.email) {
-          errors.email = 'Required';
-        } else if (
-          !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
-        ) {
-          errors.email = 'Invalid email address';
-        }
+        
         return errors;
       }}
       onSubmit={props.handleSubmit}
@@ -84,16 +78,15 @@ const Form = (props) => {
             <input
               type="email"
               name="email"
-              onChange={handleChange}
-              onBlur={handleBlur}
+             
               value={values.email}
             />
             
             <input
               type="password"
               name="password"
-              onChange={handleChange}
-              onBlur={handleBlur}
+              //onChange={handleChange}
+              //onBlur={handleBlur}
               value={values.password}
             />
            
@@ -135,11 +128,8 @@ class SidebarD extends React.Component {
   render() {
     return (
       <div>
-        {this.state.isLoading
-          ? <p>submit...</p>
-          : this.state.success
-            ? <AlertDismissible />
-            : <Form handleSubmit={this.handleSubmit} />
+        {   //this.state.isLoading ? <p>submit...</p> : this.state.success  ? <AlertDismissible />      : 
+          <Form handleSubmit={this.handleSubmit} />
         }
       </div>
     );

@@ -26,6 +26,9 @@ class SidebarB extends React.Component {
   
   render() {
      alert("hi");
+    
+    
+    
         return (
             <Formik
                 initialValues={{

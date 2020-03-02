@@ -22885,6 +22885,9 @@ class SidebarB extends React.Component {
   
   render() {
      alert("hi");
+    
+    
+    
         return (
             React.createElement(Formik, {
                 initialValues: {
@@ -87391,13 +87394,7 @@ const Form = (props) => {
       initialValues: { email: '', password: ''}, 
       validate: values => {
         let errors = {};
-        if (!values.email) {
-          errors.email = 'Required';
-        } else if (
-          !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
-        ) {
-          errors.email = 'Invalid email address';
-        }
+        
         return errors;
       }, 
       onSubmit: props.handleSubmit
@@ -87416,16 +87413,15 @@ const Form = (props) => {
             React.createElement("input", {
               type: "email", 
               name: "email", 
-              onChange: handleChange, 
-              onBlur: handleBlur, 
+             
               value: values.email}
             ), 
             
             React.createElement("input", {
               type: "password", 
               name: "password", 
-              onChange: handleChange, 
-              onBlur: handleBlur, 
+              //onChange={handleChange}
+              //onBlur={handleBlur}
               value: values.password}
             ), 
            
@@ -87467,11 +87463,8 @@ class SidebarD extends React.Component {
   render() {
     return (
       React.createElement("div", null, 
-        this.state.isLoading
-          ? React.createElement("p", null, "submit...")
-          : this.state.success
-            ? React.createElement(AlertDismissible, null)
-            : React.createElement(Form, {handleSubmit: this.handleSubmit})
+           //this.state.isLoading ? <p>submit...</p> : this.state.success  ? <AlertDismissible />      : 
+          React.createElement(Form, {handleSubmit: this.handleSubmit})
         
       )
     );
