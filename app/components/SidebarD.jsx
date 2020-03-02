@@ -66,31 +66,31 @@ const Form = (props) => {
     >
       {({
         values,
-        errors,
+        //errors,
         touched,
-        handleChange,
-        handleBlur,
-        handleSubmit,
-        isSubmitting,
+       handleChange,
+       // handleBlur,
+        handleSubmit
+       // isSubmitting,
         /* and other goodies */
       }) => (
           <form onSubmit={handleSubmit}>
             <input
               type="email"
               name="email"
-             
+              onChange={handleChange}
               value={values.email}
             />
             
             <input
               type="password"
               name="password"
-              //onChange={handleChange}
+              onChange={handleChange}
               //onBlur={handleBlur}
               value={values.password}
             />
            
-            <button type="submit" disabled={isSubmitting}>
+            <button type="submit" >
               Submit
           </button>
           </form>
@@ -115,6 +115,7 @@ class SidebarD extends React.Component {
     
 
      handleSubmit() {
+       alert("hi from handle Submit  neme is!!! " + this.state.name);
     this.setState({
       isLoading: false ,
       success: true
