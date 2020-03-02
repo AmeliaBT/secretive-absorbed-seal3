@@ -87354,11 +87354,14 @@ const style3 = {
 //https://stackoverflow.com/questions/55910688/formik-with-react-bootstrap-styling
 //<AlertDismissible />
 class AlertDismissible extends React.Component {
-    
+   
   constructor(props) {
+     alert("hi2 from AlertDismissible ");
     super(props);
 
     this.state = { show: true };
+    
+     alert("hi3 from AlertDismissible ");
   }
 
   render() {
@@ -87448,6 +87451,50 @@ class SidebarD extends React.Component {
   }
 
 
+    
+
+     handleSubmit() {
+    this.setState({
+      isLoading: false ,
+      success: true
+    });
+
+    //this.delay()
+     // .then(e => this.setState({ success: true, isLoading: false }))
+      //.catch(e => console.log(e))
+  }
+
+  render() {
+    return (
+      React.createElement("div", null, 
+        this.state.isLoading
+          ? React.createElement("p", null, "submit...")
+          : this.state.success
+            ? React.createElement(AlertDismissible, null)
+            : React.createElement(Form, {handleSubmit: this.handleSubmit})
+        
+      )
+    );
+  }
+}
+  
+  
+  
+
+module.exports = SidebarD;
+/* 
+
+class SidebarD extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      name: 'React',
+      success: false,
+      isLoading: false
+    };
+  }
+
+
      delay() {
     const that = this;
     return new Promise(function (resolve, reject) {
@@ -87470,23 +87517,18 @@ class SidebarD extends React.Component {
 
   render() {
     return (
-      React.createElement("div", null, 
-        this.state.isLoading
-          ? React.createElement("p", null, "submit...")
+      <div>
+        {this.state.isLoading
+          ? <p>submit...</p>
           : this.state.success
-            ? React.createElement(AlertDismissible, null)
-            : React.createElement(Form, {handleSubmit: this.handleSubmit})
-        
-      )
+            ? <AlertDismissible />
+            : <Form handleSubmit={this.handleSubmit} />
+        }
+      </div>
     );
   }
 }
-  
-  
-  
-
-module.exports = SidebarD;
-
+*/
 
 
 
