@@ -88,7 +88,7 @@ const Form = (props) => {
               onBlur={handleBlur}
               value={values.email}
             />
-            {errors.email && touched.email && errors.email}
+            
             <input
               type="password"
               name="password"
@@ -96,7 +96,7 @@ const Form = (props) => {
               onBlur={handleBlur}
               value={values.password}
             />
-            {errors.password && touched.password && errors.password}
+           
             <button type="submit" disabled={isSubmitting}>
               Submit
           </button>

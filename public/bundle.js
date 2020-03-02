@@ -87420,7 +87420,7 @@ const Form = (props) => {
               onBlur: handleBlur, 
               value: values.email}
             ), 
-            errors.email && touched.email && errors.email, 
+            
             React.createElement("input", {
               type: "password", 
               name: "password", 
@@ -87428,7 +87428,7 @@ const Form = (props) => {
               onBlur: handleBlur, 
               value: values.password}
             ), 
-            errors.password && touched.password && errors.password, 
+           
             React.createElement("button", {type: "submit", disabled: isSubmitting}, 
               "Submit"
           )
