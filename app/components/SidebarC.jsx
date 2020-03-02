@@ -1,3 +1,7 @@
+//https://hackernoon.com/building-react-forms-with-formik-yup-and-react-bootstrap-with-a-minimal-amount-of-pain-and-suffering-1sfk3xv8
+
+//https://formik-form.surge.sh
+//https://github.com/Nicknyr/Formik_Example 
 import React from 'react';
 import styled from 'styled-components';
 import { Form, Button } from 'react-bootstrap';
@@ -116,6 +120,9 @@ const BasicForm = () => {
           handleSubmit,
           isSubmitting }) => (
         <MYFORM className="mx-auto">
+            {console.log(values)}  
+            
+            
           <Form.Group controlId="formName">
             <Form.Label>Name :</Form.Label>
             <Form.Control
