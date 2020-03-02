@@ -87342,137 +87342,38 @@ const Link = __webpack_require__(11).Link
 const {Alert, FormControlLabel, FormControl, FormGroup, Group, Radio, Col, Grid, Row, Button, Glyphicon } = __webpack_require__(12);
 //const FormikRadioGroup =require('./FormikRadioGroup');
 const style = __webpack_require__(160);
-const { Formik,  Field, ErrorMessage } =__webpack_require__(161);
+const { useFormik, Formik,  Field, ErrorMessage } =__webpack_require__(161);
 //const options =require('./exampleData');
 const {Yup} =__webpack_require__(311);
-const style1 = {
-    width: '100%',
-    margin: 'auto'}
-const style2 = {
-    paddingTop: '1em',}
-const style3 = {
-    marginRight: '1em'}
 
-// Render Prop
-//https://stackoverflow.com/questions/55910688/formik-with-react-bootstrap-styling
-//<AlertDismissible />
-class AlertDismissible extends React.Component {
-   
-  constructor(props) {
-     alert("hi2 from AlertDismissible ");
-    super(props);
 
-    this.state = { show: true };
-    
-     alert("hi3 from AlertDismissible ");
-  }
 
-  render() {
-
-    return (
-      React.createElement("div", null, 
-        React.createElement(Alert, {variant: "light"}, 
-          React.createElement("p", null, 
-            "We'll be in touch with login details shortly."
-            ), 
-          React.createElement("hr", null), 
-          React.createElement("div", {className: "d-flex justify-content-end"}, 
-            React.createElement(Button, {variant: "outline-success"}, 
-              "Close"
-              )
-          )
-        )
-      )
-    );
-  }
-}
-
-const Form = (props) => {
-  return (React.createElement("div", null, 
-    React.createElement("h1", null, "Anywhere in your app!"), 
-    React.createElement(Formik, {
-      initialValues: { email: '', password: ''}, 
-      validate: values => {
-        let errors = {};
-        
-        return errors;
-      }, 
-      onSubmit: props.handleSubmit
-    }, 
-      ({
-        values,
-        errors,
-        touched,
-        handleChange,
-        handleBlur,
-        handleSubmit,
-        isSubmitting,
-        /* and other goodies */
-      }) => (
-          React.createElement("form", {onSubmit: handleSubmit}, 
-            React.createElement("input", {
-              type: "email", 
-              name: "email", 
-             
-              value: values.email}
-            ), 
-            
-            React.createElement("input", {
-              type: "password", 
-              name: "password", 
-              //onChange={handleChange}
-              //onBlur={handleBlur}
-              value: values.password}
-            ), 
-           
-            React.createElement("button", {type: "submit"}, 
-              "Submit"
-          )
-          )
-        )
+const SidebarD= () => {
+  // Pass the useFormik() hook initial form values and a submit function that will
+  // be called when the form is submitted
+  //https://jaredpalmer.com/formik/docs/tutorial 
+  const formik = useFormik({
+    initialValues: {
+      email: '',
+    },
+    onSubmit: values => {
+      alert(JSON.stringify(values, null, 2));
+    },
+  });
+  return (
+    React.createElement("form", {onSubmit: formik.handleSubmit}, 
+      React.createElement("label", {htmlFor: "email"}, "Email Address"), 
+      React.createElement("input", {
+        id: "email", 
+        name: "email", 
+        type: "email", 
+        onChange: formik.handleChange, 
+        value: formik.values.email}
+      ), 
+      React.createElement("button", {type: "submit"}, "Submit")
     )
-  )
-  )
-}
-
-
-class SidebarD extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      name: 'React',
-      success: false,
-      isLoading: false
-    };
-  }
-
-
-    
-
-     handleSubmit() {
-    this.setState({
-      isLoading: false ,
-      success: true
-    });
-
-    //this.delay()
-     // .then(e => this.setState({ success: true, isLoading: false }))
-      //.catch(e => console.log(e))
-  }
-
-  render() {
-    return (
-      React.createElement("div", null, 
-           //this.state.isLoading ? <p>submit...</p> : this.state.success  ? <AlertDismissible />      : 
-          React.createElement(Form, {handleSubmit: this.handleSubmit})
-        
-      )
-    );
-  }
-}
-  
-  
-  
+  );
+};
 
 module.exports = SidebarD;
 /* 
