@@ -2,11 +2,18 @@
 
 //https://formik-form.surge.sh
 //https://github.com/Nicknyr/Formik_Example 
-import React from 'react';
-import styled from 'styled-components';
-import { Form, Button } from 'react-bootstrap';
 
-// Styled-components styles
+//import styled from 'styled-components';
+//import { Form, Button } from 'react-bootstrap';
+import { Formik, ErrorMessage } from 'formik';
+import * as Yup from 'yup';
+
+const React = require('react');
+const Link = require('react-router-dom').Link
+const {FormControlLabel, FormControl, FormGroup, Group, Radio, Col, Grid, Row, Button, Glyphicon, Form } = require('react-bootstrap');
+//const FormikRadioGroup =require('./FormikRadioGroup');
+
+
 const CONTAINER = styled.div`
   background: #F7F9FA;
   height: auto;
@@ -16,22 +23,28 @@ const CONTAINER = styled.div`
   -webkit-box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.4);
   -moz-box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.4);
   box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.4);
-
   @media(min-width: 786px) {
     width: 60%;
   }
-
   label {
     color: #24B9B6;
     font-size: 1.2em;
     font-weight: 400;
   }
-
+  .error {
+    border: 2px solid #FF6565;
+  }
+  .error-message {
+    color: #FF6565;
+    padding: .5em .2em;
+    height: 1em;
+    position: absolute;
+    font-size: .8em;
+  }
   h1 {
     color: #24B9B6;
     padding-top: .5em;
   }
-
   .form-group {
     margin-bottom: 2.5em;
   }
@@ -42,7 +55,6 @@ const MYFORM = styled(Form)`
   text-align: left;
   padding-top: 2em;
   padding-bottom: 2em;
-
   @media(min-width: 786px) {
     width: 50%;
   }
@@ -53,65 +65,51 @@ const BUTTON = styled(Button)`
   border: none;
   font-size: 1.2em;
   font-weight: 400;
-
   &:hover {
     background: #1D3461;
   }
 `;
 
-const BasicForm = () => {
-  return (
+// RegEx for phone number validation
+const phoneRegExp = /^(\+?\d{0,4})?\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{4}\)?)?$/
+
+// Schema for yup
+const validationSchema = Yup.object().shape({
+  name: Yup.string()
+  .min(2, "*Names must have at least 2 characters")
+  .max(100, "*Names can't be longer than 100 characters")
+  .required("*Name is required"),
+  email: Yup.string()
+  .email("*Must be a valid email address")
+  .max(100, "*Email must be less than 100 characters")
+  .required("*Email is required"),
+  phone: Yup.string()
+  .matches(phoneRegExp, "*Phone number is not valid")
+  .required("*Phone number required"),
+  blog: Yup.string()
+  .url("*Must enter URL in http://www.example.com format")
+  .required("*URL required")
+});
+
+const SidebarC = () => {
+  return(
     <CONTAINER>
-      <MYFORM className="mx-auto">
-        <Form.Group controlId="formName">
-          <Form.Label>Name :</Form.Label>
-          <Form.Control
-            type="text"
-            name="name"
-            placeholder="Full Name"
-            />
-        </Form.Group>
-        <Form.Group controlId="formEmail">
-          <Form.Label>Email :</Form.Label>
-          <Form.Control
-            type="text"
-            name="email"
-            placeholder="Email"
-          />
-        </Form.Group>
-        <Form.Group controlId="formPhone">
-          <Form.Label>Phone :</Form.Label>
-          <Form.Control
-            type="text"
-            name="phone"
-            placeholder="Phone"
-            />
-        </Form.Group>
-        <Form.Group controlId="formBlog">
-          <Form.Label>Blog :</Form.Label>
-          <Form.Control
-            type="text"
-            name="blog"
-            placeholder="Blog URL"
-            />
-        </Form.Group>
-        <BUTTON variant="primary" type="submit">
-          Submit
-        </BUTTON>
-      </MYFORM>
-    </CONTAINER>
-  );
-}
+    <h1>Example Formik Form</h1>
+    <Formik
+      initialValues={{ name:"", email:"", phone:"", blog:""}}
+      validationSchema={validationSchema}
+      onSubmit={(values, {setSubmitting, resetForm}) => {
+          // When button submits form and form is in the process of submitting, submit button is disabled
+          setSubmitting(true);
 
-//Sets initial values for form inputs
-
-
- const SidebarC = () => {
-  return (
-    <CONTAINER>
-      //Sets initial values for form inputs
-      <Formik initialValues={{ name:"", email:"", phone:"", blog:""}}>
-        {/* Callback function containing Formik state and helpers that handle common form actions */}
+          // Simulate submitting to database, shows us values submitted, resets form
+          setTimeout(() => {
+            alert(JSON.stringify(values, null, 2));
+            resetForm();
+            setSubmitting(false);
+          }, 500);
+      }}
+    >
       {( {values,
           errors,
           touched,
@@ -119,27 +117,21 @@ const BasicForm = () => {
           handleBlur,
           handleSubmit,
           isSubmitting }) => (
-        <MYFORM className="mx-auto">
-            {console.log(values)}  
-            
-            
+        <MYFORM onSubmit={handleSubmit} className="mx-auto">
           <Form.Group controlId="formName">
             <Form.Label>Name :</Form.Label>
             <Form.Control
               type="text"
               name="name"
               placeholder="Full Name"
-/* Now that our values are initialized and our callback function contains the proper parameters let's update the field forms and connect them to Formik by adding onChange, onBlur, and value to our form properties:
-              */
-/* Set onChange to handleChange */
               onChange={handleChange}
-              /* Set onBlur to handleBlur */
               onBlur={handleBlur}
-              /* Store the value of this input in values.name, make sure this is named the same as the name property on the form element */
-              value={values.name}              
-              
-              
+              value={values.name}
+              className={touched.name && errors.name ? "has-error" : null}
               />
+              {touched.name && errors.name ? (
+                <div className="error-message">{errors.name}</div>
+              ): null}
           </Form.Group>
           <Form.Group controlId="formEmail">
             <Form.Label>Email :</Form.Label>
@@ -147,7 +139,14 @@ const BasicForm = () => {
               type="text"
               name="email"
               placeholder="Email"
-            />
+              onChange={handleChange}
+              onBlur={handleBlur}
+              value={values.email}
+              className={touched.email && errors.email ? "has-error" : null}
+               />
+               {touched.email && errors.email ? (
+                 <div className="error-message">{errors.email}</div>
+               ): null}
           </Form.Group>
           <Form.Group controlId="formPhone">
             <Form.Label>Phone :</Form.Label>
@@ -155,7 +154,14 @@ const BasicForm = () => {
               type="text"
               name="phone"
               placeholder="Phone"
-              />
+              onChange={handleChange}
+              onBlur={handleBlur}
+              value={values.phone}
+              className={touched.phone && errors.phone ? "has-error" : null}
+               />
+             {touched.phone && errors.phone ? (
+                 <div className="error-message">{errors.phone}</div>
+               ): null}
           </Form.Group>
           <Form.Group controlId="formBlog">
             <Form.Label>Blog :</Form.Label>
@@ -163,22 +169,26 @@ const BasicForm = () => {
               type="text"
               name="blog"
               placeholder="Blog URL"
+              onChange={handleChange}
+              onBlur={handleBlur}
+              value={values.blog}
+              className={touched.blog && errors.blog ? "has-error" : null}
               />
+            {touched.blog && errors.blog ? (
+                <div className="error-message">{errors.blog}</div>
+              ): null}
           </Form.Group>
-          <BUTTON variant="primary" type="submit">
+          {/*Submit button that is disabled after button is clicked/form is in the process of submitting*/}
+          <BUTTON variant="primary" type="submit" disabled={isSubmitting}>
             Submit
           </BUTTON>
         </MYFORM>
       )}
-      </Formik>
+    </Formik>
     </CONTAINER>
   );
 }
 
-
-
-  
-  
   
   
   

@@ -8,7 +8,7 @@ const {Table , Grid, Row, Col, Modal} = require('react-bootstrap');
 // other components and etc
 const Header = require('./Header');
 const FilterA =require('./FilterA');
-const SidebarB =require('./SidebarB');
+const SidebarC =require('./SidebarC');
 //const ExportData = require('./ExportData');
 const RIlistItemAll = require('./RIlistItemAll');
 let test = {a: 1, b: 2};
@@ -103,9 +103,9 @@ class RIlistAll2 extends React.Component {
        < FilterA />   */}   
       
 <Row > 
-   <Col xs={1} ><div  className="well" >  
-    < SidebarB />  </div> </Col>
-  <Col xs={11} > <div   >  
+   <Col xs={3} ><div  className="well" >  
+    < SidebarC />  </div> </Col>
+  <Col xs={8} > <div   >  
     
       
   
