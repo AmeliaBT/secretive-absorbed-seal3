@@ -9,7 +9,7 @@ const {Alert, FormControlLabel, FormControl, FormGroup, Group, Radio, Col, Grid,
 const style = require('../styles/SidebarA');
 const { useFormik, Formik,  Field, ErrorMessage } =require('formik');
 //const options =require('./exampleData');
-const {Yup} =require('yup');
+//const {Yup} =require('yup');
 
 
 
@@ -20,11 +20,16 @@ const SidebarD= () => {
   const formik = useFormik({
     initialValues: {
       email: '',
+      firstName: ''
     },
     onSubmit: values => {
       alert(JSON.stringify(values, null, 2));
+      
     },
   });
+  
+  
+  
   return (
     <form onSubmit={formik.handleSubmit}>
       <label htmlFor="email">Email Address</label>
@@ -34,6 +39,14 @@ const SidebarD= () => {
         type="email"
         onChange={formik.handleChange}
         value={formik.values.email}
+      />
+      <label htmlFor="firstName">First Name</label>
+      <input
+        id="firstName"
+        name="firstName"
+        type="text"
+        onChange={formik.handleChange}
+        value={formik.values.firstName}
       />
       <button type="submit">Submit</button>
     </form>
