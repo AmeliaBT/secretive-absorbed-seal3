@@ -87350,7 +87350,7 @@ const { useFormik, Formik,  Field, ErrorMessage } =__webpack_require__(161);
 
 
    
-const SidebarD1= () => {
+const SidebarD= () => {
   // Pass the useFormik() hook initial form values and a submit function that will
   // be called when the form is submitted
   //https://jaredpalmer.com/formik/docs/tutorial 
@@ -87395,11 +87395,6 @@ const SidebarD1= () => {
   );
 };
 
-class SidebarD extends React.Component {
- render() {
-    return
- 
- }}
     
    
    

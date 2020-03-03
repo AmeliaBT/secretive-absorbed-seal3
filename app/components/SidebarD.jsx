@@ -14,7 +14,7 @@ const { useFormik, Formik,  Field, ErrorMessage } =require('formik');
 
 
    
-const SidebarD1= () => {
+const SidebarD= () => {
   // Pass the useFormik() hook initial form values and a submit function that will
   // be called when the form is submitted
   //https://jaredpalmer.com/formik/docs/tutorial 
@@ -26,6 +26,7 @@ const SidebarD1= () => {
     onSubmit: values => {
       alert(JSON.stringify(values, null, 2));
       alert("formik.values.email:  " +formik.values.email);
+      
     },
   });
   /*
@@ -59,11 +60,6 @@ const SidebarD1= () => {
   );
 };
 
-class SidebarD extends React.Component {
- render() {
-    return
- 
- }}
     
    
    
