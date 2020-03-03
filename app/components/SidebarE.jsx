@@ -17,23 +17,26 @@ const { useFormik, Formik,  Field, ErrorMessage } =require('formik');
 class SidebarE extends React.Component {
   constructor(props) {
     this.state = {
-      inputData: {}
+      inputData: {},
+      address: "blanka"
     }
   }
 
   render() {
     return(
       <Formik
-        initialValues={{ email: "", password: "" }}
+        initialValues={{ address: ""}}
 
         onSubmit={(values) => {
-          // Set updated state here
+          // Set updated state here //formik.values.email)
+          alert("Form is validated! Submitting the form... " );
+  //this.setState({ name: "ghj" });
+
         }}
-        render={({
-            submitForm
+        render={({ submitForm
           }) => (
           <form onSubmit={submitForm}>
-            <Field type="text" name="address" onChange={handleChange} />
+            <Field type="text" name="address"  />
             <button type="submit">Submit</button>
           </form>
         )}

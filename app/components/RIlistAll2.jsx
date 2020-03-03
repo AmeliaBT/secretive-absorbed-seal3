@@ -9,7 +9,7 @@ const {Table , Grid, Row, Col, Modal} = require('react-bootstrap');
 const Header = require('./Header');
 const FilterA =require('./FilterA');
 const SidebarB =require('./SidebarB');
-const SidebarD =require('./SidebarD');
+const SidebarE =require('./SidebarE');
 //const ExportData = require('./ExportData');
 const RIlistItemAll = require('./RIlistItemAll');
 let test = {a: 1, b: 2};
@@ -21,14 +21,14 @@ class RIlistAll2 extends React.Component {
       show: false, 
       disabled: true,
        reports: "loading..." ,
-      emailT:"meee"
+      
     };
    // alert("props? SidebarD: ");
    // alert(SidebarD.values.email);
     this.handleShow = this.handleShow.bind(this);
     this.handleClose = this.handleClose.bind(this);
     this.handleShowModal = this.handleShowModal.bind(this); 
-    this.handleParentData = this.handleParentData.bind(this);
+    
 
   }
    /***********************/
@@ -97,9 +97,7 @@ class RIlistAll2 extends React.Component {
     
   }
   //https://react-bootstrap.github.io/components/table/
-  handleParentData(event) {
-    
-    this.setState({ emailT: event.email });  }
+  
 
   
   render() {
@@ -111,12 +109,12 @@ class RIlistAll2 extends React.Component {
               
       {/* 
        < FilterA />   */}   
-      <Row> <p>From Formik: {this.state.emailT}  </p>  </Row>
+      <Row> <p>From Formik   </p>  </Row>
 <Row > 
    <Col xs={3} ><div  className="well" >  
     < SidebarB />  </div> </Col>
   <Col xs={8} > <div   >  
-     < SidebarD   />  
+     < SidebarE  />  
       {/* 
   formik.values.email
 <Table className="myForm">  

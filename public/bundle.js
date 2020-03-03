@@ -87197,7 +87197,7 @@ const {Table , Grid, Row, Col, Modal} = __webpack_require__(12);
 const Header = __webpack_require__(19);
 const FilterA =__webpack_require__(139);
 const SidebarB =__webpack_require__(295);
-const SidebarD =__webpack_require__(846);
+const SidebarE =__webpack_require__(846);
 //const ExportData = require('./ExportData');
 const RIlistItemAll = __webpack_require__(329);
 let test = {a: 1, b: 2};
@@ -87209,14 +87209,14 @@ class RIlistAll2 extends React.Component {
       show: false, 
       disabled: true,
        reports: "loading..." ,
-      emailT:"meee"
+      
     };
    // alert("props? SidebarD: ");
    // alert(SidebarD.values.email);
     this.handleShow = this.handleShow.bind(this);
     this.handleClose = this.handleClose.bind(this);
     this.handleShowModal = this.handleShowModal.bind(this); 
-    this.handleParentData = this.handleParentData.bind(this);
+    
 
   }
    /***********************/
@@ -87285,9 +87285,7 @@ class RIlistAll2 extends React.Component {
     
   }
   //https://react-bootstrap.github.io/components/table/
-  handleParentData(event) {
-    
-    this.setState({ emailT: event.email });  }
+  
 
   
   render() {
@@ -87299,12 +87297,12 @@ class RIlistAll2 extends React.Component {
               
       /* 
        < FilterA />   */
-      React.createElement(Row, null, " ", React.createElement("p", null, "From Formik: ", this.state.emailT, "  "), "  "), 
+      React.createElement(Row, null, " ", React.createElement("p", null, "From Formik   "), "  "), 
 React.createElement(Row, null, 
    React.createElement(Col, {xs: 3}, React.createElement("div", {className: "well"}, 
     React.createElement(SidebarB, null), "  "), " "), 
   React.createElement(Col, {xs: 8}, " ", React.createElement("div", null, 
-     React.createElement(SidebarD, null), 
+     React.createElement(SidebarE, null), 
       /* 
   formik.values.email
 <Table className="myForm">  
@@ -87358,157 +87356,38 @@ const { useFormik, Formik,  Field, ErrorMessage } =__webpack_require__(161);
 
 
    
-const SidebarD= () => {
-  // Pass the useFormik() hook initial form values and a submit function that will
-  // be called when the form is submitted
-  //https://jaredpalmer.com/formik/docs/tutorial 
-  const formik = useFormik({
-    initialValues: {
-      email: '',
-      firstName: ''
-    },
-    onSubmit: values => {
-      alert(JSON.stringify(values, null, 2));
-      alert("formik.values.email:  " +formik.values.email);
-      //create a component
-      
-     
-    },
-  });
-  /*
-  {
-  "email": "person1@cms.com",
-  "firstName": "test Bane"
-}
-  */
-  
-  
-  return (
-    React.createElement("form", {onSubmit: formik.handleSubmit}, 
-      React.createElement("label", {htmlFor: "email"}, "Email Address"), 
-      React.createElement("input", {
-        id: "email", 
-        name: "email", 
-        type: "email", 
-        onChange: formik.handleChange, 
-        value: formik.values.email}
-      ), 
-      React.createElement("label", {htmlFor: "firstName"}, "First Name"), 
-      React.createElement("input", {
-        id: "firstName", 
-        name: "firstName", 
-        type: "text", 
-        onChange: formik.handleChange, 
-        value: formik.values.firstName}
-      ), 
-      React.createElement("button", {type: "submit"}, "Submit")
-    )
-  );
-};
-
-    
-   
-   
-module.exports = SidebarD;
-/* 
-const SidebarD= () => {
- 
-  const formik = useFormik({
-    initialValues: {
-      email: '',
-      firstName: ''
-    },
-    onSubmit: values => {
-      alert(JSON.stringify(values, null, 2));
-      alert("formik.values.email:  " +formik.values.email);
-    },
-  });
-
-  
-  
-  return (
-    <form onSubmit={formik.handleSubmit}>
-      <label htmlFor="email">Email Address</label>
-      <input
-        id="email"
-        name="email"
-        type="email"
-        onChange={formik.handleChange}
-        value={formik.values.email}
-      />
-      <label htmlFor="firstName">First Name</label>
-      <input
-        id="firstName"
-        name="firstName"
-        type="text"
-        onChange={formik.handleChange}
-        value={formik.values.firstName}
-      />
-      <button type="submit">Submit</button>
-    </form>
-  );
-};
-
-module.exports = SidebarD;
-
- // Pass the useFormik() hook initial form values and a submit function that will
-  // be called when the form is submitted
-  //https://jaredpalmer.com/formik/docs/tutorial 
-
-  /*
-  {
-  "email": "person1@cms.com",
-  "firstName": "test Bane"
-}
-  */
-/*
-=======================================
-class SidebarD extends React.Component {
-  constructor() {
-    super();
+class SidebarE extends React.Component {
+  constructor(props) {
     this.state = {
-      name: 'React',
-      success: false,
-      isLoading: false
-    };
-  }
-
-
-     delay() {
-    const that = this;
-    return new Promise(function (resolve, reject) {
-      setTimeout(() => {
-        resolve();
-      }, 5000)
-    });
-  }
-
-
-     handleSubmit() {
-    this.setState({
-      isLoading: true
-    });
-
-    this.delay()
-      .then(e => this.setState({ success: true, isLoading: false }))
-      .catch(e => console.log(e))
+      inputData: {},
+      address: "blanka"
+    }
   }
 
   render() {
-    return (
-      <div>
-        {this.state.isLoading
-          ? <p>submit...</p>
-          : this.state.success
-            ? <AlertDismissible />
-            : <Form handleSubmit={this.handleSubmit} />
-        }
-      </div>
-    );
+    return(
+      React.createElement(Formik, {
+        initialValues: { address: ""}, 
+
+        onSubmit: (values) => {
+          // Set updated state here //formik.values.email)
+          alert("Form is validated! Submitting the form... " );
+  //this.setState({ name: "ghj" });
+
+        }, 
+        render: ({
+            submitForm
+          }) => (
+          React.createElement("form", {onSubmit: submitForm}, 
+            React.createElement(Field, {type: "text", name: "address"}), 
+            React.createElement("button", {type: "submit"}, "Submit")
+          )
+        )}
+      )
+    )
   }
 }
-*/
-
+module.exports = SidebarE;
 
 
 
