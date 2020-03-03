@@ -14,10 +14,15 @@ const { useFormik, Formik,  Field, ErrorMessage } =require('formik');
 
 
 
-const SidebarD= () => {
-  // Pass the useFormik() hook initial form values and a submit function that will
-  // be called when the form is submitted
-  //https://jaredpalmer.com/formik/docs/tutorial 
+class SidebarD extends Component {
+  constructor(props) {
+    this.state = {
+      inputData: {}
+    }
+  }
+
+//  const SidebarD2= () => {
+ 
   const formik = useFormik({
     initialValues: {
       email: '',
@@ -28,12 +33,58 @@ const SidebarD= () => {
       alert("formik.values.email:  " +formik.values.email);
     },
   });
-  /*
-  {
-  "email": "person1@cms.com",
-  "firstName": "test Bane"
+  
+  
+  
+  
+  
+  
+  render() {
+    
+    return (
+    <form onSubmit={formik.handleSubmit}>
+      <label htmlFor="email">Email Address</label>
+      <input
+        id="email"
+        name="email"
+        type="email"
+        onChange={formik.handleChange}
+        value={formik.values.email}
+      />
+      <label htmlFor="firstName">First Name</label>
+      <input
+        id="firstName"
+        name="firstName"
+        type="text"
+        onChange={formik.handleChange}
+        value={formik.values.firstName}
+      />
+      <button type="submit">Submit</button>
+    </form>
+  );
+    
+    
+    
+}   
 }
-  */
+
+
+
+module.exports = SidebarD;
+/* 
+const SidebarD= () => {
+ 
+  const formik = useFormik({
+    initialValues: {
+      email: '',
+      firstName: ''
+    },
+    onSubmit: values => {
+      alert(JSON.stringify(values, null, 2));
+      alert("formik.values.email:  " +formik.values.email);
+    },
+  });
+
   
   
   return (
@@ -60,8 +111,19 @@ const SidebarD= () => {
 };
 
 module.exports = SidebarD;
-/* 
 
+ // Pass the useFormik() hook initial form values and a submit function that will
+  // be called when the form is submitted
+  //https://jaredpalmer.com/formik/docs/tutorial 
+
+  /*
+  {
+  "email": "person1@cms.com",
+  "firstName": "test Bane"
+}
+  */
+
+=======================================
 class SidebarD extends React.Component {
   constructor() {
     super();
