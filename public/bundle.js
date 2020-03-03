@@ -87295,7 +87295,7 @@ React.createElement(Row, null,
    React.createElement(Col, {xs: 3}, React.createElement("div", {className: "well"}, 
     React.createElement(SidebarB, null), "  "), " "), 
   React.createElement(Col, {xs: 8}, " ", React.createElement("div", null, 
-     React.createElement(SidebarD, null), 
+     React.createElement(SidebarD, {firstName: "this.state.firstName"}), 
       /* 
   
 <Table className="myForm">  
@@ -87359,10 +87359,15 @@ const SidebarD= () => {
     },
     onSubmit: values => {
       alert(JSON.stringify(values, null, 2));
-      
+      console.log(JSON.stringify(values, null, 2));
     },
   });
-  
+  /*
+  {
+  "email": "person1@cms.com",
+  "firstName": "test Bane"
+}
+  */
   
   
   return (

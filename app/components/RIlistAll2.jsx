@@ -21,6 +21,7 @@ class RIlistAll2 extends React.Component {
       show: false, 
       disabled: true,
        reports: "loading..." 
+      firstName
     };
     
     this.handleShow = this.handleShow.bind(this);
@@ -107,7 +108,7 @@ class RIlistAll2 extends React.Component {
    <Col xs={3} ><div  className="well" >  
     < SidebarB />  </div> </Col>
   <Col xs={8} > <div   >  
-     < SidebarD />  
+     < SidebarD firstName="this.state.firstName" />  
       {/* 
   
 <Table className="myForm">  
