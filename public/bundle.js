@@ -87304,6 +87304,7 @@ React.createElement(Row, null,
     React.createElement(SidebarB, null), "  "), " "), 
   React.createElement(Col, {xs: 8}, " ", React.createElement("div", null, 
      React.createElement(SidebarD, null), 
+    React.createElement(SidebarE, null), 
       /* 
   formik.values.email
 <Table className="myForm">  
@@ -87526,7 +87527,43 @@ const { useFormik, Formik,  Field, ErrorMessage } =__webpack_require__(104);
 //const {Yup} =require('yup');
 
 //https://stackoverflow.com/questions/54685998/pass-values-to-the-state-from-formik 
-   
+  
+/*
+const SidebarDD= () => {  
+  const formik = useFormik({
+    initialValues: {
+      email: '',
+      firstName: ''
+    },
+    onSubmit: values => {
+      alert(JSON.stringify(values, null, 2));
+      alert("formik.values.email:  " +formik.values.email);     
+    },
+  });
+     
+  return (
+    <form onSubmit={formik.handleSubmit}>
+      <label htmlFor="email">Email Address</label>
+      <input
+        id="email"
+        name="email"
+        type="email"
+        onChange={formik.handleChange}
+        value={formik.values.email}
+      />
+      <label htmlFor="firstName">First Name</label>
+      <input
+        id="firstName"
+        name="firstName"
+        type="text"
+        onChange={formik.handleChange}
+        value={formik.values.firstName}
+      />
+      <button type="submit">Submit</button>
+    </form>
+  );
+};
+*/
 class SidebarE extends React.Component {
   constructor(props) {
     this.state = {
@@ -87537,28 +87574,34 @@ class SidebarE extends React.Component {
   render() {
     return(
       
-      
-      React.createElement(Formik, {
-        initialValues: values, 
-        onSubmit: (values) => {
-          // Set updated state here
-        }, 
-        render: ({
-            submitForm
-          }) => (
-          React.createElement("form", {onSubmit: submitForm}, 
-            React.createElement(Field, {type: "text", name: "address", onChange: handleChange}), 
-            React.createElement("button", {type: "submit"}, "Submit")
-          )
-        )}
+     
+   //====================================
+     
+    React.createElement("div", null, " ", React.createElement("p", null, " SidebarDD")
+        
       )
-      
-      
-      
+  //=========================    
     )
   }
 }
 module.exports = SidebarE;
+//<SidebarDD />
+ /*
+      <Formik
+        initialValues={values}
+        onSubmit={(values) => {
+          // Set updated state here
+        }}
+        render={({
+            submitForm
+          }) => (
+          <form onSubmit={submitForm}>
+            <Field type="text" name="address" onChange={handleChange} />
+            <button type="submit">Submit</button>
+          </form>
+        )}
+      />
+      */
 
 
 

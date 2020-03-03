@@ -116,6 +116,7 @@ class RIlistAll2 extends React.Component {
     < SidebarB />  </div> </Col>
   <Col xs={8} > <div   >  
      < SidebarD /> 
+    < SidebarE /> 
       {/* 
   formik.values.email
 <Table className="myForm">  
