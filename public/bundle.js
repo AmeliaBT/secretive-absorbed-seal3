@@ -87208,9 +87208,11 @@ class RIlistAll2 extends React.Component {
     this.state = {
       show: false, 
       disabled: true,
-       reports: "loading..." 
+       reports: "loading..." ,
+      firstName:"MyNameIaXYZ"
     };
-    
+    alert("props? ");
+    alert(this.state.firstName);
     this.handleShow = this.handleShow.bind(this);
     this.handleClose = this.handleClose.bind(this);
     this.handleShowModal = this.handleShowModal.bind(this);  
@@ -87295,7 +87297,7 @@ React.createElement(Row, null,
    React.createElement(Col, {xs: 3}, React.createElement("div", {className: "well"}, 
     React.createElement(SidebarB, null), "  "), " "), 
   React.createElement(Col, {xs: 8}, " ", React.createElement("div", null, 
-     React.createElement(SidebarD, {firstName: "this.state.firstName"}), 
+     React.createElement(SidebarD, {firstName: this.state.firstName}), 
       /* 
   
 <Table className="myForm">  
