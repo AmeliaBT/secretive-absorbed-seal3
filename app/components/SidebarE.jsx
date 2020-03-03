@@ -9,6 +9,7 @@ const {Alert, FormControlLabel, FormControl, FormGroup, Group, Radio, Col, Grid,
 //const FormikRadioGroup =require('./FormikRadioGroup');
 const style = require('../styles/SidebarA');
 const { useFormik, Formik,  Field, ErrorMessage } =require('formik');
+
 //const options =require('./exampleData');
 //const {Yup} =require('yup');
 
@@ -23,6 +24,8 @@ class SidebarE extends React.Component {
 
   render() {
     return(
+      
+      /*
       <Formik
         initialValues={values}
         onSubmit={(values) => {
@@ -37,6 +40,9 @@ class SidebarE extends React.Component {
           </form>
         )}
       />
+      */
+      
+      
     )
   }
 }

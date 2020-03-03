@@ -11,13 +11,18 @@ const style = require('../styles/SidebarA');
 const { useFormik, Formik,  Field, ErrorMessage } =require('formik');
 //const options =require('./exampleData');
 //const {Yup} =require('yup');
-
-
-   
-const SidebarD= () => {
-  // Pass the useFormik() hook initial form values and a submit function that will
+/*
+  {
+  "email": "person1@cms.com",
+  "firstName": "test Bane"
+}
+// Pass the useFormik() hook initial form values and a submit function that will
   // be called when the form is submitted
   //https://jaredpalmer.com/formik/docs/tutorial 
+  */
+
+   
+const SidebarD= () => {  
   const formik = useFormik({
     initialValues: {
       email: '',
@@ -25,20 +30,10 @@ const SidebarD= () => {
     },
     onSubmit: values => {
       alert(JSON.stringify(values, null, 2));
-      alert("formik.values.email:  " +formik.values.email);
-      //create a component
-      
-     
+      alert("formik.values.email:  " +formik.values.email);     
     },
   });
-  /*
-  {
-  "email": "person1@cms.com",
-  "firstName": "test Bane"
-}
-  */
-  
-  
+     
   return (
     <form onSubmit={formik.handleSubmit}>
       <label htmlFor="email">Email Address</label>
