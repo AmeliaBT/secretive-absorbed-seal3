@@ -24,7 +24,7 @@ const SidebarD= () => {
     },
     onSubmit: values => {
       alert(JSON.stringify(values, null, 2));
-      console.log(JSON.stringify(values, null, 2));
+      alert("formik.values.email:  " +formik.values.email);
     },
   });
   /*

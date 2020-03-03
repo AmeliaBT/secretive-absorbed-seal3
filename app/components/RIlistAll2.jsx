@@ -20,11 +20,10 @@ class RIlistAll2 extends React.Component {
     this.state = {
       show: false, 
       disabled: true,
-       reports: "loading..." ,
-      firstName:"MyNameIaXYZ"
+       reports: "loading..." 
     };
-    alert("props? ");
-    alert(this.state.firstName);
+   // alert("props? SidebarD: ");
+   // alert(SidebarD.values.email);
     this.handleShow = this.handleShow.bind(this);
     this.handleClose = this.handleClose.bind(this);
     this.handleShowModal = this.handleShowModal.bind(this);  
@@ -109,7 +108,7 @@ class RIlistAll2 extends React.Component {
    <Col xs={3} ><div  className="well" >  
     < SidebarB />  </div> </Col>
   <Col xs={8} > <div   >  
-     < SidebarD firstName={this.state.firstName} />  
+     < SidebarD  />  
       {/* 
   
 <Table className="myForm">  

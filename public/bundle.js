@@ -87208,11 +87208,10 @@ class RIlistAll2 extends React.Component {
     this.state = {
       show: false, 
       disabled: true,
-       reports: "loading..." ,
-      firstName:"MyNameIaXYZ"
+       reports: "loading..." 
     };
-    alert("props? ");
-    alert(this.state.firstName);
+   // alert("props? SidebarD: ");
+   // alert(SidebarD.values.email);
     this.handleShow = this.handleShow.bind(this);
     this.handleClose = this.handleClose.bind(this);
     this.handleShowModal = this.handleShowModal.bind(this);  
@@ -87297,7 +87296,7 @@ React.createElement(Row, null,
    React.createElement(Col, {xs: 3}, React.createElement("div", {className: "well"}, 
     React.createElement(SidebarB, null), "  "), " "), 
   React.createElement(Col, {xs: 8}, " ", React.createElement("div", null, 
-     React.createElement(SidebarD, {firstName: this.state.firstName}), 
+     React.createElement(SidebarD, null), 
       /* 
   
 <Table className="myForm">  
@@ -87361,7 +87360,7 @@ const SidebarD= () => {
     },
     onSubmit: values => {
       alert(JSON.stringify(values, null, 2));
-      console.log(JSON.stringify(values, null, 2));
+      alert("formik.values.email:  " +formik.values.email);
     },
   });
   /*
