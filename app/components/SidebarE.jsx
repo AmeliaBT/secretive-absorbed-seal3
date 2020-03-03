@@ -15,7 +15,7 @@ const { useFormik, Formik,  Field, ErrorMessage } =require('formik');
 
 //https://stackoverflow.com/questions/54685998/pass-values-to-the-state-from-formik 
   
-/*
+
 const SidebarDD= () => {  
   const formik = useFormik({
     initialValues: {
@@ -50,7 +50,7 @@ const SidebarDD= () => {
     </form>
   );
 };
-*/
+
 class SidebarE extends React.Component {
   constructor(props) {
        super();
@@ -61,8 +61,8 @@ class SidebarE extends React.Component {
 
   render() {
     return (
-      <div> <p> SidebarDD</p> 
-        
+      <div> <br/> <br/> <p> SidebarE- see this?   </p> 
+        <SidebarDD />
       </div>
   //=========================    
     );

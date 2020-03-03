@@ -115,7 +115,7 @@ class RIlistAll2 extends React.Component {
    <Col xs={3} ><div  className="well" >  
     < SidebarB />  </div> </Col>
   <Col xs={8} > <div   >  
-     < SidebarD /> 
+     < SidebarE /> 
    
       {/* 
        < SidebarE /> 
@@ -143,9 +143,7 @@ class RIlistAll2 extends React.Component {
     </div>
      </Col>
 </Row> 
-        <Row> <p>From Formik   </p> 
-         < SidebarE /> 
-        </Row>
+      
       </div>
     );
   }

@@ -87303,7 +87303,7 @@ React.createElement(Row, null,
    React.createElement(Col, {xs: 3}, React.createElement("div", {className: "well"}, 
     React.createElement(SidebarB, null), "  "), " "), 
   React.createElement(Col, {xs: 8}, " ", React.createElement("div", null, 
-     React.createElement(SidebarD, null), 
+     React.createElement(SidebarE, null), 
    
       /* 
        < SidebarE /> 
@@ -87330,10 +87330,8 @@ React.createElement(Row, null,
   
     )
      )
-), 
-        React.createElement(Row, null, " ", React.createElement("p", null, "From Formik   "), 
-         React.createElement(SidebarE, null)
-        )
+)
+      
       )
     );
   }
@@ -87532,7 +87530,7 @@ const { useFormik, Formik,  Field, ErrorMessage } =__webpack_require__(103);
 
 //https://stackoverflow.com/questions/54685998/pass-values-to-the-state-from-formik 
   
-/*
+
 const SidebarDD= () => {  
   const formik = useFormik({
     initialValues: {
@@ -87546,28 +87544,28 @@ const SidebarDD= () => {
   });
      
   return (
-    <form onSubmit={formik.handleSubmit}>
-      <label htmlFor="email">Email Address</label>
-      <input
-        id="email"
-        name="email"
-        type="email"
-        onChange={formik.handleChange}
-        value={formik.values.email}
-      />
-      <label htmlFor="firstName">First Name</label>
-      <input
-        id="firstName"
-        name="firstName"
-        type="text"
-        onChange={formik.handleChange}
-        value={formik.values.firstName}
-      />
-      <button type="submit">Submit</button>
-    </form>
+    React.createElement("form", {onSubmit: formik.handleSubmit}, 
+      React.createElement("label", {htmlFor: "email"}, "Email Address"), 
+      React.createElement("input", {
+        id: "email", 
+        name: "email", 
+        type: "email", 
+        onChange: formik.handleChange, 
+        value: formik.values.email}
+      ), 
+      React.createElement("label", {htmlFor: "firstName"}, "First Name"), 
+      React.createElement("input", {
+        id: "firstName", 
+        name: "firstName", 
+        type: "text", 
+        onChange: formik.handleChange, 
+        value: formik.values.firstName}
+      ), 
+      React.createElement("button", {type: "submit"}, "Submit")
+    )
   );
 };
-*/
+
 class SidebarE extends React.Component {
   constructor(props) {
        super();
@@ -87578,8 +87576,8 @@ class SidebarE extends React.Component {
 
   render() {
     return (
-      React.createElement("div", null, " ", React.createElement("p", null, " SidebarDD")
-        
+      React.createElement("div", null, " ", React.createElement("br", null), " ", React.createElement("br", null), " ", React.createElement("p", null, " SidebarE- see this?   "), 
+        React.createElement(SidebarDD, null)
       )
   //=========================    
     );
