@@ -110,14 +110,15 @@ class RIlistAll2 extends React.Component {
               
       {/* 
        < FilterA />   */}   
-      <Row> <p>From Formik   </p>  </Row>
+      
 <Row > 
    <Col xs={3} ><div  className="well" >  
     < SidebarB />  </div> </Col>
   <Col xs={8} > <div   >  
      < SidebarD /> 
-    < SidebarE /> 
+   
       {/* 
+       < SidebarE /> 
   formik.values.email
 <Table className="myForm">  
                  
@@ -142,6 +143,9 @@ class RIlistAll2 extends React.Component {
     </div>
      </Col>
 </Row> 
+        <Row> <p>From Formik   </p> 
+         < SidebarE /> 
+        </Row>
       </div>
     );
   }

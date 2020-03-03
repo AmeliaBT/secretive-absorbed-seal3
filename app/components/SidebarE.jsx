@@ -7,7 +7,7 @@ const React = require('react');
 const Link = require('react-router-dom').Link
 const {Alert, FormControlLabel, FormControl, FormGroup, Group, Radio, Col, Grid, Row, Button, Glyphicon } = require('react-bootstrap');
 //const FormikRadioGroup =require('./FormikRadioGroup');
-const style = require('../styles/SidebarA');
+//const style = require('../styles/SidebarA');
 const { useFormik, Formik,  Field, ErrorMessage } =require('formik');
 
 //const options =require('./exampleData');
@@ -53,22 +53,19 @@ const SidebarDD= () => {
 */
 class SidebarE extends React.Component {
   constructor(props) {
+       super();
     this.state = {
       inputData: {}
     }
   }
 
   render() {
-    return(
-      
-     
-   //====================================
-     
-    <div> <p> SidebarDD</p> 
+    return (
+      <div> <p> SidebarDD</p> 
         
       </div>
   //=========================    
-    )
+    );
   }
 }
 module.exports = SidebarE;
