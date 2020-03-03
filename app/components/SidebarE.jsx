@@ -12,31 +12,27 @@ const { useFormik, Formik,  Field, ErrorMessage } =require('formik');
 //const options =require('./exampleData');
 //const {Yup} =require('yup');
 
-
+//https://stackoverflow.com/questions/54685998/pass-values-to-the-state-from-formik 
    
 class SidebarE extends React.Component {
   constructor(props) {
     this.state = {
-      inputData: {},
-      address: "blanka"
+      inputData: {}
     }
   }
 
   render() {
     return(
       <Formik
-        initialValues={{ address: ""}}
-
+        initialValues={values}
         onSubmit={(values) => {
-          // Set updated state here //formik.values.email)
-          alert("Form is validated! Submitting the form... " );
-  //this.setState({ name: "ghj" });
-
+          // Set updated state here
         }}
-        render={({ submitForm
+        render={({
+            submitForm
           }) => (
           <form onSubmit={submitForm}>
-            <Field type="text" name="address"  />
+            <Field type="text" name="address" onChange={handleChange} />
             <button type="submit">Submit</button>
           </form>
         )}
