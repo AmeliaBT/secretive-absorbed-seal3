@@ -13,18 +13,30 @@ const { useFormik, Formik,  Field, ErrorMessage } =require('formik');
 //const {Yup} =require('yup');
 
 
-
-class SidebarD extends Component {
-  constructor(props) {
-    this.state = {
-      inputData: {}
-    }
-  }
-
+   
+const SidebarD1= () => {
+  // Pass the useFormik() hook initial form values and a submit function that will
+  // be called when the form is submitted
+  //https://jaredpalmer.com/formik/docs/tutorial 
+  const formik = useFormik({
+    initialValues: {
+      email: '',
+      firstName: ''
+    },
+    onSubmit: values => {
+      alert(JSON.stringify(values, null, 2));
+      alert("formik.values.email:  " +formik.values.email);
+    },
+  });
+  /*
+  {
+  "email": "person1@cms.com",
+  "firstName": "test Bane"
+}
+  */
   
-  render() {
-    
-    return (
+  
+  return (
     <form onSubmit={formik.handleSubmit}>
       <label htmlFor="email">Email Address</label>
       <input
@@ -45,14 +57,16 @@ class SidebarD extends Component {
       <button type="submit">Submit</button>
     </form>
   );
-    
-    
-    
-}   
-}
+};
 
-
-
+class SidebarD extends React.Component {
+ render() {
+    return
+ 
+ }}
+    
+   
+   
 module.exports = SidebarD;
 /* 
 const SidebarD= () => {
@@ -105,7 +119,7 @@ module.exports = SidebarD;
   "firstName": "test Bane"
 }
   */
-
+/*
 =======================================
 class SidebarD extends React.Component {
   constructor() {
