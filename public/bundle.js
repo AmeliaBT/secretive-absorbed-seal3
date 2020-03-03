@@ -87282,6 +87282,11 @@ class RIlistAll2 extends React.Component {
     
   }
   //https://react-bootstrap.github.io/components/table/
+  handleParentData(event) {
+    this.setState({ myName: event.myName });
+    this.setState({ email: event.email });  }
+
+  
   render() {
     return (
       React.createElement("div", null, 
@@ -87291,12 +87296,12 @@ class RIlistAll2 extends React.Component {
               
       /* 
        < FilterA />   */
-      React.createElement(Row, null, " ", React.createElement("p", null, "Formik test ", formik.values.email, "  "), "  "), 
+      React.createElement(Row, null, " ", React.createElement("p", null, "Formik  "), "  "), 
 React.createElement(Row, null, 
    React.createElement(Col, {xs: 3}, React.createElement("div", {className: "well"}, 
     React.createElement(SidebarB, null), "  "), " "), 
   React.createElement(Col, {xs: 8}, " ", React.createElement("div", null, 
-     React.createElement(SidebarD, null), 
+     React.createElement(SidebarD, {handleData: this.handleParentData}), 
       /* 
   
 <Table className="myForm">  

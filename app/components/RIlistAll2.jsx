@@ -94,6 +94,11 @@ class RIlistAll2 extends React.Component {
     
   }
   //https://react-bootstrap.github.io/components/table/
+  handleParentData(event) {
+    this.setState({ myName: event.myName });
+    this.setState({ email: event.email });  }
+
+  
   render() {
     return (
       <div>
@@ -103,14 +108,14 @@ class RIlistAll2 extends React.Component {
               
       {/* 
        < FilterA />   */}   
-      <Row> <p>Formik test {formik.values.email}  </p>  </Row>
+      <Row> <p>Formik  </p>  </Row>
 <Row > 
    <Col xs={3} ><div  className="well" >  
     < SidebarB />  </div> </Col>
   <Col xs={8} > <div   >  
-     < SidebarD  />  
+     < SidebarD  handleData={this.handleParentData} />  
       {/* 
-  
+  ormik.values.email
 <Table className="myForm">  
                  
             <Row>
