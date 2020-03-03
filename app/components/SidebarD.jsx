@@ -21,23 +21,6 @@ class SidebarD extends Component {
     }
   }
 
-//  const SidebarD2= () => {
- 
-  const formik = useFormik({
-    initialValues: {
-      email: '',
-      firstName: ''
-    },
-    onSubmit: values => {
-      alert(JSON.stringify(values, null, 2));
-      alert("formik.values.email:  " +formik.values.email);
-    },
-  });
-  
-  
-  
-  
-  
   
   render() {
     
