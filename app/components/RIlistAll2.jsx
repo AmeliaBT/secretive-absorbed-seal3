@@ -103,7 +103,7 @@ class RIlistAll2 extends React.Component {
               
       {/* 
        < FilterA />   */}   
-      
+      <Row> <p>Formik test {formik.values.email}  </p>  </Row>
 <Row > 
    <Col xs={3} ><div  className="well" >  
     < SidebarB />  </div> </Col>

@@ -87291,7 +87291,7 @@ class RIlistAll2 extends React.Component {
               
       /* 
        < FilterA />   */
-      
+      React.createElement(Row, null, " ", React.createElement("p", null, "Formik test ", formik.values.email, "  "), "  "), 
 React.createElement(Row, null, 
    React.createElement(Col, {xs: 3}, React.createElement("div", {className: "well"}, 
     React.createElement(SidebarB, null), "  "), " "), 
