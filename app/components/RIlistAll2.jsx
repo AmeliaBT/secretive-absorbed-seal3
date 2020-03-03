@@ -20,13 +20,16 @@ class RIlistAll2 extends React.Component {
     this.state = {
       show: false, 
       disabled: true,
-       reports: "loading..." 
+       reports: "loading..." ,
+      emailT:"meee"
     };
    // alert("props? SidebarD: ");
    // alert(SidebarD.values.email);
     this.handleShow = this.handleShow.bind(this);
     this.handleClose = this.handleClose.bind(this);
-    this.handleShowModal = this.handleShowModal.bind(this);  
+    this.handleShowModal = this.handleShowModal.bind(this); 
+    this.handleParentData = this.handleParentData.bind(this);
+
   }
    /***********************/
    // handlers
@@ -95,8 +98,8 @@ class RIlistAll2 extends React.Component {
   }
   //https://react-bootstrap.github.io/components/table/
   handleParentData(event) {
-    this.setState({ myName: event.myName });
-    this.setState({ email: event.email });  }
+    
+    this.setState({ emailT: event.email });  }
 
   
   render() {
@@ -108,14 +111,14 @@ class RIlistAll2 extends React.Component {
               
       {/* 
        < FilterA />   */}   
-      <Row> <p>Formik  </p>  </Row>
+      <Row> <p>From Formik: {this.state.emailT}  </p>  </Row>
 <Row > 
    <Col xs={3} ><div  className="well" >  
     < SidebarB />  </div> </Col>
   <Col xs={8} > <div   >  
-     < SidebarD  handleData={this.handleParentData} />  
+     < SidebarD   />  
       {/* 
-  ormik.values.email
+  formik.values.email
 <Table className="myForm">  
                  
             <Row>

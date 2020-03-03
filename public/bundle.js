@@ -87208,13 +87208,16 @@ class RIlistAll2 extends React.Component {
     this.state = {
       show: false, 
       disabled: true,
-       reports: "loading..." 
+       reports: "loading..." ,
+      emailT:"meee"
     };
    // alert("props? SidebarD: ");
    // alert(SidebarD.values.email);
     this.handleShow = this.handleShow.bind(this);
     this.handleClose = this.handleClose.bind(this);
-    this.handleShowModal = this.handleShowModal.bind(this);  
+    this.handleShowModal = this.handleShowModal.bind(this); 
+    this.handleParentData = this.handleParentData.bind(this);
+
   }
    /***********************/
    // handlers
@@ -87283,8 +87286,8 @@ class RIlistAll2 extends React.Component {
   }
   //https://react-bootstrap.github.io/components/table/
   handleParentData(event) {
-    this.setState({ myName: event.myName });
-    this.setState({ email: event.email });  }
+    
+    this.setState({ emailT: event.email });  }
 
   
   render() {
@@ -87296,14 +87299,14 @@ class RIlistAll2 extends React.Component {
               
       /* 
        < FilterA />   */
-      React.createElement(Row, null, " ", React.createElement("p", null, "Formik  "), "  "), 
+      React.createElement(Row, null, " ", React.createElement("p", null, "From Formik: ", this.state.emailT, "  "), "  "), 
 React.createElement(Row, null, 
    React.createElement(Col, {xs: 3}, React.createElement("div", {className: "well"}, 
     React.createElement(SidebarB, null), "  "), " "), 
   React.createElement(Col, {xs: 8}, " ", React.createElement("div", null, 
-     React.createElement(SidebarD, {handleData: this.handleParentData}), 
+     React.createElement(SidebarD, null), 
       /* 
-  
+  formik.values.email
 <Table className="myForm">  
                  
             <Row>
