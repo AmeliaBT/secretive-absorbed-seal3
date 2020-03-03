@@ -1,3 +1,4 @@
+//ToDO: see React Parent -Child slides
 /* ****************************************
 Sidebar component that displays a list of options, and receives a callback function as its props. The callback function will be called from the Sidebar component by clicking one of the buttons, and will allow to notify the containing component (the parent) of the click
 *************************************************** */
