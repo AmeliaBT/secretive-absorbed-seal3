@@ -10355,10 +10355,10 @@ submitForm(e) { e.preventDefault();
   
   render() { return (        React.createElement("div", null, 
 React.createElement("form", null, 
-"Model:",  
+"Model: ", React.createElement("br", null), 
   React.createElement("input", {className: "filer_input", type: "text", name: "model", value: this.state.model, 
     onChange: this.handleChangeValue}), "  ", React.createElement("br", null), 
-"PN:",  
+"PN: ", React.createElement("br", null), 
   React.createElement("input", {className: "filer_input", type: "text", name: "pn", value: this.state.pn, 
     onChange: this.handleChangeValue}), " ", React.createElement("br", null), 
 React.createElement("br", null), 

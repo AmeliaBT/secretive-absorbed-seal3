@@ -36,10 +36,10 @@ submitForm(e) { e.preventDefault();
   
   render() { return (        <div>        
 <form>
-Model: 
+Model: <br />
   <input className="filer_input" type="text" name="model"  value={this.state.model} 
     onChange={this.handleChangeValue}/>  <br />
-PN: 
+PN: <br />
   <input className="filer_input" type="text" name="pn"  value={this.state.pn} 
     onChange={this.handleChangeValue} /> <br />
 <br />         
