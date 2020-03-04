@@ -18,14 +18,19 @@ let test = {a: 1, b: 2};
 class RIlistAll2 extends React.Component {
   constructor(props) {
     super(props);
+    
     this.state = {
       show: false, 
       disabled: true,
        reports: "loading..." ,
+      myName: "", 
+      email: ''  
       
     };
    // alert("props? SidebarD: ");
    // alert(SidebarD.values.email);
+    this.handleParentData = this.handleParentData.bind(this);
+
     this.handleShow = this.handleShow.bind(this);
     this.handleClose = this.handleClose.bind(this);
     this.handleShowModal = this.handleShowModal.bind(this); 
@@ -35,6 +40,12 @@ class RIlistAll2 extends React.Component {
    /***********************/
    // handlers
    /***********************/
+  handleParentData(event) {
+    this.setState({ myName: event.myName });
+    this.setState({ email: event.email });  }
+
+  
+  
   handleShowModal() {
     // show Modal
     this.handleShow();    
@@ -113,11 +124,14 @@ class RIlistAll2 extends React.Component {
       
 <Row > 
    <Col xs={3} ><div  className="well" >  
-    < SidebarB />  </div> </Col>
+   </div> </Col>
   <Col xs={8} > <div   >  
-     < SidebarE /> 
-   
+     < FilterA handleData ={this.handleParentData} /> 
+    <p>{this.state.myName}</p>  
+          <p>{this.state.email}</p>  
+
       {/* 
+         < SidebarB />
        < SidebarE /> 
   formik.values.email
 <Table className="myForm">  

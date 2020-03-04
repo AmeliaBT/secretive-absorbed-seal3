@@ -87206,14 +87206,19 @@ let test = {a: 1, b: 2};
 class RIlistAll2 extends React.Component {
   constructor(props) {
     super(props);
+    
     this.state = {
       show: false, 
       disabled: true,
        reports: "loading..." ,
+      myName: "", 
+      email: ''  
       
     };
    // alert("props? SidebarD: ");
    // alert(SidebarD.values.email);
+    this.handleParentData = this.handleParentData.bind(this);
+
     this.handleShow = this.handleShow.bind(this);
     this.handleClose = this.handleClose.bind(this);
     this.handleShowModal = this.handleShowModal.bind(this); 
@@ -87223,6 +87228,12 @@ class RIlistAll2 extends React.Component {
    /***********************/
    // handlers
    /***********************/
+  handleParentData(event) {
+    this.setState({ myName: event.myName });
+    this.setState({ email: event.email });  }
+
+  
+  
   handleShowModal() {
     // show Modal
     this.handleShow();    
@@ -87300,12 +87311,15 @@ class RIlistAll2 extends React.Component {
        < FilterA />   */
       
 React.createElement(Row, null, 
-   React.createElement(Col, {xs: 3}, React.createElement("div", {className: "well"}, 
-    React.createElement(SidebarB, null), "  "), " "), 
+   React.createElement(Col, {xs: 3}, React.createElement("div", {className: "well"}
+   ), " "), 
   React.createElement(Col, {xs: 8}, " ", React.createElement("div", null, 
-     React.createElement(SidebarE, null), 
-   
+     React.createElement(FilterA, {handleData: this.handleParentData}), 
+    React.createElement("p", null, this.state.myName), 
+          React.createElement("p", null, this.state.email), 
+
       /* 
+         < SidebarB />
        < SidebarE /> 
   formik.values.email
 <Table className="myForm">  
