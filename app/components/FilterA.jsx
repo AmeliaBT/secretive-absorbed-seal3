@@ -1,39 +1,28 @@
 const React = require('react');
-const Link = require('react-router-dom').Link
-// style for BOOKS
-//const style = require('../styles/FormRI');
-// other components and etc
-const options =require('./exampleData');
-//const CustomizedTypeahead =require('./CustomizedTypeahead');
-
-const {Typeahead} = require('react-bootstrap-typeahead');
-
-
+const ReactDOM = require('react-dom');
 class FilterA extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      name: 'xxReact'
-    };
+  constructor(props){
+    super(props);
+    this.state = { myName: '', email: ''  } 
+
+   this.handleChangeValue = this.handleChangeValue.bind(this);
+    this.submitForm = this.submitForm.bind(this);
+}  
+submitForm(e) { e.preventDefault();  
+  this.props.handleData(this.state) } ;  
+
+   handleChangeValue(event) {
+     const target = event.target;
+      const value = target.value;
+      const name = target.name;
+      this.setState({ [name]: value });
   }
-// <Typeahead
-  render() {
-    return (
-      <div>
-          <div >
-       
-      <Typeahead
-          labelKey="name" 
-        options={options}
-        multiple
-          placeholder="Choose a state..."
-        />      
-            
-      </div>
-         </div>
-    );
-  }
-}
+  
+  render() {    return (        <div>        <form>
+Name: <input type="text" name="myName"  value={this.state.myName} onChange={this.handleChangeValue}/>  <br />
+Email: <input type="text" name="email"  value={this.state.email} onChange={this.handleChangeValue} /> <br /><br />          <input type="button" value="Submit" onClick={this.submitForm}/></form>        </div>    )  }}
+
+
 module.exports = FilterA;
 
 /*
