@@ -8,6 +8,7 @@ const {Table , Grid, Row, Col, Modal} = require('react-bootstrap');
 // other components and etc
 const Header = require('./Header');
 const FilterA =require('./FilterA');
+const FilterB =require('./FilterB');
 //const SidebarB =require('./SidebarB');
 //const SidebarD =require('./SidebarD'); //works ok
 //const SidebarE =require('./SidebarE');
@@ -26,12 +27,15 @@ class RIlistAll2 extends React.Component {
        model: '', 
        pn: '' ,
        sel_radio_a:"",
+       sel_radio_b:"",
+      
        filterA:''
       
     };
    // alert("props? SidebarD: ");
    // alert(SidebarD.values.email);
     this.handleParentData = this.handleParentData.bind(this);
+    this.handleParentDataB = this.handleParentData.bind(this);
 
     this.handleShow = this.handleShow.bind(this);
     this.handleClose = this.handleClose.bind(this);
@@ -49,7 +53,13 @@ class RIlistAll2 extends React.Component {
     this.setState({ filterA: "    Showing results for " + event.model + " & " + event.pn + " & " +event.sel_radio_a }); 
     
   }
-
+ handleParentDataB(event) {
+    this.setState({ myName: event.myName });
+    this.setState({ email: event.email }); 
+   this.setState({ color: event.color }); 
+    this.setState({ filterA: "    Showing results for " + event.model + " & " + event.pn + " & " +event.sel_radio_a }); 
+    
+  }
   
   
   handleShowModal() {
@@ -133,6 +143,8 @@ class RIlistAll2 extends React.Component {
      
      
       < FilterA handleData ={this.handleParentData} /> 
+     <br/>
+      < FilterB handleData ={this.handleParentDataB} /> 
      
    </div> </Col>
   

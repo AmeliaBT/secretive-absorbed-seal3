@@ -7,29 +7,23 @@ class FilterB extends React.Component {
   constructor(props){
     super(props);
     this.state = { 
-      model: '', 
-      pn: '' ,
-     sel_radio_a: ''
+      
+     sel_radio_b: ''
 } 
 
-   this.handleChangeValue = this.handleChangeValue.bind(this);
+ 
     this.submitForm = this.submitForm.bind(this);
      this.onRadioChange = this.onRadioChange.bind(this);
 }  
 submitForm(e) { e.preventDefault();  
-  this.props.handleData(this.state) } ;  
+  this.props.handleDataB(this.state) } ;  
 
   
-   handleChangeValue(event) {
-     const target = event.target;
-      const value = target.value;
-      const name = target.name;
-      this.setState({ [name]: value });
-  }
+  
   
    onRadioChange(e){
     this.setState({
-      sel_radio_a: e.target.value
+      sel_radio_b: e.target.value
     });
   }
   
@@ -43,11 +37,11 @@ submitForm(e) { e.preventDefault();
               <label>
                 <input
                   type="radio"
-                  value="Pass,"
-                  checked={this.state.sel_radio_a === "Helen,"}
+                  value="Pass"
+                  checked={this.state.sel_radio_b === "Pass"}
                   onChange={this.onRadioChange}
                 />
-                <span className="filter_lbl" >Helen</span>
+                <span className="filter_lbl" >Pass</span>
               </label>
             </li>
 
@@ -55,26 +49,15 @@ submitForm(e) { e.preventDefault();
               <label>
                 <input
                   type="radio"
-                  value="Tuan"
-                  checked={this.state.sel_radio_a === "Tuan"}
+                  value="Fail"
+                  checked={this.state.sel_radio_b === "Fail"}
                   onChange={this.onRadioChange}
                 />
-                <span className="filter_lbl">Tuan</span>
+                <span className="filter_lbl">Fail</span>
               </label>
             </li>
 
-            <li>
-              <label>
-                <input
-                  type="radio"
-                  value="Abc"
-                  checked={this.state.sel_radio_a === "Abc"}
-                  onChange={this.onRadioChange}
-                />
-                <span className="filter_lbl">Abc</span>
-              </label>  
-      </li>
-                
+               
              
           </ul>
 
