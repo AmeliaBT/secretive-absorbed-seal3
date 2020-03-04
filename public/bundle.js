@@ -87530,7 +87530,7 @@ const { useFormik, Formik,  Field, ErrorMessage } =__webpack_require__(103);
 
 //https://stackoverflow.com/questions/54685998/pass-values-to-the-state-from-formik 
   
-let myProp;
+let myProp ="start";
 const SidebarDD= () => {  
   const formik = useFormik({
     initialValues: {
@@ -87541,6 +87541,7 @@ const SidebarDD= () => {
       alert(JSON.stringify(values, null, 2));
       alert("formik.values.email:  " +formik.values.email); 
       myProp=formik.values.email;
+      this.props.handleData()
     },
   });
      
@@ -87572,13 +87573,14 @@ class SidebarE extends React.Component {
        super();
     this.state = {
       inputData: {},
-      myprop1:""
+      myprop1: myProp
     }
   }
 
   render() {
     return (
-      React.createElement("div", null, " ", React.createElement("br", null), " ", React.createElement("br", null), " ", React.createElement("p", null, " SidebarE- see this?   "), 
+      React.createElement("div", null, " ", React.createElement("br", null), " ", React.createElement("br", null), " ", React.createElement("p", null, " SidebarE- see this?  ", this.state.myprop1, "  "), 
+        
         React.createElement(SidebarDD, null)
       )
   //=========================    
