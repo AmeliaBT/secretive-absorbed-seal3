@@ -10322,7 +10322,11 @@ const ReactDOM = __webpack_require__(12);
 class FilterA extends React.Component {
   constructor(props){
     super(props);
-    this.state = { myName: '', email: ''  } 
+    this.state = { 
+      myName: '', 
+      email: '' ,
+     color: 'green'
+} 
 
    this.handleChangeValue = this.handleChangeValue.bind(this);
     this.submitForm = this.submitForm.bind(this);
@@ -10337,9 +10341,77 @@ submitForm(e) { e.preventDefault();
       this.setState({ [name]: value });
   }
   
-  render() {    return (        React.createElement("div", null, "        ", React.createElement("form", null, 
-"Name: ", React.createElement("input", {type: "text", name: "myName", value: this.state.myName, onChange: this.handleChangeValue}), "  ", React.createElement("br", null), 
-"Email: ", React.createElement("input", {type: "text", name: "email", value: this.state.email, onChange: this.handleChangeValue}), " ", React.createElement("br", null), React.createElement("br", null), "          ", React.createElement("input", {type: "button", value: "Submit", onClick: this.submitForm})), "        ")    )  }}
+  render() { return (        React.createElement("div", null, 
+React.createElement("form", null, 
+"Name:",  
+  React.createElement("input", {type: "text", name: "myName", value: this.state.myName, onChange: this.handleChangeValue}), "  ", React.createElement("br", null), 
+"Email:",  
+  React.createElement("input", {type: "text", name: "email", value: this.state.email, onChange: this.handleChangeValue}), " ", React.createElement("br", null), 
+React.createElement("br", null), 
+  
+    React.createElement("ul", null, 
+            React.createElement("li", null, 
+              React.createElement("label", null, 
+                React.createElement("input", {
+                  type: "radio", 
+                  value: "red", 
+                  checked: this.state.color === "red", 
+                  onChange: this.onRadioChange}
+                ), 
+                React.createElement("span", null, "Red")
+              )
+            ), 
+
+            React.createElement("li", null, 
+              React.createElement("label", null, 
+                React.createElement("input", {
+                  type: "radio", 
+                  value: "green", 
+                  checked: this.state.color === "green", 
+                  onChange: this.onRadioChange}
+                ), 
+                React.createElement("span", null, "Green")
+              )
+            ), 
+
+            React.createElement("li", null, 
+              React.createElement("label", null, 
+                React.createElement("input", {
+                  type: "radio", 
+                  value: "blue", 
+                  checked: this.state.color === "blue", 
+                  onChange: this.onRadioChange}
+                ), 
+                React.createElement("span", null, "Blue")
+              )
+      ), 
+   React.createElement("li", null, 
+              React.createElement("label", null, 
+                React.createElement("input", {
+                  type: "radio", 
+                  value: "orange", 
+                  checked: this.state.color === "orange", 
+                  onChange: this.onRadioChange}
+                ), 
+                React.createElement("span", null, "Ornage")
+              )
+            ), 
+
+            React.createElement("li", null, 
+              React.createElement("label", null, 
+                React.createElement("input", {
+                  type: "radio", 
+                  value: "purple", 
+                  checked: this.state.color === "purple", 
+                  onChange: this.onRadioChange}
+                ), 
+                React.createElement("span", null, "Purple")
+              )
+            )
+          ), 
+
+  
+  React.createElement("input", {type: "button", value: "Submit", onClick: this.submitForm})), "        ")    )  }}
 
 
 module.exports = FilterA;
