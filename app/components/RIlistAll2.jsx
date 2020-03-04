@@ -24,7 +24,8 @@ class RIlistAll2 extends React.Component {
       disabled: true,
        reports: "loading..." ,
       myName: "", 
-      email: ''  
+      email: '' ,
+      color:''
       
     };
    // alert("props? SidebarD: ");
@@ -42,7 +43,9 @@ class RIlistAll2 extends React.Component {
    /***********************/
   handleParentData(event) {
     this.setState({ myName: event.myName });
-    this.setState({ email: event.email });  }
+    this.setState({ email: event.email }); 
+   this.setState({ color: event.color }); 
+  }
 
   
   
@@ -123,17 +126,18 @@ class RIlistAll2 extends React.Component {
        < FilterA />   */}   
       
 <Row > 
-   <Col xs={3} ><div  className="well" >  
-   </div> </Col>
-  <Col xs={8} > <div   >  
-     < FilterA handleData ={this.handleParentData} /> 
-    <p>{this.state.myName}</p>  
+   <Col xs={3} ><div  className="well" > 
+      < FilterA handleData ={this.handleParentData} /> 
+     <p>{this.state.myName}</p>  
           <p>{this.state.email}</p>  
-
-      {/* 
-         < SidebarB />
-       < SidebarE /> 
-  formik.values.email
+     <p>{this.state.color}</p>
+   </div> </Col>
+  
+  
+  <Col xs={8} > <div   >  
+    
+    
+         
 <Table className="myForm">  
                  
             <Row>
@@ -150,7 +154,7 @@ class RIlistAll2 extends React.Component {
         
         {this.state.reports}
   </Table>  
-  */}
+
          <Modal show={this.state.show} onHide={this.handleClose}>  </Modal>
    
   

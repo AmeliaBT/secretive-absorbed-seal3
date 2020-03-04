@@ -23,6 +23,13 @@ submitForm(e) { e.preventDefault();
       this.setState({ [name]: value });
   }
   
+   onRadioChange(e){
+    this.setState({
+      color: e.target.value
+    });
+  }
+  
+  
   render() { return (        <div>        
 <form>
 Name: 

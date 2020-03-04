@@ -10342,6 +10342,13 @@ submitForm(e) { e.preventDefault();
       this.setState({ [name]: value });
   }
   
+   onRadioChange(e){
+    this.setState({
+      color: e.target.value
+    });
+  }
+  
+  
   render() { return (        React.createElement("div", null, 
 React.createElement("form", null, 
 "Name:",  
@@ -71758,7 +71765,8 @@ class RIlistAll2 extends React.Component {
       disabled: true,
        reports: "loading..." ,
       myName: "", 
-      email: ''  
+      email: '' ,
+      color:''
       
     };
    // alert("props? SidebarD: ");
@@ -71776,7 +71784,9 @@ class RIlistAll2 extends React.Component {
    /***********************/
   handleParentData(event) {
     this.setState({ myName: event.myName });
-    this.setState({ email: event.email });  }
+    this.setState({ email: event.email }); 
+   this.setState({ color: event.color }); 
+  }
 
   
   
@@ -71857,34 +71867,35 @@ class RIlistAll2 extends React.Component {
        < FilterA />   */
       
 React.createElement(Row, null, 
-   React.createElement(Col, {xs: 3}, React.createElement("div", {className: "well"}
-   ), " "), 
-  React.createElement(Col, {xs: 8}, " ", React.createElement("div", null, 
-     React.createElement(FilterA, {handleData: this.handleParentData}), 
-    React.createElement("p", null, this.state.myName), 
+   React.createElement(Col, {xs: 3}, React.createElement("div", {className: "well"}, 
+      React.createElement(FilterA, {handleData: this.handleParentData}), 
+     React.createElement("p", null, this.state.myName), 
           React.createElement("p", null, this.state.email), 
-
-      /* 
-         < SidebarB />
-       < SidebarE /> 
-  formik.values.email
-<Table className="myForm">  
+     React.createElement("p", null, this.state.color)
+   ), " "), 
+  
+  
+  React.createElement(Col, {xs: 8}, " ", React.createElement("div", null, 
+    
+    
+         
+React.createElement(Table, {className: "myForm"}, 
                  
-            <Row>
-             <Col sm={1}> <b>RI </b>  </Col> 
-                <Col sm={1} ><b> Inspector</b> </Col> 
-                <Col sm={1} ><b> Part Number </b></Col> 
-                <Col sm={2} ><b>Description </b></Col> 
-               <Col  sm={1} ><b> Date Inspected</b> </Col> 
-              <Col  sm={1} ><b>Pass /Fail </b> </Col> 
-               <Col sm={1} > <b>Lot Size </b> </Col> 
-              <Col sm={3} > <b>Comment</b> </Col> 
-               <Col sm={1} > <b>View </b> </Col> 
-           </Row>
+            React.createElement(Row, null, 
+             React.createElement(Col, {sm: 1}, " ", React.createElement("b", null, "RI "), "  "), 
+                React.createElement(Col, {sm: 1}, React.createElement("b", null, " Inspector"), " "), 
+                React.createElement(Col, {sm: 1}, React.createElement("b", null, " Part Number ")), 
+                React.createElement(Col, {sm: 2}, React.createElement("b", null, "Description ")), 
+               React.createElement(Col, { sm: 1}, React.createElement("b", null, " Date Inspected"), " "), 
+              React.createElement(Col, { sm: 1}, React.createElement("b", null, "Pass /Fail "), " "), 
+               React.createElement(Col, {sm: 1}, " ", React.createElement("b", null, "Lot Size "), " "), 
+              React.createElement(Col, {sm: 3}, " ", React.createElement("b", null, "Comment"), " "), 
+               React.createElement(Col, {sm: 1}, " ", React.createElement("b", null, "View "), " ")
+           ), 
         
-        {this.state.reports}
-  </Table>  
-  */
+        this.state.reports
+  ), 
+
          React.createElement(Modal, {show: this.state.show, onHide: this.handleClose}, "  ")
    
   
