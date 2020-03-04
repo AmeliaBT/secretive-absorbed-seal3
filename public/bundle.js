@@ -12605,11 +12605,11 @@ submitForm(e) { e.preventDefault();
   
   render() { return (        React.createElement("div", null, 
 React.createElement("form", null, 
-"Model A: ", React.createElement("br", null), 
-  React.createElement("input", {className: "filer_input_a", type: "text", name: "model", value: this.state.model, 
+"Model: ", React.createElement("br", null), 
+  React.createElement("input", {className: "filter_input_a", type: "text", name: "model", value: this.state.model, 
     onChange: this.handleChangeValue}), "  ", React.createElement("br", null), 
-"PN A: ", React.createElement("br", null), 
-  React.createElement("input", {className: "filer_input_a", type: "text", name: "pn", value: this.state.pn, 
+"PN: ", React.createElement("br", null), 
+  React.createElement("input", {className: "filter_input_a", type: "text", name: "pn", value: this.state.pn, 
     onChange: this.handleChangeValue}), " ", React.createElement("br", null), 
 React.createElement("br", null), 
   "Inspector:",  
@@ -12622,7 +12622,7 @@ React.createElement("br", null),
                   checked: this.state.sel_radio_a === "Helen,", 
                   onChange: this.onRadioChange}
                 ), 
-                React.createElement("span", null, "Helen")
+                React.createElement("span", {className: "filter_lbl"}, "Helen")
               )
             ), 
 
@@ -12634,7 +12634,7 @@ React.createElement("br", null),
                   checked: this.state.sel_radio_a === "Tuan", 
                   onChange: this.onRadioChange}
                 ), 
-                React.createElement("span", null, "Tuan")
+                React.createElement("span", {className: "filter_lbl"}, "Tuan")
               )
             ), 
 
@@ -12646,7 +12646,7 @@ React.createElement("br", null),
                   checked: this.state.sel_radio_a === "Abc", 
                   onChange: this.onRadioChange}
                 ), 
-                React.createElement("span", null, "Abc")
+                React.createElement("span", {className: "filter_lbl"}, "Abc")
               )
       )
                 
@@ -59627,7 +59627,7 @@ exports = module.exports = __webpack_require__(24)(false);
 
 
 // module
-exports.push([module.i, "\nul,\nol {\n  list-style: none;\n  margin: 0;\n  padding: 0;\n}\n\n.filer_input_a{max-width: 200px;}\n\n\nlabel {\n  cursor: pointer;\n  font-color: red;\n}\n\nlabel span {\n  display: inline-block;\n  padding: 0 0 0 1px;\n}\n\n/* \n\n font-family: sans-serif;\n  text-align: center;\nbody {\n\n  margin: 0;\n  font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Roboto\", \"Oxygen\",\n    \"Ubuntu\", \"Cantarell\", \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\",\n    sans-serif;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n\ncode {\n  font-family: source-code-pro, Menlo, Monaco, Consolas, \"Courier New\",\n    monospace;\n}\n\nul,\nol {\n  list-style: none;\n  margin: 0;\n  padding: 0;\n}\n\n.App {\n  max-width: 500px;\n  margin: 50px auto;\n}\n\nstrong {\n  margin-bottom: 10px;\n  display: block;\n  font-size: 25px;\n}\n\nlabel {\n  cursor: pointer;\n}\n\nlabel span {\n  display: inline-block;\n  padding: 0 0 0 10px;\n}\n\n*/", ""]);
+exports.push([module.i, "\nul,\nol {\n  list-style: none;\n  margin: 0;\n  padding: 0;\n}\n\n.filter_input_a{max-width: 200px;}\n.filter_lbl{font-size: 12px;}\n\nlabel {\n  cursor: pointer;\n  font-color: red;\n}\n\nlabel span {\n  display: inline-block;\n  padding: 0 0 0 1px;\n}\n\n/* \n\n font-family: sans-serif;\n  text-align: center;\nbody {\n\n  margin: 0;\n  font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Roboto\", \"Oxygen\",\n    \"Ubuntu\", \"Cantarell\", \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\",\n    sans-serif;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n\ncode {\n  font-family: source-code-pro, Menlo, Monaco, Consolas, \"Courier New\",\n    monospace;\n}\n\nul,\nol {\n  list-style: none;\n  margin: 0;\n  padding: 0;\n}\n\n.App {\n  max-width: 500px;\n  margin: 50px auto;\n}\n\nstrong {\n  margin-bottom: 10px;\n  display: block;\n  font-size: 25px;\n}\n\nlabel {\n  cursor: pointer;\n}\n\nlabel span {\n  display: inline-block;\n  padding: 0 0 0 10px;\n}\n\n*/", ""]);
 
 // exports
 

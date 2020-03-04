@@ -6,8 +6,12 @@ ol {
   padding: 0;
 }
 
-.filer_input_a{max-width: 200px;}
-
+.filter_input_a {
+  max-width: 50%;
+}
+.filter_lbl{
+  font-size: 12px;
+color: black;}
 
 label {
   cursor: pointer;

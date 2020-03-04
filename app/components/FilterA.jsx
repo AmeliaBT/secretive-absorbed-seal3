@@ -36,11 +36,11 @@ submitForm(e) { e.preventDefault();
   
   render() { return (        <div>        
 <form>
-Model A: <br />
-  <input className="filer_input_a" type="text" name="model"  value={this.state.model} 
+Model: <br />
+  <input className="filter_input_a" type="text" name="model"  value={this.state.model} 
     onChange={this.handleChangeValue}/>  <br />
-PN A: <br />
-  <input className="filer_input_a" type="text" name="pn"  value={this.state.pn} 
+PN: <br />
+  <input className="filter_input_a" type="text" name="pn"  value={this.state.pn} 
     onChange={this.handleChangeValue} /> <br />
 <br />         
   Inspector: 
@@ -53,7 +53,7 @@ PN A: <br />
                   checked={this.state.sel_radio_a === "Helen,"}
                   onChange={this.onRadioChange}
                 />
-                <span>Helen</span>
+                <span className="filter_lbl" >Helen</span>
               </label>
             </li>
 
@@ -65,7 +65,7 @@ PN A: <br />
                   checked={this.state.sel_radio_a === "Tuan"}
                   onChange={this.onRadioChange}
                 />
-                <span>Tuan</span>
+                <span className="filter_lbl">Tuan</span>
               </label>
             </li>
 
@@ -77,7 +77,7 @@ PN A: <br />
                   checked={this.state.sel_radio_a === "Abc"}
                   onChange={this.onRadioChange}
                 />
-                <span>Abc</span>
+                <span className="filter_lbl">Abc</span>
               </label>  
       </li>
                 
