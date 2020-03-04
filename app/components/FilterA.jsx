@@ -52,7 +52,7 @@ Email:
                   checked={this.state.color === "red"}
                   onChange={this.onRadioChange}
                 />
-                <span>Red</span>
+                <span2>Red</span2>
               </label>
             </li>
 
@@ -64,7 +64,7 @@ Email:
                   checked={this.state.color === "green"}
                   onChange={this.onRadioChange}
                 />
-                <span>Green</span>
+                <span2>Green</span2>
               </label>
             </li>
 
@@ -76,7 +76,7 @@ Email:
                   checked={this.state.color === "blue"}
                   onChange={this.onRadioChange}
                 />
-                <span>Blue</span>
+                <span2>Blue</span2>
               </label>  
       </li>
    <li>
@@ -87,7 +87,7 @@ Email:
                   checked={this.state.color === "orange"}
                   onChange={this.onRadioChange}
                 />
-                <span>Ornage</span>
+                <span2>Ornage</span2>
               </label>
             </li>
 
@@ -99,7 +99,7 @@ Email:
                   checked={this.state.color === "purple"}
                   onChange={this.onRadioChange}
                 />
-                <span>Purple</span>
+                <span2>Purple</span2>
               </label>
             </li>
           </ul>

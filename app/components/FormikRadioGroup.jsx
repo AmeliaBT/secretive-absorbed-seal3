@@ -5,7 +5,7 @@ const React = require('react');
 const Link = require('react-router-dom').Link
 const {FormControlLabel, FormControl, FormGroup, Group, Radio, Col, Grid, Row, Button, Glyphicon, Form } = require('react-bootstrap');
 
-const style = require('../styles/SidebarA');
+//const style = require('../styles/SidebarA');
 //const options =require('./exampleData');
 
 // Render Prop

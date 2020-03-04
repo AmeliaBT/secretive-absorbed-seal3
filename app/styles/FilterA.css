@@ -6,6 +6,11 @@ ol {
   padding: 0;
 }
 
+span2{
+  font-color: red;
+  fornt-size: 10px;
+  fornt-weight: normal;
+}
 
 label {
   cursor: pointer;

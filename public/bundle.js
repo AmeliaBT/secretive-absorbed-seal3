@@ -10371,7 +10371,7 @@ React.createElement("br", null),
                   checked: this.state.color === "red", 
                   onChange: this.onRadioChange}
                 ), 
-                React.createElement("span", null, "Red")
+                React.createElement("span2", null, "Red")
               )
             ), 
 
@@ -10383,7 +10383,7 @@ React.createElement("br", null),
                   checked: this.state.color === "green", 
                   onChange: this.onRadioChange}
                 ), 
-                React.createElement("span", null, "Green")
+                React.createElement("span2", null, "Green")
               )
             ), 
 
@@ -10395,7 +10395,7 @@ React.createElement("br", null),
                   checked: this.state.color === "blue", 
                   onChange: this.onRadioChange}
                 ), 
-                React.createElement("span", null, "Blue")
+                React.createElement("span2", null, "Blue")
               )
       ), 
    React.createElement("li", null, 
@@ -10406,7 +10406,7 @@ React.createElement("br", null),
                   checked: this.state.color === "orange", 
                   onChange: this.onRadioChange}
                 ), 
-                React.createElement("span", null, "Ornage")
+                React.createElement("span2", null, "Ornage")
               )
             ), 
 
@@ -10418,7 +10418,7 @@ React.createElement("br", null),
                   checked: this.state.color === "purple", 
                   onChange: this.onRadioChange}
                 ), 
-                React.createElement("span", null, "Purple")
+                React.createElement("span2", null, "Purple")
               )
             )
           ), 
@@ -65808,7 +65808,7 @@ exports = module.exports = __webpack_require__(28)(false);
 
 
 // module
-exports.push([module.i, "\nul,\nol {\n  list-style: none;\n  margin: 0;\n  padding: 0;\n}\n\n\nlabel {\n  cursor: pointer;\n  font-color: red;\n}\n\nlabel span {\n  display: inline-block;\n  padding: 0 0 0 1px;\n}\n\n/* \n\n font-family: sans-serif;\n  text-align: center;\nbody {\n\n  margin: 0;\n  font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Roboto\", \"Oxygen\",\n    \"Ubuntu\", \"Cantarell\", \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\",\n    sans-serif;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n\ncode {\n  font-family: source-code-pro, Menlo, Monaco, Consolas, \"Courier New\",\n    monospace;\n}\n\nul,\nol {\n  list-style: none;\n  margin: 0;\n  padding: 0;\n}\n\n.App {\n  max-width: 500px;\n  margin: 50px auto;\n}\n\nstrong {\n  margin-bottom: 10px;\n  display: block;\n  font-size: 25px;\n}\n\nlabel {\n  cursor: pointer;\n}\n\nlabel span {\n  display: inline-block;\n  padding: 0 0 0 10px;\n}\n\n*/", ""]);
+exports.push([module.i, "\nul,\nol {\n  list-style: none;\n  margin: 0;\n  padding: 0;\n}\n\nspan2{\n  font-color: red;\n  fornt-size: 10px;\n  fornt-weight: normal;\n}\n\nlabel {\n  cursor: pointer;\n  font-color: red;\n}\n\nlabel span {\n  display: inline-block;\n  padding: 0 0 0 1px;\n}\n\n/* \n\n font-family: sans-serif;\n  text-align: center;\nbody {\n\n  margin: 0;\n  font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Roboto\", \"Oxygen\",\n    \"Ubuntu\", \"Cantarell\", \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\",\n    sans-serif;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n\ncode {\n  font-family: source-code-pro, Menlo, Monaco, Consolas, \"Courier New\",\n    monospace;\n}\n\nul,\nol {\n  list-style: none;\n  margin: 0;\n  padding: 0;\n}\n\n.App {\n  max-width: 500px;\n  margin: 50px auto;\n}\n\nstrong {\n  margin-bottom: 10px;\n  display: block;\n  font-size: 25px;\n}\n\nlabel {\n  cursor: pointer;\n}\n\nlabel span {\n  display: inline-block;\n  padding: 0 0 0 10px;\n}\n\n*/", ""]);
 
 // exports
 
@@ -65824,7 +65824,7 @@ const React = __webpack_require__(0);
 const Link = __webpack_require__(9).Link
 const {FormControlLabel, FormControl, FormGroup, Group, Radio, Col, Grid, Row, Button, Glyphicon, Form } = __webpack_require__(11);
 
-const style = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"../styles/SidebarA\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+//const style = require('../styles/SidebarA');
 //const options =require('./exampleData');
 
 // Render Prop
@@ -71927,7 +71927,7 @@ const React = __webpack_require__(0);
 const Link = __webpack_require__(9).Link
 const {Alert, FormControlLabel, FormControl, FormGroup, Group, Radio, Col, Grid, Row, Button, Glyphicon } = __webpack_require__(11);
 //const FormikRadioGroup =require('./FormikRadioGroup');
-const style = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"../styles/SidebarA\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+//const style = require('../styles/SidebarA');
 const { useFormik, Formik,  Field, ErrorMessage } =__webpack_require__(79);
 //const options =require('./exampleData');
 //const {Yup} =require('yup');
