@@ -1,8 +1,8 @@
 
-span{
-  font-size:10px;
+.spanGlyph{
+  font-size:12px;
 color: green;
- 
+  padding:0;
 }
 .myTable{  border: 1px solid #F8F8F8; /*#000000' */
 }

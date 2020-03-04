@@ -129,7 +129,7 @@ class RIlistAll2 extends React.Component {
        < FilterA />   */}   
  <Row> <p>{this.state.filterA}   </p></Row>     
 <Row > 
-   <Col xs={3} ><div  className="well" > 
+   <Col xs={1} ><div  className="well" > 
      
      
       < FilterA handleData ={this.handleParentData} /> 
@@ -137,7 +137,7 @@ class RIlistAll2 extends React.Component {
    </div> </Col>
   
   
-  <Col xs={8} > <div   >  
+  <Col xs={11} > <div   >  
     
     
          
