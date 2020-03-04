@@ -23,10 +23,10 @@ class RIlistAll2 extends React.Component {
       show: false, 
       disabled: true,
        reports: "loading..." ,
-      myName: "", 
-      email: '' ,
-      color:'',
-      filterA:''
+       model: '', 
+       pn: '' ,
+       sel_radio_a:"",
+       filterA:''
       
     };
    // alert("props? SidebarD: ");
@@ -46,7 +46,7 @@ class RIlistAll2 extends React.Component {
     this.setState({ myName: event.myName });
     this.setState({ email: event.email }); 
    this.setState({ color: event.color }); 
-    this.setState({ filterA: "    Showing results for " + event.myName + " & " + event.email + " & " +event.color }); 
+    this.setState({ filterA: "    Showing results for " + event.model + " & " + event.pn + " & " +event.sel_radio_a }); 
     
   }
 

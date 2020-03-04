@@ -8,8 +8,8 @@ class FilterA extends React.Component {
     super(props);
     this.state = { 
       model: '', 
-      email: '' ,
-     sel_radio_a: 'green'
+      pn: '' ,
+     sel_radio_a: ''
 } 
 
    this.handleChangeValue = this.handleChangeValue.bind(this);
@@ -37,10 +37,10 @@ submitForm(e) { e.preventDefault();
   render() { return (        <div>        
 <form>
 Model: 
-  <input type="text" name="model"  value={this.state.model} 
+  <input className="filer_input" type="text" name="model"  value={this.state.model} 
     onChange={this.handleChangeValue}/>  <br />
 PN: 
-  <input type="text" name="email"  value={this.state.email} 
+  <input className="filer_input" type="text" name="pn"  value={this.state.pn} 
     onChange={this.handleChangeValue} /> <br />
 <br />         
   Inspector: 

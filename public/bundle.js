@@ -10326,9 +10326,9 @@ class FilterA extends React.Component {
   constructor(props){
     super(props);
     this.state = { 
-      myName: '', 
-      email: '' ,
-     sel_radio_a: 'green'
+      model: '', 
+      pn: '' ,
+     sel_radio_a: ''
 } 
 
    this.handleChangeValue = this.handleChangeValue.bind(this);
@@ -10356,10 +10356,10 @@ submitForm(e) { e.preventDefault();
   render() { return (        React.createElement("div", null, 
 React.createElement("form", null, 
 "Model:",  
-  React.createElement("input", {type: "text", name: "myName", value: this.state.myName, 
+  React.createElement("input", {className: "filer_input", type: "text", name: "model", value: this.state.model, 
     onChange: this.handleChangeValue}), "  ", React.createElement("br", null), 
 "PN:",  
-  React.createElement("input", {type: "text", name: "email", value: this.state.email, 
+  React.createElement("input", {className: "filer_input", type: "text", name: "pn", value: this.state.pn, 
     onChange: this.handleChangeValue}), " ", React.createElement("br", null), 
 React.createElement("br", null), 
   "Inspector:",  
@@ -71747,10 +71747,10 @@ class RIlistAll2 extends React.Component {
       show: false, 
       disabled: true,
        reports: "loading..." ,
-      myName: "", 
-      email: '' ,
-      color:'',
-      filterA:''
+       model: '', 
+       pn: '' ,
+       sel_radio_a:"",
+       filterA:''
       
     };
    // alert("props? SidebarD: ");
@@ -71770,7 +71770,7 @@ class RIlistAll2 extends React.Component {
     this.setState({ myName: event.myName });
     this.setState({ email: event.email }); 
    this.setState({ color: event.color }); 
-    this.setState({ filterA: "    Showing results for " + event.myName + " & " + event.email + " & " +event.color }); 
+    this.setState({ filterA: "    Showing results for " + event.model + " & " + event.pn + " & " +event.sel_radio_a }); 
     
   }
 

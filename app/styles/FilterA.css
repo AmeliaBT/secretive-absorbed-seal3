@@ -6,11 +6,8 @@ ol {
   padding: 0;
 }
 
-span2{
-  font-color: red;
-  fornt-size: 10px;
-  fornt-weight: normal;
-}
+.filer_input{max-width: 30px;}
+
 
 label {
   cursor: pointer;
