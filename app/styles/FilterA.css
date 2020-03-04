@@ -7,10 +7,13 @@ ol {
 }
 
 .filter_input_a {
-  max-width: 50%;
+ width: 90%;
+  background-color: white;
+   
 }
 .filter_lbl{
   font-size: 12px;
+  font-weight: normal;
 color: black;}
 
 label {
