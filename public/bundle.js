@@ -10328,7 +10328,7 @@ class FilterA extends React.Component {
     this.state = { 
       myName: '', 
       email: '' ,
-     color: 'green'
+     sel_radio_a: 'green'
 } 
 
    this.handleChangeValue = this.handleChangeValue.bind(this);
@@ -10348,7 +10348,7 @@ submitForm(e) { e.preventDefault();
   
    onRadioChange(e){
     this.setState({
-      color: e.target.value
+      sel_radio_a: e.target.value
     });
   }
   
@@ -10369,7 +10369,7 @@ React.createElement("br", null),
                 React.createElement("input", {
                   type: "radio", 
                   value: "Helen,", 
-                  checked: this.state.color === "Helen,", 
+                  checked: this.state.sel_radio_a === "Helen,", 
                   onChange: this.onRadioChange}
                 ), 
                 React.createElement("span2", null, "Helen")
@@ -10381,7 +10381,7 @@ React.createElement("br", null),
                 React.createElement("input", {
                   type: "radio", 
                   value: "Tuan", 
-                  checked: this.state.color === "Tuan", 
+                  checked: this.state.sel_radio_a === "Tuan", 
                   onChange: this.onRadioChange}
                 ), 
                 React.createElement("span2", null, "Tuan")
@@ -10393,7 +10393,7 @@ React.createElement("br", null),
                 React.createElement("input", {
                   type: "radio", 
                   value: "Abc", 
-                  checked: this.state.color === "Abc", 
+                  checked: this.state.sel_radio_a === "Abc", 
                   onChange: this.onRadioChange}
                 ), 
                 React.createElement("span2", null, "Abc")

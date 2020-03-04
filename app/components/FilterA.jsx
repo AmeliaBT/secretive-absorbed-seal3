@@ -7,9 +7,9 @@ class FilterA extends React.Component {
   constructor(props){
     super(props);
     this.state = { 
-      myName: '', 
+      model: '', 
       email: '' ,
-     color: 'green'
+     sel_radio_a: 'green'
 } 
 
    this.handleChangeValue = this.handleChangeValue.bind(this);
@@ -29,7 +29,7 @@ submitForm(e) { e.preventDefault();
   
    onRadioChange(e){
     this.setState({
-      color: e.target.value
+      sel_radio_a: e.target.value
     });
   }
   
@@ -37,7 +37,7 @@ submitForm(e) { e.preventDefault();
   render() { return (        <div>        
 <form>
 Model: 
-  <input type="text" name="myName"  value={this.state.myName} 
+  <input type="text" name="model"  value={this.state.model} 
     onChange={this.handleChangeValue}/>  <br />
 PN: 
   <input type="text" name="email"  value={this.state.email} 
@@ -50,7 +50,7 @@ PN:
                 <input
                   type="radio"
                   value="Helen,"
-                  checked={this.state.color === "Helen,"}
+                  checked={this.state.sel_radio_a === "Helen,"}
                   onChange={this.onRadioChange}
                 />
                 <span2>Helen</span2>
@@ -62,7 +62,7 @@ PN:
                 <input
                   type="radio"
                   value="Tuan"
-                  checked={this.state.color === "Tuan"}
+                  checked={this.state.sel_radio_a === "Tuan"}
                   onChange={this.onRadioChange}
                 />
                 <span2>Tuan</span2>
@@ -74,7 +74,7 @@ PN:
                 <input
                   type="radio"
                   value="Abc"
-                  checked={this.state.color === "Abc"}
+                  checked={this.state.sel_radio_a === "Abc"}
                   onChange={this.onRadioChange}
                 />
                 <span2>Abc</span2>
