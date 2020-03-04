@@ -46,7 +46,8 @@ class RIlistAll2 extends React.Component {
     this.setState({ myName: event.myName });
     this.setState({ email: event.email }); 
    this.setState({ color: event.color }); 
-    this.setState({ filterA: event.color }); 
+    this.setState({ filterA: "    Showing results for " + event.myName + " & " + event.email + " & " +event.color }); 
+    
   }
 
   
@@ -126,7 +127,7 @@ class RIlistAll2 extends React.Component {
               
       {/* 
        < FilterA />   */}   
- <Row> <p>{this.state.myName + " & "} {this.state.email + " & "}  {this.state.color}  </p></Row>     
+ <Row> <p>{this.state.filterA}   </p></Row>     
 <Row > 
    <Col xs={3} ><div  className="well" > 
      

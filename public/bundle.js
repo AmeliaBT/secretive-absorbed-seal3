@@ -71769,7 +71769,8 @@ class RIlistAll2 extends React.Component {
     this.setState({ myName: event.myName });
     this.setState({ email: event.email }); 
    this.setState({ color: event.color }); 
-    this.setState({ filterA: event.color }); 
+    this.setState({ filterA: "    Showing results for " + event.myName + " & " + event.email + " & " +event.color }); 
+    
   }
 
   
@@ -71849,7 +71850,7 @@ class RIlistAll2 extends React.Component {
               
       /* 
        < FilterA />   */
- React.createElement(Row, null, " ", React.createElement("p", null, "Showing results for ", this.state.myName + " & ", " ", this.state.email + " & ", "  ", this.state.color, "  ")), 
+ React.createElement(Row, null, " ", React.createElement("p", null, this.state.filterA, "   ")), 
 React.createElement(Row, null, 
    React.createElement(Col, {xs: 3}, React.createElement("div", {className: "well"}, 
      
