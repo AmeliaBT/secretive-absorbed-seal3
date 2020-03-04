@@ -10338,6 +10338,7 @@ class FilterA extends React.Component {
 submitForm(e) { e.preventDefault();  
   this.props.handleData(this.state) } ;  
 
+  
    handleChangeValue(event) {
      const target = event.target;
       const value = target.value;
