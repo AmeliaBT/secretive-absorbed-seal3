@@ -8,9 +8,9 @@ const {Table , Grid, Row, Col, Modal} = require('react-bootstrap');
 // other components and etc
 const Header = require('./Header');
 const FilterA =require('./FilterA');
-const SidebarB =require('./SidebarB');
-const SidebarD =require('./SidebarD'); //works ok
-const SidebarE =require('./SidebarE');
+//const SidebarB =require('./SidebarB');
+//const SidebarD =require('./SidebarD'); //works ok
+//const SidebarE =require('./SidebarE');
 //const ExportData = require('./ExportData');
 const RIlistItemAll = require('./RIlistItemAll');
 let test = {a: 1, b: 2};

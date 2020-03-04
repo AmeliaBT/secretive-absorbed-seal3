@@ -7,8 +7,8 @@ const style = require('../styles/HomePage');
 const {Table , Grid, Row, Col, Modal} = require('react-bootstrap');
 // other components and etc
 const Header = require('./Header');
-const FilterA =require('./FilterA');
-const SidebarB =require('./SidebarB');
+//const FilterA =require('./FilterA');
+//const SidebarB =require('./SidebarB');
 //const ExportData = require('./ExportData');
 const RIlistItemAll = require('./RIlistItemAll');
 let test = {a: 1, b: 2};
