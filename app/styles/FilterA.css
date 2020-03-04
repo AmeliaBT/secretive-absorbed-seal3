@@ -9,6 +9,7 @@ ol {
 
 label {
   cursor: pointer;
+  font-color: red;
 }
 
 label span {

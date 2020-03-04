@@ -1,5 +1,8 @@
 const React = require('react');
 const ReactDOM = require('react-dom');
+
+const style = require('../styles/FilterA');
+
 class FilterA extends React.Component {
   constructor(props){
     super(props);
