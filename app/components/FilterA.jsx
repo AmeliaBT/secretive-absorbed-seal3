@@ -35,24 +35,24 @@ submitForm(e) { e.preventDefault();
   
   render() { return (        <div>        
 <form>
-Name: 
+Model: 
   <input type="text" name="myName"  value={this.state.myName} 
     onChange={this.handleChangeValue}/>  <br />
-Email: 
+PN: 
   <input type="text" name="email"  value={this.state.email} 
     onChange={this.handleChangeValue} /> <br />
 <br />         
-  
+  Inspector: 
     <ul>
             <li>
               <label>
                 <input
                   type="radio"
-                  value="red"
-                  checked={this.state.color === "red"}
+                  value="Helen,"
+                  checked={this.state.color === "Helen,"}
                   onChange={this.onRadioChange}
                 />
-                <span2>Red</span2>
+                <span2>Helen</span2>
               </label>
             </li>
 
@@ -60,11 +60,11 @@ Email:
               <label>
                 <input
                   type="radio"
-                  value="green"
-                  checked={this.state.color === "green"}
+                  value="Tuan"
+                  checked={this.state.color === "Tuan"}
                   onChange={this.onRadioChange}
                 />
-                <span2>Green</span2>
+                <span2>Tuan</span2>
               </label>
             </li>
 
@@ -72,36 +72,15 @@ Email:
               <label>
                 <input
                   type="radio"
-                  value="blue"
-                  checked={this.state.color === "blue"}
+                  value="Abc"
+                  checked={this.state.color === "Abc"}
                   onChange={this.onRadioChange}
                 />
-                <span2>Blue</span2>
+                <span2>Abc</span2>
               </label>  
       </li>
-   <li>
-              <label>
-                <input
-                  type="radio"
-                  value="orange"
-                  checked={this.state.color === "orange"}
-                  onChange={this.onRadioChange}
-                />
-                <span2>Ornage</span2>
-              </label>
-            </li>
-
-            <li>
-              <label>
-                <input
-                  type="radio"
-                  value="purple"
-                  checked={this.state.color === "purple"}
-                  onChange={this.onRadioChange}
-                />
-                <span2>Purple</span2>
-              </label>
-            </li>
+                
+             
           </ul>
 
   

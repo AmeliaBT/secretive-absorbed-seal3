@@ -10354,24 +10354,24 @@ submitForm(e) { e.preventDefault();
   
   render() { return (        React.createElement("div", null, 
 React.createElement("form", null, 
-"Name:",  
+"Model:",  
   React.createElement("input", {type: "text", name: "myName", value: this.state.myName, 
     onChange: this.handleChangeValue}), "  ", React.createElement("br", null), 
-"Email:",  
+"PN:",  
   React.createElement("input", {type: "text", name: "email", value: this.state.email, 
     onChange: this.handleChangeValue}), " ", React.createElement("br", null), 
 React.createElement("br", null), 
-  
+  "Inspector:",  
     React.createElement("ul", null, 
             React.createElement("li", null, 
               React.createElement("label", null, 
                 React.createElement("input", {
                   type: "radio", 
-                  value: "red", 
-                  checked: this.state.color === "red", 
+                  value: "Helen,", 
+                  checked: this.state.color === "Helen,", 
                   onChange: this.onRadioChange}
                 ), 
-                React.createElement("span2", null, "Red")
+                React.createElement("span2", null, "Helen")
               )
             ), 
 
@@ -10379,11 +10379,11 @@ React.createElement("br", null),
               React.createElement("label", null, 
                 React.createElement("input", {
                   type: "radio", 
-                  value: "green", 
-                  checked: this.state.color === "green", 
+                  value: "Tuan", 
+                  checked: this.state.color === "Tuan", 
                   onChange: this.onRadioChange}
                 ), 
-                React.createElement("span2", null, "Green")
+                React.createElement("span2", null, "Tuan")
               )
             ), 
 
@@ -10391,36 +10391,15 @@ React.createElement("br", null),
               React.createElement("label", null, 
                 React.createElement("input", {
                   type: "radio", 
-                  value: "blue", 
-                  checked: this.state.color === "blue", 
+                  value: "Abc", 
+                  checked: this.state.color === "Abc", 
                   onChange: this.onRadioChange}
                 ), 
-                React.createElement("span2", null, "Blue")
+                React.createElement("span2", null, "Abc")
               )
-      ), 
-   React.createElement("li", null, 
-              React.createElement("label", null, 
-                React.createElement("input", {
-                  type: "radio", 
-                  value: "orange", 
-                  checked: this.state.color === "orange", 
-                  onChange: this.onRadioChange}
-                ), 
-                React.createElement("span2", null, "Ornage")
-              )
-            ), 
-
-            React.createElement("li", null, 
-              React.createElement("label", null, 
-                React.createElement("input", {
-                  type: "radio", 
-                  value: "purple", 
-                  checked: this.state.color === "purple", 
-                  onChange: this.onRadioChange}
-                ), 
-                React.createElement("span2", null, "Purple")
-              )
-            )
+      )
+                
+             
           ), 
 
   
@@ -65650,7 +65629,7 @@ exports = module.exports = __webpack_require__(28)(false);
 
 
 // module
-exports.push([module.i, "glyph{\n  \n  color: red;\n  font-size:10px;\n}\nspanG{\n  font-size:10px;\n\n \n}\n.myTable{  border: 1px solid #F8F8F8; /*#000000' */\n}\n.Form {\n \n  margin: auto;\n  margin-top: 50px;\n \n}\n\n/* \n.Form {\n  width: 600px;\n background: antiquewhite; \n padding: 50px;\n border: 1px solid #9d9d8e;\n*/\n.form-label {\n  color: black; /*#f6ff67;*/\n  font-weight: bold\n}\n\n.profile-line {\n  background-color: #44708f;\n  width: 100%;\n  height: 10px;\n  margin: auto;\n  margin-bottom: 10px;\n}\n\n.input-label {\nwidth: 90%;\nmargin-top: 0;\nmargin-bottom: 0;\ncolor: rgb(157, 157, 157);\nbackground-color: red;\n}\n\n.profile-label {\n  text-align: center;\n  font-size: 30px;\n  color: black; /* #f6ff67;*/  \n  margin-top: 0px;\n  background-color: green;\n}\n.table-row-line {\n  border: 1px solid #9d9d8e;  \n  font-size: 10px;\n  padding: 0;\n  margin-top: 0;\n  margin-bottom: 0;\n}\n/*\n\n.table-row-line {\n  \n border: 1px solid #9d9d8e;  \n  margin-top: 0;\n  margin-bottom: 0;\n  color:blue;\n  font-size: small;\n  backgroung-color: pink;\n}\n.input-row {\n  padding: 50px;\n border: 1px solid #9d9d8e;  \n  margin-top: 0;\n  margin-bottom: 0;\n  height: 1px;\nbackground-color: azure;\npadding: 0%;\n}\n.profile-label {\n  text-align: center;\n  font-size: 30px;\n  color: black; \n  margin: 3%;\n  margin-top: 30px;\n}\n\n.profile-label {\n  text-align: center;\n  font-size: 30px;\n  color: black; \n  margin: 3%;\n  margin-top: 30px;\n}\n\n.input-label {\nwidth: 90%;\nmargin: auto;\ncolor: rgb(157, 157, 157);\n}\n*/", ""]);
+exports.push([module.i, "\nspanG{\n  font-size:10px;\ncolor: green;\n \n}\n.myTable{  border: 1px solid #F8F8F8; /*#000000' */\n}\n.Form {\n \n  margin: auto;\n  margin-top: 50px;\n \n}\n\n/* \n.Form {\n  width: 600px;\n background: antiquewhite; \n padding: 50px;\n border: 1px solid #9d9d8e;\n*/\n.form-label {\n  color: black; /*#f6ff67;*/\n  font-weight: bold\n}\n\n.profile-line {\n  background-color: #44708f;\n  width: 100%;\n  height: 10px;\n  margin: auto;\n  margin-bottom: 10px;\n}\n\n.input-label {\nwidth: 90%;\nmargin-top: 0;\nmargin-bottom: 0;\ncolor: rgb(157, 157, 157);\nbackground-color: red;\n}\n\n.profile-label {\n  text-align: center;\n  font-size: 30px;\n  color: black; /* #f6ff67;*/  \n  margin-top: 0px;\n  background-color: green;\n}\n.table-row-line {\n  border: 1px solid #9d9d8e;  \n  font-size: 10px;\n  padding: 0;\n  margin-top: 0;\n  margin-bottom: 0;\n}\n/*\n\n.table-row-line {\n  \n border: 1px solid #9d9d8e;  \n  margin-top: 0;\n  margin-bottom: 0;\n  color:blue;\n  font-size: small;\n  backgroung-color: pink;\n}\n.input-row {\n  padding: 50px;\n border: 1px solid #9d9d8e;  \n  margin-top: 0;\n  margin-bottom: 0;\n  height: 1px;\nbackground-color: azure;\npadding: 0%;\n}\n.profile-label {\n  text-align: center;\n  font-size: 30px;\n  color: black; \n  margin: 3%;\n  margin-top: 30px;\n}\n\n.profile-label {\n  text-align: center;\n  font-size: 30px;\n  color: black; \n  margin: 3%;\n  margin-top: 30px;\n}\n\n.input-label {\nwidth: 90%;\nmargin: auto;\ncolor: rgb(157, 157, 157);\n}\n*/", ""]);
 
 // exports
 
