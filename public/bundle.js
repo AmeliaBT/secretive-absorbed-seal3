@@ -59474,13 +59474,14 @@ class RIlistAll2 extends React.Component {
        sel_radio_a:"",
        sel_radio_b:"",
       
-       filterA:''
+       filterA:'',
+       filterB:''
       
     };
    // alert("props? SidebarD: ");
    // alert(SidebarD.values.email);
     this.handleParentData = this.handleParentData.bind(this);
-    this.handleParentDataB = this.handleParentData.bind(this);
+    this.handleParentDataB = this.handleParentDataB.bind(this);
 
     this.handleShow = this.handleShow.bind(this);
     this.handleClose = this.handleClose.bind(this);
@@ -59492,17 +59493,16 @@ class RIlistAll2 extends React.Component {
    // handlers
    /***********************/
   handleParentData(event) {
-    this.setState({ myName: event.myName });
-    this.setState({ email: event.email }); 
-   this.setState({ color: event.color }); 
-    this.setState({ filterA: "    Showing results for " + event.model + " & " + event.pn + " & " +event.sel_radio_a }); 
+    this.setState({ model: event.model });
+    this.setState({ pn: event.pn }); 
+   this.setState({ sel_radio_a: event.sel_radio_a }); 
+    this.setState({ filterA: "    Showing results for " + event.model + " & " + event.pn + " & " +event.sel_radio_a + " & " +event.sel_radio_b }); 
     
   }
  handleParentDataB(event) {
-    this.setState({ myName: event.myName });
-    this.setState({ email: event.email }); 
-   this.setState({ color: event.color }); 
-    this.setState({ filterA: "    Showing results for " + event.model + " & " + event.pn + " & " +event.sel_radio_a }); 
+  
+   this.setState({ sel_radio_b: event.sel_radio_b }); 
+    this.setState({ filterB: "    Showing results for " + event.model + " & " + event.pn + " & " +event.sel_radio_a + " & " +event.sel_radio_b }); 
     
   }
   
@@ -59687,7 +59687,7 @@ React.createElement("form", null,
               React.createElement("label", null, 
                 React.createElement("input", {
                   type: "radio", 
-                  value: "Pass,", 
+                  value: "Pass", 
                   checked: this.state.sel_radio_b === "Pass", 
                   onChange: this.onRadioChange}
                 ), 
