@@ -71748,7 +71748,8 @@ class RIlistAll2 extends React.Component {
        reports: "loading..." ,
       myName: "", 
       email: '' ,
-      color:''
+      color:'',
+      filterA:''
       
     };
    // alert("props? SidebarD: ");
@@ -71768,6 +71769,7 @@ class RIlistAll2 extends React.Component {
     this.setState({ myName: event.myName });
     this.setState({ email: event.email }); 
    this.setState({ color: event.color }); 
+    this.setState({ filterA: event.color }); 
   }
 
   
@@ -71847,13 +71849,13 @@ class RIlistAll2 extends React.Component {
               
       /* 
        < FilterA />   */
-      
+ React.createElement(Row, null, " ", React.createElement("p", null, "Showing results for ", this.state.myName + " & ", " ", this.state.email + " & ", "  ", this.state.color, "  ")), 
 React.createElement(Row, null, 
    React.createElement(Col, {xs: 3}, React.createElement("div", {className: "well"}, 
-      React.createElement(FilterA, {handleData: this.handleParentData}), 
-     React.createElement("p", null, this.state.myName), 
-          React.createElement("p", null, this.state.email), 
-     React.createElement("p", null, this.state.color)
+     
+     
+      React.createElement(FilterA, {handleData: this.handleParentData})
+     
    ), " "), 
   
   

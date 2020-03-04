@@ -25,7 +25,8 @@ class RIlistAll2 extends React.Component {
        reports: "loading..." ,
       myName: "", 
       email: '' ,
-      color:''
+      color:'',
+      filterA:''
       
     };
    // alert("props? SidebarD: ");
@@ -45,6 +46,7 @@ class RIlistAll2 extends React.Component {
     this.setState({ myName: event.myName });
     this.setState({ email: event.email }); 
    this.setState({ color: event.color }); 
+    this.setState({ filterA: event.color }); 
   }
 
   
@@ -124,13 +126,13 @@ class RIlistAll2 extends React.Component {
               
       {/* 
        < FilterA />   */}   
-      
+ <Row> <p>{this.state.myName + " & "} {this.state.email + " & "}  {this.state.color}  </p></Row>     
 <Row > 
    <Col xs={3} ><div  className="well" > 
+     
+     
       < FilterA handleData ={this.handleParentData} /> 
-     <p>{this.state.myName}</p>  
-          <p>{this.state.email}</p>  
-     <p>{this.state.color}</p>
+     
    </div> </Col>
   
   
