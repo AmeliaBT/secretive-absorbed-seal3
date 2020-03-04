@@ -11,6 +11,7 @@ class FilterA extends React.Component {
 
    this.handleChangeValue = this.handleChangeValue.bind(this);
     this.submitForm = this.submitForm.bind(this);
+     this.onRadioChange = this.onRadioChange.bind(this);
 }  
 submitForm(e) { e.preventDefault();  
   this.props.handleData(this.state) } ;  
@@ -25,9 +26,11 @@ submitForm(e) { e.preventDefault();
   render() { return (        <div>        
 <form>
 Name: 
-  <input type="text" name="myName"  value={this.state.myName} onChange={this.handleChangeValue}/>  <br />
+  <input type="text" name="myName"  value={this.state.myName} 
+    onChange={this.handleChangeValue}/>  <br />
 Email: 
-  <input type="text" name="email"  value={this.state.email} onChange={this.handleChangeValue} /> <br />
+  <input type="text" name="email"  value={this.state.email} 
+    onChange={this.handleChangeValue} /> <br />
 <br />         
   
     <ul>

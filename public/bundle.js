@@ -10330,6 +10330,7 @@ class FilterA extends React.Component {
 
    this.handleChangeValue = this.handleChangeValue.bind(this);
     this.submitForm = this.submitForm.bind(this);
+     this.onRadioChange = this.onRadioChange.bind(this);
 }  
 submitForm(e) { e.preventDefault();  
   this.props.handleData(this.state) } ;  
@@ -10344,9 +10345,11 @@ submitForm(e) { e.preventDefault();
   render() { return (        React.createElement("div", null, 
 React.createElement("form", null, 
 "Name:",  
-  React.createElement("input", {type: "text", name: "myName", value: this.state.myName, onChange: this.handleChangeValue}), "  ", React.createElement("br", null), 
+  React.createElement("input", {type: "text", name: "myName", value: this.state.myName, 
+    onChange: this.handleChangeValue}), "  ", React.createElement("br", null), 
 "Email:",  
-  React.createElement("input", {type: "text", name: "email", value: this.state.email, onChange: this.handleChangeValue}), " ", React.createElement("br", null), 
+  React.createElement("input", {type: "text", name: "email", value: this.state.email, 
+    onChange: this.handleChangeValue}), " ", React.createElement("br", null), 
 React.createElement("br", null), 
   
     React.createElement("ul", null, 
