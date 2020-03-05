@@ -59519,7 +59519,13 @@ class RIlistAll2 extends React.Component {
   handleFilters() {
      // post request to select reports
       let that = this;
-      const xhr = new XMLHttpRequest();      
+      const xhr = new XMLHttpRequest();  
+    
+    xhr.open('POST', '/create-filtered-table2', true);
+      xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');     
+      
+      xhr.send();
+      xhr.onreadystatechange = function() {
                  
  let body = 'Gwo:=' + encodeURIComponent(this.state.model) +
       '&fwo=' + encodeURIComponent(this.state.pn) +
@@ -59546,7 +59552,7 @@ class RIlistAll2 extends React.Component {
         }
   }
 
-
+  }
   
   
   
@@ -59574,7 +59580,7 @@ class RIlistAll2 extends React.Component {
     // load reports
       let that = this;
       let xhr = new XMLHttpRequest();  
-   // xhr.open('POST', '/get-user-filtered-reports', true);
+  
     //get-all-users-reports
       xhr.open('POST', '/get-all-users-reports', true);
       xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
