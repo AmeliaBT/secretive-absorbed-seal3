@@ -488,17 +488,12 @@ app.post("/create-filtered-table2", function(request, response) {
                       // "Gwo":request.body["Gwo"]
                        
                        } , 
-     (err, doc) => {
-     
-     if (err) throw err;
-    // let NN=user.inspname;     
-     // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-          response.json(doc);
-    
-    // });
+     (err, doc) => {     
+     if (err) throw err;   
+          response.json(doc);   
 });
 
-
+});
 
   app.post("/report-edit", function(request, response) {  
    reportModel.findOne({"reportID":request.body["reportID"]}, (err, doc) => {

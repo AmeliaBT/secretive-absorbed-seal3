@@ -54,7 +54,7 @@ class RIlistAll2 extends React.Component {
    this.setState({ sel_radio_a: event.sel_radio_a });  
     let dataB=this.state.sel_radio_b;
     this.setState({ filterAB: "    Showing results for " + event.model + " " + event.pn + " " +event.sel_radio_a  +" " + dataB}); 
-    
+    this.handleFiltersTest;
   }
  handleParentDataB(event) {  
    this.setState({ sel_radio_b: event.sel_radio_b });
@@ -62,10 +62,10 @@ class RIlistAll2 extends React.Component {
   this.setState({ filterAB: "    Showing results for " + dataA  +"  " +event.sel_radio_b}); 
     
   }
+  handleFiltersTest() {alert("hi")};
   
-  
-  handleFilters() {
-     // post request to select reports
+ /* handleFilters() {
+    
       let that = this;
       const xhr = new XMLHttpRequest();  
     
@@ -87,7 +87,7 @@ class RIlistAll2 extends React.Component {
         }
         let response = JSON.parse(this.responseText);
         
-// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  
+
              
         
          let reports = response.reports.map((el) => {
@@ -102,9 +102,8 @@ class RIlistAll2 extends React.Component {
            record={el.record}
            lwo ={el.lwo}       
             /> 
-        });
-        
- // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!           
+        });      
+     
         
            that.setState({
           ["reports"]: <div className="reports">
@@ -115,7 +114,7 @@ class RIlistAll2 extends React.Component {
     
   }
   
-  
+  */
   
   
   handleShowModal() {
