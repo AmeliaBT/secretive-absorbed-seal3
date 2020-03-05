@@ -9,10 +9,7 @@ const {Table , Grid, Row, Col, Modal} = require('react-bootstrap');
 const Header = require('./Header');
 const FilterA =require('./FilterA');
 const FilterB =require('./FilterB');
-//const SidebarB =require('./SidebarB');
-//const SidebarD =require('./SidebarD'); //works ok
-//const SidebarE =require('./SidebarE');
-//const ExportData = require('./ExportData');
+
 const RIlistItemAll = require('./RIlistItemAll');
 let test = {a: 1, b: 2};
 
@@ -34,8 +31,7 @@ class RIlistAll2 extends React.Component {
       
       
     };
-   // alert("props? SidebarD: ");
-   // alert(SidebarD.values.email);
+   
     this.handleParentData = this.handleParentData.bind(this);
     this.handleParentDataB = this.handleParentDataB.bind(this);
 
@@ -48,18 +44,62 @@ class RIlistAll2 extends React.Component {
    /***********************/
    // handlers
    /***********************/
-  handleFiltersTest() {alert("hi")};
-  
+   
   
   handleParentData(event) {
+    // load reports
+      let that = this;
+      let xhr = new XMLHttpRequest();  
+  
+    //get-all-users-reports
+      xhr.open('POST', '/get-all-users-reports', true);
+      xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+      xhr.send();
+      xhr.onreadystatechange = function() {
+        if (this.readyState != 4) return;
+        if (this.status != 200) {
+          alert( 'error: ' + (this.status ? this.statusText : 'request has not been set') );
+          return;
+        }
+        let response = JSON.parse(this.responseText);
+        
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  
+             
+        
+         let reports = response.reports.map((el) => {
+          return <RIlistItemAll  key={el.reportID}
+           reportnumber={el.reportID}  
+           inspector={el.inspector}
+             fwo={el.fwo}     
+           Gwo={el.Gwo}
+           jwo={el.jwo}
+           two={el.two}
+           owo={el.owo}
+           record={el.record}
+           lwo ={el.lwo}       
+            /> 
+        });
+        
+ // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!           
+        
+           that.setState({
+          ["reports"]: <div className="reports">
+                      {reports}     
+                    </div>
+           });
+       }
     
-/*  
+  }
+  
+  
+  xxhandleParentData(event) {   
+ 
     alert("hi");
     let that = this;
-      const xhr = new XMLHttpRequest();  
+      const xhr = new XMLHttpRequest(); 
     
     xhr.open('POST', '/create-filtered-table2', true);
-     this.server.open(this.method, this.url, true);
+     
       xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');     
       
       xhr.send();
@@ -94,16 +134,25 @@ class RIlistAll2 extends React.Component {
             /> 
         });      
      
-        
+         //let dataB=this.state.sel_radio_b;
            that.setState({
+             model: event.model ,
+      pn: event.pn , 
+      sel_radio_a: event.sel_radio_a ,
+      filterAB: "    Showing results for " + event.model + " " + event.pn + " " +event.sel_radio_a ,
           ["reports"]: <div className="reports">
                       {reports}     
                     </div>
            });
+           
+          
       }
     
   }
-    */
+    
+    
+    
+    
   }
     
  handleParentDataB(event) {  
