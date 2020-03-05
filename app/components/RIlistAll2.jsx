@@ -28,7 +28,8 @@ class RIlistAll2 extends React.Component {
        pn: '' ,
       sel_radio_b:"",
        sel_radio_a:"",
-        filterAB:""
+        filterAB:"",
+      modal_label: "Choose RI Reports to view"
       
       
     };
