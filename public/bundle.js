@@ -12588,6 +12588,12 @@ class FilterA extends React.Component {
 submitForm(e) { e.preventDefault();  
   this.props.handleData(this.state) } ;  
 
+  clearForm(e) {
+     this.setState({ 
+       
+       [name]: "" }); 
+  }
+  
   
    handleChangeValue(event) {
      const target = event.target;
@@ -12649,12 +12655,11 @@ React.createElement("br", null),
                 React.createElement("span", {className: "filter_lbl"}, "Abc")
               )
       )
-                
              
           ), 
-
-  
-  React.createElement("input", {type: "button", value: "Submit", onClick: this.submitForm})), "        ")    )  }}
+  React.createElement("input", {type: "button", value: "Submit", onClick: this.submitForm})), 
+    React.createElement("input", {type: "button", value: "Clear", onClick: this.clearForm})
+    )    )  }}
 
 
 module.exports = FilterA;

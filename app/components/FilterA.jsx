@@ -19,6 +19,12 @@ class FilterA extends React.Component {
 submitForm(e) { e.preventDefault();  
   this.props.handleData(this.state) } ;  
 
+  clearForm(e) {
+     this.setState({ 
+       
+       [name]: "" }); 
+  }
+  
   
    handleChangeValue(event) {
      const target = event.target;
@@ -79,13 +85,12 @@ PN: <br />
                 />
                 <span className="filter_lbl">Abc</span>
               </label>  
-      </li>
-                
+      </li>              
              
-          </ul>
-
-  
-  <input type="button" value="Submit" onClick={this.submitForm}/></form>        </div>    )  }}
+          </ul>  
+  <input type="button" value="Submit" onClick={this.submitForm}/></form> 
+    <input type="button" value="Clear" onClick={this.clearForm}/>
+    </div>    )  }}
 
 
 module.exports = FilterA;
