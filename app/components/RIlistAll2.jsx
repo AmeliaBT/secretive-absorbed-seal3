@@ -66,14 +66,16 @@ class RIlistAll2 extends React.Component {
       const xhr = new XMLHttpRequest();  
     
     xhr.open('POST', '/create-filtered-table2', true);
+    
+     //this.server.open(this.method, this.url, true);
       xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');     
       
       xhr.send();
       xhr.onreadystatechange = function() {
                  
- let body = 'Gwo:=' + encodeURIComponent(this.state.model) +
-      '&fwo=' + encodeURIComponent(this.state.pn) +
-      '&inspector=' + encodeURIComponent(this.state.sel_radio_a);
+ let body = 'Gwo:=' + encodeURIComponent(event.model) +
+      '&fwo=' + encodeURIComponent(event.pn) +
+      '&inspector=' + encodeURIComponent(event.sel_radio_a);
       xhr.send(body);
       xhr.onreadystatechange = function() {
         if (this.readyState != 4) return;
@@ -101,11 +103,12 @@ class RIlistAll2 extends React.Component {
         });      
      
         
-           that.setState({
+     /*      that.setState({
           ["reports"]: <div className="reports">
                       {reports}     
                     </div>
            });
+        */
       }
     
   }
