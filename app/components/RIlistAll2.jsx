@@ -64,6 +64,42 @@ class RIlistAll2 extends React.Component {
   }
   
   
+  handleFilters() {
+     // post request to select reports
+      let that = this;
+      const xhr = new XMLHttpRequest();      
+                 
+ let body = 'Gwo:=' + encodeURIComponent(this.state.model) +
+      '&fwo=' + encodeURIComponent(this.state.pn) +
+      '&inspector=' + encodeURIComponent(this.state.sel_radio_a);
+      xhr.send(body);
+      xhr.onreadystatechange = function() {
+        if (this.readyState != 4) return;
+        if (this.status != 200) {
+          alert( 'error: ' + (this.status ? this.statusText : 'request has not been set') );
+          return;
+        }
+        let response = JSON.parse(this.responseText);
+        if(response.error == 0) {
+           window.location.href = "/list-all2";
+           that.setState({
+          ["modal_label"]: "Success"
+           });
+        }
+        else {
+          that.setState({
+          ["modal_label"]: "Oops, something went wrong :/ try again pls"
+           });
+         }
+        }
+  }
+
+
+  
+  
+  
+  
+  
   handleShowModal() {
     // show Modal
     this.handleShow();    
