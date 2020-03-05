@@ -59474,7 +59474,7 @@ class RIlistAll2 extends React.Component {
        sel_radio_a:"",
        sel_radio_b:"",
       
-       filterA:""
+       filterAB:""
       
       
     };
@@ -59496,14 +59496,12 @@ class RIlistAll2 extends React.Component {
     this.setState({ model: event.model });
     this.setState({ pn: event.pn }); 
    this.setState({ sel_radio_a: event.sel_radio_a }); 
-    this.setState({ filterA: "    Showing results for " + this.state.model + " & " + this.state.pn + " & " +this.state.sel_radio_a  +" & " +this.state.sel_radio_b}); 
+    this.setState({ filterAB: "    Showing results for " + event.model + " & " + event.pn + " & " +event.sel_radio_a  +" & " +this.state.sel_radio_b}); 
     
   }
- handleParentDataB(event) {
-  
-   this.setState({ sel_radio_b: event.sel_radio_b }); 
-   
-    this.setState({ filterA: "    Showing results for " + this.state.model + " & " + this.state.pn + " & " +this.state.sel_radio_a  +" & " +this.state.sel_radio_b}); 
+ handleParentDataB(event) {  
+   this.setState({ sel_radio_b: event.sel_radio_b });
+    this.setState({ filterAB: "    Showing results for " + this.state.model + " & " + this.state.pn + " & " +this.state.sel_radio_a  +" & " +event.sel_radio_b}); 
     
   }
   
@@ -59583,7 +59581,7 @@ class RIlistAll2 extends React.Component {
               
       /* 
        < FilterA />   */
- React.createElement(Row, null, " ", React.createElement("p", null, this.state.filterA, "   ")), 
+ React.createElement(Row, null, " ", React.createElement("p", null, this.state.filterAB, "   ")), 
 React.createElement(Row, null, 
    React.createElement(Col, {xs: 1}, React.createElement("div", {className: "well"}, 
      

@@ -29,7 +29,7 @@ class RIlistAll2 extends React.Component {
        sel_radio_a:"",
        sel_radio_b:"",
       
-       filterA:""
+       filterAB:""
       
       
     };
@@ -51,14 +51,12 @@ class RIlistAll2 extends React.Component {
     this.setState({ model: event.model });
     this.setState({ pn: event.pn }); 
    this.setState({ sel_radio_a: event.sel_radio_a }); 
-    this.setState({ filterA: "    Showing results for " + this.state.model + " & " + this.state.pn + " & " +this.state.sel_radio_a  +" & " +this.state.sel_radio_b}); 
+    this.setState({ filterAB: "    Showing results for " + event.model + " & " + event.pn + " & " +event.sel_radio_a  +" & " +this.state.sel_radio_b}); 
     
   }
- handleParentDataB(event) {
-  
-   this.setState({ sel_radio_b: event.sel_radio_b }); 
-   
-    this.setState({ filterA: "    Showing results for " + this.state.model + " & " + this.state.pn + " & " +this.state.sel_radio_a  +" & " +this.state.sel_radio_b}); 
+ handleParentDataB(event) {  
+   this.setState({ sel_radio_b: event.sel_radio_b });
+    this.setState({ filterAB: "    Showing results for " + this.state.model + " & " + this.state.pn + " & " +this.state.sel_radio_a  +" & " +event.sel_radio_b}); 
     
   }
   
@@ -138,7 +136,7 @@ class RIlistAll2 extends React.Component {
               
       {/* 
        < FilterA />   */}   
- <Row> <p>{this.state.filterA}   </p></Row>     
+ <Row> <p>{this.state.filterAB}   </p></Row>     
 <Row > 
    <Col xs={1} ><div  className="well" > 
      
