@@ -48,13 +48,21 @@ class RIlistAll2 extends React.Component {
   
   handleParentData(event) {
     // load reports
+    alert("ok 1")
+    
+    let body = 'Gwo:=' + encodeURIComponent(event.model) +
+      '&fwo=' + encodeURIComponent(event.pn) +
+      '&inspector=' + encodeURIComponent(event.sel_radio_a);
+    
       let that = this;
       let xhr = new XMLHttpRequest();  
   
-    //get-all-users-reports
-      xhr.open('POST', '/get-all-users-reports', true);
+   
+    //  xhr.open('POST', '/get-all-users-reports', true);
+     
+     xhr.open('POST', '/create-filtered-table2', true);
       xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-      xhr.send();
+      xhr.send(body);
       xhr.onreadystatechange = function() {
         if (this.readyState != 4) return;
         if (this.status != 200) {
@@ -64,7 +72,7 @@ class RIlistAll2 extends React.Component {
         let response = JSON.parse(this.responseText);
         
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  
-             
+            alert("ok 2") ;
         
          let reports = response.reports.map((el) => {
           return <RIlistItemAll  key={el.reportID}
@@ -81,14 +89,14 @@ class RIlistAll2 extends React.Component {
         });
         
  // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!           
-        
+        alert("ok 3");
            that.setState({
           ["reports"]: <div className="reports">
                       {reports}     
                     </div>
            });
        }
-    
+    alert("ok 4");
   }
   
   
@@ -96,6 +104,7 @@ class RIlistAll2 extends React.Component {
  
     alert("hi");
     let that = this;
+    
       const xhr = new XMLHttpRequest(); 
     
     xhr.open('POST', '/create-filtered-table2', true);
