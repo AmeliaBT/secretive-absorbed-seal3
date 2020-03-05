@@ -6,16 +6,16 @@ const style = require('../styles/FilterA');
 class FilterB extends React.Component {
   constructor(props){
     super(props);
-    this.state = { 
-      
-     sel_radio_b: ''
+    this.state = {       
+     sel_radio_b: ""
 } 
 
  
     this.submitForm = this.submitForm.bind(this);
      this.onRadioChange = this.onRadioChange.bind(this);
 }  
-submitForm(e) { e.preventDefault();  
+submitForm(e) { e.preventDefault(); 
+               alert("hi from pass/fail ..." + this.state.sel_radio_b);
   this.props.handleDataB(this.state) } ;  
 
   

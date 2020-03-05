@@ -59502,6 +59502,7 @@ class RIlistAll2 extends React.Component {
   }
  handleParentDataB(event) {  
    this.setState({ sel_radio_b: event.sel_radio_b });
+   alert(" pass/fail: " + event.sel_radio_b);
    let dataA=this.state.model + " & " + this.state.pn + " & " +this.state.sel_radio_a ;
   this.setState({ filterAB: "    Showing results for " + dataA  +" & " +event.sel_radio_b}); 
     
@@ -59657,16 +59658,16 @@ const style = __webpack_require__(157);
 class FilterB extends React.Component {
   constructor(props){
     super(props);
-    this.state = { 
-      
-     sel_radio_b: ''
+    this.state = {       
+     sel_radio_b: ""
 } 
 
  
     this.submitForm = this.submitForm.bind(this);
      this.onRadioChange = this.onRadioChange.bind(this);
 }  
-submitForm(e) { e.preventDefault();  
+submitForm(e) { e.preventDefault(); 
+               alert("hi from pass/fail ..." + this.state.sel_radio_b);
   this.props.handleDataB(this.state) } ;  
 
   

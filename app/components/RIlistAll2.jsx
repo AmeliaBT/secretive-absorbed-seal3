@@ -57,6 +57,7 @@ class RIlistAll2 extends React.Component {
   }
  handleParentDataB(event) {  
    this.setState({ sel_radio_b: event.sel_radio_b });
+   alert(" pass/fail: " + event.sel_radio_b);
    let dataA=this.state.model + " & " + this.state.pn + " & " +this.state.sel_radio_a ;
   this.setState({ filterAB: "    Showing results for " + dataA  +" & " +event.sel_radio_b}); 
     
