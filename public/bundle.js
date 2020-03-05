@@ -58686,7 +58686,7 @@ exports = module.exports = __webpack_require__(24)(false);
 
 
 // module
-exports.push([module.i, "/*used:\nclassName=\"profile\"\nclassName=\"show-grid\"\nclassName=\"profile-line\">\nclassName=\"home-title\"\n*/\n.title-line {\n  width:100%;\n  text-align: center; }\n.title-line p{\n    width:100%;\n    text-align: center;\n  }\nspan{ \n  background-color: white;\n  font-size: 24px; \n  font-weight: bold;\n  color:#44708f;}\n\n.myForm{ \nwidth: 80%;\nmargin-left: 10%;\nbackground-color: white;\nborder: 1px #F9F9F9 solid;\n  border-radius: 5px;\n  \n}\n\n.profile {\n  background-color: white;\n  width:80.7%;\n  margin: auto; \n}\n.show-grid {  \n  width:100%;  \n  margin: auto 0;\n}\n\n  .profile-line {\n    background-color: #44708f;\n    width:80.7%;\n    height: 1px;    \n    margin-bottom: 1px;\n    margin-top: 1px\n}\n\n.left-col {\n  background:  blue;   \n  width: 25%;\n  border: 1px #F9F9F9 solid;\n  border-top-right-radius: 1px;\n  border-bottom-left-radius: 1px;\n  border-bottom-left-radius: 1px;\n}\n\n\n\n\n  /*\n  \n.left-col {\n  background:  white;   \n  width: 50%;\n  border: 1px #F9F9F9 solid;\n  border-top-right-radius: 1px;\n  border-bottom-left-radius: 1px;\n  border-bottom-left-radius: 1px;\n}\n\n.right-col {\n  background-color: white; \n  width: 50%;\n  border: 1px #F9F9F9 solid;\n  border-top-right-radius: 1px;\n  border-bottom-left-radius: 1px;\n  border-bottom-right-radius: 1px;\n}\n\n.profile-label {\n  text-align: center;\n  font-size: 30px;\n  color: black;\n  margin: 3%;\n  margin-top: 30px;\n}\n\n.input-label {\n  width: 90%;\n  margin: auto;\n  color: rgb(157, 157, 157);\n}\n\n.library-label {\n  color: #f6ff67;\n  float: left;\n  font-size: 16px;\n  padding: 30px;\n  background: #3f6e8e;\n  margin-top: 10px;\n  margin-left: 20px;\n  height: 140px;\n  border: 1px #9d9d9d solid;\n  border-top-left-radius: 10px;\n  border-top-right-radius: 10px;\n}\n   background-color: red;\n  \n  */", ""]);
+exports.push([module.i, "/*used:\nclassName=\"profile\"\nclassName=\"show-grid\"\nclassName=\"profile-line\">\nclassName=\"home-title\"\n*/\n.filter_msg{margin-left:50px;}\n.title-line {\n  width:100%;\n  text-align: center; }\n.title-line p{\n    width:100%;\n    text-align: center;\n  }\nspan{ \n  background-color: white;\n  font-size: 24px; \n  font-weight: bold;\n  color:#44708f;}\n\n.myForm{ \nwidth: 80%;\nmargin-left: 10%;\nbackground-color: white;\nborder: 1px #F9F9F9 solid;\n  border-radius: 5px;\n  \n}\n\n.profile {\n  background-color: white;\n  width:80.7%;\n  margin: auto; \n}\n.show-grid {  \n  width:100%;  \n  margin: auto 0;\n}\n\n  .profile-line {\n    background-color: #44708f;\n    width:80.7%;\n    height: 1px;    \n    margin-bottom: 1px;\n    margin-top: 1px\n}\n\n.left-col {\n  background:  blue;   \n  width: 25%;\n  border: 1px #F9F9F9 solid;\n  border-top-right-radius: 1px;\n  border-bottom-left-radius: 1px;\n  border-bottom-left-radius: 1px;\n}\n\n\n\n\n  /*\n  \n.left-col {\n  background:  white;   \n  width: 50%;\n  border: 1px #F9F9F9 solid;\n  border-top-right-radius: 1px;\n  border-bottom-left-radius: 1px;\n  border-bottom-left-radius: 1px;\n}\n\n.right-col {\n  background-color: white; \n  width: 50%;\n  border: 1px #F9F9F9 solid;\n  border-top-right-radius: 1px;\n  border-bottom-left-radius: 1px;\n  border-bottom-right-radius: 1px;\n}\n\n.profile-label {\n  text-align: center;\n  font-size: 30px;\n  color: black;\n  margin: 3%;\n  margin-top: 30px;\n}\n\n.input-label {\n  width: 90%;\n  margin: auto;\n  color: rgb(157, 157, 157);\n}\n\n.library-label {\n  color: #f6ff67;\n  float: left;\n  font-size: 16px;\n  padding: 30px;\n  background: #3f6e8e;\n  margin-top: 10px;\n  margin-left: 20px;\n  height: 140px;\n  border: 1px #9d9d9d solid;\n  border-top-left-radius: 10px;\n  border-top-right-radius: 10px;\n}\n   background-color: red;\n  \n  */", ""]);
 
 // exports
 
@@ -59504,13 +59504,13 @@ class RIlistAll2 extends React.Component {
     
    this.setState({ sel_radio_a: event.sel_radio_a });  
     let dataB=this.state.sel_radio_b;
-    this.setState({ filterAB: "    Showing results for " + event.model + " & " + event.pn + " & " +event.sel_radio_a  +" & " + dataB}); 
+    this.setState({ filterAB: "    Showing results for " + event.model + " " + event.pn + " " +event.sel_radio_a  +" " + dataB}); 
     
   }
  handleParentDataB(event) {  
    this.setState({ sel_radio_b: event.sel_radio_b });
-   let dataA=this.state.model + " & " + this.state.pn + " & " +this.state.sel_radio_a ;
-  this.setState({ filterAB: "    Showing results for " + dataA  +" & " +event.sel_radio_b}); 
+   let dataA=this.state.model + "  " + this.state.pn + "  " +this.state.sel_radio_a ;
+  this.setState({ filterAB: "    Showing results for " + dataA  +"  " +event.sel_radio_b}); 
     
   }
   
@@ -59590,7 +59590,7 @@ class RIlistAll2 extends React.Component {
               
       /* 
        < FilterA />   */
- React.createElement(Row, null, " ", React.createElement("p", null, this.state.filterAB, "   ")), 
+ React.createElement(Row, null, " ", React.createElement("p", {className: "filter_msg"}, this.state.filterAB, "   ")), 
 React.createElement(Row, null, 
    React.createElement(Col, {xs: 1}, React.createElement("div", {className: "well"}, 
      

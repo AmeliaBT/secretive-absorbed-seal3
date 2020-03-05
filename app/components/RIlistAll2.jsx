@@ -52,13 +52,13 @@ class RIlistAll2 extends React.Component {
     
    this.setState({ sel_radio_a: event.sel_radio_a });  
     let dataB=this.state.sel_radio_b;
-    this.setState({ filterAB: "    Showing results for " + event.model + " & " + event.pn + " & " +event.sel_radio_a  +" & " + dataB}); 
+    this.setState({ filterAB: "    Showing results for " + event.model + " " + event.pn + " " +event.sel_radio_a  +" " + dataB}); 
     
   }
  handleParentDataB(event) {  
    this.setState({ sel_radio_b: event.sel_radio_b });
-   let dataA=this.state.model + " & " + this.state.pn + " & " +this.state.sel_radio_a ;
-  this.setState({ filterAB: "    Showing results for " + dataA  +" & " +event.sel_radio_b}); 
+   let dataA=this.state.model + "  " + this.state.pn + "  " +this.state.sel_radio_a ;
+  this.setState({ filterAB: "    Showing results for " + dataA  +"  " +event.sel_radio_b}); 
     
   }
   
@@ -138,7 +138,7 @@ class RIlistAll2 extends React.Component {
               
       {/* 
        < FilterA />   */}   
- <Row> <p>{this.state.filterAB}   </p></Row>     
+ <Row> <p className="filter_msg">{this.state.filterAB}   </p></Row>     
 <Row > 
    <Col xs={1} ><div  className="well" > 
      
