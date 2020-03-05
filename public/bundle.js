@@ -59616,7 +59616,7 @@ React.createElement(Table, {className: "myForm"},
                React.createElement(Col, { sm: 1}, React.createElement("b", null, " Date Inspected"), " "), 
               React.createElement(Col, { sm: 1}, React.createElement("b", null, "Pass /Fail "), " "), 
                React.createElement(Col, {sm: 1}, " ", React.createElement("b", null, "Lot Size "), " "), 
-              React.createElement(Col, {sm: 2}, " ", React.createElement("b", null, "Comment"), " "), 
+              React.createElement(Col, {sm: 3}, " ", React.createElement("b", null, "Comment"), " "), 
                React.createElement(Col, {sm: 1}, " ", React.createElement("b", null, "View "), " ")
            ), 
         
