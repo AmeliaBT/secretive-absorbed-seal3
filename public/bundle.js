@@ -59504,22 +59504,14 @@ class RIlistAll2 extends React.Component {
   
   
   handleParentData(event) {
-    let dataB=this.state.sel_radio_b;
-    this.setState({
-      model: event.model ,
-      pn: event.pn , 
-      sel_radio_a: event.sel_radio_a ,
-      filterAB: "    Showing results for " + event.model + " " + event.pn + " " +event.sel_radio_a  +" " + dataB
     
-    });
-  
+/*  
     alert("hi");
     let that = this;
       const xhr = new XMLHttpRequest();  
     
     xhr.open('POST', '/create-filtered-table2', true);
-    
-     //this.server.open(this.method, this.url, true);
+     this.server.open(this.method, this.url, true);
       xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');     
       
       xhr.send();
@@ -59541,30 +59533,29 @@ class RIlistAll2 extends React.Component {
              
         
          let reports = response.reports.map((el) => {
-          return React.createElement(RIlistItemAll, {key: el.reportID, 
-           reportnumber: el.reportID, 
-           inspector: el.inspector, 
-             fwo: el.fwo, 
-           Gwo: el.Gwo, 
-           jwo: el.jwo, 
-           two: el.two, 
-           owo: el.owo, 
-           record: el.record, 
-           lwo: el.lwo}
-            ) 
+          return <RIlistItemAll  key={el.reportID}
+           reportnumber={el.reportID}  
+           inspector={el.inspector}
+             fwo={el.fwo}     
+           Gwo={el.Gwo}
+           jwo={el.jwo}
+           two={el.two}
+           owo={el.owo}
+           record={el.record}
+           lwo ={el.lwo}       
+            /> 
         });      
      
         
-     /*      that.setState({
+           that.setState({
           ["reports"]: <div className="reports">
                       {reports}     
                     </div>
            });
-        */
       }
     
   }
-    
+    */
   }
     
  handleParentDataB(event) {  
