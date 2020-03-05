@@ -86,22 +86,34 @@ class RIlistAll2 extends React.Component {
           return;
         }
         let response = JSON.parse(this.responseText);
-        if(response.error == 0) {
-           window.location.href = "/list-all2";
+        
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  
+             
+        
+         let reports = response.reports.map((el) => {
+          return <RIlistItemAll  key={el.reportID}
+           reportnumber={el.reportID}  
+           inspector={el.inspector}
+             fwo={el.fwo}     
+           Gwo={el.Gwo}
+           jwo={el.jwo}
+           two={el.two}
+           owo={el.owo}
+           record={el.record}
+           lwo ={el.lwo}       
+            /> 
+        });
+        
+ // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!           
+        
            that.setState({
-          ["modal_label"]: "Success"
+          ["reports"]: <div className="reports">
+                      {reports}     
+                    </div>
            });
-        }
-        else {
-          that.setState({
-          ["modal_label"]: "Oops, something went wrong :/ try again pls"
-           });
-         }
-        }
+       }
+    
   }
-
-  }
-  
   
   
   
