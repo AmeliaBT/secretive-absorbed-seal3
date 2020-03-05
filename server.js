@@ -481,22 +481,15 @@ app.post("/get-user-filtered-reports", function(request, response) {
 //create-filtered-table2
 
 app.post("/create-filtered-table2", function(request, response) {
-   reportModel.find(request.body, (err, doc) => {
-      if (err) throw err;
+   //reportModel.find(request.body, (err, doc) => {
+     // if (err) throw err;
     // let NN=user.inspname;     
      // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-         reportModel.find({}, (err, docs) => {
-          if(err) throw err;
-          let reports = []   ;
-          for(let i = docs.length-1; i > -1; i--) {
-         if(docs[i].inspector === NN) { reports.push(docs[i]);}   
-            /* 
-              ["reportsLink"]: "/reports",
-             ["listLink"]: "/reports"            */              
-            if(i == 0) response.json({reports: reports});
-
-          }
-       });
+  reportModel.findOne({inspname: request.body["inspname"]}, (err, user) => {
+      if (err) throw err;
+      response.json({street: user.street, city: user.city});
+    });
+       
     
     // });
 });
