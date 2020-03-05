@@ -59467,6 +59467,7 @@ const FilterB =__webpack_require__(391);
 //const ExportData = require('./ExportData');
 const RIlistItemAll = __webpack_require__(155);
 let test = {a: 1, b: 2};
+
 /* the  page that shows all reports */
 class RIlistAll2 extends React.Component {
   constructor(props) {
@@ -59499,6 +59500,9 @@ class RIlistAll2 extends React.Component {
    /***********************/
    // handlers
    /***********************/
+  handleFiltersTest() {alert("hi")};
+  
+  
   handleParentData(event) {
     this.setState({ model: event.model });
     this.setState({ pn: event.pn }); 
@@ -59506,7 +59510,8 @@ class RIlistAll2 extends React.Component {
    this.setState({ sel_radio_a: event.sel_radio_a });  
     let dataB=this.state.sel_radio_b;
     this.setState({ filterAB: "    Showing results for " + event.model + " " + event.pn + " " +event.sel_radio_a  +" " + dataB}); 
-    this.handleFiltersTest;
+
+    alert("hi");
   }
  handleParentDataB(event) {  
    this.setState({ sel_radio_b: event.sel_radio_b });
@@ -59514,7 +59519,8 @@ class RIlistAll2 extends React.Component {
   this.setState({ filterAB: "    Showing results for " + dataA  +"  " +event.sel_radio_b}); 
     
   }
-  handleFiltersTest() {alert("hi")};
+  
+
   
  /* handleFilters() {
     
