@@ -12583,15 +12583,17 @@ class FilterA extends React.Component {
 
    this.handleChangeValue = this.handleChangeValue.bind(this);
     this.submitForm = this.submitForm.bind(this);
+      this.clearForm = this.clearForm.bind(this);
      this.onRadioChange = this.onRadioChange.bind(this);
 }  
 submitForm(e) { e.preventDefault();  
   this.props.handleData(this.state) } ;  
 
-  clearForm(e) {
-     this.setState({ 
-       
-       [name]: "" }); 
+  clearForm() {
+    this.setState({ 
+       model: '', 
+      pn: '' ,
+     sel_radio_a: ''}); 
   }
   
   
@@ -59666,12 +59668,13 @@ class FilterB extends React.Component {
      sel_radio_b: ""
 } 
 
- 
+   this.clearForm = this.clearForm.bind(this);
     this.submitForm = this.submitForm.bind(this);
      this.onRadioChange = this.onRadioChange.bind(this);
 }  
 submitForm(e) { e.preventDefault();           
   this.props.handleDataB(this.state) } ;  
+ 
   
   
    onRadioChange(e){
@@ -59679,7 +59682,10 @@ submitForm(e) { e.preventDefault();
       sel_radio_b: e.target.value
     });
   }
-  
+  clearForm() {
+    this.setState({        
+     sel_radio_b: ''}); 
+  } 
   
   render() { return (        React.createElement("div", null, 
 React.createElement("form", null, 
@@ -59715,7 +59721,9 @@ React.createElement("form", null,
           ), 
 
   
-  React.createElement("input", {type: "button", value: "Submit", onClick: this.submitForm})), "        ")    )  }}
+  React.createElement("input", {type: "button", value: "Submit", onClick: this.submitForm})), 
+     React.createElement("input", {type: "button", value: "Clear", onClick: this.clearForm})
+    )    )  }}
 
 
 module.exports = FilterB;

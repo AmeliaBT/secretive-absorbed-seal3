@@ -10,12 +10,13 @@ class FilterB extends React.Component {
      sel_radio_b: ""
 } 
 
- 
+   this.clearForm = this.clearForm.bind(this);
     this.submitForm = this.submitForm.bind(this);
      this.onRadioChange = this.onRadioChange.bind(this);
 }  
 submitForm(e) { e.preventDefault();           
   this.props.handleDataB(this.state) } ;  
+ 
   
   
    onRadioChange(e){
@@ -23,7 +24,10 @@ submitForm(e) { e.preventDefault();
       sel_radio_b: e.target.value
     });
   }
-  
+  clearForm() {
+    this.setState({        
+     sel_radio_b: ''}); 
+  } 
   
   render() { return (        <div>        
 <form>
@@ -59,7 +63,9 @@ submitForm(e) { e.preventDefault();
           </ul>
 
   
-  <input type="button" value="Submit" onClick={this.submitForm}/></form>        </div>    )  }}
+  <input type="button" value="Submit" onClick={this.submitForm}/></form> 
+     <input type="button" value="Clear" onClick={this.clearForm}/>
+    </div>    )  }}
 
 
 module.exports = FilterB;
