@@ -52,15 +52,66 @@ class RIlistAll2 extends React.Component {
   
   
   handleParentData(event) {
-    this.setState({ model: event.model });
-    ,this.setState({ pn: event.pn }); 
-    
-   this.setState({ sel_radio_a: event.sel_radio_a });  
     let dataB=this.state.sel_radio_b;
-    this.setState({ filterAB: "    Showing results for " + event.model + " " + event.pn + " " +event.sel_radio_a  +" " + dataB}); 
-
+    this.setState({
+      model: event.model ,
+      pn: event.pn , 
+      sel_radio_a: event.sel_radio_a ,
+      filterAB: "    Showing results for " + event.model + " " + event.pn + " " +event.sel_radio_a  +" " + dataB
+    
+    });
+  
     alert("hi");
+    let that = this;
+      const xhr = new XMLHttpRequest();  
+    
+    xhr.open('POST', '/create-filtered-table2', true);
+      xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');     
+      
+      xhr.send();
+      xhr.onreadystatechange = function() {
+                 
+ let body = 'Gwo:=' + encodeURIComponent(this.state.model) +
+      '&fwo=' + encodeURIComponent(this.state.pn) +
+      '&inspector=' + encodeURIComponent(this.state.sel_radio_a);
+      xhr.send(body);
+      xhr.onreadystatechange = function() {
+        if (this.readyState != 4) return;
+        if (this.status != 200) {
+          alert( 'error: ' + (this.status ? this.statusText : 'request has not been set') );
+          return;
+        }
+        let response = JSON.parse(this.responseText);
+        
+
+             
+        
+         let reports = response.reports.map((el) => {
+          return <RIlistItemAll  key={el.reportID}
+           reportnumber={el.reportID}  
+           inspector={el.inspector}
+             fwo={el.fwo}     
+           Gwo={el.Gwo}
+           jwo={el.jwo}
+           two={el.two}
+           owo={el.owo}
+           record={el.record}
+           lwo ={el.lwo}       
+            /> 
+        });      
+     
+        
+           that.setState({
+          ["reports"]: <div className="reports">
+                      {reports}     
+                    </div>
+           });
+      }
+    
   }
+    
+  }
+    
  handleParentDataB(event) {  
    this.setState({ sel_radio_b: event.sel_radio_b });
    let dataA=this.state.model + "  " + this.state.pn + "  " +this.state.sel_radio_a ;
