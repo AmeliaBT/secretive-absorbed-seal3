@@ -59471,10 +59471,9 @@ class RIlistAll2 extends React.Component {
        reports: "loading..." ,
        model: '', 
        pn: '' ,
+      sel_radio_b:"",
        sel_radio_a:"",
-       sel_radio_b:"",
-      
-       filterAB:""
+        filterAB:""
       
       
     };
@@ -59495,14 +59494,14 @@ class RIlistAll2 extends React.Component {
   handleParentData(event) {
     this.setState({ model: event.model });
     this.setState({ pn: event.pn }); 
-   this.setState({ sel_radio_a: event.sel_radio_a }); 
+    
+   this.setState({ sel_radio_a: event.sel_radio_a });  
     let dataB=this.state.sel_radio_b;
     this.setState({ filterAB: "    Showing results for " + event.model + " & " + event.pn + " & " +event.sel_radio_a  +" & " + dataB}); 
     
   }
  handleParentDataB(event) {  
    this.setState({ sel_radio_b: event.sel_radio_b });
-   alert(" pass/fail: " + event.sel_radio_b);
    let dataA=this.state.model + " & " + this.state.pn + " & " +this.state.sel_radio_a ;
   this.setState({ filterAB: "    Showing results for " + dataA  +" & " +event.sel_radio_b}); 
     
@@ -59591,7 +59590,7 @@ React.createElement(Row, null,
      
       React.createElement(FilterA, {handleData: this.handleParentData}), 
      React.createElement("br", null), 
-      React.createElement(FilterB, {handleData: this.handleParentDataB})
+      React.createElement(FilterB, {handleDataB: this.handleParentDataB})
      
    ), " "), 
   
@@ -59666,11 +59665,8 @@ class FilterB extends React.Component {
     this.submitForm = this.submitForm.bind(this);
      this.onRadioChange = this.onRadioChange.bind(this);
 }  
-submitForm(e) { e.preventDefault(); 
-               alert("hi from pass/fail ..." + this.state.sel_radio_b);
+submitForm(e) { e.preventDefault();           
   this.props.handleDataB(this.state) } ;  
-
-  
   
   
    onRadioChange(e){

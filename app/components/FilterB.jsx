@@ -14,11 +14,8 @@ class FilterB extends React.Component {
     this.submitForm = this.submitForm.bind(this);
      this.onRadioChange = this.onRadioChange.bind(this);
 }  
-submitForm(e) { e.preventDefault(); 
-               alert("hi from pass/fail ..." + this.state.sel_radio_b);
+submitForm(e) { e.preventDefault();           
   this.props.handleDataB(this.state) } ;  
-
-  
   
   
    onRadioChange(e){
