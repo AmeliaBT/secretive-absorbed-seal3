@@ -50,7 +50,7 @@ class RIlistAll2 extends React.Component {
     // load reports
     alert("ok 1")
     
-    let body = 'Gwo:=' + encodeURIComponent(event.model) +
+    let body = 'Gwo=' + encodeURIComponent(event.model) +
       '&fwo=' + encodeURIComponent(event.pn) +
       '&inspector=' + encodeURIComponent(event.sel_radio_a);
     
