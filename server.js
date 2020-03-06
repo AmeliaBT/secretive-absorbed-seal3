@@ -493,12 +493,15 @@ app.post("/create-filtered-table2", function(request, response) {
          reportModel.find({}, (err, docs) => {
           if(err) throw err;
           let reports = []   ;
+           let reports2 = []   ;
           for(let i = docs.length-1; i > -1; i--) {
-            console.log(docs[i].inspector);
-         if(docs[i].inspector === NN) { reports.push(docs[i]);}   
-                       
-            if(i == 0) response.json({reports: reports});
-
+            //console.log(docs[i].inspector);
+         if(docs[i].inspector === NN) { reports.push(docs[i]);} else{
+           reports2.push(docs[i]);
+         }  
+             console.log(reports)  ;        
+            if(i == 0) response.json({reports: reports2});
+console.log(reports2.length);
           }
        });
     
