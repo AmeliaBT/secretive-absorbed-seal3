@@ -59519,10 +59519,10 @@ class RIlistAll2 extends React.Component {
           return;
         }
         let response = JSON.parse(this.responseText);
-        alert("got resp")
+        alert("got resp");
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  
-             
-        
+            alert(response.length) ;
+         alert(response.reports[0]);
          let reports = response.reports.map((el) => {
           return React.createElement(RIlistItemAll, {key: el.reportID, 
            reportnumber: el.reportID, 

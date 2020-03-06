@@ -499,6 +499,7 @@ app.post("/create-filtered-table2", function(request, response) {
   //  console.log(request); 
       if (err) throw err;
            response.json(doc);
+    console.log(doc);
           }        
      );
 
