@@ -481,18 +481,24 @@ app.post("/get-user-filtered-reports", function(request, response) {
 //create-filtered-table2
 
 app.post("/create-filtered-table2", function(request, response) {
-   reportModel.find(
-     {"Gwo":request.body["Gwo"], //Model
-     "fwo":request.body["fwo"], //pn
-     "inspector":request.body["inspector"]
-                      // "Gwo":request.body["Gwo"]
+ //  reportModel.find(
+    // userModel.findById(request.session.passport.user, (err, user) => {
+  // reportModel.find(request.body, (err, docs) => {
+       //if (err) throw err;
+     let NN= request.body.insector;     
+     // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+         reportModel.find({}, (err, docs) => {
+          if(err) throw err;
+          let reports = []   ;
+          for(let i = docs.length-1; i > -1; i--) {
+         if(docs[i].inspector === NN) { reports.push(docs[i]);}   
                        
-                       } , 
-     (err, doc) => {     
-     if (err) throw err;   
-          response.json(doc);   
-});
+            if(i == 0) response.json({reports: reports});
 
+          }
+       });
+    
+   //  });
 });
 
   app.post("/report-edit", function(request, response) {  
