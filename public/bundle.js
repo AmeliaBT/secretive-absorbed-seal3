@@ -59514,6 +59514,8 @@ class RIlistAll2 extends React.Component {
      
      xhr.open('POST', '/create-filtered-table2', true);
       xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    alert("ok 1 body: ");
+    alert(body);
       xhr.send(body);
       xhr.onreadystatechange = function() {
         if (this.readyState != 4) return;
@@ -59525,6 +59527,7 @@ class RIlistAll2 extends React.Component {
         
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  
             alert("ok 2") ;
+          alert(response) ;
         
          let reports = response.reports.map((el) => {
           return React.createElement(RIlistItemAll, {key: el.reportID, 
