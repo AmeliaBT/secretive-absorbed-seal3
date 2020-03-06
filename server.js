@@ -495,9 +495,9 @@ app.post("/create-filtered-table2", function(request, response) {
   console.log(NN3);
   
      // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-         reportModel.find({'inspector':}, (err, docs) => {
+         reportModel.find({'inspector' : 'Tuan'},  'fwo Gwo reportID',(err, docs) => {
            if(err) throw err;
-
+           
            /*
           if(err) throw err;
           let reports = []   ;
