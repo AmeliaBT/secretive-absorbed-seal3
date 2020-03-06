@@ -486,6 +486,7 @@ app.post("/create-filtered-table2", function(request, response) {
   // reportModel.find(request.body, (err, docs) => {
        //if (err) throw err;
      let NN= request.body.inspector; 
+  NN="RI-person2"
   console.log("server NN: ");
   console.log(NN);
   
@@ -499,9 +500,12 @@ app.post("/create-filtered-table2", function(request, response) {
          if(docs[i].inspector === NN) { reports.push(docs[i]);} else{
            reports2.push(docs[i]);
          }  
-             console.log(reports)  ;        
-            if(i == 0) response.json({reports: reports2});
-console.log(reports2.length);
+            console.log("reports")  ;  
+             console.log(reports)  ; 
+            console.log("reports2")  ;  
+             console.log(reports2)  ; 
+            if(i == 0) response.json({reports: reports});
+console.log(reports.length);
           }
        });
     
