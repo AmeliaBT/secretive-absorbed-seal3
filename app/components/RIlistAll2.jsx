@@ -46,26 +46,20 @@ class RIlistAll2 extends React.Component {
    /***********************/
    
   
-  handleParentData(event) {
+ // handleParentData(event) {
+    handleParentData() {
+      alert('hi from handleParentData')
     // load reports
-    
-    
-    let body = 'Gwo=' + encodeURIComponent(event.model) +
-      '&fwo=' + encodeURIComponent(event.pn) +
-      '&inspector=' + encodeURIComponent(event.sel_radio_a);
-    
+   //componentWillMount() {
+    // load reports
       let that = this;
       let xhr = new XMLHttpRequest();  
   
-   
-    //  xhr.open('POST', '/get-all-users-reports', true);
-     
-     xhr.open('POST', '/create-filtered-table2', true);
+    //get-all-users-reports
+   // xhr.open('POST', '/get-all-users-reports', true);
+      xhr.open('POST', '/create-filtered-table2', true);
       xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-  
-   // alert(body);
-   // alert(body.inspector);
-      xhr.send(body);
+      xhr.send();
       xhr.onreadystatechange = function() {
         if (this.readyState != 4) return;
         if (this.status != 200) {
@@ -73,10 +67,9 @@ class RIlistAll2 extends React.Component {
           return;
         }
         let response = JSON.parse(this.responseText);
-        
+        alert("got resp")
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  
-           // alert("ok 2 respons from server ") ;
-          //alert(response.length) ;
+             
         
          let reports = response.reports.map((el) => {
           return <RIlistItemAll  key={el.reportID}
@@ -93,15 +86,16 @@ class RIlistAll2 extends React.Component {
         });
         
  // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!           
-     //   alert("ok 3");
+        
            that.setState({
           ["reports"]: <div className="reports">
                       {reports}     
                     </div>
            });
        }
-    alert("ok 4");
+    
   }
+
   
   
   xxhandleParentData(event) {   
