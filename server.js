@@ -485,8 +485,9 @@ app.post("/create-filtered-table2", function(request, response) {
     // userModel.findById(request.session.passport.user, (err, user) => {
   // reportModel.find(request.body, (err, docs) => {
        //if (err) throw err;
-     let NN= request.body.inspector; 
-  NN="Tuan";
+     let NN= request.body.Gwo; 
+  let NN2= request.body.Gwo; 
+ // NN="Tuan";
   console.log("server NN: ");
   console.log(NN);
   
@@ -497,9 +498,8 @@ app.post("/create-filtered-table2", function(request, response) {
            let reports2 = []   ;
           for(let i = docs.length-1; i > -1; i--) {
             //console.log(docs[i].inspector);
-         if(docs[i].inspector === NN) { reports.push(docs[i]);} else{
-           reports2.push(docs[i]);
-         }  
+         if(docs[i].Gwo === NN) { reports.push(docs[i]);} 
+           // else{           reports2.push(docs[i]);         }  
             
           //  if(i == 0) 
 
