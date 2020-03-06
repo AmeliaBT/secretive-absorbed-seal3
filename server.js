@@ -500,12 +500,12 @@ app.post("/create-filtered-table2", function(request, response) {
          if(docs[i].inspector === NN) { reports.push(docs[i]);} else{
            reports2.push(docs[i]);
          }  
-            console.log("reports")  ;  
-             console.log(reports)  ; 
-            console.log("reports2")  ;  
-             console.log(reports2)  ; 
+            console.log("good reports qty:")  ;  
+            console.log(reports.length)  ; 
+            console.log("bad reports2 aty: ")  ;  
+            console.log(reports2.length)  ; 
             if(i == 0) response.json({reports: reports});
-console.log(reports.length);
+
           }
        });
     
