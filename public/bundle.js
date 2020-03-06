@@ -59500,7 +59500,7 @@ class RIlistAll2 extends React.Component {
   
   handleParentData(event) {
     // load reports
-    alert("ok 1")
+    
     
     let body = 'Gwo=' + encodeURIComponent(event.model) +
       '&fwo=' + encodeURIComponent(event.pn) +
@@ -59514,9 +59514,9 @@ class RIlistAll2 extends React.Component {
      
      xhr.open('POST', '/create-filtered-table2', true);
       xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    alert("ok 1 body: ");
-    alert(body);
-    alert(body.inspector);
+  
+   // alert(body);
+   // alert(body.inspector);
       xhr.send(body);
       xhr.onreadystatechange = function() {
         if (this.readyState != 4) return;
@@ -59527,8 +59527,8 @@ class RIlistAll2 extends React.Component {
         let response = JSON.parse(this.responseText);
         
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  
-            alert("ok 2 respons from server ") ;
-          alert(response.length) ;
+           // alert("ok 2 respons from server ") ;
+          //alert(response.length) ;
         
          let reports = response.reports.map((el) => {
           return React.createElement(RIlistItemAll, {key: el.reportID, 
@@ -59545,7 +59545,7 @@ class RIlistAll2 extends React.Component {
         });
         
  // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!           
-        alert("ok 3");
+     //   alert("ok 3");
            that.setState({
           ["reports"]: React.createElement("div", {className: "reports"}, 
                       reports

@@ -485,20 +485,20 @@ app.post("/create-filtered-table2", function(request, response) {
     // userModel.findById(request.session.passport.user, (err, user) => {
   // reportModel.find(request.body, (err, docs) => {
        //if (err) throw err;
-     let NN= request.body.Gwo; 
-  let NN2= request.body.inspector; 
-   let NN3= request.body.fwo; 
+   //  let NN= request.body.Gwo; 
+  //let NN2= request.body.inspector; 
+  // let NN3= request.body.fwo; 
  // NN="Tuan";
-  console.log("server NN: ");
-  console.log(NN);
-  console.log(NN2);
-  console.log(NN3);
+//  console.log("server NN: ");
+ // console.log(NN);
+ // console.log(NN2);
+ // console.log(NN3);
   
-  reportModel.findOne({"inspector":request.body["inspector"]}, (err, doc) => {
+  reportModel.find({"two":"Fail"}, (err, doc) => {
  // console.log("request: ");
   //  console.log(request); 
       if (err) throw err;
-            response.json(doc);
+           // response.json(doc);
           }        
      );
 
