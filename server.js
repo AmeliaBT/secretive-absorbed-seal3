@@ -494,13 +494,22 @@ app.post("/create-filtered-table2", function(request, response) {
   console.log(NN2);
   console.log(NN3);
   
+  reportModel.findOne({"inspector":request.body["inspector"]}, (err, doc) => {
+ // console.log("request: ");
+  //  console.log(request); 
+      if (err) throw err;
+            response.json(doc);
+          }        
+     );
+
+  
      // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-         reportModel.findOne({'inspector' : 'Tuan'}, (err, doc) => {
+          /* reportModel.findOne({'inspector' : 'Tuan'}, (err, doc) => {
            if(err) throw err;
            console.log("doc: ");
            console.log(doc);
            response.json(doc);
-           /*
+         
           if(err) throw err;
           let reports = []   ;
            let reports2 = []   ;
@@ -512,7 +521,7 @@ app.post("/create-filtered-table2", function(request, response) {
            response.json({reports: reports});
            */
            
-       });
+       //});
     
    //  });
 });
