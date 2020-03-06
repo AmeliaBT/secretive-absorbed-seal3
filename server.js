@@ -495,21 +495,21 @@ app.post("/create-filtered-table2", function(request, response) {
   console.log(NN3);
   
      // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-         reportModel.find({}, (err, docs) => {
+         reportModel.find({'inspector':}, (err, docs) => {
+           if(err) throw err;
+
+           /*
           if(err) throw err;
           let reports = []   ;
            let reports2 = []   ;
-          for(let i = docs.length-1; i > -1; i--) {
-            //console.log(docs[i].inspector);
+          for(let i = docs.length-1; i > -1; i--) {           
          if(docs[i].Gwo === NN) { reports.push(docs[i]);} 
-           // else{           reports2.push(docs[i]);         }  
-            
-          //  if(i == 0) 
-
           }
            console.log("QTY: ")
            console.log(reports.length)
            response.json({reports: reports});
+           */
+           
        });
     
    //  });
