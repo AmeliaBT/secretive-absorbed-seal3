@@ -485,12 +485,16 @@ app.post("/create-filtered-table2", function(request, response) {
     // userModel.findById(request.session.passport.user, (err, user) => {
   // reportModel.find(request.body, (err, docs) => {
        //if (err) throw err;
-     let NN= request.body.insector;     
+     let NN= request.body.inspector; 
+  console.log("server NN: ");
+  console.log(NN);
+  
      // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
          reportModel.find({}, (err, docs) => {
           if(err) throw err;
           let reports = []   ;
           for(let i = docs.length-1; i > -1; i--) {
+            console.log(docs[i].inspector);
          if(docs[i].inspector === NN) { reports.push(docs[i]);}   
                        
             if(i == 0) response.json({reports: reports});
