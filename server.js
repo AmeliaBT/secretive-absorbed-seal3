@@ -486,10 +486,13 @@ app.post("/create-filtered-table2", function(request, response) {
   // reportModel.find(request.body, (err, docs) => {
        //if (err) throw err;
      let NN= request.body.Gwo; 
-  let NN2= request.body.Gwo; 
+  let NN2= request.body.inspector; 
+   let NN3= request.body.fwo; 
  // NN="Tuan";
   console.log("server NN: ");
   console.log(NN);
+  console.log(NN2);
+  console.log(NN3);
   
      // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
          reportModel.find({}, (err, docs) => {
