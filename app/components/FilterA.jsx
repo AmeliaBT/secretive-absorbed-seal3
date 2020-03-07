@@ -57,8 +57,8 @@ PN: <br />
               <label>
                 <input
                   type="radio"
-                  value="Helen,"
-                  checked={this.state.sel_radio_a == "Helen"}
+                  value="Helen, "
+                  checked={this.state.sel_radio_a === "Helen, "}
                   onChange={this.onRadioChange}
                 />
                 <span className="filter_lbl" >Helen</span>

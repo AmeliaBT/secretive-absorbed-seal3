@@ -12626,8 +12626,8 @@ React.createElement("br", null),
               React.createElement("label", null, 
                 React.createElement("input", {
                   type: "radio", 
-                  value: "Helen,", 
-                  checked: this.state.sel_radio_a === "Helen,", 
+                  value: "Helen, ", 
+                  checked: this.state.sel_radio_a === "Helen, ", 
                   onChange: this.onRadioChange}
                 ), 
                 React.createElement("span", {className: "filter_lbl"}, "Helen")
