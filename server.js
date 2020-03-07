@@ -493,8 +493,8 @@ app.post("/create-filtered-table2", function(request, response) {
  // console.log(NN3);
   
  // reportModel.find({"two":"Fail"}, (err, doc) => { this is ok
-// sample: userModel.find({ inspname: request.body["inspname"]},
-  //try;
+
+ 
    //reportModel.find({"inspector":request.body.inspector}, (err, doc) => {
   reportModel.find({ inspector: request.body["inspector"]}, (err, doc) => {
       if (err) throw err;
@@ -502,31 +502,9 @@ app.post("/create-filtered-table2", function(request, response) {
    // console.log(doc);
           }        
      );
-
-  
-     // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-          /* reportModel.findOne({'inspector' : 'Tuan'}, (err, doc) => {
-           if(err) throw err;
-           console.log("doc: ");
-           console.log(doc);
-           response.json(doc);
-         
-          if(err) throw err;
-          let reports = []   ;
-           let reports2 = []   ;
-          for(let i = docs.length-1; i > -1; i--) {           
-         if(docs[i].Gwo === NN) { reports.push(docs[i]);} 
-          }
-           console.log("QTY: ")
-           console.log(reports.length)
-           response.json({reports: reports});
-           */
            
-       //});
-    
-   //  });
 });
-
+  // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   app.post("/report-edit", function(request, response) {  
    reportModel.findOne({"reportID":request.body["reportID"]}, (err, doc) => {
  // console.log("request: ");
