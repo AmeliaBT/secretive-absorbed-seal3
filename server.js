@@ -497,7 +497,8 @@ app.post("/create-filtered-table2", function(request, response) {
  // reportModel.find({"two":"Fail"}, (err, doc) => { this is ok
 // sample: userModel.find({ inspname: request.body["inspname"]},
   //try;
-   reportModel.find({"inspector":request.body.inspector}, (err, doc) => {
+   //reportModel.find({"inspector":request.body.inspector}, (err, doc) => {
+  reportModel.find({ inspector: request.body["inspector"]}, (err, doc) => {
       if (err) throw err;
            response.json(doc);
     console.log(doc);

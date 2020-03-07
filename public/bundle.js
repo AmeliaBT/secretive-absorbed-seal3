@@ -59513,9 +59513,16 @@ class RIlistAll2 extends React.Component {
       xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
       xhr.send();
       xhr.onreadystatechange = function() {
-         let body = 'Gwo:=' + encodeURIComponent(this.state.model) +
+      /*   let body = 'Gwo:=' + encodeURIComponent(this.state.model) +
       '&fwo=' + encodeURIComponent(this.state.pn) +
       '&inspector=' + encodeURIComponent(this.state.sel_radio_a);
+        let body = 'Gwo:=' + encodeURIComponent(event.model) +
+      '&fwo=' + encodeURIComponent(event.pn) +
+      '&inspector=' + encodeURIComponent(event.sel_radio_a);
+      
+       */
+        //let body = 'inspector=' + encodeURIComponent(event.sel_radio_a);
+        let body = 'inspector='+ encodeURIComponent('Tuan');
         alert(body);
       xhr.send(body);
         if (this.readyState != 4) return;
@@ -59526,7 +59533,7 @@ class RIlistAll2 extends React.Component {
         let response = JSON.parse(this.responseText);
      
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  
-            alert(response.length) ;
+            alert("len: " + response.length) ;
        
          let reports = response.map((el) => {
           
