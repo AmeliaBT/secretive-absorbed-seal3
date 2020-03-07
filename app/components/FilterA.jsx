@@ -81,11 +81,11 @@ PN: <br />
               <label>
                 <input
                   type="radio"
-                  value="Abc"
-                  checked={this.state.sel_radio_a === "Abc"}
+                  value="Jim"
+                  checked={this.state.sel_radio_a === "Jim"}
                   onChange={this.onRadioChange}
                 />
-                <span className="filter_lbl">Abc</span>
+                <span className="filter_lbl">Jim</span>
               </label>  
       </li>              
              
