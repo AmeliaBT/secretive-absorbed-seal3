@@ -52,6 +52,9 @@ class RIlistAll2 extends React.Component {
     // load reports
    //componentWillMount() {
     // load reports
+        let that = this;
+      let body = 'inspector='+ encodeURIComponent('Tuan');
+        alert(body);
       let that = this;
       let xhr = new XMLHttpRequest();  
   
@@ -70,8 +73,7 @@ class RIlistAll2 extends React.Component {
       
        */
         //let body = 'inspector=' + encodeURIComponent(event.sel_radio_a);
-        let body = 'inspector='+ encodeURIComponent('Tuan');
-        alert(body);
+        
       xhr.send(body);
         if (this.readyState != 4) return;
         if (this.status != 200) {
