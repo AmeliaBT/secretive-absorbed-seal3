@@ -59499,13 +59499,9 @@ class RIlistAll2 extends React.Component {
    
   
  // handleParentData(event) {
-    handleParentData() {
-      alert('hi from handleParentData')
-    // load reports
-   //componentWillMount() {
-    // load reports
-      let body = 'inspector='+ encodeURIComponent('Tuan');
-        alert(body);
+    handleParentData(event) {
+         // load reports
+   
       let that = this;
       let xhr = new XMLHttpRequest();  
   
@@ -59513,7 +59509,10 @@ class RIlistAll2 extends React.Component {
    // xhr.open('POST', '/get-all-users-reports', true);
       xhr.open('POST', '/create-filtered-table2', true);
       xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-      xhr.send();
+      let body = 'inspector='+ encodeURIComponent(event.sel_radio_a);
+        alert(body);
+      
+      xhr.send(body);
       xhr.onreadystatechange = function() {
       /*   let body = 'Gwo:=' + encodeURIComponent(this.state.model) +
       '&fwo=' + encodeURIComponent(this.state.pn) +
@@ -59525,7 +59524,7 @@ class RIlistAll2 extends React.Component {
        */
         //let body = 'inspector=' + encodeURIComponent(event.sel_radio_a);
         
-      xhr.send(body);
+      //xhr.send(body);
         if (this.readyState != 4) return;
         if (this.status != 200) {
           alert( 'error: ' + (this.status ? this.statusText : 'request has not been set') );
