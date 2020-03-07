@@ -481,7 +481,10 @@ app.post("/get-user-filtered-reports", function(request, response) {
 //create-filtered-table2
 
 app.post("/create-filtered-table2", function(request, response) {
-
+ //  reportModel.find(
+    // userModel.findById(request.session.passport.user, (err, user) => {
+  // reportModel.find(request.body, (err, docs) => {
+       //if (err) throw err;
    //  let NN= request.body.Gwo; 
   //let NN2= request.body.inspector; 
   // let NN3= request.body.fwo; 
@@ -491,9 +494,10 @@ app.post("/create-filtered-table2", function(request, response) {
  // console.log(NN2);
  // console.log(NN3);
   
-  reportModel.find({"inspector":request.body.inspector}, (err, doc) => {
- // console.log("request: ");
-  //  console.log(request); 
+ // reportModel.find({"two":"Fail"}, (err, doc) => { this is ok
+// sample: userModel.find({ inspname: request.body["inspname"]},
+  //try;
+   reportModel.find({"inspector":request.body.inspector}, (err, doc) => {
       if (err) throw err;
            response.json(doc);
     console.log(doc);

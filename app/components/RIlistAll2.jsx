@@ -61,6 +61,13 @@ class RIlistAll2 extends React.Component {
       xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
       xhr.send();
       xhr.onreadystatechange = function() {
+      /*   let body = 'Gwo:=' + encodeURIComponent(this.state.model) +
+      '&fwo=' + encodeURIComponent(this.state.pn) +
+      '&inspector=' + encodeURIComponent(this.state.sel_radio_a);
+        
+        
+        alert(body);
+      xhr.send(body);
         if (this.readyState != 4) return;
         if (this.status != 200) {
           alert( 'error: ' + (this.status ? this.statusText : 'request has not been set') );
@@ -72,7 +79,7 @@ class RIlistAll2 extends React.Component {
             alert(response.length) ;
        
          let reports = response.map((el) => {
-           alert("hi");
+          
           return <RIlistItemAll  key={el.reportID}
            reportnumber={el.reportID}  
            inspector={el.inspector}
