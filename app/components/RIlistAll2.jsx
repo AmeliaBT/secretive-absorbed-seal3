@@ -56,14 +56,11 @@ class RIlistAll2 extends React.Component {
       xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
       //let body = 'Gwo=' + encodeURIComponent(event.model) 'inspector='+ encodeURIComponent(event.sel_radio_a);
         let body = 'Gwo=' + encodeURIComponent(event.model) +
-      '&fwo=' + encodeURIComponent(event.pn) +
-      '&inspector=' + encodeURIComponent(event.sel_radio_a);
-      alert(body);
-    //  let body = 'Gwo=' + encodeURIComponent(event.model) +
-     // '&fwo=' + encodeURIComponent(event.pn) +
-     // '&inspector=' + encodeURIComponent(event.sel_radio_a);
-      
-       
+                   '&fwo=' + encodeURIComponent(event.pn) +
+                   '&inspector=' + encodeURIComponent(event.sel_radio_a);
+//alert(body);
+        
+
       
       let dataB=this.state.dataB;  
       xhr.send(body);
@@ -102,8 +99,7 @@ class RIlistAll2 extends React.Component {
             pn: event.pn ,
            
             sel_radio_a: event.sel_radio_a ,
-            filterAB:'Showing ' + res_len +' results',
-             //for ' +event.model  + ' ' + dataB  + "  " + event.sel_radio_a , 
+            filterAB:'Showing ' + res_len +' results for ' +event.model  + ' '  +event.pn  + ' ' + event.sel_radio_a , 
              
           ["reports"]: <div className="reports">
                       {reports}     
