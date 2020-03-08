@@ -482,22 +482,13 @@ app.post("/get-user-filtered-reports", function(request, response) {
 
 app.post("/create-filtered-table2", function(request, response) {
    
- let regGwo = request.body.Gwo; 
-// NN2= request.body.inspector; 
-  // let NN3= request.body.fwo; 
- // console.log(NN);
-//console.log(NN2);
- // console.log(NN3);
-  
- // reportModel.find({"two":"Fail"}, (err, doc) => { this is ok
+ let regGwo = request.body.Gwo; //Model
+let regfwo = request.body.fwo; //PN
 
- console.log(request.body["Gwo"]);
-  console.log(request.body["fwo"]);
    //reportModel.find({"inspector":request.body.inspector}, (err, doc) => {
   reportModel.find({ inspector: request.body["inspector"],
-                    //yzT-TQ5403
-                  //  Gwo: /yzT-TQ5403/i },  ok
-                   Gwo: new RegExp(regGwo, 'i')}, 
+                      Gwo: new RegExp(regGwo, 'i'), 
+                      fwo: new RegExp(regfwo, 'i')}, 
                    (err, doc) => {
       if (err) throw err;
            response.json(doc);
