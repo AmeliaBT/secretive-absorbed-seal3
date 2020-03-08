@@ -497,7 +497,7 @@ console.log(NN2);
   reportModel.find({ inspector: request.body["inspector"],
                     //yzT-TQ5403
                   //  Gwo: /yzT-TQ5403/i },  ok
-                   Gwo: /request.body["Gwo"]/i }, 
+                   Gwo: /request.body["Gwo"]/ig }, 
                    (err, doc) => {
       if (err) throw err;
            response.json(doc);
