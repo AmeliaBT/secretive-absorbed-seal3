@@ -494,10 +494,11 @@ console.log(NN2);
   
  // reportModel.find({"two":"Fail"}, (err, doc) => { this is ok
 
- console.log(request.body["model"]);
+ console.log(request.body["Gwo"]);
+  console.log(request.body["fwo"]);
    //reportModel.find({"inspector":request.body.inspector}, (err, doc) => {
   reportModel.find({ inspector: request.body["inspector"],
-                    model: /request.body["model"]/ }, (err, doc) => {
+                    Gwo: /request.body["Gwo"]/ }, (err, doc) => {
       if (err) throw err;
            response.json(doc);
    // console.log(doc);

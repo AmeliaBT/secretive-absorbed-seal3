@@ -59506,20 +59506,21 @@ class RIlistAll2 extends React.Component {
       let xhr = new XMLHttpRequest();  
       xhr.open('POST', '/create-filtered-table2', true);
       xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-      let body = 'inspector='+ encodeURIComponent(event.sel_radio_a);
+      //let body = 'Gwo=' + encodeURIComponent(event.model) 'inspector='+ encodeURIComponent(event.sel_radio_a);
+        let body = 'Gwo=' + encodeURIComponent(this.event.model) +
+      '&fwo=' + encodeURIComponent(this.event.pn) +
+      '&inspector=' + encodeURIComponent(this.event.sel_radio_a);
+      alert(body);
+    //  let body = 'Gwo=' + encodeURIComponent(event.model) +
+     // '&fwo=' + encodeURIComponent(event.pn) +
+     // '&inspector=' + encodeURIComponent(event.sel_radio_a);
       
+       
       
       let dataB=this.state.dataB;  
       xhr.send(body);
       xhr.onreadystatechange = function() {
-      /*   let body = 'Gwo:=' + encodeURIComponent(this.state.model) +
-      '&fwo=' + encodeURIComponent(this.state.pn) +
-      '&inspector=' + encodeURIComponent(this.state.sel_radio_a);
-        let body = 'Gwo:=' + encodeURIComponent(event.model) +
-      '&fwo=' + encodeURIComponent(event.pn) +
-      '&inspector=' + encodeURIComponent(event.sel_radio_a);
       
-       */
         
         if (this.readyState != 4) return;
         if (this.status != 200) {
