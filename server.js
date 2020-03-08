@@ -482,11 +482,11 @@ app.post("/get-user-filtered-reports", function(request, response) {
 
 app.post("/create-filtered-table2", function(request, response) {
    
-   //  let NN= request.body.Gwo; 
-let NN2= request.body.inspector; 
+ let regGwo = request.body.Gwo; 
+// NN2= request.body.inspector; 
   // let NN3= request.body.fwo; 
  // console.log(NN);
-console.log(NN2);
+//console.log(NN2);
  // console.log(NN3);
   
  // reportModel.find({"two":"Fail"}, (err, doc) => { this is ok
@@ -497,7 +497,7 @@ console.log(NN2);
   reportModel.find({ inspector: request.body["inspector"],
                     //yzT-TQ5403
                   //  Gwo: /yzT-TQ5403/i },  ok
-                   Gwo: /request.body["Gwo"]/ig }, 
+                   Gwo: new RegExp(regGwo, 'i')}, 
                    (err, doc) => {
       if (err) throw err;
            response.json(doc);
