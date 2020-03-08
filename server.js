@@ -484,19 +484,20 @@ app.post("/create-filtered-table2", function(request, response) {
 
     
    //  let NN= request.body.Gwo; 
-//let NN2= request.body.inspector; 
+let NN2= request.body.inspector; 
   // let NN3= request.body.fwo; 
 
 
  // console.log(NN);
-// console.log(NN2);
+console.log(NN2);
  // console.log(NN3);
   
  // reportModel.find({"two":"Fail"}, (err, doc) => { this is ok
 
- 
+ console.log(request.body["model"]);
    //reportModel.find({"inspector":request.body.inspector}, (err, doc) => {
-  reportModel.find({ inspector: request.body["inspector"]}, (err, doc) => {
+  reportModel.find({ inspector: request.body["inspector"],
+                    model: /request.body["model"]/ }, (err, doc) => {
       if (err) throw err;
            response.json(doc);
    // console.log(doc);
