@@ -485,6 +485,7 @@ app.post("/create-filtered-table2", function(request, response) {
 let regGwo = request.body.Gwo; //Model
 let regfwo = request.body.fwo; //PN
 let reg_inspector= request.body.inspector; 
+  if(reg_inspector=== "Other"){reg_inspector='^Tuan'};
    //reportModel.find({"inspector":request.body.inspector}, (err, doc) => {
   reportModel.find({ 
      Gwo: new RegExp(regGwo, 'ig'), 
