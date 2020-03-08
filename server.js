@@ -481,13 +481,10 @@ app.post("/get-user-filtered-reports", function(request, response) {
 //create-filtered-table2
 
 app.post("/create-filtered-table2", function(request, response) {
-
-    
+   
    //  let NN= request.body.Gwo; 
 let NN2= request.body.inspector; 
   // let NN3= request.body.fwo; 
-
-
  // console.log(NN);
 console.log(NN2);
  // console.log(NN3);
