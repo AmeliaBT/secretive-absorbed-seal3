@@ -55,6 +55,8 @@ class RIlistAll2 extends React.Component {
       xhr.open('POST', '/create-filtered-table2', true);
       xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
       let body = 'inspector='+ encodeURIComponent(event.sel_radio_a);
+      
+      
       let dataB=this.state.dataB;  
       xhr.send(body);
       xhr.onreadystatechange = function() {
@@ -99,7 +101,8 @@ class RIlistAll2 extends React.Component {
             pn: event.pn ,
            
             sel_radio_a: event.sel_radio_a ,
-            filterAB:'Showing ' + res_len +' results for ' +event.model  + ' ' + dataB  +"  " + event.sel_radio_b', 
+            filterAB:'Showing ' + res_len +' results',
+             //for ' +event.model  + ' ' + dataB  + "  " + event.sel_radio_a , 
              
           ["reports"]: <div className="reports">
                       {reports}     
