@@ -487,9 +487,9 @@ let regfwo = request.body.fwo; //PN
 let reg_inspector= request.body.inspector; 
    //reportModel.find({"inspector":request.body.inspector}, (err, doc) => {
   reportModel.find({ 
-     Gwo: new RegExp(regGwo, 'i'), 
-     fwo: new RegExp(regfwo, 'i'),    
-     inspector: new RegExp(reg_inspector, 'i')
+     Gwo: new RegExp(regGwo, 'ig'), 
+     fwo: new RegExp(regfwo, 'ig'),    
+     inspector: new RegExp(reg_inspector, 'ig')
   }, 
                    (err, doc) => {
       if (err) throw err;
