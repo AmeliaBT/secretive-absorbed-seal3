@@ -99,7 +99,7 @@ class RIlistAll2 extends React.Component {
             pn: event.pn ,
            
             sel_radio_a: event.sel_radio_a ,
-            filterAB:'Showing results for " + dataB  +"  " +event.sel_radio_b', 
+            filterAB:'Showing ' + res_len +' results for ' +event.model  + ' ' + dataB  +"  " + event.sel_radio_b', 
              
           ["reports"]: <div className="reports">
                       {reports}     
