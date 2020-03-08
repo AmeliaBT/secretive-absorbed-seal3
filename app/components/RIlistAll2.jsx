@@ -23,11 +23,11 @@ class RIlistAll2 extends React.Component {
       disabled: true,
        reports: "loading..." ,
       res_len:"",
-       model: '', 
-       pn: '' ,
+      model: '', 
+      pn: '' ,
       sel_radio_b:"",
-       sel_radio_a:"",
-        filterAB:"",
+      sel_radio_a:"",
+      filterAB:"",
       modal_label: "Choose RI Reports to view"
       
       
@@ -47,20 +47,14 @@ class RIlistAll2 extends React.Component {
    /***********************/
    
   
- // handleParentData(event) {
+ 
     handleParentData(event) {
-         // load reports
-   
       let that = this;
       let xhr = new XMLHttpRequest();  
-  
-    //get-all-users-reports
-   // xhr.open('POST', '/get-all-users-reports', true);
       xhr.open('POST', '/create-filtered-table2', true);
       xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
       let body = 'inspector='+ encodeURIComponent(event.sel_radio_a);
-        alert(body);
-      
+          
       xhr.send(body);
       xhr.onreadystatechange = function() {
       /*   let body = 'Gwo:=' + encodeURIComponent(this.state.model) +
@@ -71,9 +65,7 @@ class RIlistAll2 extends React.Component {
       '&inspector=' + encodeURIComponent(event.sel_radio_a);
       
        */
-        //let body = 'inspector=' + encodeURIComponent(event.sel_radio_a);
         
-      //xhr.send(body);
         if (this.readyState != 4) return;
         if (this.status != 200) {
           alert( 'error: ' + (this.status ? this.statusText : 'request has not been set') );
@@ -81,11 +73,10 @@ class RIlistAll2 extends React.Component {
         }
         let response = JSON.parse(this.responseText);
      
-// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  
-            alert("len: " + response.length) ;
-       
-         let reports = response.map((el) => {
-          
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  
+            
+       let res_len=response.length;
+         let reports = response.map((el) => {          
           return <RIlistItemAll  key={el.reportID}
            reportnumber={el.reportID}  
            inspector={el.inspector}
@@ -102,6 +93,13 @@ class RIlistAll2 extends React.Component {
  // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!           
         
            that.setState({
+            res_len:res_len,
+            model: event.model, 
+            pn: event.pn ,
+           
+            sel_radio_a: event.sel_radio_a ,
+            filterAB:''    Showing results for " + dataA  +"  " +event.sel_radio_b', 
+             
           ["reports"]: <div className="reports">
                       {reports}     
                     </div>
@@ -115,7 +113,8 @@ class RIlistAll2 extends React.Component {
  handleParentDataB(event) {  
    this.setState({ sel_radio_b: event.sel_radio_b });
    let dataA=this.state.model + "  " + this.state.pn + "  " +this.state.sel_radio_a ;
-  this.setState({ filterAB: "    Showing results for " + dataA  +"  " +event.sel_radio_b}); 
+ 
+   this.setState({ filterAB: "    Showing results for " + dataA  +"  " +event.sel_radio_b}); 
     
   }
   
