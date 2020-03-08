@@ -53,19 +53,7 @@ PN: <br />
 <br />         
   Inspector: 
     <ul>
-            <li>
-              <label>
-                <input
-                  type="radio"
-                  value="Helen, "
-                  checked={this.state.sel_radio_a === "Helen, "}
-                  onChange={this.onRadioChange}
-                />
-                <span className="filter_lbl" >Helen</span>
-              </label>
-            </li>
-
-            <li>
+      <li>
               <label>
                 <input
                   type="radio"
@@ -77,6 +65,7 @@ PN: <br />
               </label>
             </li>
 
+            
             <li>
               <label>
                 <input
@@ -88,7 +77,17 @@ PN: <br />
                 <span className="filter_lbl">Jim</span>
               </label>  
       </li>              
-             
+            <li>
+              <label>
+                <input
+                  type="radio"
+                  value="Other"
+                  checked={this.state.sel_radio_a === "Other"}
+                  onChange={this.onRadioChange}
+                />
+                <span className="filter_lbl" >Other</span>
+              </label>
+            </li> 
           </ul>  
   <input type="button" value="Submit" onClick={this.submitForm}/></form> 
     <input type="button" value="Clear" onClick={this.clearForm}/>
