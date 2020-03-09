@@ -9,7 +9,12 @@ class FilterA extends React.Component {
     this.state = { 
       model: '', 
       pn: '' ,
-     sel_radio_a: ''
+      comment: '' ,
+     sel_radio_a: '',
+      supplier:'',
+  source:'',
+  destination:''
+      
 } 
 
    this.handleChangeValue = this.handleChangeValue.bind(this);
