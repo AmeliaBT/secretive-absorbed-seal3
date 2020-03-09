@@ -59552,8 +59552,10 @@ class RIlistAll2 extends React.Component {
                   '&inspector=' + encodeURIComponent(event.sel_radio_a)+
                   '&ewo=' + encodeURIComponent(event.supplier) +
                   '&mwo=' + encodeURIComponent(event.source) +
-                  '&nwo=' + encodeURIComponent(event.destination)
+                  '&nwo=' + encodeURIComponent(event.destination)+
+             '&reportID=' + encodeURIComponent(event.riN)
             ;
+            
 
         
 
@@ -59599,7 +59601,9 @@ class RIlistAll2 extends React.Component {
             source: event.source,
             destination: event.destination,
              
-            filterAB:'Showing ' + res_len +' results for ' +event.model  
+            filterAB:'Showing ' + res_len +' results for ' 
+             + event.riN
+             + ' ' +event.model  
              + ' '  +event.pn  
              + ' ' + event.sel_radio_a  
               + ' '  +event.pn  
