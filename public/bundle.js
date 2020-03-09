@@ -12593,7 +12593,13 @@ submitForm(e) { e.preventDefault();
     this.setState({ 
        model: '', 
       pn: '' ,
-     sel_radio_a: ''}); 
+       comment: '' ,
+     sel_radio_a: ''
+    
+    
+    
+    
+    }); 
   }
   
   
@@ -12618,6 +12624,11 @@ React.createElement("form", null,
     onChange: this.handleChangeValue}), "  ", React.createElement("br", null), 
 "PN: ", React.createElement("br", null), 
   React.createElement("input", {className: "filter_input_a", type: "text", name: "pn", value: this.state.pn, 
+    onChange: this.handleChangeValue}), " ", React.createElement("br", null), 
+React.createElement("br", null), 
+  
+  "Comment: ", React.createElement("br", null), 
+  React.createElement("input", {className: "filter_input_a", type: "text", name: "comment", value: this.state.comment, 
     onChange: this.handleChangeValue}), " ", React.createElement("br", null), 
 React.createElement("br", null), 
   "Inspector:",  

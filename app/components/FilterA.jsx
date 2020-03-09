@@ -24,7 +24,13 @@ submitForm(e) { e.preventDefault();
     this.setState({ 
        model: '', 
       pn: '' ,
-     sel_radio_a: ''}); 
+       comment: '' ,
+     sel_radio_a: ''
+    
+    
+    
+    
+    }); 
   }
   
   
@@ -50,7 +56,12 @@ Model: <br />
 PN: <br />
   <input className="filter_input_a" type="text" name="pn"  value={this.state.pn} 
     onChange={this.handleChangeValue} /> <br />
-<br />         
+<br />   
+  
+  Comment: <br />
+  <input className="filter_input_a" type="text" name="comment"  value={this.state.comment} 
+    onChange={this.handleChangeValue} /> <br />
+<br />    
   Inspector: 
     <ul>
       <li>
