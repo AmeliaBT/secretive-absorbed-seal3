@@ -34,11 +34,7 @@ submitForm(e) { e.preventDefault();
       supplier:'',
   source:'',
   destination:''
-      
-    
-    
-    
-    
+         
     }); 
   }
   

@@ -12578,8 +12578,11 @@ class FilterA extends React.Component {
     this.state = { 
       model: '', 
       pn: '' ,
+      comment: '' ,
      sel_radio_a: '',
-      
+      supplier:'',
+  source:'',
+  destination:''
       
 } 
 
@@ -12600,11 +12603,7 @@ submitForm(e) { e.preventDefault();
       supplier:'',
   source:'',
   destination:''
-      
-    
-    
-    
-    
+         
     }); 
   }
   
