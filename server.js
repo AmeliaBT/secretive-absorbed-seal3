@@ -485,24 +485,30 @@ app.post("/create-filtered-table2", function(request, response) {
 let regGwo = request.body.Gwo; //Model
 let regfwo = request.body.fwo; //PN
   
-  let reg_record = request.body.fwo; //
-  let regewo = request.body.fwo; //
-  let regmwo = request.body.mwo; //
-  let regnwo = request.body.nwo; //
-  
+  let reg_record = request.body.record; //
+  let regewo = request.body.ewo; //sup
+  let regmwo = request.body.mwo; //sour
+  let regnwo = request.body.nwo; //des
+  console.log("regnwo "+ regnwo)
 let reg_inspector= request.body.inspector; 
  
   if(reg_inspector=== "Other"){reg_inspector='^(?!Tuan).*$'  };
    //reportModel.find({"inspector":request.body.inspector}, (err, doc) => {
   reportModel.find({ 
      Gwo: new RegExp(regGwo, 'ig'), 
-     fwo: new RegExp(regfwo, 'ig'),    
+     fwo: new RegExp(regfwo, 'ig'), 
+    
+    record: new RegExp(reg_record, 'ig'), 
+    ewo: new RegExp(regewo, 'ig'), 
+    mwo: new RegExp(regmwo, 'ig'), 
+    nwo: new RegExp(regnwo, 'ig'), 
+    
      inspector: new RegExp(reg_inspector, 'ig')
   }, 
                    (err, doc) => {
       if (err) throw err;
            response.json(doc);
-  // console.log(doc);
+   console.log(doc);
           }        
      );
            
