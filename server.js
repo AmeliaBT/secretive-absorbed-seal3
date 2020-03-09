@@ -489,10 +489,12 @@ let regfwo = request.body.fwo; //PN
   let regewo = request.body.ewo; //sup
   let regmwo = request.body.mwo; //sour
   let regnwo = request.body.nwo; //des
+   let regtwo = request.body.two; //pass-fail
  let reg_inspector= request.body.inspector; 
 
  // if(reg_inspector=== "Other"){reg_inspector='^(?!Tuan).*$' }; //ok  
    if(reg_inspector=== "Other"){reg_inspector='^(?!Tuan)(?!Jim).*$'  };
+  if(regtwo=== "Other"){regtwo='^(?!Pass)(?!Fail).*$'  };
    reportModel.find({ 
     reportID: new RegExp(regreportID, 'ig'), 
      Gwo: new RegExp(regGwo, 'ig'), 

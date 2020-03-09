@@ -8,7 +8,7 @@ const {Table , Grid, Row, Col, Modal} = require('react-bootstrap');
 // other components and etc
 const Header = require('./Header');
 const FilterA =require('./FilterA');
-const FilterB =require('./FilterB');
+//const FilterB =require('./FilterB');
 
 const RIlistItemAll = require('./RIlistItemAll');
 let test = {a: 1, b: 2};
@@ -42,7 +42,7 @@ class RIlistAll2 extends React.Component {
     };
    
     this.handleParentData = this.handleParentData.bind(this);
-    this.handleParentDataB = this.handleParentDataB.bind(this);
+    //this.handleParentDataB = this.handleParentDataB.bind(this);
 
     this.handleShow = this.handleShow.bind(this);
     this.handleClose = this.handleClose.bind(this);
@@ -70,6 +70,7 @@ class RIlistAll2 extends React.Component {
                   '&ewo=' + encodeURIComponent(event.supplier) +
                   '&mwo=' + encodeURIComponent(event.source) +
                   '&nwo=' + encodeURIComponent(event.destination)+
+                  '&two=' + encodeURIComponent(event.sel_radio_b)+
              '&reportID=' + encodeURIComponent(event.riN)
             ;
             
@@ -113,10 +114,12 @@ class RIlistAll2 extends React.Component {
             model: event.model, 
             pn: event.pn ,           
             sel_radio_a: event.sel_radio_a ,
+            sel_radio_b: event.sel_radio_b ,
            comment :  event.comment,  
             supplier:event.supplier,
             source: event.source,
             destination: event.destination,
+             
              
             filterAB:'Showing ' + res_len +' results for ' 
              + event.riN
@@ -128,6 +131,7 @@ class RIlistAll2 extends React.Component {
               + ' '  +event.supplier
                + ' '  +event.source
                + ' '  +event.destination
+              + ' ' + event.sel_radio_a  
              ,
           ["reports"]: <div className="reports">
                       {reports}     
@@ -138,14 +142,14 @@ class RIlistAll2 extends React.Component {
   }
 
   
-    
+ /*   
  handleParentDataB(event) {  
    this.setState({ sel_radio_b: event.sel_radio_b });
    let dataA=this.state.model + "  " + this.state.pn + "  " +this.state.sel_radio_a ;
  
-   this.setState({ filterAB: "    Showing results for " + dataA  +"  " +event.sel_radio_b}); 
+   this.setState({ filterAB: "    Showing results for " + dataA }); 
     
-  }
+  }*/
   
   
  
@@ -232,7 +236,7 @@ class RIlistAll2 extends React.Component {
      
       < FilterA handleData ={this.handleParentData} /> 
      <br/>
-      < FilterB handleDataB ={this.handleParentDataB} /> 
+     {/* < FilterB handleDataB ={this.handleParentDataB} /> */} 
      
    </div> </Col>
   
