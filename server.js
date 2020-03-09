@@ -491,8 +491,11 @@ let regfwo = request.body.fwo; //PN
   let regnwo = request.body.nwo; //des
  let reg_inspector= request.body.inspector; 
  //'^(part1|part2|part1,part2)$'
- // if(reg_inspector=== "Other"){reg_inspector='^(?!Tuan).*$' }; //ok
-   if(reg_inspector=== "Other"){reg_inspector='^(Tuan|Jim|Tuan,Jim)$'};
+ // if(reg_inspector=== "Other"){reg_inspector='^(?!Tuan).*$' }; //ok  
+  /*You can do as many of these as you want, and this will be an "and." Example:
+(/^(?=.*word1)(?=.*word2)(?=.*word3).*$/   */
+  if(reg_inspector=== "Other"){(reg_inspector='^(?=.Tuan)(?=.Jim).*$') };
+  
    //reportModel.find({"inspector":request.body.inspector}, (err, doc) => {
   reportModel.find({ 
     reportID: new RegExp(regreportID, 'ig'), 
