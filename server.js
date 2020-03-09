@@ -491,7 +491,7 @@ let regfwo = request.body.fwo; //PN
   let regnwo = request.body.nwo; //des
  let reg_inspector= request.body.inspector; 
  
-  if(reg_inspector=== "Other"){reg_inspector='^(?!Tuan).*$'  };
+  if(reg_inspector=== "Other"){reg_inspector='^(?!Tuan|!Jim).*$' };
    //reportModel.find({"inspector":request.body.inspector}, (err, doc) => {
   reportModel.find({ 
     reportID: new RegExp(regreportID, 'ig'), 
