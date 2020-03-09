@@ -504,7 +504,7 @@ let regfwo = request.body.fwo; //PN
     ewo: new RegExp(regewo, 'ig'), 
     mwo: new RegExp(regmwo, 'ig'), 
     nwo: new RegExp(regnwo, 'ig'), 
-    
+    two: new RegExp(regtwo, 'ig'), 
      inspector: new RegExp(reg_inspector, 'ig')
   }, 
                    (err, doc) => {

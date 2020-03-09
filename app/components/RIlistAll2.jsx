@@ -131,7 +131,7 @@ class RIlistAll2 extends React.Component {
               + ' '  +event.supplier
                + ' '  +event.source
                + ' '  +event.destination
-              + ' ' + event.sel_radio_a  
+              + ' ' + event.sel_radio_b  
              ,
           ["reports"]: <div className="reports">
                       {reports}     
