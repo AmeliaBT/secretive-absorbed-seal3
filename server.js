@@ -490,14 +490,17 @@ let regfwo = request.body.fwo; //PN
   let regmwo = request.body.mwo; //sour
   let regnwo = request.body.nwo; //des
    let regtwo = request.body.two; //pass-fail
-   let regowo = request.body.owo; // lot size
+   let owo = request.body.owo; // lot size
  let reg_inspector= request.body.inspector; 
 
  // if(reg_inspector=== "Other"){reg_inspector='^(?!Tuan).*$' }; //ok  
    if(reg_inspector=== "Other"){reg_inspector='^(?!Tuan)(?!Jim).*$'  };
   if(regtwo=== "Other"){regtwo='^(?!Pass)(?!Fail).*$'  };
   
-  if(regowo ==="<100"){console.log(regowo)}else{console.log("no: "+ regowo)}
+  if(owo ==="<100"){
+    //MyModel.find({ name: 'john', age: { $gte: 18 }});
+    console.log(owo);
+  }else{console.log("no: "+ owo)}
    reportModel.find({ 
     reportID: new RegExp(regreportID, 'ig'), 
      Gwo: new RegExp(regGwo, 'ig'), 
@@ -508,6 +511,8 @@ let regfwo = request.body.fwo; //PN
     mwo: new RegExp(regmwo, 'ig'), 
     nwo: new RegExp(regnwo, 'ig'), 
     two: new RegExp(regtwo, 'ig'), 
+    //MyModel.find({ name: 'john', age: { $gte: 18 }});
+       owo: { $gte: 100 }, 
      inspector: new RegExp(reg_inspector, 'ig')
   }, 
                    (err, doc) => {

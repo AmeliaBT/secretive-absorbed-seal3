@@ -117,7 +117,7 @@ class RIlistAll2 extends React.Component {
             pn: event.pn ,           
             sel_radio_a: event.sel_radio_a ,
             sel_radio_b: event.sel_radio_b ,
-             sel_radio_b: event.sel_radio_c ,
+             sel_radio_c: event.sel_radio_c ,
            comment :  event.comment,  
             supplier:event.supplier,
             source: event.source,
