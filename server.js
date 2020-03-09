@@ -499,10 +499,30 @@ let regfwo = request.body.fwo; //PN
   if(regtwo=== "Other"){regtwo='^(?!Pass)(?!Fail).*$'  };
   
   if(owo ==="<100"){
-    //MyModel.find({ name: 'john', age: { $gte: 18 }});
+   
     console.log(owo);
     lot={ $lte: 99 };
-  }else{console.log("no: "+ owo)}
+  }else{
+     lot={ $gte: 0 };console.log("no: "+ owo)}
+  
+  switch(owo) {
+  case 100:
+    // code block
+          lot={ $lte: 99 };
+    break;
+  case 1000:
+    // code block
+    break;
+  default:
+    // code block
+}
+  
+  
+  
+  
+  
+  
+  
    reportModel.find({ 
     reportID: new RegExp(regreportID, 'ig'), 
      Gwo: new RegExp(regGwo, 'ig'), 
