@@ -56,6 +56,9 @@ submitForm(e) { e.preventDefault();
   
   render() { return (        <div>        
 <form>
+  RI Number: <br />
+  <input className="filter_input_a" type="text" name="riN"  value={this.state.riN} 
+    onChange={this.handleChangeValue}/>  <br />
 Model: <br />
   <input className="filter_input_a" type="text" name="model"  value={this.state.model} 
     onChange={this.handleChangeValue}/>  <br />
@@ -116,8 +119,9 @@ PN: <br />
   Destination: <br />
   <input className="filter_input_a" type="text" name="destination"  value={this.state.destination} 
     onChange={this.handleChangeValue} /> <br />
-  
+  <br /><br />
   <input type="button" value="Submit" onClick={this.submitForm}/></form> 
+      <br />
     <input type="button" value="Clear" onClick={this.clearForm}/>
     </div>    )  }}
 

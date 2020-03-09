@@ -12625,6 +12625,9 @@ submitForm(e) { e.preventDefault();
   
   render() { return (        React.createElement("div", null, 
 React.createElement("form", null, 
+  "RI Number: ", React.createElement("br", null), 
+  React.createElement("input", {className: "filter_input_a", type: "text", name: "riN", value: this.state.riN, 
+    onChange: this.handleChangeValue}), "  ", React.createElement("br", null), 
 "Model: ", React.createElement("br", null), 
   React.createElement("input", {className: "filter_input_a", type: "text", name: "model", value: this.state.model, 
     onChange: this.handleChangeValue}), "  ", React.createElement("br", null), 
@@ -12685,8 +12688,9 @@ React.createElement("br", null),
   "Destination: ", React.createElement("br", null), 
   React.createElement("input", {className: "filter_input_a", type: "text", name: "destination", value: this.state.destination, 
     onChange: this.handleChangeValue}), " ", React.createElement("br", null), 
-  
+  React.createElement("br", null), React.createElement("br", null), 
   React.createElement("input", {type: "button", value: "Submit", onClick: this.submitForm})), 
+      React.createElement("br", null), 
     React.createElement("input", {type: "button", value: "Clear", onClick: this.clearForm})
     )    )  }}
 
@@ -59502,6 +59506,7 @@ class RIlistAll2 extends React.Component {
       disabled: true,
        reports: "loading..." ,
       res_len:"",
+       riN:"",
       model: '', 
       pn: '' ,
       comment : '' ,

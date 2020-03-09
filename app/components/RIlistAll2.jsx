@@ -23,6 +23,7 @@ class RIlistAll2 extends React.Component {
       disabled: true,
        reports: "loading..." ,
       res_len:"",
+       riN:"",
       model: '', 
       pn: '' ,
       comment : '' ,
@@ -68,7 +69,9 @@ class RIlistAll2 extends React.Component {
                   '&inspector=' + encodeURIComponent(event.sel_radio_a)+
                   '&ewo=' + encodeURIComponent(event.supplier) +
                   '&mwo=' + encodeURIComponent(event.source) +
-                  '&nwo=' + encodeURIComponent(event.destination)
+                  '&nwo=' + encodeURIComponent(event.destination)+
+             '&nwo=' + encodeURIComponent(event.riN)
+            ;
             ;
 
         
