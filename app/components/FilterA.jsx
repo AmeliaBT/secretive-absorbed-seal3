@@ -25,7 +25,11 @@ submitForm(e) { e.preventDefault();
        model: '', 
       pn: '' ,
        comment: '' ,
-     sel_radio_a: ''
+     sel_radio_a: '',
+      supplier:'',
+  source:'',
+  destination:''
+      
     
     
     
@@ -100,6 +104,17 @@ PN: <br />
               </label>
             </li> 
           </ul>  
+  
+  supplier: <br />
+  <input className="filter_input_a" type="text" name="supplier"  value={this.state.supplier} 
+    onChange={this.handleChangeValue} /> <br />
+ Source: <br />
+  <input className="filter_input_a" type="text" name="source"  value={this.state.source} 
+    onChange={this.handleChangeValue} /> <br />
+  Destination: <br />
+  <input className="filter_input_a" type="text" name="destination"  value={this.state.destination} 
+    onChange={this.handleChangeValue} /> <br />
+  
   <input type="button" value="Submit" onClick={this.submitForm}/></form> 
     <input type="button" value="Clear" onClick={this.clearForm}/>
     </div>    )  }}

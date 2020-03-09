@@ -12594,7 +12594,11 @@ submitForm(e) { e.preventDefault();
        model: '', 
       pn: '' ,
        comment: '' ,
-     sel_radio_a: ''
+     sel_radio_a: '',
+      supplier:'',
+  source:'',
+  destination:''
+      
     
     
     
@@ -12669,6 +12673,17 @@ React.createElement("br", null),
               )
             )
           ), 
+  
+  "supplier: ", React.createElement("br", null), 
+  React.createElement("input", {className: "filter_input_a", type: "text", name: "supplier", value: this.state.supplier, 
+    onChange: this.handleChangeValue}), " ", React.createElement("br", null), 
+ "Source: ", React.createElement("br", null), 
+  React.createElement("input", {className: "filter_input_a", type: "text", name: "source", value: this.state.source, 
+    onChange: this.handleChangeValue}), " ", React.createElement("br", null), 
+  "Destination: ", React.createElement("br", null), 
+  React.createElement("input", {className: "filter_input_a", type: "text", name: "destination", value: this.state.destination, 
+    onChange: this.handleChangeValue}), " ", React.createElement("br", null), 
+  
   React.createElement("input", {type: "button", value: "Submit", onClick: this.submitForm})), 
     React.createElement("input", {type: "button", value: "Clear", onClick: this.clearForm})
     )    )  }}
@@ -59487,8 +59502,14 @@ class RIlistAll2 extends React.Component {
       res_len:"",
       model: '', 
       pn: '' ,
-      sel_radio_b:"",
+      comment : '' ,
       sel_radio_a:"",
+      supplier:'',
+      source:'',
+      destination:'',
+      
+      sel_radio_b:"",
+     
       filterAB:"",
       modal_label: "Choose RI Reports to view",
       dataA:"",
@@ -59518,7 +59539,9 @@ class RIlistAll2 extends React.Component {
       xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
       //let body = 'Gwo=' + encodeURIComponent(event.model) 'inspector='+ encodeURIComponent(event.sel_radio_a);
         let body = 'Gwo=' + encodeURIComponent(event.model) +
+           
                    '&fwo=' + encodeURIComponent(event.pn) +
+                  'record=' + encodeURIComponent(event.comment) +
                    '&inspector=' + encodeURIComponent(event.sel_radio_a);
 //alert(body);
         

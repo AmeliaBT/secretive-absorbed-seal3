@@ -25,8 +25,14 @@ class RIlistAll2 extends React.Component {
       res_len:"",
       model: '', 
       pn: '' ,
-      sel_radio_b:"",
+      comment : '' ,
       sel_radio_a:"",
+      supplier:'',
+      source:'',
+      destination:'',
+      
+      sel_radio_b:"",
+     
       filterAB:"",
       modal_label: "Choose RI Reports to view",
       dataA:"",
@@ -56,7 +62,9 @@ class RIlistAll2 extends React.Component {
       xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
       //let body = 'Gwo=' + encodeURIComponent(event.model) 'inspector='+ encodeURIComponent(event.sel_radio_a);
         let body = 'Gwo=' + encodeURIComponent(event.model) +
+           
                    '&fwo=' + encodeURIComponent(event.pn) +
+                  'record=' + encodeURIComponent(event.comment) +
                    '&inspector=' + encodeURIComponent(event.sel_radio_a);
 //alert(body);
         
