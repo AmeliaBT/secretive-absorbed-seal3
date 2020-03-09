@@ -490,11 +490,14 @@ let regfwo = request.body.fwo; //PN
   let regmwo = request.body.mwo; //sour
   let regnwo = request.body.nwo; //des
    let regtwo = request.body.two; //pass-fail
+   let regowo = request.body.owo; // lot size
  let reg_inspector= request.body.inspector; 
 
  // if(reg_inspector=== "Other"){reg_inspector='^(?!Tuan).*$' }; //ok  
    if(reg_inspector=== "Other"){reg_inspector='^(?!Tuan)(?!Jim).*$'  };
   if(regtwo=== "Other"){regtwo='^(?!Pass)(?!Fail).*$'  };
+  
+  if(regowo ==="<100"){console.log(regowo)}else{console.log("no: "+ regowo)}
    reportModel.find({ 
     reportID: new RegExp(regreportID, 'ig'), 
      Gwo: new RegExp(regGwo, 'ig'), 

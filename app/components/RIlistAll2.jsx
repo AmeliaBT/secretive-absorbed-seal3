@@ -33,6 +33,7 @@ class RIlistAll2 extends React.Component {
       destination:'',
       
       sel_radio_b:"",
+      sel_radio_c:"", //lot size
      
       filterAB:"",
       modal_label: "Choose RI Reports to view",
@@ -71,6 +72,7 @@ class RIlistAll2 extends React.Component {
                   '&mwo=' + encodeURIComponent(event.source) +
                   '&nwo=' + encodeURIComponent(event.destination)+
                   '&two=' + encodeURIComponent(event.sel_radio_b)+
+                  '&owo=' + encodeURIComponent(event.sel_radio_c)+ //lot size
              '&reportID=' + encodeURIComponent(event.riN)
             ;
             
@@ -115,6 +117,7 @@ class RIlistAll2 extends React.Component {
             pn: event.pn ,           
             sel_radio_a: event.sel_radio_a ,
             sel_radio_b: event.sel_radio_b ,
+             sel_radio_b: event.sel_radio_c ,
            comment :  event.comment,  
             supplier:event.supplier,
             source: event.source,
@@ -131,7 +134,8 @@ class RIlistAll2 extends React.Component {
               + ' '  +event.supplier
                + ' '  +event.source
                + ' '  +event.destination
-              + ' ' + event.sel_radio_b  
+              + ' ' + event.sel_radio_b 
+              + ' ' + event.sel_radio_c  
              ,
           ["reports"]: <div className="reports">
                       {reports}     

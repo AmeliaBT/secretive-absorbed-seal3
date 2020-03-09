@@ -12,6 +12,7 @@ class FilterA extends React.Component {
       comment: '' ,
       sel_radio_a: '',
       sel_radio_b: '',
+      sel_radio_c: '',
       supplier:'',
       source:'',
       destination:'',
@@ -24,6 +25,7 @@ class FilterA extends React.Component {
       this.clearForm = this.clearForm.bind(this);
      this.onRadioChange = this.onRadioChange.bind(this);
      this.onRadioChangeB = this.onRadioChangeB.bind(this);
+    this.onRadioChangeC = this.onRadioChangeC.bind(this);
 }  
 submitForm(e) { e.preventDefault();  
   this.props.handleData(this.state) } ;  
@@ -35,6 +37,7 @@ submitForm(e) { e.preventDefault();
        comment: '' ,
      sel_radio_a: '',
       sel_radio_b: '',
+       sel_radio_c: '',
       supplier:'',
   source:'',
   destination:''
@@ -58,6 +61,11 @@ submitForm(e) { e.preventDefault();
   onRadioChangeB(e){
     this.setState({
       sel_radio_b: e.target.value
+    });
+  }
+   onRadioChangeC(e){
+    this.setState({
+      sel_radio_c: e.target.value
     });
   }
   
@@ -188,7 +196,7 @@ Pass/Fail:
                 <input
                   type="radio"
                   value="100-1000"
-                  checked={this.state.sel_radio_c === "100-1000l"}
+                  checked={this.state.sel_radio_c === "100-1000"}
                   onChange={this.onRadioChangeC}
                 />
                 <span className="filter_lbl">100-1000</span>
@@ -202,7 +210,7 @@ Pass/Fail:
                   checked={this.state.sel_radio_c === ">1000"}
                   onChange={this.onRadioChangeC}
                 />
-                <span className="filter_lbl" &lt; 1000 </span>
+                <span className="filter_lbl" > &gt; 1000 </span>
               </label>
             </li> 
           </ul>  
