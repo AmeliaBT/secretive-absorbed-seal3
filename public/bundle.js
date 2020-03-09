@@ -12736,7 +12736,45 @@ React.createElement("br", null),
           ), 
   
   
-  
+  React.createElement("br", null), 
+ "Lot Size:",  
+    React.createElement("ul", null, 
+      React.createElement("li", null, 
+              React.createElement("label", null, 
+                React.createElement("input", {
+                  type: "radio", 
+                  value: "<100", 
+                  checked: this.state.sel_radio_c === "<100", 
+                  onChange: this.onRadioChangeC}
+                ), 
+                React.createElement("span", {className: "filter_lbl"}, "  less 100 ")
+              )
+            ), 
+
+            
+            React.createElement("li", null, 
+              React.createElement("label", null, 
+                React.createElement("input", {
+                  type: "radio", 
+                  value: "100-1000", 
+                  checked: this.state.sel_radio_c === "100-1000l", 
+                  onChange: this.onRadioChangeC}
+                ), 
+                React.createElement("span", {className: "filter_lbl"}, "100-1000")
+              )
+      ), 
+            React.createElement("li", null, 
+              React.createElement("label", null, 
+                React.createElement("input", {
+                  type: "radio", 
+                  value: ">1000", 
+                  checked: this.state.sel_radio_c === ">1000", 
+                  onChange: this.onRadioChangeC}
+                ), 
+                React.createElement("span", {className: "filter_lbl"}, " 1000 ")
+              )
+            )
+          ), 
   
   
   

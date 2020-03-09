@@ -167,7 +167,45 @@ Pass/Fail:
           </ul>    
   
   
-  
+  <br />    
+ Lot Size: 
+    <ul>
+      <li>
+              <label>
+                <input
+                  type="radio"
+                  value="<100"
+                  checked={this.state.sel_radio_c === "<100"}
+                  onChange={this.onRadioChangeC}
+                />
+                <span className="filter_lbl">  &lt; 100 </span>
+              </label>
+            </li>
+
+            
+            <li>
+              <label>
+                <input
+                  type="radio"
+                  value="100-1000"
+                  checked={this.state.sel_radio_c === "100-1000l"}
+                  onChange={this.onRadioChangeC}
+                />
+                <span className="filter_lbl">100-1000</span>
+              </label>  
+      </li>              
+            <li>
+              <label>
+                <input
+                  type="radio"
+                  value=">1000"
+                  checked={this.state.sel_radio_c === ">1000"}
+                  onChange={this.onRadioChangeC}
+                />
+                <span className="filter_lbl" &lt; 1000 </span>
+              </label>
+            </li> 
+          </ul>  
   
   
   
