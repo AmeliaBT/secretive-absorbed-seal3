@@ -490,8 +490,9 @@ let regfwo = request.body.fwo; //PN
   let regmwo = request.body.mwo; //sour
   let regnwo = request.body.nwo; //des
  let reg_inspector= request.body.inspector; 
- 
-  if(reg_inspector=== "Other"){reg_inspector='^(?!Tuan|!Jim).*$' };
+ //'^(part1|part2|part1,part2)$'
+ // if(reg_inspector=== "Other"){reg_inspector='^(?!Tuan).*$' }; //ok
+   if(reg_inspector=== "Other"){reg_inspector='^(Tuan|Jim|Tuan,Jim)$'};
    //reportModel.find({"inspector":request.body.inspector}, (err, doc) => {
   reportModel.find({ 
     reportID: new RegExp(regreportID, 'ig'), 
