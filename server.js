@@ -481,6 +481,7 @@ app.post("/get-user-filtered-reports", function(request, response) {
 //create-filtered-table2
 
 app.post("/create-filtered-table2", function(request, response) {
+  let lot;
  let regreportID = request.body.reportID;  
 let regGwo = request.body.Gwo; //Model
 let regfwo = request.body.fwo; //PN
@@ -500,6 +501,7 @@ let regfwo = request.body.fwo; //PN
   if(owo ==="<100"){
     //MyModel.find({ name: 'john', age: { $gte: 18 }});
     console.log(owo);
+    lot={ $lte: 99 };
   }else{console.log("no: "+ owo)}
    reportModel.find({ 
     reportID: new RegExp(regreportID, 'ig'), 
@@ -512,7 +514,7 @@ let regfwo = request.body.fwo; //PN
     nwo: new RegExp(regnwo, 'ig'), 
     two: new RegExp(regtwo, 'ig'), 
     //MyModel.find({ name: 'john', age: { $gte: 18 }});
-       owo: { $gte: 100 }, 
+       owo: lot, 
      inspector: new RegExp(reg_inspector, 'ig')
   }, 
                    (err, doc) => {
