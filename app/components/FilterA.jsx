@@ -14,7 +14,7 @@ class FilterA extends React.Component {
       supplier:'',
   source:'',
   destination:'',
-      riN
+      riN:""
       
 } 
 
