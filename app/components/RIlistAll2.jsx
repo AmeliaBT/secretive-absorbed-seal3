@@ -70,7 +70,7 @@ class RIlistAll2 extends React.Component {
                   '&mwo=' + encodeURIComponent(event.source) +
                   '&nwo=' + encodeURIComponent(event.destination)
             ;
-alert(body);
+
         
 
       
@@ -108,15 +108,19 @@ alert(body);
            that.setState({
             res_len:res_len,
             model: event.model, 
-            pn: event.pn ,
-           
+            pn: event.pn ,           
             sel_radio_a: event.sel_radio_a ,
+           comment :  event.comment,  
+            supplier:event.supplier,
+            source: event.source,
+            destination: event.destination,
+             
             filterAB:'Showing ' + res_len +' results for ' +event.model  
              + ' '  +event.pn  
              + ' ' + event.sel_radio_a  
               + ' '  +event.pn  
-                 + ' '  +event.record  
-               + ' '  +event.supplier
+              + ' '  +event.comment  
+              + ' '  +event.supplier
                + ' '  +event.source
                + ' '  +event.destination
              ,
@@ -129,7 +133,7 @@ alert(body);
   }
 
   
-     
+    
  handleParentDataB(event) {  
    this.setState({ sel_radio_b: event.sel_radio_b });
    let dataA=this.state.model + "  " + this.state.pn + "  " +this.state.sel_radio_a ;
@@ -138,7 +142,6 @@ alert(body);
     
   }
   
-
   
  
   

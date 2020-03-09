@@ -508,7 +508,7 @@ let reg_inspector= request.body.inspector;
                    (err, doc) => {
       if (err) throw err;
            response.json(doc);
-   console.log(doc);
+   //console.log(doc);
           }        
      );
            
