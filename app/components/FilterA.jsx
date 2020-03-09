@@ -10,10 +10,11 @@ class FilterA extends React.Component {
       model: '', 
       pn: '' ,
       comment: '' ,
-     sel_radio_a: '',
+      sel_radio_a: '',
+      sel_radio_b: '',
       supplier:'',
-  source:'',
-  destination:'',
+      source:'',
+      destination:'',
       riN:""
       
 } 
@@ -22,6 +23,7 @@ class FilterA extends React.Component {
     this.submitForm = this.submitForm.bind(this);
       this.clearForm = this.clearForm.bind(this);
      this.onRadioChange = this.onRadioChange.bind(this);
+     this.onRadioChangeB = this.onRadioChangeB.bind(this);
 }  
 submitForm(e) { e.preventDefault();  
   this.props.handleData(this.state) } ;  
@@ -32,6 +34,7 @@ submitForm(e) { e.preventDefault();
       pn: '' ,
        comment: '' ,
      sel_radio_a: '',
+      sel_radio_b: '',
       supplier:'',
   source:'',
   destination:''
@@ -52,7 +55,11 @@ submitForm(e) { e.preventDefault();
       sel_radio_a: e.target.value
     });
   }
-  
+  onRadioChangeB(e){
+    this.setState({
+      sel_radio_b: e.target.value
+    });
+  }
   
   render() { return (        <div>        
 <form>
@@ -119,6 +126,52 @@ PN: <br />
   Destination: <br />
   <input className="filter_input_a" type="text" name="destination"  value={this.state.destination} 
     onChange={this.handleChangeValue} /> <br />
+  <br />
+Pass/Fail: 
+    <ul>
+      <li>
+              <label>
+                <input
+                  type="radio"
+                  value="Pass"
+                  checked={this.state.sel_radio_b === "Pass"}
+                  onChange={this.onRadioChangeB}
+                />
+                <span className="filter_lbl">Pass</span>
+              </label>
+            </li>
+
+            
+            <li>
+              <label>
+                <input
+                  type="radio"
+                  value="Fail"
+                  checked={this.state.sel_radio_b === "Fail"}
+                  onChange={this.onRadioChangeB}
+                />
+                <span className="filter_lbl">Fail</span>
+              </label>  
+      </li>              
+            <li>
+              <label>
+                <input
+                  type="radio"
+                  value="Other"
+                  checked={this.state.sel_radio_b === "Other"}
+                  onChange={this.onRadioChangeB}
+                />
+                <span className="filter_lbl" >Other</span>
+              </label>
+            </li> 
+          </ul>    
+  
+  
+  
+  
+  
+  
+  
   <br /><br />
   <input type="button" value="Submit" onClick={this.submitForm}/></form> 
       <br />
