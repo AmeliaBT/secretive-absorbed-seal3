@@ -506,22 +506,23 @@ let regfwo = request.body.fwo; //PN
      lot={ $gte: 0 };console.log("no: "+ owo)}
   
   switch(owo) {
-  case 100:
-    // code block
+  case "<100":   
           lot={ $lte: 99 };
     break;
-  case 1000:
-    // code block
+    case "100-1000":
+     lot={ $gte: 100, $lte:1000  };
+    break;
+  case ">1000":
+     lot={ $gte: 1001 };
+    break;
+      case "":
+     lot={ $gte: 0 };
     break;
   default:
     // code block
+      lot={ $gte: 0 };
 }
-  
-  
-  
-  
-  
-  
+   
   
    reportModel.find({ 
     reportID: new RegExp(regreportID, 'ig'), 
