@@ -63,9 +63,13 @@ class RIlistAll2 extends React.Component {
       //let body = 'Gwo=' + encodeURIComponent(event.model) 'inspector='+ encodeURIComponent(event.sel_radio_a);
         let body = 'Gwo=' + encodeURIComponent(event.model) +
            
-                   '&fwo=' + encodeURIComponent(event.pn) +
-                  'record=' + encodeURIComponent(event.comment) +
-                   '&inspector=' + encodeURIComponent(event.sel_radio_a);
+                  '&fwo=' + encodeURIComponent(event.pn) +
+                  '&record=' + encodeURIComponent(event.comment) +
+                  '&inspector=' + encodeURIComponent(event.sel_radio_a)
+                  '&ewo=' + encodeURIComponent(event.supplier) +
+                  '&mwo=' + encodeURIComponent(event.source) +
+                  '&nwo=' + encodeURIComponent(event.destination)
+            ;
 //alert(body);
         
 
