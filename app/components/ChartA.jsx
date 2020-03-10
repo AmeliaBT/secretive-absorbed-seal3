@@ -150,8 +150,7 @@ class ChartA extends React.Component {
       if (i > 10) return;
       this.setState(state => {
         return Object.assign({}, state, {
-          data: [
-            ...state.data,
+          data: [...state.data,
             [20 * i, 10 * Math.random(), 10 * Math.random()]
           ]
         });
