@@ -142,12 +142,14 @@ class ChartA extends React.Component {
       ]
     };
   }
-
+/
   componentDidMount() {
     let i = 0;
     setInterval(() => {
       i++;
       if (i > 10) return;
+      this.setState({data:[20 * i, 10 * Math.random(), 10 * Math.random()]})
+    /*  
       this.setState(state => {
         return Object.assign({}, state, {
           data: [...state.data,
@@ -155,8 +157,12 @@ class ChartA extends React.Component {
           ]
         });
       });
+      
+      */
     }, 500);
   }
+  
+  
   render() {
     return (
       
