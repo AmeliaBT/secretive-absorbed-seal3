@@ -51,7 +51,7 @@ const DiffChart = () => {
   );
 };
 
-class App extends React.Component {
+class ChartA extends React.Component {
   componentDidMount() {
     setInterval(() => {
       this.setState({ refresh: Date.now() });
@@ -116,7 +116,7 @@ const Issue317 = () => {
 };
 
 //class ChartB extends React.Component< {}, { data: any[][] } > {
-class ChartA extends React.Component {
+class ChartAx extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -142,7 +142,8 @@ class ChartA extends React.Component {
       ]
     };
   }
-/
+}
+/*
   componentDidMount() {
     let i = 0;
     setInterval(() => {
@@ -159,9 +160,10 @@ class ChartA extends React.Component {
       });
       
       */
+  /*
     }, 500);
   }
-  
+  *?
   
   render() {
     return (

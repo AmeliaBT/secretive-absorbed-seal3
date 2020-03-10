@@ -61263,7 +61263,7 @@ const DiffChart = () => {
   );
 };
 
-class App extends React.Component {
+class ChartA extends React.Component {
   componentDidMount() {
     setInterval(() => {
       this.setState({ refresh: Date.now() });
@@ -61328,7 +61328,7 @@ const Issue317 = () => {
 };
 
 //class ChartB extends React.Component< {}, { data: any[][] } > {
-class ChartA extends React.Component {
+class ChartAx extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -61354,7 +61354,8 @@ class ChartA extends React.Component {
       ]
     };
   }
-
+}
+/*
   componentDidMount() {
     let i = 0;
     setInterval(() => {
@@ -61371,20 +61372,22 @@ class ChartA extends React.Component {
       });
       
       */
+  /*
     }, 500);
   }
+  *?
   
   render() {
     return (
       
-      React.createElement("div", null, 
-        React.createElement(Header, null), 
-        React.createElement(Issue317, null), 
-        React.createElement(Chart, {
-          chartType: "Gauge", 
-          width: "100%", 
-          height: "400px", 
-          data: [
+      <div>
+        <Header />
+        <Issue317 />
+        <Chart
+          chartType="Gauge"
+          width="100%"
+          height="400px"
+          data={[
             [
               { type: "string", label: "Label" },
               { type: "number", label: "Value" }
@@ -61392,13 +61395,13 @@ class ChartA extends React.Component {
             ["Memory", 80],
             ["CPU", 55],
             ["Network", 20]
-          ], 
-          options: gaugeOptions}
-        ), 
-        React.createElement(App, null), 
-        React.createElement(Chart, {
-          chartType: "BarChart", 
-          data: {
+          ]}
+          options={gaugeOptions}
+        />
+        <App />
+        <Chart
+          chartType="BarChart"
+          data={{
             cols: [
               { id: "task", label: "Task", type: "string" },
               { id: "hours", label: "Hours per Day", type: "number" }
@@ -61410,38 +61413,38 @@ class ChartA extends React.Component {
               { c: [{ v: "Watch TV" }, { v: 2 }] },
               { c: [{ v: "Sleep" }, { v: 7, f: "7.000" }] }
             ]
-          }, 
-          options: { colors: ["green"]}, 
-          width: "100%", 
-          height: "400px", 
-          legendToggle: true}
-        ), 
-        React.createElement(Chart, {
-          chartType: "ScatterChart", 
-          data: this.state.data, 
-          options: {
+          }}
+          options={{ colors: ["green"] }}
+          width="100%"
+          height="400px"
+          legendToggle
+        />
+        <Chart
+          chartType="ScatterChart"
+          data={this.state.data}
+          options={{
             title: "Age vs. Weight comparison",
             hAxis: { title: "Age", minValue: 0, maxValue: 15 },
             vAxis: { title: "Weight", minValue: 0, maxValue: 15 },
             legend: "none"
-          }, 
-          width: "100%", 
-          height: "400px", 
-          legendToggle: true, 
-          getChartWrapper: chartWrapper => {
+          }}
+          width="100%"
+          height="400px"
+          legendToggle
+          getChartWrapper={chartWrapper => {
             console.log("chart ", chartWrapper.getChart());
           }}
-        ), 
-        React.createElement(Chart, {
-          chartType: "ScatterChart", 
-          columns: ["Age", "Weight", "Test"], 
-          rows: [[8, 12, 1], [4, 5.5, 2]], 
-          options: {}, 
-          width: "100%", 
-          height: "400px", 
-          legendToggle: true}
-        )
-      )
+        />
+        <Chart
+          chartType="ScatterChart"
+          columns={["Age", "Weight", "Test"]}
+          rows={[[8, 12, 1], [4, 5.5, 2]]}
+          options={{}}
+          width="100%"
+          height="400px"
+          legendToggle
+        />
+      </div>
     );
   }
 }
