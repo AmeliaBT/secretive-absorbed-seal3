@@ -4,6 +4,8 @@ https://stackoverflow.com/questions/32950708/google-charts-json-date-react
 https://react-google-charts.com/data-sources/from-api
 https://www.github.com/rakannimer/react-google-charts
 cd react-google-charts
+see this: clowned by myself from github
+https://rakannimer-react-google-charts.glitch.me/
 *************************************************** */
 const React = require('react');
 const Link = require('react-router-dom').Link

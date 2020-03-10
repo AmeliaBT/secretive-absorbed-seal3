@@ -61216,6 +61216,8 @@ https://stackoverflow.com/questions/32950708/google-charts-json-date-react
 https://react-google-charts.com/data-sources/from-api
 https://www.github.com/rakannimer/react-google-charts
 cd react-google-charts
+see this: clowned by myself from github
+https://rakannimer-react-google-charts.glitch.me/
 *************************************************** */
 const React = __webpack_require__(0);
 const Link = __webpack_require__(10).Link
