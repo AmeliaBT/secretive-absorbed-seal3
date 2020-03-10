@@ -61218,27 +61218,68 @@ const React = __webpack_require__(0);
 const Link = __webpack_require__(10).Link
 const Header = __webpack_require__(17);
 const  { Chart }= __webpack_require__(401); 
-
+const chartEvents = [
+  {
+    eventName: "select",
+    callback({ chartWrapper }) {
+      console.log("Selected ", chartWrapper.getChart().getSelection());
+    }
+  }
+];
+const data = [
+  ["age", "weight"],
+  [8, 12],
+  [4, 5.5],
+  [11, 14],
+  [4, 5],
+  [3, 3.5],
+  [6.5, 7]
+];
+ 
+const options = {
+  title: "Age vs. Weight comparison",
+  hAxis: { title: "Age", viewWindow: { min: 0, max: 15 } },
+  vAxis: { title: "Weight", viewWindow: { min: 0, max: 15 } },
+  legend: "none"
+};
 
 
 class ChartA extends React.Component {
+  
+  render() {
+  
+//const ExampleChart = () => {
+  return (
+    React.createElement(Chart, {
+      chartType: "ScatterChart", 
+      data: data, 
+      options: options, 
+      graphID: "ScatterChart", 
+      width: "100%", 
+      height: "400px", 
+      chartEvents: chartEvents}
+    )
+  );
+};
+}
+  /*
   render() {
     return (
-      React.createElement("div", null, "    ", React.createElement(Header, null), 
-      React.createElement("div", {className: "my-pretty-chart-container"}, 
-        React.createElement(Chart, {
-          chartType: "ScatterChart", 
-          data: [["Age", "Weight"], [4, 5.5],  [5, 9], [6, 12]], 
-          width: "100%", 
-          height: "400px", 
-          legendToggle: true}
-        )
-      )
-        )
+      <div>    <Header/>
+      <div className={"my-pretty-chart-container"}>
+        <Chart
+          chartType="ScatterChart"
+          data={[["Age", "Weight"], [4, 5.5],  [5, 9], [6, 12]]}
+          width="100%"
+          height="400px"
+          legendToggle
+        />
+      </div>
+        </div>
     );
   }
 }
-  
+ */ 
   
 module.exports = ChartA;
 
