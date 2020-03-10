@@ -14,7 +14,8 @@ class Header extends React.Component {
       reportsLink: "",
       listLink: "",
       listLinkAll: "",
-      listLinkAll2: ""
+      listLinkAll2: "",
+      chartLinkA:""
     };
     this.handleLogOut = this.handleLogOut.bind(this);
   }
@@ -66,8 +67,8 @@ class Header extends React.Component {
             ["reportsLink"]: "/reports",
              ["listLink"]: "/list",
              ["listLinkAll"]: "/list-all",
-                ["listLinkAll2"]: "/list-all2"
-             
+                ["listLinkAll2"]: "/list-all2",
+                ["chartLinkA"]: "/chartA"
            });
         }
         else {
@@ -106,6 +107,9 @@ class Header extends React.Component {
           </Navbar.Brand>
           <Navbar.Brand >           
             <Link to={this.state.listLinkAll2} ><p  className="link">Filters  </p></Link>            
+          </Navbar.Brand>
+          <Navbar.Brand >           
+            <Link to={this.state.chartLinkA} ><p  className="link">Charts  </p></Link>            
           </Navbar.Brand>
           
           <Navbar.Toggle />

@@ -1434,7 +1434,8 @@ class Header extends React.Component {
       reportsLink: "",
       listLink: "",
       listLinkAll: "",
-      listLinkAll2: ""
+      listLinkAll2: "",
+      chartLinkA:""
     };
     this.handleLogOut = this.handleLogOut.bind(this);
   }
@@ -1486,8 +1487,8 @@ class Header extends React.Component {
             ["reportsLink"]: "/reports",
              ["listLink"]: "/list",
              ["listLinkAll"]: "/list-all",
-                ["listLinkAll2"]: "/list-all2"
-             
+                ["listLinkAll2"]: "/list-all2",
+                ["chartLinkA"]: "/chartA"
            });
         }
         else {
@@ -1526,6 +1527,9 @@ class Header extends React.Component {
           ), 
           React.createElement(Navbar.Brand, null, 
             React.createElement(Link, {to: this.state.listLinkAll2}, React.createElement("p", {className: "link"}, "Filters  "))
+          ), 
+          React.createElement(Navbar.Brand, null, 
+            React.createElement(Link, {to: this.state.chartLinkA}, React.createElement("p", {className: "link"}, "Charts  "))
           ), 
           
           React.createElement(Navbar.Toggle, null)
