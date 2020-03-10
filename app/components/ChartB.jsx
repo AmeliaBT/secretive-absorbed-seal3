@@ -115,7 +115,8 @@ const Issue317 = () => {
   );
 };
 
-class ChartB extends React.Component< {}, { data: any[][] } > {
+//class ChartB extends React.Component< {}, { data: any[][] } > {
+class ChartB extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
