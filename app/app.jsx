@@ -25,6 +25,7 @@ const SignUp = require('./components/SignUp');
 const LogIn = require('./components/LogIn');
 const HomePage = require('./components/HomePage');
 const FilterA = require('./components/FilterA');
+const ChartA = require('./components/ChartA');
 //const DisplayMessages= require('./components/DisplayMessages');
 //const DisplayMessagesB= require('./components/DisplayMessagesB');
 const ManyRecords =require('./components/ManyRecords');
@@ -47,6 +48,7 @@ render((
          <Route path="/list" component={RIlist}/>
          <Route path="/list-all" component={RIlistAll}/>
          <Route path="/list-all2" component={RIlistAll2}/>
+         <Route path="/chartA" component={ChartA}/>
         <Route path="/report-edit" component={RIedit}/>
         <Route path="/report-view" component={RIview}/>
          <Route path="/up-many-records" component={ManyRecords}/>

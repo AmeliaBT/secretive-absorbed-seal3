@@ -249,7 +249,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_runtime_corejs2_core_js_object_entries__ = __webpack_require__(117);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_runtime_corejs2_core_js_object_entries___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_runtime_corejs2_core_js_object_entries__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__babel_runtime_corejs2_helpers_esm_extends__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_invariant__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_invariant__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_invariant___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_invariant__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_prop_types__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_prop_types__);
@@ -1361,63 +1361,6 @@ function _assertThisInitialized(self) {
 /* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
-/* WEBPACK VAR INJECTION */(function(process) {/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
-
-
-/**
- * Use invariant() to assert state which your program assumes to be true.
- *
- * Provide sprintf-style format (only %s is supported) and arguments
- * to provide information about what broke and what you were
- * expecting.
- *
- * The invariant message will be stripped in production, but the invariant
- * will remain to ensure logic does not differ in production.
- */
-
-var invariant = function(condition, format, a, b, c, d, e, f) {
-  if (process.env.NODE_ENV !== 'production') {
-    if (format === undefined) {
-      throw new Error('invariant requires an error message argument');
-    }
-  }
-
-  if (!condition) {
-    var error;
-    if (format === undefined) {
-      error = new Error(
-        'Minified exception occurred; use the non-minified dev environment ' +
-        'for the full error message and additional helpful warnings.'
-      );
-    } else {
-      var args = [a, b, c, d, e, f];
-      var argIndex = 0;
-      error = new Error(
-        format.replace(/%s/g, function() { return args[argIndex++]; })
-      );
-      error.name = 'Invariant Violation';
-    }
-
-    error.framesToPop = 1; // we don't care about invariant's own frame
-    throw error;
-  }
-};
-
-module.exports = invariant;
-
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7)))
-
-/***/ }),
-/* 18 */
-/***/ (function(module, exports, __webpack_require__) {
-
 const React = __webpack_require__(0);
 const Link = __webpack_require__(10).Link
 // style for HEADER
@@ -1559,6 +1502,63 @@ module.exports = Header;
 
                             <div className="link" onClick={that.handleLogOut}>^Log^ [ouT]</div>
 */
+
+/***/ }),
+/* 18 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(process) {/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+
+
+/**
+ * Use invariant() to assert state which your program assumes to be true.
+ *
+ * Provide sprintf-style format (only %s is supported) and arguments
+ * to provide information about what broke and what you were
+ * expecting.
+ *
+ * The invariant message will be stripped in production, but the invariant
+ * will remain to ensure logic does not differ in production.
+ */
+
+var invariant = function(condition, format, a, b, c, d, e, f) {
+  if (process.env.NODE_ENV !== 'production') {
+    if (format === undefined) {
+      throw new Error('invariant requires an error message argument');
+    }
+  }
+
+  if (!condition) {
+    var error;
+    if (format === undefined) {
+      error = new Error(
+        'Minified exception occurred; use the non-minified dev environment ' +
+        'for the full error message and additional helpful warnings.'
+      );
+    } else {
+      var args = [a, b, c, d, e, f];
+      var argIndex = 0;
+      error = new Error(
+        format.replace(/%s/g, function() { return args[argIndex++]; })
+      );
+      error.name = 'Invariant Violation';
+    }
+
+    error.framesToPop = 1; // we don't care about invariant's own frame
+    throw error;
+  }
+};
+
+module.exports = invariant;
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7)))
 
 /***/ }),
 /* 19 */
@@ -4903,7 +4903,7 @@ module.exports = ReactPropTypesSecret;
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_warning__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_warning___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_warning__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_invariant__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_invariant__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_invariant___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_invariant__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_react__);
@@ -6399,7 +6399,7 @@ if (process.env.NODE_ENV === 'production') {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_prop_types__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_invariant__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_invariant__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_invariant___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_invariant__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_history__ = __webpack_require__(29);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
@@ -6525,7 +6525,7 @@ Link.contextTypes = {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_warning__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_warning___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_warning__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_invariant__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_invariant__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_invariant___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_invariant__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_react__);
@@ -7658,7 +7658,7 @@ var storeShape = __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.shape({
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__babel_runtime_helpers_esm_objectWithoutPropertiesLoose__ = __webpack_require__(39);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_hoist_non_react_statics__ = __webpack_require__(213);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_hoist_non_react_statics___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_hoist_non_react_statics__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_invariant__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_invariant__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_invariant___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_invariant__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_react__);
@@ -8411,7 +8411,7 @@ PanelGroup.childContextTypes = childContextTypes;
 /* harmony export (immutable) */ __webpack_exports__["c"] = isProp;
 /* harmony export (immutable) */ __webpack_exports__["b"] = defaultKey;
 /* harmony export (immutable) */ __webpack_exports__["a"] = canAcceptRef;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_invariant__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_invariant__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_invariant___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_invariant__);
 
 
@@ -12218,7 +12218,7 @@ const React = __webpack_require__(0);
 const Link = __webpack_require__(10).Link
 //const style = require('../styles/FormRI');
 const style = __webpack_require__(43);
-const Header = __webpack_require__(18);
+const Header = __webpack_require__(17);
 
 const { option, Form, FormGroup, Col, FormControl, Button, Grid, Row, ControlLabel} = __webpack_require__(13);
 //const Person = mongoose.model('Person', personSchema);
@@ -12906,6 +12906,7 @@ const SignUp = __webpack_require__(393);
 const LogIn = __webpack_require__(395);
 const HomePage = __webpack_require__(396);
 const FilterA = __webpack_require__(156);
+const ChartA = __webpack_require__(400);
 //const DisplayMessages= require('./components/DisplayMessages');
 //const DisplayMessagesB= require('./components/DisplayMessagesB');
 const ManyRecords =__webpack_require__(153);
@@ -12928,6 +12929,7 @@ render((
          React.createElement(Route, {path: "/list", component: RIlist}), 
          React.createElement(Route, {path: "/list-all", component: RIlistAll}), 
          React.createElement(Route, {path: "/list-all2", component: RIlistAll2}), 
+         React.createElement(Route, {path: "/chartA", component: ChartA}), 
         React.createElement(Route, {path: "/report-edit", component: RIedit}), 
         React.createElement(Route, {path: "/report-view", component: RIview}), 
          React.createElement(Route, {path: "/up-many-records", component: ManyRecords})
@@ -46235,7 +46237,7 @@ module.exports = Array.isArray || function (arr) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_prop_types__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_invariant__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_invariant__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_invariant___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_invariant__);
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -46339,7 +46341,7 @@ Prompt.contextTypes = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_prop_types__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_warning__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_warning___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_warning__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_invariant__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_invariant__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_invariant___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_invariant__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_history__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__generatePath__ = __webpack_require__(91);
@@ -46475,7 +46477,7 @@ Redirect.contextTypes = {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_warning__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_warning___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_warning__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_invariant__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_invariant__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_invariant___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_invariant__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_react__);
@@ -46656,7 +46658,7 @@ StaticRouter.childContextTypes = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_prop_types__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_warning__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_warning___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_warning__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_invariant__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_invariant__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_invariant___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_invariant__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__matchPath__ = __webpack_require__(65);
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -48276,7 +48278,7 @@ const Link = __webpack_require__(10).Link
 const style = __webpack_require__(226);
 // other components and etc
 //const RINav = require('./RINav');
-const Header = __webpack_require__(18);
+const Header = __webpack_require__(17);
 const ManyRecords = __webpack_require__(153);
 // react-bootstrap
 const {Jumbotron} = __webpack_require__(13);
@@ -48898,7 +48900,7 @@ function useUncontrolled(props, config) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_react_lifecycles_compat__ = __webpack_require__(116);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_invariant__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_invariant__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_invariant___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_invariant__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__utils__ = __webpack_require__(115);
 
@@ -58450,7 +58452,7 @@ Thumbnail.propTypes = propTypes;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_prop_types__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_invariant__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_invariant__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_invariant___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_invariant__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_uncontrollable__ = __webpack_require__(27);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__utils_createChainedFunction__ = __webpack_require__(12);
@@ -58806,7 +58808,7 @@ const style = __webpack_require__(379);
 // react-bootstrap
 const {Modal, Button, form, FormGroup, FormControl, ControlLabel, option} = __webpack_require__(13);
 // other components and etc
-const Header = __webpack_require__(18);
+const Header = __webpack_require__(17);
 const RIreport = __webpack_require__(381);
 
 /* the reports page that shows all reports */
@@ -59193,7 +59195,7 @@ const {Table ,filterFactory, Row, Col} = __webpack_require__(13);
 //import BootstrapTable from 'react-bootstrap-table-next';
 //import filterFactory, { textFilter } from 'react-bootstrap-table2-filter';
 
-const Header = __webpack_require__(18);
+const Header = __webpack_require__(17);
 
 const RIlistItem = __webpack_require__(385);
 
@@ -59418,7 +59420,7 @@ const style = __webpack_require__(43);
 // react-bootstrap
 const {Table , Grid, Row, Col, Modal} = __webpack_require__(13);
 // other components and etc
-const Header = __webpack_require__(18);
+const Header = __webpack_require__(17);
 //const FilterA =require('./FilterA');
 //const SidebarB =require('./SidebarB');
 //const ExportData = require('./ExportData');
@@ -59562,7 +59564,7 @@ const style = __webpack_require__(43);
 // react-bootstrap
 const {Table , Grid, Row, Col, Modal} = __webpack_require__(13);
 // other components and etc
-const Header = __webpack_require__(18);
+const Header = __webpack_require__(17);
 const FilterA =__webpack_require__(156);
 //const FilterB =require('./FilterB');
 
@@ -59890,7 +59892,7 @@ exports.push([module.i, "\nul,\nol {\n  list-style: none;\n  margin: 0;\n  paddi
 const React = __webpack_require__(0);
 const ReactDOM = __webpack_require__(11);
 const Link = __webpack_require__(10).Link
-const Header = __webpack_require__(18);
+const Header = __webpack_require__(17);
 const RIphoto2 = __webpack_require__(157);
 let myLink, myLink2;;
 // react-bootstrap
@@ -60221,7 +60223,7 @@ const React = __webpack_require__(0);
 const ReactDOM = __webpack_require__(11);
 const Link = __webpack_require__(10).Link
 //const style = require('../styles/Profile');
-const Header = __webpack_require__(18);
+const Header = __webpack_require__(17);
 const RIphoto2 = __webpack_require__(157);
 const {Grid, Row, Col, FormControl, ControlLabel, FormGroup, HelpBlock, Tabs, Tab, Form, Button} = __webpack_require__(13);
 let myLink, myLink2;
@@ -60425,7 +60427,7 @@ const Link = __webpack_require__(10).Link
 // style for BOOKS
 const style = __webpack_require__(158);
 // other components and etc
-const Header = __webpack_require__(18);
+const Header = __webpack_require__(17);
 // react-bootstrap
 const {Form, FormGroup, Col, FormControl, Button} = __webpack_require__(13);
 
@@ -60568,7 +60570,7 @@ const Link = __webpack_require__(10).Link
 // style for BOOKS
 const style = __webpack_require__(158);
 // other components and etc
-const Header = __webpack_require__(18);
+const Header = __webpack_require__(17);
 // react-bootstrap
 const {Form, FormGroup, Col, FormControl, Button} = __webpack_require__(13);
 
@@ -60674,7 +60676,7 @@ const React = __webpack_require__(0);
 
 const style = __webpack_require__(43);
 // other components and etc
-const Header = __webpack_require__(18);
+const Header = __webpack_require__(17);
 const FormRI =__webpack_require__(397);
 // react-bootstrap
 const {Grid, Row, Col, FormControl} = __webpack_require__(13);
@@ -60768,7 +60770,7 @@ const Link = __webpack_require__(10).Link
 // style for BOOKS
 const style = __webpack_require__(398);
 // other components and etc
-const Header = __webpack_require__(18);
+const Header = __webpack_require__(17);
 //const CreatableSelect= require('react-select');
 //const { Creatable }= require('react-select');
 
@@ -61203,6 +61205,1009 @@ exports.push([module.i, "/* for Filter A \nh1, p {\n  font-family: Lato;\n}\n\n.
 
 // exports
 
+
+/***/ }),
+/* 400 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* ****************************************
+https://www.npmjs.com/package/react-google-charts
+https://stackoverflow.com/questions/32950708/google-charts-json-date-react
+*************************************************** */
+const React = __webpack_require__(0);
+const Link = __webpack_require__(10).Link
+const Header = __webpack_require__(17);
+const  { Chart }= __webpack_require__(401); 
+
+
+
+class ChartA extends React.Component {
+  render() {
+    return (
+      React.createElement("div", null, "    ", React.createElement(Header, null), 
+      React.createElement("div", {className: "my-pretty-chart-container"}, 
+        React.createElement(Chart, {
+          chartType: "ScatterChart", 
+          data: [["Age", "Weight"], [4, 5.5], [8, 12]], 
+          width: "100%", 
+          height: "400px", 
+          legendToggle: true}
+        )
+      )
+        )
+    );
+  }
+}
+  
+  
+module.exports = ChartA;
+
+
+
+/***/ }),
+/* 401 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Chart", function() { return Chart; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_load_script__ = __webpack_require__(402);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_load_script___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_load_script__);
+
+
+
+/*! *****************************************************************************
+Copyright (c) Microsoft Corporation. All rights reserved.
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+this file except in compliance with the License. You may obtain a copy of the
+License at http://www.apache.org/licenses/LICENSE-2.0
+
+THIS CODE IS PROVIDED ON AN *AS IS* BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION ANY IMPLIED
+WARRANTIES OR CONDITIONS OF TITLE, FITNESS FOR A PARTICULAR PURPOSE,
+MERCHANTABLITY OR NON-INFRINGEMENT.
+
+See the Apache Version 2.0 License for specific language governing permissions
+and limitations under the License.
+***************************************************************************** */
+/* global Reflect, Promise */
+
+var extendStatics = function(d, b) {
+    extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return extendStatics(d, b);
+};
+
+function __extends(d, b) {
+    extendStatics(d, b);
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+}
+
+var __assign = function() {
+    __assign = Object.assign || function __assign(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+
+function __awaiter(thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+}
+
+function __generator(thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+}
+
+var chartDefaultProps = {
+    graph_id: null,
+    legend_toggle: false,
+    graphID: null,
+    options: {
+        colors: null
+    },
+    data: null,
+    rows: null,
+    columns: null,
+    diffdata: null,
+    chartEvents: null,
+    legendToggle: false,
+    chartActions: null,
+    getChartWrapper: function (chartWrapper, google) { },
+    getChartEditor: null,
+    className: "",
+    style: {},
+    formatters: null,
+    spreadSheetUrl: null,
+    spreadSheetQueryParameters: {
+        headers: 1,
+        gid: 1
+    },
+    rootProps: {},
+    chartWrapperParams: {},
+    controls: null,
+    render: null,
+    toolbarItems: null,
+    toolbarID: null
+};
+
+var GoogleChartLoader = (function (_super) {
+    __extends(GoogleChartLoader, _super);
+    function GoogleChartLoader() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.handleGoogleChartsLoaderScriptLoaded = function (windowGoogleCharts) {
+            var _a = _this.props, version = _a.chartVersion, packages = _a.chartPackages, language = _a.chartLanguage, mapsApiKey = _a.mapsApiKey, onLoad = _a.onLoad;
+            windowGoogleCharts.charts.load(version || "current", {
+                packages: packages || ["corechart", "controls"],
+                language: language || "en",
+                mapsApiKey: mapsApiKey
+            });
+            windowGoogleCharts.charts.setOnLoadCallback(function () {
+                onLoad(windowGoogleCharts);
+            });
+        };
+        return _this;
+    }
+    GoogleChartLoader.prototype.shouldComponentUpdate = function (nextProps) {
+        return nextProps.chartPackages === this.props.chartPackages;
+    };
+    GoogleChartLoader.prototype.render = function () {
+        var _this = this;
+        var onError = this.props.onError;
+        return (Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])(__WEBPACK_IMPORTED_MODULE_1_react_load_script___default.a, { url: "https://www.gstatic.com/charts/loader.js", onError: onError, onLoad: function () {
+                var windowWithGoogle = window;
+                if (windowWithGoogle.google) {
+                    _this.handleGoogleChartsLoaderScriptLoaded(windowWithGoogle.google);
+                }
+            } }));
+    };
+    return GoogleChartLoader;
+}(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]));
+
+var uniqueID = 0;
+var generateUniqueID = function () {
+    uniqueID += 1;
+    return "reactgooglegraph-" + uniqueID;
+};
+
+var DEFAULT_CHART_COLORS = [
+    "#3366CC",
+    "#DC3912",
+    "#FF9900",
+    "#109618",
+    "#990099",
+    "#3B3EAC",
+    "#0099C6",
+    "#DD4477",
+    "#66AA00",
+    "#B82E2E",
+    "#316395",
+    "#994499",
+    "#22AA99",
+    "#AAAA11",
+    "#6633CC",
+    "#E67300",
+    "#8B0707",
+    "#329262",
+    "#5574A6",
+    "#3B3EAC"
+];
+
+var _this = undefined;
+var loadDataTableFromSpreadSheet = function (googleViz, spreadSheetUrl, urlParams) {
+    if (urlParams === void 0) { urlParams = {}; }
+    return __awaiter(_this, void 0, void 0, function () {
+        return __generator(this, function (_a) {
+            return [2, new Promise(function (resolve, reject) {
+                    var headers = "" + (urlParams.headers ? "headers=" + urlParams.headers : "headers=0");
+                    var queryString = "" + (urlParams.query ? "&tq=" + encodeURIComponent(urlParams.query) : "");
+                    var gid = "" + (urlParams.gid ? "&gid=" + urlParams.gid : "");
+                    var sheet = "" + (urlParams.sheet ? "&sheet=" + urlParams.sheet : "");
+                    var access_token = "" + (urlParams.access_token ? "&access_token=" + urlParams.access_token : "");
+                    var urlQueryString = "" + headers + gid + sheet + queryString + access_token;
+                    var urlToSpreadSheet = spreadSheetUrl + "/gviz/tq?" + urlQueryString;
+                    var query = new googleViz.visualization.Query(urlToSpreadSheet);
+                    query.send(function (response) {
+                        if (response.isError()) {
+                            reject("Error in query:  " + response.getMessage() + " " + response.getDetailedMessage());
+                        }
+                        else {
+                            resolve(response.getDataTable());
+                        }
+                    });
+                })];
+        });
+    });
+};
+
+var _a = Object(__WEBPACK_IMPORTED_MODULE_0_react__["createContext"])(chartDefaultProps), Provider = _a.Provider, Consumer = _a.Consumer;
+var ContextProvider = function (_a) {
+    var children = _a.children, value = _a.value;
+    return Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])(Provider, { value: value }, children);
+};
+var ContextConsumer = function (_a) {
+    var render = _a.render;
+    return (Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])(Consumer, null, function (context) {
+        return render(context);
+    }));
+};
+
+var GRAY_COLOR = "#CCCCCC";
+var GoogleChartDataTableInner = (function (_super) {
+    __extends(GoogleChartDataTableInner, _super);
+    function GoogleChartDataTableInner() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.state = {
+            hiddenColumns: []
+        };
+        _this.listenToLegendToggle = function () {
+            var _a = _this.props, google = _a.google, googleChartWrapper = _a.googleChartWrapper;
+            google.visualization.events.addListener(googleChartWrapper, "select", function () {
+                var chart = googleChartWrapper.getChart();
+                var selection = chart.getSelection();
+                var dataTable = googleChartWrapper.getDataTable();
+                if (selection.length === 0 ||
+                    selection[0].row !== null ||
+                    dataTable === null) {
+                    return;
+                }
+                var columnIndex = selection[0].column;
+                var columnID = _this.getColumnID(dataTable, columnIndex);
+                if (_this.state.hiddenColumns.includes(columnID)) {
+                    _this.setState(function (state) { return (__assign({}, state, { hiddenColumns: state.hiddenColumns.filter(function (colID) { return colID !== columnID; }).slice() })); });
+                }
+                else {
+                    _this.setState(function (state) { return (__assign({}, state, { hiddenColumns: state.hiddenColumns.concat([columnID]) })); });
+                }
+            });
+        };
+        _this.applyFormatters = function (dataTable, formatters) {
+            var google = _this.props.google;
+            for (var _i = 0, formatters_1 = formatters; _i < formatters_1.length; _i++) {
+                var formatter = formatters_1[_i];
+                switch (formatter.type) {
+                    case "ArrowFormat": {
+                        var vizFormatter = new google.visualization.ArrowFormat(formatter.options);
+                        vizFormatter.format(dataTable, formatter.column);
+                        break;
+                    }
+                    case "BarFormat": {
+                        var vizFormatter = new google.visualization.BarFormat(formatter.options);
+                        vizFormatter.format(dataTable, formatter.column);
+                        break;
+                    }
+                    case "ColorFormat": {
+                        var vizFormatter = new google.visualization.ColorFormat(formatter.options);
+                        var ranges = formatter.ranges;
+                        for (var _a = 0, ranges_1 = ranges; _a < ranges_1.length; _a++) {
+                            var range = ranges_1[_a];
+                            vizFormatter.addRange.apply(vizFormatter, range);
+                        }
+                        vizFormatter.format(dataTable, formatter.column);
+                        break;
+                    }
+                    case "DateFormat": {
+                        var vizFormatter = new google.visualization.DateFormat(formatter.options);
+                        vizFormatter.format(dataTable, formatter.column);
+                        break;
+                    }
+                    case "NumberFormat": {
+                        var vizFormatter = new google.visualization.NumberFormat(formatter.options);
+                        vizFormatter.format(dataTable, formatter.column);
+                        break;
+                    }
+                    case "PatternFormat": {
+                        var vizFormatter = new google.visualization.PatternFormat(formatter.options);
+                        vizFormatter.format(dataTable, formatter.column);
+                        break;
+                    }
+                }
+            }
+        };
+        _this.getColumnID = function (dataTable, columnIndex) {
+            return (dataTable.getColumnId(columnIndex) ||
+                dataTable.getColumnLabel(columnIndex));
+        };
+        _this.draw = function (_a) {
+            var data = _a.data, diffdata = _a.diffdata, rows = _a.rows, columns = _a.columns, options = _a.options, legend_toggle = _a.legend_toggle, legendToggle = _a.legendToggle, chartType = _a.chartType, formatters = _a.formatters, spreadSheetUrl = _a.spreadSheetUrl, spreadSheetQueryParameters = _a.spreadSheetQueryParameters;
+            return __awaiter(_this, void 0, void 0, function () {
+                var _b, google, googleChartWrapper, dataTable, chartDiff, oldData, newData, columnCount, i, columnID, previousColumnLabel, previousColumnID, previousColumnType, chart;
+                return __generator(this, function (_c) {
+                    switch (_c.label) {
+                        case 0:
+                            _b = this.props, google = _b.google, googleChartWrapper = _b.googleChartWrapper;
+                            chartDiff = null;
+                            if (diffdata !== null) {
+                                oldData = google.visualization.arrayToDataTable(diffdata.old);
+                                newData = google.visualization.arrayToDataTable(diffdata.new);
+                                chartDiff = google.visualization[chartType].prototype.computeDiff(oldData, newData);
+                            }
+                            if (!(data !== null)) return [3, 1];
+                            if (Array.isArray(data)) {
+                                dataTable = google.visualization.arrayToDataTable(data);
+                            }
+                            else {
+                                dataTable = new google.visualization.DataTable(data);
+                            }
+                            return [3, 5];
+                        case 1:
+                            if (!(rows !== null && columns !== null)) return [3, 2];
+                            dataTable = google.visualization.arrayToDataTable([columns].concat(rows));
+                            return [3, 5];
+                        case 2:
+                            if (!(spreadSheetUrl !== null)) return [3, 4];
+                            return [4, loadDataTableFromSpreadSheet(google, spreadSheetUrl, spreadSheetQueryParameters)];
+                        case 3:
+                            dataTable = (_c.sent());
+                            return [3, 5];
+                        case 4:
+                            dataTable = google.visualization.arrayToDataTable([]);
+                            _c.label = 5;
+                        case 5:
+                            columnCount = dataTable.getNumberOfColumns();
+                            for (i = 0; i < columnCount; i += 1) {
+                                columnID = this.getColumnID(dataTable, i);
+                                if (this.state.hiddenColumns.includes(columnID)) {
+                                    previousColumnLabel = dataTable.getColumnLabel(i);
+                                    previousColumnID = dataTable.getColumnId(i);
+                                    previousColumnType = dataTable.getColumnType(i);
+                                    dataTable.removeColumn(i);
+                                    dataTable.addColumn({
+                                        label: previousColumnLabel,
+                                        id: previousColumnID,
+                                        type: previousColumnType
+                                    });
+                                }
+                            }
+                            chart = googleChartWrapper.getChart();
+                            if (googleChartWrapper.getChartType() === "Timeline") {
+                                chart && chart.clearChart();
+                            }
+                            googleChartWrapper.setChartType(chartType);
+                            googleChartWrapper.setOptions(options);
+                            googleChartWrapper.setDataTable(dataTable);
+                            googleChartWrapper.draw();
+                            if (this.props.googleChartDashboard !== null) {
+                                this.props.googleChartDashboard.draw(dataTable);
+                            }
+                            if (chartDiff !== null) {
+                                googleChartWrapper.setDataTable(chartDiff);
+                                googleChartWrapper.draw();
+                            }
+                            if (formatters !== null) {
+                                this.applyFormatters(dataTable, formatters);
+                                googleChartWrapper.setDataTable(dataTable);
+                                googleChartWrapper.draw();
+                            }
+                            if (legendToggle === true || legend_toggle === true) {
+                                this.grayOutHiddenColumns({ options: options });
+                            }
+                            return [2];
+                    }
+                });
+            });
+        };
+        _this.grayOutHiddenColumns = function (_a) {
+            var options = _a.options;
+            var googleChartWrapper = _this.props.googleChartWrapper;
+            var dataTable = googleChartWrapper.getDataTable();
+            if (dataTable === null)
+                return;
+            var columnCount = dataTable.getNumberOfColumns();
+            var hasAHiddenColumn = _this.state.hiddenColumns.length > 0;
+            if (hasAHiddenColumn === false)
+                return;
+            var colors = Array.from({ length: columnCount - 1 }).map(function (dontcare, i) {
+                var columnID = _this.getColumnID(dataTable, i + 1);
+                if (_this.state.hiddenColumns.includes(columnID)) {
+                    return GRAY_COLOR;
+                }
+                else if (typeof options.colors !== "undefined" &&
+                    options.colors !== null) {
+                    return options.colors[i];
+                }
+                else {
+                    return DEFAULT_CHART_COLORS[i];
+                }
+            });
+            googleChartWrapper.setOptions(__assign({}, options, { colors: colors }));
+            googleChartWrapper.draw();
+        };
+        _this.onResize = function () {
+            var googleChartWrapper = _this.props.googleChartWrapper;
+            googleChartWrapper.draw();
+        };
+        return _this;
+    }
+    GoogleChartDataTableInner.prototype.componentDidMount = function () {
+        this.draw(this.props);
+        window.addEventListener("resize", this.onResize);
+        if (this.props.legend_toggle || this.props.legendToggle) {
+            this.listenToLegendToggle();
+        }
+    };
+    GoogleChartDataTableInner.prototype.componentWillUnmount = function () {
+        var _a = this.props, google = _a.google, googleChartWrapper = _a.googleChartWrapper;
+        window.removeEventListener("resize", this.onResize);
+        google.visualization.events.removeAllListeners(googleChartWrapper);
+        if (googleChartWrapper.getChartType() === "Timeline") {
+            googleChartWrapper.getChart() &&
+                googleChartWrapper.getChart().clearChart();
+        }
+    };
+    GoogleChartDataTableInner.prototype.componentDidUpdate = function () {
+        this.draw(this.props);
+    };
+    GoogleChartDataTableInner.prototype.render = function () {
+        return null;
+    };
+    return GoogleChartDataTableInner;
+}(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]));
+var GoogleChartDataTable = (function (_super) {
+    __extends(GoogleChartDataTable, _super);
+    function GoogleChartDataTable() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    GoogleChartDataTable.prototype.componentDidMount = function () { };
+    GoogleChartDataTable.prototype.componentWillUnmount = function () { };
+    GoogleChartDataTable.prototype.shouldComponentUpdate = function () {
+        return false;
+    };
+    GoogleChartDataTable.prototype.render = function () {
+        var _a = this.props, google = _a.google, googleChartWrapper = _a.googleChartWrapper, googleChartDashboard = _a.googleChartDashboard;
+        return (Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])(ContextConsumer, { render: function (props) {
+                return (Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])(GoogleChartDataTableInner, __assign({}, props, { google: google, googleChartWrapper: googleChartWrapper, googleChartDashboard: googleChartDashboard })));
+            } }));
+    };
+    return GoogleChartDataTable;
+}(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]));
+
+var GoogleChartEvents = (function (_super) {
+    __extends(GoogleChartEvents, _super);
+    function GoogleChartEvents() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    GoogleChartEvents.prototype.shouldComponentUpdate = function () {
+        return false;
+    };
+    GoogleChartEvents.prototype.listenToEvents = function (_a) {
+        var _this = this;
+        var chartEvents = _a.chartEvents, google = _a.google, googleChartWrapper = _a.googleChartWrapper;
+        if (chartEvents === null) {
+            return;
+        }
+        google.visualization.events.removeAllListeners(googleChartWrapper);
+        var _loop_1 = function (event_1) {
+            var eventName = event_1.eventName, callback = event_1.callback;
+            google.visualization.events.addListener(googleChartWrapper, eventName, function () {
+                var args = [];
+                for (var _i = 0; _i < arguments.length; _i++) {
+                    args[_i] = arguments[_i];
+                }
+                callback({
+                    chartWrapper: googleChartWrapper,
+                    props: _this.props,
+                    google: google,
+                    eventArgs: args
+                });
+            });
+        };
+        for (var _i = 0, chartEvents_1 = chartEvents; _i < chartEvents_1.length; _i++) {
+            var event_1 = chartEvents_1[_i];
+            _loop_1(event_1);
+        }
+    };
+    GoogleChartEvents.prototype.render = function () {
+        var _this = this;
+        var _a = this.props, google = _a.google, googleChartWrapper = _a.googleChartWrapper;
+        return (Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])(ContextConsumer, { render: function (propsFromContext) {
+                _this.listenToEvents({
+                    chartEvents: propsFromContext.chartEvents || null,
+                    google: google,
+                    googleChartWrapper: googleChartWrapper
+                });
+                return null;
+            } }));
+    };
+    return GoogleChartEvents;
+}(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]));
+
+var controlCounter = 0;
+var GoogleChart = (function (_super) {
+    __extends(GoogleChart, _super);
+    function GoogleChart() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.state = {
+            googleChartWrapper: null,
+            googleChartDashboard: null,
+            googleChartControls: null,
+            googleChartEditor: null,
+            isReady: false
+        };
+        _this.graphID = null;
+        _this.dashboard_ref = Object(__WEBPACK_IMPORTED_MODULE_0_react__["createRef"])();
+        _this.toolbar_ref = Object(__WEBPACK_IMPORTED_MODULE_0_react__["createRef"])();
+        _this.getGraphID = function () {
+            var _a = _this.props, graphID = _a.graphID, graph_id = _a.graph_id;
+            var instanceGraphID;
+            if (graphID === null && graph_id === null) {
+                if (_this.graphID === null) {
+                    instanceGraphID = generateUniqueID();
+                }
+                else {
+                    instanceGraphID = _this.graphID;
+                }
+            }
+            else if (graphID !== null && graph_id === null) {
+                instanceGraphID = graphID;
+            }
+            else if (graph_id !== null && graphID === null) {
+                instanceGraphID = graph_id;
+            }
+            else {
+                instanceGraphID = graphID;
+            }
+            _this.graphID = instanceGraphID;
+            return _this.graphID;
+        };
+        _this.getControlID = function (id, index) {
+            controlCounter += 1;
+            var controlID;
+            if (typeof id === "undefined") {
+                controlID = "googlechart-control-" + index + "-" + controlCounter;
+            }
+            else {
+                controlID = id;
+            }
+            return controlID;
+        };
+        _this.addControls = function (googleChartWrapper, googleChartDashboard) {
+            var _a = _this.props, google = _a.google, controls = _a.controls;
+            var googleChartControls = controls === null
+                ? null
+                : controls.map(function (control, i) {
+                    var controlIDMaybe = control.controlID, controlType = control.controlType, controlOptions = control.options, controlWrapperParams = control.controlWrapperParams;
+                    var controlID = _this.getControlID(controlIDMaybe, i);
+                    return {
+                        controlProp: control,
+                        control: new google.visualization.ControlWrapper(__assign({ containerId: controlID, controlType: controlType, options: controlOptions }, controlWrapperParams))
+                    };
+                });
+            if (googleChartControls === null) {
+                return null;
+            }
+            googleChartDashboard.bind(googleChartControls.map(function (_a) {
+                var control = _a.control;
+                return control;
+            }), googleChartWrapper);
+            var _loop_1 = function (chartControl) {
+                var control = chartControl.control, controlProp = chartControl.controlProp;
+                var _a = controlProp.controlEvents, controlEvents = _a === void 0 ? [] : _a;
+                var _loop_2 = function (event_1) {
+                    var callback = event_1.callback, eventName = event_1.eventName;
+                    google.visualization.events.removeListener(control, eventName, callback);
+                    google.visualization.events.addListener(control, eventName, function () {
+                        var args = [];
+                        for (var _i = 0; _i < arguments.length; _i++) {
+                            args[_i] = arguments[_i];
+                        }
+                        callback({
+                            chartWrapper: googleChartWrapper,
+                            controlWrapper: control,
+                            props: _this.props,
+                            google: google,
+                            eventArgs: args
+                        });
+                    });
+                };
+                for (var _i = 0, controlEvents_1 = controlEvents; _i < controlEvents_1.length; _i++) {
+                    var event_1 = controlEvents_1[_i];
+                    _loop_2(event_1);
+                }
+            };
+            for (var _i = 0, googleChartControls_1 = googleChartControls; _i < googleChartControls_1.length; _i++) {
+                var chartControl = googleChartControls_1[_i];
+                _loop_1(chartControl);
+            }
+            return googleChartControls;
+        };
+        _this.renderChart = function () {
+            var _a = _this.props, width = _a.width, height = _a.height, options = _a.options, style = _a.style, className = _a.className, rootProps = _a.rootProps, google = _a.google;
+            var divStyle = __assign({ height: height || (options && options.height), width: width || (options && options.width) }, style);
+            return (Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])("div", __assign({ id: _this.getGraphID(), style: divStyle, className: className }, rootProps), _this.state.isReady && _this.state.googleChartWrapper !== null ? (Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])(__WEBPACK_IMPORTED_MODULE_0_react__["Fragment"], null,
+                Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])(GoogleChartDataTable, { googleChartWrapper: _this.state.googleChartWrapper, google: google, googleChartDashboard: _this.state.googleChartDashboard }),
+                Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])(GoogleChartEvents, { googleChartWrapper: _this.state.googleChartWrapper, google: google }))) : null));
+        };
+        _this.renderControl = function (filter) {
+            if (filter === void 0) { filter = function (_a) {
+                var control = _a.control, controlProp = _a.controlProp;
+                return true;
+            }; }
+            return _this.state.isReady && _this.state.googleChartControls !== null ? (Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])(__WEBPACK_IMPORTED_MODULE_0_react__["Fragment"], null, _this.state.googleChartControls
+                .filter(function (_a) {
+                var controlProp = _a.controlProp, control = _a.control;
+                return filter({ control: control, controlProp: controlProp });
+            })
+                .map(function (_a) {
+                var control = _a.control, controlProp = _a.controlProp;
+                return (Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])("div", { key: control.getContainerId(), id: control.getContainerId() }));
+            }))) : null;
+        };
+        _this.renderToolBar = function () {
+            if (_this.props.toolbarItems === null)
+                return null;
+            return Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])("div", { ref: _this.toolbar_ref });
+        };
+        return _this;
+    }
+    GoogleChart.prototype.componentDidMount = function () {
+        var _a = this.props, options = _a.options, google = _a.google, chartType = _a.chartType, chartWrapperParams = _a.chartWrapperParams, toolbarItems = _a.toolbarItems, getChartEditor = _a.getChartEditor, getChartWrapper = _a.getChartWrapper;
+        var chartConfig = __assign({ chartType: chartType,
+            options: options, containerId: this.getGraphID() }, chartWrapperParams);
+        var googleChartWrapper = new google.visualization.ChartWrapper(chartConfig);
+        googleChartWrapper.setOptions(options);
+        getChartWrapper(googleChartWrapper, google);
+        var googleChartDashboard = new google.visualization.Dashboard(this.dashboard_ref);
+        var googleChartControls = this.addControls(googleChartWrapper, googleChartDashboard);
+        if (toolbarItems !== null) {
+            google.visualization.drawToolbar(this.toolbar_ref.current, toolbarItems);
+        }
+        var googleChartEditor = null;
+        if (getChartEditor !== null) {
+            googleChartEditor = new google.visualization.ChartEditor();
+            getChartEditor({
+                chartEditor: googleChartEditor,
+                chartWrapper: googleChartWrapper,
+                google: google
+            });
+        }
+        this.setState({
+            googleChartEditor: googleChartEditor,
+            googleChartControls: googleChartControls,
+            googleChartDashboard: googleChartDashboard,
+            googleChartWrapper: googleChartWrapper,
+            isReady: true
+        });
+    };
+    GoogleChart.prototype.componentDidUpdate = function () {
+        if (this.state.googleChartWrapper === null)
+            return;
+        if (this.state.googleChartDashboard === null)
+            return;
+        if (this.state.googleChartControls === null)
+            return;
+        var controls = this.props.controls;
+        for (var i = 0; i < controls.length; i += 1) {
+            var _a = controls[i], controlType = _a.controlType, options = _a.options, controlWrapperParams = _a.controlWrapperParams;
+            if (controlWrapperParams && "state" in controlWrapperParams) {
+                this.state.googleChartControls[i].control.setState(controlWrapperParams["state"]);
+            }
+            this.state.googleChartControls[i].control.setOptions(options);
+            this.state.googleChartControls[i].control.setControlType(controlType);
+        }
+    };
+    GoogleChart.prototype.shouldComponentUpdate = function (nextProps, nextState) {
+        return (this.state.isReady !== nextState.isReady ||
+            nextProps.controls !== this.props.controls);
+    };
+    GoogleChart.prototype.render = function () {
+        var _a = this.props, width = _a.width, height = _a.height, options = _a.options, style = _a.style;
+        var divStyle = __assign({ height: height || (options && options.height), width: width || (options && options.width) }, style);
+        if (this.props.render !== null) {
+            return (Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])("div", { ref: this.dashboard_ref, style: divStyle },
+                Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])("div", { ref: this.toolbar_ref, id: "toolbar" }),
+                this.props.render({
+                    renderChart: this.renderChart,
+                    renderControl: this.renderControl,
+                    renderToolbar: this.renderToolBar
+                })));
+        }
+        else {
+            return (Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])("div", { ref: this.dashboard_ref, style: divStyle },
+                this.renderControl(function (_a) {
+                    var controlProp = _a.controlProp;
+                    return controlProp.controlPosition !== "bottom";
+                }),
+                this.renderChart(),
+                this.renderControl(function (_a) {
+                    var controlProp = _a.controlProp;
+                    return controlProp.controlPosition === "bottom";
+                }),
+                this.renderToolBar()));
+        }
+    };
+    return GoogleChart;
+}(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]));
+
+var Chart = (function (_super) {
+    __extends(Chart, _super);
+    function Chart() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this._isMounted = false;
+        _this.state = {
+            loadingStatus: "loading",
+            google: null
+        };
+        _this.onLoad = function (google) {
+            if (_this.isFullyLoaded(google)) {
+                _this.onSuccess(google);
+            }
+            else {
+                var id_1 = setInterval(function () {
+                    var google = window.google;
+                    if (_this._isMounted) {
+                        if (google && _this.isFullyLoaded(google)) {
+                            clearInterval(id_1);
+                            _this.onSuccess(google);
+                        }
+                    }
+                    else {
+                        clearInterval(id_1);
+                    }
+                }, 1000);
+            }
+        };
+        _this.onSuccess = function (google) {
+            _this.setState({
+                loadingStatus: "ready",
+                google: google
+            });
+        };
+        _this.onError = function () {
+            _this.setState({
+                loadingStatus: "errored"
+            });
+        };
+        return _this;
+    }
+    Chart.prototype.render = function () {
+        var _a = this.props, chartLanguage = _a.chartLanguage, chartPackages = _a.chartPackages, chartVersion = _a.chartVersion, mapsApiKey = _a.mapsApiKey, loader = _a.loader, errorElement = _a.errorElement;
+        return (Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])(ContextProvider, { value: this.props },
+            this.state.loadingStatus === "ready" && this.state.google !== null ? (Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])(GoogleChart, __assign({}, this.props, { google: this.state.google }))) : this.state.loadingStatus === "errored" && errorElement ? (errorElement) : (loader),
+            Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])(GoogleChartLoader, __assign({}, { chartLanguage: chartLanguage, chartPackages: chartPackages, chartVersion: chartVersion, mapsApiKey: mapsApiKey }, { onLoad: this.onLoad, onError: this.onError }))));
+    };
+    Chart.prototype.componentDidMount = function () {
+        this._isMounted = true;
+    };
+    Chart.prototype.componentWillUnmount = function () {
+        this._isMounted = false;
+    };
+    Chart.prototype.isFullyLoaded = function (google) {
+        var _a = this.props, controls = _a.controls, toolbarItems = _a.toolbarItems, getChartEditor = _a.getChartEditor;
+        return (google &&
+            google.visualization &&
+            google.visualization.ChartWrapper &&
+            google.visualization.Dashboard &&
+            (!controls || google.visualization.ChartWrapper) &&
+            (!getChartEditor || google.visualization.ChartEditor) &&
+            (!toolbarItems || google.visualization.drawToolbar));
+    };
+    Chart.defaultProps = chartDefaultProps;
+    return Chart;
+}(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]));
+
+/* harmony default export */ __webpack_exports__["default"] = (Chart);
+
+
+
+/***/ }),
+/* 402 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(1);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Script = function (_React$Component) {
+  _inherits(Script, _React$Component);
+
+  // A dictionary mapping script URL to a boolean value indicating if the script
+  // has failed to load.
+
+
+  // A dictionary mapping script URLs to a dictionary mapping
+  // component key to component for all components that are waiting
+  // for the script to load.
+  function Script(props) {
+    _classCallCheck(this, Script);
+
+    var _this = _possibleConstructorReturn(this, (Script.__proto__ || Object.getPrototypeOf(Script)).call(this, props));
+
+    _this.scriptLoaderId = 'id' + _this.constructor.idCount++; // eslint-disable-line space-unary-ops, no-plusplus
+    return _this;
+  }
+
+  // A counter used to generate a unique id for each component that uses
+  // ScriptLoaderMixin.
+
+
+  // A dictionary mapping script URL to a boolean value indicating if the script
+  // has already been loaded.
+
+
+  _createClass(Script, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      var _props = this.props,
+          onError = _props.onError,
+          onLoad = _props.onLoad,
+          url = _props.url;
+
+
+      if (this.constructor.loadedScripts[url]) {
+        onLoad();
+        return;
+      }
+
+      if (this.constructor.erroredScripts[url]) {
+        onError();
+        return;
+      }
+
+      // If the script is loading, add the component to the script's observers
+      // and return. Otherwise, initialize the script's observers with the component
+      // and start loading the script.
+      if (this.constructor.scriptObservers[url]) {
+        this.constructor.scriptObservers[url][this.scriptLoaderId] = this.props;
+        return;
+      }
+
+      this.constructor.scriptObservers[url] = _defineProperty({}, this.scriptLoaderId, this.props);
+
+      this.createScript();
+    }
+  }, {
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {
+      var url = this.props.url;
+
+      var observers = this.constructor.scriptObservers[url];
+
+      // If the component is waiting for the script to load, remove the
+      // component from the script's observers before unmounting the component.
+      if (observers) {
+        delete observers[this.scriptLoaderId];
+      }
+    }
+  }, {
+    key: 'createScript',
+    value: function createScript() {
+      var _this2 = this;
+
+      var _props2 = this.props,
+          onCreate = _props2.onCreate,
+          url = _props2.url,
+          attributes = _props2.attributes;
+
+      var script = document.createElement('script');
+
+      onCreate();
+
+      // add 'data-' or non standard attributes to the script tag
+      if (attributes) {
+        Object.keys(attributes).forEach(function (prop) {
+          return script.setAttribute(prop, attributes[prop]);
+        });
+      }
+
+      script.src = url;
+
+      // default async to true if not set with custom attributes
+      if (!script.hasAttribute('async')) {
+        script.async = 1;
+      }
+
+      var callObserverFuncAndRemoveObserver = function callObserverFuncAndRemoveObserver(shouldRemoveObserver) {
+        var observers = _this2.constructor.scriptObservers[url];
+        Object.keys(observers).forEach(function (key) {
+          if (shouldRemoveObserver(observers[key])) {
+            delete _this2.constructor.scriptObservers[url][_this2.scriptLoaderId];
+          }
+        });
+      };
+      script.onload = function () {
+        _this2.constructor.loadedScripts[url] = true;
+        callObserverFuncAndRemoveObserver(function (observer) {
+          observer.onLoad();
+          return true;
+        });
+      };
+
+      script.onerror = function () {
+        _this2.constructor.erroredScripts[url] = true;
+        callObserverFuncAndRemoveObserver(function (observer) {
+          observer.onError();
+          return true;
+        });
+      };
+
+      document.body.appendChild(script);
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      return null;
+    }
+  }]);
+
+  return Script;
+}(_react2.default.Component);
+
+Script.propTypes = {
+  attributes: _propTypes.PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  onCreate: _propTypes.PropTypes.func,
+  onError: _propTypes.PropTypes.func.isRequired,
+  onLoad: _propTypes.PropTypes.func.isRequired,
+  url: _propTypes.PropTypes.string.isRequired
+};
+Script.defaultProps = {
+  attributes: {},
+  onCreate: function onCreate() {},
+  onError: function onError() {},
+  onLoad: function onLoad() {} };
+Script.scriptObservers = {};
+Script.loadedScripts = {};
+Script.erroredScripts = {};
+Script.idCount = 0;
+exports.default = Script;
+module.exports = exports['default'];
 
 /***/ })
 /******/ ]);
