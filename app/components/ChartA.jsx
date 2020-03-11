@@ -256,28 +256,31 @@ class ChartA extends React.Component {
            lwo ={el.lwo}       
             /> 
 */
-           let iDs=[] ;  
+           let arrayOfIDs=[] ;  
       
          let reports = response.reports.map((el) => {
           return 
       
- 
-  iDs.push(el.owo) ; //+ " " +{el.cwo}+ " " +{el.two}+  </p> +<br/> 
+ /* arrayOfBooks.push(
+           {reportnumber:request.body["reportnumber"], 
+           inspname: user.inspname});
+           */
+  arrayOfIDs.push({inspname:el.inspector}) ; //+ " " +{el.cwo}+ " " +{el.two}+  </p> +<br/> 
             
              
            
         });
           alert(reports.length);
-        alert(iDs.length);
-        alert([5]);
+        alert( arrayOfIDs.length);
+        alert(arrayOfIDs[5]);
  // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!           
         
            that.setState({
           ["reports"]: <div className="reports">
                       {reports}     
                     </div>,
-            ["iDs"] :<div >
-                      iDs   
+            ["arrayOfIDs"] :<div >
+               {arrayOfIDs }
                     </div>
            });
        }
@@ -328,8 +331,8 @@ class ChartA extends React.Component {
     <p> see reports here:</p>
      <p> ID dateInspected passfail qtylot qtytested qtyfail qtyrejected CREATE_DATE</p>
     <br/>
-     {this.state.reports}
-     {this.state.iDs}
+    
+     {this.state.arrayOfIDs}
       
     </Row>  
       </div>
