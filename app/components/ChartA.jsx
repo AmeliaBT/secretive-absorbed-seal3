@@ -12,7 +12,8 @@ const  { Chart }= require('react-google-charts');
 //const FilterB =require('./FilterB');
 
 //const RIlistItemAll = require('./RIlistItemAll');
-
+let arrayOfIDs=["Date", "Lot Qty"] ; 
+let arrayOfIDs2=["Lot Qty"] ; 
 const columns = [
   { type: "string", id: "President" },
   { type: "date", id: "Start" },
@@ -55,7 +56,8 @@ const MyChartRI = () => {
   return (
     <Chart
       chartType="ColumnChart"    
-      data= {companyTwo}
+     // data= {companyTwo}
+      data=  {this.sate.arrayOfIDs}
       width="100%"
       height="400px"
     />
@@ -265,13 +267,13 @@ class ChartA extends React.Component {
 
 
 */
-           let arrayOfIDs=["Date", "Lot Qty"] ; 
-         let arrayOfIDs2=["Date", "Lot Qty"] ; 
+         
       
          let reports = response.reports.map((el) => {
-           let myDate= el.cwo.substring(0,10);  //.format("YYY/MM");
-            arrayOfIDs.push([myDate, el.qwo]) ; 
-           arrayOfIDs2.push([ el.owo]) ; 
+           let myDate= el.cwo.substring(0,10);
+           let myLot= el.owo; //.format("YYY/MM");
+            arrayOfIDs.push([myDate, myLot]) ; 
+           arrayOfIDs2.push([ myLot]) ; 
           return 
   
              
