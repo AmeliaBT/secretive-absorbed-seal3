@@ -41,7 +41,7 @@ const companyTwo = [
   ["Eric", 1500]
 ];
 
-const DiffChart = () => {
+const MyChart = () => {
   return (
     <Chart
       chartType="ColumnChart"    
@@ -288,7 +288,7 @@ class ChartA extends React.Component {
   
   <Col xs={11} > <div   >  
     
-    <DiffChart />
+    <MyChart />
         <Chart
           chartType="Timeline"
           data={[columns, ...rows]}

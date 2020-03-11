@@ -61253,7 +61253,7 @@ const companyTwo = [
   ["Eric", 1500]
 ];
 
-const DiffChart = () => {
+const MyChart = () => {
   return (
     React.createElement(Chart, {
       chartType: "ColumnChart", 
@@ -61500,7 +61500,7 @@ React.createElement(Row, null,
   
   React.createElement(Col, {xs: 11}, " ", React.createElement("div", null, 
     
-    React.createElement(DiffChart, null), 
+    React.createElement(MyChart, null), 
         React.createElement(Chart, {
           chartType: "Timeline", 
           data: [columns, ...rows], 
