@@ -234,11 +234,17 @@ class ChartA extends React.Component {
         }
         let response = JSON.parse(this.responseText);
         
-// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  
-             
-        
-         let reports = response.reports.map((el) => {
-          return <RIlistItemAll  key={el.reportID}
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
+        /*  Records._ID,
+	     C1, //dateInspected cwo
+	     T1, //pass fail	        
+	     O1, //qty lot
+	     P1, //qty tested
+	     Q1, //qty fail
+	     R1, //qty rejected
+	     CREATE_DATE, //"created"
+       
+       <RIlistItemAll  key={el.reportID}
            reportnumber={el.reportID}  
            inspector={el.inspector}
              fwo={el.fwo}     
@@ -249,6 +255,16 @@ class ChartA extends React.Component {
            record={el.record}
            lwo ={el.lwo}       
             /> 
+*/
+           
+        
+         let reports = response.reports.map((el) => {
+          return 
+           <div> <p> start chart  </p>
+  <p> ID dateInspected passfail qtylot qtytested qtyfail qtyrejected CREATE_DATE</p>
+  <p> ID: </p>
+             dateInspected 
+           </div>
         });
         
  // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!           

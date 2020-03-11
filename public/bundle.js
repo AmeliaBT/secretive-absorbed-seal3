@@ -61446,21 +61446,37 @@ class ChartA extends React.Component {
         }
         let response = JSON.parse(this.responseText);
         
-// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  
-             
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
+        /*  Records._ID,
+	     C1, //dateInspected cwo
+	     T1, //pass fail	        
+	     O1, //qty lot
+	     P1, //qty tested
+	     Q1, //qty fail
+	     R1, //qty rejected
+	     CREATE_DATE, //"created"
+       
+       <RIlistItemAll  key={el.reportID}
+           reportnumber={el.reportID}  
+           inspector={el.inspector}
+             fwo={el.fwo}     
+           Gwo={el.Gwo}
+           jwo={el.jwo}
+           two={el.two}
+           owo={el.owo}
+           record={el.record}
+           lwo ={el.lwo}       
+            /> 
+*/
+           
         
          let reports = response.reports.map((el) => {
-          return React.createElement(RIlistItemAll, {key: el.reportID, 
-           reportnumber: el.reportID, 
-           inspector: el.inspector, 
-             fwo: el.fwo, 
-           Gwo: el.Gwo, 
-           jwo: el.jwo, 
-           two: el.two, 
-           owo: el.owo, 
-           record: el.record, 
-           lwo: el.lwo}
-            ) 
+          return 
+           React.createElement("div", null, " ", React.createElement("p", null, " start chart  "), 
+  React.createElement("p", null, " ID dateInspected passfail qtylot qtytested qtyfail qtyrejected CREATE_DATE"), 
+  React.createElement("p", null, " ID: "), "el.reportID" + " " +
+             "dateInspected" 
+           )
         });
         
  // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!           
