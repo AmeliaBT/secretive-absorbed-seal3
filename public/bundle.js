@@ -61468,23 +61468,26 @@ class ChartA extends React.Component {
            lwo ={el.lwo}       
             /> 
 */
-           
-        
+           let iDs=[] ;  
+      
          let reports = response.reports.map((el) => {
           return 
-          
+      
  
-  React.createElement("p", null, " ", el.reportID, "+ \" \" +", el.cwo, "+ \" \" +", el.two, "+ \" \"" 
-             )
+  iDs.push(el.reportID) ; //+ " " +{el.cwo}+ " " +{el.two}+  </p> +<br/> 
+            
              
            
         });
-        
+          alert(reports.length);
  // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!           
         
            that.setState({
           ["reports"]: React.createElement("div", {className: "reports"}, 
                       reports
+                    ),
+            ["iDs"] :React.createElement("div", {className: "reports"}, 
+                      "iDs"   
                     )
            });
        }

@@ -256,23 +256,26 @@ class ChartA extends React.Component {
            lwo ={el.lwo}       
             /> 
 */
-           
-        
+           let iDs=[] ;  
+      
          let reports = response.reports.map((el) => {
           return 
-          
+      
  
-  <p> {el.reportID}+ " " +{el.cwo}+ " " +{el.two}+ " " 
-             </p>
+  iDs.push(el.reportID) ; //+ " " +{el.cwo}+ " " +{el.two}+  </p> +<br/> 
+            
              
            
         });
-        
+          alert(reports.length);
  // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!           
         
            that.setState({
           ["reports"]: <div className="reports">
                       {reports}     
+                    </div>,
+            ["iDs"] :<div >
+                      iDs   
                     </div>
            });
        }
