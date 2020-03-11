@@ -61480,7 +61480,7 @@ class ChartA extends React.Component {
            let arrayOfIDs=["Date", "Lot Qty"] ;  
       
          let reports = response.reports.map((el) => {
-           let myDate= Date(el.cwo)   //.format("YYY/MM");
+           let myDate= el.cwo.substring(1,10);  //.format("YYY/MM");
             arrayOfIDs.push([myDate, el.qwo]) ; 
           return 
   
