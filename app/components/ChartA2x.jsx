@@ -56,11 +56,13 @@ const DiffChart = () => {
 };
 
 class ChartA extends React.Component {
+  /*
   componentDidMount() {
     setInterval(() => {
       this.setState({ refresh: Date.now() });
     }, 1000);
-  }
+  }*/
+  
   render() {
     return (
       <div className="App">
@@ -76,49 +78,8 @@ class ChartA extends React.Component {
   }
 }
 
-const gaugeOptions = {
-  width: 400,
-  height: 120,
-  redFrom: 90,
-  redTo: 100,
-  yellowFrom: 75,
-  yellowTo: 90,
-  minorTicks: 5
-};
 
-const Issue317 = () => {
-  const [chartType, setChartType] = React.useState<
-    "AreaChart" | "BarChart" | "Table"
-  >("AreaChart");
 
-  const columns = [
-    {
-      type: "string",
-      label: "year"
-    },
-    {
-      label: "AttentionSpan",
-      type: "number"
-    }
-  ];
-  const rows = [["2015", 5], ["2016", 3], ["2018", 1]];
-  return (
-    <div className="App">
-      <p> here is my button: </p>
-      <button <onClick={() => setChartType("BarChart")}>barChart</button>
-      <button onClick={() => setChartType("Table")}>Table</button>
-      <h3>{chartType}</h3>
-      <Chart
-        chartType={chartType}
-        width="100%"
-        height="400px"
-        legendToggle
-        rows={rows}
-        columns={columns}
-      />
-    </div>
-  );
-};
 
 //class ChartB extends React.Component< {}, { data: any[][] } > {
 
