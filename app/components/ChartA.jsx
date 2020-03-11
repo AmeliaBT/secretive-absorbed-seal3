@@ -259,20 +259,13 @@ class ChartA extends React.Component {
            let arrayOfIDs=[] ;  
       
          let reports = response.reports.map((el) => {
+            arrayOfIDs.push(el.two) ; 
           return 
-      
- /* arrayOfBooks.push(
-           {reportnumber:request.body["reportnumber"], 
-           inspname: user.inspname});
-           */
-  arrayOfIDs.push({inspname:el.inspector}) ; //+ " " +{el.cwo}+ " " +{el.two}+  </p> +<br/> 
-            
+  
              
            
         });
-          alert(reports.length);
-        alert( arrayOfIDs.length);
-        alert(arrayOfIDs[5]);
+         
  // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!           
         
            that.setState({
