@@ -61475,10 +61475,10 @@ class ChartA extends React.Component {
   ["Eric", 1500]
 ];
 */
-           let arrayOfIDs=["Name", "Popularity"] ;  
+           let arrayOfIDs=["Date", "Lot Qty"] ;  
       
          let reports = response.reports.map((el) => {
-            arrayOfIDs.push([el.two, el.qwo]) ; 
+            arrayOfIDs.push([el.cwo, el.qwo]) ; 
           return 
   
              
