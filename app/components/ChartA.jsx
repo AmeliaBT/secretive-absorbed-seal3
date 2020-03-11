@@ -49,7 +49,7 @@ const DiffChart = () => {
     <Chart
       chartType="ColumnChart"
      // diffdata={{ old: companyOne, new: companyTwo }}
-      diffdata= {companyTwo}
+      data= {companyTwo}
       width="100%"
       height="400px"
     />
@@ -72,7 +72,7 @@ class ChartA extends React.Component {
         <Chart
           chartType="Timeline"
           data={[columns, ...rows]}
-          width="50%"
+          width="75%"
           height="400px"
         />
       </div>
