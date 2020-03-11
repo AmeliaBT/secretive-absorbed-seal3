@@ -61263,6 +61263,17 @@ const MyChart = () => {
     )
   );
 };
+const MyChartRI = () => {
+  return (
+    React.createElement(Chart, {
+      chartType: "ColumnChart", 
+      data: companyTwo, 
+      width: "100%", 
+      height: "400px"}
+    )
+  );
+};
+
 
 /* the  page that shows all charts */
 class ChartA extends React.Component {
@@ -61456,22 +61467,18 @@ class ChartA extends React.Component {
 	     R1, //qty rejected
 	     CREATE_DATE, //"created"
        
-       <RIlistItemAll  key={el.reportID}
-           reportnumber={el.reportID}  
-           inspector={el.inspector}
-             fwo={el.fwo}     
-           Gwo={el.Gwo}
-           jwo={el.jwo}
-           two={el.two}
-           owo={el.owo}
-           record={el.record}
-           lwo ={el.lwo}       
-            /> 
+       const companyTwo = [
+  ["Name", "Popularity"],
+  ["Cesar", 370],
+  ["Rachel", 600],
+  ["Patrick", 700],
+  ["Eric", 1500]
+];
 */
-           let arrayOfIDs=[] ;  
+           let arrayOfIDs=["Name", "Popularity"] ;  
       
          let reports = response.reports.map((el) => {
-            arrayOfIDs.push(el.two) ; 
+            arrayOfIDs.push([el.two, el.qwo]) ; 
           return 
   
              
@@ -61519,13 +61526,14 @@ React.createElement(Row, null,
   React.createElement(Col, {xs: 11}, " ", React.createElement("div", null, 
     
     React.createElement(MyChart, null), 
+    
         React.createElement(Chart, {
           chartType: "Timeline", 
           data: [columns, ...rows], 
           width: "75%", 
           height: "400px"}
         ), 
- 
+  React.createElement(MyChartRI, null), 
 
   React.createElement(Modal, {show: this.state.show, onHide: this.handleClose}, "  ")
     
