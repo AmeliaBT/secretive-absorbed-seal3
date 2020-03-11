@@ -262,11 +262,14 @@ class ChartA extends React.Component {
   ["Patrick", 700],
   ["Eric", 1500]
 ];
+
+
 */
            let arrayOfIDs=["Date", "Lot Qty"] ;  
       
          let reports = response.reports.map((el) => {
-            arrayOfIDs.push([el.cwo, el.qwo]) ; 
+           let myDate= el.cwo.getMonth();   //.format("YYY/MM");
+            arrayOfIDs.push([myDate, el.qwo]) ; 
           return 
   
              
