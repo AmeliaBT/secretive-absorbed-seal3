@@ -14,11 +14,8 @@ const  { Chart }= require('react-google-charts');
 //const RIlistItemAll = require('./RIlistItemAll');
 let arrayOfIDs=
    [
-  ["Name", "Popularity"],
-  ["Cesar", 370],
-  ["Rachel", 600],
-  ["Patrick", 700],
-  ["Eric", 1500]
+  ["Name", "Lot Qty"]
+  
 ];
 let arrayOfIDs2=["Lot Qty"] ; 
 const columns = [
@@ -63,8 +60,7 @@ const MyChartRI = () => {
   return (
     <Chart
       chartType="ColumnChart"    
-     // data= {companyTwo}
-     data=  {arrayOfIDs}
+        data=  {arrayOfIDs}
       width="100%"
       height="400px"
     />
@@ -331,7 +327,7 @@ class ChartA extends React.Component {
   
   
   <Col xs={11} > <div   >  
-    
+ {/*  
     <MyChart />
     
         <Chart
@@ -339,7 +335,7 @@ class ChartA extends React.Component {
           data={[columns, ...rows]}
           width="75%"
           height="400px"
-        /> 
+        /> */}  
   <MyChartRI />
 
   <Modal show={this.state.show} onHide={this.handleClose}>  </Modal>
@@ -347,23 +343,7 @@ class ChartA extends React.Component {
     </div>
      </Col>
 </Row> 
-  <Row>  
-    <p> see reports here:</p>
-     <p> ID dateInspected passfail qtylot qtytested qtyfail qtyrejected CREATE_DATE</p>
-    <br/>
-    
-     {this.state.arrayOfIDs}
-      
-    </Row>  
-        
-        <Row>  
-    <p> see reports here:</p>
-     <p> ID dateInspected passfail qtylot qtytested qtyfail qtyrejected CREATE_DATE</p>
-    <br/>
-    
-     {this.state.arrayOfIDs2}
-      
-    </Row>  
+  
       </div>
     );
   }

@@ -61226,11 +61226,8 @@ const  { Chart }= __webpack_require__(401);
 //const RIlistItemAll = require('./RIlistItemAll');
 let arrayOfIDs=
    [
-  ["Name", "Popularity"],
-  ["Cesar", 370],
-  ["Rachel", 600],
-  ["Patrick", 700],
-  ["Eric", 1500]
+  ["Name", "Lot Qty"]
+  
 ];
 let arrayOfIDs2=["Lot Qty"] ; 
 const columns = [
@@ -61275,8 +61272,7 @@ const MyChartRI = () => {
   return (
     React.createElement(Chart, {
       chartType: "ColumnChart", 
-     // data= {companyTwo}
-     data: arrayOfIDs, 
+        data: arrayOfIDs, 
       width: "100%", 
       height: "400px"}
     )
@@ -61543,39 +61539,23 @@ React.createElement(Row, null,
   
   
   React.createElement(Col, {xs: 11}, " ", React.createElement("div", null, 
+ /*  
+    <MyChart />
     
-    React.createElement(MyChart, null), 
-    
-        React.createElement(Chart, {
-          chartType: "Timeline", 
-          data: [columns, ...rows], 
-          width: "75%", 
-          height: "400px"}
-        ), 
+        <Chart
+          chartType="Timeline"
+          data={[columns, ...rows]}
+          width="75%"
+          height="400px"
+        /> */
   React.createElement(MyChartRI, null), 
 
   React.createElement(Modal, {show: this.state.show, onHide: this.handleClose}, "  ")
     
     )
      )
-), 
-  React.createElement(Row, null, 
-    React.createElement("p", null, " see reports here:"), 
-     React.createElement("p", null, " ID dateInspected passfail qtylot qtytested qtyfail qtyrejected CREATE_DATE"), 
-    React.createElement("br", null), 
-    
-     this.state.arrayOfIDs
-      
-    ), 
-        
-        React.createElement(Row, null, 
-    React.createElement("p", null, " see reports here:"), 
-     React.createElement("p", null, " ID dateInspected passfail qtylot qtytested qtyfail qtyrejected CREATE_DATE"), 
-    React.createElement("br", null), 
-    
-     this.state.arrayOfIDs2
-      
-    )
+)
+  
       )
     );
   }
