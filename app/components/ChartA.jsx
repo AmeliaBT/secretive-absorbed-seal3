@@ -13,13 +13,44 @@ const  { Chart }= require('react-google-charts');
 
 //const RIlistItemAll = require('./RIlistItemAll');
 
+const columns = [
+  { type: "string", id: "President" },
+  { type: "date", id: "Start" },
+  { type: "date", id: "End" }
+];
 
+const rows = [
+  ["Washington", new Date(1789, 3, 30), new Date(1797, 2, 4)],
+  ["Adams", new Date(1797, 2, 4), new Date(1801, 2, 4)],
+  ["Jefferson", new Date(1801, 2, 4), new Date(1809, 2, 4)]
+];
 
+const companyOne = [
+  ["Name", "Popularity"],
+  ["Cesar", 250],
+  ["Rachel", 4200],
+  ["Patrick", 2900],
+  ["Eric", 8200]
+];
 
+const companyTwo = [
+  ["Name", "Popularity"],
+  ["Cesar", 370],
+  ["Rachel", 600],
+  ["Patrick", 700],
+  ["Eric", 1500]
+];
 
-
-
-
+const DiffChart = () => {
+  return (
+    <Chart
+      chartType="ColumnChart"    
+      data= {companyTwo}
+      width="100%"
+      height="400px"
+    />
+  );
+};
 
 /* the  page that shows all charts */
 class ChartA extends React.Component {
@@ -104,7 +135,9 @@ class ChartA extends React.Component {
             
        let res_len=response.length;
          let reports = response.map((el) => {          
-          return <RIlistItemAll  key={el.reportID}
+          return 
+           <p> got all data for chart; </p>
+           {/* <RIlistItemAll  key={el.reportID}
            reportnumber={el.reportID}  
            inspector={el.inspector}
              fwo={el.fwo}     
@@ -114,7 +147,7 @@ class ChartA extends React.Component {
            owo={el.owo}
            record={el.record}
            lwo ={el.lwo}       
-            /> 
+            /> */}
         });
         
  // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!           
