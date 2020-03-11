@@ -48,7 +48,8 @@ const DiffChart = () => {
   return (
     <Chart
       chartType="ColumnChart"
-      diffdata={{ old: companyOne, new: companyTwo }}
+     // diffdata={{ old: companyOne, new: companyTwo }}
+      diffdata= {companyTwo}
       width="100%"
       height="400px"
     />
@@ -56,19 +57,22 @@ const DiffChart = () => {
 };
 
 class ChartA extends React.Component {
+  /*
   componentDidMount() {
     setInterval(() => {
       this.setState({ refresh: Date.now() });
     }, 1000);
-  }
+  }*/
+  
   render() {
     return (
       <div className="App">
+        <Header />
         <DiffChart />
         <Chart
           chartType="Timeline"
           data={[columns, ...rows]}
-          width="100%"
+          width="50%"
           height="400px"
         />
       </div>
@@ -76,234 +80,13 @@ class ChartA extends React.Component {
   }
 }
 
-const gaugeOptions = {
-  width: 400,
-  height: 120,
-  redFrom: 90,
-  redTo: 100,
-  yellowFrom: 75,
-  yellowTo: 90,
-  minorTicks: 5
-};
 
-const Issue317 = () => {
-  const [chartType, setChartType] = React.useState<
-    "AreaChart" | "BarChart" | "Table"
-  >("AreaChart");
 
-  const columns = [
-    {
-      type: "string",
-      label: "year"
-    },
-    {
-      label: "AttentionSpan",
-      type: "number"
-    }
-  ];
-  const rows = [["2015", 5], ["2016", 3], ["2018", 1]];
-  return (
-    <div className="App">
-      <button onClick={() => setChartType("BarChart")}>barChart</button>
-      <button onClick={() => setChartType("Table")}>Table</button>
-      <h3>{chartType}</h3>
-      <Chart
-        chartType={chartType}
-        width="100%"
-        height="400px"
-        legendToggle
-        rows={rows}
-        columns={columns}
-      />
-    </div>
-  );
-};
 
 //class ChartB extends React.Component< {}, { data: any[][] } > {
-class ChartAx extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      data: [
-        [
-          {
-            type: "number",
-            label: "Age"
-          },
-          {
-            type: "number",
-            label: "Weight",
-            color: "green"
-          },
-          {
-            type: "number",
-            label: "test"
-          }
-        ],
-        [4, 5.5, 1],
-        [8, 12, 2],
-        [11, 14, 3]
-      ]
-    };
-  }
-}
+
 /*
-  componentDidMount() {
-    let i = 0;
-    setInterval(() => {
-      i++;
-      if (i > 10) return;
-      this.setState({data:[20 * i, 10 * Math.random(), 10 * Math.random()]})
-    /*  
-      this.setState(state => {
-        return Object.assign({}, state, {
-          data: [...state.data,
-            [20 * i, 10 * Math.random(), 10 * Math.random()]
-          ]
-        });
-      });
-      
-      */
-  /*
-    }, 500);
-  }
-  *?
   
-  render() {
-    return (
-      
-      <div>
-        <Header />
-        <Issue317 />
-        <Chart
-          chartType="Gauge"
-          width="100%"
-          height="400px"
-          data={[
-            [
-              { type: "string", label: "Label" },
-              { type: "number", label: "Value" }
-            ],
-            ["Memory", 80],
-            ["CPU", 55],
-            ["Network", 20]
-          ]}
-          options={gaugeOptions}
-        />
-        <App />
-        <Chart
-          chartType="BarChart"
-          data={{
-            cols: [
-              { id: "task", label: "Task", type: "string" },
-              { id: "hours", label: "Hours per Day", type: "number" }
-            ],
-            rows: [
-              { c: [{ v: "Work" }, { v: 11 }] },
-              { c: [{ v: "Eat" }, { v: 2 }] },
-              { c: [{ v: "Commute" }, { v: 2 }] },
-              { c: [{ v: "Watch TV" }, { v: 2 }] },
-              { c: [{ v: "Sleep" }, { v: 7, f: "7.000" }] }
-            ]
-          }}
-          options={{ colors: ["green"] }}
-          width="100%"
-          height="400px"
-          legendToggle
-        />
-        <Chart
-          chartType="ScatterChart"
-          data={this.state.data}
-          options={{
-            title: "Age vs. Weight comparison",
-            hAxis: { title: "Age", minValue: 0, maxValue: 15 },
-            vAxis: { title: "Weight", minValue: 0, maxValue: 15 },
-            legend: "none"
-          }}
-          width="100%"
-          height="400px"
-          legendToggle
-          getChartWrapper={chartWrapper => {
-            console.log("chart ", chartWrapper.getChart());
-          }}
-        />
-        <Chart
-          chartType="ScatterChart"
-          columns={["Age", "Weight", "Test"]}
-          rows={[[8, 12, 1], [4, 5.5, 2]]}
-          options={{}}
-          width="100%"
-          height="400px"
-          legendToggle
-        />
-      </div>
-    );
-  }
-}
-
-//ReactDOM.render(<InteractiveChart />, document.getElementById("app"));
-
-/*const chartEvents = [
-  {
-    eventName: "select",
-    callback({ chartWrapper }) {
-      console.log("Selected ", chartWrapper.getChart().getSelection());
-    }
-  }
-];
-const data = [
-  ["age", "weight"],
-  [8, 12],
-  [4, 5.5],
-  [11, 14],
-  [4, 5],
-  [3, 3.5],
-  [6.5, 7]
-];
- 
-const options = {
-  title: "Age vs. Weight comparison",
-  hAxis: { title: "Age", viewWindow: { min: 0, max: 15 } },
-  vAxis: { title: "Weight", viewWindow: { min: 0, max: 15 } },
-  legend: "none"
-};
-
-
-class ChartA extends React.Component {
-  
-  render() {
-  
-//const ExampleChart = () => {
-  return (
-    <Chart
-      chartType="ScatterChart"
-      data={data}
-      options={options}
-      graphID="ScatterChart"
-      width="100%"
-      height="400px"
-      chartEvents={chartEvents}
-    />
-  );
-};
-}
-  /*
-  render() {
-    return (
-      <div>    <Header/>
-      <div className={"my-pretty-chart-container"}>
-        <Chart
-          chartType="ScatterChart"
-          data={[["Age", "Weight"], [4, 5.5],  [5, 9], [6, 12]]}
-          width="100%"
-          height="400px"
-          legendToggle
-        />
-      </div>
-        </div>
-    );
-  }
-}
  */ 
   
 module.exports = ChartA;
