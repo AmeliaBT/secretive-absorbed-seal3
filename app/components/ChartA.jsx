@@ -260,11 +260,12 @@ class ChartA extends React.Component {
         
          let reports = response.reports.map((el) => {
           return 
-           <div> <p> start chart  </p>
-  <p> ID dateInspected passfail qtylot qtytested qtyfail qtyrejected CREATE_DATE</p>
-  <p> ID: </p>
-             dateInspected 
-           </div>
+          
+ 
+  <p> {el.reportID}+ " " +{el.cwo}+ " " +{el.two}+ " " 
+             </p>
+             
+           
         });
         
  // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!           
@@ -318,7 +319,11 @@ class ChartA extends React.Component {
     </div>
      </Col>
 </Row> 
-      
+  <Row>  
+    <p> see reports here:</p>
+     <p> ID dateInspected passfail qtylot qtytested qtyfail qtyrejected CREATE_DATE</p>
+      {this.state.reports}
+    </Row>  
       </div>
     );
   }

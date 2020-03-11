@@ -61472,11 +61472,12 @@ class ChartA extends React.Component {
         
          let reports = response.reports.map((el) => {
           return 
-           React.createElement("div", null, " ", React.createElement("p", null, " start chart  "), 
-  React.createElement("p", null, " ID dateInspected passfail qtylot qtytested qtyfail qtyrejected CREATE_DATE"), 
-  React.createElement("p", null, " ID: "), "el.reportID" + " " +
-             "dateInspected" 
-           )
+          
+ 
+  React.createElement("p", null, " ", el.reportID, "+ \" \" +", el.cwo, "+ \" \" +", el.two, "+ \" \"" 
+             )
+             
+           
         });
         
  // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!           
@@ -61529,8 +61530,12 @@ React.createElement(Row, null,
     
     )
      )
-)
-      
+), 
+  React.createElement(Row, null, 
+    React.createElement("p", null, " see reports here:"), 
+     React.createElement("p", null, " ID dateInspected passfail qtylot qtytested qtyfail qtyrejected CREATE_DATE"), 
+      this.state.reports
+    )
       )
     );
   }
