@@ -61474,19 +61474,21 @@ class ChartA extends React.Component {
           return 
       
  
-  iDs.push(el.reportID) ; //+ " " +{el.cwo}+ " " +{el.two}+  </p> +<br/> 
+  iDs.push(el.owo) ; //+ " " +{el.cwo}+ " " +{el.two}+  </p> +<br/> 
             
              
            
         });
           alert(reports.length);
+        alert(iDs.length);
+        alert([5]);
  // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!           
         
            that.setState({
           ["reports"]: React.createElement("div", {className: "reports"}, 
                       reports
                     ),
-            ["iDs"] :React.createElement("div", {className: "reports"}, 
+            ["iDs"] :React.createElement("div", null, 
                       "iDs"   
                     )
            });
@@ -61537,7 +61539,10 @@ React.createElement(Row, null,
   React.createElement(Row, null, 
     React.createElement("p", null, " see reports here:"), 
      React.createElement("p", null, " ID dateInspected passfail qtylot qtytested qtyfail qtyrejected CREATE_DATE"), 
-      this.state.reports
+    React.createElement("br", null), 
+     this.state.reports, 
+     this.state.iDs
+      
     )
       )
     );

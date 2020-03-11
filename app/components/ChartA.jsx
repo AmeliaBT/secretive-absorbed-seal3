@@ -262,12 +262,14 @@ class ChartA extends React.Component {
           return 
       
  
-  iDs.push(el.reportID) ; //+ " " +{el.cwo}+ " " +{el.two}+  </p> +<br/> 
+  iDs.push(el.owo) ; //+ " " +{el.cwo}+ " " +{el.two}+  </p> +<br/> 
             
              
            
         });
           alert(reports.length);
+        alert(iDs.length);
+        alert([5]);
  // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!           
         
            that.setState({
@@ -325,7 +327,10 @@ class ChartA extends React.Component {
   <Row>  
     <p> see reports here:</p>
      <p> ID dateInspected passfail qtylot qtytested qtyfail qtyrejected CREATE_DATE</p>
-      {this.state.reports}
+    <br/>
+     {this.state.reports}
+     {this.state.iDs}
+      
     </Row>  
       </div>
     );
