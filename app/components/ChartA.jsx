@@ -12,7 +12,14 @@ const  { Chart }= require('react-google-charts');
 //const FilterB =require('./FilterB');
 
 //const RIlistItemAll = require('./RIlistItemAll');
-let arrayOfIDs=["Date", "Lot Qty"] ; 
+let arrayOfIDs=
+   [
+  ["Name", "Popularity"],
+  ["Cesar", 370],
+  ["Rachel", 600],
+  ["Patrick", 700],
+  ["Eric", 1500]
+];
 let arrayOfIDs2=["Lot Qty"] ; 
 const columns = [
   { type: "string", id: "President" },
@@ -57,7 +64,7 @@ const MyChartRI = () => {
     <Chart
       chartType="ColumnChart"    
      // data= {companyTwo}
-      data=  {this.sate.arrayOfIDs}
+     data=  {arrayOfIDs}
       width="100%"
       height="400px"
     />
@@ -69,7 +76,8 @@ const MyChartRI = () => {
 class ChartA extends React.Component {
   constructor(props) {
     super(props);
-    
+ 
+   
     this.state = {
       show: false, 
       disabled: true,
@@ -91,6 +99,7 @@ class ChartA extends React.Component {
       modal_label: "Choose RI Reports to view",
       dataA:"",
       dataB:""
+     
       
     };
    
