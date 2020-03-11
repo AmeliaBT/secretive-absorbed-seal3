@@ -61477,11 +61477,13 @@ class ChartA extends React.Component {
 
 
 */
-           let arrayOfIDs=["Date", "Lot Qty"] ;  
+           let arrayOfIDs=["Date", "Lot Qty"] ; 
+         let arrayOfIDs2=["Date", "Lot Qty"] ; 
       
          let reports = response.reports.map((el) => {
-           let myDate= el.cwo.substring(1,10);  //.format("YYY/MM");
+           let myDate= el.cwo.substring(0,10);  //.format("YYY/MM");
             arrayOfIDs.push([myDate, el.qwo]) ; 
+           arrayOfIDs2.push([ el.owo]) ; 
           return 
   
              
@@ -61496,6 +61498,9 @@ class ChartA extends React.Component {
                     ),
             ["arrayOfIDs"] :React.createElement("div", null, 
                arrayOfIDs 
+                    ),
+              ["arrayOfIDs2"] :React.createElement("div", null, 
+               arrayOfIDs2 
                     )
            });
        }
@@ -61549,6 +61554,15 @@ React.createElement(Row, null,
     React.createElement("br", null), 
     
      this.state.arrayOfIDs
+      
+    ), 
+        
+        React.createElement(Row, null, 
+    React.createElement("p", null, " see reports here:"), 
+     React.createElement("p", null, " ID dateInspected passfail qtylot qtytested qtyfail qtyrejected CREATE_DATE"), 
+    React.createElement("br", null), 
+    
+     this.state.arrayOfIDs2
       
     )
       )
