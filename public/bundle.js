@@ -61205,6 +61205,7 @@ exports.push([module.i, "/* for Filter A \nh1, p {\n  font-family: Lato;\n}\n\n.
 /* 400 */
 /***/ (function(module, exports, __webpack_require__) {
 
+//https://stackoverflow.com/questions/47004716/google-charts-data-grouping-for-column-chart?rq=1
 const React = __webpack_require__(0);
 const Link = __webpack_require__(10).Link
 const style = __webpack_require__(37);
