@@ -1,68 +1,20 @@
 const React = require('react');
 const Link = require('react-router-dom').Link
-// style for list
-
 const style = require('../styles/HomePage');
-// react-bootstrap
 const {Table , Grid, Row, Col, Modal} = require('react-bootstrap');
-// other components and etc
 const Header = require('./Header');
 const FilterA =require('./FilterA');
 const  { Chart }= require('react-google-charts'); 
-//const FilterB =require('./FilterB');
 
-//const RIlistItemAll = require('./RIlistItemAll');
-let arrayOfIDs=
-   [
-  ["Name", "Lot Qty"]
-  
-];
-let arrayOfIDs2=["Lot Qty"] ; 
-const columns = [
-  { type: "string", id: "President" },
-  { type: "date", id: "Start" },
-  { type: "date", id: "End" }
-];
+let arrayOfRIs= [  ["Name", "Lot Qty"]];
 
-const rows = [
-  ["Washington", new Date(1789, 3, 30), new Date(1797, 2, 4)],
-  ["Adams", new Date(1797, 2, 4), new Date(1801, 2, 4)],
-  ["Jefferson", new Date(1801, 2, 4), new Date(1809, 2, 4)]
-];
-
-const companyOne = [
-  ["Name", "Popularity"],
-  ["Cesar", 250],
-  ["Rachel", 4200],
-  ["Patrick", 2900],
-  ["Eric", 8200]
-];
-
-const companyTwo = [
-  ["Name", "Popularity"],
-  ["Cesar", 370],
-  ["Rachel", 600],
-  ["Patrick", 700],
-  ["Eric", 1500]
-];
-
-const MyChart = () => {
-  return (
-    <Chart
-      chartType="ColumnChart"    
-      data= {companyTwo}
-      width="100%"
-      height="400px"
-    />
-  );
-};
 const MyChartRI = () => {
   return (
     <Chart
       chartType="ColumnChart"    
-        data=  {arrayOfIDs}
-      width="100%"
-      height="400px"
+        data=  {arrayOfRIs}
+       width="100%"
+       height="400px"
     />
   );
 };
@@ -133,8 +85,7 @@ class ChartA extends React.Component {
              '&reportID=' + encodeURIComponent(event.riN)
             ;
             
-
-        
+    
 
       
       let dataB=this.state.dataB;  
@@ -148,13 +99,10 @@ class ChartA extends React.Component {
           return;
         }
         let response = JSON.parse(this.responseText);
-     
-// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  
-            
        let res_len=response.length;
          let reports = response.map((el) => {          
           return 
-           <p> got all data for chart; </p>
+          
            {/* <RIlistItemAll  key={el.reportID}
            reportnumber={el.reportID}  
            inspector={el.inspector}
@@ -261,25 +209,14 @@ class ChartA extends React.Component {
 	     Q1, //qty fail
 	     R1, //qty rejected
 	     CREATE_DATE, //"created"
-       
-       const companyTwo = [
-  ["Name", "Popularity"],
-  ["Cesar", 370],
-  ["Rachel", 600],
-  ["Patrick", 700],
-  ["Eric", 1500]
-];
-
-
-*/
+       */
          
       
          let reports = response.reports.map((el) => {
            let myDate= el.cwo.substring(0,10);
            let myLot= el.owo; //.format("YYY/MM");
-            arrayOfIDs.push([myDate, myLot]) ; 
-           arrayOfIDs2.push([ myLot]) ; 
-          return 
+            arrayOfRIs.push([myDate, myLot]) ; 
+          
   
              
            
@@ -291,12 +228,10 @@ class ChartA extends React.Component {
           ["reports"]: <div className="reports">
                       {reports}     
                     </div>,
-            ["arrayOfIDs"] :<div >
-               {arrayOfIDs }
-                    </div>,
-              ["arrayOfIDs2"] :<div >
-               {arrayOfIDs2 }
+            ["arrayOfRIs"] :<div >
+               {arrayOfRIs }
                     </div>
+              
            });
        }
     

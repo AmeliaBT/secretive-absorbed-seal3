@@ -61212,69 +61212,21 @@ exports.push([module.i, "/* for Filter A \nh1, p {\n  font-family: Lato;\n}\n\n.
 
 const React = __webpack_require__(0);
 const Link = __webpack_require__(10).Link
-// style for list
-
 const style = __webpack_require__(37);
-// react-bootstrap
 const {Table , Grid, Row, Col, Modal} = __webpack_require__(12);
-// other components and etc
 const Header = __webpack_require__(17);
 const FilterA =__webpack_require__(86);
 const  { Chart }= __webpack_require__(401); 
-//const FilterB =require('./FilterB');
 
-//const RIlistItemAll = require('./RIlistItemAll');
-let arrayOfIDs=
-   [
-  ["Name", "Lot Qty"]
-  
-];
-let arrayOfIDs2=["Lot Qty"] ; 
-const columns = [
-  { type: "string", id: "President" },
-  { type: "date", id: "Start" },
-  { type: "date", id: "End" }
-];
+let arrayOfRIs= [  ["Name", "Lot Qty"]];
 
-const rows = [
-  ["Washington", new Date(1789, 3, 30), new Date(1797, 2, 4)],
-  ["Adams", new Date(1797, 2, 4), new Date(1801, 2, 4)],
-  ["Jefferson", new Date(1801, 2, 4), new Date(1809, 2, 4)]
-];
-
-const companyOne = [
-  ["Name", "Popularity"],
-  ["Cesar", 250],
-  ["Rachel", 4200],
-  ["Patrick", 2900],
-  ["Eric", 8200]
-];
-
-const companyTwo = [
-  ["Name", "Popularity"],
-  ["Cesar", 370],
-  ["Rachel", 600],
-  ["Patrick", 700],
-  ["Eric", 1500]
-];
-
-const MyChart = () => {
-  return (
-    React.createElement(Chart, {
-      chartType: "ColumnChart", 
-      data: companyTwo, 
-      width: "100%", 
-      height: "400px"}
-    )
-  );
-};
 const MyChartRI = () => {
   return (
     React.createElement(Chart, {
       chartType: "ColumnChart", 
-        data: arrayOfIDs, 
-      width: "100%", 
-      height: "400px"}
+        data: arrayOfRIs, 
+       width: "100%", 
+       height: "400px"}
     )
   );
 };
@@ -61345,8 +61297,7 @@ class ChartA extends React.Component {
              '&reportID=' + encodeURIComponent(event.riN)
             ;
             
-
-        
+    
 
       
       let dataB=this.state.dataB;  
@@ -61360,13 +61311,10 @@ class ChartA extends React.Component {
           return;
         }
         let response = JSON.parse(this.responseText);
-     
-// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  
-            
        let res_len=response.length;
          let reports = response.map((el) => {          
           return 
-           React.createElement("p", null, " got all data for chart; ")
+          
            {/* <RIlistItemAll  key={el.reportID}
            reportnumber={el.reportID}  
            inspector={el.inspector}
@@ -61473,25 +61421,14 @@ class ChartA extends React.Component {
 	     Q1, //qty fail
 	     R1, //qty rejected
 	     CREATE_DATE, //"created"
-       
-       const companyTwo = [
-  ["Name", "Popularity"],
-  ["Cesar", 370],
-  ["Rachel", 600],
-  ["Patrick", 700],
-  ["Eric", 1500]
-];
-
-
-*/
+       */
          
       
          let reports = response.reports.map((el) => {
            let myDate= el.cwo.substring(0,10);
            let myLot= el.owo; //.format("YYY/MM");
-            arrayOfIDs.push([myDate, myLot]) ; 
-           arrayOfIDs2.push([ myLot]) ; 
-          return 
+            arrayOfRIs.push([myDate, myLot]) ; 
+          
   
              
            
@@ -61503,12 +61440,10 @@ class ChartA extends React.Component {
           ["reports"]: React.createElement("div", {className: "reports"}, 
                       reports
                     ),
-            ["arrayOfIDs"] :React.createElement("div", null, 
-               arrayOfIDs 
-                    ),
-              ["arrayOfIDs2"] :React.createElement("div", null, 
-               arrayOfIDs2 
+            ["arrayOfRIs"] :React.createElement("div", null, 
+               arrayOfRIs 
                     )
+              
            });
        }
     
