@@ -8,26 +8,12 @@ const  { Chart }= require('react-google-charts');
 
 let arrayOfRIs= [  ["Date", "Lot Qty"]];
 let MyChartRI;
-
+let optionsCh2={title: 'Lot Qty '};
 
 /* the  page that shows all charts */
 class ChartA extends React.Component {
   constructor(props) {
-     let optionsCh2 = {
-        title: 'Lot Qty ',
-        timeline: {
-          groupByRowLabel: true
-        },
-   hAxis: {
-            format: 'M/d/yy',
-            gridlines: {count: 15}
-          },
-          vAxis: {
-            gridlines: {color: 'none'},
-            minValue: 0
-          }
-      };
-
+     
     super(props);
    
     this.state = {
@@ -64,7 +50,6 @@ class ChartA extends React.Component {
    // handlers
    /***********************/
    
-  
  
     handleParentData(event) {
       let that = this;
@@ -92,6 +77,24 @@ class ChartA extends React.Component {
           alert( 'error: ' + (this.status ? this.statusText : 'request has not been set') );
           return;
         }
+     optionsCh2 ={
+        title: 'Lot Qty ',
+        timeline: {
+          groupByRowLabel: true
+        },
+   hAxis: {
+            format: 'M/d/yy',
+            gridlines: {count: 15}
+          },
+          vAxis: {
+            gridlines: {color: 'none'},
+            minValue: 0
+          }
+      };
+
+     
+        
+        
         let response = JSON.parse(this.responseText);
        let res_len=response.length;
          arrayOfRIs=[  ["Date", "Lot Qty"]];
