@@ -61216,27 +61216,26 @@ const FilterA =__webpack_require__(86);
 const  { Chart }= __webpack_require__(401); 
 
 let arrayOfRIs1= [  ["Date", "Lot Size"]];
-let arrayOfRIs2= [  ["Date", "Lot Size"]];
-//let arrayOfRIs2= [  ["Date", "Lot Size", "Qty Tested", "Qty Fail", "Qty Rejected"]];
-let MyChartRI;
+//let arrayOfRIs2= [  ["Date", "Lot Size"]];
+let arrayOfRIs2= [  ["Date", "Lot Size", "Qty Tested", "Qty Fail", "Qty Rejected"]];
+let MyChartRI1;
+let MyChartRI2;
 //let optionsCh2={title: 'Lot Qty '};
 let optionsCh1 ={  title: 'Lot Size',
                timeline: {  groupByRowLabel: true },
                 hAxis: {title: "Date Inspected",  format: 'MMM/yyyy'},
                vAxis: { title: "Lot Size", minValue: 0 },
-
                  legend: "none"
 }
   // hAxis: { title: "Lot Qty", viewWindow: { min: 0, max: 15 } },
 //  vAxis: { title: "Date tested", viewWindow: { min: 0, max: 15 } },
+   //  gridlines: {color: 'red'},
+//  gridlines: {count: 15}
 let optionsCh2 ={
         title: 'Lot Size',
         timeline: { groupByRowLabel: true  },
-        hAxis: { format: 'MMM/yyyy', //  gridlines: {count: 15}
-               },
-    vAxis: {  minValue: 0
-       //  gridlines: {color: 'red'},
-          }
+        hAxis: { format: 'MMM/yyyy'},
+        vAxis: {  minValue: 0}
       };
 
 
@@ -61313,17 +61312,18 @@ class ChartA extends React.Component {
         let response = JSON.parse(this.responseText);
        let res_len=response.length;
          arrayOfRIs1=[  ["Date", "Lot Qty"]];
+         arrayOfRIs2= [  ["Date", "Lot Size", "Qty Tested", "Qty Fail", "Qty Rejected"]];
         
         let reports = response.map((el) => { 
        if(el.cwo !== ""){
           let myDate= new Date(el.cwo.substring(0,10));
            let myLot= el.owo; 
-           // let qtyTested= el.pwo; 
-           //  let qtyFail= el.qwo; 
-            // let qtyRejected= el.rwo; 
+           let qtyTested= el.pwo; 
+           let qtyFail= el.qwo; 
+            let qtyRejected= el.rwo; 
             arrayOfRIs1.push([myDate, myLot ]) ; 
-          arrayOfRIs2.push([myDate, myLot ]) ;
-          //   arrayOfRIs2.push([myDate, myLot, qtyTested, qtyFail, qtyRejected ]) ;   
+          
+         arrayOfRIs2.push([myDate, myLot, qtyTested, qtyFail, qtyRejected ]) ;   
         
         
       }    
@@ -61333,7 +61333,8 @@ class ChartA extends React.Component {
       
         
            that.setState({
-             arrayOfRIs:arrayOfRIs1,
+             arrayOfRIs1:arrayOfRIs1,
+              arrayOfRIs2:arrayOfRIs1,
             res_len:res_len,
             model: event.model, 
             pn: event.pn ,           
@@ -61404,12 +61405,12 @@ class ChartA extends React.Component {
           if(el.cwo !== ""){
           let myDate= new Date(el.cwo.substring(0,10));
            let myLot= el.owo; 
-           // let qtyTested= el.pwo; 
-            // let qtyFail= el.qwo; 
-            // let qtyRejected= el.rwo; 
+          let qtyTested= el.pwo; 
+           let qtyFail= el.qwo; 
+           let qtyRejected= el.rwo; 
             arrayOfRIs1.push([myDate, myLot ]) ; 
              arrayOfRIs2.push([myDate, myLot ]) ; 
-           //  arrayOfRIs2.push([myDate, myLot, qtyTested, qtyFail, qtyRejected ]) ; 
+          arrayOfRIs2.push([myDate, myLot, qtyTested, qtyFail, qtyRejected ]) ; 
       }            
         });
         
@@ -61447,7 +61448,7 @@ React.createElement(Row, null,
     ), 
 React.createElement(Chart, {
       chartType: "ColumnChart", 
-      data: this.state.arrayOfRIs1, 
+      data: this.state.arrayOfRIs2, 
        options: optionsCh2, 
        width: "100%", 
        height: "300px", 
