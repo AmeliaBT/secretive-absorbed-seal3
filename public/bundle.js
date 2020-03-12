@@ -61291,7 +61291,7 @@ class ChartA extends React.Component {
         }
         let response = JSON.parse(this.responseText);
        let res_len=response.length;
-         
+         arrayOfRIs=[  ["Date", "Lot Qty"]];
         let reports = response.map((el) => { 
             let myDate= el.cwo.substring(0,10);
            let myLot= el.owo; //.format("YYY/MM");
@@ -61303,6 +61303,7 @@ class ChartA extends React.Component {
       
         
            that.setState({
+             arrayOfRIs:arrayOfRIs,
             res_len:res_len,
             model: event.model, 
             pn: event.pn ,           
@@ -61326,8 +61327,8 @@ class ChartA extends React.Component {
               + ' ' + event.sel_radio_b 
               + ' ' + event.sel_radio_c  
              ,
-          ["reports"]: React.createElement("div", {className: "reports"}, " ", reports, "  "),
-                ["arrayOfRIs"] :React.createElement("div", null, arrayOfRIs )      
+          ["reports"]: React.createElement("div", {className: "reports"}, " ", reports, "  ")
+              
              
            });
        }
@@ -61374,7 +61375,7 @@ class ChartA extends React.Component {
             arrayOfRIs.push([myDate, myLot]) ;            
         });
           that.setState({
-         
+           ["reports"]: {reports},
             "arrayOfRIs" : arrayOfRIs             
            });
        }
