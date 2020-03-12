@@ -61215,7 +61215,23 @@ const  { Chart }= __webpack_require__(401);
 
 let arrayOfRIs= [  ["Date", "Lot Qty"]];
 let MyChartRI;
-let optionsCh2={title: 'Lot Qty '};
+//let optionsCh2={title: 'Lot Qty '};
+
+let optionsCh2 ={
+        title: 'Lot Qty ',
+        timeline: {
+          groupByRowLabel: true
+        },
+   hAxis: {
+            format: 'MM/yyyy',
+            gridlines: {count: 15}
+          },
+          vAxis: {
+            gridlines: {color: 'red'},
+            minValue: 0
+          }
+      };
+
 
 /* the  page that shows all charts */
 class ChartA extends React.Component {
@@ -61241,8 +61257,7 @@ class ChartA extends React.Component {
       sel_radio_c:"", //lot size
      
       filterAB:"",
-      modal_label: "Choose RI Reports to view",
-      optionsCh2: optionsCh2
+      modal_label: "Choose RI Reports to view"
       
     };
    
@@ -61284,21 +61299,7 @@ class ChartA extends React.Component {
           alert( 'error: ' + (this.status ? this.statusText : 'request has not been set') );
           return;
         }
-     optionsCh2 ={
-        title: 'Lot Qty ',
-        timeline: {
-          groupByRowLabel: true
-        },
-   hAxis: {
-            format: 'M/d/yy',
-            gridlines: {count: 15}
-          },
-          vAxis: {
-            gridlines: {color: 'none'},
-            minValue: 0
-          }
-      };
-
+     
      
         
         
@@ -61423,7 +61424,8 @@ React.createElement(Row, null,
     ), 
 React.createElement(Chart, {
       chartType: "ColumnChart", 
-      data: this.state.arrayOfRIs, optionsCh2, 
+      data: this.state.arrayOfRIs, 
+       options: optionsCh2, 
        width: "100%", 
        height: "300px"}
       
