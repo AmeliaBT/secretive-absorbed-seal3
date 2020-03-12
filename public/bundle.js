@@ -61294,11 +61294,11 @@ class ChartA extends React.Component {
          arrayOfRIs=[  ["Date", "Lot Qty"]];
         
         let reports = response.map((el) => { 
-      
+      if(el.cwo !== ""){
           let myDate= new Date(el.cwo.substring(0,10));
            let myLot= el.owo; 
             arrayOfRIs.push([myDate, myLot]) ;            
-                 
+      }    
             return         
           
         });
@@ -61372,12 +61372,16 @@ class ChartA extends React.Component {
         }
         let response = JSON.parse(this.responseText);             
          let reports = response.reports.map((el) => {
-          // let myDate= el.cwo.substring(0,10);
-           let myDate= new Date(el.cwo.substring(0,10));
-           let myLot= el.owo; //.format("YYY/MM");
-           
+          
+          if(el.cwo !== ""){
+          let myDate= new Date(el.cwo.substring(0,10));
+           let myLot= el.owo; 
             arrayOfRIs.push([myDate, myLot]) ;            
+      }            
         });
+        
+                
+        
           that.setState({
            ["reports"]: {reports},
             "arrayOfRIs" : arrayOfRIs             
