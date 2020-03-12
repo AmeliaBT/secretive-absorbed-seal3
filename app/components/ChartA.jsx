@@ -6,7 +6,7 @@ const Header = require('./Header');
 const FilterA =require('./FilterA');
 const  { Chart }= require('react-google-charts'); 
 
-let arrayOfRIs=  ["Name", "Lot Qty"],["abc", 100];
+let arrayOfRIs= [  ["Date", "Lot Qty"]];
 let MyChartRI;
 
 
@@ -34,8 +34,7 @@ class ChartA extends React.Component {
       sel_radio_c:"", //lot size
      
       filterAB:"",
-      modal_label: "Choose RI Reports to view",
-        ["arrayOfRIs"] :{arrayOfRIs }   
+      modal_label: "Choose RI Reports to view"
       
     };
    
@@ -116,7 +115,7 @@ class ChartA extends React.Component {
               + ' ' + event.sel_radio_c  
              ,
           ["reports"]: <div className="reports"> {reports}  </div>,
-                ["arrayOfRIs"] :<div >{arrayOfRIs }</div>      
+                "arrayOfRIs" :arrayOfRIs     
              
            });
        }
@@ -163,8 +162,8 @@ class ChartA extends React.Component {
             arrayOfRIs.push([myDate, myLot]) ;            
         });
           that.setState({
-           ["reports"]: <div >{reports}</div>,
-            ["arrayOfRIs"] :{arrayOfRIs }             
+         
+            "arrayOfRIs" : arrayOfRIs             
            });
        }
     
@@ -175,9 +174,7 @@ class ChartA extends React.Component {
       <div>
         <Header/> 
   
- <Row> <p className="filter_msg">{this.state.filterAB}   </p>
-      <p>see:  {this.state.arrayOfRIs} </p>  
-        </Row>     
+ <Row> <p className="filter_msg">{this.state.filterAB}   </p></Row>     
 <Row > 
    <Col xs={1} ><div  className="well" >  
       < FilterA handleData ={this.handleParentData} /> 
@@ -186,8 +183,7 @@ class ChartA extends React.Component {
   <Col xs={11} > <div   >  
  <Chart
       chartType="ColumnChart"  
-  // data={this.state.arrayOfRIs }
-   data={arrayOfRIs }
+      data={this.state.arrayOfRIs }
        width="100%"
        height="400px"
     />
