@@ -11,10 +11,12 @@ const  { Chart }= require('react-google-charts');
 let arrayOfRIs= [  ["Date", "Lot Qty"]];
 let MyChartRI;
 //let optionsCh2={title: 'Lot Qty '};
-let optionsCh1 ={  title: 'Lot Qty ',
+let optionsCh1 ={  title: 'Lot Size',
                timeline: {  groupByRowLabel: true },
-                hAxis: { format: 'MMM/yyyy'},
-               vAxis: {  minValue: 0 }
+                hAxis: {title: "Date Inspected",  format: 'MMM/yyyy'},
+               vAxis: { title: "Lot Qty", minValue: 0 },
+// hAxis: { title: "Lot Qty", viewWindow: { min: 0, max: 15 } },
+//  vAxis: { title: "Date tested", viewWindow: { min: 0, max: 15 } },
 }
   
 let optionsCh2 ={

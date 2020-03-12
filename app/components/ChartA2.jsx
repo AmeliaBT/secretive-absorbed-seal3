@@ -7,6 +7,41 @@ const React = require('react');
 const Link = require('react-router-dom').Link
 //const Header = require('./Header');
 const  { Chart }= require('react-google-charts'); 
+var data = google.visualization.arrayToDataTable([
+      ['Year', 'Product', 'Value'],
+      [2015, 'A', 10],
+      [2015, 'B', 20],
+      [2016, 'C', 30],
+      [2016, 'D', 40]
+    ]);
+
+    // format year as string
+    var formatYear = new google.visualization.NumberFormat({
+      pattern: '0000'
+    });
+    formatYear.format(data, 0);
+
+    // create data view
+    var view = new google.visualization.DataView(data);
+
+    // init column arrays
+    var aggColumns = [];
+
+    // use formatted year as first column
+    var viewColumns = [{
+      calc: function (dt, row) {
+        return dt.getFormattedValue(row, 0);
+      },
+      label: data.getColumnLabel(0),
+      type: 'string'
+    }];
+
+
+
+
+
+
+
 const chartEvents = [
   {
     eventName: "select",
@@ -15,15 +50,7 @@ const chartEvents = [
     }
   }
 ];
-const data = [
-  ["age", "weight"],
-  [8, 12],
-  [4, 5.5],
-  [11, 14],
-  [4, 5],
-  [3, 3.5],
-  [6.5, 7]
-];
+
  
 const options = {
   title: "Age vs. Weight comparison",
