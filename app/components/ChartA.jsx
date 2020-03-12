@@ -8,19 +8,20 @@ const FilterA =require('./FilterA');
 const ChartA1 =require('./ChartA1');
 const  { Chart }= require('react-google-charts'); 
 
-let arrayOfRIs= [  ["Date", "Lot Qty"]];
+let arrayOfRIs= [  ["Date", "Lot Size", "Qty Tested", "qty fail"]];
 let MyChartRI;
 //let optionsCh2={title: 'Lot Qty '};
 let optionsCh1 ={  title: 'Lot Size',
                timeline: {  groupByRowLabel: true },
                 hAxis: {title: "Date Inspected",  format: 'MMM/yyyy'},
-               vAxis: { title: "Lot Qty", minValue: 0 },
+               vAxis: { title: "Lot Size", minValue: 0 },
 // hAxis: { title: "Lot Qty", viewWindow: { min: 0, max: 15 } },
 //  vAxis: { title: "Date tested", viewWindow: { min: 0, max: 15 } },
+                 legend: "none"
 }
   
 let optionsCh2 ={
-        title: 'Lot Qty ',
+        title: 'Lot Size',
         timeline: { groupByRowLabel: true  },
         hAxis: { format: 'MMM/yyyy', //  gridlines: {count: 15}
                },
@@ -221,6 +222,7 @@ class ChartA extends React.Component {
     options={optionsCh1 }
        width="100%"
        height="300px"
+       legendToggle
     />
 <Chart
       chartType="ColumnChart"  
@@ -228,7 +230,7 @@ class ChartA extends React.Component {
        options={optionsCh2 }
        width="100%"
        height="300px"
-      
+       legendToggle
     />
     <ChartA1 />
 

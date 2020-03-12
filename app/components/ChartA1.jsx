@@ -45,7 +45,8 @@ class ChartA1 extends React.Component {
       options={options}
       graphID="ScatterChart"
       width="100%"
-      height="400px"
+      height="300px"
+      legendToggle
       chartEvents={chartEvents}
     />
   );
