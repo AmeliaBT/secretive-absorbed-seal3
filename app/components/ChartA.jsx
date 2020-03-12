@@ -5,22 +5,24 @@ const style = require('../styles/HomePage');
 const {Table , Grid, Row, Col, Modal} = require('react-bootstrap');
 const Header = require('./Header');
 const FilterA =require('./FilterA');
-const ChartA1 =require('./ChartA1');
+//const ChartA1 =require('./ChartA1');
 const  { Chart }= require('react-google-charts'); 
 
 let arrayOfRIs1= [  ["Date", "Lot Size"]];
-let arrayOfRIs2= [  ["Date", "Lot Size", "Qty Tested", "Qty Fail", "Qty Rejected"]];
+let arrayOfRIs2= [  ["Date", "Lot Size"]];
+//let arrayOfRIs2= [  ["Date", "Lot Size", "Qty Tested", "Qty Fail", "Qty Rejected"]];
+let MyChartRI;
 let MyChartRI;
 //let optionsCh2={title: 'Lot Qty '};
 let optionsCh1 ={  title: 'Lot Size',
                timeline: {  groupByRowLabel: true },
                 hAxis: {title: "Date Inspected",  format: 'MMM/yyyy'},
                vAxis: { title: "Lot Size", minValue: 0 },
-// hAxis: { title: "Lot Qty", viewWindow: { min: 0, max: 15 } },
-//  vAxis: { title: "Date tested", viewWindow: { min: 0, max: 15 } },
+
                  legend: "none"
 }
-  
+  // hAxis: { title: "Lot Qty", viewWindow: { min: 0, max: 15 } },
+//  vAxis: { title: "Date tested", viewWindow: { min: 0, max: 15 } },
 let optionsCh2 ={
         title: 'Lot Size',
         timeline: { groupByRowLabel: true  },
@@ -107,10 +109,15 @@ class ChartA extends React.Component {
          arrayOfRIs1=[  ["Date", "Lot Qty"]];
         
         let reports = response.map((el) => { 
-      if(el.cwo !== ""){
+       if(el.cwo !== ""){
           let myDate= new Date(el.cwo.substring(0,10));
            let myLot= el.owo; 
-            arrayOfRIs1.push([myDate, myLot]) ;    
+           // let qtyTested= el.pwo; 
+           //  let qtyFail= el.qwo; 
+            // let qtyRejected= el.rwo; 
+            arrayOfRIs1.push([myDate, myLot ]) ; 
+          arrayOfRIs2.push([myDate, myLot ]) ;
+          //   arrayOfRIs2.push([myDate, myLot, qtyTested, qtyFail, qtyRejected ]) ;   
         
         
       }    
@@ -191,11 +198,12 @@ class ChartA extends React.Component {
           if(el.cwo !== ""){
           let myDate= new Date(el.cwo.substring(0,10));
            let myLot= el.owo; 
-            let qtyTested= el.pwo; 
-             let qtyFail= el.qwo; 
-             let qtyRejected= el.rwo; 
+           // let qtyTested= el.pwo; 
+            // let qtyFail= el.qwo; 
+            // let qtyRejected= el.rwo; 
             arrayOfRIs1.push([myDate, myLot ]) ; 
-             arrayOfRIs2.push([myDate, myLot, qtyTested, qtyFail, qtyRejected ]) ; 
+             arrayOfRIs2.push([myDate, myLot ]) ; 
+           //  arrayOfRIs2.push([myDate, myLot, qtyTested, qtyFail, qtyRejected ]) ; 
       }            
         });
         
@@ -233,13 +241,13 @@ class ChartA extends React.Component {
     />
 <Chart
       chartType="ColumnChart"  
-      data={this.state.arrayOfRIs2}
+      data={this.state.arrayOfRIs1}
        options={optionsCh2 }
        width="100%"
        height="300px"
        legendToggle
     />
-    <ChartA1 />
+  
 
   <Modal show={this.state.show} onHide={this.handleClose}>  </Modal>
     
@@ -255,7 +263,12 @@ class ChartA extends React.Component {
 module.exports = ChartA;
        
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
-        /*  Records._ID,
+
+
+        /* 
+          <ChartA1 />
+        
+        Records._ID,
 	     C1, //dateInspected cwo
 	     T1, //pass fail	        
 	     O1, //qty lot
