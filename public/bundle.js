@@ -61236,7 +61236,6 @@ const MyChartRI = () => {
 class ChartA extends React.Component {
   constructor(props) {
     super(props);
- 
    
     this.state = {
       show: false, 
@@ -61256,16 +61255,12 @@ class ChartA extends React.Component {
       sel_radio_c:"", //lot size
      
       filterAB:"",
-      modal_label: "Choose RI Reports to view",
-      dataA:"",
-      dataB:""
+      modal_label: "Choose RI Reports to view"
      
       
     };
    
     this.handleParentData = this.handleParentData.bind(this);
-    //this.handleParentDataB = this.handleParentDataB.bind(this);
-
     this.handleShow = this.handleShow.bind(this);
     this.handleClose = this.handleClose.bind(this);
     this.handleShowModal = this.handleShowModal.bind(this); 
@@ -61283,7 +61278,7 @@ class ChartA extends React.Component {
       let xhr = new XMLHttpRequest();  
       xhr.open('POST', '/create-filtered-table2', true);
       xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-      //let body = 'Gwo=' + encodeURIComponent(event.model) 'inspector='+ encodeURIComponent(event.sel_radio_a);
+    
         let body = 'Gwo=' + encodeURIComponent(event.model) +
            
                   '&fwo=' + encodeURIComponent(event.pn) +
@@ -61300,7 +61295,7 @@ class ChartA extends React.Component {
     
 
       
-      let dataB=this.state.dataB;  
+      
       xhr.send(body);
       xhr.onreadystatechange = function() {
       
@@ -61364,19 +61359,7 @@ class ChartA extends React.Component {
     
   }
 
-  
- /*   
- handleParentDataB(event) {  
-   this.setState({ sel_radio_b: event.sel_radio_b });
-   let dataA=this.state.model + "  " + this.state.pn + "  " +this.state.sel_radio_a ;
  
-   this.setState({ filterAB: "    Showing results for " + dataA }); 
-    
-  }*/
-  
-  
- 
-  
   handleShowModal() {
     // show Modal
     this.handleShow();    
@@ -61411,47 +61394,24 @@ class ChartA extends React.Component {
           return;
         }
         let response = JSON.parse(this.responseText);
-        
-// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
-        /*  Records._ID,
-	     C1, //dateInspected cwo
-	     T1, //pass fail	        
-	     O1, //qty lot
-	     P1, //qty tested
-	     Q1, //qty fail
-	     R1, //qty rejected
-	     CREATE_DATE, //"created"
-       */
-         
-      
+             
          let reports = response.reports.map((el) => {
            let myDate= el.cwo.substring(0,10);
            let myLot= el.owo; //.format("YYY/MM");
             arrayOfRIs.push([myDate, myLot]) ; 
-          
-  
+           
              
            
         });
          
- // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!           
-        
-           that.setState({
-          ["reports"]: React.createElement("div", {className: "reports"}, 
-                      reports
-                    ),
-            ["arrayOfRIs"] :React.createElement("div", null, 
-               arrayOfRIs 
-                    )
-              
+            that.setState({
+           ["reports"]: React.createElement("div", null, reports),
+            ["arrayOfRIs"] :React.createElement("div", null, arrayOfRIs )              
            });
        }
     
   }
-  //https://react-bootstrap.github.io/components/table/
-  
-
-  
+   
   render() {
     return (
       React.createElement("div", null, 
@@ -61464,25 +61424,11 @@ class ChartA extends React.Component {
  React.createElement(Row, null, " ", React.createElement("p", {className: "filter_msg"}, this.state.filterAB, "   ")), 
 React.createElement(Row, null, 
    React.createElement(Col, {xs: 1}, React.createElement("div", {className: "well"}, 
-     
-     
       React.createElement(FilterA, {handleData: this.handleParentData}), 
      React.createElement("br", null)
-     /* < FilterB handleDataB ={this.handleParentDataB} /> */
-     
    ), " "), 
-  
-  
   React.createElement(Col, {xs: 11}, " ", React.createElement("div", null, 
- /*  
-    <MyChart />
-    
-        <Chart
-          chartType="Timeline"
-          data={[columns, ...rows]}
-          width="75%"
-          height="400px"
-        /> */
+ 
   React.createElement(MyChartRI, null), 
 
   React.createElement(Modal, {show: this.state.show, onHide: this.handleClose}, "  ")
@@ -61497,14 +61443,18 @@ React.createElement(Row, null,
 };
 
 module.exports = ChartA;
-//< SidebarB />  < FilterA />
-/* 
-
-        
-<Table className="myForm">  
-         {this.state.reports}
-  </Table>  
-*/
+       
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
+        /*  Records._ID,
+	     C1, //dateInspected cwo
+	     T1, //pass fail	        
+	     O1, //qty lot
+	     P1, //qty tested
+	     Q1, //qty fail
+	     R1, //qty rejected
+	     CREATE_DATE, //"created"
+       */
+   
 
 /***/ }),
 /* 401 */
