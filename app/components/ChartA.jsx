@@ -10,10 +10,24 @@ let arrayOfRIs= [  ["Date", "Lot Qty"]];
 let MyChartRI;
 
 
-
 /* the  page that shows all charts */
 class ChartA extends React.Component {
   constructor(props) {
+     let optionsCh2 = {
+        title: 'Lot Qty ',
+        timeline: {
+          groupByRowLabel: true
+        },
+   hAxis: {
+            format: 'M/d/yy',
+            gridlines: {count: 15}
+          },
+          vAxis: {
+            gridlines: {color: 'none'},
+            minValue: 0
+          }
+      };
+
     super(props);
    
     this.state = {
@@ -34,7 +48,8 @@ class ChartA extends React.Component {
       sel_radio_c:"", //lot size
      
       filterAB:"",
-      modal_label: "Choose RI Reports to view"
+      modal_label: "Choose RI Reports to view",
+      optionsCh2: optionsCh2
       
     };
    
@@ -198,10 +213,10 @@ class ChartA extends React.Component {
     />
 <Chart
       chartType="ColumnChart"  
-      data={this.state.arrayOfRIs }
+      data={this.state.arrayOfRIs, optionsCh2 }
        width="100%"
        height="300px"
-      groupByRowLabel: true
+      
     />
 
   <Modal show={this.state.show} onHide={this.handleClose}>  </Modal>
