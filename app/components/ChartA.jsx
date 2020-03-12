@@ -194,9 +194,15 @@ class ChartA extends React.Component {
       chartType="ColumnChart"  
       data={this.state.arrayOfRIs }
        width="100%"
-       height="400px"
+       height="300px"
     />
-
+<Chart
+      chartType="ColumnChart"  
+      data={this.state.arrayOfRIs }
+       width="100%"
+       height="300px"
+      groupByRowLabel: true
+    />
 
   <Modal show={this.state.show} onHide={this.handleClose}>  </Modal>
     

@@ -81,12 +81,10 @@ Model: <br />
 PN: <br />
   <input className="filter_input_a" type="text" name="pn"  value={this.state.pn} 
     onChange={this.handleChangeValue} /> <br />
-<br />   
   
   Comment: <br />
   <input className="filter_input_a" type="text" name="comment"  value={this.state.comment} 
-    onChange={this.handleChangeValue} /> <br />
-<br />    
+    onChange={this.handleChangeValue} /> <br /> 
   Inspector: 
     <ul>
       <li>
@@ -135,7 +133,7 @@ PN: <br />
   Destination: <br />
   <input className="filter_input_a" type="text" name="destination"  value={this.state.destination} 
     onChange={this.handleChangeValue} /> <br />
-  <br />
+
 Pass/Fail: 
     <ul>
       <li>
@@ -176,7 +174,7 @@ Pass/Fail:
           </ul>    
   
   
-  <br />    
+   
  Lot Size: 
     <ul>
       <li>
@@ -216,12 +214,9 @@ Pass/Fail:
             </li> 
           </ul>  
   
-  
-  
-  
-  <br /><br />
+
   <input type="button" value="Submit" onClick={this.submitForm}/></form> 
-      <br />
+   
     <input type="button" value="Clear" onClick={this.clearForm}/>
     </div>    )  }}
 
