@@ -6,7 +6,7 @@ const Header = require('./Header');
 const FilterA =require('./FilterA');
 const  { Chart }= require('react-google-charts'); 
 
-let arrayOfRIs= [  ["Name", "Lot Qty"],["abc", 100]];
+let arrayOfRIs=  ["Name", "Lot Qty"],["abc", 100];
 let MyChartRI;
 
 
@@ -35,8 +35,7 @@ class ChartA extends React.Component {
      
       filterAB:"",
       modal_label: "Choose RI Reports to view",
-      ["arrayOfRIs"] :{arrayOfRIs }  
-     
+        ["arrayOfRIs"] :{arrayOfRIs }   
       
     };
    
@@ -165,7 +164,7 @@ class ChartA extends React.Component {
         });
           that.setState({
            ["reports"]: <div >{reports}</div>,
-            ["arrayOfRIs"] :<div >{arrayOfRIs }</div>              
+            ["arrayOfRIs"] :{arrayOfRIs }             
            });
        }
     
@@ -176,15 +175,23 @@ class ChartA extends React.Component {
       <div>
         <Header/> 
   
- <Row> <p className="filter_msg">{this.state.filterAB}   </p></Row>     
+ <Row> <p className="filter_msg">{this.state.filterAB}   </p>
+      <p>see:  {this.state.arrayOfRIs} </p>  
+        </Row>     
 <Row > 
    <Col xs={1} ><div  className="well" >  
       < FilterA handleData ={this.handleParentData} /> 
      <br/>
    </div> </Col>
   <Col xs={11} > <div   >  
- 
-  <MyChartRI />
+ <Chart
+      chartType="ColumnChart"  
+  // data={this.state.arrayOfRIs }
+   data={arrayOfRIs }
+       width="100%"
+       height="400px"
+    />
+
 
   <Modal show={this.state.show} onHide={this.handleClose}>  </Modal>
     
