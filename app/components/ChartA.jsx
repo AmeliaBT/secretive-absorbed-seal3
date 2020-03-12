@@ -9,28 +9,19 @@ const  { Chart }= require('react-google-charts');
 let arrayOfRIs= [  ["Date", "Lot Qty"]];
 let MyChartRI;
 //let optionsCh2={title: 'Lot Qty '};
-let optionsCh1 ={
-        title: 'Lot Qty ',
-        timeline: {
-          groupByRowLabel: true
-        },
-   hAxis: { format: 'MMM/yyyy',
-          //  gridlines: {count: 15}
-          },
-    vAxis: { //  gridlines: {color: 'red'},
-            minValue: 0 };
+let optionsCh1 ={  title: 'Lot Qty ',
+               timeline: {  groupByRowLabel: true },
+                hAxis: { format: 'MMM/yyyy'},
+               vAxis: {  minValue: 0 }
+}
+  
 let optionsCh2 ={
         title: 'Lot Qty ',
-        timeline: {
-          groupByRowLabel: true
-        },
-   hAxis: {
-            format: 'MMM/yyyy',
-          //  gridlines: {count: 15}
-          },
-    vAxis: {
-          //  gridlines: {color: 'red'},
-            minValue: 0
+        timeline: { groupByRowLabel: true  },
+        hAxis: { format: 'MMM/yyyy', //  gridlines: {count: 15}
+               },
+    vAxis: {  minValue: 0
+       //  gridlines: {color: 'red'},
           }
       };
 
@@ -192,7 +183,8 @@ class ChartA extends React.Component {
           if(el.cwo !== ""){
           let myDate= new Date(el.cwo.substring(0,10));
            let myLot= el.owo; 
-            arrayOfRIs.push([myDate, myLot]) ;            
+            arrayOfRIs.push([myDate, myLot]) ; 
+            
       }            
         });
         
@@ -221,6 +213,7 @@ class ChartA extends React.Component {
  <Chart
       chartType="ColumnChart"  
       data={this.state.arrayOfRIs }
+    options={optionsCh1 }
        width="100%"
        height="300px"
     />
