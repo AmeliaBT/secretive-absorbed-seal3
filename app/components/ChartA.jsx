@@ -9,7 +9,16 @@ const  { Chart }= require('react-google-charts');
 let arrayOfRIs= [  ["Date", "Lot Qty"]];
 let MyChartRI;
 //let optionsCh2={title: 'Lot Qty '};
-
+let optionsCh1 ={
+        title: 'Lot Qty ',
+        timeline: {
+          groupByRowLabel: true
+        },
+   hAxis: { format: 'MMM/yyyy',
+          //  gridlines: {count: 15}
+          },
+    vAxis: { //  gridlines: {color: 'red'},
+            minValue: 0 };
 let optionsCh2 ={
         title: 'Lot Qty ',
         timeline: {
@@ -17,10 +26,10 @@ let optionsCh2 ={
         },
    hAxis: {
             format: 'MMM/yyyy',
-            gridlines: {count: 15}
+          //  gridlines: {count: 15}
           },
-          vAxis: {
-            gridlines: {color: 'red'},
+    vAxis: {
+          //  gridlines: {color: 'red'},
             minValue: 0
           }
       };
