@@ -61997,7 +61997,8 @@ const FilterA =__webpack_require__(86);
 const ChartA1 =__webpack_require__(402);
 const  { Chart }= __webpack_require__(159); 
 
-let arrayOfRIs= [  ["Date", "Lot Size", "Qty Tested", ""]];
+let arrayOfRIs1= [  ["Date", "Lot Size"]];
+let arrayOfRIs2= [  ["Date", "Lot Size", "Qty Tested", "Qty Fail", "Qty Rejected"]];
 let MyChartRI;
 //let optionsCh2={title: 'Lot Qty '};
 let optionsCh1 ={  title: 'Lot Size',
@@ -62092,13 +62093,15 @@ class ChartA extends React.Component {
         
         let response = JSON.parse(this.responseText);
        let res_len=response.length;
-         arrayOfRIs=[  ["Date", "Lot Qty"]];
+         arrayOfRIs1=[  ["Date", "Lot Qty"]];
         
         let reports = response.map((el) => { 
       if(el.cwo !== ""){
           let myDate= new Date(el.cwo.substring(0,10));
            let myLot= el.owo; 
-            arrayOfRIs.push([myDate, myLot]) ;            
+            arrayOfRIs1.push([myDate, myLot]) ;    
+        
+        
       }    
             return         
           
@@ -62106,7 +62109,7 @@ class ChartA extends React.Component {
       
         
            that.setState({
-             arrayOfRIs:arrayOfRIs,
+             arrayOfRIs:arrayOfRIs1,
             res_len:res_len,
             model: event.model, 
             pn: event.pn ,           
@@ -62177,8 +62180,11 @@ class ChartA extends React.Component {
           if(el.cwo !== ""){
           let myDate= new Date(el.cwo.substring(0,10));
            let myLot= el.owo; 
-            arrayOfRIs.push([myDate, myLot]) ; 
-            
+            let qtyTested= el.pwo; 
+             let qtyFail= el.qwo; 
+             let qtyRejected= el.rwo; 
+            arrayOfRIs1.push([myDate, myLot ]) ; 
+             arrayOfRIs2.push([myDate, myLot, qtyTested, qtyFail, qtyRejected ]) ; 
       }            
         });
         
@@ -62186,7 +62192,8 @@ class ChartA extends React.Component {
         
           that.setState({
            ["reports"]: {reports},
-            "arrayOfRIs" : arrayOfRIs             
+            "arrayOfRIs1" : arrayOfRIs1 ,
+             "arrayOfRIs2" : arrayOfRIs2 
            });
        }
     
@@ -62207,15 +62214,15 @@ React.createElement(Row, null,
  React.createElement(Chart, {
       //chartType="ColumnChart" 
    chartType: "ScatterChart", 
-      data: this.state.arrayOfRIs, 
+      data: this.state.arrayOfRIs1, 
     options: optionsCh1, 
        width: "100%", 
-       height: "300px", 
-       legendToggle: true}
+       height: "300px"}
+       
     ), 
 React.createElement(Chart, {
       chartType: "ColumnChart", 
-      data: this.state.arrayOfRIs, 
+      data: this.state.arrayOfRIs2, 
        options: optionsCh2, 
        width: "100%", 
        height: "300px", 
