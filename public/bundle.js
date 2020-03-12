@@ -61223,7 +61223,7 @@ let optionsCh2 ={
           groupByRowLabel: true
         },
    hAxis: {
-            format: 'MM/yyyy',
+            format: 'MMM/yyyy',
             gridlines: {count: 15}
           },
           vAxis: {
