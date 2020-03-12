@@ -5,6 +5,7 @@ const style = require('../styles/HomePage');
 const {Table , Grid, Row, Col, Modal} = require('react-bootstrap');
 const Header = require('./Header');
 const FilterA =require('./FilterA');
+const ChartA1 =require('./ChartA1');
 const  { Chart }= require('react-google-charts'); 
 
 let arrayOfRIs= [  ["Date", "Lot Qty"]];
@@ -212,7 +213,8 @@ class ChartA extends React.Component {
    </div> </Col>
   <Col xs={11} > <div   >  
  <Chart
-      chartType="ColumnChart"  
+      //chartType="ColumnChart" 
+   chartType="ScatterChart"
       data={this.state.arrayOfRIs }
     options={optionsCh1 }
        width="100%"
@@ -226,6 +228,7 @@ class ChartA extends React.Component {
        height="300px"
       
     />
+    <ChartA1 />
 
   <Modal show={this.state.show} onHide={this.handleClose}>  </Modal>
     
