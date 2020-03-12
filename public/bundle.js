@@ -61218,13 +61218,14 @@ const Header = __webpack_require__(17);
 const FilterA =__webpack_require__(86);
 const  { Chart }= __webpack_require__(401); 
 
-let arrayOfRIs= [  ["Name", "Lot Qty"]];
+let arrayOfRIs= [  ["Name", "Lot Qty"],["abc", 100]];
 
 const MyChartRI = () => {
   return (
     React.createElement(Chart, {
       chartType: "ColumnChart", 
-        data: arrayOfRIs, 
+       // data=  {arrayOfRIs}
+    data: this.state.arrayOfRIs, 
        width: "100%", 
        height: "400px"}
     )
@@ -61255,7 +61256,8 @@ class ChartA extends React.Component {
       sel_radio_c:"", //lot size
      
       filterAB:"",
-      modal_label: "Choose RI Reports to view"
+      modal_label: "Choose RI Reports to view",
+     arrayOfRIs:{arrayOfRIs }  
      
       
     };

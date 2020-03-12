@@ -6,13 +6,14 @@ const Header = require('./Header');
 const FilterA =require('./FilterA');
 const  { Chart }= require('react-google-charts'); 
 
-let arrayOfRIs= [  ["Name", "Lot Qty"]];
+let arrayOfRIs= [  ["Name", "Lot Qty"],["abc", 100]];
 
 const MyChartRI = () => {
   return (
     <Chart
       chartType="ColumnChart"    
-        data=  {arrayOfRIs}
+       // data=  {arrayOfRIs}
+    data={this.state.arrayOfRIs }
        width="100%"
        height="400px"
     />
@@ -43,7 +44,8 @@ class ChartA extends React.Component {
       sel_radio_c:"", //lot size
      
       filterAB:"",
-      modal_label: "Choose RI Reports to view"
+      modal_label: "Choose RI Reports to view",
+     arrayOfRIs:{arrayOfRIs }  
      
       
     };
