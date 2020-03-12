@@ -78,10 +78,6 @@ class ChartA extends React.Component {
              '&reportID=' + encodeURIComponent(event.riN)
             ;
             
-    
-
-      
-      
       xhr.send(body);
       xhr.onreadystatechange = function() {
       
@@ -93,23 +89,16 @@ class ChartA extends React.Component {
         }
         let response = JSON.parse(this.responseText);
        let res_len=response.length;
-         let reports = response.map((el) => {          
-          return 
+         
+        let reports = response.map((el) => { 
+            let myDate= el.cwo.substring(0,10);
+           let myLot= el.owo; //.format("YYY/MM");
+            arrayOfRIs.push([myDate, myLot]) ;            
+                 
+            return         
           
-           {/* <RIlistItemAll  key={el.reportID}
-           reportnumber={el.reportID}  
-           inspector={el.inspector}
-             fwo={el.fwo}     
-           Gwo={el.Gwo}
-           jwo={el.jwo}
-           two={el.two}
-           owo={el.owo}
-           record={el.record}
-           lwo ={el.lwo}       
-            /> */}
         });
-        
- // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!           
+      
         
            that.setState({
             res_len:res_len,
@@ -121,9 +110,7 @@ class ChartA extends React.Component {
            comment :  event.comment,  
             supplier:event.supplier,
             source: event.source,
-            destination: event.destination,
-             
-             
+            destination: event.destination,             
             filterAB:'Showing ' + res_len +' results for ' 
              + event.riN
              + ' ' +event.model  
@@ -137,9 +124,9 @@ class ChartA extends React.Component {
               + ' ' + event.sel_radio_b 
               + ' ' + event.sel_radio_c  
              ,
-          ["reports"]: <div className="reports">
-                      {reports}     
-                    </div>
+          ["reports"]: <div className="reports"> {reports}  </div>,
+                ["arrayOfRIs"] :<div >{arrayOfRIs }</div>      
+             
            });
        }
     
@@ -150,8 +137,7 @@ class ChartA extends React.Component {
     // show Modal
     this.handleShow();    
   }
-  /***********************/  
- 
+  
   /***********************/
    handleClose() {
     this.setState({ show: false });
@@ -179,18 +165,13 @@ class ChartA extends React.Component {
           alert( 'error: ' + (this.status ? this.statusText : 'request has not been set') );
           return;
         }
-        let response = JSON.parse(this.responseText);
-             
+        let response = JSON.parse(this.responseText);             
          let reports = response.reports.map((el) => {
            let myDate= el.cwo.substring(0,10);
            let myLot= el.owo; //.format("YYY/MM");
-            arrayOfRIs.push([myDate, myLot]) ; 
-           
-             
-           
+            arrayOfRIs.push([myDate, myLot]) ;            
         });
-         
-            that.setState({
+          that.setState({
            ["reports"]: <div >{reports}</div>,
             ["arrayOfRIs"] :<div >{arrayOfRIs }</div>              
            });
@@ -202,11 +183,7 @@ class ChartA extends React.Component {
     return (
       <div>
         <Header/> 
-    
-               
-              
-      {/* 
-       < FilterA />   */}   
+  
  <Row> <p className="filter_msg">{this.state.filterAB}   </p></Row>     
 <Row > 
    <Col xs={1} ><div  className="well" >  
@@ -239,5 +216,18 @@ module.exports = ChartA;
 	     Q1, //qty fail
 	     R1, //qty rejected
 	     CREATE_DATE, //"created"
+       
+       
+       
        */
-   
+    {/* <RIlistItemAll  key={el.reportID}
+           reportnumber={el.reportID}  
+           inspector={el.inspector}
+             fwo={el.fwo}     
+           Gwo={el.Gwo}
+           jwo={el.jwo}
+           two={el.two}
+           owo={el.owo}
+           record={el.record}
+           lwo ={el.lwo}       
+            /> */}
