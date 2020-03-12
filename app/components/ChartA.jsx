@@ -127,7 +127,7 @@ class ChartA extends React.Component {
         
            that.setState({
              arrayOfRIs1:arrayOfRIs1,
-              arrayOfRIs2:arrayOfRIs1,
+              arrayOfRIs2:arrayOfRIs2,
             res_len:res_len,
             model: event.model, 
             pn: event.pn ,           
@@ -202,16 +202,13 @@ class ChartA extends React.Component {
            let qtyFail= el.qwo; 
            let qtyRejected= el.rwo; 
             arrayOfRIs1.push([myDate, myLot ]) ; 
-             arrayOfRIs2.push([myDate, myLot ]) ; 
-          arrayOfRIs2.push([myDate, myLot, qtyTested, qtyFail, qtyRejected ]) ; 
+            arrayOfRIs2.push([myDate, myLot, qtyTested, qtyFail, qtyRejected ]) ; 
       }            
         });
         
-                
-        
           that.setState({
            ["reports"]: {reports},
-            "arrayOfRIs1" : arrayOfRIs1 ,
+            "arrayOfRIs1" : arrayOfRIs1,
              "arrayOfRIs2" : arrayOfRIs2 
            });
        }
