@@ -61222,6 +61222,10 @@ let MyChartRI1;
 let MyChartRI2;
 let arrayOfYM;
 let arrLotYM=[];
+
+
+
+
 //let optionsCh2={title: 'Lot Qty '};
 let optionsCh1 ={  title: 'Receiving Inspection',
                timeline: {  groupByRowLabel: true },
@@ -61411,13 +61415,15 @@ class ChartA extends React.Component {
           let qtyTested= el.pwo; 
            let qtyFail= el.qwo; 
            let qtyRejected= el.rwo; 
+            let pass_fail= el.two; 
             arrayOfRIs1.push([myDate, myLot ]) ; 
-            arrayOfRIs2.push([myDate, myLot, qtyTested, qtyFail, qtyRejected ]) ; 
+            arrayOfRIs2.push([myDate, myLot, qtyTested, qtyFail, qtyRejected, pass_fail ]) ; 
             arrayOfYM.push([myDate.getYear() +"-"+myDate.getMonth()]) ; 
       }            
         });
         
-       let uniqueYM = [...new Set(arrayOfYM)] ;      
+       let uniqueYM = [...new Set(arrayOfYM)] ;  
+        alert("uniqueYM " +uniqueYM);
        arrLotYM=[]; //[Y-M , LAR (sum of lot  PASS/all lots)
         alert(uniqueYM.length)
         for(let i=0; i< uniqueYM.lenght; i++){
@@ -61425,7 +61431,7 @@ class ChartA extends React.Component {
           let lotN=0; //number of lots
           let lotA=0; //number of lots PASS
           for(let j=0; j< arrayOfRIs2.length; j++ ){
-            let ym= arrayOfRIs2.myDate[j].getYear() +"-"+arrayOfRIs2.myDate[j].myDate.getMonth()
+            let ym= arrayOfRIs2[j].myDate.getYear() +"-"+arrayOfRIs2[j].myDate.getMonth()
           if(ym === uniqueYM[i] ) {
             lotN= lotN+1;
             if(arrayOfRIs2.two[j] === "Pass" ){ lotA =lotA+1;}
@@ -61438,8 +61444,9 @@ class ChartA extends React.Component {
           that.setState({
            ["reports"]: {reports},
             "arrayOfRIs1" : arrayOfRIs1,
-             "arrayOfRIs2" : arrayOfRIs2 ,
-              "arrLotYM": arrLotYM
+             "arrayOfRIs2" : arrayOfRIs2 
+            //,
+             // "arrLotYM": arrLotYM
            });
        }
    }
