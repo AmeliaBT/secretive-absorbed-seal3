@@ -61415,7 +61415,7 @@ class ChartA extends React.Component {
       }            
         });
        let uniqueYM = [...new Set(arrayOfYM)] ;      
-        let myLotYM=[]; //sum of quantities 
+        let myLotYM=[]; //[Y-M , LAR (sum of lot  PASS/all lots)
         
         for(let i=0; i< uniqueYM.lenght; i++){
           let lotN=0; //number of lots
@@ -61425,9 +61425,9 @@ class ChartA extends React.Component {
           if(ym === uniqueYM[i] ) {
             lotN= lotN+1;
             if(arrayOfRIs2.two[j] === "Pass" ){ lotA =lotA+1;}
-            myLotYM.push(arrayOfRIs2.myLot[j]) }
+            //myLotYM.push(arrayOfRIs2.myLot[j]) }
           }
-               
+           myLotYM.push([uniqueYM[i],lotA/lotN*100])    
         }
         
       
@@ -61437,8 +61437,8 @@ class ChartA extends React.Component {
              "arrayOfRIs2" : arrayOfRIs2 
            });
        }
-    
-  }
+   }
+}
    
   render() {
     return (
