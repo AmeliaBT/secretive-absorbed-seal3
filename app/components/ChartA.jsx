@@ -9,7 +9,8 @@ const FilterA =require('./FilterA');
 const  { Chart }= require('react-google-charts'); 
 
 let arrayOfRIs1= [  ["Date", "Lot Size"]];
-//let arrayOfRIs2= [  ["Date", "Lot Size"]];
+
+
 let arrayOfRIs2= [  ["Date", "Lot Size", "Qty Tested", "Qty Fail", "Qty Rejected"]];
 let MyChartRI1;
 let MyChartRI2;
@@ -210,30 +211,32 @@ class ChartA extends React.Component {
            let qtyRejected= el.rwo; 
             let pass_fail= el.two; 
             arrayOfRIs1.push([myDate, myLot ]) ; 
-            arrayOfRIs2.push([myDate, myLot, qtyTested, qtyFail, qtyRejected, pass_fail ]) ; 
+           
+            
+            arrayOfRIs2.push([myDate, myLot, qtyTested, qtyFail, qtyRejected]) ; 
             arrayOfYM.push([myDate.getYear() +"-"+myDate.getMonth()]) ; 
       }            
         });
         
        let uniqueYM = [...new Set(arrayOfYM)] ;  
         alert("uniqueYM " +uniqueYM);
-       arrLotYM=[]; //[Y-M , LAR (sum of lot  PASS/all lots)
+        arrLotYM=[]; //[Y-M , LAR (sum of lot  PASS/all lots)
         alert(uniqueYM.length)
-        for(let i=0; i< uniqueYM.lenght; i++){
-       
+//==========================================        
+        for(let i=0; i< uniqueYM.lenght; i++){       
           let lotN=0; //number of lots
           let lotA=0; //number of lots PASS
           for(let j=0; j< arrayOfRIs2.length; j++ ){
             let ym= arrayOfRIs2[j].myDate.getYear() +"-"+arrayOfRIs2[j].myDate.getMonth()
           if(ym === uniqueYM[i] ) {
             lotN= lotN+1;
-            if(arrayOfRIs2.two[j] === "Pass" ){ lotA =lotA+1;}
+            if(arrayOfRIs2[j].pass_fail === "Pass" ){ lotA =lotA+1;}
            
           }
            arrLotYM.push([uniqueYM[i].lotA/lotN*100])    
-        }
+        }}
         
-      
+ //     
           that.setState({
            ["reports"]: {reports},
             "arrayOfRIs1" : arrayOfRIs1,
@@ -241,7 +244,7 @@ class ChartA extends React.Component {
             //,
              // "arrLotYM": arrLotYM
            });
-       }
+       
    }
 }
    
