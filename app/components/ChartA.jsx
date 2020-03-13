@@ -14,7 +14,7 @@ let arrayOfRIs2= [  ["Date", "Lot Size", "Qty Tested", "Qty Fail", "Qty Rejected
 let MyChartRI1;
 let MyChartRI2;
 //let optionsCh2={title: 'Lot Qty '};
-let optionsCh1 ={  title: 'RI Quantity Tested',
+let optionsCh1 ={  title: 'Receiving Inspection',
                timeline: {  groupByRowLabel: true },
                 hAxis: {title: "Date Inspected",  format: 'MMM/yyyy'},
                vAxis: { title: "Lot Size", minValue: 0 },
