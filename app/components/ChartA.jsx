@@ -205,7 +205,10 @@ class ChartA extends React.Component {
           if(el.cwo !== ""){
           //let myDate= new Date(el.cwo.substring(0,10));
         //  let myDate= new Date(el.cwo);
-          let myDate= el.cwo;  
+          let myDate= el.cwo; 
+          let month = myDate.getUTCMonth() + 1; //months from 1-12
+            let year = myDate.getUTCFullYear();
+            console.log(year +" -" + year);
            let myLot= el.owo; 
            
           let qtyTested= el.pwo; 
@@ -215,8 +218,8 @@ class ChartA extends React.Component {
             arrayOfRIs1.push([myDate, myLot ]) ; 
             arrayOfRIs2.push([myDate, myLot, qtyTested, qtyFail, qtyRejected]) ; 
             //for getting unique YYYY-MM
-           // arrayOfRIs3.push(el.cwo.substring(0,4) +"-" +el.cwo.substring(5,7)  ) ;  //ok
-            arrayOfRIs3.push(myDate.getYear() +"-"+ myDate.getMonth()  ) ;
+            arrayOfRIs3.push(el.cwo.substring(0,4) +"-" +el.cwo.substring(5,7)  ) ;  //ok
+           // arrayOfRIs3.push(myDate.getYear() +"-"+ myDate.getMonth()  ) ;
       }            
         });
   
@@ -225,10 +228,10 @@ class ChartA extends React.Component {
 }
   uniqueYM = arrayOfRIs3.unique();
   arrLotYM=[]; //[Y-M , LAR (sum of lot  PASS/all lots)
-   console.log("arrayOfRIs3") ;
-        console.log(arrayOfRIs3);
-     console.log("uniqueYM") ;
-        console.log(uniqueYM);
+   //console.log("arrayOfRIs3") ;
+      //  console.log(arrayOfRIs3);
+    // console.log("uniqueYM") ;
+      //  console.log(uniqueYM);
         
          
 //==========================================   
