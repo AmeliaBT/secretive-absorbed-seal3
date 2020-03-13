@@ -206,11 +206,9 @@ class ChartA extends React.Component {
           //let myDate= new Date(el.cwo.substring(0,10));
         //  let myDate= new Date(el.cwo);
           let myDate= el.cwo; 
-            let myDate2= el.cwo; 
-            console.log(myDate2);
-          //let month = myDate2.getFullYear()+ 1; //months from 1-12
-          //  let year = myDate2.getFullYear();;
-         //   console.log(year +" -" + year);
+            let myDate2= el.cwo.substring(0,4 ) +"-" +el.cwo.substring(5,7) ; 
+            //console.log(myDate2);
+          
            let myLot= el.owo; 
            
           let qtyTested= el.pwo; 
@@ -218,10 +216,11 @@ class ChartA extends React.Component {
            let qtyRejected= el.rwo; 
             let pass_fail= el.two; 
             arrayOfRIs1.push([myDate, myLot ]) ; 
-            arrayOfRIs2.push([myDate, myLot, qtyTested, qtyFail, qtyRejected]) ; 
+            arrayOfRIs2.push([myDate2, myLot, qtyTested, qtyFail, qtyRejected]) ; 
             //for getting unique YYYY-MM
-            arrayOfRIs3.push("____"+ el.cwo.substring(0,4 ) +"-" +el.cwo.substring(5,7)  ) ;  //ok
-           // arrayOfRIs3.push(myDate.getYear() +"-"+ myDate.getMonth()  ) ;
+           // arrayOfRIs3.push(el.cwo.substring(0,4 ) +"-" +el.cwo.substring(5,7)  ) ;  //ok
+             arrayOfRIs3.push(myDate2 ) ;  
+          
       }            
         });
   
