@@ -209,13 +209,18 @@ class ChartA extends React.Component {
         });
        let uniqueYM = [...new Set(arrayOfYM)] ;      
         let myLotYM=[]; //sum of quantities 
+        
         for(let i=0; i< uniqueYM.lenght; i++){
+          let lotN=0; //number of lots
+          let lotA=0; //number of lots PASS
           for(let j=0; j< arrayOfRIs2.length; j++ ){
             let ym= arrayOfRIs2.myDate[j].getYear() +"-"+arrayOfRIs2.myDate[j].myDate.getMonth()
           if(ym === uniqueYM[i] ) {
-            myLotYM.push(arrayOfRIs2.myLot[j]) }
+            lotN= lotN+1;
+            if(arrayOfRIs2.two[j] === "Pass" ){ lotA =lotA+1;}
+            //myLotYM.push(arrayOfRIs2.myLot[j]) }
           }
-               
+           myLotYM    
         }
         
       
