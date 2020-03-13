@@ -15,7 +15,7 @@ let arrayOfRIs2= [  ["Date", "Lot Size", "Qty Tested", "Qty Fail", "Qty Rejected
 let MyChartRI1;
 let MyChartRI2;
 let arrayOfYM;
-let arrLotYM=[];
+let arrLotYM;
 
 
 
@@ -211,18 +211,20 @@ class ChartA extends React.Component {
            let qtyRejected= el.rwo; 
             let pass_fail= el.two; 
             arrayOfRIs1.push([myDate, myLot ]) ; 
-           
+            //arrayOfYM.push(myDate);
             
             arrayOfRIs2.push([myDate, myLot, qtyTested, qtyFail, qtyRejected]) ; 
-            arrayOfYM.push([myDate.getYear() +"-"+myDate.getMonth()]) ; 
+            //arrayOfYM.push([myDate.getYear() +"-"+myDate.getMonth()]) ; 
+           // arrayOfYM.push([myDate]);
       }            
         });
-        
+        alert("arrayOfYM " +arrayOfYM);
        let uniqueYM = [...new Set(arrayOfYM)] ;  
         alert("uniqueYM " +uniqueYM);
         arrLotYM=[]; //[Y-M , LAR (sum of lot  PASS/all lots)
         alert(uniqueYM.length)
-//==========================================        
+//==========================================   
+        /*
         for(let i=0; i< uniqueYM.lenght; i++){       
           let lotN=0; //number of lots
           let lotA=0; //number of lots PASS
@@ -235,8 +237,8 @@ class ChartA extends React.Component {
           }
            arrLotYM.push([uniqueYM[i].lotA/lotN*100])    
         }}
-        
- //     
+       */ 
+ // 888888888     
           that.setState({
            ["reports"]: {reports},
             "arrayOfRIs1" : arrayOfRIs1,
