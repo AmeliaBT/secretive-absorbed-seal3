@@ -213,31 +213,19 @@ class ChartA extends React.Component {
             arrayOfRIs1.push([myDate, myLot ]) ; 
             //arrayOfYM.push(myDate);
             arrayOfRIs2.push([myDate, myLot, qtyTested, qtyFail, qtyRejected]) ; 
-            arrayOfRIs3.push([el.cwo.substring(0,4)]) ; 
+            arrayOfRIs3.push(el.cwo.substring(0,4) +"-" +el.cwo.substring(0,4)  ) ; 
             //arrayOfYM.push([myDate.getYear() +"-"+myDate.getMonth()]) ; 
            // arrayOfYM.push([myDate]);
       }            
         });
-      //  alert("arrayOfYM " + arrayOfRIs3.length );
-    //uniqueYM = [...new Set(arrayOfRIs3)] ; 
+  
   Array.prototype.unique = function () {
   return [...new Set(this)]
 }
-//const arr = [1, 5, 2, 2, 2, 3, 4, 3, 2, 1, 5]
-//const uniqueArr = arr.unique()
-
-      uniqueYM = arrayOfRIs3.unique();
-
-         uniqueYM = [...new Set(arrayOfRIs3)] ;  
-        alert("uniqueYM " +uniqueYM);
-        arrLotYM=[]; //[Y-M , LAR (sum of lot  PASS/all lots)
-        alert(uniqueYM.length);
-        
-   
-
-
-  
-        
+  uniqueYM = arrayOfRIs3.unique();
+  arrLotYM=[]; //[Y-M , LAR (sum of lot  PASS/all lots)
+    
+         
 //==========================================   
         /*
         for(let i=0; i< uniqueYM.lenght; i++){       
