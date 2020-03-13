@@ -61407,6 +61407,7 @@ class ChartA extends React.Component {
           if(el.cwo !== ""){
           let myDate= new Date(el.cwo.substring(0,10));
            let myLot= el.owo; 
+           
           let qtyTested= el.pwo; 
            let qtyFail= el.qwo; 
            let qtyRejected= el.rwo; 
@@ -61415,9 +61416,10 @@ class ChartA extends React.Component {
             arrayOfYM.push([myDate.getYear() +"-"+myDate.getMonth()]) ; 
       }            
         });
+        
        let uniqueYM = [...new Set(arrayOfYM)] ;      
        arrLotYM=[]; //[Y-M , LAR (sum of lot  PASS/all lots)
-        
+        alert(uniqueYM.length)
         for(let i=0; i< uniqueYM.lenght; i++){
        
           let lotN=0; //number of lots
@@ -61429,7 +61431,7 @@ class ChartA extends React.Component {
             if(arrayOfRIs2.two[j] === "Pass" ){ lotA =lotA+1;}
            
           }
-           arrLotYM.push([uniqueYM[i],lotA/lotN*100])    
+           arrLotYM.push([uniqueYM[i].lotA/lotN*100])    
         }
         
       
@@ -61448,7 +61450,9 @@ class ChartA extends React.Component {
       React.createElement("div", null, 
         React.createElement(Header, null), 
   
- React.createElement(Row, null, " ", React.createElement("p", {className: "filter_msg"}, this.state.filterAB, "   ")), 
+ React.createElement(Row, null, " ", React.createElement("p", {className: "filter_msg"}, this.state.filterAB, "   "), 
+      React.createElement("p", null, " arrLotYM:  ", this.state.arrLotYM, " ")
+        ), 
 React.createElement(Row, null, 
    React.createElement(Col, {xs: 2}, React.createElement("div", {className: "well"}, 
       React.createElement(FilterA, {handleData: this.handleParentData}), 
