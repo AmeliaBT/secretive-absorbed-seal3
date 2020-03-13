@@ -61410,12 +61410,11 @@ class ChartA extends React.Component {
         
          let reports = response.reports.map((el) => {          
           if(el.cwo !== ""){
-          //let myDate= new Date(el.cwo.substring(0,10));
+          let myDate= new Date(el.cwo.substring(0,10));
         //  let myDate= new Date(el.cwo);
-          let myDate= el.cwo; 
+          //let myDate= el.cwo; 
             let myDate2= el.cwo.substring(0,4 ) +"-" +el.cwo.substring(5,7) ; 
-            //console.log(myDate2);
-          
+            //console.log(myDate2);          
            let myLot= el.owo; 
            
           let qtyTested= el.pwo; 
@@ -61425,8 +61424,9 @@ class ChartA extends React.Component {
             arrayOfRIs1.push([myDate, myLot ]) ; 
             arrayOfRIs2.push([myDate, myLot, qtyTested, qtyFail, qtyRejected]) ; 
             //for getting unique YYYY-MM
-           // arrayOfRIs3.push(el.cwo.substring(0,4 ) +"-" +el.cwo.substring(5,7)  ) ;  //ok
-             arrayOfRIs3.push(myDate2 ) ;  
+            //arrayOfRIs3.push(el.cwo.substring(0,4 ) +"-" +el.cwo.substring(5,7)  ) ;  //ok
+            arrayOfRIs3.push(myDate2 ) ;  
+           if(pass_fail !=="Pass"){pass_fail= "Fail"}; 
           arrayOfRIsPF.push([myDate2, pass_fail]) ; 
       }            
         });
@@ -61436,8 +61436,8 @@ class ChartA extends React.Component {
 }
   uniqueYM = arrayOfRIs3.unique();
   arrLotYM=[]; //[Y-M , LAR (sum of lot  PASS/all lots)
-   console.log("arrayOfRIsPF") ;
-      console.log(arrayOfRIsPF);
+  // console.log("arrayOfRIsPF") ;
+     // console.log(arrayOfRIsPF);
     // console.log("uniqueYM") ;
       //  console.log(uniqueYM);
         
@@ -61464,8 +61464,8 @@ class ChartA extends React.Component {
             "arrayOfRIs1" : arrayOfRIs1,
              "arrayOfRIs2" : arrayOfRIs2,
              "arrayOfRIs3" :arrayOfRIs3,
-            "uniqueYM": uniqueYM,
-            "arrLotYM":arrLotYM
+            "uniqueYM": uniqueYM
+           // "arrLotYM":arrLotYM
             //,
              // "arrLotYM": arrLotYM
            });
