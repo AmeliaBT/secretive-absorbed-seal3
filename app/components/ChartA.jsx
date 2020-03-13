@@ -203,7 +203,9 @@ class ChartA extends React.Component {
         
          let reports = response.reports.map((el) => {          
           if(el.cwo !== ""){
-          let myDate= new Date(el.cwo.substring(0,10));
+          //let myDate= new Date(el.cwo.substring(0,10));
+        //  let myDate= new Date(el.cwo);
+          let myDate= el.cwo;  
            let myLot= el.owo; 
            
           let qtyTested= el.pwo; 
@@ -223,7 +225,11 @@ class ChartA extends React.Component {
 }
   uniqueYM = arrayOfRIs3.unique();
   arrLotYM=[]; //[Y-M , LAR (sum of lot  PASS/all lots)
-    
+   console.log("arrayOfRIs3") ;
+        console.log(arrayOfRIs3);
+     console.log("uniqueYM") ;
+        console.log(uniqueYM);
+        
          
 //==========================================   
         
