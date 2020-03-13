@@ -16,7 +16,7 @@ let MyChartRI1;
 let MyChartRI2;
 let arrayOfYM;
 let arrLotYM;
-
+let arrayOfRIsPF;
 
 
 
@@ -216,11 +216,11 @@ class ChartA extends React.Component {
            let qtyRejected= el.rwo; 
             let pass_fail= el.two; 
             arrayOfRIs1.push([myDate, myLot ]) ; 
-            arrayOfRIs2.push([myDate2, myLot, qtyTested, qtyFail, qtyRejected]) ; 
+            arrayOfRIs2.push([myDate, myLot, qtyTested, qtyFail, qtyRejected]) ; 
             //for getting unique YYYY-MM
            // arrayOfRIs3.push(el.cwo.substring(0,4 ) +"-" +el.cwo.substring(5,7)  ) ;  //ok
              arrayOfRIs3.push(myDate2 ) ;  
-          
+          arrayOfRIsPF.push([myDate2, pass_fail]) ; 
       }            
         });
   
@@ -229,28 +229,28 @@ class ChartA extends React.Component {
 }
   uniqueYM = arrayOfRIs3.unique();
   arrLotYM=[]; //[Y-M , LAR (sum of lot  PASS/all lots)
-   console.log("arrayOfRIs3") ;
-      console.log(arrayOfRIs3);
+   console.log("arrayOfRIsPF") ;
+      console.log(arrayOfRIsPF);
     // console.log("uniqueYM") ;
       //  console.log(uniqueYM);
         
          
 //==========================================   
-        
+  /*      
         for(let i=0; i< uniqueYM.lenght; i++){       
           let lotN=0; //number of lots
           let lotA=0; //number of lots PASS
-          for(let j=0; j< arrayOfRIs2.length; j++ ){
-            let ym= arrayOfRIs2[j].myDate.getYear() +"-"+arrayOfRIs2[j].myDate.getMonth();
+          for(let j=0; j< arrayOfRIsPF.length; j++ ){
+            let ym= arrayOfRIsPF[j].myDate;
             
           if(ym === uniqueYM[i] ) {
             lotN= lotN+1;
-            if(arrayOfRIs2[j].pass_fail === "Pass" ){ lotA =lotA+1;}
+            if(arrayOfRIsPF[j].pass_fail === "Pass" ){ lotA =lotA+1;}
            
           }
            arrLotYM.push([uniqueYM[i].lotA/lotN*100])    
         }}
-       
+    */   
  // 888888888     
           that.setState({
            ["reports"]: {reports},
