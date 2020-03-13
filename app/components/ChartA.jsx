@@ -204,10 +204,17 @@ class ChartA extends React.Component {
            let qtyRejected= el.rwo; 
             arrayOfRIs1.push([myDate, myLot ]) ; 
             arrayOfRIs2.push([myDate, myLot, qtyTested, qtyFail, qtyRejected ]) ; 
-            arrayOfYM.push([(Date(Year(myDate)))]) ; 
+            arrayOfYM.push([myDate.getYear() +"-"+myDate.getMonth()]) ; 
       }            
         });
-        
+       let uniqueYM = [...new Set(arrayOfYM)] ;
+        //let myLotYM=arrayOfRIs1.map()
+        let myLotYM=[];
+        for(let i=0; i< uniqueYM.lenght; i++){
+          
+          
+        }
+ 
           that.setState({
            ["reports"]: {reports},
             "arrayOfRIs1" : arrayOfRIs1,
