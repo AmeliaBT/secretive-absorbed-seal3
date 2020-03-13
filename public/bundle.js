@@ -61221,6 +61221,7 @@ let arrayOfRIs2= [  ["Date", "Lot Size", "Qty Tested", "Qty Fail", "Qty Rejected
 let MyChartRI1;
 let MyChartRI2;
 let arrayOfYM;
+let arrLotYM=[];
 //let optionsCh2={title: 'Lot Qty '};
 let optionsCh1 ={  title: 'Receiving Inspection',
                timeline: {  groupByRowLabel: true },
@@ -61415,7 +61416,7 @@ class ChartA extends React.Component {
       }            
         });
        let uniqueYM = [...new Set(arrayOfYM)] ;      
-        let arrLotYM=[]; //[Y-M , LAR (sum of lot  PASS/all lots)
+       arrLotYM=[]; //[Y-M , LAR (sum of lot  PASS/all lots)
         
         for(let i=0; i< uniqueYM.lenght; i++){
        
