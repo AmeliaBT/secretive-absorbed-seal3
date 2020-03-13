@@ -9,11 +9,9 @@ const FilterA =require('./FilterA');
 const  { Chart }= require('react-google-charts'); 
 
 let arrayOfRIs1= [  ["Date", "Lot Size"]];
-
-
 let arrayOfRIs2= [  ["Date", "Lot Size", "Qty Tested", "Qty Fail", "Qty Rejected"]];
-
 let arrayOfRIs3= ["Date"];
+let uniqueYM;
 let MyChartRI1;
 let MyChartRI2;
 let arrayOfYM;
@@ -220,8 +218,10 @@ class ChartA extends React.Component {
            // arrayOfYM.push([myDate]);
       }            
         });
-        alert("arrayOfYM " + arrayOfRIs3.length );
-       let uniqueYM = [...new Set(arrayOfRIs3)] ;  
+      //  alert("arrayOfYM " + arrayOfRIs3.length );
+    //  uniqueYM = [...new Set(arrayOfRIs3)] ;  
+        
+         uniqueYM = [...new Set(arrayOfRIs3)] ;  
         alert("uniqueYM " +uniqueYM);
         arrLotYM=[]; //[Y-M , LAR (sum of lot  PASS/all lots)
         alert(uniqueYM.length)
@@ -244,7 +244,9 @@ class ChartA extends React.Component {
           that.setState({
            ["reports"]: {reports},
             "arrayOfRIs1" : arrayOfRIs1,
-             "arrayOfRIs2" : arrayOfRIs2 
+             "arrayOfRIs2" : arrayOfRIs2,
+             "arrayOfRIs3" :arrayOfRIs3,
+            "uniqueYM": uniqueYM
             //,
              // "arrLotYM": arrLotYM
            });
@@ -258,7 +260,8 @@ class ChartA extends React.Component {
         <Header/> 
   
  <Row> <p className="filter_msg">{this.state.filterAB}   </p>
-      <p> arrLotYM:  {this.state.arrLotYM} </p>  
+      <p> arrLotYM:-all  {this.state.arrayOfRIs3} </p>  
+    <p> uniqueYM:  {this.state.uniqueYM} </p> 
         </Row>     
 <Row > 
    <Col xs={2} ><div  className="well" >  

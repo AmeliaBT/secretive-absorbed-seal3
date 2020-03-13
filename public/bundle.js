@@ -61216,11 +61216,9 @@ const FilterA =__webpack_require__(86);
 const  { Chart }= __webpack_require__(401); 
 
 let arrayOfRIs1= [  ["Date", "Lot Size"]];
-
-
 let arrayOfRIs2= [  ["Date", "Lot Size", "Qty Tested", "Qty Fail", "Qty Rejected"]];
-
 let arrayOfRIs3= ["Date"];
+let uniqueYM;
 let MyChartRI1;
 let MyChartRI2;
 let arrayOfYM;
@@ -61427,8 +61425,10 @@ class ChartA extends React.Component {
            // arrayOfYM.push([myDate]);
       }            
         });
-        alert("arrayOfYM " + arrayOfRIs3.length );
-       let uniqueYM = [...new Set(arrayOfRIs3)] ;  
+      //  alert("arrayOfYM " + arrayOfRIs3.length );
+    //  uniqueYM = [...new Set(arrayOfRIs3)] ;  
+        
+         uniqueYM = [...new Set(arrayOfRIs3)] ;  
         alert("uniqueYM " +uniqueYM);
         arrLotYM=[]; //[Y-M , LAR (sum of lot  PASS/all lots)
         alert(uniqueYM.length)
@@ -61451,7 +61451,9 @@ class ChartA extends React.Component {
           that.setState({
            ["reports"]: {reports},
             "arrayOfRIs1" : arrayOfRIs1,
-             "arrayOfRIs2" : arrayOfRIs2 
+             "arrayOfRIs2" : arrayOfRIs2,
+             "arrayOfRIs3" :arrayOfRIs3,
+            "uniqueYM": uniqueYM
             //,
              // "arrLotYM": arrLotYM
            });
@@ -61465,7 +61467,8 @@ class ChartA extends React.Component {
         React.createElement(Header, null), 
   
  React.createElement(Row, null, " ", React.createElement("p", {className: "filter_msg"}, this.state.filterAB, "   "), 
-      React.createElement("p", null, " arrLotYM:  ", this.state.arrLotYM, " ")
+      React.createElement("p", null, " arrLotYM:-all  ", this.state.arrayOfRIs3, " "), 
+    React.createElement("p", null, " uniqueYM:  ", this.state.uniqueYM, " ")
         ), 
 React.createElement(Row, null, 
    React.createElement(Col, {xs: 2}, React.createElement("div", {className: "well"}, 
