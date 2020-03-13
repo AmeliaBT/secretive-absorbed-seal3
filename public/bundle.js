@@ -61220,6 +61220,7 @@ let arrayOfRIs1= [  ["Date", "Lot Size"]];
 let arrayOfRIs2= [  ["Date", "Lot Size", "Qty Tested", "Qty Fail", "Qty Rejected"]];
 let MyChartRI1;
 let MyChartRI2;
+let arrayOfYM;
 //let optionsCh2={title: 'Lot Qty '};
 let optionsCh1 ={  title: 'Receiving Inspection',
                timeline: {  groupByRowLabel: true },
@@ -61399,9 +61400,9 @@ class ChartA extends React.Component {
           alert( 'error: ' + (this.status ? this.statusText : 'request has not been set') );
           return;
         }
-        let response = JSON.parse(this.responseText);             
-         let reports = response.reports.map((el) => {
-          
+        let response = JSON.parse(this.responseText); 
+        
+         let reports = response.reports.map((el) => {          
           if(el.cwo !== ""){
           let myDate= new Date(el.cwo.substring(0,10));
            let myLot= el.owo; 
@@ -61410,6 +61411,7 @@ class ChartA extends React.Component {
            let qtyRejected= el.rwo; 
             arrayOfRIs1.push([myDate, myLot ]) ; 
             arrayOfRIs2.push([myDate, myLot, qtyTested, qtyFail, qtyRejected ]) ; 
+            arrayOfYM.push([(Date(Year(myDate)))]) ; 
       }            
         });
         
