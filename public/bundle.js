@@ -61418,11 +61418,10 @@ class ChartA extends React.Component {
            let qtyRejected= el.rwo; 
             let pass_fail= el.two; 
             arrayOfRIs1.push([myDate, myLot ]) ; 
-            //arrayOfYM.push(myDate);
             arrayOfRIs2.push([myDate, myLot, qtyTested, qtyFail, qtyRejected]) ; 
-            arrayOfRIs3.push(el.cwo.substring(0,4) +"-" ) ; 
-            //arrayOfYM.push([myDate.getYear() +"-"+myDate.getMonth()]) ; 
-           // arrayOfYM.push([myDate]);
+            //for getting unique YYYY-MM
+           // arrayOfRIs3.push(el.cwo.substring(0,4) +"-" +el.cwo.substring(5,7)  ) ;  //ok
+            arrayOfRIs3.push(myDate.getYear() +"-"+ myDate.getMonth()  ) ;
       }            
         });
   
@@ -61434,12 +61433,13 @@ class ChartA extends React.Component {
     
          
 //==========================================   
-        /*
+        
         for(let i=0; i< uniqueYM.lenght; i++){       
           let lotN=0; //number of lots
           let lotA=0; //number of lots PASS
           for(let j=0; j< arrayOfRIs2.length; j++ ){
-            let ym= arrayOfRIs2[j].myDate.getYear() +"-"+arrayOfRIs2[j].myDate.getMonth()
+            let ym= arrayOfRIs2[j].myDate.getYear() +"-"+arrayOfRIs2[j].myDate.getMonth();
+            
           if(ym === uniqueYM[i] ) {
             lotN= lotN+1;
             if(arrayOfRIs2[j].pass_fail === "Pass" ){ lotA =lotA+1;}
@@ -61447,15 +61447,15 @@ class ChartA extends React.Component {
           }
            arrLotYM.push([uniqueYM[i].lotA/lotN*100])    
         }}
-       */ 
+       
  // 888888888     
           that.setState({
            ["reports"]: {reports},
             "arrayOfRIs1" : arrayOfRIs1,
              "arrayOfRIs2" : arrayOfRIs2,
              "arrayOfRIs3" :arrayOfRIs3,
-            "uniqueYM": uniqueYM
-            
+            "uniqueYM": uniqueYM,
+            "arrLotYM":arrLotYM
             //,
              // "arrLotYM": arrLotYM
            });
@@ -61470,7 +61470,9 @@ class ChartA extends React.Component {
   
  React.createElement(Row, null, " ", React.createElement("p", {className: "filter_msg"}, this.state.filterAB, "   "), 
       React.createElement("p", null, " arrLotYM:-all  ", this.state.arrayOfRIs3, " "), 
-    React.createElement("p", null, " uniqueYM:  ", this.state.uniqueYM, " ")
+    React.createElement("p", null, " uniqueYM:  ", this.state.uniqueYM, " "), 
+   
+    React.createElement("p", null, "   arrLotYM ", this.state.arrLotYM, " ")
         ), 
 React.createElement(Row, null, 
    React.createElement(Col, {xs: 2}, React.createElement("div", {className: "well"}, 
