@@ -61429,11 +61429,11 @@ class ChartA extends React.Component {
   
  React.createElement(Row, null, " ", React.createElement("p", {className: "filter_msg"}, this.state.filterAB, "   ")), 
 React.createElement(Row, null, 
-   React.createElement(Col, {xs: 1}, React.createElement("div", {className: "well"}, 
+   React.createElement(Col, {xs: 2}, React.createElement("div", {className: "well"}, 
       React.createElement(FilterA, {handleData: this.handleParentData}), 
      React.createElement("br", null)
    ), " "), 
-  React.createElement(Col, {xs: 11}, " ", React.createElement("div", null, 
+  React.createElement(Col, {xs: 10}, " ", React.createElement("div", null, 
  React.createElement(Chart, {
       //chartType="ColumnChart" 
    chartType: "ScatterChart", 

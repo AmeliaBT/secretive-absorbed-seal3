@@ -222,11 +222,11 @@ class ChartA extends React.Component {
   
  <Row> <p className="filter_msg">{this.state.filterAB}   </p></Row>     
 <Row > 
-   <Col xs={1} ><div  className="well" >  
+   <Col xs={2} ><div  className="well" >  
       < FilterA handleData ={this.handleParentData} /> 
      <br/>
    </div> </Col>
-  <Col xs={11} > <div   >  
+  <Col xs={10} > <div   >  
  <Chart
       //chartType="ColumnChart" 
    chartType="ScatterChart"
