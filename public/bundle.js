@@ -61425,10 +61425,13 @@ class ChartA extends React.Component {
             arrayOfRIs2.push([myDate, myLot, qtyTested, qtyFail, qtyRejected]) ; 
             //for getting unique YYYY-MM
             //arrayOfRIs3.push(el.cwo.substring(0,4 ) +"-" +el.cwo.substring(5,7)  ) ;  //ok
-            arrayOfRIs3.push(myDate2 ) ;  
-           if(pass_fail !== ""){
-             arrayOfRIsPF.push([myDate2, pass_fail])
-                                 }; 
+            arrayOfRIs3.push(myDate2 ) ; 
+            console.log(pass_fail.length);
+            
+           if(pass_fail.length === null){
+         //arrayOfRIsPF.push([myDate2, pass_fail])
+             arrayOfRIsPF.push("ok");
+             }else alert("issue"); 
            
       }            
         });
