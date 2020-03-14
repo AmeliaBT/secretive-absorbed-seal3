@@ -219,8 +219,10 @@ class ChartA extends React.Component {
             //for getting unique YYYY-MM
             //arrayOfRIs3.push(el.cwo.substring(0,4 ) +"-" +el.cwo.substring(5,7)  ) ;  //ok
             arrayOfRIs3.push(myDate2 ) ;  
-           if(pass_fail !=="Pass"){pass_fail= "Fail"}; 
-          arrayOfRIsPF.push([myDate2, pass_fail]) ; 
+           if(pass_fail !== ""){
+             arrayOfRIsPF.push([myDate2, pass_fail])
+                                 }; 
+           
       }            
         });
   
