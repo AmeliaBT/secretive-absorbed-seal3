@@ -61394,7 +61394,7 @@ class ChartA extends React.Component {
     // load reports
       let that = this;
       let xhr = new XMLHttpRequest();  
-  
+  console.log(" hi from will Mount");
     //get-all-users-reports
       xhr.open('POST', '/get-all-users-reports', true);
       xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
@@ -61425,7 +61425,7 @@ class ChartA extends React.Component {
             //for getting unique YYYY-MM
             //arrayOfRIs3.push(el.cwo.substring(0,4 ) +"-" +el.cwo.substring(5,7)  ) ;  //ok
             arrayOfRIs3.push(myDate2 ) ; 
-            console.log(pass_fail.length);
+            //console.log(pass_fail.length);
             let xx=[];
            if(pass_fail.length === null){
             
@@ -61457,9 +61457,16 @@ class ChartA extends React.Component {
            
           }
            arrLotYM.push([uniqueYM[i].lotA/lotN*100]) ;
+            console.log("lotN ");
+            console.log(lotN);
             console.log(arrLotYM);
-            console.log(i);
-        }}
+            console.log("lotA ");
+            console.log(lotA);
+            
+            
+        }
+  console.log(" hi from loop ");
+ }
       
  // 888888888     
           that.setState({
