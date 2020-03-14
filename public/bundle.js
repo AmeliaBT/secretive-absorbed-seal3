@@ -61442,13 +61442,12 @@ class ChartA extends React.Component {
   uniqueYM = arrayOfRIs3.unique();
   arrLotYM=[]; //[Y-M , LAR (sum of lot  PASS/all lots)
   
-  console.log(" hi from here  ");      
-    console.log("uniqueYM.lenght " + uniqueYM.lenght);
+  console.log(" hi from here  ");   
+      
+    console.log("uniqueYM.length " + uniqueYM.lenght);
    console.log("arrayOfRIsPF.length " + arrayOfRIsPF.length);     
 //==========================================   
- for(let i=0; i< uniqueYM.lenght; i++){ 
-   console.log("i" + i);
-   
+ for(let i=0; i< uniqueYM.length; i++){ 
           let lotN=0; //number of lots
           let lotA=0; //number of lots PASS
           for(let j=0; j< arrayOfRIsPF.length; j++ ){
@@ -61460,25 +61459,22 @@ class ChartA extends React.Component {
            
           }
            arrLotYM.push([uniqueYM[i].lotA/lotN*100]) ;
-            console.log("lotN ");
-            console.log(lotN);
-            console.log(arrLotYM);
-            console.log("lotA ");
-            console.log(lotA);
-            
+           
             
         }
-  console.log(" hi from loop ");
+  
  }
-      
+   
+        
+        
  // 888888888     
           that.setState({
            ["reports"]: {reports},
             "arrayOfRIs1" : arrayOfRIs1,
              "arrayOfRIs2" : arrayOfRIs2,
              "arrayOfRIs3" :arrayOfRIs3,
-            "uniqueYM": uniqueYM
-           // "arrLotYM":arrLotYM
+            "uniqueYM": uniqueYM,
+           "arrLotYM":arrLotYM
             //,
              // "arrLotYM": arrLotYM
            });
