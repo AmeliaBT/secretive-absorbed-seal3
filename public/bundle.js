@@ -61448,12 +61448,15 @@ class ChartA extends React.Component {
    console.log("arrayOfRIsPF.length " + arrayOfRIsPF.length);     
 //==========================================   
  for(let i=1; i< uniqueYM.length; i++){ 
-     
-           arrLotYM.push([uniqueYM[i], 77 ]) ; 
+    
+           arrLotYM.push([uniqueYM[i], 10+i ]) ; 
 
  }
    
-        
+     console.log(" hi table arrLotYM " );       
+        console.log(arrLotYM);
+         console.log(" hi table arrayOfRIs1 " );   
+        console.log(arrayOfRIs1);
         
  // 888888888     
           that.setState({
