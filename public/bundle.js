@@ -61448,7 +61448,7 @@ class ChartA extends React.Component {
    console.log("arrayOfRIsPF.length " + arrayOfRIsPF.length);     
 //==========================================   
  for(let i=1; i< uniqueYM.length; i++){ 
-          let lotN=0; //number of lots
+          let lotN=1; //number of lots
           let lotA=0; //number of lots PASS
           for(let j=0; j< arrayOfRIsPF.length; j++ ){
             let ym= arrayOfRIsPF[j][0];
@@ -61458,8 +61458,8 @@ class ChartA extends React.Component {
             if(arrayOfRIsPF[j][1] === "Pass" ){ lotA =lotA+1;}
            
           }
-           arrLotYM.push([uniqueYM[i],lotA/lotN*100]) ;
-           
+         //  arrLotYM.push([uniqueYM[i],lotA/lotN*100]) ;
+           arrLotYM.push([uniqueYM[i],0.9]) ; 
             
         }
   
@@ -61488,10 +61488,10 @@ class ChartA extends React.Component {
         React.createElement(Header, null), 
   
  React.createElement(Row, null, " ", React.createElement(Col, {xs: 10, smOffset: 1}, "   ", React.createElement("p", {className: "filter_msg"}, this.state.filterAB, "   "), 
-      React.createElement("p", null, " arrLotYM:-all  ", this.state.arrayOfRIs3, " "), 
+      React.createElement("p", null, " arrLotYM:-all   "), 
     React.createElement("p", null, " uniqueYM:  ", this.state.uniqueYM, " "), 
    
-    React.createElement("p", null, "   arrLotYM ", this.state.arrLotYM, " ")
+    React.createElement("p", null, "   arrLotYM  ")
    ), " "), 
 React.createElement(Row, null, 
    React.createElement(Col, {xs: 2}, React.createElement("div", {className: "well"}, 
@@ -61510,7 +61510,9 @@ React.createElement(Row, null,
     ), 
 React.createElement(Chart, {
       chartType: "ColumnChart", 
-      data: this.state.arrayOfRIs2, 
+   //data={this.state.arrayOfRIs2}
+  //arrLotYM
+  data: this.state.arrLotYM, 
        options: optionsCh2, 
        width: "100%", 
        height: "300px", 
