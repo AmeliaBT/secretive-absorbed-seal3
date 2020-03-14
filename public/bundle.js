@@ -61448,21 +61448,9 @@ class ChartA extends React.Component {
    console.log("arrayOfRIsPF.length " + arrayOfRIsPF.length);     
 //==========================================   
  for(let i=1; i< uniqueYM.length; i++){ 
-          let lotN=1; //number of lots
-          let lotA=0; //number of lots PASS
-          for(let j=0; j< arrayOfRIsPF.length; j++ ){
-            let ym= arrayOfRIsPF[j][0];
-            
-          if(ym === uniqueYM[i] ) {
-            lotN= lotN+1;
-            if(arrayOfRIsPF[j][1] === "Pass" ){ lotA =lotA+1;}
-           
-          }
-         //  arrLotYM.push([uniqueYM[i],lotA/lotN*100]) ;
-           arrLotYM.push([uniqueYM[i],0.9]) ; 
-            
-        }
-  
+     
+           arrLotYM.push([uniqueYM[i], 77 ]) ; 
+
  }
    
         
@@ -61491,7 +61479,7 @@ class ChartA extends React.Component {
       React.createElement("p", null, " arrLotYM:-all   "), 
     React.createElement("p", null, " uniqueYM:  ", this.state.uniqueYM, " "), 
    
-    React.createElement("p", null, "   arrLotYM  ")
+    React.createElement("p", null, "   arrLotYM ", this.state.arrLotYM, "  ")
    ), " "), 
 React.createElement(Row, null, 
    React.createElement(Col, {xs: 2}, React.createElement("div", {className: "well"}, 
