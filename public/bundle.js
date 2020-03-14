@@ -61481,12 +61481,12 @@ class ChartA extends React.Component {
       React.createElement("div", null, 
         React.createElement(Header, null), 
   
- React.createElement(Row, null, " ", React.createElement("p", {className: "filter_msg"}, this.state.filterAB, "   "), 
+ React.createElement(Row, null, " ", React.createElement(Col, {xs: 10, smOffset: 1}, "   ", React.createElement("p", {className: "filter_msg"}, this.state.filterAB, "   "), 
       React.createElement("p", null, " arrLotYM:-all  ", this.state.arrayOfRIs3, " "), 
     React.createElement("p", null, " uniqueYM:  ", this.state.uniqueYM, " "), 
    
     React.createElement("p", null, "   arrLotYM ", this.state.arrLotYM, " ")
-        ), 
+   ), " "), 
 React.createElement(Row, null, 
    React.createElement(Col, {xs: 2}, React.createElement("div", {className: "well"}, 
       React.createElement(FilterA, {handleData: this.handleParentData}), 

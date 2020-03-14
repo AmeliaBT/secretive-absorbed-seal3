@@ -274,12 +274,12 @@ class ChartA extends React.Component {
       <div>
         <Header/> 
   
- <Row> <p className="filter_msg">{this.state.filterAB}   </p>
+ <Row> <Col  xs={10}   smOffset={1}  >   <p className="filter_msg">{this.state.filterAB}   </p>
       <p> arrLotYM:-all  {this.state.arrayOfRIs3} </p>  
     <p> uniqueYM:  {this.state.uniqueYM} </p> 
    
     <p>   arrLotYM {this.state.arrLotYM} </p> 
-        </Row>     
+   </Col> </Row>     
 <Row > 
    <Col xs={2} ><div  className="well" >  
       < FilterA handleData ={this.handleParentData} /> 
