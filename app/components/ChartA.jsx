@@ -250,6 +250,8 @@ class ChartA extends React.Component {
            
           }
            arrLotYM.push([uniqueYM[i].lotA/lotN*100]) ;
+            console.log("lotN ");
+            cons
             console.log(arrLotYM);
             console.log(i);
         }}
