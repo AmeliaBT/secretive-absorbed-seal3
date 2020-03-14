@@ -61223,9 +61223,8 @@ let MyChartRI1;
 let MyChartRI2;
 let arrayOfYM;
 let arrLotYM;
-let arrayOfRIsPF;
-
-
+let arrayOfRIsPF=[];
+    
 
 //let optionsCh2={title: 'Lot Qty '};
 let optionsCh1 ={  title: 'Receiving Inspection',
@@ -61427,12 +61426,13 @@ class ChartA extends React.Component {
             //arrayOfRIs3.push(el.cwo.substring(0,4 ) +"-" +el.cwo.substring(5,7)  ) ;  //ok
             arrayOfRIs3.push(myDate2 ) ; 
             console.log(pass_fail.length);
-            
+            let xx=[];
            if(pass_fail.length === null){
-         //arrayOfRIsPF.push([myDate2, pass_fail])
-             arrayOfRIsPF.push("ok");
-             }else alert("issue"); 
+            
+           arrayOfRIsPF.push([myDate2, "Fail"]);
            
+           }else{ arrayOfRIsPF.push([myDate2, pass_fail]);}
+                    
       }            
         });
   
@@ -61441,15 +61441,11 @@ class ChartA extends React.Component {
 }
   uniqueYM = arrayOfRIs3.unique();
   arrLotYM=[]; //[Y-M , LAR (sum of lot  PASS/all lots)
-  // console.log("arrayOfRIsPF") ;
-     // console.log(arrayOfRIsPF);
-    // console.log("uniqueYM") ;
-      //  console.log(uniqueYM);
+  
         
          
 //==========================================   
-  /*      
-        for(let i=0; i< uniqueYM.lenght; i++){       
+ for(let i=0; i< uniqueYM.lenght; i++){       
           let lotN=0; //number of lots
           let lotA=0; //number of lots PASS
           for(let j=0; j< arrayOfRIsPF.length; j++ ){
@@ -61462,7 +61458,7 @@ class ChartA extends React.Component {
           }
            arrLotYM.push([uniqueYM[i].lotA/lotN*100])    
         }}
-    */   
+      
  // 888888888     
           that.setState({
            ["reports"]: {reports},
