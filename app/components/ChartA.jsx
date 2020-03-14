@@ -240,18 +240,18 @@ class ChartA extends React.Component {
     console.log("uniqueYM.length " + uniqueYM.lenght);
    console.log("arrayOfRIsPF.length " + arrayOfRIsPF.length);     
 //==========================================   
- for(let i=0; i< uniqueYM.length; i++){ 
+ for(let i=1; i< uniqueYM.length; i++){ 
           let lotN=0; //number of lots
           let lotA=0; //number of lots PASS
           for(let j=0; j< arrayOfRIsPF.length; j++ ){
-            let ym= arrayOfRIsPF[j].myDate;
+            let ym= arrayOfRIsPF[j][0];
             
           if(ym === uniqueYM[i] ) {
             lotN= lotN+1;
-            if(arrayOfRIsPF[j].pass_fail === "Pass" ){ lotA =lotA+1;}
+            if(arrayOfRIsPF[j][1] === "Pass" ){ lotA =lotA+1;}
            
           }
-           arrLotYM.push([uniqueYM[i].lotA/lotN*100]) ;
+           arrLotYM.push([uniqueYM[i],lotA/lotN*100]) ;
            
             
         }
