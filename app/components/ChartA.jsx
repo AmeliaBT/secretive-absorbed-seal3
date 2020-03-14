@@ -235,10 +235,13 @@ class ChartA extends React.Component {
   uniqueYM = arrayOfRIs3.unique();
   arrLotYM=[]; //[Y-M , LAR (sum of lot  PASS/all lots)
   
-        
-         
+  console.log(" hi from here  ");      
+    console.log("uniqueYM.lenght " + uniqueYM.lenght);
+   console.log("arrayOfRIsPF.length " + arrayOfRIsPF.length);     
 //==========================================   
- for(let i=0; i< uniqueYM.lenght; i++){       
+ for(let i=0; i< uniqueYM.lenght; i++){ 
+   console.log("i" + i);
+   
           let lotN=0; //number of lots
           let lotA=0; //number of lots PASS
           for(let j=0; j< arrayOfRIsPF.length; j++ ){

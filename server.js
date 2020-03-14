@@ -417,8 +417,17 @@ app.post("/add-report", function(request, response) {
     });
 });
 
-
-*/
+ //   for(let j = 0; j < users[i].reports.length; j++) {              
+               /* // function for filtering
+               function checkBookName(el) {
+                 return el.chosenBook == users[i].reports[j].reportnumber;
+               }              
+            let filteredIncome = users[i].income.filter(checkBookName);
+              let filteredOutcome = users[i].outcome.filter(checkBookName);
+              if((filteredIncome.length == 0) && (filteredOutcome.length == 0)) {
+                reports.push(users[i].reports[j]);
+              } */
+         
 /***********************************/
 
 
@@ -432,24 +441,9 @@ app.post("/get-all-users-reports", function(request, response) {
        reportModel.find({}, (err, docs) => {
           if(err) throw err;
           let reports = []   ;
-       
-         // for(let i = 0; i < docs.length; i++) {
-          for(let i = docs.length-1; i > -1; i--) {
-         //   for(let j = 0; j < users[i].reports.length; j++) {              
-               /* // function for filtering
-               function checkBookName(el) {
-                 return el.chosenBook == users[i].reports[j].reportnumber;
-               }              
-            let filteredIncome = users[i].income.filter(checkBookName);
-              let filteredOutcome = users[i].outcome.filter(checkBookName);
-              if((filteredIncome.length == 0) && (filteredOutcome.length == 0)) {
-                reports.push(users[i].reports[j]);
-              } */
-           // }            
-            reports.push(docs[i]);
-           // if(i == docs.length - 1) response.json({reports: reports});
+          for(let i = docs.length-1; i > -1; i--) {                 
+            reports.push(docs[i]);          
             if(i == 0) response.json({reports: reports});
-
           }
        });
 });
