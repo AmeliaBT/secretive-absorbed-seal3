@@ -61394,7 +61394,7 @@ class ChartA extends React.Component {
     // load reports
       let that = this;
       let xhr = new XMLHttpRequest();  
-  console.log(" hi from will Mount");
+ 
     //get-all-users-reports
       xhr.open('POST', '/get-all-users-reports', true);
       xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
