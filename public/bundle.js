@@ -61456,7 +61456,9 @@ class ChartA extends React.Component {
             if(arrayOfRIsPF[j].pass_fail === "Pass" ){ lotA =lotA+1;}
            
           }
-           arrLotYM.push([uniqueYM[i].lotA/lotN*100])    
+           arrLotYM.push([uniqueYM[i].lotA/lotN*100]) ;
+            console.log(arrLotYM);
+            console.log(i);
         }}
       
  // 888888888     
