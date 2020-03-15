@@ -6594,7 +6594,34 @@ React.createElement("form", null,
               )
             )
           ), 
-  
+  "Date Span:",  
+    React.createElement("ul", null, 
+      React.createElement("li", null, 
+              React.createElement("label", null, 
+                React.createElement("input", {
+                  type: "radio", 
+                  value: "last12", 
+                  checked: this.state.sel_radio_d === "last12", 
+                  onChange: this.onRadioChangeD}
+                ), 
+                React.createElement("span", {className: "filter_lbl"}, " last 12 months")
+              )
+            ), 
+
+            
+            React.createElement("li", null, 
+              React.createElement("label", null, 
+                React.createElement("input", {
+                  type: "radio", 
+                  value: "all", 
+                  checked: this.state.sel_radio_d === "all", 
+                  onChange: this.onRadioChangeD}
+                ), 
+                React.createElement("span", {className: "filter_lbl"}, "all")
+              )
+      )
+            
+          ), 
 
   React.createElement("input", {type: "button", value: "Submit", onClick: this.submitForm})), 
    
@@ -61239,9 +61266,9 @@ let optionsCh1 ={  title: 'Receiving Inspection',
    //  gridlines: {color: 'red'},
 //  gridlines: {count: 15}
 let optionsCh2 ={
-        title: 'Lot Acceptance Rate',
+        title: 'Monthly Lot Acceptance Rates',
         timeline: { groupByRowLabel: true  },
-        hAxis: { format: 'MMM/yyyy', title: "Date (Year-Month) Inspected" },
+        hAxis: { format: 'MMM/yyyy', title: "Date (Month) Inspected" },
         vAxis: {  minValue: 0 ,title: "Rate %"}, 
   legend: "none"
       };

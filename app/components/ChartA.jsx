@@ -32,9 +32,9 @@ let optionsCh1 ={  title: 'Receiving Inspection',
    //  gridlines: {color: 'red'},
 //  gridlines: {count: 15}
 let optionsCh2 ={
-        title: 'Lot Acceptance Rate',
+        title: 'Monthly Lot Acceptance Rates',
         timeline: { groupByRowLabel: true  },
-        hAxis: { format: 'MMM/yyyy', title: "Date (Year-Month) Inspected" },
+        hAxis: { format: 'MMM/yyyy', title: "Date (Month) Inspected" },
         vAxis: {  minValue: 0 ,title: "Rate %"}, 
   legend: "none"
       };

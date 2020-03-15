@@ -69,7 +69,11 @@ submitForm(e) { e.preventDefault();
       sel_radio_c: e.target.value
     });
   }
-  
+  onRadioChangeC(e){
+    this.setState({
+      sel_radio_c: e.target.value
+    });
+  }
   render() { return (        <div>        
 <form>
   RI Number: <br />
@@ -213,7 +217,34 @@ Pass/Fail:
               </label>
             </li> 
           </ul>  
-  
+  Date Span: 
+    <ul>
+      <li>
+              <label>
+                <input
+                  type="radio"
+                  value="last12"
+                  checked={this.state.sel_radio_d === "last12"}
+                  onChange={this.onRadioChangeD}
+                />
+                <span className="filter_lbl"> last 12 months</span>
+              </label>
+            </li>
+
+            
+            <li>
+              <label>
+                <input
+                  type="radio"
+                  value="all"
+                  checked={this.state.sel_radio_d === "all"}
+                  onChange={this.onRadioChangeD}
+                />
+                <span className="filter_lbl">all</span>
+              </label>  
+      </li>              
+            
+          </ul>  
 
   <input type="button" value="Submit" onClick={this.submitForm}/></form> 
    
