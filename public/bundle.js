@@ -61332,24 +61332,53 @@ class ChartA extends React.Component {
         let reports = response.map((el) => { 
        if(el.cwo !== ""){
           let myDate= new Date(el.cwo.substring(0,10));
+          let myDate2= el.cwo.substring(0,4 ) +"-" +el.cwo.substring(5,7) ; 
            let myLot= el.owo; 
            let qtyTested= el.pwo; 
            let qtyFail= el.qwo; 
             let qtyRejected= el.rwo; 
+           let pass_fail= el.two; 
             arrayOfRIs1.push([myDate, myLot ]) ; 
           
         // arrayOfRIs2.push([myDate, myLot, qtyTested, qtyFail, qtyRejected ]) ;   
-        arrayOfRIs2.push([myDate,  qtyTested, qtyFail]) ;   
+        arrayOfRIs2.push([myDate,  qtyTested, qtyFail]) ; 
+         
+          // getting unique YYYY-MM
+           arrayOfRIs3.push(myDate2 ) ;           
+           if(pass_fail.length === null){
+           arrayOfRIsPF.push([myDate2, "Fail"]);
+           }else{ arrayOfRIsPF.push([myDate2, pass_fail]);}  
         
       }    
             return         
           
         });
       
+         Array.prototype.unique = function () {
+  return [...new Set(this)]
+}
+  uniqueYM = arrayOfRIs3.unique();
+  arrLotYM=[["Y-M", "LAR"]]; //[Y-M , LAR (sum of lot  PASS/all lots)
+        
+ for(let i=1; i< uniqueYM.length; i++){ 
+    let lotN=0; //number of lots
+    let lotA=0; //number of lots PASS
+   for(let j=0; j< arrayOfRIsPF.length; j++ ){
+            let ym= arrayOfRIsPF[j][0];
+          if(ym === uniqueYM[i] ) {
+            lotN= lotN+1;
+            if(arrayOfRIsPF[j][1] === "Pass" ){ lotA =lotA+1;}           
+          }           
+   }
+
+   arrLotYM.push([new Date(uniqueYM[i]), lotA/lotN*100 ]) ;
+ }
         
            that.setState({
              arrayOfRIs1:arrayOfRIs1,
               arrayOfRIs2:arrayOfRIs2,
+              
+               "arrLotYM":arrLotYM,
             res_len:res_len,
             model: event.model, 
             pn: event.pn ,           
@@ -61475,9 +61504,10 @@ class ChartA extends React.Component {
            ["reports"]: {reports},
             "arrayOfRIs1" : arrayOfRIs1,
              "arrayOfRIs2" : arrayOfRIs2,
-             "arrayOfRIs3" :arrayOfRIs3,
-            "uniqueYM": uniqueYM,
-           "arrLotYM":arrLotYM
+             "arrLotYM":arrLotYM
+          //   "arrayOfRIs3" :arrayOfRIs3,
+          //  "uniqueYM": uniqueYM,
+          
             //,
              // "arrLotYM": arrLotYM
            });
