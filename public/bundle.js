@@ -61328,7 +61328,7 @@ class ChartA extends React.Component {
          arrayOfRIs1=[  ["Date", "Lot Qty"]];
        //  arrayOfRIs2= [  ["Date", "Lot Size", "Qty Tested", "Qty Fail", "Qty Rejected"]];
         arrayOfRIs2= [  ["Date", "Qty Tested", "Qty Fail"]];
-        
+       arrayOfRIs3= ["Date"];
         let reports = response.map((el) => { 
        if(el.cwo !== ""){
           let myDate= new Date(el.cwo.substring(0,10));
@@ -61505,11 +61505,7 @@ class ChartA extends React.Component {
             "arrayOfRIs1" : arrayOfRIs1,
              "arrayOfRIs2" : arrayOfRIs2,
              "arrLotYM":arrLotYM
-          //   "arrayOfRIs3" :arrayOfRIs3,
-          //  "uniqueYM": uniqueYM,
           
-            //,
-             // "arrLotYM": arrLotYM
            });
        
    }
