@@ -9,7 +9,8 @@ const FilterA =require('./FilterA');
 const  { Chart }= require('react-google-charts'); 
 
 let arrayOfRIs1= [  ["Date", "Lot Size"]];
-let arrayOfRIs2= [  ["Date", "Lot Size", "Qty Tested", "Qty Fail", "Qty Rejected"]];
+//let arrayOfRIs2= [  ["Date", "Lot Size", "Qty Tested", "Qty Fail", "Qty Rejected"]];
+let arrayOfRIs2= [  ["Date", "Qty Tested", "Qty Fail"]];
 let arrayOfRIs3= ["Date"];
 let uniqueYM;
 let MyChartRI1;
@@ -34,7 +35,7 @@ let optionsCh2 ={
         title: 'Lot Acceptance Rate',
         timeline: { groupByRowLabel: true  },
         hAxis: { format: 'MMM/yyyy', title: "Date (Year-Month) Inspected" },
-        vAxis: {  minValue: 0 ,title: "%"}, 
+        vAxis: {  minValue: 0 ,title: "Rate %"}, 
   legend: "none"
       };
 let optionsCh3 ={
@@ -118,7 +119,8 @@ class ChartA extends React.Component {
         let response = JSON.parse(this.responseText);
        let res_len=response.length;
          arrayOfRIs1=[  ["Date", "Lot Qty"]];
-         arrayOfRIs2= [  ["Date", "Lot Size", "Qty Tested", "Qty Fail", "Qty Rejected"]];
+       //  arrayOfRIs2= [  ["Date", "Lot Size", "Qty Tested", "Qty Fail", "Qty Rejected"]];
+        arrayOfRIs2= [  ["Date", "Qty Tested", "Qty Fail"]];
         
         let reports = response.map((el) => { 
        if(el.cwo !== ""){
@@ -129,8 +131,8 @@ class ChartA extends React.Component {
             let qtyRejected= el.rwo; 
             arrayOfRIs1.push([myDate, myLot ]) ; 
           
-         arrayOfRIs2.push([myDate, myLot, qtyTested, qtyFail, qtyRejected ]) ;   
-        
+        // arrayOfRIs2.push([myDate, myLot, qtyTested, qtyFail, qtyRejected ]) ;   
+        arrayOfRIs2.push([myDate,  qtyTested, qtyFail]) ;   
         
       }    
             return         
@@ -219,7 +221,8 @@ class ChartA extends React.Component {
            let qtyRejected= el.rwo; 
             let pass_fail= el.two; 
             arrayOfRIs1.push([myDate, myLot ]) ; 
-            arrayOfRIs2.push([myDate, myLot, qtyTested, qtyFail, qtyRejected]) ; 
+          //  arrayOfRIs2.push([myDate, myLot, qtyTested, qtyFail, qtyRejected]) ; 
+              arrayOfRIs2.push([myDate,  qtyTested, qtyFail]) ; 
             // getting unique YYYY-MM
            arrayOfRIs3.push(myDate2 ) ; //ok 
            
