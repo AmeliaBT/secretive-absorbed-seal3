@@ -100,7 +100,9 @@ class ChartA extends React.Component {
                   '&nwo=' + encodeURIComponent(event.destination)+
                   '&two=' + encodeURIComponent(event.sel_radio_b)+
                   '&owo=' + encodeURIComponent(event.sel_radio_c)+ //lot size
-             '&reportID=' + encodeURIComponent(event.riN)
+             '&reportID=' + encodeURIComponent(event.riN)+
+            '&cwo=' + encodeURIComponent(event.sel_radio_d)//last12 , all 
+
             ;
             
       xhr.send(body);
