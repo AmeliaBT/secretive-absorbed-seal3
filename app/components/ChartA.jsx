@@ -233,7 +233,7 @@ class ChartA extends React.Component {
   return [...new Set(this)]
 }
   uniqueYM = arrayOfRIs3.unique();
-  arrLotYM=[["Y-M", "Lot Size"]]; //[Y-M , LAR (sum of lot  PASS/all lots)
+  arrLotYM=[["Y-M", "LAR"]]; //[Y-M , LAR (sum of lot  PASS/all lots)
   
   console.log(" hi from here  ");   
       
@@ -256,7 +256,7 @@ class ChartA extends React.Component {
    
          
    }
-     arrLotYM.push([uniqueYM[i], lotN ]) ; 
+     arrLotYM.push([uniqueYM[i], lotA/lotN*100 ]) ; 
  }
    
      console.log(" hi table arrLotYM " );       
