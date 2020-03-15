@@ -61238,12 +61238,19 @@ let optionsCh1 ={  title: 'Receiving Inspection',
    //  gridlines: {color: 'red'},
 //  gridlines: {count: 15}
 let optionsCh2 ={
-        title: 'Lot Size',
+        title: 'Lot Acceptance Rate',
         timeline: { groupByRowLabel: true  },
         hAxis: { format: 'MMM/yyyy'},
-        vAxis: {  minValue: 0}
+        vAxis: {  minValue: 0},
+  legend: "none"
       };
-
+let optionsCh3 ={
+        title: 'Qty ..',
+        timeline: { groupByRowLabel: true  },
+        hAxis: { format: 'MMM/yyyy'},
+        vAxis: {  minValue: 0},
+       legend: {position: "top"}
+      };
 
 /* the  page that shows all charts */
 class ChartA extends React.Component {
@@ -61491,11 +61498,7 @@ class ChartA extends React.Component {
       React.createElement("div", null, 
         React.createElement(Header, null), 
   
- React.createElement(Row, null, " ", React.createElement(Col, {xs: 10, smOffset: 1}, "   ", React.createElement("p", {className: "filter_msg"}, this.state.filterAB, "   "), 
-      React.createElement("p", null, " arrLotYM:-all   "), 
-    React.createElement("p", null, " uniqueYM:  ", this.state.uniqueYM, " "), 
-   
-    React.createElement("p", null, "   arrLotYM ", this.state.arrLotYM, "  ")
+ React.createElement(Row, null, " ", React.createElement(Col, {xs: 10, smOffset: 1}, "   ", React.createElement("p", {className: "filter_msg"}, this.state.filterAB, "   ")
    ), " "), 
 React.createElement(Row, null, 
    React.createElement(Col, {xs: 2}, React.createElement("div", {className: "well"}, 
@@ -61503,23 +61506,30 @@ React.createElement(Row, null,
      React.createElement("br", null)
    ), " "), 
   React.createElement(Col, {xs: 10}, " ", React.createElement("div", null, 
- React.createElement(Chart, {
-      //chartType="ColumnChart" 
-   chartType: "ScatterChart", 
-      data: this.state.arrayOfRIs1, 
-    options: optionsCh1, 
-       width: "100%", 
-       height: "300px"}
-       
-    ), 
-React.createElement(Chart, {
+    React.createElement(Chart, {
       chartType: "ColumnChart", 
    //data={this.state.arrayOfRIs2}
   //arrLotYM
   data: this.state.arrLotYM, 
        options: optionsCh2, 
        width: "100%", 
-       height: "300px", 
+       height: "200px", 
+       legendToggle: true}
+    ), 
+ React.createElement(Chart, {
+      //chartType="ColumnChart" 
+   chartType: "ScatterChart", 
+      data: this.state.arrayOfRIs1, 
+    options: optionsCh1, 
+       width: "100%", 
+       height: "200px"}
+    ), 
+React.createElement(Chart, {
+      chartType: "ColumnChart", 
+  data: this.state.arrayOfRIs2, 
+    options: optionsCh3, 
+       width: "100%", 
+       height: "200px", 
        legendToggle: true}
     ), 
   

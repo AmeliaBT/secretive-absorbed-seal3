@@ -31,12 +31,19 @@ let optionsCh1 ={  title: 'Receiving Inspection',
    //  gridlines: {color: 'red'},
 //  gridlines: {count: 15}
 let optionsCh2 ={
-        title: 'Lot Size',
+        title: 'Lot Acceptance Rate',
         timeline: { groupByRowLabel: true  },
         hAxis: { format: 'MMM/yyyy'},
-        vAxis: {  minValue: 0}
+        vAxis: {  minValue: 0},
+  legend: "none"
       };
-
+let optionsCh3 ={
+        title: 'Qty ..',
+        timeline: { groupByRowLabel: true  },
+        hAxis: { format: 'MMM/yyyy'},
+        vAxis: {  minValue: 0},
+       legend: {position: "top"}
+      };
 
 /* the  page that shows all charts */
 class ChartA extends React.Component {
@@ -284,11 +291,7 @@ class ChartA extends React.Component {
       <div>
         <Header/> 
   
- <Row> <Col  xs={10}   smOffset={1}  >   <p className="filter_msg">{this.state.filterAB}   </p>
-      <p> arrLotYM:-all   </p>  
-    <p> uniqueYM:  {this.state.uniqueYM} </p> 
-   
-    <p>   arrLotYM {this.state.arrLotYM}  </p> 
+ <Row> <Col  xs={10}   smOffset={1}  >   <p className="filter_msg">{this.state.filterAB}   </p>    
    </Col> </Row>     
 <Row > 
    <Col xs={2} ><div  className="well" >  
@@ -296,23 +299,30 @@ class ChartA extends React.Component {
      <br/>
    </div> </Col>
   <Col xs={10} > <div   >  
- <Chart
-      //chartType="ColumnChart" 
-   chartType="ScatterChart"
-      data={this.state.arrayOfRIs1 }
-    options={optionsCh1 }
-       width="100%"
-       height="300px"
-       
-    />
-<Chart
+    <Chart
       chartType="ColumnChart"  
    //data={this.state.arrayOfRIs2}
   //arrLotYM
   data={this.state.arrLotYM}
        options={optionsCh2 }
        width="100%"
-       height="300px"
+       height="200px"
+       legendToggle
+    />
+ <Chart
+      //chartType="ColumnChart" 
+   chartType="ScatterChart"
+      data={this.state.arrayOfRIs1 }
+    options={optionsCh1 }
+       width="100%"
+       height="200px"
+    />
+<Chart
+      chartType="ColumnChart"  
+  data={this.state.arrayOfRIs2}
+    options={optionsCh3 }
+       width="100%"
+       height="200px"
        legendToggle
     />
   
