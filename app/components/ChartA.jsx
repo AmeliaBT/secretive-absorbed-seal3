@@ -196,6 +196,7 @@ class ChartA extends React.Component {
                + ' '  +event.destination
               + ' ' + event.sel_radio_b 
               + ' ' + event.sel_radio_c  
+               + ' ' + event.sel_radio_d  
              ,
           ["reports"]: <div className="reports"> {reports}  </div>
               

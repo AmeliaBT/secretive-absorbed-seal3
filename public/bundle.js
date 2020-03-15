@@ -59621,6 +59621,8 @@ class RIlistAll2 extends React.Component {
       
       sel_radio_b:"",
       sel_radio_c:"", //lot size
+            sel_radio_d:"", //lot size
+
      
       filterAB:"",
       modal_label: "Choose RI Reports to view",
@@ -59660,7 +59662,8 @@ class RIlistAll2 extends React.Component {
                   '&nwo=' + encodeURIComponent(event.destination)+
                   '&two=' + encodeURIComponent(event.sel_radio_b)+
                   '&owo=' + encodeURIComponent(event.sel_radio_c)+ //lot size
-             '&reportID=' + encodeURIComponent(event.riN)
+             '&reportID=' + encodeURIComponent(event.riN)+
+            '&cwo=' + encodeURIComponent(event.sel_radio_d)
             ;
             
 
@@ -59705,6 +59708,7 @@ class RIlistAll2 extends React.Component {
             sel_radio_a: event.sel_radio_a ,
             sel_radio_b: event.sel_radio_b ,
              sel_radio_c: event.sel_radio_c ,
+             sel_radio_d: event.sel_radio_d ,
            comment :  event.comment,  
             supplier:event.supplier,
             source: event.source,
@@ -59723,6 +59727,7 @@ class RIlistAll2 extends React.Component {
                + ' '  +event.destination
               + ' ' + event.sel_radio_b 
               + ' ' + event.sel_radio_c  
+              + ' ' + event.sel_radio_d 
              ,
           ["reports"]: React.createElement("div", {className: "reports"}, 
                       reports
@@ -61437,6 +61442,7 @@ class ChartA extends React.Component {
                + ' '  +event.destination
               + ' ' + event.sel_radio_b 
               + ' ' + event.sel_radio_c  
+               + ' ' + event.sel_radio_d  
              ,
           ["reports"]: React.createElement("div", {className: "reports"}, " ", reports, "  ")
               
