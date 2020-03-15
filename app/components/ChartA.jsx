@@ -210,11 +210,9 @@ class ChartA extends React.Component {
          let reports = response.reports.map((el) => {          
           if(el.cwo !== ""){
           let myDate= new Date(el.cwo.substring(0,10));
-        //  let myDate= new Date(el.cwo);
-          //let myDate= el.cwo; 
-            let myDate2= el.cwo.substring(0,4 ) +"-" +el.cwo.substring(5,7) ; 
-            //console.log(myDate2);          
-           let myLot= el.owo; 
+            myDate.format("YYYY/mm")
+          let myDate2= el.cwo.substring(0,4 ) +"-" +el.cwo.substring(5,7) ; 
+          let myLot= el.owo; 
            
           let qtyTested= el.pwo; 
            let qtyFail= el.qwo; 
@@ -222,15 +220,11 @@ class ChartA extends React.Component {
             let pass_fail= el.two; 
             arrayOfRIs1.push([myDate, myLot ]) ; 
             arrayOfRIs2.push([myDate, myLot, qtyTested, qtyFail, qtyRejected]) ; 
-            //for getting unique YYYY-MM
-             arrayOfRIs3.push(myDate2 ) ; //ok 
-             arrayOfRIs3.push(myDate2 ) ;
+            // getting unique YYYY-MM
+           arrayOfRIs3.push(myDate2 ) ; //ok 
            
-            let xx=[];
            if(pass_fail.length === null){
-            
            arrayOfRIsPF.push([myDate2, "Fail"]);
-           
            }else{ arrayOfRIsPF.push([myDate2, pass_fail]);}
                     
       }            
@@ -241,11 +235,7 @@ class ChartA extends React.Component {
 }
   uniqueYM = arrayOfRIs3.unique();
   arrLotYM=[["Y-M", "LAR"]]; //[Y-M , LAR (sum of lot  PASS/all lots)
-  
-  console.log(" hi from here  ");   
-      
-    console.log("uniqueYM.length " + uniqueYM.lenght);
-   console.log("arrayOfRIsPF.length " + arrayOfRIsPF.length);     
+        
 //==========================================   
  for(let i=1; i< uniqueYM.length; i++){ 
     let lotN=0; //number of lots
@@ -263,13 +253,12 @@ class ChartA extends React.Component {
    
          
    }
-     arrLotYM.push([uniqueYM[i], lotA/lotN*100 ]) ; 
+   //new Date
+     //arrLotYM.push([uniqueYM[i], lotA/lotN*100 ]) ; //ok
+   arrLotYM.push([new Date(uniqueYM[i]), lotA/lotN*100 ]) ;
  }
    
-     console.log(" hi table arrLotYM " );       
-        console.log(arrLotYM);
-         console.log(" hi table arrayOfRIs1 " );   
-        console.log(arrayOfRIs1);
+    
         
  // 888888888     
           that.setState({
