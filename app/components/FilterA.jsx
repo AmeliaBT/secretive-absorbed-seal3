@@ -13,6 +13,7 @@ class FilterA extends React.Component {
       sel_radio_a: '',
       sel_radio_b: '',
       sel_radio_c: '',
+      sel_radio_d: '',
       supplier:'',
       source:'',
       destination:'',
@@ -26,6 +27,7 @@ class FilterA extends React.Component {
      this.onRadioChange = this.onRadioChange.bind(this);
      this.onRadioChangeB = this.onRadioChangeB.bind(this);
     this.onRadioChangeC = this.onRadioChangeC.bind(this);
+    this.onRadioChangeD = this.onRadioChangeD.bind(this);
 }  
 submitForm(e) { e.preventDefault();  
   this.props.handleData(this.state) } ;  
@@ -38,6 +40,7 @@ submitForm(e) { e.preventDefault();
      sel_radio_a: '',
       sel_radio_b: '',
        sel_radio_c: '',
+      sel_radio_d: '',
       supplier:'',
   source:'',
   destination:'',
@@ -69,9 +72,9 @@ submitForm(e) { e.preventDefault();
       sel_radio_c: e.target.value
     });
   }
-  onRadioChangeC(e){
+  onRadioChangeD(e){
     this.setState({
-      sel_radio_c: e.target.value
+      sel_radio_d: e.target.value
     });
   }
   render() { return (        <div>        
@@ -79,10 +82,10 @@ submitForm(e) { e.preventDefault();
   RI Number: <br />
   <input className="filter_input_a" type="text" name="riN"  value={this.state.riN} 
     onChange={this.handleChangeValue}/>  <br />
-Model: <br />
+Description/ Model: <br />
   <input className="filter_input_a" type="text" name="model"  value={this.state.model} 
     onChange={this.handleChangeValue}/>  <br />
-PN: <br />
+Part Number: <br />
   <input className="filter_input_a" type="text" name="pn"  value={this.state.pn} 
     onChange={this.handleChangeValue} /> <br />
   

@@ -6394,6 +6394,7 @@ class FilterA extends React.Component {
       sel_radio_a: '',
       sel_radio_b: '',
       sel_radio_c: '',
+      sel_radio_d: '',
       supplier:'',
       source:'',
       destination:'',
@@ -6407,6 +6408,7 @@ class FilterA extends React.Component {
      this.onRadioChange = this.onRadioChange.bind(this);
      this.onRadioChangeB = this.onRadioChangeB.bind(this);
     this.onRadioChangeC = this.onRadioChangeC.bind(this);
+    this.onRadioChangeD = this.onRadioChangeD.bind(this);
 }  
 submitForm(e) { e.preventDefault();  
   this.props.handleData(this.state) } ;  
@@ -6419,6 +6421,7 @@ submitForm(e) { e.preventDefault();
      sel_radio_a: '',
       sel_radio_b: '',
        sel_radio_c: '',
+      sel_radio_d: '',
       supplier:'',
   source:'',
   destination:'',
@@ -6450,16 +6453,20 @@ submitForm(e) { e.preventDefault();
       sel_radio_c: e.target.value
     });
   }
-  
+  onRadioChangeD(e){
+    this.setState({
+      sel_radio_d: e.target.value
+    });
+  }
   render() { return (        React.createElement("div", null, 
 React.createElement("form", null, 
   "RI Number: ", React.createElement("br", null), 
   React.createElement("input", {className: "filter_input_a", type: "text", name: "riN", value: this.state.riN, 
     onChange: this.handleChangeValue}), "  ", React.createElement("br", null), 
-"Model: ", React.createElement("br", null), 
+"Description/ Model: ", React.createElement("br", null), 
   React.createElement("input", {className: "filter_input_a", type: "text", name: "model", value: this.state.model, 
     onChange: this.handleChangeValue}), "  ", React.createElement("br", null), 
-"PN: ", React.createElement("br", null), 
+"Part Number: ", React.createElement("br", null), 
   React.createElement("input", {className: "filter_input_a", type: "text", name: "pn", value: this.state.pn, 
     onChange: this.handleChangeValue}), " ", React.createElement("br", null), 
   
@@ -61302,7 +61309,7 @@ class ChartA extends React.Component {
       
       sel_radio_b:"",
       sel_radio_c:"", //lot size
-     
+      sel_radio_d:"", // last12 , all 
       filterAB:"",
       modal_label: "Choose RI Reports to view"
       

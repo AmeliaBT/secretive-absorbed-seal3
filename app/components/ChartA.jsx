@@ -68,7 +68,7 @@ class ChartA extends React.Component {
       
       sel_radio_b:"",
       sel_radio_c:"", //lot size
-     
+      sel_radio_d:"", // last12 , all 
       filterAB:"",
       modal_label: "Choose RI Reports to view"
       
