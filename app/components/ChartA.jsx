@@ -33,8 +33,8 @@ let optionsCh1 ={  title: 'Receiving Inspection',
 let optionsCh2 ={
         title: 'Lot Acceptance Rate',
         timeline: { groupByRowLabel: true  },
-        hAxis: { format: 'MMM/yyyy'},
-        vAxis: {  minValue: 0},
+        hAxis: { format: 'MMM/yyyy', title: "Date (Year-Month) Inspected" },
+        vAxis: {  minValue: 0 ,title: "%"}, 
   legend: "none"
       };
 let optionsCh3 ={
@@ -223,9 +223,9 @@ class ChartA extends React.Component {
             arrayOfRIs1.push([myDate, myLot ]) ; 
             arrayOfRIs2.push([myDate, myLot, qtyTested, qtyFail, qtyRejected]) ; 
             //for getting unique YYYY-MM
-            //arrayOfRIs3.push(el.cwo.substring(0,4 ) +"-" +el.cwo.substring(5,7)  ) ;  //ok
-            arrayOfRIs3.push(myDate2 ) ; 
-            //console.log(pass_fail.length);
+             arrayOfRIs3.push(myDate2 ) ; //ok 
+             arrayOfRIs3.push(myDate2 ) ;
+           
             let xx=[];
            if(pass_fail.length === null){
             
@@ -306,8 +306,8 @@ class ChartA extends React.Component {
   data={this.state.arrLotYM}
        options={optionsCh2 }
        width="100%"
-       height="200px"
-       legendToggle
+       height="300px"
+      
     />
  <Chart
       //chartType="ColumnChart" 
