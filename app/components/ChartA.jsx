@@ -210,7 +210,7 @@ class ChartA extends React.Component {
          let reports = response.reports.map((el) => {          
           if(el.cwo !== ""){
           let myDate= new Date(el.cwo.substring(0,10));
-            myDate.format("YYYY/mm")
+           // myDate.format("YYYY/mmm");
           let myDate2= el.cwo.substring(0,4 ) +"-" +el.cwo.substring(5,7) ; 
           let myLot= el.owo; 
            
