@@ -487,7 +487,7 @@ let regfwo = request.body.fwo; //PN
    let regtwo = request.body.two; //pass-fail
    let owo = request.body.owo; // lot size
  let reg_inspector= request.body.inspector; 
-
+let regcwo=request.body.cwo; // date inspected
  // if(reg_inspector=== "Other"){reg_inspector='^(?!Tuan).*$' }; //ok  
    if(reg_inspector=== "Other"){reg_inspector='^(?!Tuan)(?!Jim).*$'  };
   if(regtwo=== "Other"){regtwo='^(?!Pass)(?!Fail).*$'  };
@@ -528,9 +528,8 @@ let regfwo = request.body.fwo; //PN
     mwo: new RegExp(regmwo, 'ig'), 
     nwo: new RegExp(regnwo, 'ig'), 
     two: new RegExp(regtwo, 'ig'), 
-    //MyModel.find({ name: 'john', age: { $gte: 18 }});
-       owo: lot, 
-     inspector: new RegExp(reg_inspector, 'ig')
+    owo: lot, 
+    inspector: new RegExp(reg_inspector, 'ig')
   }, 
                    (err, doc) => {
       if (err) throw err;
