@@ -516,7 +516,7 @@ let regcwo=request.body.cwo; // date inspected
     // code block
       lot={ $gte: 0 };
 }
-   
+  //if(cwo === ) 
   
    reportModel.find({ 
     reportID: new RegExp(regreportID, 'ig'), 
