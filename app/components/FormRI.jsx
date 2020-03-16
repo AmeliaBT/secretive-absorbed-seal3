@@ -244,7 +244,7 @@ Submit RI form
      <Button className="btn btn-primary btn-block" type="submit"><i className="fa fa-paper-plane"></i> Submit</Button>
       </FormGroup>
 </Col></Row>
- <Row> <Col  sm={10} >  <div className="profile-line"> General </div></Col> 
+ <Row> <Col  sm={11} >  <div className="profile-line1"><p>General 2</p> </div></Col> 
    </Row>     
 <Row >
 <Col sm={3} >	 <div className="well">   
