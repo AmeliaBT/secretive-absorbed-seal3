@@ -1,3 +1,4 @@
+// component item for Table View  (with edits disabled)
 const React = require('react');
 const Link = require('react-router-dom').Link
 // react-bootstrap

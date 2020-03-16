@@ -1,4 +1,4 @@
-//Edit
+//shows requested RI Report (form with photos); editing and saving 
 const React = require('react');
 const ReactDOM = require('react-dom');
 const Link = require('react-router-dom').Link

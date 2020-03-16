@@ -1,3 +1,4 @@
+//component item for Edit   (with edits enabled)
 const React = require('react');
 const Link = require('react-router-dom').Link
 // react-bootstrap

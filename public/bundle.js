@@ -12707,6 +12707,7 @@ if(false) {
 /* 156 */
 /***/ (function(module, exports, __webpack_require__) {
 
+// component item for Table View  (with edits disabled)
 const React = __webpack_require__(0);
 const Link = __webpack_require__(10).Link
 // react-bootstrap
@@ -59336,6 +59337,7 @@ module.exports = RIlist;
 /* 385 */
 /***/ (function(module, exports, __webpack_require__) {
 
+//component item for Edit   (with edits enabled)
 const React = __webpack_require__(0);
 const Link = __webpack_require__(10).Link
 // react-bootstrap
@@ -59589,6 +59591,8 @@ module.exports = RIlistAll;
 /* 388 */
 /***/ (function(module, exports, __webpack_require__) {
 
+
+// Table View  with  Filter; All can view and  filter 
 const React = __webpack_require__(0);
 const Link = __webpack_require__(10).Link
 // style for list
@@ -59926,7 +59930,7 @@ exports.push([module.i, "\nul,\nol {\n  list-style: none;\n  margin: 0;\n  paddi
 /* 391 */
 /***/ (function(module, exports, __webpack_require__) {
 
-//Edit
+//shows requested RI Report (form with photos) 
 const React = __webpack_require__(0);
 const ReactDOM = __webpack_require__(11);
 const Link = __webpack_require__(10).Link
