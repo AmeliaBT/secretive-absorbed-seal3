@@ -531,7 +531,8 @@ let regcwo=request.body.cwo; // date inspected
     two: new RegExp(regtwo, 'ig'), 
     owo: lot, 
     inspector: new RegExp(reg_inspector, 'ig'),
-     cwo: { $gte : new Date("2019-03-12T20:15:31Z")}
+   //  cwo: { $gte : new Date("2019-03-12T20:15:31Z")}
+     cwo: { $gte : new Date("0")}
   }, 
                    (err, doc) => {
       if (err) throw err;
