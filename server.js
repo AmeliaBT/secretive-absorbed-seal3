@@ -487,7 +487,7 @@ let regfwo = request.body.fwo; //PN
    let regtwo = request.body.two; //pass-fail
    let owo = request.body.owo; // lot size
  let reg_inspector= request.body.inspector; 
-let regcwo=request.body.cwo; // date inspected
+let cwo=request.body.cwo; // date inspected
  // if(reg_inspector=== "Other"){reg_inspector='^(?!Tuan).*$' }; //ok  
    if(reg_inspector=== "Other"){reg_inspector='^(?!Tuan)(?!Jim).*$'  };
   if(regtwo=== "Other"){regtwo='^(?!Pass)(?!Fail).*$'  };
@@ -517,7 +517,10 @@ let regcwo=request.body.cwo; // date inspected
       lot={ $gte: 0 };
 }
   //last12 , all 
-  //if(cwo === ) 
+  let dateSpan;
+  if(cwo === "last12"){
+  dateSpan= { $gte : new Date("2019-03-16T20:15:31Z")} } 
+  else{ dateSpan = { $gte : new Date("2000-01-16T20:15:31Z")} }
   
    reportModel.find({ 
     reportID: new RegExp(regreportID, 'ig'), 
@@ -531,8 +534,7 @@ let regcwo=request.body.cwo; // date inspected
     two: new RegExp(regtwo, 'ig'), 
     owo: lot, 
     inspector: new RegExp(reg_inspector, 'ig'),
-   //  cwo: { $gte : new Date("2019-03-12T20:15:31Z")}
-     cwo: { $gte : new Date("0")}
+    cwo: dateSpan 
   }, 
                    (err, doc) => {
       if (err) throw err;
