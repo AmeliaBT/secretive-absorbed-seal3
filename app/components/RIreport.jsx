@@ -1,3 +1,4 @@
+// element for RI Gallery -WIP 
 const React = require('react');
 const Link = require('react-router-dom').Link
 // react-bootstrap

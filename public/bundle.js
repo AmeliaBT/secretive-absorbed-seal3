@@ -12847,6 +12847,7 @@ btn-xs - Very small
 /* 157 */
 /***/ (function(module, exports, __webpack_require__) {
 
+//used by RI Report (form with photos); editing and saving are enabled 
 const React = __webpack_require__(0);
 const Link = __webpack_require__(10).Link
 const {Image} = __webpack_require__(12);
@@ -58833,6 +58834,8 @@ exports.push([module.i, "/*used:\nclassName=\"profile\"\nclassName=\"show-grid\"
 /* 378 */
 /***/ (function(module, exports, __webpack_require__) {
 
+// RI Gallery WIP 
+
 const React = __webpack_require__(0);
 const Link = __webpack_require__(10).Link
 // style for BOOKS
@@ -59080,6 +59083,7 @@ exports.push([module.i, "\n.btn-modal {\n  width: 49.5% !important;\n  float: ri
 /* 381 */
 /***/ (function(module, exports, __webpack_require__) {
 
+// element for RI Gallery -WIP 
 const React = __webpack_require__(0);
 const Link = __webpack_require__(10).Link
 // react-bootstrap
@@ -59930,7 +59934,7 @@ exports.push([module.i, "\nul,\nol {\n  list-style: none;\n  margin: 0;\n  paddi
 /* 391 */
 /***/ (function(module, exports, __webpack_require__) {
 
-//shows requested RI Report (form with photos) 
+//shows requested RI Report (form with photos); editing and saving are enabled 
 const React = __webpack_require__(0);
 const ReactDOM = __webpack_require__(11);
 const Link = __webpack_require__(10).Link
@@ -60260,7 +60264,7 @@ module.exports = RIedit;
 /* 392 */
 /***/ (function(module, exports, __webpack_require__) {
 
-
+//shows requested RI Report (form with photos); editing and saving are disabled 
 const React = __webpack_require__(0);
 const ReactDOM = __webpack_require__(11);
 const Link = __webpack_require__(10).Link

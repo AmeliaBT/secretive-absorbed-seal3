@@ -1,3 +1,4 @@
+//used by RI Report (form with photos); editing and saving are enabled 
 const React = require('react');
 const Link = require('react-router-dom').Link
 const {Image} = require('react-bootstrap');
