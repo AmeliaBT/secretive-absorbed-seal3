@@ -517,9 +517,13 @@ let cwo=request.body.cwo; // date inspected
       lot={ $gte: 0 };
 }
   //last12 , all 
+  const dateN = new Date();
+dateN.setDate(dateN.getDate() -365);
   let dateSpan;
   if(cwo === "last12"){
-  dateSpan= { $gte : new Date("2019-03-16T20:15:31Z")} } 
+ // dateSpan= { $gte : new Date("2019-03-16T20:15:31Z")} } 
+   dateSpan= { $gte : new Date(dateN)} } 
+  
   else{ dateSpan = { $gte : new Date("2000-01-16T20:15:31Z")} }
   
    reportModel.find({ 
