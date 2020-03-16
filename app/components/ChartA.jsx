@@ -1,4 +1,4 @@
-//https://stackoverflow.com/questions/47004716/google-charts-data-grouping-for-column-chart?rq=1
+// Charts
 const React = require('react');
 const Link = require('react-router-dom').Link
 const style = require('../styles/HomePage');

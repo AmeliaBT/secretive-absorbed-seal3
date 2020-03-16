@@ -6379,6 +6379,7 @@ TabContent.childContextTypes = childContextTypes;
 /* 86 */
 /***/ (function(module, exports, __webpack_require__) {
 
+//Fillter component used in many pages
 const React = __webpack_require__(0);
 const ReactDOM = __webpack_require__(11);
 
@@ -12487,6 +12488,7 @@ ToggleButton.propTypes = propTypes;
 /* 154 */
 /***/ (function(module, exports, __webpack_require__) {
 
+//Admin 
 const React = __webpack_require__(0);
 const Link = __webpack_require__(10).Link
 //const style = require('../styles/FormRI');
@@ -59213,6 +59215,7 @@ exports.push([module.i, ".book-all {\n  background: #FAFAFA; /*antiquewhite;*/\n
 /* 384 */
 /***/ (function(module, exports, __webpack_require__) {
 
+// Edit  (no Filter); Inspector Reports only
 const React = __webpack_require__(0);
 const Link = __webpack_require__(10).Link
 // style for RIlist
@@ -59441,6 +59444,7 @@ exports.push([module.i, "\n.spanGlyph{\n  font-size:10px;\ncolor: green;  \n}\n.
 /* 387 */
 /***/ (function(module, exports, __webpack_require__) {
 
+// Table View  (no Filter); All can view only
 const React = __webpack_require__(0);
 const Link = __webpack_require__(10).Link
 // style for list
@@ -59922,7 +59926,7 @@ exports.push([module.i, "\nul,\nol {\n  list-style: none;\n  margin: 0;\n  paddi
 /* 391 */
 /***/ (function(module, exports, __webpack_require__) {
 
-
+//Edit
 const React = __webpack_require__(0);
 const ReactDOM = __webpack_require__(11);
 const Link = __webpack_require__(10).Link
@@ -60706,6 +60710,8 @@ module.exports = LogIn;
 /* 396 */
 /***/ (function(module, exports, __webpack_require__) {
 
+//RI Gallery 
+
 const React = __webpack_require__(0);
 
 const style = __webpack_require__(37);
@@ -60799,6 +60805,7 @@ module.exports = HomePage;
 /* 397 */
 /***/ (function(module, exports, __webpack_require__) {
 
+//Inspector Form
 const React = __webpack_require__(0);
 const Link = __webpack_require__(10).Link
 // style for BOOKS
@@ -61244,7 +61251,7 @@ exports.push([module.i, "/* for Filter A \nh1, p {\n  font-family: Lato;\n}\n\n.
 /* 400 */
 /***/ (function(module, exports, __webpack_require__) {
 
-//https://stackoverflow.com/questions/47004716/google-charts-data-grouping-for-column-chart?rq=1
+// Charts
 const React = __webpack_require__(0);
 const Link = __webpack_require__(10).Link
 const style = __webpack_require__(37);

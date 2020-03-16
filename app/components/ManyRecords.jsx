@@ -1,3 +1,4 @@
+//Admin 
 const React = require('react');
 const Link = require('react-router-dom').Link
 //const style = require('../styles/FormRI');

@@ -1,3 +1,4 @@
+// Table View  (no Filter); All can view only
 const React = require('react');
 const Link = require('react-router-dom').Link
 // style for list

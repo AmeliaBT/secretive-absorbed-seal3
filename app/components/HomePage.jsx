@@ -1,3 +1,5 @@
+//RI Gallery 
+
 const React = require('react');
 
 const style = require('../styles/HomePage');

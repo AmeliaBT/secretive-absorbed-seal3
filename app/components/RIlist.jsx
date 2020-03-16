@@ -1,3 +1,4 @@
+// Edit  (no Filter); Inspector Reports only
 const React = require('react');
 const Link = require('react-router-dom').Link
 // style for RIlist

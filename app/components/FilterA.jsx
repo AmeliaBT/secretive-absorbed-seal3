@@ -1,3 +1,4 @@
+//Fillter component used in many pages
 const React = require('react');
 const ReactDOM = require('react-dom');
 
