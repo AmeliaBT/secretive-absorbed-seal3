@@ -66,7 +66,7 @@ class HomePage extends React.Component {
  
 
  <div className="title-line"> 
-  <p>Receiving Inspection Report Form for: <span>  {this.state.inspname}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span> department: 
+  <p>QLT-1201-F03 Receiving Inspection Form for: <span>  {this.state.inspname}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span> department: 
   <span>  { this.state.dep} </span>  </p>
   </div>
   <div className="profile-line"></div> 

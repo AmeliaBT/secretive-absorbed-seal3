@@ -60786,7 +60786,7 @@ class HomePage extends React.Component {
  
 
  React.createElement("div", {className: "title-line"}, 
-  React.createElement("p", null, "Receiving Inspection Report Form for: ", React.createElement("span", null, "  ", this.state.inspname, "       "), " department:",  
+  React.createElement("p", null, "QLT-1201-F03 Receiving Inspection Form for: ", React.createElement("span", null, "  ", this.state.inspname, "       "), " department:",  
   React.createElement("span", null, "  ",  this.state.dep, " "), "  ")
   ), 
   React.createElement("div", {className: "profile-line"})
@@ -61059,7 +61059,8 @@ Submit RI form
      React.createElement(Button, {className: "btn btn-primary btn-block", type: "submit"}, React.createElement("i", {className: "fa fa-paper-plane"}), " Submit")
       )
 )), 
-   
+ React.createElement(Row, null, " ", React.createElement(Col, {  sm: 11}, "  ", React.createElement("div", {className: "profile-line"}, " General "))
+   ), 
 React.createElement(Row, null, 
 React.createElement(Col, {sm: 3}, "  ", React.createElement("div", {className: "well"}, " ",   
  React.createElement(FormGroup, {className: "input-row"}, React.createElement(ControlLabel, null, "Inspector:"), " ", React.createElement(FormControl, {   readOnly: true, type: "text",  name: "inspector", value: this.state.inspector, 	 placeholder: this.state.inspector	 }  ), " "), "    ", 

@@ -244,7 +244,8 @@ Submit RI form
      <Button className="btn btn-primary btn-block" type="submit"><i className="fa fa-paper-plane"></i> Submit</Button>
       </FormGroup>
 </Col></Row>
-   
+ <Row> <Col  sm={10} >  <div className="profile-line"> General </div></Col> 
+   </Row>     
 <Row >
 <Col sm={3} >	 <div className="well">   
  <FormGroup className="input-row"><ControlLabel>Inspector:</ControlLabel> <FormControl   readOnly type="text" name="inspector" value={this.state.inspector	} placeholder={this.state.inspector	 }  /> </FormGroup>    
