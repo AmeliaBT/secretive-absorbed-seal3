@@ -516,6 +516,7 @@ let regcwo=request.body.cwo; // date inspected
     // code block
       lot={ $gte: 0 };
 }
+  //last12 , all 
   //if(cwo === ) 
   
    reportModel.find({ 
