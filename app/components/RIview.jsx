@@ -103,7 +103,9 @@ this.state = {
            
         <Row>  
      <Col sm={11} ><h4>  RI Number:  {this.state.reportID}  </h4>  </Col></Row>  
-      
+     
+         
+  <Row> <Col  sm={11} >  <div className="profile-line1"><p>General</p> </div></Col>  </Row>       
          <Row >
 <Col sm={3} >	 <div className="well">   
  <FormGroup className="input-row"><ControlLabel>Inspector:</ControlLabel> <FormControl   readOnly type="text" name="inspector" value={this.state.inspector	}  /> </FormGroup>    
@@ -125,7 +127,9 @@ this.state = {
 <FormGroup ><ControlLabel>Destination:</ControlLabel> <FormControl  className="input-row3" type="text" name="nwo" value={this.state.nwo}  readOnly  />  </FormGroup> 
   </div></Col>
   </Row>
- <Row> <Col  sm={11} >  <div className="profile-line"></div></Col>  </Row>   
+ 
+  <Row> <Col  sm={11} >  <div className="profile-line"><p>Product</p>  </div></Col>  </Row>       
+         
    <Row>
      
 
@@ -143,8 +147,8 @@ this.state = {
   </Row>
    
    
- <Row> <Col  sm={11} >  <div className="profile-line"></div></Col>  </Row>
-
+ 
+<Row> <Col  sm={11} >  <div className="profile-line2"><p>Inspection</p> </div></Col>  </Row>
   <Row>
   <Col sm={2} >	   <div className="well">
  <FormGroup className="input-row"><ControlLabel> 	 Lot Size:	</ControlLabel><FormControl type="number" name="owo"   value={this.state.owo	} readOnly  />  </FormGroup> 
@@ -166,7 +170,7 @@ this.state = {
   </FormGroup> 
    </Col>
   </Row>
- <Row> <Col  sm={11} >  <div className="profile-line"></div></Col>  </Row>
+
  <Row> 
 <Col sm={6} >
 <FormGroup className="input-row"><ControlLabel> 	Photo 1:	</ControlLabel><FormControl type="text"  name="lwo"    placeholder={this.state.lwo	} readOnly  />   </FormGroup>  

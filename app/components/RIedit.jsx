@@ -271,7 +271,7 @@ this.state = {
   </FormGroup> 
    </Col>
   </Row>
- <Row> <Col  sm={11} >  <div className="profile-line"></div></Col>  </Row>
+ 
  <Row> 
 <Col sm={6} >
 <FormGroup className="input-row"><ControlLabel> 	Photo 1	</ControlLabel><FormControl type="text"  name="lwo" value={this.state.lwo	}     placeholder={this.state.lwo	 }  onChange={this.handleChangeValue} />   </FormGroup>  

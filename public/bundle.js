@@ -60207,7 +60207,7 @@ React.createElement(FormGroup, { className: "input-row"}, React.createElement(C
   ), " "
    )
   ), 
- React.createElement(Row, null, " ", React.createElement(Col, {  sm: 11}, "  ", React.createElement("div", {className: "profile-line"})), "  "), 
+ 
  React.createElement(Row, null, 
 React.createElement(Col, {sm: 6}, 
 React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "  Photo 1 "), React.createElement(FormControl, { type: "text", name: "lwo", value: this.state.lwo, 	placeholder: this.state.lwo, 	 onChange: this.handleChangeValue}), "   "), "  ", 
@@ -60372,7 +60372,9 @@ this.state = {
            
         React.createElement(Row, null, "  ", 
      React.createElement(Col, {sm: 11}, React.createElement("h4", null, "  RI Number:  ", this.state.reportID, "  "), "  ")), 
-      
+     
+         
+  React.createElement(Row, null, " ", React.createElement(Col, {  sm: 11}, "  ", React.createElement("div", {className: "profile-line1"}, React.createElement("p", null, "General"), " ")), "  "), 
          React.createElement(Row, null, 
 React.createElement(Col, {sm: 3}, "  ", React.createElement("div", {className: "well"}, " ",   
  React.createElement(FormGroup, {className: "input-row"}, React.createElement(ControlLabel, null, "Inspector:"), " ", React.createElement(FormControl, {   readOnly: true, type: "text",  name: "inspector", value: this.state.inspector	}  ), " "), "    ", 
@@ -60394,7 +60396,9 @@ React.createElement(FormGroup, null , React.createElement(ControlLabel, null, "
 React.createElement(FormGroup, null , React.createElement(ControlLabel, null, "Destination:"), " ", React.createElement(FormControl, {  className: "input-row3", type: "text",  name: "nwo", value: this.state.nwo, readOnly: true}), "  "), " "
   ))
   ), 
- React.createElement(Row, null, " ", React.createElement(Col, {  sm: 11}, "  ", React.createElement("div", {className: "profile-line"})), "  "), 
+ 
+  React.createElement(Row, null, " ", React.createElement(Col, {  sm: 11}, "  ", React.createElement("div", {className: "profile-line"}, React.createElement("p", null, "Product"), "  ")), "  "), 
+         
    React.createElement(Row, null, 
      
 
@@ -60412,8 +60416,8 @@ React.createElement(FormGroup, { className: "input-row"}, React.createElement(C
   ), 
    
    
- React.createElement(Row, null, " ", React.createElement(Col, {  sm: 11}, "  ", React.createElement("div", {className: "profile-line"})), "  "), 
-
+ 
+React.createElement(Row, null, " ", React.createElement(Col, {  sm: 11}, "  ", React.createElement("div", {className: "profile-line2"}, React.createElement("p", null, "Inspection"), " ")), "  "), 
   React.createElement(Row, null, 
   React.createElement(Col, {sm: 2}, "    ", React.createElement("div", {className: "well"}, 
  React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "   Lot Size: "), React.createElement(FormControl, { type: "number",  name: "owo",   value: this.state.owo, 	 readOnly: true} ), "  "), " " + " " +
@@ -60435,7 +60439,7 @@ React.createElement(FormGroup, { className: "input-row"}, React.createElement(C
   ), " "
    )
   ), 
- React.createElement(Row, null, " ", React.createElement(Col, {  sm: 11}, "  ", React.createElement("div", {className: "profile-line"})), "  "), 
+
  React.createElement(Row, null, 
 React.createElement(Col, {sm: 6}, 
 React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "  Photo 1: "), React.createElement(FormControl, { type: "text", name: "lwo", placeholder: this.state.lwo, 	 readOnly: true}), "   "), "  ", 
