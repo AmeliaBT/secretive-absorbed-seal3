@@ -287,7 +287,7 @@ Submit RI form
 <FormGroup ><ControlLabel>Destination:</ControlLabel> <FormControl  className="input-row3" type="text" name="nwo" value={this.state.nwo} componentClass="select"  placeholder="select" onChange={this.handleChangeValue}> {optionsN} </FormControl> </FormGroup> 
   </div></Col>
   </Row>
- <Row> <Col  sm={11} >  <div className="profile-line"></div></Col>  </Row>   
+ <Row> <Col  sm={11} >  <div className="profile-line">Product  </div></Col>  </Row>   
    <Row>
      
 
@@ -307,7 +307,7 @@ Submit RI form
   </Row>
    
    
- <Row> <Col  sm={11} >  <div className="profile-line"></div></Col>  </Row>
+ <Row> <Col  sm={11} >  <div className="profile-line2"> Inspection</div></Col>  </Row>
 
   <Row>
   <Col sm={2} >	   <div className="well">
@@ -330,8 +330,10 @@ Submit RI form
   </FormGroup> 
    </Col>
   </Row>
+   {/* 
  <Row> <Col  sm={11} >  <div className="profile-line"></div></Col>  </Row>
- <Row> 
+ */}
+   <Row> 
 <Col sm={6} >
 <FormGroup className="input-row"><ControlLabel>Photo 1 (I:\QC-Reports\RI_Photos\) 	</ControlLabel><FormControl type="file"  name="lwo"     placeholder={this.state.lwo	} onChange={this.handleChangeValueImg}  />   </FormGroup>  
  <div style={{width: 400, height: 'auto'}}>
