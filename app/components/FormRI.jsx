@@ -287,7 +287,7 @@ Submit RI form
 <FormGroup ><ControlLabel>Destination:</ControlLabel> <FormControl  className="input-row3" type="text" name="nwo" value={this.state.nwo} componentClass="select"  placeholder="select" onChange={this.handleChangeValue}> {optionsN} </FormControl> </FormGroup> 
   </div></Col>
   </Row>
- <Row> <Col  sm={11} >  <div className="profile-line">Product  </div></Col>  </Row>   
+ <Row> <Col  sm={11} >  <div className="profile-line"><p>Product</p>  </div></Col>  </Row>   
    <Row>
      
 
@@ -307,7 +307,7 @@ Submit RI form
   </Row>
    
    
- <Row> <Col  sm={11} >  <div className="profile-line2"> Inspection</div></Col>  </Row>
+ <Row> <Col  sm={11} >  <div className="profile-line2"><p>Inspection</p> </div></Col>  </Row>
 
   <Row>
   <Col sm={2} >	   <div className="well">

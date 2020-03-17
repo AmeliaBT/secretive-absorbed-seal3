@@ -61102,7 +61102,7 @@ React.createElement(FormGroup, null , React.createElement(ControlLabel, null, "
 React.createElement(FormGroup, null , React.createElement(ControlLabel, null, "Destination:"), " ", React.createElement(FormControl, {  className: "input-row3", type: "text",  name: "nwo", value: this.state.nwo, componentClass: "select", placeholder: "select", onChange: this.handleChangeValue}, " ", optionsN, " "), " "), " "
   ))
   ), 
- React.createElement(Row, null, " ", React.createElement(Col, {  sm: 11}, "  ", React.createElement("div", {className: "profile-line"}, "Product  ")), "  "), 
+ React.createElement(Row, null, " ", React.createElement(Col, {  sm: 11}, "  ", React.createElement("div", {className: "profile-line"}, React.createElement("p", null, "Product"), "  ")), "  "), 
    React.createElement(Row, null, 
      
 
@@ -61122,7 +61122,7 @@ React.createElement(FormGroup, { className: "input-row"}, React.createElement(C
   ), 
    
    
- React.createElement(Row, null, " ", React.createElement(Col, {  sm: 11}, "  ", React.createElement("div", {className: "profile-line2"}, " Inspection")), "  "), 
+ React.createElement(Row, null, " ", React.createElement(Col, {  sm: 11}, "  ", React.createElement("div", {className: "profile-line2"}, React.createElement("p", null, "Inspection"), " ")), "  "), 
 
   React.createElement(Row, null, 
   React.createElement(Col, {sm: 2}, "    ", React.createElement("div", {className: "well"}, 
