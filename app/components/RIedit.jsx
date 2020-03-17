@@ -205,7 +205,10 @@ this.state = {
       <FormGroup > 
      <Button className="btn btn-primary btn-block" type="submit"><i className="fa fa-paper-plane"></i> Submit</Button>
       </FormGroup>
-</Col></Row>      
+</Col></Row>  
+ <Row> <Col  sm={11} >  <div className="profile-line1"><p>General</p> </div></Col>  </Row>
+     
+      
       <Row >
 <Col sm={3} >	 <div className="well">   
  <FormGroup className="input-row"><ControlLabel>Inspector:</ControlLabel> <FormControl   readOnly type="text" name="inspector" value={this.state.inspector	} placeholder={this.state.inspector	 }  /> </FormGroup>    
@@ -227,10 +230,10 @@ this.state = {
 <FormGroup ><ControlLabel>Destination:</ControlLabel> <FormControl  className="input-row3" type="text" name="nwo" value={this.state.nwo}  onChange={this.handleChangeValue} />  </FormGroup> 
   </div></Col>
   </Row>
- <Row> <Col  sm={11} >  <div className="profile-line"></div></Col>  </Row>   
-   <Row>
-     
+ 
 
+  <Row> <Col  sm={11} >  <div className="profile-line"><p>Product</p>  </div></Col>  </Row>    
+   <Row>
 <Col sm={4} ><div className="well">   
 <FormGroup className="input-row"><ControlLabel> 	 P/N:	</ControlLabel><FormControl type="text" name="fwo"   value={this.state.fwo	} placeholder={this.state.fwo	} onChange={this.handleChangeValue} />  </FormGroup> 
   </div></Col>
@@ -245,8 +248,8 @@ this.state = {
   </Row>
    
    
- <Row> <Col  sm={11} >  <div className="profile-line"></div></Col>  </Row>
 
+<Row> <Col  sm={11} >  <div className="profile-line2"><p>Inspection</p> </div></Col>  </Row>
   <Row>
   <Col sm={2} >	   <div className="well">
  <FormGroup className="input-row"><ControlLabel> 	 Lot Size:	</ControlLabel><FormControl type="number" name="owo"   value={this.state.owo	} placeholder={this.state.owo	} onChange={this.handleChangeValue} />  </FormGroup> 

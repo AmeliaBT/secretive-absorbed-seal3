@@ -60142,6 +60142,9 @@ React.createElement(Col, { sm: 4},
      React.createElement(Button, {className: "btn btn-primary btn-block", type: "submit"}, React.createElement("i", {className: "fa fa-paper-plane"}), " Submit")
       )
 )), 
+ React.createElement(Row, null, " ", React.createElement(Col, {  sm: 11}, "  ", React.createElement("div", {className: "profile-line1"}, React.createElement("p", null, "General"), " ")), "  "), 
+     
+      
       React.createElement(Row, null, 
 React.createElement(Col, {sm: 3}, "  ", React.createElement("div", {className: "well"}, " ",   
  React.createElement(FormGroup, {className: "input-row"}, React.createElement(ControlLabel, null, "Inspector:"), " ", React.createElement(FormControl, {   readOnly: true, type: "text",  name: "inspector", value: this.state.inspector, 	 placeholder: this.state.inspector	 }  ), " "), "    ", 
@@ -60163,10 +60166,10 @@ React.createElement(FormGroup, null , React.createElement(ControlLabel, null, "
 React.createElement(FormGroup, null , React.createElement(ControlLabel, null, "Destination:"), " ", React.createElement(FormControl, {  className: "input-row3", type: "text",  name: "nwo", value: this.state.nwo, onChange: this.handleChangeValue}), "  "), " "
   ))
   ), 
- React.createElement(Row, null, " ", React.createElement(Col, {  sm: 11}, "  ", React.createElement("div", {className: "profile-line"})), "  "), 
-   React.createElement(Row, null, 
-     
+ 
 
+  React.createElement(Row, null, " ", React.createElement(Col, {  sm: 11}, "  ", React.createElement("div", {className: "profile-line"}, React.createElement("p", null, "Product"), "  ")), "  "), 
+   React.createElement(Row, null, 
 React.createElement(Col, {sm: 4}, React.createElement("div", {className: "well"}, 
 React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "   P/N: "), React.createElement(FormControl, { type: "text",  name: "fwo",   value: this.state.fwo, 	 placeholder: this.state.fwo, 	 onChange: this.handleChangeValue} ), "  "), " " + " " +
 "  ")), 
@@ -60181,8 +60184,8 @@ React.createElement(FormGroup, { className: "input-row"}, React.createElement(C
   ), 
    
    
- React.createElement(Row, null, " ", React.createElement(Col, {  sm: 11}, "  ", React.createElement("div", {className: "profile-line"})), "  "), 
 
+React.createElement(Row, null, " ", React.createElement(Col, {  sm: 11}, "  ", React.createElement("div", {className: "profile-line2"}, React.createElement("p", null, "Inspection"), " ")), "  "), 
   React.createElement(Row, null, 
   React.createElement(Col, {sm: 2}, "    ", React.createElement("div", {className: "well"}, 
  React.createElement(FormGroup, { className: "input-row"}, React.createElement(ControlLabel, null, "   Lot Size: "), React.createElement(FormControl, { type: "number",  name: "owo",   value: this.state.owo, 	 placeholder: this.state.owo, 	 onChange: this.handleChangeValue} ), "  "), " " + " " +
@@ -61253,7 +61256,7 @@ exports = module.exports = __webpack_require__(24)(false);
 
 
 // module
-exports.push([module.i, "/* for Filter A \nh1, p {\n  font-family: Lato;\n}\n\n.rbt-input-wrapper::before {\n  font-family: FontAwesome;\n  content: \"\\f0d7\";\n  position: absolute;\n  top: 50%;\n  transform: translateY(-50%);\n  right: 10px;\n  z-index: 1;\n}\n*/ \n/* *************************** */ \n.search-icon {\n  position: absolute;\n  right: 5px;\n  top: 5px;\n  z-index: 9999; /*this will keep the icon appearing all time, even when on input::focus*/\n}\n/* \n.Form {\n  width: 600px;\n background: antiquewhite; \n padding: 50px;\n border: 1px solid #9d9d8e;\n*/\n\n.profile-line {\n  background-color: #44708f;\n  \n  width: 100%;\n  height: 15px;\n  margin: auto;\n  margin-bottom: 2px;\n  margin-top: 2px;\n    padding: 0%;\n}\n.profile-line1 p{\n  color: white;\n  padding-left: 20px;\n  font-weight: bold;\n  font-size: 12px;}\n.profile-line2p{\n  color: white;\n  padding-left: 20px;\n  font-weight: bold;\n  font-size: 12px;}\n.profile-line p{\n  color: white;\n  padding-left: 20px;\n  font-weight: bold;\n  font-size: 12px;}\n\n.profile-line1{\n  background-color: #006400; \n  width: 100%;\n  height: 15px;\n  margin: auto;\n  margin-bottom: 2px;\n  margin-top: 2px;\n    padding: 0%;\n}\n.profile-line2{\n  background-color: red; \n  width: 100%;\n  height: 15px;\n  margin: auto;\n  margin-bottom: 2px;\n  margin-top: 2px;\n    padding: 0%;\n}\n.input-rowC{\n padding: 5px;\n  width: 100%; \n  height: 120px;\npadding: 0%;}\n\n \n.input-row {\n  width: 100%; \n  margin-top: 0;\n  margin-bottom: 0;\n  height: 40px;\n\npadding: 0%;\n}\n.input-row3 {\n  height: 40px;\n  margin-top: 0;\n  margin-bottom: 0;\n  padding: 0%;\n}\n.input-row2 {\n  width: 100%; \n  margin-top: 0;\n  margin-bottom: 0;\n  height: 40px;\n  background-color: white; \npadding: 0%;\n}\n\n/*\n\n\n.FormRI { \n  margin: auto;\n  margin-top: 50px; \n  width: 83%;\n  margin: auto 0;\n  border: 1px solid #9d9d8e;\n  background: antiquewhite; \n}\n\nbackground-color: azure;\nwidth: 600px;\n.input-label {\nwidth: 90%;\nmargin-top: 0;\nmargin-bottom: 0;\ncolor: rgb(157, 157, 157);\nbackground-color: red;\n}\n\n.profile-label {\n  text-align: center;\n  font-size: 10px;\n  color: black;\n  margin-top: 0px;\n  background-color: green;\n}\n.profile-label {\n  text-align: center;\n  font-size: 30px;\n  color: black; \n  margin: 3%;\n  margin-top: 30px;\n}\n\n.profile-label {\n  text-align: center;\n  font-size: 30px;\n  color: black; \n  margin: 3%;\n  margin-top: 30px;\n}\n\n.input-label {\nwidth: 90%;\nmargin: auto;\ncolor: rgb(157, 157, 157);\n}\n*/", ""]);
+exports.push([module.i, "/* for Filter A \nh1, p {\n  font-family: Lato;\n}\n\n.rbt-input-wrapper::before {\n  font-family: FontAwesome;\n  content: \"\\f0d7\";\n  position: absolute;\n  top: 50%;\n  transform: translateY(-50%);\n  right: 10px;\n  z-index: 1;\n}\n*/ \n/* *************************** */ \n.search-icon {\n  position: absolute;\n  right: 5px;\n  top: 5px;\n  z-index: 9999; /*this will keep the icon appearing all time, even when on input::focus*/\n}\n/* \n.Form {\n  width: 600px;\n background: antiquewhite; \n padding: 50px;\n border: 1px solid #9d9d8e;\n*/\n\n.profile-line {\n  background-color: #44708f;\n  \n  width: 100%;\n  height: 15px;\n  margin: auto;\n  margin-bottom: 2px;\n  margin-top: 2px;\n    padding: 0%;\n}\n.profile-line1 p{\n  color: white;\n  padding-left: 20px;\n  font-weight: bold;\n  font-size: 12px;}\n.profile-line2 p{\n  color: white;\n  padding-left: 20px;\n  font-weight: bold;\n  font-size: 12px;}\n.profile-line p{\n  color: white;\n  padding-left: 20px;\n  font-weight: bold;\n  font-size: 12px;}\n\n.profile-line1{\n  background-color: #006400; \n  width: 100%;\n  height: 15px;\n  margin: auto;\n  margin-bottom: 2px;\n  margin-top: 2px;\n    padding: 0%;\n}\n.profile-line2{\n  background-color: red; \n  width: 100%;\n  height: 15px;\n  margin: auto;\n  margin-bottom: 2px;\n  margin-top: 2px;\n    padding: 0%;\n}\n.input-rowC{\n padding: 5px;\n  width: 100%; \n  height: 120px;\npadding: 0%;}\n\n \n.input-row {\n  width: 100%; \n  margin-top: 0;\n  margin-bottom: 0;\n  height: 40px;\n\npadding: 0%;\n}\n.input-row3 {\n  height: 40px;\n  margin-top: 0;\n  margin-bottom: 0;\n  padding: 0%;\n}\n.input-row2 {\n  width: 100%; \n  margin-top: 0;\n  margin-bottom: 0;\n  height: 40px;\n  background-color: white; \npadding: 0%;\n}\n\n/*\n\n\n.FormRI { \n  margin: auto;\n  margin-top: 50px; \n  width: 83%;\n  margin: auto 0;\n  border: 1px solid #9d9d8e;\n  background: antiquewhite; \n}\n\nbackground-color: azure;\nwidth: 600px;\n.input-label {\nwidth: 90%;\nmargin-top: 0;\nmargin-bottom: 0;\ncolor: rgb(157, 157, 157);\nbackground-color: red;\n}\n\n.profile-label {\n  text-align: center;\n  font-size: 10px;\n  color: black;\n  margin-top: 0px;\n  background-color: green;\n}\n.profile-label {\n  text-align: center;\n  font-size: 30px;\n  color: black; \n  margin: 3%;\n  margin-top: 30px;\n}\n\n.profile-label {\n  text-align: center;\n  font-size: 30px;\n  color: black; \n  margin: 3%;\n  margin-top: 30px;\n}\n\n.input-label {\nwidth: 90%;\nmargin: auto;\ncolor: rgb(157, 157, 157);\n}\n*/", ""]);
 
 // exports
 
