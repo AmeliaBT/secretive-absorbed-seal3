@@ -12771,8 +12771,8 @@ class RIlistItemAll extends React.Component {
         React.createElement(Col, {  sm: 1}, " ", this.state.owo), 
         React.createElement(Col, {  sm: 3}, " ", this.state.record), 
         React.createElement(Col, {  sm: 1}, " ", React.createElement(Link, {to: 'report-view/' + this.state.reportID}, 
-         React.createElement(Button, {className: "btn btn-defaul btn-xs spanGlyph"}, React.createElement("span", {className: "spanGlyph"}, 
-           React.createElement(Glyphicon, {glyph: "eye-open"}), " "), "  ")), " ")
+         React.createElement(Button, {className: "btn btn-defaul btn-xs spanGlyph"}, 
+           React.createElement(Glyphicon, {glyph: "eye-open"}), "   ")), " ")
               
         )
                )
@@ -59417,7 +59417,7 @@ class RIlistItem extends React.Component {
         React.createElement(Col, {  sm: 1}, " ", this.state.owo), 
           React.createElement(Col, {  sm: 3}, " ", this.state.record), 
         React.createElement(Col, {  sm: 1}, "  ", React.createElement(Link, {to: 'report-edit/' + this.state.reportID}, 
-            React.createElement(Button, {bsSize: "xsmall"}, React.createElement("span", {className: "spanGlyph"}, React.createElement(Glyphicon, {glyph: "edit"}), " "))), " ")
+            React.createElement(Button, {bsSize: "xsmall", className: "spanGlyph"}, React.createElement(Glyphicon, {glyph: "edit"}), " ")), " ")
        
               
         )
