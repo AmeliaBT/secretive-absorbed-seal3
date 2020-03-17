@@ -13,7 +13,8 @@ class RIlistItemAll extends React.Component {
     let jwo2;
      let jwo=this.props.jwo;//Date Inspected:
     if(jwo == null){jwo2=""}else{jwo2= jwo.slice(0,-14)};
-   
+     let pfColor;
+    if(this.props.two === "Pass"){pfColor = "text-success"}else{pfColor="text-danger"};
     this.state = {
       //img_url: this.props.img_url,
       inspector: this.props.inspector,
@@ -24,7 +25,8 @@ class RIlistItemAll extends React.Component {
       two: this.props.two, //Pass / Fail:
        owo: this.props.owo,
       record: this.props.record,
-      lwo: this.props.lwo
+      lwo: this.props.lwo,
+        pfColor: pfColor 
       
       /*,
       tooltip:
@@ -58,7 +60,7 @@ class RIlistItemAll extends React.Component {
        <Col sm={1} > {this.state.fwo}</Col>
        <Col  sm={2} > {this.state.Gwo}</Col>
         <Col  sm={1} > {this.state.jwo}</Col>
-        <Col  sm={1} > {this.state.two}</Col>
+        <Col  sm={1} ><span className={this.state.pfColor}>  {this.state.two}</span></Col>
         <Col  sm={1} > {this.state.owo}</Col>
         <Col  sm={3} > {this.state.record}</Col>
         <Col  sm={1} > <Link to={'report-view/' + this.state.reportID  }> 
