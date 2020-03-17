@@ -1,7 +1,9 @@
-
+.mybtn-red {
+   color: red;
+}
 .spanGlyph{
-  font-size:10px;
-color: green;  
+ 
+color: red;  
 }
 .myTable{  border: 1px solid #F8F8F8; /*#000000' */
 }
