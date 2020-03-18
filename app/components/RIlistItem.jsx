@@ -75,11 +75,11 @@ class RIlistItem extends React.Component {
        <Col  sm={2} > {this.state.Gwo}</Col>
         <Col  sm={1} > {this.state.jwo}</Col>
         
-        <Col  sm={1}  ><p style={{fontSize: 12}}  className={this.state.pfColor}>  {this.state.two}</p></Col>
+        <Col  sm={1}  ><p style={{fontWeight: 'bold', fontSize: 14}} className={this.state.pfColor}>  {this.state.two}</p></Col>
           <Col  sm={1} > {this.state.owo}</Col>
           <Col  sm={3} > {this.state.record}</Col>
         <Col  sm={1} >  <Link to={'report-edit/' + this.state.reportID  }>
-            <Button bsSize="xsmall"  ><Glyphicon glyph="edit" /> </Button></Link> </Col>
+            <Button bsSize="xxsmall"  ><Glyphicon glyph="edit" /> </Button></Link> </Col>
        
               
         </Row>

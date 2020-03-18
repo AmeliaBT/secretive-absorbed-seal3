@@ -60,7 +60,7 @@ class RIlistItemAll extends React.Component {
        <Col sm={1} > {this.state.fwo}</Col>
        <Col  sm={2} > {this.state.Gwo}</Col>
         <Col  sm={1} > {this.state.jwo}</Col>
-        <Col  sm={1}  ><p style={{fontWeight: 'bold', fontSize: 14}} xx className={this.state.pfColor}>  {this.state.two}</p></Col>
+        <Col  sm={1}  ><p style={{fontWeight: 'bold', fontSize: 14}} className={this.state.pfColor}>  {this.state.two}</p></Col>
         <Col  sm={1} > {this.state.owo}</Col>
         <Col  sm={3} > {this.state.record}</Col>
         <Col  sm={1} > <Link to={'report-view/' + this.state.reportID  }> 
