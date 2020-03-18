@@ -1,9 +1,8 @@
 .mybtn-red {
    color: red;
 }
-.spanGlyph{
- 
-color: red;  
+.span{
+ font-size: 10px;
 }
 .myTable{  border: 1px solid #F8F8F8; /*#000000' */
 }
@@ -44,8 +43,8 @@ background-color: red;
 
 .profile-label {
   text-align: center;
-  font-size: 30px;
-  color: black; /* #f6ff67;*/  
+ 
+  color: black; /* #f6ff67;  font-size: 30px;*/  
   margin-top: 0px;
   background-color: green;
 }
