@@ -1,4 +1,5 @@
 //component item for Edit   (with edits enabled)
+/* ootstrap's global default font-size is 14px, with a line-height of 1.428. This is applied to the <body> element and all paragraphs ( <p> ). In addition, all <p> elements have a bottom margin that equals half their computed line-height (10px by default).*/
 const React = require('react');
 const Link = require('react-router-dom').Link
 // react-bootstrap
@@ -20,7 +21,7 @@ class RIlistItem extends React.Component {
     let jwo2;     
     if(jwo == null ){jwo2=""}else{jwo2=jwo.slice(0,-14)};
     let pfColor;
-    if(this.props.two === "Pass"){pfColor = "text-success text-center text-primary"}else{pfColor="text-danger"}
+    if(this.props.two === "Pass"){pfColor = "text-success"}else{pfColor="text-danger"}
    // let two=this.props.two; //Pass / Fail
    // let owo=this.props.owo; //Lot Size
    //    let record=this.props.record;
