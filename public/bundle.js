@@ -12769,7 +12769,7 @@ class RIlistItemAll extends React.Component {
        React.createElement(Col, { sm: 1}, " ", this.state.fwo), 
        React.createElement(Col, {  sm: 2}, " ", this.state.Gwo), 
         React.createElement(Col, {  sm: 1}, " ", this.state.jwo), 
-        React.createElement(Col, {  sm: 1, style: {fontSize: 12}}, React.createElement("p", {style: {fontSize: 12}, className: this.state.pfColor}, "  ", this.state.two)), 
+        React.createElement(Col, {  sm: 1}, React.createElement("p", {style: {fontWeight: 'bold', fontSize: 14}, xx: true, className: this.state.pfColor}, "  ", this.state.two)), 
         React.createElement(Col, {  sm: 1}, " ", this.state.owo), 
         React.createElement(Col, {  sm: 3}, " ", this.state.record), 
         React.createElement(Col, {  sm: 1}, " ", React.createElement(Link, {to: 'report-view/' + this.state.reportID}, 
@@ -59419,8 +59419,9 @@ class RIlistItem extends React.Component {
      React.createElement(Col, { sm: 1}, " ", this.state.fwo), 
        React.createElement(Col, {  sm: 2}, " ", this.state.Gwo), 
         React.createElement(Col, {  sm: 1}, " ", this.state.jwo), 
-        React.createElement(Col, {  sm: 1}, React.createElement("span", {className: this.state.pfColor}, "  ", this.state.two)), 
-        React.createElement(Col, {  sm: 1}, " ", this.state.owo), 
+        
+        React.createElement(Col, {  sm: 1}, React.createElement("p", {style: {fontSize: 12}, className: this.state.pfColor}, "  ", this.state.two)), 
+          React.createElement(Col, {  sm: 1}, " ", this.state.owo), 
           React.createElement(Col, {  sm: 3}, " ", this.state.record), 
         React.createElement(Col, {  sm: 1}, "  ", React.createElement(Link, {to: 'report-edit/' + this.state.reportID}, 
             React.createElement(Button, {bsSize: "xsmall"}, React.createElement(Glyphicon, {glyph: "edit"}), " ")), " ")
