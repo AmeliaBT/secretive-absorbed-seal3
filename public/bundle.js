@@ -59831,24 +59831,22 @@ class RIlistAll2 extends React.Component {
                
               
       /* 
-       < FilterA />   */
+       < FilterA />  className="well"  className="myForm"*/
  React.createElement(Row, null, " ", React.createElement("p", {className: "filter_msg"}, this.state.filterAB, "   ")), 
 React.createElement(Row, null, 
-   React.createElement(Col, {xs: 1}, React.createElement("div", {className: "well"}, 
-     
-     
+   React.createElement(Col, {xs: 2}, React.createElement("div", {className: "well"}, 
       React.createElement(FilterA, {handleData: this.handleParentData}), 
      React.createElement("br", null)
-     /* < FilterB handleDataB ={this.handleParentDataB} /> */
+    
      
    ), " "), 
   
   
-  React.createElement(Col, {xs: 11}, " ", React.createElement("div", null, 
+  React.createElement(Col, {xs: 10}, " ", React.createElement("div", null, 
     
     
          
-React.createElement(Table, {className: "myForm"}, 
+React.createElement(Table, null, 
                  
             React.createElement(Row, null, 
              React.createElement(Col, {sm: 1}, " ", React.createElement("b", null, "RI "), "  "), 
@@ -59858,7 +59856,7 @@ React.createElement(Table, {className: "myForm"},
                React.createElement(Col, { sm: 1}, React.createElement("b", null, " Date Inspected"), " "), 
               React.createElement(Col, { sm: 1}, React.createElement("b", null, "Pass /Fail "), " "), 
                React.createElement(Col, {sm: 1}, " ", React.createElement("b", null, "Lot Size "), " "), 
-              React.createElement(Col, {sm: 3}, " ", React.createElement("b", null, "Comment"), " "), 
+              React.createElement(Col, {sm: 2}, " ", React.createElement("b", null, "Comment"), " "), 
                React.createElement(Col, {sm: 1}, " ", React.createElement("b", null, "View "), " ")
            ), 
         

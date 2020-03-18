@@ -239,24 +239,22 @@ class RIlistAll2 extends React.Component {
                
               
       {/* 
-       < FilterA />   */}   
+       < FilterA />  className="well"  className="myForm"*/}   
  <Row> <p className="filter_msg">{this.state.filterAB}   </p></Row>     
 <Row > 
-   <Col xs={1} ><div  className="well" > 
-     
-     
+   <Col xs={2} ><div className="well"   >   
       < FilterA handleData ={this.handleParentData} /> 
      <br/>
-     {/* < FilterB handleDataB ={this.handleParentDataB} /> */} 
+    
      
    </div> </Col>
   
   
-  <Col xs={11} > <div   >  
+  <Col xs={10} > <div   >  
     
     
          
-<Table className="myForm">  
+<Table >  
                  
             <Row>
              <Col sm={1}> <b>RI </b>  </Col> 
@@ -266,7 +264,7 @@ class RIlistAll2 extends React.Component {
                <Col  sm={1} ><b> Date Inspected</b> </Col> 
               <Col  sm={1} ><b>Pass /Fail </b> </Col> 
                <Col sm={1} > <b>Lot Size </b> </Col> 
-              <Col sm={3} > <b>Comment</b> </Col> 
+              <Col sm={2} > <b>Comment</b> </Col> 
                <Col sm={1} > <b>View </b> </Col> 
            </Row>
         
