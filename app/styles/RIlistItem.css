@@ -1,9 +1,18 @@
 
 
-.myTable{  border: 1px solid #F8F8F8; /*#000000' */
-}
 
+.table-row-line {
+  
+ border-bottom: 1px solid #9d9d8e;  
+   border: 1px solid #9d9d8e;  
+  margin-top: 0;
+  margin-bottom: 0;
+  color:blue;
+ 
+}
 /* 
+ font-size: small;
+  backgroung-color: pink;
 .Form {
   width: 600px;
  background: antiquewhite; 
@@ -12,15 +21,7 @@
 */
 /*
 
-.table-row-line {
-  
- border: 1px solid #9d9d8e;  
-  margin-top: 0;
-  margin-bottom: 0;
-  color:blue;
-  font-size: small;
-  backgroung-color: pink;
-}
+
 .input-row {
   padding: 50px;
  border: 1px solid #9d9d8e;  
@@ -51,4 +52,7 @@ width: 90%;
 margin: auto;
 color: rgb(157, 157, 157);
 }
+
+
+
 */
