@@ -3,7 +3,7 @@
 const React = require('react');
 const Link = require('react-router-dom').Link
 // react-bootstrap
-const {Col, Grid, Row, Button, Glyphicon , OverlayTrigger, Popover} = require('react-bootstrap');
+const {Col, Grid, Row, Button, Glyphicon } = require('react-bootstrap');
 
 const style = require('../styles/RIlistItem');
 

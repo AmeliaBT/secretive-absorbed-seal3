@@ -12769,11 +12769,11 @@ class RIlistItemAll extends React.Component {
        React.createElement(Col, { sm: 1}, " ", this.state.fwo), 
        React.createElement(Col, {  sm: 2}, " ", this.state.Gwo), 
         React.createElement(Col, {  sm: 1}, " ", this.state.jwo), 
-        React.createElement(Col, {  sm: 1}, React.createElement("span", {className: this.state.pfColor}, "  ", this.state.two)), 
+        React.createElement(Col, {  sm: 1}, React.createElement("span", {style: {fontSize: 12}, className: this.state.pfColor}, "  ", this.state.two)), 
         React.createElement(Col, {  sm: 1}, " ", this.state.owo), 
         React.createElement(Col, {  sm: 3}, " ", this.state.record), 
         React.createElement(Col, {  sm: 1}, " ", React.createElement(Link, {to: 'report-view/' + this.state.reportID}, 
-         React.createElement(Button, {bsSize: "xsmall", className: "spanGlyph"}, 
+         React.createElement(Button, {bsSize: "xsmall", style: {fontSize: 12}}, 
            React.createElement(Glyphicon, {glyph: "eye-open"}), "   ")), " ")
               
         )
@@ -59348,7 +59348,7 @@ module.exports = RIlist;
 const React = __webpack_require__(0);
 const Link = __webpack_require__(10).Link
 // react-bootstrap
-const {Col, Grid, Row, Button, Glyphicon , OverlayTrigger, Popover} = __webpack_require__(12);
+const {Col, Grid, Row, Button, Glyphicon } = __webpack_require__(12);
 
 const style = __webpack_require__(155);
 
