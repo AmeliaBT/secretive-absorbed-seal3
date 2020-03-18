@@ -5,8 +5,10 @@
  border-bottom: 1px solid #9d9d8e;  
   margin-top: 0;
   margin-bottom: 0; 
-   font-size: small;
+   
 }
+.pn-small{font-size: small;
+color:blue}
 /* 
  font-size: small;
   backgroung-color: pink;

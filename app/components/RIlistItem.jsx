@@ -4,13 +4,10 @@ const React = require('react');
 const Link = require('react-router-dom').Link
 // react-bootstrap
 const {Col, Grid, Row, Button, Glyphicon } = require('react-bootstrap');
-
 const style = require('../styles/RIlistItem');
 
-
 /* component for displaying one line of list  */
-class RIlistItem extends React.Component {
- 
+class RIlistItem extends React.Component { 
   constructor(props) {
     super(props); 
    // this.myRef = React.createRef();
@@ -59,7 +56,7 @@ class RIlistItem extends React.Component {
         <Row > 
         <Col  sm={1} >#{this.state.reportID} </Col>       
     <Col  sm={1} >#{this.state.inspector} </Col>   
-     <Col sm={1} > {this.state.fwo}</Col>
+     <Col sm={1} > <p style={{fontSize: "small"}}> {this.state.fwo} </p> </Col>
        <Col  sm={2} > {this.state.Gwo}</Col>
         <Col  sm={1} > {this.state.jwo}</Col>
         
