@@ -21,7 +21,7 @@ class RIlistItem extends React.Component {
     let jwo2;     
     if(jwo == null ){jwo2=""}else{jwo2=jwo.slice(0,-14)};
     let pfColor;
-    if(this.props.two === "Pass"){pfColor = "text-success font-size-small"}else{pfColor="text-danger font-size-small" }
+    if(this.props.two === "Pass"){pfColor = "text-success"}else{pfColor="text-danger" }
    // let two=this.props.two; //Pass / Fail
    // let owo=this.props.owo; //Lot Size
    //    let record=this.props.record;
