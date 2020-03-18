@@ -12767,7 +12767,7 @@ class RIlistItemAll extends React.Component {
         React.createElement(Col, {  sm: 1}, this.state.reportID, " "), 
        React.createElement(Col, { sm: 1}, " ", this.state.inspector), 
       
-       React.createElement(Col, { sm: 1}, " ", React.createElement("p", {style: {fontSize: 10}}, " ", this.state.fwo, " "), " "), 
+       React.createElement(Col, { sm: 1}, " ", React.createElement("p", {style: {fontSize: 12}}, " ", this.state.fwo, " "), " "), 
        React.createElement(Col, {  sm: 2}, " ", this.state.Gwo), 
         React.createElement(Col, {  sm: 1}, " ", this.state.jwo), 
         React.createElement(Col, {  sm: 1}, React.createElement("p", {style: {fontWeight: 'bold', fontSize: 14}, className: this.state.pfColor}, "  ", this.state.two)), 
@@ -59402,7 +59402,8 @@ class RIlistItem extends React.Component {
         React.createElement(Row, null, 
         React.createElement(Col, {  sm: 1}, "#", this.state.reportID, " "), 
     React.createElement(Col, {  sm: 1}, "#", this.state.inspector, " "), 
-     React.createElement(Col, { sm: 1}, " ", React.createElement("p", {style: {fontSize: "small"}}, " ", this.state.fwo, " "), " "), 
+  React.createElement(Col, { sm: 1}, " ", React.createElement("p", {style: {fontSize: 12}}, " ", this.state.fwo, " "), " "), 
+  
        React.createElement(Col, {  sm: 2}, " ", this.state.Gwo), 
         React.createElement(Col, {  sm: 1}, " ", this.state.jwo), 
         

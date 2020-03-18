@@ -56,7 +56,8 @@ class RIlistItem extends React.Component {
         <Row > 
         <Col  sm={1} >#{this.state.reportID} </Col>       
     <Col  sm={1} >#{this.state.inspector} </Col>   
-     <Col sm={1} > <p style={{fontSize: "small"}}> {this.state.fwo} </p> </Col>
+  <Col sm={1} > <p style={{fontSize: 12}}> {this.state.fwo} </p> </Col>            
+  
        <Col  sm={2} > {this.state.Gwo}</Col>
         <Col  sm={1} > {this.state.jwo}</Col>
         
