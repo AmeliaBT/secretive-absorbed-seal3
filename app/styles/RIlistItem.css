@@ -1,14 +1,11 @@
 
 
 
-.table-row-line {
-  
+.table-row-line {  
  border-bottom: 1px solid #9d9d8e;  
-   border: 1px solid #9d9d8e;  
   margin-top: 0;
-  margin-bottom: 0;
-  color:blue;
- 
+  margin-bottom: 0; 
+   font-size: small;
 }
 /* 
  font-size: small;

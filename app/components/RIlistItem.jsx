@@ -40,29 +40,17 @@ class RIlistItem extends React.Component {
       lwo: this.props.lwo,
       pfColor: pfColor
                     }
-    //this.handleOnClick = this.handleOnClick.bind(this);
-        }
-
-   handleOnClick() {
-    // <RIedit PN={this.state.fwo} />   
-  //    alert(this.state.reportID);
-   //  alert("PN: " +this.state.inspector);
- //  alert("desc" + this.state.Gwo);   
-  //  alert(this.state.reportID);
-   }
-  
-   componentWillMount() {
-    //get   supplier and pn of user by nickname
-    let that = this;
     
-  }
+        }
+   
+  
   
   
   /***********************/
   //<Link to={{ pathname: 'report-edit/' + this.state.reportID , state: { inspector: 'xyz'} }}>
   // in child const {xx} = props.location.state 
   render() {
-  //  const {report, showDelete, showDelete2} = this.props;
+ 
      const {report, showDelete, showDelete2} = this.props;
     return(
        <div>
@@ -79,7 +67,7 @@ class RIlistItem extends React.Component {
           <Col  sm={1} > {this.state.owo}</Col>
           <Col  sm={3} > {this.state.record}</Col>
         <Col  sm={1} >  <Link to={'report-edit/' + this.state.reportID  }>
-            <Button bsSize="xxsmall"  ><Glyphicon glyph="edit" /> </Button></Link> </Col>
+            <Button bsSize="xsmall"  ><Glyphicon glyph="edit" /> </Button></Link> </Col>
        
               
         </Row>

@@ -59385,29 +59385,17 @@ class RIlistItem extends React.Component {
       lwo: this.props.lwo,
       pfColor: pfColor
                     }
-    //this.handleOnClick = this.handleOnClick.bind(this);
-        }
-
-   handleOnClick() {
-    // <RIedit PN={this.state.fwo} />   
-  //    alert(this.state.reportID);
-   //  alert("PN: " +this.state.inspector);
- //  alert("desc" + this.state.Gwo);   
-  //  alert(this.state.reportID);
-   }
-  
-   componentWillMount() {
-    //get   supplier and pn of user by nickname
-    let that = this;
     
-  }
+        }
+   
+  
   
   
   /***********************/
   //<Link to={{ pathname: 'report-edit/' + this.state.reportID , state: { inspector: 'xyz'} }}>
   // in child const {xx} = props.location.state 
   render() {
-  //  const {report, showDelete, showDelete2} = this.props;
+ 
      const {report, showDelete, showDelete2} = this.props;
     return(
        React.createElement("div", null, 
@@ -59424,7 +59412,7 @@ class RIlistItem extends React.Component {
           React.createElement(Col, {  sm: 1}, " ", this.state.owo), 
           React.createElement(Col, {  sm: 3}, " ", this.state.record), 
         React.createElement(Col, {  sm: 1}, "  ", React.createElement(Link, {to: 'report-edit/' + this.state.reportID}, 
-            React.createElement(Button, {bsSize: "xxsmall"}, React.createElement(Glyphicon, {glyph: "edit"}), " ")), " ")
+            React.createElement(Button, {bsSize: "xsmall"}, React.createElement(Glyphicon, {glyph: "edit"}), " ")), " ")
        
               
         )
@@ -59449,7 +59437,7 @@ exports = module.exports = __webpack_require__(24)(false);
 
 
 // module
-exports.push([module.i, "\n\n.myTable{  border: 1px solid #F8F8F8; /*#000000' */\n}\n\n/* \n.Form {\n  width: 600px;\n background: antiquewhite; \n padding: 50px;\n border: 1px solid #9d9d8e;\n*/\n/*\n\n.table-row-line {\n  \n border: 1px solid #9d9d8e;  \n  margin-top: 0;\n  margin-bottom: 0;\n  color:blue;\n  font-size: small;\n  backgroung-color: pink;\n}\n.input-row {\n  padding: 50px;\n border: 1px solid #9d9d8e;  \n  margin-top: 0;\n  margin-bottom: 0;\n  height: 1px;\nbackground-color: azure;\npadding: 0%;\n}\n.profile-label {\n  text-align: center;\n  font-size: 30px;\n  color: black; \n  margin: 3%;\n  margin-top: 30px;\n}\n\n.profile-label {\n  text-align: center;\n  font-size: 30px;\n  color: black; \n  margin: 3%;\n  margin-top: 30px;\n}\n\n.input-label {\nwidth: 90%;\nmargin: auto;\ncolor: rgb(157, 157, 157);\n}\n*/", ""]);
+exports.push([module.i, "\n\n\n.table-row-line {  \n border-bottom: 1px solid #9d9d8e;  \n  margin-top: 0;\n  margin-bottom: 0; \n   font-size: small;\n}\n/* \n font-size: small;\n  backgroung-color: pink;\n.Form {\n  width: 600px;\n background: antiquewhite; \n padding: 50px;\n border: 1px solid #9d9d8e;\n*/\n/*\n\n\n.input-row {\n  padding: 50px;\n border: 1px solid #9d9d8e;  \n  margin-top: 0;\n  margin-bottom: 0;\n  height: 1px;\nbackground-color: azure;\npadding: 0%;\n}\n.profile-label {\n  text-align: center;\n  font-size: 30px;\n  color: black; \n  margin: 3%;\n  margin-top: 30px;\n}\n\n.profile-label {\n  text-align: center;\n  font-size: 30px;\n  color: black; \n  margin: 3%;\n  margin-top: 30px;\n}\n\n.input-label {\nwidth: 90%;\nmargin: auto;\ncolor: rgb(157, 157, 157);\n}\n\n\n\n*/", ""]);
 
 // exports
 
