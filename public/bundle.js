@@ -61347,7 +61347,8 @@ class ChartA extends React.Component {
       sel_radio_c:"", //lot size
       sel_radio_d:"", // last12 , all 
       filterAB:"",
-      modal_label: "Choose RI Reports to view"
+      modal_label: "Choose RI Reports to view",
+      showTableHead:false
       
     };
    
@@ -61592,7 +61593,8 @@ class ChartA extends React.Component {
            ["reports"]: {reports},
             "arrayOfRIs1" : arrayOfRIs1,
              "arrayOfRIs2" : arrayOfRIs2,
-             "arrLotYM":arrLotYM
+             "arrLotYM":arrLotYM,
+            showTableHead:false
           
            });
        
@@ -61642,19 +61644,8 @@ React.createElement(Chart, {
 
 React.createElement("br", null), 
   React.createElement(Table, null, 
-    TableHead, 
+    this.state.showTableHead&&{TableHead}, 
     /* 
-            <Row>
-             <Col sm={1}> <b>RI </b>  </Col> 
-                <Col sm={1} ><b> Inspector</b> </Col> 
-                <Col sm={1} ><b> Part Number </b></Col> 
-                <Col sm={2} ><b>Description </b></Col> 
-               <Col  sm={1} ><b> Date Inspected</b> </Col> 
-              <Col  sm={1} ><b>Pass /Fail </b> </Col> 
-               <Col sm={1} > <b>Lot Size </b> </Col> 
-              <Col sm={2} > <b>Comment</b> </Col> 
-               <Col sm={1} > <b>View </b> </Col> 
-           </Row>
         */
         this.state.reportsT
   ), 
