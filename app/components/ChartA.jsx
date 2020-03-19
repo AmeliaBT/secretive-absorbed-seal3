@@ -56,7 +56,7 @@ class ChartA extends React.Component {
     this.state = {
       show: false, 
       disabled: true,
-       reports: "loading..." ,
+       chart_data: "loading..." ,
       res_len:"",
        riN:"",
       model: '', 
@@ -71,7 +71,7 @@ class ChartA extends React.Component {
       sel_radio_c:"", //lot size
       sel_radio_d:"", // last12 , all 
       filterAB:"",
-      modal_label: "Choose RI Reports to view"
+      modal_label: "Choose RI chart_data to view"
       
     };
    
@@ -125,7 +125,7 @@ class ChartA extends React.Component {
        //  arrayOfRIs2= [  ["Date", "Lot Size", "Qty Tested", "Qty Fail", "Qty Rejected"]];
         arrayOfRIs2= [  ["Date", "Qty Tested", "Qty Fail"]];
        arrayOfRIs3= ["Date"];
-        let reports = response.map((el) => { 
+        let chart_data = response.map((el) => { 
        if(el.cwo !== ""){
           let myDate= new Date(el.cwo.substring(0,10));
           let myDate2= el.cwo.substring(0,4 ) +"-" +el.cwo.substring(5,7) ; 
@@ -199,7 +199,7 @@ class ChartA extends React.Component {
               + ' ' + event.sel_radio_c  
                + ' ' + event.sel_radio_d  
              ,
-          ["reports"]: <div className="reports"> {reports}  </div>
+          ["chart_data"]: <div className="reports"> {chart_data}  </div>
               
              
            });
@@ -226,12 +226,12 @@ class ChartA extends React.Component {
   }
    /***********************/
   componentWillMount() {
-    // load reports
+    // load chart_data
       let that = this;
       let xhr = new XMLHttpRequest();  
  
-    //get-all-users-reports
-      xhr.open('POST', '/get-all-users-reports', true);
+    //get-all-users-chart_data
+      xhr.open('POST', '/get-all-users-chart_data', true);
       xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
       xhr.send();
       xhr.onreadystatechange = function() {
@@ -242,7 +242,7 @@ class ChartA extends React.Component {
         }
         let response = JSON.parse(this.responseText); 
         
-         let reports = response.reports.map((el) => {          
+         let chart_data = response.reports.map((el) => {          
           if(el.cwo !== ""){
           let myDate= new Date(el.cwo.substring(0,10));
            // myDate.format("YYYY/mmm");
@@ -298,7 +298,7 @@ class ChartA extends React.Component {
         
  // 888888888     
           that.setState({
-           ["reports"]: {reports},
+           ["chart_data"]: {chart_data},
             "arrayOfRIs1" : arrayOfRIs1,
              "arrayOfRIs2" : arrayOfRIs2,
              "arrLotYM":arrLotYM
