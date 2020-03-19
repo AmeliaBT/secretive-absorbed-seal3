@@ -62661,7 +62661,8 @@ const React = __webpack_require__(0);
 const Link = __webpack_require__(10).Link
 const {Row, Col} = __webpack_require__(11);
 class TableHead extends React.Component {
-  render()  { React.createElement("div", null, " ", React.createElement(Row, null, 
+  render()  {
+     return (React.createElement("div", null, " ", React.createElement(Row, null, 
              React.createElement(Col, {sm: 1}, " ", React.createElement("b", null, "RI "), "  "), 
                 React.createElement(Col, {sm: 1}, React.createElement("b", null, " Inspector"), " "), 
                 React.createElement(Col, {sm: 1}, React.createElement("b", null, " Part Number ")), 
@@ -62671,7 +62672,7 @@ class TableHead extends React.Component {
                React.createElement(Col, {sm: 1}, " ", React.createElement("b", null, "Lot Size "), " "), 
               React.createElement(Col, {sm: 2}, " ", React.createElement("b", null, "Comment"), " "), 
                React.createElement(Col, {sm: 1}, " ", React.createElement("b", null, "View "), " ")
-           ), " ")}
+           ), " ")) }
 
 
 }

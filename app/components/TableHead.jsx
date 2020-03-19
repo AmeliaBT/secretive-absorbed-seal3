@@ -2,7 +2,8 @@ const React = require('react');
 const Link = require('react-router-dom').Link
 const {Row, Col} = require('react-bootstrap');
 class TableHead extends React.Component {
-  render()  { <div> <Row>
+  render()  {
+     return (<div> <Row>
              <Col sm={1}> <b>RI </b>  </Col> 
                 <Col sm={1} ><b> Inspector</b> </Col> 
                 <Col sm={1} ><b> Part Number </b></Col> 
@@ -12,7 +13,7 @@ class TableHead extends React.Component {
                <Col sm={1} > <b>Lot Size </b> </Col> 
               <Col sm={2} > <b>Comment</b> </Col> 
                <Col sm={1} > <b>View </b> </Col> 
-           </Row> </div>}
+           </Row> </div>) }
 
 
 }
