@@ -61273,7 +61273,8 @@ const RIlistItemAll = __webpack_require__(86);
 //const ChartA1 =require('./ChartA1');
 const  { Chart }= __webpack_require__(401); 
 
-const TableHead= React.createElement(Row, null, 
+class TableHead extends React.Component {
+  render() {React.createElement(Row, null, 
              React.createElement(Col, {sm: 1}, " ", React.createElement("b", null, "RI "), "  "), 
                 React.createElement(Col, {sm: 1}, React.createElement("b", null, " Inspector"), " "), 
                 React.createElement(Col, {sm: 1}, React.createElement("b", null, " Part Number ")), 
@@ -61283,7 +61284,7 @@ const TableHead= React.createElement(Row, null,
                React.createElement(Col, {sm: 1}, " ", React.createElement("b", null, "Lot Size "), " "), 
               React.createElement(Col, {sm: 2}, " ", React.createElement("b", null, "Comment"), " "), 
                React.createElement(Col, {sm: 1}, " ", React.createElement("b", null, "View "), " ")
-           ) 
+           ) }};
       
 let arrayOfRIs1= [  ["Date", "Lot Size"]];
 //let arrayOfRIs2= [  ["Date", "Lot Size", "Qty Tested", "Qty Fail", "Qty Rejected"]];
@@ -61476,7 +61477,8 @@ class ChartA extends React.Component {
            comment :  event.comment,  
             supplier:event.supplier,
             source: event.source,
-            destination: event.destination,             
+            destination: event.destination, 
+             showTableHead:true,
             filterAB:'Showing ' + res_len +' results for ' 
              + event.riN
              + ' ' +event.model  
@@ -61644,7 +61646,7 @@ React.createElement(Chart, {
 
 React.createElement("br", null), 
   React.createElement(Table, null, 
-    this.state.showTableHead&&{TableHead}, 
+    this.state.showTableHead && React.createElement(TableHead, null), 
     /* 
         */
         this.state.reportsT
