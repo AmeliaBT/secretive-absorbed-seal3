@@ -9,6 +9,18 @@ const RIlistItemAll = require('./RIlistItemAll');
 //const ChartA1 =require('./ChartA1');
 const  { Chart }= require('react-google-charts'); 
 
+const TableHead= <Row>
+             <Col sm={1}> <b>RI </b>  </Col> 
+                <Col sm={1} ><b> Inspector</b> </Col> 
+                <Col sm={1} ><b> Part Number </b></Col> 
+                <Col sm={2} ><b>Description </b></Col> 
+               <Col  sm={1} ><b> Date Inspected</b> </Col> 
+              <Col  sm={1} ><b>Pass /Fail </b> </Col> 
+               <Col sm={1} > <b>Lot Size </b> </Col> 
+              <Col sm={2} > <b>Comment</b> </Col> 
+               <Col sm={1} > <b>View </b> </Col> 
+           </Row> 
+      
 let arrayOfRIs1= [  ["Date", "Lot Size"]];
 //let arrayOfRIs2= [  ["Date", "Lot Size", "Qty Tested", "Qty Fail", "Qty Rejected"]];
 let arrayOfRIs2= [  ["Date", "Qty Tested", "Qty Fail"]];
@@ -366,7 +378,8 @@ class ChartA extends React.Component {
 
 <br/>
   <Table >  
-                 
+    {TableHead  }
+    {/* 
             <Row>
              <Col sm={1}> <b>RI </b>  </Col> 
                 <Col sm={1} ><b> Inspector</b> </Col> 
@@ -378,7 +391,7 @@ class ChartA extends React.Component {
               <Col sm={2} > <b>Comment</b> </Col> 
                <Col sm={1} > <b>View </b> </Col> 
            </Row>
-        
+        */}
         {this.state.reportsT}
   </Table>    
     

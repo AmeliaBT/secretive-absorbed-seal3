@@ -59918,7 +59918,7 @@ exports = module.exports = __webpack_require__(24)(false);
 
 
 // module
-exports.push([module.i, "\nul,\nol {\n  list-style: none;\n  margin: 0;\n  padding: 0;\n}\n\n.filter_input_a {\n width: 90%;\n  background-color: white;\n   \n}\n.filter_lbl{\n  font-size: 12px;\n  font-weight: normal;\ncolor: black;}\n\nlabel {\n  cursor: pointer;\n  font-color: red;\n}\n\nlabel span {\n  display: inline-block;\n  padding: 0 0 0 1px;\n}\n\n/* \n\n font-family: sans-serif;\n  text-align: center;\nbody {\n\n  margin: 0;\n  font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Roboto\", \"Oxygen\",\n    \"Ubuntu\", \"Cantarell\", \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\",\n    sans-serif;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n\ncode {\n  font-family: source-code-pro, Menlo, Monaco, Consolas, \"Courier New\",\n    monospace;\n}\n\nul,\nol {\n  list-style: none;\n  margin: 0;\n  padding: 0;\n}\n\n.App {\n  max-width: 500px;\n  margin: 50px auto;\n}\n\nstrong {\n  margin-bottom: 10px;\n  display: block;\n  font-size: 25px;\n}\n\nlabel {\n  cursor: pointer;\n}\n\nlabel span {\n  display: inline-block;\n  padding: 0 0 0 10px;\n}\n\n*/", ""]);
+exports.push([module.i, "\nul,\nol {\n  list-style: none;\n  margin: 0;\n  padding: 0;\n}\n\n.filter_input_a {\n width: 90%;\n  background-color: white;\n   \n}\n.filter_lbl{\n  font-size: 12px;\n  font-weight: normal;\ncolor: black;}\n\nlabel {\n  cursor: pointer;\n  font-color: red;\n}\n\nlabel span {\n  display: inline-block;\n  padding: 0 0 0 1px;\n}\nbody {\n    padding: 5px\n}\n/* \n\n font-family: sans-serif;\n  text-align: center;\nbody {\n\n  margin: 0;\n  font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Roboto\", \"Oxygen\",\n    \"Ubuntu\", \"Cantarell\", \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\",\n    sans-serif;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n\ncode {\n  font-family: source-code-pro, Menlo, Monaco, Consolas, \"Courier New\",\n    monospace;\n}\n\nul,\nol {\n  list-style: none;\n  margin: 0;\n  padding: 0;\n}\n\n.App {\n  max-width: 500px;\n  margin: 50px auto;\n}\n\nstrong {\n  margin-bottom: 10px;\n  display: block;\n  font-size: 25px;\n}\n\nlabel {\n  cursor: pointer;\n}\n\nlabel span {\n  display: inline-block;\n  padding: 0 0 0 10px;\n}\n\n*/", ""]);
 
 // exports
 
@@ -61273,6 +61273,18 @@ const RIlistItemAll = __webpack_require__(86);
 //const ChartA1 =require('./ChartA1');
 const  { Chart }= __webpack_require__(401); 
 
+const TableHead= React.createElement(Row, null, 
+             React.createElement(Col, {sm: 1}, " ", React.createElement("b", null, "RI "), "  "), 
+                React.createElement(Col, {sm: 1}, React.createElement("b", null, " Inspector"), " "), 
+                React.createElement(Col, {sm: 1}, React.createElement("b", null, " Part Number ")), 
+                React.createElement(Col, {sm: 2}, React.createElement("b", null, "Description ")), 
+               React.createElement(Col, { sm: 1}, React.createElement("b", null, " Date Inspected"), " "), 
+              React.createElement(Col, { sm: 1}, React.createElement("b", null, "Pass /Fail "), " "), 
+               React.createElement(Col, {sm: 1}, " ", React.createElement("b", null, "Lot Size "), " "), 
+              React.createElement(Col, {sm: 2}, " ", React.createElement("b", null, "Comment"), " "), 
+               React.createElement(Col, {sm: 1}, " ", React.createElement("b", null, "View "), " ")
+           ) 
+      
 let arrayOfRIs1= [  ["Date", "Lot Size"]];
 //let arrayOfRIs2= [  ["Date", "Lot Size", "Qty Tested", "Qty Fail", "Qty Rejected"]];
 let arrayOfRIs2= [  ["Date", "Qty Tested", "Qty Fail"]];
@@ -61630,19 +61642,20 @@ React.createElement(Chart, {
 
 React.createElement("br", null), 
   React.createElement(Table, null, 
-                 
-            React.createElement(Row, null, 
-             React.createElement(Col, {sm: 1}, " ", React.createElement("b", null, "RI "), "  "), 
-                React.createElement(Col, {sm: 1}, React.createElement("b", null, " Inspector"), " "), 
-                React.createElement(Col, {sm: 1}, React.createElement("b", null, " Part Number ")), 
-                React.createElement(Col, {sm: 2}, React.createElement("b", null, "Description ")), 
-               React.createElement(Col, { sm: 1}, React.createElement("b", null, " Date Inspected"), " "), 
-              React.createElement(Col, { sm: 1}, React.createElement("b", null, "Pass /Fail "), " "), 
-               React.createElement(Col, {sm: 1}, " ", React.createElement("b", null, "Lot Size "), " "), 
-              React.createElement(Col, {sm: 2}, " ", React.createElement("b", null, "Comment"), " "), 
-               React.createElement(Col, {sm: 1}, " ", React.createElement("b", null, "View "), " ")
-           ), 
-        
+    TableHead, 
+    /* 
+            <Row>
+             <Col sm={1}> <b>RI </b>  </Col> 
+                <Col sm={1} ><b> Inspector</b> </Col> 
+                <Col sm={1} ><b> Part Number </b></Col> 
+                <Col sm={2} ><b>Description </b></Col> 
+               <Col  sm={1} ><b> Date Inspected</b> </Col> 
+              <Col  sm={1} ><b>Pass /Fail </b> </Col> 
+               <Col sm={1} > <b>Lot Size </b> </Col> 
+              <Col sm={2} > <b>Comment</b> </Col> 
+               <Col sm={1} > <b>View </b> </Col> 
+           </Row>
+        */
         this.state.reportsT
   ), 
     
