@@ -5,6 +5,7 @@ const style = require('../styles/HomePage');
 const {Table , Grid, Row, Col, Modal} = require('react-bootstrap');
 const Header = require('./Header');
 const FilterA =require('./FilterA');
+const RIlistItemAll = require('./RIlistItemAll');
 //const ChartA1 =require('./ChartA1');
 const  { Chart }= require('react-google-charts'); 
 
