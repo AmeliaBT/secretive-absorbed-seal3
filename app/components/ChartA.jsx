@@ -149,7 +149,7 @@ class ChartA extends React.Component {
             return         
           
         });
-      
+      //for the table
         let reportsT = response.map((el) => {          
           return <RIlistItemAll  key={el.reportID}
            reportnumber={el.reportID}  
