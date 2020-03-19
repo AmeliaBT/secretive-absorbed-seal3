@@ -61414,6 +61414,21 @@ class ChartA extends React.Component {
           
         });
       
+        let reportsT = response.map((el) => {          
+          return React.createElement(RIlistItemAll, {key: el.reportID, 
+           reportnumber: el.reportID, 
+           inspector: el.inspector, 
+             fwo: el.fwo, 
+           Gwo: el.Gwo, 
+           jwo: el.jwo, 
+           two: el.two, 
+           owo: el.owo, 
+           record: el.record, 
+           lwo: el.lwo}
+            ) 
+        });
+        
+        
          Array.prototype.unique = function () {
   return [...new Set(this)]
 }
@@ -61463,9 +61478,9 @@ class ChartA extends React.Component {
               + ' ' + event.sel_radio_c  
                + ' ' + event.sel_radio_d  
              ,
-          ["reports"]: React.createElement("div", {className: "reports"}, " ", reports, "  ")
+          ["reports"]: React.createElement("div", {className: "reports"}, " ", reports, "  "),
               
-             
+                ["reportsT"]: React.createElement("div", {className: "reports"}, " ", reportsT, "  ") 
            });
        }
     
@@ -61613,6 +61628,28 @@ React.createElement(Chart, {
     ), 
   
 
+React.createElement("br", null), 
+  React.createElement(Table, null, 
+                 
+            React.createElement(Row, null, 
+             React.createElement(Col, {sm: 1}, " ", React.createElement("b", null, "RI "), "  "), 
+                React.createElement(Col, {sm: 1}, React.createElement("b", null, " Inspector"), " "), 
+                React.createElement(Col, {sm: 1}, React.createElement("b", null, " Part Number ")), 
+                React.createElement(Col, {sm: 2}, React.createElement("b", null, "Description ")), 
+               React.createElement(Col, { sm: 1}, React.createElement("b", null, " Date Inspected"), " "), 
+              React.createElement(Col, { sm: 1}, React.createElement("b", null, "Pass /Fail "), " "), 
+               React.createElement(Col, {sm: 1}, " ", React.createElement("b", null, "Lot Size "), " "), 
+              React.createElement(Col, {sm: 2}, " ", React.createElement("b", null, "Comment"), " "), 
+               React.createElement(Col, {sm: 1}, " ", React.createElement("b", null, "View "), " ")
+           ), 
+        
+        this.state.reportsT
+  ), 
+    
+    
+    
+    
+    
   React.createElement(Modal, {show: this.state.show, onHide: this.handleClose}, "  ")
     
     )

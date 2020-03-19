@@ -150,6 +150,21 @@ class ChartA extends React.Component {
           
         });
       
+        let reportsT = response.map((el) => {          
+          return <RIlistItemAll  key={el.reportID}
+           reportnumber={el.reportID}  
+           inspector={el.inspector}
+             fwo={el.fwo}     
+           Gwo={el.Gwo}
+           jwo={el.jwo}
+           two={el.two}
+           owo={el.owo}
+           record={el.record}
+           lwo ={el.lwo}       
+            /> 
+        });
+        
+        
          Array.prototype.unique = function () {
   return [...new Set(this)]
 }
@@ -199,9 +214,9 @@ class ChartA extends React.Component {
               + ' ' + event.sel_radio_c  
                + ' ' + event.sel_radio_d  
              ,
-          ["reports"]: <div className="reports"> {reports}  </div>
+          ["reports"]: <div className="reports"> {reports}  </div>,
               
-             
+                ["reportsT"]: <div className="reports"> {reportsT}  </div> 
            });
        }
     
@@ -349,6 +364,28 @@ class ChartA extends React.Component {
     />
   
 
+<br/>
+  <Table >  
+                 
+            <Row>
+             <Col sm={1}> <b>RI </b>  </Col> 
+                <Col sm={1} ><b> Inspector</b> </Col> 
+                <Col sm={1} ><b> Part Number </b></Col> 
+                <Col sm={2} ><b>Description </b></Col> 
+               <Col  sm={1} ><b> Date Inspected</b> </Col> 
+              <Col  sm={1} ><b>Pass /Fail </b> </Col> 
+               <Col sm={1} > <b>Lot Size </b> </Col> 
+              <Col sm={2} > <b>Comment</b> </Col> 
+               <Col sm={1} > <b>View </b> </Col> 
+           </Row>
+        
+        {this.state.reportsT}
+  </Table>    
+    
+    
+    
+    
+    
   <Modal show={this.state.show} onHide={this.handleClose}>  </Modal>
     
     </div>
