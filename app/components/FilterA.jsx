@@ -31,7 +31,9 @@ class FilterA extends React.Component {
     this.onRadioChangeC = this.onRadioChangeC.bind(this);
     this.onRadioChangeD = this.onRadioChangeD.bind(this);
 }  
-submitForm(e) { e.preventDefault();  
+submitForm(e) { 
+  e.preventDefault(); 
+  //check if any filter was set
   this.props.handleData(this.state) } ;  
 
   clearForm() {
@@ -47,7 +49,7 @@ submitForm(e) { e.preventDefault();
   source:'',
   destination:'',
        riN:"",
-      clearFilter:true
+      clearFilter:true //do not load table
          
     }); 
   }
@@ -56,6 +58,7 @@ submitForm(e) { e.preventDefault();
    handleChangeValue(event) {
      const target = event.target;
       const value = target.value;
+     if (value !== ''){this.setState( {clearFilter:false})};
       const name = target.name;
       this.setState({ [name]: value });
   }
