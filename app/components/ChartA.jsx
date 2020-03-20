@@ -93,7 +93,7 @@ class ChartA extends React.Component {
     handleParentData(event) {
        let reportsT ;  
       let clearFilter=event.clearFilter;
-        alert("clearFilter " + clearFilter);
+       // alert("clearFilter " + clearFilter);
       let that = this;
       let xhr = new XMLHttpRequest();  
       xhr.open('POST', '/create-filtered-table2', true);
@@ -172,7 +172,8 @@ class ChartA extends React.Component {
            lwo ={el.lwo}       
             /> 
         });
-      }else{reportsT = null}
+      }else{reportsT = null;
+          this.setState( {showTableHead:false}) }
         
          Array.prototype.unique = function () {
   return [...new Set(this)]
@@ -209,7 +210,7 @@ class ChartA extends React.Component {
             supplier:event.supplier,
             source: event.source,
             destination: event.destination, 
-             showTableHead:true,
+//showTableHead:true,
             filterAB:'Showing ' + res_len +' results for ' 
              + event.riN
              + ' ' +event.model  
