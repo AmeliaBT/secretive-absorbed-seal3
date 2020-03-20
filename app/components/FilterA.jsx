@@ -45,7 +45,8 @@ submitForm(e) { e.preventDefault();
       supplier:'',
   source:'',
   destination:'',
-       riN:""
+       riN:"",
+      clearFilter:true
          
     }); 
   }

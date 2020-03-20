@@ -9,8 +9,7 @@ const RIlistItemAll = require('./RIlistItemAll');
 //const ChartA1 =require('./ChartA1');
 const  { Chart }= require('react-google-charts'); 
 const TableHead =require('./TableHead');
-
-      
+   
 let arrayOfRIs1= [  ["Date", "Lot Size"]];
 //let arrayOfRIs2= [  ["Date", "Lot Size", "Qty Tested", "Qty Fail", "Qty Rejected"]];
 let arrayOfRIs2= [  ["Date", "Qty Tested", "Qty Fail"]];
@@ -21,7 +20,7 @@ let MyChartRI2;
 let arrayOfYM;
 let arrLotYM;
 let arrayOfRIsPF=[];
-    
+ 
 
 //let optionsCh2={title: 'Lot Qty '};
 let optionsCh1 ={  title: 'Receiving Inspection',
@@ -74,7 +73,8 @@ class ChartA extends React.Component {
       sel_radio_d:"", // last12 , all 
       filterAB:"",
       modal_label: "Choose RI Reports to view",
-      showTableHead:false
+      showTableHead:false,
+      clearFilter:false
       
     };
    
@@ -91,6 +91,7 @@ class ChartA extends React.Component {
    
  
     handleParentData(event) {
+       let reportsT ;  
       let that = this;
       let xhr = new XMLHttpRequest();  
       xhr.open('POST', '/create-filtered-table2', true);
@@ -120,6 +121,7 @@ class ChartA extends React.Component {
         }
      
      
+        let clearFilter=event.clearFilter;
         
         
         let response = JSON.parse(this.responseText);
@@ -153,7 +155,10 @@ class ChartA extends React.Component {
           
         });
       //for the table
-        let reportsT = response.map((el) => {          
+       // let reportsT ;
+        if (clearFilter === false){
+          alert("clearFilter " + clearFilter)
+      reportsT = response.map((el) => {          
           return <RIlistItemAll  key={el.reportID}
            reportnumber={el.reportID}  
            inspector={el.inspector}
@@ -166,7 +171,7 @@ class ChartA extends React.Component {
            lwo ={el.lwo}       
             /> 
         });
-        
+      }else{reportsT = null}
         
          Array.prototype.unique = function () {
   return [...new Set(this)]
