@@ -6,12 +6,10 @@ const {Table , Grid, Row, Col, Modal} = require('react-bootstrap');
 const Header = require('./Header');
 const FilterA =require('./FilterA');
 const RIlistItemAll = require('./RIlistItemAll');
-//const ChartA1 =require('./ChartA1');
 const  { Chart }= require('react-google-charts'); 
 const TableHead =require('./TableHead');
    
 let arrayOfRIs1= [  ["Date", "Lot Size"]];
-//let arrayOfRIs2= [  ["Date", "Lot Size", "Qty Tested", "Qty Fail", "Qty Rejected"]];
 let arrayOfRIs2= [  ["Date", "Qty Tested", "Qty Fail"]];
 let arrayOfRIs3= ["Date"];
 let uniqueYM;
@@ -21,8 +19,6 @@ let arrayOfYM;
 let arrLotYM;
 let arrayOfRIsPF=[];
  
-
-//let optionsCh2={title: 'Lot Qty '};
 let optionsCh2 ={
         title: 'Lot Acceptance Rates Grouped by Month',
         timeline: { groupByRowLabel: true  },
@@ -30,26 +26,17 @@ let optionsCh2 ={
         vAxis: {  minValue: 0 ,title: "Rate %"}, 
   legend: "none"
       };
-let optionsCh1 ={  
-              // title: 'Receiving Inspection',
-                legend: {position: "top"},
-             //  timeline: {  groupByRowLabel: true },
-              //  hAxis: {title: "Date Inspected",  format: 'MMM/yyyy'},
+let optionsCh1 ={ 
+  legend: {position: "top"},           
    hAxis: {title: "Date Inspected"},
-               vAxis: { title: "Qty", minValue: 0 },
-                legend: {position: "top"}
-}
-  // hAxis: { title: "Lot Qty", viewWindow: { min: 0, max: 15 } },
-//  vAxis: { title: "Date tested", viewWindow: { min: 0, max: 15 } },
-   //  gridlines: {color: 'red'},
-//  gridlines: {count: 15}
+   vAxis: {title: "Qty", minValue: 0 }   
+  
+};
 
-let optionsCh3 ={
-       // title: 'Qty ..',
-     //   timeline: { groupByRowLabel: true  },
-        hAxis: { title: "Date Inspected", format: 'MMM/yyyy'},
-        vAxis: {  minValue: 0, title: "Qty"},
-       legend: {position: "top"}
+let optionsCh3 ={    
+   legend: {position: "top"},
+    hAxis: { title: "Date Inspected"},
+    vAxis: { title: "Qty",  minValue: 0}      
       };
 
 /* the  page that shows all charts */
@@ -70,23 +57,20 @@ class ChartA extends React.Component {
       sel_radio_a:"",
       supplier:'',
       source:'',
-      destination:'',
-      
+      destination:'',      
       sel_radio_b:"",
       sel_radio_c:"", //lot size
       sel_radio_d:"", // last12 , all 
       filterAB:"",
       modal_label: "Choose RI Reports to view",
       showTableHead:false,
-      clearFilter:false
-      
+      clearFilter:false      
     };
    
     this.handleParentData = this.handleParentData.bind(this);
     this.handleShow = this.handleShow.bind(this);
     this.handleClose = this.handleClose.bind(this);
-    this.handleShowModal = this.handleShowModal.bind(this); 
-    
+    this.handleShowModal = this.handleShowModal.bind(this);   
 
   }
    /***********************/
@@ -96,8 +80,7 @@ class ChartA extends React.Component {
  
     handleParentData(event) {
        let reportsT ;  
-      let clearFilter=event.clearFilter;
-       // alert("clearFilter " + clearFilter);
+      let clearFilter=event.clearFilter;   
       let that = this;
       let xhr = new XMLHttpRequest();  
       xhr.open('POST', '/create-filtered-table2', true);
@@ -113,26 +96,18 @@ class ChartA extends React.Component {
                   '&owo=' + encodeURIComponent(event.sel_radio_c)+ //lot size
              '&reportID=' + encodeURIComponent(event.riN)+
             '&cwo=' + encodeURIComponent(event.sel_radio_d)//last12 , all 
-
             ;
             
       xhr.send(body);
-      xhr.onreadystatechange = function() {
-       
+      xhr.onreadystatechange = function() {       
         if (this.readyState != 4) return;
         if (this.status != 200) {
           alert( 'error: ' + (this.status ? this.statusText : 'request has not been set') );
           return;
         }
-     
-     
-       
-        
-        
-        let response = JSON.parse(this.responseText);
+       let response = JSON.parse(this.responseText);
        let res_len=response.length;
          arrayOfRIs1=[  ["Date", "Lot Qty"]];
-       //  arrayOfRIs2= [  ["Date", "Lot Size", "Qty Tested", "Qty Fail", "Qty Rejected"]];
         arrayOfRIs2= [  ["Date", "Qty Tested", "Qty Fail"]];
        arrayOfRIs3= ["Date"];
         let reports = response.map((el) => { 
@@ -144,23 +119,19 @@ class ChartA extends React.Component {
            let qtyFail= el.qwo; 
             let qtyRejected= el.rwo; 
            let pass_fail= el.two; 
-            arrayOfRIs1.push([myDate, myLot ]) ; 
-          
-        // arrayOfRIs2.push([myDate, myLot, qtyTested, qtyFail, qtyRejected ]) ;   
+            arrayOfRIs1.push([myDate, myLot ]) ;
         arrayOfRIs2.push([myDate,  qtyTested, qtyFail]) ; 
          
           // getting unique YYYY-MM
            arrayOfRIs3.push(myDate2 ) ;           
            if(pass_fail.length === null){
            arrayOfRIsPF.push([myDate2, "Fail"]);
-           }else{ arrayOfRIsPF.push([myDate2, pass_fail]);}  
-        
+           }else{ arrayOfRIsPF.push([myDate2, pass_fail]);}          
       }    
             return         
           
         });
-      //for the table
-       // let reportsT ;
+      //for the table   
         if (clearFilter === false){
         that.setState( {showTableHead:true});
       reportsT = response.map((el) => {          
@@ -177,8 +148,7 @@ class ChartA extends React.Component {
             /> 
         });
       }else{reportsT = null;
-          that.setState( {showTableHead:false}); }
-        
+          that.setState( {showTableHead:false}); }        
          Array.prototype.unique = function () {
   return [...new Set(this)]
 }
@@ -259,8 +229,6 @@ class ChartA extends React.Component {
     // load reports
       let that = this;
       let xhr = new XMLHttpRequest();  
- 
-    //get-all-users-reports
       xhr.open('POST', '/get-all-users-reports', true);
       xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
       xhr.send();
@@ -284,8 +252,7 @@ class ChartA extends React.Component {
            let qtyRejected= el.rwo; 
             let pass_fail= el.two; 
             arrayOfRIs1.push([myDate, myLot ]) ; 
-          //  arrayOfRIs2.push([myDate, myLot, qtyTested, qtyFail, qtyRejected]) ; 
-              arrayOfRIs2.push([myDate,  qtyTested, qtyFail]) ; 
+            arrayOfRIs2.push([myDate,  qtyTested, qtyFail]) ; 
             // getting unique YYYY-MM
            arrayOfRIs3.push(myDate2 ) ; //ok 
            
@@ -307,27 +274,15 @@ class ChartA extends React.Component {
     let lotN=0; //number of lots
     let lotA=0; //number of lots PASS
    for(let j=0; j< arrayOfRIsPF.length; j++ ){
-            let ym= arrayOfRIsPF[j][0];
-            
+            let ym= arrayOfRIsPF[j][0];            
           if(ym === uniqueYM[i] ) {
             lotN= lotN+1;
-            if(arrayOfRIsPF[j][1] === "Pass" ){ lotA =lotA+1;}
-           
+            if(arrayOfRIsPF[j][1] === "Pass" ){ lotA =lotA+1;}           
           }
-
-   
-   
-         
    }
-   //new Date
-     //arrLotYM.push([uniqueYM[i], lotA/lotN*100 ]) ; //ok
-   arrLotYM.push([new Date(uniqueYM[i]), lotA/lotN*100 ]) ;
+    arrLotYM.push([new Date(uniqueYM[i]), lotA/lotN*100 ]) ;
  }
-   
-    
-        
- // 888888888     
-          that.setState({
+            that.setState({
            ["reports"]: {reports},
             "arrayOfRIs1" : arrayOfRIs1,
              "arrayOfRIs2" : arrayOfRIs2,
@@ -354,16 +309,13 @@ class ChartA extends React.Component {
   <Col xs={10} > <div   >  
     <Chart
       chartType="ColumnChart"  
-   //data={this.state.arrayOfRIs2}
-  //arrLotYM
-  data={this.state.arrLotYM}
+      data={this.state.arrLotYM}
        options={optionsCh2 }
        width="100%"
        height="300px"
       
     />
- <Chart
-      //chartType="ColumnChart" 
+ <Chart   
    chartType="ScatterChart"
       data={this.state.arrayOfRIs1 }
     options={optionsCh1 }
@@ -383,15 +335,8 @@ class ChartA extends React.Component {
 <br/>
   <Table >  
     {this.state.showTableHead && <TableHead />}
-    {/* clearFilter
-        */}
-        {this.state.reportsT}
-  </Table>    
-    
-    
-    
-    
-    
+    {this.state.reportsT}
+  </Table>      
   <Modal show={this.state.show} onHide={this.handleClose}>  </Modal>
     
     </div>
@@ -407,6 +352,12 @@ module.exports = ChartA;
        
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
 
+  //  timeline: {  groupByRowLabel: true },
+              //  hAxis: {title: "Date Inspected",  format: 'MMM/yyyy'},
+  // hAxis: { title: "Lot Qty", viewWindow: { min: 0, max: 15 } },
+//  vAxis: { title: "Date tested", viewWindow: { min: 0, max: 15 } },
+   //  gridlines: {color: 'red'},
+//  gridlines: {count: 15}
 
         /* 
           <ChartA1 />
