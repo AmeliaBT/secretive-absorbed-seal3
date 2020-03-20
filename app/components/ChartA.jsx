@@ -378,7 +378,7 @@ class ChartA extends React.Component {
 <br/>
   <Table >  
     {this.state.showTableHead && <TableHead />}
-    {/* 
+    {/* clearFilter
         */}
         {this.state.reportsT}
   </Table>    

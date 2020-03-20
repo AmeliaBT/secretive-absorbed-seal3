@@ -6542,7 +6542,8 @@ class FilterA extends React.Component {
       supplier:'',
       source:'',
       destination:'',
-      riN:""
+      riN:"",
+      clearFilter:false
       
 } 
 
@@ -61643,7 +61644,7 @@ React.createElement(Chart, {
 React.createElement("br", null), 
   React.createElement(Table, null, 
     this.state.showTableHead && React.createElement(TableHead, null), 
-    /* 
+    /* clearFilter
         */
         this.state.reportsT
   ), 
