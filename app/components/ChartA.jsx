@@ -41,10 +41,10 @@ let optionsCh2 ={
   legend: "none"
       };
 let optionsCh3 ={
-        title: 'Qty ..',
+       // title: 'Qty ..',
         timeline: { groupByRowLabel: true  },
         hAxis: { format: 'MMM/yyyy'},
-        vAxis: {  minValue: 0},
+        vAxis: {  minValue: 0, title: "Qty"},
        legend: {position: "top"}
       };
 
@@ -158,7 +158,7 @@ class ChartA extends React.Component {
       //for the table
        // let reportsT ;
         if (clearFilter === false){
-        
+        that.setState( {showTableHead:true});
       reportsT = response.map((el) => {          
           return <RIlistItemAll  key={el.reportID}
            reportnumber={el.reportID}  
@@ -173,7 +173,7 @@ class ChartA extends React.Component {
             /> 
         });
       }else{reportsT = null;
-          this.setState( {showTableHead:false}) }
+          that.setState( {showTableHead:false}); }
         
          Array.prototype.unique = function () {
   return [...new Set(this)]
