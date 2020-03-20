@@ -6591,21 +6591,26 @@ submitForm(e) {
     this.setState({
       sel_radio_a: e.target.value
     });
+        if (e.target.value !== ''){this.setState( {clearFilter:false})};
+     
   }
   onRadioChangeB(e){
     this.setState({
       sel_radio_b: e.target.value
     });
+      if (e.target.value !== ''){this.setState( {clearFilter:false})};
   }
    onRadioChangeC(e){
     this.setState({
       sel_radio_c: e.target.value
     });
+       if (e.target.value !== ''){this.setState( {clearFilter:false})};
   }
   onRadioChangeD(e){
     this.setState({
       sel_radio_d: e.target.value
     });
+      if (e.target.value !== null){this.setState( {clearFilter:false})};
   }
   render() { return (        React.createElement("div", null, 
 React.createElement("form", null, 
