@@ -61297,27 +61297,31 @@ let arrayOfRIsPF=[];
  
 
 //let optionsCh2={title: 'Lot Qty '};
-let optionsCh1 ={  title: 'Receiving Inspection',
-               timeline: {  groupByRowLabel: true },
-                hAxis: {title: "Date Inspected",  format: 'MMM/yyyy'},
-               vAxis: { title: "Lot Size", minValue: 0 },
-                 legend: "none"
+let optionsCh2 ={
+        title: 'Lot Acceptance Rates Grouped by Month',
+        timeline: { groupByRowLabel: true  },
+        hAxis: { format: 'YYYY-MMM', title: "Month/Year Inspected" },
+        vAxis: {  minValue: 0 ,title: "Rate %"}, 
+  legend: "none"
+      };
+let optionsCh1 ={  
+              // title: 'Receiving Inspection',
+                legend: {position: "top"},
+             //  timeline: {  groupByRowLabel: true },
+              //  hAxis: {title: "Date Inspected",  format: 'MMM/yyyy'},
+   hAxis: {title: "Date Inspected"},
+               vAxis: { title: "Qty", minValue: 0 },
+                legend: {position: "top"}
 }
   // hAxis: { title: "Lot Qty", viewWindow: { min: 0, max: 15 } },
 //  vAxis: { title: "Date tested", viewWindow: { min: 0, max: 15 } },
    //  gridlines: {color: 'red'},
 //  gridlines: {count: 15}
-let optionsCh2 ={
-        title: 'Monthly Lot Acceptance Rates',
-        timeline: { groupByRowLabel: true  },
-        hAxis: { format: 'MMM/yyyy', title: "Date (Month) Inspected" },
-        vAxis: {  minValue: 0 ,title: "Rate %"}, 
-  legend: "none"
-      };
+
 let optionsCh3 ={
        // title: 'Qty ..',
-        timeline: { groupByRowLabel: true  },
-        hAxis: { format: 'MMM/yyyy'},
+     //   timeline: { groupByRowLabel: true  },
+        hAxis: { title: "Date Inspected", format: 'MMM/yyyy'},
         vAxis: {  minValue: 0, title: "Qty"},
        legend: {position: "top"}
       };
