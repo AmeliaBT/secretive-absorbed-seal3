@@ -61357,6 +61357,8 @@ class ChartA extends React.Component {
  
     handleParentData(event) {
        let reportsT ;  
+      let clearFilter=event.clearFilter;
+        alert("clearFilter " + clearFilter);
       let that = this;
       let xhr = new XMLHttpRequest();  
       xhr.open('POST', '/create-filtered-table2', true);
@@ -61377,8 +61379,7 @@ class ChartA extends React.Component {
             
       xhr.send(body);
       xhr.onreadystatechange = function() {
-      
-        
+       
         if (this.readyState != 4) return;
         if (this.status != 200) {
           alert( 'error: ' + (this.status ? this.statusText : 'request has not been set') );
@@ -61386,7 +61387,7 @@ class ChartA extends React.Component {
         }
      
      
-        let clearFilter=event.clearFilter;
+       
         
         
         let response = JSON.parse(this.responseText);
@@ -61422,7 +61423,7 @@ class ChartA extends React.Component {
       //for the table
        // let reportsT ;
         if (clearFilter === false){
-          alert("clearFilter " + clearFilter)
+        
       reportsT = response.map((el) => {          
           return React.createElement(RIlistItemAll, {key: el.reportID, 
            reportnumber: el.reportID, 
