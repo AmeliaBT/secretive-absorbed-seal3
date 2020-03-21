@@ -79,18 +79,16 @@ class RIlistAll extends React.Component {
             /> 
         });
         
-           
-         let arrLotYM;
-        alert("hi "  );
+    alert("hi  reports" +reports);       
+  let arrLotYM=[];
+       
      for(let i=1; i< 5; i++){ 
  arrLotYM.push(["m-y" +i, "rate" +i]) ;}
         
         
-        alert("hi " +arrLotYM );
+        alert("hi  arrLotYM: " +arrLotYM );
         let reportsM = arrLotYM.map((el) => {
-          return 
-        
-          <RIlistItemMonth
+          return  <RIlistItemMonth
                     month_year={el[0]}
                     lar={el[1]}  
                    
@@ -131,7 +129,7 @@ class RIlistAll extends React.Component {
   </Table>  
          <Modal show={this.state.show} onHide={this.handleClose}>  </Modal>
    
-  
+  <p> </p>
     </div>
    
 

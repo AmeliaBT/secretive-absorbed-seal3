@@ -59469,17 +59469,16 @@ class RIlistAll extends React.Component {
             ) 
         });
         
-           
-         let arrLotYM;  
+    alert("hi  reports" +reports);       
+  let arrLotYM=[];
+       
      for(let i=1; i< 5; i++){ 
  arrLotYM.push(["m-y" +i, "rate" +i]) ;}
         
         
-        alert("hi " +arrLotYM );
+        alert("hi  arrLotYM: " +arrLotYM );
         let reportsM = arrLotYM.map((el) => {
-          return 
-        
-          React.createElement(RIlistItemMonth, {
+          return  React.createElement(RIlistItemMonth, {
                     month_year: el[0], 
                     lar: el[1]}
                    
@@ -59518,9 +59517,9 @@ React.createElement(Table, {className: "myForm"},
         
         this.state.reportsM
   ), 
-         React.createElement(Modal, {show: this.state.show, onHide: this.handleClose}, "  ")
+         React.createElement(Modal, {show: this.state.show, onHide: this.handleClose}, "  "), 
    
-  
+  React.createElement("p", null, " ")
     )
    
 
