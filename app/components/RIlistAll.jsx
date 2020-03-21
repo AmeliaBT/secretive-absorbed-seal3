@@ -122,11 +122,12 @@ class RIlistAll extends React.Component {
 }     
     
      uniqueYM = arrayOfRIs3.unique();
-   alert("uniqueYM: " + uniqueYM)  ;   
+  // alert("uniqueYM: " + uniqueYM)  ;   
   arrLotYM=[["Y-M", "LAR"]]; //[Y-M , LAR (sum of lot  PASS/all lots)
         
         
-     for(let i=1; i< uniqueYM.length; i++){ 
+    // for(let i=1; i< uniqueYM.length; i++){ 
+           for(let i=1; i< 9; i++){ 
     let lotN=0; //number of lots
     let lotA=0; //number of lots PASS
    for(let j=0; j< arrayOfRIsPF.length; j++ ){
@@ -136,13 +137,14 @@ class RIlistAll extends React.Component {
             if(arrayOfRIsPF[j][1] === "Pass" ){ lotA =lotA+1;}           
           }           
    }
-
+alert(" hi from i= " +i);
    arrLotYM.push([new Date(uniqueYM[i]), lotA/lotN*100 ]) ;
        
-       return <RIlistItemMonth
+     return <RIlistItemMonth
           month_year={new Date(uniqueYM[i])}
           lar={lotA/lotN*100}               
             /> 
+             
  }   
         
         

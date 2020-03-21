@@ -9,8 +9,11 @@ const style = require('../styles/RIlistItem');
 class RIlistItemMonth extends React.Component {
  
   constructor(props) {
+    alert("hi");
+    alert(this.props.month_year);
     super(props);  
 
+    
     this.state = {
   
   month_year: this.props.month_year,
