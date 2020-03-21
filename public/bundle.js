@@ -59248,11 +59248,13 @@ class RIlist extends React.Component {
  arrLotYM.push(["m-y" +i, "rate" +i]) ;}
         alert("hi " +arrLotYM );
         let reportsM = arrLotYM.map((el) => {
-          return React.createElement(RIlistItemMonth, {
-                    month_year: el[0], 
-                    lar: el.lar}
+          return 
+          /*
+          <RIlistItemMonth
+                    month_year={el[0]}
+                    lar={el[1]}  
                    
-            ) 
+            /> */
         });   
     
         
