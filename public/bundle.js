@@ -6459,64 +6459,6 @@ class RIlistItemAll extends React.Component {
 module.exports = RIlistItemAll ;
 
 
-   {/* 
-   btn-lg - LARGE
-
-btn-sm - SMALL
-
-btn-xs - Very small
-   <Button bsSize="xsmall" >
-   class="btn btn-primary btn-xs"
-    <Row>
-             <Col sm={1}> <b>RI </b>  </Col> 
-                <Col sm={1} ><b> Inspector</b> </Col> 
-                <Col sm={1} ><b> PN </b></Col> 
-                <Col sm={2} ><b>Description n </b></Col> 
-               <Col  sm={1} ><b> Date Inspected</b> </Col> 
-              <Col  sm={1} ><b>Pass / Fail </b> </Col> 
-               <Col sm={1} > <b>Lot Size </b> </Col> 
-              <Col sm={3} > <b>Comment</b> </Col> 
-               <Col sm={1} > <b>View </b> </Col> 
-           </Row>
-   
-   
-<div className="book-all">
-     <img src={this.state.img_url} alt="book pic" className="img-all"/>*/}
-/* 
-
-        <div className="bookname-all">{this.state.reportID}</div>
-        <div className="exchange-btn-all" onClick={() => this.props.showModal(this.props.reportID, this.props.inspector)}>ListItem</div>
-         <OverlayTrigger
-            trigger={['hover', 'focus']}
-            placement="bottom"
-            overlay={this.state.tooltip}
-          >
-              <div className="nickname-all">Inspector: {this.state.inspector}</div>
-             
-          </OverlayTrigger>
-      </div>
-
-
-<tr>
-        <td className="input-row">#{this.state.reportID}</td>
-        <td className="input-row">{this.state.fwo}</td>
-        <td className="input-row">{this.state.Gwo}</td>
-        <td className="input-row">{this.state.jwo}</td>
-        <td className="input-row">{this.state.two}</td>
-        <td className="input-row">{this.state.owo}</td>
-        <td className="input-row">
-         <Link to={'report-edit/' + this.state.reportID}>
-            <Button bsSize="xsmall" >Edit <Glyphicon glyph="edit"/> </Button></Link>
-        </td>
-        <td className="input-row">
-          <Button bsSize="xsmall" className="report-delete" onClick={() => showDelete(report)}>
-            Delete <Glyphicon glyph="remove-circle"/>
-          </Button>
-        </td>
-      </tr>    
-        
-
-*/
 
 /***/ }),
 /* 87 */
