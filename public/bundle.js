@@ -59530,7 +59530,7 @@ class RIlistAll extends React.Component {
 alert(" hi from i= " +i);
    arrLotYM.push([new Date(uniqueYM[i]), lotA/lotN*100 ]) ;
        
-     return React.createElement(RIlistItemMonth, {
+     React.createElement(RIlistItemMonth, {
           month_year: new Date(uniqueYM[i]), 
           lar: lotA/lotN*100}
             ) 
