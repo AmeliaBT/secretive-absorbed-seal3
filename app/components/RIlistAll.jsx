@@ -141,8 +141,10 @@ alert(" hi from i= " +i);
    arrLotYM.push([new Date(uniqueYM[i]), lotA/lotN*100 ]) ;
        
      <RIlistItemMonth
-          month_year={new Date(uniqueYM[i])}
-          lar={lotA/lotN*100}               
+          //month_year={new Date(uniqueYM[i])}
+          //lar={lotA/lotN*100}   
+       month_year={"jan " + i}
+        lar={"rate " + i}   
             /> 
              
  }   
@@ -153,9 +155,8 @@ alert(" hi from i= " +i);
  // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!           
         
            that.setState({
-          ["reportsM"]: <div className="reports">
-                      {reportsM}     
-                    </div>
+         // ["reportsM"]: <div className="reports">  {reportsM}  </div>
+              reportsM:  {arrLotYM}   
            });
        }
     
