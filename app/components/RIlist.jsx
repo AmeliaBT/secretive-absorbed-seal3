@@ -73,26 +73,26 @@ class RIlist extends React.Component {
                    lwo={el.lwo}
             /> 
         });   
+  let arrLotYM=[];  
+     for(let i=1; i< 9; i++){ 
+ arrLotYM.push(["m-y" +i, "rate" +i]) ;
         
-       for(let i=1; i< 9; i++){ 
- arrLotYM.push([new Date(uniqueYM[i]), lotA/lotN*100 ]) ;
- <RIlistItemMonth
-          //month_year={new Date(uniqueYM[i])}
-          //lar={lotA/lotN*100}   
-       month_year={"jan " + i}
-        lar={"rate " + i}   
+        let reportsM = arrLotYM.map((el) => {
+          return <RIlistItemMonth 
+                    month_year={el.month_year}
+                    lar={el.lar}  
+                   
             /> 
-             
- }  
-        
+        });   
+    
         
         
         
 //  className="pull-right"  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!    
            that.setState({
-          ["reports"]: <div className="reports">
-                      {reports}     
-                    </div>
+          ["reports"]: <div className="reports">{reports} </div>,
+             
+         ["reportsM"]: <div className="reports">{reportsM} </div>
            });
        }    
   } 
