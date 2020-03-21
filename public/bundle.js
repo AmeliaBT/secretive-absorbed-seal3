@@ -59407,7 +59407,7 @@ const style = __webpack_require__(37);
 const {Table , Grid, Row, Col, Modal} = __webpack_require__(11);
 // other components and etc
 const Header = __webpack_require__(17);
-const RIlistItemAll = __webpack_require__(388);
+const RIlistItemMonth = __webpack_require__(388);
 
 let arrayOfRIs1= [  ["Date", "Lot Size"]];
 let arrayOfRIs2= [  ["Date", "Qty Tested", "Qty Fail"]];
@@ -59497,15 +59497,16 @@ class RIlistAll extends React.Component {
            
         // end new
            
-          return React.createElement(RIlistItemMonth, {
-          key: el.reportID, 
-          reportnumber: el.reportID}
+        //  return <RIlistItemMonth
+        //  key={el.reportID}
+        //  reportnumber={el.reportID}  
               
-            ) 
+          //  /> 
         });
-        
+    alert("arrayOfRIs3: " + arrayOfRIs3)   ; 
         //new2
-  uniqueYM = arrayOfRIs3.unique();
+     uniqueYM = arrayOfRIs3.unique();
+   alert("uniqueYM: " + uniqueYM)  ;   
   arrLotYM=[["Y-M", "LAR"]]; //[Y-M , LAR (sum of lot  PASS/all lots)
      for(let i=1; i< uniqueYM.length; i++){ 
     let lotN=0; //number of lots
@@ -59614,10 +59615,7 @@ class RIlistItemMonth extends React.Component {
         }
 
    componentWillMount() {
-    //get   supplier and pn of user by nickname
-    //let that = this;
-    //  const xhr = new XMLHttpRequest();
-     
+      
   }
   /***********************/
   render() {
@@ -59629,15 +59627,16 @@ class RIlistItemMonth extends React.Component {
       
         React.createElement(Row, null, 
         React.createElement(Col, {  sm: 1}, this.state.month_year, " "), 
-       React.createElement(Col, { sm: 1}, " ", this.state.lar), 
-      
-       React.createElement(Col, { sm: 1}, " ", React.createElement("p", {style: {fontSize: 12}}, " ", this.state.fwo, " "), " "), 
-       React.createElement(Col, {  sm: 2}, " ", this.state.Gwo), 
-        React.createElement(Col, {  sm: 1}, " ", this.state.jwo), 
-        React.createElement(Col, {  sm: 1}, React.createElement("p", {style: {fontWeight: 'bold', fontSize: 14}, className: this.state.pfColor}, "  ", this.state.two)), 
-        React.createElement(Col, {  sm: 1}, " ", this.state.owo), 
-        React.createElement(Col, {  sm: 3}, " ", this.state.record)
-        
+       React.createElement(Col, { sm: 1}, " ", this.state.lar)
+          
+     /* 
+       <Col sm={1} > <p style={{fontSize: 12}}> {this.state.fwo} </p> </Col>     
+       <Col  sm={2} > {this.state.Gwo}</Col>
+        <Col  sm={1} > {this.state.jwo}</Col>
+        <Col  sm={1}  ><p style={{fontWeight: 'bold', fontSize: 14}} className={this.state.pfColor}>  {this.state.two}</p></Col>
+        <Col  sm={1} > {this.state.owo}</Col>
+        <Col  sm={3} > {this.state.record}</Col>
+        */
               
         )
                )

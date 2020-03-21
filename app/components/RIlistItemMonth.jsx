@@ -20,10 +20,7 @@ class RIlistItemMonth extends React.Component {
         }
 
    componentWillMount() {
-    //get   supplier and pn of user by nickname
-    //let that = this;
-    //  const xhr = new XMLHttpRequest();
-     
+      
   }
   /***********************/
   render() {
@@ -36,14 +33,15 @@ class RIlistItemMonth extends React.Component {
         <Row > 
         <Col  sm={1} >{this.state.month_year} </Col>       
        <Col sm={1} > {this.state.lar}</Col>
-      
+          
+     {/* 
        <Col sm={1} > <p style={{fontSize: 12}}> {this.state.fwo} </p> </Col>     
        <Col  sm={2} > {this.state.Gwo}</Col>
         <Col  sm={1} > {this.state.jwo}</Col>
         <Col  sm={1}  ><p style={{fontWeight: 'bold', fontSize: 14}} className={this.state.pfColor}>  {this.state.two}</p></Col>
         <Col  sm={1} > {this.state.owo}</Col>
         <Col  sm={3} > {this.state.record}</Col>
-        
+        */} 
               
         </Row>
                </div>

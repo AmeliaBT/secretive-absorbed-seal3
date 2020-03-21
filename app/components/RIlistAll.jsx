@@ -17,7 +17,7 @@ const style = require('../styles/HomePage');
 const {Table , Grid, Row, Col, Modal} = require('react-bootstrap');
 // other components and etc
 const Header = require('./Header');
-const RIlistItemAll = require('./RIlistItemMonth');
+const RIlistItemMonth = require('./RIlistItemMonth');
 
 let arrayOfRIs1= [  ["Date", "Lot Size"]];
 let arrayOfRIs2= [  ["Date", "Qty Tested", "Qty Fail"]];
@@ -107,15 +107,16 @@ class RIlistAll extends React.Component {
            
         // end new
            
-          return <RIlistItemMonth
-          key={el.reportID}
-          reportnumber={el.reportID}  
+        //  return <RIlistItemMonth
+        //  key={el.reportID}
+        //  reportnumber={el.reportID}  
               
-            /> 
+          //  /> 
         });
-        
+    alert("arrayOfRIs3: " + arrayOfRIs3)   ; 
         //new2
-  uniqueYM = arrayOfRIs3.unique();
+     uniqueYM = arrayOfRIs3.unique();
+   alert("uniqueYM: " + uniqueYM)  ;   
   arrLotYM=[["Y-M", "LAR"]]; //[Y-M , LAR (sum of lot  PASS/all lots)
      for(let i=1; i< uniqueYM.length; i++){ 
     let lotN=0; //number of lots
