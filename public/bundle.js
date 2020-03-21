@@ -669,6 +669,18 @@ module.exports = exports['default'];
 
 /***/ }),
 /* 9 */
+/***/ (function(module, exports) {
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : {
+    "default": obj
+  };
+}
+
+module.exports = _interopRequireDefault;
+
+/***/ }),
+/* 10 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -729,18 +741,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
-
-/***/ }),
-/* 10 */
-/***/ (function(module, exports) {
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    "default": obj
-  };
-}
-
-module.exports = _interopRequireDefault;
 
 /***/ }),
 /* 11 */
@@ -1362,7 +1362,7 @@ function _assertThisInitialized(self) {
 /***/ (function(module, exports, __webpack_require__) {
 
 const React = __webpack_require__(0);
-const Link = __webpack_require__(9).Link
+const Link = __webpack_require__(10).Link
 // style for HEADER
 const style = __webpack_require__(229);
 // react-bootstrap
@@ -3417,7 +3417,7 @@ module.exports = exports["default"];
 "use strict";
 
 
-var _interopRequireDefault = __webpack_require__(10);
+var _interopRequireDefault = __webpack_require__(9);
 
 exports.__esModule = true;
 exports.default = void 0;
@@ -3771,7 +3771,7 @@ Button.defaultProps = defaultProps;
 "use strict";
 
 
-var _interopRequireDefault = __webpack_require__(10);
+var _interopRequireDefault = __webpack_require__(9);
 
 exports.__esModule = true;
 exports.default = style;
@@ -5354,7 +5354,7 @@ ButtonGroup.defaultProps = defaultProps;
 "use strict";
 
 
-var _interopRequireDefault = __webpack_require__(10);
+var _interopRequireDefault = __webpack_require__(9);
 
 exports.__esModule = true;
 exports.default = exports.animationEnd = exports.animationDelay = exports.animationTiming = exports.animationDuration = exports.animationName = exports.transitionEnd = exports.transitionDuration = exports.transitionDelay = exports.transitionTiming = exports.transitionProperty = exports.transform = void 0;
@@ -5946,7 +5946,7 @@ module.exports = {};
 "use strict";
 
 
-var _interopRequireDefault = __webpack_require__(10);
+var _interopRequireDefault = __webpack_require__(9);
 
 exports.__esModule = true;
 exports.default = void 0;
@@ -5981,7 +5981,7 @@ module.exports = exports["default"];
 "use strict";
 
 
-var _interopRequireDefault = __webpack_require__(10);
+var _interopRequireDefault = __webpack_require__(9);
 
 exports.__esModule = true;
 exports.default = void 0;
@@ -6379,32 +6379,77 @@ TabContent.childContextTypes = childContextTypes;
 /* 86 */
 /***/ (function(module, exports, __webpack_require__) {
 
-// style-loader: Adds some css to the DOM by adding a <style> tag
+// component item for Table View  (with edits disabled)
+const React = __webpack_require__(0);
+const Link = __webpack_require__(10).Link
+// react-bootstrap
+const {Col, Row, Button, Glyphicon , OverlayTrigger} = __webpack_require__(11);
+// style 
+const style = __webpack_require__(156);
+/* component for displaying one line of list  */
+class RIlistItemAll extends React.Component {
+ 
+  constructor(props) {
+    super(props);  
+    let jwo2;
+     let jwo=this.props.jwo;//Date Inspected:
+    if(jwo == null){jwo2=""}else{jwo2= jwo.slice(0,-14)};
+     let pfColor;
+    if(this.props.two === "Pass"){pfColor = "text-success"}else{pfColor="text-danger"};
+    this.state = {
+      //img_url: this.props.img_url,
+      inspector: this.props.inspector,
+       reportID: this.props.reportnumber,
+      fwo: this.props.fwo,
+      Gwo: this.props.Gwo,
+       jwo: jwo2, //this.props.jwo.slice(0,-14), //Date Inspected:
+      two: this.props.two, //Pass / Fail:
+       owo: this.props.owo,
+      record: this.props.record,
+      lwo: this.props.lwo,
+        pfColor: pfColor 
+ 
+            }
+        }
 
-// load the styles
-var content = __webpack_require__(386);
-if(typeof content === 'string') content = [[module.i, content, '']];
-// Prepare cssTransformation
-var transform;
+   componentWillMount() {
+    //get   supplier and pn of user by nickname
+    //let that = this;
+    //  const xhr = new XMLHttpRequest();
+     
+  }
+  /***********************/
+  render() {
+    const {report, showDelete, showDelete2} = this.props;
+    return(
+      React.createElement("div", null, 
+       
+     React.createElement("div", {className: "table-row-line"}, 
+      
+        React.createElement(Row, null, 
+        React.createElement(Col, {  sm: 1}, this.state.reportID, " "), 
+       React.createElement(Col, { sm: 1}, " ", this.state.inspector), 
+      
+       React.createElement(Col, { sm: 1}, " ", React.createElement("p", {style: {fontSize: 12}}, " ", this.state.fwo, " "), " "), 
+       React.createElement(Col, {  sm: 2}, " ", this.state.Gwo), 
+        React.createElement(Col, {  sm: 1}, " ", this.state.jwo), 
+        React.createElement(Col, {  sm: 1}, React.createElement("p", {style: {fontWeight: 'bold', fontSize: 14}, className: this.state.pfColor}, "  ", this.state.two)), 
+        React.createElement(Col, {  sm: 1}, " ", this.state.owo), 
+        React.createElement(Col, {  sm: 3}, " ", this.state.record), 
+        React.createElement(Col, {  sm: 1}, " ", React.createElement(Link, {to: 'report-view/' + this.state.reportID}, 
+         React.createElement(Button, {bsSize: "xsmall"}, 
+           React.createElement(Glyphicon, {glyph: "eye-open"}), "   ")), " ")
+              
+        )
+               )
 
-var options = {"hmr":true}
-options.transform = transform
-// add the styles to the DOM
-var update = __webpack_require__(25)(content, options);
-if(content.locals) module.exports = content.locals;
-// Hot Module Replacement
-if(false) {
-	// When the styles change, update the <style> tags
-	if(!content.locals) {
-		module.hot.accept("!!../../../rbd/pnpm-volume/dcee82c3-07d2-4a4b-8cfd-415a38ec1672/node_modules/.registry.npmjs.org/css-loader/0.28.11/node_modules/css-loader/index.js!./RIlistItem.css", function() {
-			var newContent = require("!!../../../rbd/pnpm-volume/dcee82c3-07d2-4a4b-8cfd-415a38ec1672/node_modules/.registry.npmjs.org/css-loader/0.28.11/node_modules/css-loader/index.js!./RIlistItem.css");
-			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-			update(newContent);
-		});
-	}
-	// When the module is disposed, remove the <style> tags
-	module.hot.dispose(function() { update(); });
+      )
+    );
+  }
 }
+module.exports = RIlistItemAll ;
+
+
 
 /***/ }),
 /* 87 */
@@ -6414,7 +6459,7 @@ if(false) {
 const React = __webpack_require__(0);
 const ReactDOM = __webpack_require__(12);
 
-const style = __webpack_require__(390);
+const style = __webpack_require__(389);
 
 class FilterA extends React.Component {
   constructor(props){
@@ -9306,7 +9351,7 @@ CarouselItem.defaultProps = defaultProps;
 "use strict";
 
 
-var _interopRequireDefault = __webpack_require__(10);
+var _interopRequireDefault = __webpack_require__(9);
 
 exports.__esModule = true;
 exports.default = camelizeStyleName;
@@ -9967,7 +10012,7 @@ exports.default = _default;
 "use strict";
 
 
-var _interopRequireDefault = __webpack_require__(10);
+var _interopRequireDefault = __webpack_require__(9);
 
 exports.__esModule = true;
 exports.default = activeElement;
@@ -10482,7 +10527,7 @@ ListGroupItem.defaultProps = defaultProps;
 "use strict";
 
 
-var _interopRequireDefault = __webpack_require__(10);
+var _interopRequireDefault = __webpack_require__(9);
 
 exports.__esModule = true;
 exports.default = scrollbarSize;
@@ -11759,7 +11804,7 @@ Overlay.defaultProps = defaultProps;
 "use strict";
 
 
-var _interopRequireDefault = __webpack_require__(10);
+var _interopRequireDefault = __webpack_require__(9);
 
 exports.__esModule = true;
 exports.default = offset;
@@ -11803,7 +11848,7 @@ module.exports = exports["default"];
 "use strict";
 
 
-var _interopRequireDefault = __webpack_require__(10);
+var _interopRequireDefault = __webpack_require__(9);
 
 exports.__esModule = true;
 exports.default = scrollTop;
@@ -12531,7 +12576,7 @@ ToggleButton.propTypes = propTypes;
 
 //Admin 
 const React = __webpack_require__(0);
-const Link = __webpack_require__(9).Link
+const Link = __webpack_require__(10).Link
 //const style = require('../styles/FormRI');
 const style = __webpack_require__(37);
 const Header = __webpack_require__(17);
@@ -12717,77 +12762,32 @@ module.exports = ManyRecords;
 /* 156 */
 /***/ (function(module, exports, __webpack_require__) {
 
-// component item for Table View  (with edits disabled)
-const React = __webpack_require__(0);
-const Link = __webpack_require__(9).Link
-// react-bootstrap
-const {Col, Row, Button, Glyphicon , OverlayTrigger} = __webpack_require__(11);
-// style 
-const style = __webpack_require__(86);
-/* component for displaying one line of list  */
-class RIlistItemAll extends React.Component {
- 
-  constructor(props) {
-    super(props);  
-    let jwo2;
-     let jwo=this.props.jwo;//Date Inspected:
-    if(jwo == null){jwo2=""}else{jwo2= jwo.slice(0,-14)};
-     let pfColor;
-    if(this.props.two === "Pass"){pfColor = "text-success"}else{pfColor="text-danger"};
-    this.state = {
-      //img_url: this.props.img_url,
-      inspector: this.props.inspector,
-       reportID: this.props.reportnumber,
-      fwo: this.props.fwo,
-      Gwo: this.props.Gwo,
-       jwo: jwo2, //this.props.jwo.slice(0,-14), //Date Inspected:
-      two: this.props.two, //Pass / Fail:
-       owo: this.props.owo,
-      record: this.props.record,
-      lwo: this.props.lwo,
-        pfColor: pfColor 
- 
-            }
-        }
+// style-loader: Adds some css to the DOM by adding a <style> tag
 
-   componentWillMount() {
-    //get   supplier and pn of user by nickname
-    //let that = this;
-    //  const xhr = new XMLHttpRequest();
-     
-  }
-  /***********************/
-  render() {
-    const {report, showDelete, showDelete2} = this.props;
-    return(
-      React.createElement("div", null, 
-       
-     React.createElement("div", {className: "table-row-line"}, 
-      
-        React.createElement(Row, null, 
-        React.createElement(Col, {  sm: 1}, this.state.reportID, " "), 
-       React.createElement(Col, { sm: 1}, " ", this.state.inspector), 
-      
-       React.createElement(Col, { sm: 1}, " ", React.createElement("p", {style: {fontSize: 12}}, " ", this.state.fwo, " "), " "), 
-       React.createElement(Col, {  sm: 2}, " ", this.state.Gwo), 
-        React.createElement(Col, {  sm: 1}, " ", this.state.jwo), 
-        React.createElement(Col, {  sm: 1}, React.createElement("p", {style: {fontWeight: 'bold', fontSize: 14}, className: this.state.pfColor}, "  ", this.state.two)), 
-        React.createElement(Col, {  sm: 1}, " ", this.state.owo), 
-        React.createElement(Col, {  sm: 3}, " ", this.state.record), 
-        React.createElement(Col, {  sm: 1}, " ", React.createElement(Link, {to: 'report-view/' + this.state.reportID}, 
-         React.createElement(Button, {bsSize: "xsmall"}, 
-           React.createElement(Glyphicon, {glyph: "eye-open"}), "   ")), " ")
-              
-        )
-               )
+// load the styles
+var content = __webpack_require__(386);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// Prepare cssTransformation
+var transform;
 
-      )
-    );
-  }
+var options = {"hmr":true}
+options.transform = transform
+// add the styles to the DOM
+var update = __webpack_require__(25)(content, options);
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../../rbd/pnpm-volume/dcee82c3-07d2-4a4b-8cfd-415a38ec1672/node_modules/.registry.npmjs.org/css-loader/0.28.11/node_modules/css-loader/index.js!./RIlistItem.css", function() {
+			var newContent = require("!!../../../rbd/pnpm-volume/dcee82c3-07d2-4a4b-8cfd-415a38ec1672/node_modules/.registry.npmjs.org/css-loader/0.28.11/node_modules/css-loader/index.js!./RIlistItem.css");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
 }
-module.exports = RIlistItemAll ;
-
-
 
 /***/ }),
 /* 157 */
@@ -12795,7 +12795,7 @@ module.exports = RIlistItemAll ;
 
 //used by RI Report (form with photos); editing and saving are enabled 
 const React = __webpack_require__(0);
-const Link = __webpack_require__(9).Link
+const Link = __webpack_require__(10).Link
 const {Image} = __webpack_require__(11);
 class RIphoto2 extends React.Component {
   constructor(props) {
@@ -12830,7 +12830,7 @@ module.exports = RIphoto2;
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(395);
+var content = __webpack_require__(394);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -12862,9 +12862,9 @@ const React = __webpack_require__(0);
 const { render } = __webpack_require__(12);
 
 // router
-const Route = __webpack_require__(9).Route;
-const BrowserRouter = __webpack_require__(9).BrowserRouter;
-const hashHistory = __webpack_require__(9).hashHistory;
+const Route = __webpack_require__(10).Route;
+const BrowserRouter = __webpack_require__(10).BrowserRouter;
+const hashHistory = __webpack_require__(10).hashHistory;
 
 // redux
 const { createStore } = __webpack_require__(94);
@@ -12878,14 +12878,14 @@ const Main = __webpack_require__(225);
 const RIreports = __webpack_require__(378);
 const RIlist = __webpack_require__(384);
 const RIlistAll = __webpack_require__(387); //change
-const RIlistAll2 = __webpack_require__(389); 
-const RIedit = __webpack_require__(392);
-const RIview = __webpack_require__(393);
-const SignUp = __webpack_require__(394);
-const LogIn = __webpack_require__(396);
-const HomePage = __webpack_require__(397);
+const RIlistAll2 = __webpack_require__(388); 
+const RIedit = __webpack_require__(391);
+const RIview = __webpack_require__(392);
+const SignUp = __webpack_require__(393);
+const LogIn = __webpack_require__(395);
+const HomePage = __webpack_require__(396);
 const FilterA = __webpack_require__(87);
-const ChartA = __webpack_require__(401);
+const ChartA = __webpack_require__(400);
 //const DisplayMessages= require('./components/DisplayMessages');
 //const DisplayMessagesB= require('./components/DisplayMessagesB');
 const ManyRecords =__webpack_require__(155);
@@ -48252,7 +48252,7 @@ module.exports = {
 /***/ (function(module, exports, __webpack_require__) {
 
 const React = __webpack_require__(0);
-const Link = __webpack_require__(9).Link
+const Link = __webpack_require__(10).Link
 // style for MAIN
 const style = __webpack_require__(226);
 // other components and etc
@@ -49855,7 +49855,7 @@ CarouselCaption.defaultProps = defaultProps;
 "use strict";
 
 
-var _interopRequireDefault = __webpack_require__(10);
+var _interopRequireDefault = __webpack_require__(9);
 
 exports.__esModule = true;
 exports.default = void 0;
@@ -49880,7 +49880,7 @@ exports.default = _default;
 "use strict";
 
 
-var _interopRequireDefault = __webpack_require__(10);
+var _interopRequireDefault = __webpack_require__(9);
 
 exports.__esModule = true;
 exports.default = void 0;
@@ -49950,7 +49950,7 @@ module.exports = exports["default"];
 "use strict";
 
 
-var _interopRequireDefault = __webpack_require__(10);
+var _interopRequireDefault = __webpack_require__(9);
 
 exports.__esModule = true;
 exports.default = hyphenateStyleName;
@@ -49994,7 +49994,7 @@ module.exports = exports["default"];
 "use strict";
 
 
-var _interopRequireDefault = __webpack_require__(10);
+var _interopRequireDefault = __webpack_require__(9);
 
 exports.__esModule = true;
 exports.default = _getComputedStyle;
@@ -53294,7 +53294,7 @@ Modal.BACKDROP_TRANSITION_DURATION = 150;
 "use strict";
 
 
-var _interopRequireDefault = __webpack_require__(10);
+var _interopRequireDefault = __webpack_require__(9);
 
 exports.__esModule = true;
 exports.default = void 0;
@@ -53329,7 +53329,7 @@ exports.default = _default;
 "use strict";
 
 
-var _interopRequireDefault = __webpack_require__(10);
+var _interopRequireDefault = __webpack_require__(9);
 
 exports.__esModule = true;
 exports.default = filterEvents;
@@ -53395,7 +53395,7 @@ module.exports = exports["default"];
 "use strict";
 
 
-var _interopRequireDefault = __webpack_require__(10);
+var _interopRequireDefault = __webpack_require__(9);
 
 exports.__esModule = true;
 exports.default = void 0;
@@ -54285,7 +54285,7 @@ module.exports = exports['default'];
 "use strict";
 
 
-var _interopRequireDefault = __webpack_require__(10);
+var _interopRequireDefault = __webpack_require__(9);
 
 exports.__esModule = true;
 exports.default = void 0;
@@ -54315,7 +54315,7 @@ exports.default = _default;
 "use strict";
 
 
-var _interopRequireDefault = __webpack_require__(10);
+var _interopRequireDefault = __webpack_require__(9);
 
 exports.__esModule = true;
 exports.default = addClass;
@@ -55826,7 +55826,7 @@ module.exports = exports['default'];
 "use strict";
 
 
-var _interopRequireDefault = __webpack_require__(10);
+var _interopRequireDefault = __webpack_require__(9);
 
 exports.__esModule = true;
 exports.default = position;
@@ -55905,7 +55905,7 @@ module.exports = _extends;
 "use strict";
 
 
-var _interopRequireDefault = __webpack_require__(10);
+var _interopRequireDefault = __webpack_require__(9);
 
 exports.__esModule = true;
 exports.default = offsetParent;
@@ -55938,7 +55938,7 @@ module.exports = exports["default"];
 "use strict";
 
 
-var _interopRequireDefault = __webpack_require__(10);
+var _interopRequireDefault = __webpack_require__(9);
 
 exports.__esModule = true;
 exports.default = scrollTop;
@@ -58783,7 +58783,7 @@ exports.push([module.i, "/*used:\nclassName=\"profile\"\nclassName=\"show-grid\"
 // RI Gallery WIP 
 
 const React = __webpack_require__(0);
-const Link = __webpack_require__(9).Link
+const Link = __webpack_require__(10).Link
 // style for BOOKS
 const style = __webpack_require__(379);
 // react-bootstrap
@@ -59031,7 +59031,7 @@ exports.push([module.i, "\n.btn-modal {\n  width: 49.5% !important;\n  float: ri
 
 // element for RI Gallery -WIP 
 const React = __webpack_require__(0);
-const Link = __webpack_require__(9).Link
+const Link = __webpack_require__(10).Link
 // react-bootstrap
 const {OverlayTrigger, Popover} = __webpack_require__(11);
 // style for BOOK
@@ -59168,7 +59168,7 @@ exports.push([module.i, ".book-all {\n  background: #FAFAFA; /*antiquewhite;*/\n
 
 // Edit  (no Filter); Inspector Reports only
 const React = __webpack_require__(0);
-const Link = __webpack_require__(9).Link
+const Link = __webpack_require__(10).Link
 // style for RIlist
 
 const style = __webpack_require__(37);
@@ -59240,7 +59240,22 @@ class RIlist extends React.Component {
                    record: el.record, 
                    lwo: el.lwo}
             ) 
-        });    
+        });   
+        
+       for(let i=1; i< 9; i++){ 
+ arrLotYM.push([new Date(uniqueYM[i]), lotA/lotN*100 ]) ;
+ React.createElement(RIlistItemMonth, {
+          //month_year={new Date(uniqueYM[i])}
+          //lar={lotA/lotN*100}   
+       month_year: "jan " + i, 
+        lar: "rate " + i}
+            ) 
+             
+ }  
+        
+        
+        
+        
 //  className="pull-right"  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!    
            that.setState({
           ["reports"]: React.createElement("div", {className: "reports"}, 
@@ -59290,10 +59305,10 @@ module.exports = RIlist;
 //component item for Edit   (with edits enabled)
 /* ootstrap's global default font-size is 14px, with a line-height of 1.428. This is applied to the <body> element and all paragraphs ( <p> ). In addition, all <p> elements have a bottom margin that equals half their computed line-height (10px by default).*/
 const React = __webpack_require__(0);
-const Link = __webpack_require__(9).Link
+const Link = __webpack_require__(10).Link
 // react-bootstrap
 const {Col, Grid, Row, Button, Glyphicon } = __webpack_require__(11);
-const style = __webpack_require__(86);
+const style = __webpack_require__(156);
 
 /* component for displaying one line of list  */
 class RIlistItem extends React.Component { 
@@ -59388,44 +59403,25 @@ exports.push([module.i, "\n\n\n.table-row-line {  \n border-bottom: 1px solid #9
 /* 387 */
 /***/ (function(module, exports, __webpack_require__) {
 
-// Table View  (no Filter);  Monthly stst ; All can view only
-/*
-Month-Year
-LotT
-LotA
-LAR%
-LotQty
-QtyT
-%Def
-
-*/
+// Table View  (no Filter); All can view only
 const React = __webpack_require__(0);
-const Link = __webpack_require__(9).Link
+const Link = __webpack_require__(10).Link
 // style for list
 const style = __webpack_require__(37);
 // react-bootstrap
 const {Table , Grid, Row, Col, Modal} = __webpack_require__(11);
 // other components and etc
 const Header = __webpack_require__(17);
-const RIlistItemMonth = __webpack_require__(388);
+const RIlistItemAll = __webpack_require__(86);
 
-let arrayOfRIs1= [  ["Date", "Lot Size"]];
-let arrayOfRIs2= [  ["Date", "Qty Tested", "Qty Fail"]];
-let arrayOfRIs3= ["Date"];
-let uniqueYM;
-let MyChartRI1;
-let MyChartRI2;
-let arrayOfYM;
-let arrLotYM;
-let arrayOfRIsPF=[];
-
+/* the  page that shows all reports */
 class RIlistAll extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       show: false, 
       disabled: true,
-       reportsM: "loading..." 
+       reports: "loading..." 
     };
     
     this.handleShow = this.handleShow.bind(this);
@@ -59453,12 +59449,12 @@ class RIlistAll extends React.Component {
     this.setState({ show: true });
   }
    /***********************/
- /***********************/
   componentWillMount() {
     // load reports
       let that = this;
       let xhr = new XMLHttpRequest();  
- 
+   // xhr.open('POST', '/get-user-filtered-reports', true);
+    //get-all-users-reports
       xhr.open('POST', '/get-all-users-reports', true);
       xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
       xhr.send();
@@ -59471,82 +59467,44 @@ class RIlistAll extends React.Component {
         let response = JSON.parse(this.responseText);
         
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  
+             
         
-         let reportsM = response.reports.map((el) => {
-         //new
-            if(el.cwo !== ""){
-          let myDate= new Date(el.cwo.substring(0,10));
-          let myDate2= el.cwo.substring(0,4 ) +"-" +el.cwo.substring(5,7) ; 
-           let myLot= el.owo; 
-           let qtyTested= el.pwo; 
-           let qtyFail= el.qwo; 
-            let qtyRejected= el.rwo; 
-           let pass_fail= el.two; 
-            arrayOfRIs1.push([myDate, myLot ]) ;
-            arrayOfRIs2.push([myDate,  qtyTested, qtyFail]) ; 
-             // getting unique YYYY-MM
-           arrayOfRIs3.push(myDate2 ) ;           
-           if(pass_fail.length === null){
-           arrayOfRIsPF.push([myDate2, "Fail"]);
-           }else{ arrayOfRIsPF.push([myDate2, pass_fail]);}   
-              
-              
-            }
-           
-           
-           
-        // end new
-           
-        //  return <RIlistItemMonth
-        //  key={el.reportID}
-        //  reportnumber={el.reportID}  
-              
-          //  /> 
-           return
+         let reports = response.reports.map((el) => {
+          return React.createElement(RIlistItemAll, {key: el.reportID, 
+           reportnumber: el.reportID, 
+           inspector: el.inspector, 
+             fwo: el.fwo, 
+           Gwo: el.Gwo, 
+           jwo: el.jwo, 
+           two: el.two, 
+           owo: el.owo, 
+           record: el.record, 
+           lwo: el.lwo}
+            ) 
         });
         
- //-------------------       
-     
-  Array.prototype.unique = function () {
-  return [...new Set(this)]
-}     
-    
-     uniqueYM = arrayOfRIs3.unique();
-  // alert("uniqueYM: " + uniqueYM)  ;   
-  arrLotYM=[["Y-M", "LAR"]]; //[Y-M , LAR (sum of lot  PASS/all lots)
-        
-        
-    // for(let i=1; i< uniqueYM.length; i++){ 
-           for(let i=1; i< 9; i++){ 
-    let lotN=0; //number of lots
-    let lotA=0; //number of lots PASS
-   for(let j=0; j< arrayOfRIsPF.length; j++ ){
-            let ym= arrayOfRIsPF[j][0];
-          if(ym === uniqueYM[i] ) {
-            lotN= lotN+1;
-            if(arrayOfRIsPF[j][1] === "Pass" ){ lotA =lotA+1;}           
-          }           
-   }
-alert(" hi from i= " +i);
-   arrLotYM.push([new Date(uniqueYM[i]), lotA/lotN*100 ]) ;
-       
-     React.createElement(RIlistItemMonth, {
-          //month_year={new Date(uniqueYM[i])}
-          //lar={lotA/lotN*100}   
-       month_year: "jan " + i, 
-        lar: "rate " + i}
+           
+         let reportsM = response.reports.map((el) => {
+          return React.createElement(RIlistItemMonth, {
+                   
+                   key: el.reportID, 
+           reportnumber: el.reportID, 
+           inspector: el.inspector, 
+             fwo: el.fwo, 
+           Gwo: el.Gwo, 
+           jwo: el.jwo, 
+           two: el.two, 
+           owo: el.owo, 
+           record: el.record, 
+           lwo: el.lwo}
             ) 
-             
- }   
-        
-        
-        //end of new 2
-        
+        });
  // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!           
         
            that.setState({
-         // ["reportsM"]: <div className="reports">  {reportsM}  </div>
-              reportsM:  {arrLotYM}   
+          ["reports"]: React.createElement("div", {className: "reports"}, 
+                      reports
+                    )
            });
        }
     
@@ -59556,13 +59514,6 @@ alert(" hi from i= " +i);
     return (
       React.createElement("div", null, 
         React.createElement(Header, null), 
-    
-               
-              
-      /* 
-       < FilterA />   */
-      
-
 
 
     React.createElement("div", null, 
@@ -59573,19 +59524,17 @@ React.createElement(Table, {className: "myForm"},
                  
             React.createElement(Row, null, 
              React.createElement(Col, {sm: 1}, " ", React.createElement("b", null, "RI "), "  "), 
-                React.createElement(Col, {sm: 1}, React.createElement("b", null, " Month-Year"), " "), 
-                React.createElement(Col, {sm: 1}, React.createElement("b", null, " LAR% "))
-           /* 
-                <Col sm={2} ><b>Description </b></Col> 
-               <Col  sm={1} ><b> Date Inspected</b> </Col> 
-              <Col  sm={1} ><b>Pass /Fail </b> </Col> 
-               <Col sm={1} > <b>Lot Size </b> </Col> 
-              <Col sm={3} > <b>Comment</b> </Col> 
-               <Col sm={1} > <b>View </b> </Col> 
-              */
+                React.createElement(Col, {sm: 1}, React.createElement("b", null, " Inspector"), " "), 
+                React.createElement(Col, {sm: 1}, React.createElement("b", null, " Part Number ")), 
+                React.createElement(Col, {sm: 2}, React.createElement("b", null, "Description ")), 
+               React.createElement(Col, { sm: 1}, React.createElement("b", null, " Date Inspected"), " "), 
+              React.createElement(Col, { sm: 1}, React.createElement("b", null, "Pass /Fail "), " "), 
+               React.createElement(Col, {sm: 1}, " ", React.createElement("b", null, "Lot Size "), " "), 
+              React.createElement(Col, {sm: 3}, " ", React.createElement("b", null, "Comment"), " "), 
+               React.createElement(Col, {sm: 1}, " ", React.createElement("b", null, "View "), " ")
            ), 
         
-        this.state.reportsM
+        this.state.reports
   ), 
          React.createElement(Modal, {show: this.state.show, onHide: this.handleClose}, "  ")
    
@@ -59604,73 +59553,10 @@ module.exports = RIlistAll;
 /* 388 */
 /***/ (function(module, exports, __webpack_require__) {
 
-// component item for Table View  (with edits disabled)
-const React = __webpack_require__(0);
-const Link = __webpack_require__(9).Link
-// react-bootstrap
-const {Col, Row, Button, Glyphicon , OverlayTrigger} = __webpack_require__(11);
-// style 
-const style = __webpack_require__(86);
-/* component for displaying one line of list  */
-class RIlistItemMonth extends React.Component {
- 
-  constructor(props) {
-    alert("hi");
-    alert(this.props.month_year);
-    super(props);  
-
-    
-    this.state = {
-  
-  month_year: this.props.month_year,
-         lar: this.props.lar
-      
-            }
-        }
-
-   componentWillMount() {
-      
-  }
-  /***********************/
-  render() {
-    const {report, showDelete, showDelete2} = this.props;
-    return(
-      React.createElement("div", null, 
-       
-     React.createElement("div", {className: "table-row-line"}, 
-      
-        React.createElement(Row, null, 
-        React.createElement(Col, {  sm: 1}, this.state.month_year, " "), 
-       React.createElement(Col, { sm: 1}, " ", this.state.lar)
-          
-     /* 
-       <Col sm={1} > <p style={{fontSize: 12}}> {this.state.fwo} </p> </Col>     
-       <Col  sm={2} > {this.state.Gwo}</Col>
-        <Col  sm={1} > {this.state.jwo}</Col>
-        <Col  sm={1}  ><p style={{fontWeight: 'bold', fontSize: 14}} className={this.state.pfColor}>  {this.state.two}</p></Col>
-        <Col  sm={1} > {this.state.owo}</Col>
-        <Col  sm={3} > {this.state.record}</Col>
-        */
-              
-        )
-               )
-
-      )
-    );
-  }
-}
-module.exports = RIlistItemMonth;
-
-
-
-/***/ }),
-/* 389 */
-/***/ (function(module, exports, __webpack_require__) {
-
 
 // Table View  with  Filter; All can view and  filter 
 const React = __webpack_require__(0);
-const Link = __webpack_require__(9).Link
+const Link = __webpack_require__(10).Link
 // style for list
 
 const style = __webpack_require__(37);
@@ -59681,7 +59567,7 @@ const Header = __webpack_require__(17);
 const FilterA =__webpack_require__(87);
 //const FilterB =require('./FilterB');
 
-const RIlistItemAll = __webpack_require__(156);
+const RIlistItemAll = __webpack_require__(86);
 let test = {a: 1, b: 2};
 
 /* the  page that shows all reports */
@@ -59956,13 +59842,13 @@ module.exports = RIlistAll2;
 //< SidebarB />  < FilterA />
 
 /***/ }),
-/* 390 */
+/* 389 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(391);
+var content = __webpack_require__(390);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -59987,7 +59873,7 @@ if(false) {
 }
 
 /***/ }),
-/* 391 */
+/* 390 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(24)(false);
@@ -60001,13 +59887,13 @@ exports.push([module.i, "\nul,\nol {\n  list-style: none;\n  margin: 0;\n  paddi
 
 
 /***/ }),
-/* 392 */
+/* 391 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //shows requested RI Report (form with photos); editing and saving are enabled 
 const React = __webpack_require__(0);
 const ReactDOM = __webpack_require__(12);
-const Link = __webpack_require__(9).Link
+const Link = __webpack_require__(10).Link
 const Header = __webpack_require__(17);
 const RIphoto2 = __webpack_require__(157);
 let myLink, myLink2;;
@@ -60334,13 +60220,13 @@ module.exports = RIedit;
 */
 
 /***/ }),
-/* 393 */
+/* 392 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //shows requested RI Report (form with photos); editing and saving are disabled 
 const React = __webpack_require__(0);
 const ReactDOM = __webpack_require__(12);
-const Link = __webpack_require__(9).Link
+const Link = __webpack_require__(10).Link
 //const style = require('../styles/Profile');
 const Header = __webpack_require__(17);
 const RIphoto2 = __webpack_require__(157);
@@ -60542,11 +60428,11 @@ module.exports = RIview;
 
 
 /***/ }),
-/* 394 */
+/* 393 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const React = __webpack_require__(0);
-const Link = __webpack_require__(9).Link
+const Link = __webpack_require__(10).Link
 // style for BOOKS
 const style = __webpack_require__(158);
 // other components and etc
@@ -60671,7 +60557,7 @@ class SignUp extends React.Component {
 module.exports = SignUp;
 
 /***/ }),
-/* 395 */
+/* 394 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(24)(false);
@@ -60685,11 +60571,11 @@ exports.push([module.i, ".FormSU {\n  width: 600px;\n  margin: auto;\n  margin-t
 
 
 /***/ }),
-/* 396 */
+/* 395 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const React = __webpack_require__(0);
-const Link = __webpack_require__(9).Link
+const Link = __webpack_require__(10).Link
 // style for BOOKS
 const style = __webpack_require__(158);
 // other components and etc
@@ -60792,7 +60678,7 @@ class LogIn extends React.Component {
 module.exports = LogIn;
 
 /***/ }),
-/* 397 */
+/* 396 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //RI Gallery 
@@ -60802,7 +60688,7 @@ const React = __webpack_require__(0);
 const style = __webpack_require__(37);
 // other components and etc
 const Header = __webpack_require__(17);
-const FormRI =__webpack_require__(398);
+const FormRI =__webpack_require__(397);
 // react-bootstrap
 const {Grid, Row, Col, FormControl} = __webpack_require__(11);
 
@@ -60887,14 +60773,14 @@ module.exports = HomePage;
 
 
 /***/ }),
-/* 398 */
+/* 397 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //Inspector Form
 const React = __webpack_require__(0);
-const Link = __webpack_require__(9).Link
+const Link = __webpack_require__(10).Link
 // style for BOOKS
-const style = __webpack_require__(399);
+const style = __webpack_require__(398);
 // other components and etc
 const Header = __webpack_require__(17);
 //const CreatableSelect= require('react-select');
@@ -61291,13 +61177,13 @@ href = "https://drive.google.com/file/d/19Ol1VZu646JIQE20-iSmI5Wma0I1_a_2/view?u
 */
 
 /***/ }),
-/* 399 */
+/* 398 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(400);
+var content = __webpack_require__(399);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -61322,7 +61208,7 @@ if(false) {
 }
 
 /***/ }),
-/* 400 */
+/* 399 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(24)(false);
@@ -61336,19 +61222,19 @@ exports.push([module.i, "/* for Filter A \nh1, p {\n  font-family: Lato;\n}\n\n.
 
 
 /***/ }),
-/* 401 */
+/* 400 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // Charts
 const React = __webpack_require__(0);
-const Link = __webpack_require__(9).Link
+const Link = __webpack_require__(10).Link
 const style = __webpack_require__(37);
 const {Table , Grid, Row, Col, Modal} = __webpack_require__(11);
 const Header = __webpack_require__(17);
 const FilterA =__webpack_require__(87);
-const RIlistItemAll = __webpack_require__(156);
-const  { Chart }= __webpack_require__(402); 
-const TableHead =__webpack_require__(404);
+const RIlistItemAll = __webpack_require__(86);
+const  { Chart }= __webpack_require__(401); 
+const TableHead =__webpack_require__(403);
    
 let arrayOfRIs1= [  ["Date", "Lot Size"]];
 let arrayOfRIs2= [  ["Date", "Qty Tested", "Qty Fail"]];
@@ -61728,7 +61614,7 @@ module.exports = ChartA;
             /> */}
 
 /***/ }),
-/* 402 */
+/* 401 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -61736,7 +61622,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Chart", function() { return Chart; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_load_script__ = __webpack_require__(403);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_load_script__ = __webpack_require__(402);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_load_script___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_load_script__);
 
 
@@ -62510,7 +62396,7 @@ var Chart = (function (_super) {
 
 
 /***/ }),
-/* 403 */
+/* 402 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -62693,11 +62579,11 @@ exports.default = Script;
 module.exports = exports['default'];
 
 /***/ }),
-/* 404 */
+/* 403 */
 /***/ (function(module, exports, __webpack_require__) {
 
 const React = __webpack_require__(0);
-const Link = __webpack_require__(9).Link
+const Link = __webpack_require__(10).Link
 const {Row, Col} = __webpack_require__(11);
 class TableHead extends React.Component {
   render()  {
