@@ -82,7 +82,7 @@ class RIlistAll extends React.Component {
         
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  
         
-         let reports = response.reports.map((el) => {
+         let reportsM = response.reports.map((el) => {
          //new
             if(el.cwo !== ""){
           let myDate= new Date(el.cwo.substring(0,10));
@@ -142,8 +142,8 @@ class RIlistAll extends React.Component {
  // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!           
         
            that.setState({
-          ["reports"]: <div className="reports">
-                      {reports}     
+          ["reportsM"]: <div className="reports">
+                      {reportsM}     
                     </div>
            });
        }
@@ -171,17 +171,19 @@ class RIlistAll extends React.Component {
                  
             <Row>
              <Col sm={1}> <b>RI </b>  </Col> 
-                <Col sm={1} ><b> Inspector</b> </Col> 
-                <Col sm={1} ><b> Part Number </b></Col> 
+                <Col sm={1} ><b> Month-Year</b> </Col> 
+                <Col sm={1} ><b> LAR% </b></Col> 
+           {/* 
                 <Col sm={2} ><b>Description </b></Col> 
                <Col  sm={1} ><b> Date Inspected</b> </Col> 
               <Col  sm={1} ><b>Pass /Fail </b> </Col> 
                <Col sm={1} > <b>Lot Size </b> </Col> 
               <Col sm={3} > <b>Comment</b> </Col> 
                <Col sm={1} > <b>View </b> </Col> 
+              */}   
            </Row>
         
-        {this.state.reports}
+        {this.state.reportsM}
   </Table>  
          <Modal show={this.state.show} onHide={this.handleClose}>  </Modal>
    

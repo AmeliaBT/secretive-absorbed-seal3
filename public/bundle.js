@@ -59472,7 +59472,7 @@ class RIlistAll extends React.Component {
         
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  
         
-         let reports = response.reports.map((el) => {
+         let reportsM = response.reports.map((el) => {
          //new
             if(el.cwo !== ""){
           let myDate= new Date(el.cwo.substring(0,10));
@@ -59532,8 +59532,8 @@ class RIlistAll extends React.Component {
  // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!           
         
            that.setState({
-          ["reports"]: React.createElement("div", {className: "reports"}, 
-                      reports
+          ["reportsM"]: React.createElement("div", {className: "reports"}, 
+                      reportsM
                     )
            });
        }
@@ -59561,17 +59561,19 @@ React.createElement(Table, {className: "myForm"},
                  
             React.createElement(Row, null, 
              React.createElement(Col, {sm: 1}, " ", React.createElement("b", null, "RI "), "  "), 
-                React.createElement(Col, {sm: 1}, React.createElement("b", null, " Inspector"), " "), 
-                React.createElement(Col, {sm: 1}, React.createElement("b", null, " Part Number ")), 
-                React.createElement(Col, {sm: 2}, React.createElement("b", null, "Description ")), 
-               React.createElement(Col, { sm: 1}, React.createElement("b", null, " Date Inspected"), " "), 
-              React.createElement(Col, { sm: 1}, React.createElement("b", null, "Pass /Fail "), " "), 
-               React.createElement(Col, {sm: 1}, " ", React.createElement("b", null, "Lot Size "), " "), 
-              React.createElement(Col, {sm: 3}, " ", React.createElement("b", null, "Comment"), " "), 
-               React.createElement(Col, {sm: 1}, " ", React.createElement("b", null, "View "), " ")
+                React.createElement(Col, {sm: 1}, React.createElement("b", null, " Month-Year"), " "), 
+                React.createElement(Col, {sm: 1}, React.createElement("b", null, " LAR% "))
+           /* 
+                <Col sm={2} ><b>Description </b></Col> 
+               <Col  sm={1} ><b> Date Inspected</b> </Col> 
+              <Col  sm={1} ><b>Pass /Fail </b> </Col> 
+               <Col sm={1} > <b>Lot Size </b> </Col> 
+              <Col sm={3} > <b>Comment</b> </Col> 
+               <Col sm={1} > <b>View </b> </Col> 
+              */
            ), 
         
-        this.state.reports
+        this.state.reportsM
   ), 
          React.createElement(Modal, {show: this.state.show, onHide: this.handleClose}, "  ")
    
@@ -59602,33 +59604,12 @@ class RIlistItemMonth extends React.Component {
  
   constructor(props) {
     super(props);  
-    let jwo2;
-     let jwo=this.props.jwo;//Date Inspected:
-    if(jwo == null){jwo2=""}else{jwo2= jwo.slice(0,-14)};
-     let pfColor;
-    if(this.props.two === "Pass"){pfColor = "text-success"}else{pfColor="text-danger"};
+
     this.state = {
-      //img_url: this.props.img_url,
-      inspector: this.props.inspector,
-       reportID: this.props.reportnumber,
-      fwo: this.props.fwo,
-      Gwo: this.props.Gwo,
-       jwo: jwo2, //this.props.jwo.slice(0,-14), //Date Inspected:
-      two: this.props.two, //Pass / Fail:
-       owo: this.props.owo,
-      record: this.props.record,
-      lwo: this.props.lwo,
-        pfColor: pfColor 
+  
+  month_year: this.props.month_year,
+         lar: this.props.lar
       
-      /*,
-      tooltip:
-    <Popover id="popover" title="some info">
-           <div> P/N:  { fwo} </div>        
-           <div> Description: { Gwo}  </div>
-        <div> Date Inspected: { jwo}  </div>
-        <div> Pass / Fail: { two}  </div>
-        <div> Lot Size: { owo}  </div>
-</Popover>*/
             }
         }
 
@@ -59647,18 +59628,16 @@ class RIlistItemMonth extends React.Component {
      React.createElement("div", {className: "table-row-line"}, 
       
         React.createElement(Row, null, 
-        React.createElement(Col, {  sm: 1}, this.state.reportID, " "), 
-       React.createElement(Col, { sm: 1}, " ", this.state.inspector), 
+        React.createElement(Col, {  sm: 1}, this.state.month_year, " "), 
+       React.createElement(Col, { sm: 1}, " ", this.state.lar), 
       
        React.createElement(Col, { sm: 1}, " ", React.createElement("p", {style: {fontSize: 12}}, " ", this.state.fwo, " "), " "), 
        React.createElement(Col, {  sm: 2}, " ", this.state.Gwo), 
         React.createElement(Col, {  sm: 1}, " ", this.state.jwo), 
         React.createElement(Col, {  sm: 1}, React.createElement("p", {style: {fontWeight: 'bold', fontSize: 14}, className: this.state.pfColor}, "  ", this.state.two)), 
         React.createElement(Col, {  sm: 1}, " ", this.state.owo), 
-        React.createElement(Col, {  sm: 3}, " ", this.state.record), 
-        React.createElement(Col, {  sm: 1}, " ", React.createElement(Link, {to: 'report-view/' + this.state.reportID}, 
-         React.createElement(Button, {bsSize: "xsmall"}, 
-           React.createElement(Glyphicon, {glyph: "eye-open"}), "   ")), " ")
+        React.createElement(Col, {  sm: 3}, " ", this.state.record)
+        
               
         )
                )
