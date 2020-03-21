@@ -17,8 +17,17 @@ const style = require('../styles/HomePage');
 const {Table , Grid, Row, Col, Modal} = require('react-bootstrap');
 // other components and etc
 const Header = require('./Header');
+const RIlistItemAll = require('./RIlistItemMonth');
 
-const RIlistItemAll = require('./RIlistItemAll');
+let arrayOfRIs1= [  ["Date", "Lot Size"]];
+let arrayOfRIs2= [  ["Date", "Qty Tested", "Qty Fail"]];
+let arrayOfRIs3= ["Date"];
+let uniqueYM;
+let MyChartRI1;
+let MyChartRI2;
+let arrayOfYM;
+let arrLotYM;
+let arrayOfRIsPF=[];
 
 class RIlistAll extends React.Component {
   constructor(props) {
@@ -54,8 +63,41 @@ class RIlistAll extends React.Component {
     this.setState({ show: true });
   }
    /***********************/
+ /***********************/
   componentWillMount() {
-            
+    // load reports
+      let that = this;
+      let xhr = new XMLHttpRequest();  
+      xhr.open('POST', '/get-all-users-reports', true);
+      xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+      xhr.send();
+      xhr.onreadystatechange = function() {
+        if (this.readyState != 4) return;
+        if (this.status != 200) {
+          alert( 'error: ' + (this.status ? this.statusText : 'request has not been set') );
+          return;
+        }
+        let response = JSON.parse(this.responseText); 
+        
+         let reports = response.reports.map((el) => {          
+          if(el.cwo !== ""){
+          let myDate= new Date(el.cwo.substring(0,10));
+           // myDate.format("YYYY/mmm");
+          let myDate2= el.cwo.substring(0,4 ) +"-" +el.cwo.substring(5,7) ; 
+          let myLot= el.owo;            
+          let qtyTested= el.pwo; 
+          let qtyFail= el.qwo; 
+          let qtyRejected= el.rwo; 
+          let pass_fail= el.two; 
+             arrayOfRIs1.push([myDate, myLot ]) ; 
+             arrayOfRIs2.push([myDate,  qtyTested, qtyFail]) ; 
+    // getting unique YYYY-MM
+             arrayOfRIs3.push(myDate2 ) ;            
+           if(pass_fail.length === null){
+           arrayOfRIsPF.push([myDate2, "Fail"]);
+           }else{ arrayOfRIsPF.push([myDate2, pass_fail]);}
+                    
+      }            
         });
   
   Array.prototype.unique = function () {
@@ -97,12 +139,12 @@ class RIlistAll extends React.Component {
   <Table >  
     {this.state.showTableHead && <TableHead />}
     {this.state.reportsT}
-  </Table>     
-         <Modal show={this.state.show} onHide={this.handleClose}>  </Modal>
+  </Table>  
+<Modal show={this.state.show} onHide={this.handleClose}>  </Modal>  
   
     </div>
 
-      </div>
+      
     );
   }
 };
@@ -111,34 +153,7 @@ module.exports = RIlistAll;
 
 /* 
 
-render() {
-    return (
-      <div>
-        <Header/> 
-  
-    <div   >    
-<Table className="myForm">                   
-            <Row>
-             <Col sm={1}> <b>RI </b>  </Col> 
-                <Col sm={1} ><b> Inspector</b> </Col> 
-                <Col sm={1} ><b> Part Number </b></Col> 
-                <Col sm={2} ><b>Description </b></Col> 
-               <Col  sm={1} ><b> Date Inspected</b> </Col> 
-              <Col  sm={1} ><b>Pass /Fail </b> </Col> 
-               <Col sm={1} > <b>Lot Size </b> </Col> 
-              <Col sm={3} > <b>Comment</b> </Col> 
-               <Col sm={1} > <b>View </b> </Col> 
-           </Row>        
-        {this.state.reports}
-  </Table>  
-         <Modal show={this.state.show} onHide={this.handleClose}>  </Modal>
-  
-    </div>
 
-      </div>
-    );
-  }
-};
 
 
 
