@@ -59503,11 +59503,18 @@ class RIlistAll extends React.Component {
               
           //  /> 
         });
-    alert("arrayOfRIs3: " + arrayOfRIs3)   ; 
-        //new2
+        
+ //-------------------       
+     
+  Array.prototype.unique = function () {
+  return [...new Set(this)]
+}     
+    
      uniqueYM = arrayOfRIs3.unique();
    alert("uniqueYM: " + uniqueYM)  ;   
   arrLotYM=[["Y-M", "LAR"]]; //[Y-M , LAR (sum of lot  PASS/all lots)
+        
+        
      for(let i=1; i< uniqueYM.length; i++){ 
     let lotN=0; //number of lots
     let lotA=0; //number of lots PASS
