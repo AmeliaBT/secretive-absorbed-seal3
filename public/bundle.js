@@ -59498,16 +59498,16 @@ class RIlistAll extends React.Component {
         
 //==========================================   
  for(let i=1; i< uniqueYM.length; i++){ 
-    let lotN=0; //number of lots
+    let lotT=0; //number of lots
     let lotA=0; //number of lots PASS
    for(let j=0; j< arrayOfRIsPF.length; j++ ){
             let ym= arrayOfRIsPF[j][0];            
           if(ym === uniqueYM[i] ) {
-            lotN= lotN+1;
-            if(arrayOfRIsPF[j][1] === "Pass" ){ lotA =lotA+1;}           
+            lotT= lotT+1;
+            if(arrayOfRIsPF[j][1] === "Pass" ){ lotT =lotA+1;}           
           }
    }
-    arrLotYM.push([new Date(uniqueYM[i]), lotA/lotN*100 ]) ;
+    arrLotYM.push([new Date(uniqueYM[i]), lotA/lotT*100 ]) ;
  }
             that.setState({
            ["reports"]: {reports},
