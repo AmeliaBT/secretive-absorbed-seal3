@@ -1,11 +1,17 @@
 // Table View  (no Filter);  Monthly stst ; All can view only
 /*
 Month-Year
+LotT
+LotA
+LAR%
+LotQty
+QtyT
+%Def
+
 */
 const React = require('react');
 const Link = require('react-router-dom').Link
 // style for list
-
 const style = require('../styles/HomePage');
 // react-bootstrap
 const {Table , Grid, Row, Col, Modal} = require('react-bootstrap');
@@ -13,8 +19,7 @@ const {Table , Grid, Row, Col, Modal} = require('react-bootstrap');
 const Header = require('./Header');
 
 const RIlistItemAll = require('./RIlistItemAll');
-let test = {a: 1, b: 2};
-/* the  page that shows all reports */
+
 class RIlistAll extends React.Component {
   constructor(props) {
     super(props);
@@ -50,69 +55,69 @@ class RIlistAll extends React.Component {
   }
    /***********************/
   componentWillMount() {
-    // load reports
-      let that = this;
-      let xhr = new XMLHttpRequest();  
-   // xhr.open('POST', '/get-user-filtered-reports', true);
-    //get-all-users-reports
-      xhr.open('POST', '/get-all-users-reports', true);
-      xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-      xhr.send();
-      xhr.onreadystatechange = function() {
-        if (this.readyState != 4) return;
-        if (this.status != 200) {
-          alert( 'error: ' + (this.status ? this.statusText : 'request has not been set') );
-          return;
-        }
-        let response = JSON.parse(this.responseText);
-        
-// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  
-             
-        
-         let reports = response.reports.map((el) => {
-          return <RIlistItemAll  key={el.reportID}
-           reportnumber={el.reportID}  
-           inspector={el.inspector}
-             fwo={el.fwo}     
-           Gwo={el.Gwo}
-           jwo={el.jwo}
-           two={el.two}
-           owo={el.owo}
-           record={el.record}
-           lwo ={el.lwo}       
-            /> 
+            
         });
+  
+  Array.prototype.unique = function () {
+  return [...new Set(this)]
+}
+  uniqueYM = arrayOfRIs3.unique();
+  arrLotYM=[["Y-M", "LAR"]]; //[Y-M , LAR (sum of lot  PASS/all lots)
         
- // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!           
-        
-           that.setState({
-          ["reports"]: <div className="reports">
-                      {reports}     
-                    </div>
+//==========================================   
+ for(let i=1; i< uniqueYM.length; i++){ 
+    let lotN=0; //number of lots
+    let lotA=0; //number of lots PASS
+   for(let j=0; j< arrayOfRIsPF.length; j++ ){
+            let ym= arrayOfRIsPF[j][0];            
+          if(ym === uniqueYM[i] ) {
+            lotN= lotN+1;
+            if(arrayOfRIsPF[j][1] === "Pass" ){ lotA =lotA+1;}           
+          }
+   }
+    arrLotYM.push([new Date(uniqueYM[i]), lotA/lotN*100 ]) ;
+ }
+            that.setState({
+           ["reports"]: {reports},
+            "arrayOfRIs1" : arrayOfRIs1,
+             "arrayOfRIs2" : arrayOfRIs2,
+             "arrLotYM":arrLotYM,
+            showTableHead:false
+          
            });
-       }
-    
-  }
-  //https://react-bootstrap.github.io/components/table/
+       
+   }
+}
+   
   render() {
     return (
       <div>
         <Header/> 
-    
-               
-              
-      {/* 
-       < FilterA />   */}   
-      
-
-
-
-    <div   >  
-    
-      
+  <br/>
+  <Table >  
+    {this.state.showTableHead && <TableHead />}
+    {this.state.reportsT}
+  </Table>     
+         <Modal show={this.state.show} onHide={this.handleClose}>  </Modal>
   
-<Table className="myForm">  
-                 
+    </div>
+
+      </div>
+    );
+  }
+};
+
+module.exports = RIlistAll;
+
+/* 
+
+render() {
+    return (
+      <div>
+        <Header/> 
+  
+    <div   >    
+<Table className="myForm">                   
             <Row>
              <Col sm={1}> <b>RI </b>  </Col> 
                 <Col sm={1} ><b> Inspector</b> </Col> 
@@ -123,19 +128,18 @@ class RIlistAll extends React.Component {
                <Col sm={1} > <b>Lot Size </b> </Col> 
               <Col sm={3} > <b>Comment</b> </Col> 
                <Col sm={1} > <b>View </b> </Col> 
-           </Row>
-        
+           </Row>        
         {this.state.reports}
   </Table>  
          <Modal show={this.state.show} onHide={this.handleClose}>  </Modal>
-   
   
     </div>
-   
 
       </div>
     );
   }
 };
 
-module.exports = RIlistAll;
+
+
+*/
