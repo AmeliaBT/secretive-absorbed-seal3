@@ -97,8 +97,29 @@ class RIlistAll extends React.Component {
            arrayOfRIsPF.push([myDate2, "Fail"]);
            }else{ arrayOfRIsPF.push([myDate2, pass_fail]);}
                     
-      }            
+      } 
+        return     
         });
+        //for the table   
+ 
+       // that.setState( {showTableHead:true});
+      reportsT = response.map((el) => {          
+          return <RIlistItemMonth 
+            key={el.reportID}
+           reportnumber={el.reportID}  
+           inspector={el.inspector}
+             fwo={el.fwo}     
+           Gwo={el.Gwo}
+           jwo={el.jwo}
+           two={el.two}
+           owo={el.owo}
+           record={el.record}
+           lwo ={el.lwo}       
+            /> 
+        });
+   
+         
+      }       
   
   Array.prototype.unique = function () {
   return [...new Set(this)]
