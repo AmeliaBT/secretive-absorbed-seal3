@@ -16,6 +16,7 @@ class RIlistAll extends React.Component {
     this.state = {
       show: false, 
       disabled: true,
+       reportsM: "loading..." ,
        reports: "loading..." 
     };
     
@@ -79,27 +80,30 @@ class RIlistAll extends React.Component {
         });
         
            
-         let reportsM = response.reports.map((el) => {
-          return <RIlistItemMonth
+         let arrLotYM;
+        alert("hi "  );
+     for(let i=1; i< 5; i++){ 
+ arrLotYM.push(["m-y" +i, "rate" +i]) ;}
+        
+        
+        alert("hi " +arrLotYM );
+        let reportsM = arrLotYM.map((el) => {
+          return 
+        
+          <RIlistItemMonth
+                    month_year={el[0]}
+                    lar={el[1]}  
                    
-                   key={el.reportID}
-           reportnumber={el.reportID}  
-           inspector={el.inspector}
-             fwo={el.fwo}     
-           Gwo={el.Gwo}
-           jwo={el.jwo}
-           two={el.two}
-           owo={el.owo}
-           record={el.record}
-           lwo ={el.lwo}       
             /> 
-        });
+        });   
+    
  // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!           
         
            that.setState({
           ["reports"]: <div className="reports">
                       {reports}     
-                    </div>
+                    </div>,
+               ["reportsM"]: <div className="reports">{reportsM} </div>
            });
        }
     
@@ -118,18 +122,12 @@ class RIlistAll extends React.Component {
 <Table className="myForm">  
                  
             <Row>
-             <Col sm={1}> <b>RI </b>  </Col> 
-                <Col sm={1} ><b> Inspector</b> </Col> 
-                <Col sm={1} ><b> Part Number </b></Col> 
-                <Col sm={2} ><b>Description </b></Col> 
-               <Col  sm={1} ><b> Date Inspected</b> </Col> 
-              <Col  sm={1} ><b>Pass /Fail </b> </Col> 
-               <Col sm={1} > <b>Lot Size </b> </Col> 
-              <Col sm={3} > <b>Comment</b> </Col> 
-               <Col sm={1} > <b>View </b> </Col> 
+             <Col sm={1}> <b>YM </b>  </Col> 
+                <Col sm={1} ><b> LAR</b> </Col> 
+              
            </Row>
         
-        {this.state.reports}
+        {this.state.reportsM}
   </Table>  
          <Modal show={this.state.show} onHide={this.handleClose}>  </Modal>
    

@@ -13,8 +13,7 @@ const {Table ,filterFactory, Row, Col} = require('react-bootstrap');
 const Header = require('./Header');
 
 const RIlistItem = require('./RIlistItem');
-const RIlistItemMonth = require('./RIlistItemMonth');
-    //RIlistItemMonth
+
 /* the page that shows all RI reports */
 class RIlist extends React.Component {
   constructor(props) {
@@ -22,8 +21,7 @@ class RIlist extends React.Component {
     this.state = {
       show: false, 
       disabled: true,
-       reportsM: "loading..." ,
-      reports: "loading..."
+       reports: "loading..." 
     };
     
    this.handleShow = this.handleShow.bind(this);
@@ -74,29 +72,12 @@ class RIlist extends React.Component {
                    record={el.record}
                    lwo={el.lwo}
             /> 
-        });   
-  let arrLotYM;  
-     for(let i=1; i< 5; i++){ 
- arrLotYM.push(["m-y" +i, "rate" +i]) ;}
-        alert("hi " +arrLotYM );
-        let reportsM = arrLotYM.map((el) => {
-          return 
-          /*
-          <RIlistItemMonth
-                    month_year={el[0]}
-                    lar={el[1]}  
-                   
-            /> */
-        });   
-    
-        
-        
-        
+        });    
 //  className="pull-right"  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!    
            that.setState({
-          ["reports"]: <div className="reports">{reports} </div>,
-             
-         ["reportsM"]: <div className="reports">{reportsM} </div>
+          ["reports"]: <div className="reports">
+                      {reports}     
+                    </div>
            });
        }    
   } 
@@ -107,15 +88,21 @@ class RIlist extends React.Component {
          <Table className="myForm">
             <Row>
         
-             <Col sm={1}> <b>mmmRI </b>  </Col> 
-              <Col sm={1} ><b>kjkjr</b> </Col> 
-                
+             <Col sm={1}> <b>RI </b>  </Col> 
+              <Col sm={1} ><b> Inspector</b> </Col> 
+                <Col sm={1} > <b>PN </b></Col> 
+                <Col sm={2} ><b>Description </b></Col> 
+               <Col  sm={1} > <b>Date Inspected </b></Col> 
+              <Col  sm={1} ><b>Pass / Fail  </b></Col> 
+               <Col sm={1} > <b>Lot Size </b></Col> 
+              <Col sm={3} > <b>Comment</b> </Col> 
+              <Col sm={1} ><b>Edit  </b></Col> 
           
            
            </Row>
        
         
-        {this.state.reportsM}          
+        {this.state.reports}          
 
        </Table> 
        
