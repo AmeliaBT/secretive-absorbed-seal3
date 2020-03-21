@@ -81,20 +81,36 @@ class RIlistAll extends React.Component {
         let response = JSON.parse(this.responseText);
         
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  
-             
         
          let reports = response.reports.map((el) => {
-          return <RIlistItemAll
-          key={el.reportID}
-           reportnumber={el.reportID}  
-           inspector={el.inspector}
-             fwo={el.fwo}     
-           Gwo={el.Gwo}
-           jwo={el.jwo}
-           two={el.two}
-           owo={el.owo}
-           record={el.record}
-           lwo ={el.lwo}       
+         //new
+            if(el.cwo !== ""){
+          let myDate= new Date(el.cwo.substring(0,10));
+          let myDate2= el.cwo.substring(0,4 ) +"-" +el.cwo.substring(5,7) ; 
+           let myLot= el.owo; 
+           let qtyTested= el.pwo; 
+           let qtyFail= el.qwo; 
+            let qtyRejected= el.rwo; 
+           let pass_fail= el.two; 
+            arrayOfRIs1.push([myDate, myLot ]) ;
+            arrayOfRIs2.push([myDate,  qtyTested, qtyFail]) ; 
+             // getting unique YYYY-MM
+           arrayOfRIs3.push(myDate2 ) ;           
+           if(pass_fail.length === null){
+           arrayOfRIsPF.push([myDate2, "Fail"]);
+           }else{ arrayOfRIsPF.push([myDate2, pass_fail]);}   
+              
+              
+            }
+           
+           
+           
+        // end new
+           
+          return <RIlistItemMonth
+          month_year={el.reportID}
+          reportnumber={el.reportID}  
+              
             /> 
         });
         
