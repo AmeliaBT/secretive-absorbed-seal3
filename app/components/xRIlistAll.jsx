@@ -1,7 +1,4 @@
-// Table View  (no Filter);  Monthly stst ; All can view only
-/*
-Month-Year
-*/
+// Table View  (no Filter); All can view only
 const React = require('react');
 const Link = require('react-router-dom').Link
 // style for list
@@ -11,7 +8,9 @@ const style = require('../styles/HomePage');
 const {Table , Grid, Row, Col, Modal} = require('react-bootstrap');
 // other components and etc
 const Header = require('./Header');
-
+//const FilterA =require('./FilterA');
+//const SidebarB =require('./SidebarB');
+//const ExportData = require('./ExportData');
 const RIlistItemAll = require('./RIlistItemAll');
 let test = {a: 1, b: 2};
 /* the  page that shows all reports */

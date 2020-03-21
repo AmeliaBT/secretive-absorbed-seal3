@@ -22,7 +22,7 @@ let arrayOfRIsPF=[];
 let optionsCh2 ={
         title: 'Lot Acceptance Rates Grouped by Month',
         timeline: { groupByRowLabel: true  },
-        hAxis: { format: 'YYYY-MMM', title: "Month/Year Inspected" },
+        hAxis: { format: 'YYYY-MMM', title: "Year-Month Inspected" },
         vAxis: {  minValue: 0 ,title: "Rate %"}, 
   legend: "none"
       };

@@ -6408,16 +6408,7 @@ class RIlistItemAll extends React.Component {
       record: this.props.record,
       lwo: this.props.lwo,
         pfColor: pfColor 
-      
-      /*,
-      tooltip:
-    <Popover id="popover" title="some info">
-           <div> P/N:  { fwo} </div>        
-           <div> Description: { Gwo}  </div>
-        <div> Date Inspected: { jwo}  </div>
-        <div> Pass / Fail: { two}  </div>
-        <div> Lot Size: { owo}  </div>
-</Popover>*/
+ 
             }
         }
 
@@ -59397,7 +59388,9 @@ exports.push([module.i, "\n\n\n.table-row-line {  \n border-bottom: 1px solid #9
 /* 387 */
 /***/ (function(module, exports, __webpack_require__) {
 
-// Table View  (no Filter); All can view only
+// Table View  (no Filter);  Monthly stst ; All can view only
+// 
+Month-Year
 const React = __webpack_require__(0);
 const Link = __webpack_require__(10).Link
 // style for list
@@ -59407,9 +59400,7 @@ const style = __webpack_require__(37);
 const {Table , Grid, Row, Col, Modal} = __webpack_require__(11);
 // other components and etc
 const Header = __webpack_require__(17);
-//const FilterA =require('./FilterA');
-//const SidebarB =require('./SidebarB');
-//const ExportData = require('./ExportData');
+
 const RIlistItemAll = __webpack_require__(86);
 let test = {a: 1, b: 2};
 /* the  page that shows all reports */
@@ -61238,7 +61229,7 @@ let arrayOfRIsPF=[];
 let optionsCh2 ={
         title: 'Lot Acceptance Rates Grouped by Month',
         timeline: { groupByRowLabel: true  },
-        hAxis: { format: 'YYYY-MMM', title: "Month/Year Inspected" },
+        hAxis: { format: 'YYYY-MMM', title: "Year-Month Inspected" },
         vAxis: {  minValue: 0 ,title: "Rate %"}, 
   legend: "none"
       };

@@ -27,16 +27,7 @@ class RIlistItemAll extends React.Component {
       record: this.props.record,
       lwo: this.props.lwo,
         pfColor: pfColor 
-      
-      /*,
-      tooltip:
-    <Popover id="popover" title="some info">
-           <div> P/N:  { fwo} </div>        
-           <div> Description: { Gwo}  </div>
-        <div> Date Inspected: { jwo}  </div>
-        <div> Pass / Fail: { two}  </div>
-        <div> Lot Size: { owo}  </div>
-</Popover>*/
+ 
             }
         }
 
