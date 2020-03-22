@@ -59524,9 +59524,9 @@ class RIlistAll extends React.Component {
             if(arrayOfRIsPF[j][1] === "Pass" ){ lotA =lotA+1;}           
           }           
    }
-     arrLotYM.push([new Date(uniqueYM[i]), lotA/lotN*100 ]) ;
-   // console.log(arrLotYM[0] );
-     // console.log(arrLotYM[1] );        
+   
+     arrLotYM.push([uniqueYM[i], lotA/lotN*100 ]) ;
+       
  }   
      
         
@@ -59536,7 +59536,7 @@ class RIlistAll extends React.Component {
       arrLotYM.map((el) => {  
  
    return React.createElement(RIlistItemMonth, {
-           month_year: "mar 20 5", //{el[0]} 
+           month_year: el[0], 
                   lar: el[1]}
             ) 
         });   
