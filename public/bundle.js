@@ -1471,7 +1471,7 @@ class Header extends React.Component {
           ), 
           
           React.createElement(Navbar.Brand, null, 
-            React.createElement(Link, {to: this.state.listLink}, React.createElement("p", {className: "link"}, "Edit   "))
+            React.createElement(Link, {to: this.state.listLink}, React.createElement("p", {className: "link"}, "Editing   "))
           ), 
           
    
