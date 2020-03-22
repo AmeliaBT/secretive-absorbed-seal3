@@ -9,7 +9,7 @@ const style = require('../styles/RIlistItem');
 class RIlistItemMonth extends React.Component {
  
   constructor(props) {
-    alert("hi");
+    alert("hi from RIlistItemMonth");
     alert(this.props.month_year);
     super(props);  
 
@@ -55,3 +55,4 @@ class RIlistItemMonth extends React.Component {
 }
 module.exports = RIlistItemMonth;
 
+//bundle.js:59493 Uncaught ReferenceError: RIlistItemMonth is not defined

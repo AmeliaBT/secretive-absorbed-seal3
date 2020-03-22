@@ -8,7 +8,7 @@ const {Table , Grid, Row, Col, Modal} = require('react-bootstrap');
 // other components and etc
 const Header = require('./Header');
 const RIlistItemAll = require('./RIlistItemAll');
-
+const RIlistItemMonth = require('./RIlistItemMonth');
 /* the  page that shows all reports */
 class RIlistAll extends React.Component {
   constructor(props) {
@@ -82,7 +82,7 @@ class RIlistAll extends React.Component {
    // alert("hi  reports" +reports);       
   let arrLotYM=[];
        
-     for(let i=1; i< 5; i++){ 
+     for(let i=1; i< 3; i++){ 
  arrLotYM.push(["m-y" +i, "rate" +i]) ;}
       //  console.log("arrLotYM");
        // console.log(arrLotYM);
@@ -100,11 +100,9 @@ class RIlistAll extends React.Component {
           //let xy=[el[0],el[1]];
           //console.log("hi")
           //console.log(xy);
-          return  <RIlistItemMonth
-                    month_year="Mar 2019" //{xy[0]}
-                    lar="13%" //{xy[1]}  
-                   
-            /> 
+          return <RIlistItemMonth
+                    month_year={"Mar 2019"} //{xy[0]}
+                    lar={"13%"} /> 
         });   
     
  // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!           
