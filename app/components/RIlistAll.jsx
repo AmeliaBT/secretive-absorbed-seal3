@@ -96,10 +96,7 @@ class RIlistAll extends React.Component {
  */      
         
         
-        let reportsM = arrLotYM.map((el) => {
-          //let xy=[el[0],el[1]];
-          //console.log("hi")
-          //console.log(xy);
+        let reportsM = arrLotYM.map((el) => {        
           return <RIlistItemMonth
                     month_year={"Mar 2019"} //{xy[0]}
                     lar={"13%"} /> 

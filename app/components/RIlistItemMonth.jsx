@@ -6,30 +6,19 @@ const {Col, Row, Button, Glyphicon , OverlayTrigger} = require('react-bootstrap'
 // style 
 const style = require('../styles/RIlistItem');
 /* component for displaying one line of list  */
-class RIlistItemMonth extends React.Component {
- 
-  constructor(props) {
-   // alert("hi from RIlistItemMonth");
-   // alert(this.props.month_year);
+class RIlistItemMonth extends React.Component { 
+  constructor(props) {   
     super(props);      
     this.state = {  
   month_year: this.props.month_year,
-         lar: this.props.lar
-      
+         lar: this.props.lar      
             }
         }
-
-   componentWillMount() {
-      
-  }
-  /***********************/
   render() {
-    const {report, showDelete, showDelete2} = this.props;
+    
     return(
-      <div>
-       
-     <div className="table-row-line"> 
-      
+      <div>      
+     <div className="table-row-line">       
         <Row > 
         <Col  sm={2} >{this.state.month_year} </Col>       
        <Col sm={1} > {this.state.lar}</Col>
@@ -51,5 +40,4 @@ class RIlistItemMonth extends React.Component {
   }
 }
 module.exports = RIlistItemMonth;
-
-//bundle.js:59493 Uncaught ReferenceError: RIlistItemMonth is not defined
+//const {report, showDelete, showDelete2} = this.props;

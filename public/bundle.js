@@ -59486,10 +59486,7 @@ class RIlistAll extends React.Component {
  */      
         
         
-        let reportsM = arrLotYM.map((el) => {
-          //let xy=[el[0],el[1]];
-          //console.log("hi")
-          //console.log(xy);
+        let reportsM = arrLotYM.map((el) => {        
           return React.createElement(RIlistItemMonth, {
                     month_year: "Mar 2019", //{xy[0]}
                     lar: "13%"}) 
@@ -59552,28 +59549,18 @@ const {Col, Row, Button, Glyphicon , OverlayTrigger} = __webpack_require__(11);
 // style 
 const style = __webpack_require__(86);
 /* component for displaying one line of list  */
-class RIlistItemMonth extends React.Component {
- 
-  constructor(props) {
-   // alert("hi from RIlistItemMonth");
-   // alert(this.props.month_year);
+class RIlistItemMonth extends React.Component { 
+  constructor(props) {   
     super(props);      
     this.state = {  
   month_year: this.props.month_year,
-         lar: this.props.lar
-      
+         lar: this.props.lar      
             }
         }
-
-   componentWillMount() {
-      
-  }
-  /***********************/
   render() {
     const {report, showDelete, showDelete2} = this.props;
     return(
       React.createElement("div", null, 
-       
      React.createElement("div", {className: "table-row-line"}, 
       
         React.createElement(Row, null, 
@@ -59597,8 +59584,8 @@ class RIlistItemMonth extends React.Component {
   }
 }
 module.exports = RIlistItemMonth;
+//const {report, showDelete, showDelete2} = this.props;
 
-//bundle.js:59493 Uncaught ReferenceError: RIlistItemMonth is not defined
 
 /***/ }),
 /* 389 */
