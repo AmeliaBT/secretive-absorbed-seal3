@@ -59555,13 +59555,10 @@ const style = __webpack_require__(86);
 class RIlistItemMonth extends React.Component {
  
   constructor(props) {
-    alert("hi from RIlistItemMonth");
-    alert(this.props.month_year);
-    super(props);  
-
-    
-    this.state = {
-  
+   // alert("hi from RIlistItemMonth");
+   // alert(this.props.month_year);
+    super(props);      
+    this.state = {  
   month_year: this.props.month_year,
          lar: this.props.lar
       
@@ -59580,7 +59577,7 @@ class RIlistItemMonth extends React.Component {
      React.createElement("div", {className: "table-row-line"}, 
       
         React.createElement(Row, null, 
-        React.createElement(Col, {  sm: 1}, this.state.month_year, " "), 
+        React.createElement(Col, {  sm: 2}, this.state.month_year, " "), 
        React.createElement(Col, { sm: 1}, " ", this.state.lar)
           
      /* 
