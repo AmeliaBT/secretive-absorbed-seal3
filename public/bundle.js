@@ -59469,13 +59469,13 @@ class RIlistAll extends React.Component {
             ) 
         });
         
-    alert("hi  reports" +reports);       
+   // alert("hi  reports" +reports);       
   let arrLotYM=[];
        
      for(let i=1; i< 5; i++){ 
  arrLotYM.push(["m-y" +i, "rate" +i]) ;}
-        console.log("arrLotYM");
-        console.log(arrLotYM);
+      //  console.log("arrLotYM");
+       // console.log(arrLotYM);
        // alert("hi  arrLotYM: " +arrLotYM );
  /* 
  4) [Array(2), Array(2), Array(2), Array(2)]
@@ -59487,9 +59487,12 @@ class RIlistAll extends React.Component {
         
         
         let reportsM = arrLotYM.map((el) => {
+          //let xy=[el[0],el[1]];
+          //console.log("hi")
+          //console.log(xy);
           return  React.createElement(RIlistItemMonth, {
-                    month_year: el[0], 
-                    lar: el[1]}
+                    month_year: "Mar 2019", //{xy[0]}
+                    lar: "13%"}//{xy[1]}  
                    
             ) 
         });   
