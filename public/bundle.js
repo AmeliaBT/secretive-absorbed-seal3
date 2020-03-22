@@ -59469,27 +59469,15 @@ class RIlistAll extends React.Component {
             ) 
         });
         
-   // alert("hi  reports" +reports);       
-  let arrLotYM=[];
+      
+  let arrLotYM=[];       
+  for(let i=1; i< 5; i++){ 
+  arrLotYM.push(["m-y" +i, "rate" +i]) ;}
        
-     for(let i=1; i< 3; i++){ 
- arrLotYM.push(["m-y" +i, "rate" +i]) ;}
-      //  console.log("arrLotYM");
-       // console.log(arrLotYM);
-       // alert("hi  arrLotYM: " +arrLotYM );
- /* 
- 4) [Array(2), Array(2), Array(2), Array(2)]
-0: (2) ["m-y1", "rate1"]
-1: (2) ["m-y2", "rate2"]
-2: (2) ["m-y3", "rate3"]
-3: (2) ["m-y4", "rate4"]
- */      
-        
-        
-        let reportsM = arrLotYM.map((el) => {        
-          return React.createElement(RIlistItemMonth, {
-                    month_year: "Mar 2019", //{xy[0]}
-                    lar: "13%"}) 
+  let reportsM = arrLotYM.map((el) => {        
+   return React.createElement(RIlistItemMonth, {
+             month_year: el[0], 
+            lar: el[1]}) 
         });   
     
  // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!           
@@ -59553,38 +59541,30 @@ class RIlistItemMonth extends React.Component {
   constructor(props) {   
     super(props);      
     this.state = {  
-  month_year: this.props.month_year,
-         lar: this.props.lar      
-            }
+          month_year: this.props.month_year,
+          lar: this.props.lar  }
         }
-  render() {
-    const {report, showDelete, showDelete2} = this.props;
+  render() {    
     return(
       React.createElement("div", null, 
-     React.createElement("div", {className: "table-row-line"}, 
-      
-        React.createElement(Row, null, 
+      React.createElement("div", {className: "table-row-line"}, " ", React.createElement(Row, null, 
         React.createElement(Col, {  sm: 2}, this.state.month_year, " "), 
        React.createElement(Col, { sm: 1}, " ", this.state.lar)
-          
-     /* 
-       <Col sm={1} > <p style={{fontSize: 12}}> {this.state.fwo} </p> </Col>     
-       <Col  sm={2} > {this.state.Gwo}</Col>
-        <Col  sm={1} > {this.state.jwo}</Col>
-        <Col  sm={1}  ><p style={{fontWeight: 'bold', fontSize: 14}} className={this.state.pfColor}>  {this.state.two}</p></Col>
-        <Col  sm={1} > {this.state.owo}</Col>
-        <Col  sm={3} > {this.state.record}</Col>
-        */
-              
-        )
-               )
-
+        ), " ")
       )
     );
   }
 }
 module.exports = RIlistItemMonth;
 //const {report, showDelete, showDelete2} = this.props;
+     {/* 
+       <Col sm={1} > <p style={{fontSize: 12}}> {this.state.fwo} </p> </Col>     
+       <Col  sm={2} > {this.state.Gwo}</Col>
+        <Col  sm={1} > {this.state.jwo}</Col>
+        <Col  sm={1}  ><p style={{fontWeight: 'bold', fontSize: 14}} className={this.state.pfColor}>  {this.state.two}</p></Col>
+        <Col  sm={1} > {this.state.owo}</Col>
+        <Col  sm={3} > {this.state.record}</Col>
+        */} 
 
 
 /***/ }),

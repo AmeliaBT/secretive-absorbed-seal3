@@ -79,27 +79,15 @@ class RIlistAll extends React.Component {
             /> 
         });
         
-   // alert("hi  reports" +reports);       
-  let arrLotYM=[];
+      
+  let arrLotYM=[];       
+  for(let i=1; i< 5; i++){ 
+  arrLotYM.push(["m-y" +i, "rate" +i]) ;}
        
-     for(let i=1; i< 3; i++){ 
- arrLotYM.push(["m-y" +i, "rate" +i]) ;}
-      //  console.log("arrLotYM");
-       // console.log(arrLotYM);
-       // alert("hi  arrLotYM: " +arrLotYM );
- /* 
- 4) [Array(2), Array(2), Array(2), Array(2)]
-0: (2) ["m-y1", "rate1"]
-1: (2) ["m-y2", "rate2"]
-2: (2) ["m-y3", "rate3"]
-3: (2) ["m-y4", "rate4"]
- */      
-        
-        
-        let reportsM = arrLotYM.map((el) => {        
-          return <RIlistItemMonth
-                    month_year={"Mar 2019"} //{xy[0]}
-                    lar={"13%"} /> 
+  let reportsM = arrLotYM.map((el) => {        
+   return <RIlistItemMonth
+             month_year={el[0]} 
+            lar={el[1]} /> 
         });   
     
  // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!           

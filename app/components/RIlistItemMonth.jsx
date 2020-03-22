@@ -10,19 +10,22 @@ class RIlistItemMonth extends React.Component {
   constructor(props) {   
     super(props);      
     this.state = {  
-  month_year: this.props.month_year,
-         lar: this.props.lar      
-            }
+          month_year: this.props.month_year,
+          lar: this.props.lar  }
         }
-  render() {
-    
+  render() {    
     return(
       <div>      
-     <div className="table-row-line">       
-        <Row > 
+      <div className="table-row-line"> <Row > 
         <Col  sm={2} >{this.state.month_year} </Col>       
        <Col sm={1} > {this.state.lar}</Col>
-          
+        </Row> </div>
+      </div>
+    );
+  }
+}
+module.exports = RIlistItemMonth;
+//const {report, showDelete, showDelete2} = this.props;
      {/* 
        <Col sm={1} > <p style={{fontSize: 12}}> {this.state.fwo} </p> </Col>     
        <Col  sm={2} > {this.state.Gwo}</Col>
@@ -31,13 +34,3 @@ class RIlistItemMonth extends React.Component {
         <Col  sm={1} > {this.state.owo}</Col>
         <Col  sm={3} > {this.state.record}</Col>
         */} 
-              
-        </Row>
-               </div>
-
-      </div>
-    );
-  }
-}
-module.exports = RIlistItemMonth;
-//const {report, showDelete, showDelete2} = this.props;
