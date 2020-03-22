@@ -103,7 +103,7 @@ class Header extends React.Component {
           </Navbar.Brand>
           
           <Navbar.Brand >           
-            <Link to={this.state.listLinkAll} ><p  className="link">Table View  </p></Link>            
+            <Link to={this.state.listLinkAll} ><p  className="link"> KPI  </p></Link>            
           </Navbar.Brand>
           <Navbar.Brand >           
             <Link to={this.state.listLinkAll2} ><p  className="link">Filters  </p></Link>            

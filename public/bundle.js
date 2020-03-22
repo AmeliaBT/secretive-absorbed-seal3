@@ -1466,7 +1466,7 @@ class Header extends React.Component {
           ), 
           
           React.createElement(Navbar.Brand, null, 
-            React.createElement(Link, {to: this.state.listLinkAll}, React.createElement("p", {className: "link"}, "Table View  "))
+            React.createElement(Link, {to: this.state.listLinkAll}, React.createElement("p", {className: "link"}, " KPI  "))
           ), 
           React.createElement(Navbar.Brand, null, 
             React.createElement(Link, {to: this.state.listLinkAll2}, React.createElement("p", {className: "link"}, "Filters  "))
