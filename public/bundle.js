@@ -59513,8 +59513,8 @@ class RIlistAll extends React.Component {
    arrLotYM=[]; //[Y-M , LAR (sum of lot  PASS/all lots)
         
         
-    // for(let i=1; i< uniqueYM.length; i++){ 
-  for(let i=1; i< 9; i++){ 
+  for(let i=1; i< uniqueYM.length; i++){ 
+  
     let lotN=0; //number of lots
     let lotA=0; //number of lots PASS
    for(let j=0; j< arrayOfRIsPF.length; j++ ){
@@ -59525,8 +59525,8 @@ class RIlistAll extends React.Component {
           }           
    }
      arrLotYM.push([new Date(uniqueYM[i]), lotA/lotN*100 ]) ;
-    console.log(arrLotYM[0] );
-      console.log(arrLotYM[1] );        
+   // console.log(arrLotYM[0] );
+     // console.log(arrLotYM[1] );        
  }   
      
         
@@ -59536,20 +59536,20 @@ class RIlistAll extends React.Component {
       arrLotYM.map((el) => {  
  
    return React.createElement(RIlistItemMonth, {
-                    month_year: "Mar 2019", 
-                    lar: "13%"}) 
-
-        
-        
-       // <RIlistItemMonth
-         //    month_year={el[0]} 
-                //    lar={el[1]}
-           //  /> 
+           month_year: "mar 20 5", //{el[0]} 
+                  lar: el[1]}
+            ) 
         });   
     
         
         //end of new 2
+     //<RIlistItemMonth
+                   // month_year={"Mar 2019"} 
+                   // lar={"13%"} /> 
+
         
+        
+          
  // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!           
         
            that.setState({
