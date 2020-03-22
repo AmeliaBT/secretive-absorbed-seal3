@@ -106,20 +106,12 @@ class RIlistAll extends React.Component {
     return (
       <div>
         <Header/> 
-
-
     <div   >  
-    
-      
-  
 <Table className="myForm">  
-                 
             <Row>
              <Col sm={1}> <b>YM </b>  </Col> 
-                <Col sm={1} ><b> LAR</b> </Col> 
-              
-           </Row>
-        
+                <Col sm={1} ><b> LAR</b> </Col>               
+           </Row>        
         {this.state.reportsM}
   </Table>  
          <Modal show={this.state.show} onHide={this.handleClose}>  </Modal>

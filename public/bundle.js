@@ -59496,20 +59496,12 @@ class RIlistAll extends React.Component {
     return (
       React.createElement("div", null, 
         React.createElement(Header, null), 
-
-
     React.createElement("div", null, 
-    
-      
-  
 React.createElement(Table, {className: "myForm"}, 
-                 
             React.createElement(Row, null, 
              React.createElement(Col, {sm: 1}, " ", React.createElement("b", null, "YM "), "  "), 
                 React.createElement(Col, {sm: 1}, React.createElement("b", null, " LAR"), " ")
-              
            ), 
-        
         this.state.reportsM
   ), 
          React.createElement(Modal, {show: this.state.show, onHide: this.handleClose}, "  "), 
