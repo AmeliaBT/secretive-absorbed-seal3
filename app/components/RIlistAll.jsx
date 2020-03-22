@@ -120,11 +120,11 @@ class RIlistAll extends React.Component {
 }     
     
      uniqueYM = arrayOfRIs3.unique();
-   arrLotYM=[["Y-M", "LAR"]]; //[Y-M , LAR (sum of lot  PASS/all lots)
+   arrLotYM=[]; //[Y-M , LAR (sum of lot  PASS/all lots)
         
         
     // for(let i=1; i< uniqueYM.length; i++){ 
-           for(let i=1; i< 9; i++){ 
+  for(let i=1; i< 9; i++){ 
     let lotN=0; //number of lots
     let lotA=0; //number of lots PASS
    for(let j=0; j< arrayOfRIsPF.length; j++ ){
@@ -134,18 +134,16 @@ class RIlistAll extends React.Component {
             if(arrayOfRIsPF[j][1] === "Pass" ){ lotA =lotA+1;}           
           }           
    }
-
-   arrLotYM.push([new Date(uniqueYM[i]), lotA/lotN*100 ]) ;
-       
-     <RIlistItemMonth
-          //month_year={new Date(uniqueYM[i])}
-          //lar={lotA/lotN*100}   
-       month_year={"jan " + i}
-        lar={"rate " + i}   
-            /> 
-             
+              
  }   
-        
+        alert()
+  let reportsM = arrLotYM.map((el) => {        
+   return <RIlistItemMonth
+             month_year={el[0]} 
+                    lar={el[1]}
+             /> 
+        });   
+    
         
         //end of new 2
         
@@ -179,8 +177,8 @@ class RIlistAll extends React.Component {
 <Table className="myForm">  
                  
             <Row>
-             <Col sm={1}> <b>RI </b>  </Col> 
-                <Col sm={1} ><b> Month-Year</b> </Col> 
+             
+                <Col sm={2} ><b> Month-Year</b> </Col> 
                 <Col sm={1} ><b> LAR% </b></Col> 
            {/* 
                 <Col sm={2} ><b>Description </b></Col> 

@@ -7,7 +7,9 @@ const {Col, Row, Button, Glyphicon , OverlayTrigger} = require('react-bootstrap'
 const style = require('../styles/RIlistItem');
 /* component for displaying one line of list  */
 class RIlistItemMonth extends React.Component { 
-  constructor(props) {   
+ 
+  constructor(props) {  
+     alert("hi");
     super(props);      
     this.state = {  
           month_year: this.props.month_year,
