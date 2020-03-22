@@ -101,15 +101,7 @@ class RIlistAll extends React.Component {
            arrayOfRIsPF.push([myDate2, "Fail"]);
            }else{ arrayOfRIsPF.push([myDate2, pass_fail]);}               
             }
-                   
-           
-        // end new
-           
-        //  return <RIlistItemMonth
-        //  key={el.reportID}
-        //  reportnumber={el.reportID}  
-              
-          //  /> 
+    
            return
         });
         
@@ -117,12 +109,10 @@ class RIlistAll extends React.Component {
      
   Array.prototype.unique = function () {
   return [...new Set(this)]
-}     
-    
-     uniqueYM = arrayOfRIs3.unique();
-   arrLotYM=[]; //[Y-M , LAR (sum of lot  PASS/all lots)
+}    
+  uniqueYM = arrayOfRIs3.unique();
         
-        
+  arrLotYM=[]; //[Y-M , LAR (sum of lot  PASS/all lots)
   for(let i=1; i< uniqueYM.length; i++){ 
   
     let lotN=0; //number of lots
@@ -139,9 +129,7 @@ class RIlistAll extends React.Component {
        
  }   
      
-        
-   console.log(arrLotYM)   ;  
-        
+      
   let reportsM = 
       arrLotYM.map((el) => {  
  
@@ -150,15 +138,7 @@ class RIlistAll extends React.Component {
                   lar={el[1]}
             /> 
         });   
-    
-        
-        //end of new 2
-     //<RIlistItemMonth
-                   // month_year={"Mar 2019"} 
-                   // lar={"13%"} /> 
-
-        
-        
+ 
           
  // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!           
         
@@ -174,23 +154,11 @@ class RIlistAll extends React.Component {
     return (
       <div>
         <Header/> 
-    
-               
-              
-      {/* 
-       < FilterA />   */}   
-      
-
-
-
     <div   >  
-    
-      
   
 <Table className="myForm">  
                  
-            <Row>
-             
+            <Row>             
                 <Col sm={2} ><b> Month-Year</b> </Col> 
                 <Col sm={1} ><b> LAR% </b></Col> 
            {/* 
@@ -207,7 +175,6 @@ class RIlistAll extends React.Component {
   </Table>  
          <Modal show={this.state.show} onHide={this.handleClose}>  </Modal>
    
-  
     </div>
    
 

@@ -59491,15 +59491,7 @@ class RIlistAll extends React.Component {
            arrayOfRIsPF.push([myDate2, "Fail"]);
            }else{ arrayOfRIsPF.push([myDate2, pass_fail]);}               
             }
-                   
-           
-        // end new
-           
-        //  return <RIlistItemMonth
-        //  key={el.reportID}
-        //  reportnumber={el.reportID}  
-              
-          //  /> 
+    
            return
         });
         
@@ -59507,12 +59499,10 @@ class RIlistAll extends React.Component {
      
   Array.prototype.unique = function () {
   return [...new Set(this)]
-}     
-    
-     uniqueYM = arrayOfRIs3.unique();
-   arrLotYM=[]; //[Y-M , LAR (sum of lot  PASS/all lots)
+}    
+  uniqueYM = arrayOfRIs3.unique();
         
-        
+  arrLotYM=[]; //[Y-M , LAR (sum of lot  PASS/all lots)
   for(let i=1; i< uniqueYM.length; i++){ 
   
     let lotN=0; //number of lots
@@ -59529,9 +59519,7 @@ class RIlistAll extends React.Component {
        
  }   
      
-        
-   console.log(arrLotYM)   ;  
-        
+      
   let reportsM = 
       arrLotYM.map((el) => {  
  
@@ -59540,15 +59528,7 @@ class RIlistAll extends React.Component {
                   lar: el[1]}
             ) 
         });   
-    
-        
-        //end of new 2
-     //<RIlistItemMonth
-                   // month_year={"Mar 2019"} 
-                   // lar={"13%"} /> 
-
-        
-        
+ 
           
  // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!           
         
@@ -59564,23 +59544,11 @@ class RIlistAll extends React.Component {
     return (
       React.createElement("div", null, 
         React.createElement(Header, null), 
-    
-               
-              
-      /* 
-       < FilterA />   */
-      
-
-
-
     React.createElement("div", null, 
-    
-      
   
 React.createElement(Table, {className: "myForm"}, 
                  
             React.createElement(Row, null, 
-             
                 React.createElement(Col, {sm: 2}, React.createElement("b", null, " Month-Year"), " "), 
                 React.createElement(Col, {sm: 1}, React.createElement("b", null, " LAR% "))
            /* 
@@ -59597,7 +59565,6 @@ React.createElement(Table, {className: "myForm"},
   ), 
          React.createElement(Modal, {show: this.state.show, onHide: this.handleClose}, "  ")
    
-  
     )
    
 
