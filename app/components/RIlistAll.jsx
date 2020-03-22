@@ -1,4 +1,14 @@
-// Table View  (no Filter); All can view only
+// Table View  (no Filter);  Monthly stst ; All can view only
+/*
+Month-Year
+LotT
+LotA
+LAR%
+LotQty
+QtyT
+%Def
+
+*/
 const React = require('react');
 const Link = require('react-router-dom').Link
 // style for list
@@ -7,17 +17,25 @@ const style = require('../styles/HomePage');
 const {Table , Grid, Row, Col, Modal} = require('react-bootstrap');
 // other components and etc
 const Header = require('./Header');
-const RIlistItemAll = require('./RIlistItemAll');
 const RIlistItemMonth = require('./RIlistItemMonth');
-/* the  page that shows all reports */
+
+let arrayOfRIs1= [  ["Date", "Lot Size"]];
+let arrayOfRIs2= [  ["Date", "Qty Tested", "Qty Fail"]];
+let arrayOfRIs3= ["Date"];
+let uniqueYM;
+let MyChartRI1;
+let MyChartRI2;
+let arrayOfYM;
+let arrLotYM;
+let arrayOfRIsPF=[];
+
 class RIlistAll extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       show: false, 
       disabled: true,
-       reportsM: "loading..." ,
-       reports: "loading..." 
+       reportsM: "loading..." 
     };
     
     this.handleShow = this.handleShow.bind(this);
@@ -45,12 +63,12 @@ class RIlistAll extends React.Component {
     this.setState({ show: true });
   }
    /***********************/
+ /***********************/
   componentWillMount() {
     // load reports
       let that = this;
       let xhr = new XMLHttpRequest();  
-   // xhr.open('POST', '/get-user-filtered-reports', true);
-    //get-all-users-reports
+ 
       xhr.open('POST', '/get-all-users-reports', true);
       xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
       xhr.send();
@@ -63,40 +81,79 @@ class RIlistAll extends React.Component {
         let response = JSON.parse(this.responseText);
         
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  
-             
         
-         let reports = response.reports.map((el) => {
-          return <RIlistItemAll  key={el.reportID}
-           reportnumber={el.reportID}  
-           inspector={el.inspector}
-             fwo={el.fwo}     
-           Gwo={el.Gwo}
-           jwo={el.jwo}
-           two={el.two}
-           owo={el.owo}
-           record={el.record}
-           lwo ={el.lwo}       
-            /> 
+         let reportsX = response.reports.map((el) => {
+         //new
+            if(el.cwo !== ""){
+          let myDate= new Date(el.cwo.substring(0,10));
+          let myDate2= el.cwo.substring(0,4 ) +"-" +el.cwo.substring(5,7) ; 
+           let myLot= el.owo; 
+           let qtyTested= el.pwo; 
+           let qtyFail= el.qwo; 
+            let qtyRejected= el.rwo; 
+           let pass_fail= el.two; 
+            arrayOfRIs1.push([myDate, myLot ]) ;
+            arrayOfRIs2.push([myDate,  qtyTested, qtyFail]) ; 
+             // getting unique YYYY-MM
+           arrayOfRIs3.push(myDate2 ) ;   
+              
+           if(pass_fail.length === null){
+           arrayOfRIsPF.push([myDate2, "Fail"]);
+           }else{ arrayOfRIsPF.push([myDate2, pass_fail]);}               
+            }
+                   
+           
+        // end new
+           
+        //  return <RIlistItemMonth
+        //  key={el.reportID}
+        //  reportnumber={el.reportID}  
+              
+          //  /> 
+           return
         });
         
-      
-  let arrLotYM=[];       
-  for(let i=1; i< 5; i++){ 
-  arrLotYM.push(["m-y" +i, "rate" +i]) ;}
-       
-  let reportsM = arrLotYM.map((el) => {        
-   return <RIlistItemMonth
-             month_year={el[0]} 
-            lar={el[1]} /> 
-        });   
+ //-------------------       
+     
+  Array.prototype.unique = function () {
+  return [...new Set(this)]
+}     
     
+     uniqueYM = arrayOfRIs3.unique();
+   arrLotYM=[["Y-M", "LAR"]]; //[Y-M , LAR (sum of lot  PASS/all lots)
+        
+        
+    // for(let i=1; i< uniqueYM.length; i++){ 
+           for(let i=1; i< 9; i++){ 
+    let lotN=0; //number of lots
+    let lotA=0; //number of lots PASS
+   for(let j=0; j< arrayOfRIsPF.length; j++ ){
+            let ym= arrayOfRIsPF[j][0];
+          if(ym === uniqueYM[i] ) {
+            lotN= lotN+1;
+            if(arrayOfRIsPF[j][1] === "Pass" ){ lotA =lotA+1;}           
+          }           
+   }
+
+   arrLotYM.push([new Date(uniqueYM[i]), lotA/lotN*100 ]) ;
+       
+     <RIlistItemMonth
+          //month_year={new Date(uniqueYM[i])}
+          //lar={lotA/lotN*100}   
+       month_year={"jan " + i}
+        lar={"rate " + i}   
+            /> 
+             
+ }   
+        
+        
+        //end of new 2
+        
  // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!           
         
            that.setState({
-          ["reports"]: <div className="reports">
-                      {reports}     
-                    </div>,
-               ["reportsM"]: <div className="reports">{reportsM} </div>
+         ["reportsM"]: <div className="reports">  {reportsM}  </div>
+             
            });
        }
     
@@ -106,17 +163,40 @@ class RIlistAll extends React.Component {
     return (
       <div>
         <Header/> 
+    
+               
+              
+      {/* 
+       < FilterA />   */}   
+      
+
+
+
     <div   >  
+    
+      
+  
 <Table className="myForm">  
+                 
             <Row>
-             <Col sm={1}> <b>YM </b>  </Col> 
-                <Col sm={1} ><b> LAR</b> </Col>               
-           </Row>        
+             <Col sm={1}> <b>RI </b>  </Col> 
+                <Col sm={1} ><b> Month-Year</b> </Col> 
+                <Col sm={1} ><b> LAR% </b></Col> 
+           {/* 
+                <Col sm={2} ><b>Description </b></Col> 
+               <Col  sm={1} ><b> Date Inspected</b> </Col> 
+              <Col  sm={1} ><b>Pass /Fail </b> </Col> 
+               <Col sm={1} > <b>Lot Size </b> </Col> 
+              <Col sm={3} > <b>Comment</b> </Col> 
+               <Col sm={1} > <b>View </b> </Col> 
+              */}   
+           </Row>
+        
         {this.state.reportsM}
   </Table>  
          <Modal show={this.state.show} onHide={this.handleClose}>  </Modal>
    
-  <p> </p>
+  
     </div>
    
 
