@@ -1457,23 +1457,25 @@ class Header extends React.Component {
       React.createElement("div", {className: "link span"}, 
        React.createElement(Navbar, {collapseOnSelect: true}, 
         React.createElement(Navbar.Header, null, 
+                 React.createElement(Navbar.Brand, null, 
+            React.createElement(Link, {to: this.state.listLinkAll}, React.createElement("p", {className: "link"}, " KPI  "))
+          ), 
+                  React.createElement(Navbar.Brand, null, 
+            React.createElement(Link, {to: this.state.listLinkAll2}, React.createElement("p", {className: "link"}, "Reports  "))
+          ), 
           React.createElement(Navbar.Brand, null, 
-            React.createElement(Link, {to: this.state.reportsLink}, React.createElement("p", {className: "link"}, "RI Gallery"))
+            React.createElement(Link, {to: this.state.chartLinkA}, React.createElement("p", {className: "link"}, "Charts  "))
+          ), 
+          React.createElement(Navbar.Brand, null, 
+            React.createElement(Link, {to: this.state.reportsLink}, React.createElement("p", {className: "link"}, "NC"))
           ), 
           
           React.createElement(Navbar.Brand, null, 
             React.createElement(Link, {to: this.state.listLink}, React.createElement("p", {className: "link"}, "Edit   "))
           ), 
           
-          React.createElement(Navbar.Brand, null, 
-            React.createElement(Link, {to: this.state.listLinkAll}, React.createElement("p", {className: "link"}, " KPI  "))
-          ), 
-          React.createElement(Navbar.Brand, null, 
-            React.createElement(Link, {to: this.state.listLinkAll2}, React.createElement("p", {className: "link"}, "Filters  "))
-          ), 
-          React.createElement(Navbar.Brand, null, 
-            React.createElement(Link, {to: this.state.chartLinkA}, React.createElement("p", {className: "link"}, "Charts  "))
-          ), 
+   
+  
           
           React.createElement(Navbar.Toggle, null)
         ), 

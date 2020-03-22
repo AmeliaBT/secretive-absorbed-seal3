@@ -94,23 +94,25 @@ class Header extends React.Component {
       <div  className="link span">
        <Navbar collapseOnSelect>
         <Navbar.Header>
+                 <Navbar.Brand >           
+            <Link to={this.state.listLinkAll} ><p  className="link"> KPI  </p></Link>            
+          </Navbar.Brand>
+                  <Navbar.Brand >           
+            <Link to={this.state.listLinkAll2} ><p  className="link">Reports  </p></Link>            
+          </Navbar.Brand>
           <Navbar.Brand >           
-            <Link to={this.state.reportsLink} ><p  className="link">RI Gallery</p></Link>            
+            <Link to={this.state.chartLinkA} ><p  className="link">Charts  </p></Link>            
+          </Navbar.Brand>
+          <Navbar.Brand >           
+            <Link to={this.state.reportsLink} ><p  className="link">NC</p></Link>            
           </Navbar.Brand>
           
           <Navbar.Brand >           
             <Link to={this.state.listLink} ><p  className="link">Edit   </p></Link>            
           </Navbar.Brand>
           
-          <Navbar.Brand >           
-            <Link to={this.state.listLinkAll} ><p  className="link"> KPI  </p></Link>            
-          </Navbar.Brand>
-          <Navbar.Brand >           
-            <Link to={this.state.listLinkAll2} ><p  className="link">Filters  </p></Link>            
-          </Navbar.Brand>
-          <Navbar.Brand >           
-            <Link to={this.state.chartLinkA} ><p  className="link">Charts  </p></Link>            
-          </Navbar.Brand>
+   
+  
           
           <Navbar.Toggle />
         </Navbar.Header>
