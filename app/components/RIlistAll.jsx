@@ -134,14 +134,27 @@ class RIlistAll extends React.Component {
             if(arrayOfRIsPF[j][1] === "Pass" ){ lotA =lotA+1;}           
           }           
    }
-              
+     arrLotYM.push([new Date(uniqueYM[i]), lotA/lotN*100 ]) ;
+    console.log(arrLotYM[0] );
+      console.log(arrLotYM[1] );        
  }   
-        alert()
-  let reportsM = arrLotYM.map((el) => {        
+     
+        
+   console.log(arrLotYM)   ;  
+        
+  let reportsM = 
+      arrLotYM.map((el) => {  
+ 
    return <RIlistItemMonth
-             month_year={el[0]} 
-                    lar={el[1]}
-             /> 
+                    month_year={"Mar 2019"} 
+                    lar={"13%"} /> 
+
+        
+        
+       // <RIlistItemMonth
+         //    month_year={el[0]} 
+                //    lar={el[1]}
+           //  /> 
         });   
     
         
