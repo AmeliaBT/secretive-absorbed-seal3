@@ -59503,6 +59503,8 @@ class RIlistAll extends React.Component {
   return [...new Set(this)]
 }    
   uniqueYM = arrayOfRIs3.unique();
+        //fruits.sort();
+//fruits.reverse();
   let lotN;      
   arrLotYM=[]; //[Y-M , LAR (sum of lot  PASS/all lots)
  for(let i=1; i< uniqueYM.length; i++){ 
@@ -59525,7 +59527,8 @@ class RIlistAll extends React.Component {
           }           
    }
    
-    arrLotYM.push([uniqueYM[i], lotN, lotA, lotA/lotN*100,lotQty, QtyT, Def, Def/QtyT*100,]) ;
+ //   arrLotYM.push([uniqueYM[i], lotN, lotA, lotA/lotN*100,lotQty, QtyT, Def, Def/QtyT*100,]) ;
+   arrLotYM.push([uniqueYM[i], lotN, lotA, Math.round(lotA/lotN*100,2),lotQty, QtyT, Def, Math.round(Def/QtyT*100,2)]) ;
        // arrLotYM.push([uniqueYM[i], lotA/lotN*100 ]) ;
  }   
      
