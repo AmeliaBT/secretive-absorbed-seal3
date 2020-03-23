@@ -59603,8 +59603,8 @@ class RIlistItemMonth extends React.Component {
   
     super(props);  
      let pfColor;
-    console.log(this.props.lotr);
-    if(this.props.lotr === "100"){pfColor = "text-success"}else{pfColor="text-danger" } 
+    console.log(this.props.lar);
+    if(this.props.lar < 100){pfColor = "text-danger"}else{pfColor="text-success" } 
     this.state = {  
           month_year: this.props.month_year,
      lotT: this.props.lotT,
