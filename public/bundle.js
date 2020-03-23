@@ -59519,8 +59519,8 @@ class RIlistAll extends React.Component {
           }           
    }
    
-     arrLotYM.push([uniqueYM[i], lotN, lotA, lotA/lotN*100 ]) ;
-       
+    // arrLotYM.push([uniqueYM[i], lotN, lotA, lotA/lotN*100 ]) ;
+        arrLotYM.push([uniqueYM[i], lotA/lotN*100 ]) ;
  }   
      
       
@@ -59528,9 +59528,9 @@ class RIlistAll extends React.Component {
    return
     React.createElement(RIlistItemMonth, {
           month_year: el[0], 
-                 lotT: "222", 
-                lotA: "111", 
-                 lar: el[3]}
+               //  lotT={"222"}
+               // lotA={"111"}
+                 lar: el[1]}
             ) 
         });   
         
@@ -59583,20 +59583,22 @@ const style = __webpack_require__(86);
 class RIlistItemMonth extends React.Component { 
  
   constructor(props) {  
-   
-    super(props);      
+   alert("hi");
+    super(props);  
+    alert("hi");
     this.state = {  
           month_year: this.props.month_year,
-      lotT: this.props.lotT,
-      lotA: this.props.lotA,
-          lar: this.props.lar  }
+     // lotT: this.props.lotT,
+     // lotA: this.props.lotA,
+          lar: this.props.lar  
+    }
         }
   render() {    
     return(
       React.createElement("div", null, 
       React.createElement("div", {className: "table-row-line"}, " ", React.createElement(Row, null, 
-        React.createElement(Col, {  sm: 2}, this.state.month_year, " "), 
-       React.createElement(Col, { sm: 1}, " ", this.state.lar)
+         React.createElement(Col, { sm: 1}, " abc abc ")
+       
         ), " ")
       )
     );
@@ -59605,6 +59607,10 @@ class RIlistItemMonth extends React.Component {
 module.exports = RIlistItemMonth;
 //const {report, showDelete, showDelete2} = this.props;
      {/* 
+     
+     
+      <Col  sm={2} >{this.state.month_year} </Col>       
+       <Col sm={1} > {this.state.lar}</Col>
      
      lotT={el[1]}
                  lotA={el[2]}

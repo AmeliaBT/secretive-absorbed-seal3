@@ -9,20 +9,22 @@ const style = require('../styles/RIlistItem');
 class RIlistItemMonth extends React.Component { 
  
   constructor(props) {  
-   
-    super(props);      
+   alert("hi");
+    super(props);  
+    alert("hi");
     this.state = {  
           month_year: this.props.month_year,
-      lotT: this.props.lotT,
-      lotA: this.props.lotA,
-          lar: this.props.lar  }
+     // lotT: this.props.lotT,
+     // lotA: this.props.lotA,
+          lar: this.props.lar  
+    }
         }
   render() {    
     return(
       <div>      
       <div className="table-row-line"> <Row > 
-        <Col  sm={2} >{this.state.month_year} </Col>       
-       <Col sm={1} > {this.state.lar}</Col>
+         <Col sm={1} > abc abc </Col>
+       
         </Row> </div>
       </div>
     );
@@ -31,6 +33,10 @@ class RIlistItemMonth extends React.Component {
 module.exports = RIlistItemMonth;
 //const {report, showDelete, showDelete2} = this.props;
      {/* 
+     
+     
+      <Col  sm={2} >{this.state.month_year} </Col>       
+       <Col sm={1} > {this.state.lar}</Col>
      
      lotT={el[1]}
                  lotA={el[2]}
