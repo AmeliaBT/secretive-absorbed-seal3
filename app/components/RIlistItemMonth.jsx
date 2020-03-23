@@ -16,7 +16,10 @@ class RIlistItemMonth extends React.Component {
           month_year: this.props.month_year,
      lotT: this.props.lotT,
      lotA: this.props.lotA,
-          lar: this.props.lar  
+          lar: this.props.lar,
+      lotQty: this.props.lotQty,
+      qtyT: this.props.qtyT,
+     def: this.props.def      
     }
         }
   render() {    
@@ -24,10 +27,15 @@ class RIlistItemMonth extends React.Component {
       <div>      
       <div className="table-row-line"> <Row > 
         
-        <Col  sm={2} >{this.state.month_year} </Col> 
-        <Col sm={1} > {this.state.lotT}</Col>
+         <Col  sm={2} >{this.state.month_year} </Col> 
+         <Col sm={1} > {this.state.lotT}</Col>
          <Col sm={1} > {this.state.lotA}</Col>
-       <Col sm={1} > {this.state.lar}</Col>
+         <Col sm={1} > {this.state.lar}</Col>
+        
+        <Col sm={1} > {this.state.lotQty}</Col>
+         <Col sm={1} > {this.state.qtyT}</Col>
+         <Col sm={1} > {this.state.def}</Col>
+        
         </Row> </div>
       </div>
     );
@@ -36,7 +44,17 @@ class RIlistItemMonth extends React.Component {
 module.exports = RIlistItemMonth;
 //const {report, showDelete, showDelete2} = this.props;
      {/* 
+     lotQty: this.props.lotQty
+      qtyT: this.props.qtyT
+     def: this.props.def
      
+      month_year={el[0]} 
+               lotT={el[1]}
+               lotA={el[2]}
+                 lar={el[3]}
+              lotQty={el[4]}
+                qtyT={el[5]}
+                 def={el[6]}
      
       <Col  sm={2} >{this.state.month_year} </Col>       
        <Col sm={1} > {this.state.lar}</Col>

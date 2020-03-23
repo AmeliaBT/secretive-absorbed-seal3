@@ -172,7 +172,7 @@ class RIlistAll extends React.Component {
               <Col sm={1} ><b> LotA </b></Col> 
               <Col sm={1} ><b> LAR% </b></Col> 
               <Col sm={1} ><b> LotQty </b></Col> 
-              <Col sm={1} ><b> LotT </b></Col> 
+              <Col sm={1} ><b> QtyT </b></Col> 
               <Col sm={1} ><b> %Def </b></Col> 
           
            </Row>
