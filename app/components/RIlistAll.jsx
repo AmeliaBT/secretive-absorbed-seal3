@@ -130,19 +130,15 @@ class RIlistAll extends React.Component {
  }   
      
       
-  let reportsM = 
-      arrLotYM.map((el) => {  
- 
-   return <RIlistItemMonth
-           month_year={el[0]} 
-                 lotT={el[1]}
-                 lotA={el[2]}
-                  lar={el[3]}
-            /> 
+  let reportsM =arrLotYM.map((el) => {  
+   return
+    //< RIlistItemMonth
+      //     month_year={el[0]} 
+                // lotT={el[1]}
+                // lotA={el[2]}
+      //            lar={el[3]}
+      //      /> 
         });   
- 
-          
- // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!           
         
            that.setState({
          ["reportsM"]: <div className="reports">  {reportsM}  </div>
@@ -151,13 +147,12 @@ class RIlistAll extends React.Component {
        }
     
   }
-  //https://react-bootstrap.github.io/components/table/
+
   render() {
     return (
       <div>
         <Header/> 
-    <div   >  
-  
+    <div>  
 <Table className="myForm">  
            {/*      
             <Row>             
@@ -167,14 +162,11 @@ class RIlistAll extends React.Component {
               <Col sm={1} ><b> LAR% </b></Col> 
           
            </Row>*/} 
-        
         {this.state.reportsM}
   </Table>  
          <Modal show={this.state.show} onHide={this.handleClose}>  </Modal>
    
     </div>
-   
-
       </div>
     );
   }
