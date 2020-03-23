@@ -59527,7 +59527,8 @@ class RIlistAll extends React.Component {
  
    return React.createElement(RIlistItemMonth, {
            month_year: el[0], 
-            lotT: el[0], 
+                 lotT: el[1], 
+                 lotA: el[2], 
                   lar: el[3]}
             ) 
         });   
@@ -59552,8 +59553,10 @@ class RIlistAll extends React.Component {
 React.createElement(Table, {className: "myForm"}, 
                  
             React.createElement(Row, null, 
-                React.createElement(Col, {sm: 2}, React.createElement("b", null, " Month-Year"), " "), 
-                React.createElement(Col, {sm: 1}, React.createElement("b", null, " LAR% "))
+              React.createElement(Col, {sm: 2}, React.createElement("b", null, " Month-Year"), " "), 
+              React.createElement(Col, {sm: 1}, React.createElement("b", null, " LotT ")), 
+              React.createElement(Col, {sm: 1}, React.createElement("b", null, " LotA ")), 
+              React.createElement(Col, {sm: 1}, React.createElement("b", null, " LAR% "))
            /* 
                 <Col sm={2} ><b>Description </b></Col> 
                <Col  sm={1} ><b> Date Inspected</b> </Col> 
@@ -59597,6 +59600,8 @@ class RIlistItemMonth extends React.Component {
     super(props);      
     this.state = {  
           month_year: this.props.month_year,
+      lotT: this.props.lotT,
+      lotA: this.props.lotA,
           lar: this.props.lar  }
         }
   render() {    
@@ -59613,6 +59618,10 @@ class RIlistItemMonth extends React.Component {
 module.exports = RIlistItemMonth;
 //const {report, showDelete, showDelete2} = this.props;
      {/* 
+     
+     lotT={el[1]}
+                 lotA={el[2]}
+                  lar={el[3]}
        <Col sm={1} > <p style={{fontSize: 12}}> {this.state.fwo} </p> </Col>     
        <Col  sm={2} > {this.state.Gwo}</Col>
         <Col  sm={1} > {this.state.jwo}</Col>

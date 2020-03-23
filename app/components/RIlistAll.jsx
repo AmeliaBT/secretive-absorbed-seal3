@@ -135,7 +135,8 @@ class RIlistAll extends React.Component {
  
    return <RIlistItemMonth
            month_year={el[0]} 
-            lotT={el[]}
+                 lotT={el[1]}
+                 lotA={el[2]}
                   lar={el[3]}
             /> 
         });   
@@ -160,8 +161,10 @@ class RIlistAll extends React.Component {
 <Table className="myForm">  
                  
             <Row>             
-                <Col sm={2} ><b> Month-Year</b> </Col> 
-                <Col sm={1} ><b> LAR% </b></Col> 
+              <Col sm={2} ><b> Month-Year</b> </Col> 
+              <Col sm={1} ><b> LotT </b></Col> 
+              <Col sm={1} ><b> LotA </b></Col> 
+              <Col sm={1} ><b> LAR% </b></Col> 
            {/* 
                 <Col sm={2} ><b>Description </b></Col> 
                <Col  sm={1} ><b> Date Inspected</b> </Col> 

@@ -13,6 +13,8 @@ class RIlistItemMonth extends React.Component {
     super(props);      
     this.state = {  
           month_year: this.props.month_year,
+      lotT: this.props.lotT,
+      lotA: this.props.lotA,
           lar: this.props.lar  }
         }
   render() {    
@@ -29,6 +31,10 @@ class RIlistItemMonth extends React.Component {
 module.exports = RIlistItemMonth;
 //const {report, showDelete, showDelete2} = this.props;
      {/* 
+     
+     lotT={el[1]}
+                 lotA={el[2]}
+                  lar={el[3]}
        <Col sm={1} > <p style={{fontSize: 12}}> {this.state.fwo} </p> </Col>     
        <Col  sm={2} > {this.state.Gwo}</Col>
         <Col  sm={1} > {this.state.jwo}</Col>
