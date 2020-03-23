@@ -19,7 +19,8 @@ class RIlistItemMonth extends React.Component {
           lar: this.props.lar,
       lotQty: this.props.lotQty,
       qtyT: this.props.qtyT,
-     def: this.props.def      
+     def: this.props.def ,
+      defR:this.props.defR
     }
         }
   render() {    
@@ -35,6 +36,7 @@ class RIlistItemMonth extends React.Component {
         <Col sm={1} > {this.state.lotQty}</Col>
          <Col sm={1} > {this.state.qtyT}</Col>
          <Col sm={1} > {this.state.def}</Col>
+        <Col sm={1} > {this.state.defR}</Col>
         
         </Row> </div>
       </div>

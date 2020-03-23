@@ -133,7 +133,7 @@ class RIlistAll extends React.Component {
           }           
    }
    
-    arrLotYM.push([uniqueYM[i], lotN, lotA, lotA/lotN*100,lotQty,QtyT, Def]) ;
+    arrLotYM.push([uniqueYM[i], lotN, lotA, lotA/lotN*100,lotQty, QtyT, Def, Def/QtyT*100,]) ;
        // arrLotYM.push([uniqueYM[i], lotA/lotN*100 ]) ;
  }   
      
@@ -148,6 +148,7 @@ class RIlistAll extends React.Component {
               lotQty={el[4]}
                 qtyT={el[5]}
                  def={el[6]}
+               defR={el[7]}
             /> 
         });   
         
@@ -173,6 +174,7 @@ class RIlistAll extends React.Component {
               <Col sm={1} ><b> LAR% </b></Col> 
               <Col sm={1} ><b> LotQty </b></Col> 
               <Col sm={1} ><b> QtyT </b></Col> 
+              <Col sm={1} ><b> QtyDef </b></Col>
               <Col sm={1} ><b> %Def </b></Col> 
           
            </Row>

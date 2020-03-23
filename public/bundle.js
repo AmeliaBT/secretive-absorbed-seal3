@@ -59525,7 +59525,7 @@ class RIlistAll extends React.Component {
           }           
    }
    
-    arrLotYM.push([uniqueYM[i], lotN, lotA, lotA/lotN*100,lotQty,QtyT, Def]) ;
+    arrLotYM.push([uniqueYM[i], lotN, lotA, lotA/lotN*100,lotQty, QtyT, Def, Def/QtyT*100,]) ;
        // arrLotYM.push([uniqueYM[i], lotA/lotN*100 ]) ;
  }   
      
@@ -59539,7 +59539,8 @@ class RIlistAll extends React.Component {
                  lar: el[3], 
               lotQty: el[4], 
                 qtyT: el[5], 
-                 def: el[6]}
+                 def: el[6], 
+               defR: el[7]}
             ) 
         });   
         
@@ -59565,6 +59566,7 @@ React.createElement(Table, {className: "myForm"},
               React.createElement(Col, {sm: 1}, React.createElement("b", null, " LAR% ")), 
               React.createElement(Col, {sm: 1}, React.createElement("b", null, " LotQty ")), 
               React.createElement(Col, {sm: 1}, React.createElement("b", null, " QtyT ")), 
+              React.createElement(Col, {sm: 1}, React.createElement("b", null, " QtyDef ")), 
               React.createElement(Col, {sm: 1}, React.createElement("b", null, " %Def "))
           
            ), 
@@ -59605,7 +59607,8 @@ class RIlistItemMonth extends React.Component {
           lar: this.props.lar,
       lotQty: this.props.lotQty,
       qtyT: this.props.qtyT,
-     def: this.props.def      
+     def: this.props.def ,
+      defR:this.props.defR
     }
         }
   render() {    
@@ -59620,7 +59623,8 @@ class RIlistItemMonth extends React.Component {
         
         React.createElement(Col, { sm: 1}, " ", this.state.lotQty), 
          React.createElement(Col, { sm: 1}, " ", this.state.qtyT), 
-         React.createElement(Col, { sm: 1}, " ", this.state.def)
+         React.createElement(Col, { sm: 1}, " ", this.state.def), 
+        React.createElement(Col, { sm: 1}, " ", this.state.defR)
         
         ), " ")
       )
