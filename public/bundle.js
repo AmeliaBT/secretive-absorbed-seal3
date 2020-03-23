@@ -59519,13 +59519,13 @@ class RIlistAll extends React.Component {
           if(ym === uniqueYM[i] ) {
             lotN= lotN+1;
             lotQty=lotQty+arrayOfRIsPF[j][2];
-            QtyT=lotQty+arrayOfRIsPF[j][3];
-            Def=lotQty+arrayOfRIsPF[j][4];
+            QtyT=QtyT+arrayOfRIsPF[j][3];
+            Def=Def+arrayOfRIsPF[j][4];
             if(arrayOfRIsPF[j][1] === "Pass" ){ lotA =lotA+1;}           
           }           
    }
    
-    arrLotYM.push([uniqueYM[i], lotN, lotA, lotA/lotN*100 ]) ;
+    arrLotYM.push([uniqueYM[i], lotN, lotA, lotA/lotN*100,lotQty,QtyT, Def]) ;
        // arrLotYM.push([uniqueYM[i], lotA/lotN*100 ]) ;
  }   
      
@@ -59536,7 +59536,10 @@ class RIlistAll extends React.Component {
           month_year: el[0], 
                lotT: el[1], 
                lotA: el[2], 
-                 lar: el[3]}
+                 lar: el[3], 
+              lotQty: el[4], 
+                qtyT: el[5], 
+                 def: el[6]}
             ) 
         });   
         
@@ -59559,7 +59562,10 @@ React.createElement(Table, {className: "myForm"},
               React.createElement(Col, {sm: 2}, React.createElement("b", null, " Month-Year"), " "), 
               React.createElement(Col, {sm: 1}, React.createElement("b", null, " LotT ")), 
               React.createElement(Col, {sm: 1}, React.createElement("b", null, " LotA ")), 
-              React.createElement(Col, {sm: 1}, React.createElement("b", null, " LAR% "))
+              React.createElement(Col, {sm: 1}, React.createElement("b", null, " LAR% ")), 
+              React.createElement(Col, {sm: 1}, React.createElement("b", null, " LotQty ")), 
+              React.createElement(Col, {sm: 1}, React.createElement("b", null, " LotT ")), 
+              React.createElement(Col, {sm: 1}, React.createElement("b", null, " %Def "))
           
            ), 
         this.state.reportsM

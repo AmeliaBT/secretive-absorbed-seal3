@@ -127,13 +127,13 @@ class RIlistAll extends React.Component {
           if(ym === uniqueYM[i] ) {
             lotN= lotN+1;
             lotQty=lotQty+arrayOfRIsPF[j][2];
-            QtyT=lotQty+arrayOfRIsPF[j][3];
-            Def=lotQty+arrayOfRIsPF[j][4];
+            QtyT=QtyT+arrayOfRIsPF[j][3];
+            Def=Def+arrayOfRIsPF[j][4];
             if(arrayOfRIsPF[j][1] === "Pass" ){ lotA =lotA+1;}           
           }           
    }
    
-    arrLotYM.push([uniqueYM[i], lotN, lotA, lotA/lotN*100 ]) ;
+    arrLotYM.push([uniqueYM[i], lotN, lotA, lotA/lotN*100,lotQty,QtyT, Def]) ;
        // arrLotYM.push([uniqueYM[i], lotA/lotN*100 ]) ;
  }   
      
@@ -145,6 +145,9 @@ class RIlistAll extends React.Component {
                lotT={el[1]}
                lotA={el[2]}
                  lar={el[3]}
+              lotQty={el[4]}
+                qtyT={el[5]}
+                 def={el[6]}
             /> 
         });   
         
@@ -168,6 +171,9 @@ class RIlistAll extends React.Component {
               <Col sm={1} ><b> LotT </b></Col> 
               <Col sm={1} ><b> LotA </b></Col> 
               <Col sm={1} ><b> LAR% </b></Col> 
+              <Col sm={1} ><b> LotQty </b></Col> 
+              <Col sm={1} ><b> LotT </b></Col> 
+              <Col sm={1} ><b> %Def </b></Col> 
           
            </Row>
         {this.state.reportsM}
