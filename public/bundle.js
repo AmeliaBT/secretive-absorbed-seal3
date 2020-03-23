@@ -59551,21 +59551,14 @@ class RIlistAll extends React.Component {
     React.createElement("div", null, 
   
 React.createElement(Table, {className: "myForm"}, 
-                 
-            React.createElement(Row, null, 
-              React.createElement(Col, {sm: 2}, React.createElement("b", null, " Month-Year"), " "), 
-              React.createElement(Col, {sm: 1}, React.createElement("b", null, " LotT ")), 
-              React.createElement(Col, {sm: 1}, React.createElement("b", null, " LotA ")), 
-              React.createElement(Col, {sm: 1}, React.createElement("b", null, " LAR% "))
-           /* 
-                <Col sm={2} ><b>Description </b></Col> 
-               <Col  sm={1} ><b> Date Inspected</b> </Col> 
-              <Col  sm={1} ><b>Pass /Fail </b> </Col> 
-               <Col sm={1} > <b>Lot Size </b> </Col> 
-              <Col sm={3} > <b>Comment</b> </Col> 
-               <Col sm={1} > <b>View </b> </Col> 
-              */
-           ), 
+           /*      
+            <Row>             
+              <Col sm={2} ><b> Month-Year</b> </Col> 
+              <Col sm={1} ><b> LotT </b></Col> 
+              <Col sm={1} ><b> LotA </b></Col> 
+              <Col sm={1} ><b> LAR% </b></Col> 
+          
+           </Row>*/
         
         this.state.reportsM
   ), 

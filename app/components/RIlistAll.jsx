@@ -159,21 +159,14 @@ class RIlistAll extends React.Component {
     <div   >  
   
 <Table className="myForm">  
-                 
+           {/*      
             <Row>             
               <Col sm={2} ><b> Month-Year</b> </Col> 
               <Col sm={1} ><b> LotT </b></Col> 
               <Col sm={1} ><b> LotA </b></Col> 
               <Col sm={1} ><b> LAR% </b></Col> 
-           {/* 
-                <Col sm={2} ><b>Description </b></Col> 
-               <Col  sm={1} ><b> Date Inspected</b> </Col> 
-              <Col  sm={1} ><b>Pass /Fail </b> </Col> 
-               <Col sm={1} > <b>Lot Size </b> </Col> 
-              <Col sm={3} > <b>Comment</b> </Col> 
-               <Col sm={1} > <b>View </b> </Col> 
-              */}   
-           </Row>
+          
+           </Row>*/} 
         
         {this.state.reportsM}
   </Table>  
