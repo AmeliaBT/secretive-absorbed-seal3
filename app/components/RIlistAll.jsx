@@ -98,8 +98,8 @@ class RIlistAll extends React.Component {
            arrayOfRIs3.push(myDate2 ) ;   
               
            if(pass_fail.length === null){
-           arrayOfRIsPF.push([myDate2, "Fail"]);
-           }else{ arrayOfRIsPF.push([myDate2, pass_fail]);}               
+           arrayOfRIsPF.push([myDate2, "Fail", myLot,qtyTested, qtyFail]);
+           }else{ arrayOfRIsPF.push([myDate2, pass_fail,myLot,qtyTested, qtyFail]);}               
             }
     
            return
@@ -126,7 +126,9 @@ class RIlistAll extends React.Component {
             let ym= arrayOfRIsPF[j][0];
           if(ym === uniqueYM[i] ) {
             lotN= lotN+1;
-            
+            lotQty=lotQty+arrayOfRIsPF[j][2];
+            QtyT=lotQty+arrayOfRIsPF[j][3];
+            Def=lotQty+arrayOfRIsPF[j][4];
             if(arrayOfRIsPF[j][1] === "Pass" ){ lotA =lotA+1;}           
           }           
    }
