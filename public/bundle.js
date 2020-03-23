@@ -59390,7 +59390,7 @@ exports.push([module.i, "\n\n\n.table-row-line {  \n border-bottom: 1px solid #9
 /* 387 */
 /***/ (function(module, exports, __webpack_require__) {
 
-// Table View  (no Filter);  Monthly stst ; All can view only
+// KPI  (no Filter);  Monthly stst ; All can view only
 /*
 Month-Year
 LotT
@@ -59509,12 +59509,16 @@ class RIlistAll extends React.Component {
   
     let lotN=0; //number of lots
     let lotA=0; //number of lots PASS
-    
+   
+    let lotQty=0;//sum of lot qty
+    let QtyT=0 ; // sum of qty tested
+    let Def = 0; //% Defective
     
    for(let j=0; j< arrayOfRIsPF.length; j++ ){
             let ym= arrayOfRIsPF[j][0];
           if(ym === uniqueYM[i] ) {
             lotN= lotN+1;
+            
             if(arrayOfRIsPF[j][1] === "Pass" ){ lotA =lotA+1;}           
           }           
    }
