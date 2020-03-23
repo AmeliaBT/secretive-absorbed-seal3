@@ -9,13 +9,13 @@ const style = require('../styles/RIlistItem');
 class RIlistItemMonth extends React.Component { 
  
   constructor(props) {  
-   alert("hi");
+  
     super(props);  
-    alert("hi");
+    
     this.state = {  
           month_year: this.props.month_year,
-     // lotT: this.props.lotT,
-     // lotA: this.props.lotA,
+     lotT: this.props.lotT,
+     lotA: this.props.lotA,
           lar: this.props.lar  
     }
         }
@@ -24,7 +24,10 @@ class RIlistItemMonth extends React.Component {
       <div>      
       <div className="table-row-line"> <Row > 
          <Col sm={1} > abc abc </Col>
-       
+        <Col  sm={2} >{this.state.month_year} </Col> 
+        <Col sm={1} > {this.state.lotT}</Col>
+         <Col sm={1} > {this.state.lotA}</Col>
+       <Col sm={1} > {this.state.lar}</Col>
         </Row> </div>
       </div>
     );

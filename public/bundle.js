@@ -59519,18 +59519,18 @@ class RIlistAll extends React.Component {
           }           
    }
    
-    // arrLotYM.push([uniqueYM[i], lotN, lotA, lotA/lotN*100 ]) ;
-        arrLotYM.push([uniqueYM[i], lotA/lotN*100 ]) ;
+    arrLotYM.push([uniqueYM[i], lotN, lotA, lotA/lotN*100 ]) ;
+       // arrLotYM.push([uniqueYM[i], lotA/lotN*100 ]) ;
  }   
      
-      
+     alert("arrLotYM  =" + arrLotYM) ;
+        console.log(arrLotYM);
   let reportsM =arrLotYM.map((el) => {  
-   return
-    React.createElement(RIlistItemMonth, {
+   return React.createElement(RIlistItemMonth, {
           month_year: el[0], 
-               //  lotT={"222"}
-               // lotA={"111"}
-                 lar: el[1]}
+               lotT: el[1], 
+               lotA: el[2], 
+                 lar: el[3]}
             ) 
         });   
         
@@ -59583,13 +59583,13 @@ const style = __webpack_require__(86);
 class RIlistItemMonth extends React.Component { 
  
   constructor(props) {  
-   alert("hi");
+  
     super(props);  
-    alert("hi");
+    
     this.state = {  
           month_year: this.props.month_year,
-     // lotT: this.props.lotT,
-     // lotA: this.props.lotA,
+     lotT: this.props.lotT,
+     lotA: this.props.lotA,
           lar: this.props.lar  
     }
         }
@@ -59597,8 +59597,11 @@ class RIlistItemMonth extends React.Component {
     return(
       React.createElement("div", null, 
       React.createElement("div", {className: "table-row-line"}, " ", React.createElement(Row, null, 
-         React.createElement(Col, { sm: 1}, " abc abc ")
-       
+         React.createElement(Col, { sm: 1}, " abc abc "), 
+        React.createElement(Col, {  sm: 2}, this.state.month_year, " "), 
+        React.createElement(Col, { sm: 1}, " ", this.state.lotT), 
+         React.createElement(Col, { sm: 1}, " ", this.state.lotA), 
+       React.createElement(Col, { sm: 1}, " ", this.state.lar)
         ), " ")
       )
     );

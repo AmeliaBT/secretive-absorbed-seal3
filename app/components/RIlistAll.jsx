@@ -127,18 +127,18 @@ class RIlistAll extends React.Component {
           }           
    }
    
-    // arrLotYM.push([uniqueYM[i], lotN, lotA, lotA/lotN*100 ]) ;
-        arrLotYM.push([uniqueYM[i], lotA/lotN*100 ]) ;
+    arrLotYM.push([uniqueYM[i], lotN, lotA, lotA/lotN*100 ]) ;
+       // arrLotYM.push([uniqueYM[i], lotA/lotN*100 ]) ;
  }   
      
-      
+     alert("arrLotYM  =" + arrLotYM) ;
+        console.log(arrLotYM);
   let reportsM =arrLotYM.map((el) => {  
-   return
-    < RIlistItemMonth
+   return < RIlistItemMonth
           month_year={el[0]} 
-               //  lotT={"222"}
-               // lotA={"111"}
-                 lar={el[1]}
+               lotT={el[1]}
+               lotA={el[2]}
+                 lar={el[3]}
             /> 
         });   
         
