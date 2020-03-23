@@ -113,10 +113,12 @@ class RIlistAll extends React.Component {
   uniqueYM = arrayOfRIs3.unique();
   let lotN;      
   arrLotYM=[]; //[Y-M , LAR (sum of lot  PASS/all lots)
-  for(let i=1; i< uniqueYM.length; i++){ 
-  
+ // for(let i=1; i< uniqueYM.length; i++){ 
+  for(let i=1; i< 9; i++){ 
     let lotN=0; //number of lots
     let lotA=0; //number of lots PASS
+    
+    
    for(let j=0; j< arrayOfRIsPF.length; j++ ){
             let ym= arrayOfRIsPF[j][0];
           if(ym === uniqueYM[i] ) {
@@ -132,12 +134,12 @@ class RIlistAll extends React.Component {
       
   let reportsM =arrLotYM.map((el) => {  
    return
-    //< RIlistItemMonth
-      //     month_year={el[0]} 
-                // lotT={el[1]}
-                // lotA={el[2]}
-      //            lar={el[3]}
-      //      /> 
+    < RIlistItemMonth
+          month_year={el[0]} 
+                 lotT={"222"}
+                lotA={"111"}
+                 lar={el[3]}
+            /> 
         });   
         
            that.setState({
