@@ -11,7 +11,9 @@ class RIlistItemMonth extends React.Component {
   constructor(props) {  
   
     super(props);  
-    
+     let pfColor;
+    console.log(this.props.lotr);
+    if(this.props.lotr === 100){pfColor = "text-success"}else{pfColor="text-danger" } 
     this.state = {  
           month_year: this.props.month_year,
      lotT: this.props.lotT,
@@ -20,7 +22,8 @@ class RIlistItemMonth extends React.Component {
       lotQty: this.props.lotQty,
       qtyT: this.props.qtyT,
      def: this.props.def ,
-      defR:this.props.defR
+      defR:this.props.defR,
+       pfColor: pfColor
     }
         }
   render() {    
@@ -31,7 +34,7 @@ class RIlistItemMonth extends React.Component {
          <Col  sm={2} >{this.state.month_year} </Col> 
          <Col sm={1} > {this.state.lotT}</Col>
          <Col sm={1} > {this.state.lotA}</Col>
-         <Col sm={1} > {this.state.lar}</Col>
+        <Col sm={1} ><p style={{fontWeight: 'bold', fontSize: 14}} className={this.state.pfColor}> {this.state.lar} </p> </Col>
         
         <Col sm={1} > {this.state.lotQty}</Col>
          <Col sm={1} > {this.state.qtyT}</Col>

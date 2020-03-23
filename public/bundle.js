@@ -59503,8 +59503,8 @@ class RIlistAll extends React.Component {
   return [...new Set(this)]
 }    
   uniqueYM = arrayOfRIs3.unique();
-        //fruits.sort();
-//fruits.reverse();
+        uniqueYM.sort();
+uniqueYM.reverse();
   let lotN;      
   arrLotYM=[]; //[Y-M , LAR (sum of lot  PASS/all lots)
  for(let i=1; i< uniqueYM.length; i++){ 
@@ -59602,7 +59602,9 @@ class RIlistItemMonth extends React.Component {
   constructor(props) {  
   
     super(props);  
-    
+     let pfColor;
+    console.log(this.props.lotr);
+    if(this.props.lotr === "100"){pfColor = "text-success"}else{pfColor="text-danger" } 
     this.state = {  
           month_year: this.props.month_year,
      lotT: this.props.lotT,
@@ -59611,7 +59613,8 @@ class RIlistItemMonth extends React.Component {
       lotQty: this.props.lotQty,
       qtyT: this.props.qtyT,
      def: this.props.def ,
-      defR:this.props.defR
+      defR:this.props.defR,
+       pfColor: pfColor
     }
         }
   render() {    
@@ -59622,7 +59625,7 @@ class RIlistItemMonth extends React.Component {
          React.createElement(Col, {  sm: 2}, this.state.month_year, " "), 
          React.createElement(Col, { sm: 1}, " ", this.state.lotT), 
          React.createElement(Col, { sm: 1}, " ", this.state.lotA), 
-         React.createElement(Col, { sm: 1}, " ", this.state.lar), 
+        React.createElement(Col, { sm: 1}, React.createElement("p", {style: {fontWeight: 'bold', fontSize: 14}, className: this.state.pfColor}, " ", this.state.lar, " "), " "), 
         
         React.createElement(Col, { sm: 1}, " ", this.state.lotQty), 
          React.createElement(Col, { sm: 1}, " ", this.state.qtyT), 
