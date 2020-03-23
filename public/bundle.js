@@ -59505,8 +59505,8 @@ class RIlistAll extends React.Component {
   uniqueYM = arrayOfRIs3.unique();
   let lotN;      
   arrLotYM=[]; //[Y-M , LAR (sum of lot  PASS/all lots)
- // for(let i=1; i< uniqueYM.length; i++){ 
-  for(let i=1; i< 9; i++){ 
+ for(let i=1; i< uniqueYM.length; i++){ 
+  
     let lotN=0; //number of lots
     let lotA=0; //number of lots PASS
     
@@ -59523,8 +59523,8 @@ class RIlistAll extends React.Component {
        // arrLotYM.push([uniqueYM[i], lotA/lotN*100 ]) ;
  }   
      
-     alert("arrLotYM  =" + arrLotYM) ;
-        console.log(arrLotYM);
+     
+       
   let reportsM =arrLotYM.map((el) => {  
    return React.createElement(RIlistItemMonth, {
           month_year: el[0], 
@@ -59548,14 +59548,14 @@ class RIlistAll extends React.Component {
         React.createElement(Header, null), 
     React.createElement("div", null, 
 React.createElement(Table, {className: "myForm"}, 
-           /*      
-            <Row>             
-              <Col sm={2} ><b> Month-Year</b> </Col> 
-              <Col sm={1} ><b> LotT </b></Col> 
-              <Col sm={1} ><b> LotA </b></Col> 
-              <Col sm={1} ><b> LAR% </b></Col> 
+              
+            React.createElement(Row, null, 
+              React.createElement(Col, {sm: 2}, React.createElement("b", null, " Month-Year"), " "), 
+              React.createElement(Col, {sm: 1}, React.createElement("b", null, " LotT ")), 
+              React.createElement(Col, {sm: 1}, React.createElement("b", null, " LotA ")), 
+              React.createElement(Col, {sm: 1}, React.createElement("b", null, " LAR% "))
           
-           </Row>*/
+           ), 
         this.state.reportsM
   ), 
          React.createElement(Modal, {show: this.state.show, onHide: this.handleClose}, "  ")
@@ -59597,7 +59597,7 @@ class RIlistItemMonth extends React.Component {
     return(
       React.createElement("div", null, 
       React.createElement("div", {className: "table-row-line"}, " ", React.createElement(Row, null, 
-         React.createElement(Col, { sm: 1}, " abc abc "), 
+        
         React.createElement(Col, {  sm: 2}, this.state.month_year, " "), 
         React.createElement(Col, { sm: 1}, " ", this.state.lotT), 
          React.createElement(Col, { sm: 1}, " ", this.state.lotA), 

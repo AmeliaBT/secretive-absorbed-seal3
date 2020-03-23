@@ -113,8 +113,8 @@ class RIlistAll extends React.Component {
   uniqueYM = arrayOfRIs3.unique();
   let lotN;      
   arrLotYM=[]; //[Y-M , LAR (sum of lot  PASS/all lots)
- // for(let i=1; i< uniqueYM.length; i++){ 
-  for(let i=1; i< 9; i++){ 
+ for(let i=1; i< uniqueYM.length; i++){ 
+  
     let lotN=0; //number of lots
     let lotA=0; //number of lots PASS
     
@@ -131,8 +131,8 @@ class RIlistAll extends React.Component {
        // arrLotYM.push([uniqueYM[i], lotA/lotN*100 ]) ;
  }   
      
-     alert("arrLotYM  =" + arrLotYM) ;
-        console.log(arrLotYM);
+     
+       
   let reportsM =arrLotYM.map((el) => {  
    return < RIlistItemMonth
           month_year={el[0]} 
@@ -156,14 +156,14 @@ class RIlistAll extends React.Component {
         <Header/> 
     <div>  
 <Table className="myForm">  
-           {/*      
+              
             <Row>             
               <Col sm={2} ><b> Month-Year</b> </Col> 
               <Col sm={1} ><b> LotT </b></Col> 
               <Col sm={1} ><b> LotA </b></Col> 
               <Col sm={1} ><b> LAR% </b></Col> 
           
-           </Row>*/} 
+           </Row>
         {this.state.reportsM}
   </Table>  
          <Modal show={this.state.show} onHide={this.handleClose}>  </Modal>
