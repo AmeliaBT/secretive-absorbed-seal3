@@ -59581,7 +59581,7 @@ React.createElement(Row, null,
      )
    ), " "), 
   
-  React.createElement(Col, {xs: 8}, " ", React.createElement("div", null, 
+  React.createElement(Col, {xs: 7}, " ", React.createElement("div", null, 
 React.createElement(Table, {className: "myForm"}, 
               
             React.createElement(Row, null, 
@@ -59597,10 +59597,14 @@ React.createElement(Table, {className: "myForm"},
            ), 
         this.state.reportsM
   ), 
+    React.createElement(Table, {className: "myFormNoLine"}
     
+    ), 
          React.createElement(Modal, {show: this.state.show, onHide: this.handleClose}, "  ")
-    
-    ), " ")
+     
+    ), " "), 
+  
+    React.createElement(Col, {xs: 2})
   )
           
     )
