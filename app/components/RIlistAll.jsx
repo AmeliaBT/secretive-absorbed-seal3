@@ -167,7 +167,16 @@ uniqueYM.reverse();
     return (
       <div>
         <Header/> 
-    <div>  
+    <div> 
+      
+ <Row> <Col  xs={4}   smOffset={1}  >   <h2 >Key Performance Indicators  </h2>    
+   </Col> </Row>  
+<Row > 
+   <Col xs={3} smOffset={1}    ><div  className="well" >  
+     <p > Legend </p>p >
+   </div> </Col>
+  
+  <Col xs={4} > <div   >        
 <Table className="myForm">  
               
             <Row>             
@@ -182,9 +191,12 @@ uniqueYM.reverse();
           
            </Row>
         {this.state.reportsM}
-  </Table>  
+  </Table>      
          <Modal show={this.state.show} onHide={this.handleClose}>  </Modal>
-   
+    
+    </div> </Col>
+  </Row> 
+          
     </div>
       </div>
     );
