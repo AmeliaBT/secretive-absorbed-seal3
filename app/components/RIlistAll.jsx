@@ -169,14 +169,26 @@ uniqueYM.reverse();
         <Header/> 
     <div> 
       
- <Row> <Col  xs={4}   smOffset={1}  >   <h2 >Key Performance Indicators  </h2>    
+ <Row> <Col  xs={3}   smOffset={1}  >   <h4 >Key Performance Indicators  </h4>    
    </Col> </Row>  
 <Row > 
-   <Col xs={3} smOffset={1}    ><div  className="well" >  
-     <p > Legend </p>p >
+   <Col xs={2}   ><div  className="well" >  
+     <p > Legend <br/>
+     LotT<br/>
+LotA<br/>
+LAR%<br/>
+LotQty<br/>
+QtyT<br/>
+QtyDef<br/>
+%Def<br/>
+     
+     
+     
+     
+     </p>
    </div> </Col>
   
-  <Col xs={4} > <div   >        
+  <Col xs={8} > <div   >        
 <Table className="myForm">  
               
             <Row>             
