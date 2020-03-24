@@ -176,10 +176,10 @@ uniqueYM.reverse();
      <p ><br/>
      LotT -number of lots tested<br/>
 LotA - number of lots accepted<br/>
-LAR% -Lot Acceptance Rate  (LAR = LotA/LotT*100)<br/>
-LotQty -number of items (total of all lots)<br/>
-QtyT- number of items tested<br/>
-QtyDef -number of items defective<br/>
+LAR% - Lot Acceptance Rate  (LAR=LotA/LotT*100)<br/>
+LotQty - sum of items in all lots<br/>
+QtyT - number of items tested<br/>
+QtyDef - number of items defective<br/>
 %Def - % of of items defective (%Def=QtyDef /QtyT*100)
 
      
@@ -189,30 +189,28 @@ QtyDef -number of items defective<br/>
      </p>
    </div> </Col>
   
-  <Col xs={7} > <div   >        
+  <Col xs={5} > <div   >        
 <Table className="myForm">  
               
             <Row>             
               <Col sm={2} ><b> Month-Year</b> </Col> 
               <Col sm={1} ><b> LotT </b></Col> 
               <Col sm={1} ><b> LotA </b></Col> 
-              <Col sm={1} ><b> LAR% </b></Col> 
-              <Col sm={1} ><b> LotQty </b></Col> 
-              <Col sm={1} ><b> QtyT </b></Col> 
+              <Col sm={2} ><b> LAR% </b></Col> 
+              <Col sm={2} ><b> LotQty </b></Col> 
+              <Col sm={2} ><b> QtyT </b></Col> 
               <Col sm={1} ><b> QtyDef </b></Col>
               <Col sm={1} ><b> %Def </b></Col> 
-          
+             
            </Row>
         {this.state.reportsM}
   </Table> 
-    <Table className="myFormBlank"> 
     
-    </Table> 
          <Modal show={this.state.show} onHide={this.handleClose}>  </Modal>
      
     </div> </Col>
   
-    <Col xs={2} ></Col>
+    <Col xs={4} ></Col>
   </Row> 
           
     </div>

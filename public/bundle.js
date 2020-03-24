@@ -59568,10 +59568,10 @@ React.createElement(Row, null,
      React.createElement("p", null, React.createElement("br", null), 
      "LotT -number of lots tested", React.createElement("br", null), 
 "LotA - number of lots accepted", React.createElement("br", null), 
-"LAR% -Lot Acceptance Rate  (LAR = LotA/LotT*100)", React.createElement("br", null), 
-"LotQty -number of items (total of all lots)", React.createElement("br", null), 
-"QtyT- number of items tested", React.createElement("br", null), 
-"QtyDef -number of items defective", React.createElement("br", null), 
+"LAR% - Lot Acceptance Rate  (LAR=LotA/LotT*100)", React.createElement("br", null), 
+"LotQty - sum of items in all lots", React.createElement("br", null), 
+"QtyT - number of items tested", React.createElement("br", null), 
+"QtyDef - number of items defective", React.createElement("br", null), 
 "%Def - % of of items defective (%Def=QtyDef /QtyT*100)"
 
      
@@ -59581,30 +59581,28 @@ React.createElement(Row, null,
      )
    ), " "), 
   
-  React.createElement(Col, {xs: 7}, " ", React.createElement("div", null, 
+  React.createElement(Col, {xs: 5}, " ", React.createElement("div", null, 
 React.createElement(Table, {className: "myForm"}, 
               
             React.createElement(Row, null, 
               React.createElement(Col, {sm: 2}, React.createElement("b", null, " Month-Year"), " "), 
               React.createElement(Col, {sm: 1}, React.createElement("b", null, " LotT ")), 
               React.createElement(Col, {sm: 1}, React.createElement("b", null, " LotA ")), 
-              React.createElement(Col, {sm: 1}, React.createElement("b", null, " LAR% ")), 
-              React.createElement(Col, {sm: 1}, React.createElement("b", null, " LotQty ")), 
-              React.createElement(Col, {sm: 1}, React.createElement("b", null, " QtyT ")), 
+              React.createElement(Col, {sm: 2}, React.createElement("b", null, " LAR% ")), 
+              React.createElement(Col, {sm: 2}, React.createElement("b", null, " LotQty ")), 
+              React.createElement(Col, {sm: 2}, React.createElement("b", null, " QtyT ")), 
               React.createElement(Col, {sm: 1}, React.createElement("b", null, " QtyDef ")), 
               React.createElement(Col, {sm: 1}, React.createElement("b", null, " %Def "))
-          
+             
            ), 
         this.state.reportsM
   ), 
-    React.createElement(Table, {className: "myFormNoLine"}
     
-    ), 
          React.createElement(Modal, {show: this.state.show, onHide: this.handleClose}, "  ")
      
     ), " "), 
   
-    React.createElement(Col, {xs: 2})
+    React.createElement(Col, {xs: 4})
   )
           
     )
@@ -59655,10 +59653,10 @@ class RIlistItemMonth extends React.Component {
          React.createElement(Col, {  sm: 2}, this.state.month_year, " "), 
          React.createElement(Col, { sm: 1}, " ", this.state.lotT), 
          React.createElement(Col, { sm: 1}, " ", this.state.lotA), 
-        React.createElement(Col, { sm: 1}, React.createElement("p", {style: {fontWeight: 'bold', fontSize: 14}, className: this.state.pfColor}, " ", this.state.lar, " "), " "), 
+        React.createElement(Col, { sm: 2}, React.createElement("p", {style: {fontWeight: 'bold', fontSize: 14}, className: this.state.pfColor}, " ", this.state.lar, " "), " "), 
         
-        React.createElement(Col, { sm: 1}, " ", this.state.lotQty), 
-         React.createElement(Col, { sm: 1}, " ", this.state.qtyT), 
+        React.createElement(Col, { sm: 2}, " ", this.state.lotQty), 
+         React.createElement(Col, { sm: 2}, " ", this.state.qtyT), 
          React.createElement(Col, { sm: 1}, " ", this.state.def), 
         React.createElement(Col, { sm: 1}, " ", this.state.defR)
         
