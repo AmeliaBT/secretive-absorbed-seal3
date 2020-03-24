@@ -172,15 +172,16 @@ uniqueYM.reverse();
  <Row> <Col  xs={3}   smOffset={1}  >   <h4 >Key Performance Indicators  </h4>    
    </Col> </Row>  
 <Row > 
-   <Col xs={2}   ><div  className="well" >  
-     <p > Legend <br/>
-     LotT<br/>
-LotA<br/>
-LAR%<br/>
-LotQty<br/>
-QtyT<br/>
-QtyDef<br/>
-%Def<br/>
+   <Col xs={3}   ><div  className="well" >  
+     <p ><br/>
+     LotT -number of lots tested<br/>
+LotA - number of lots accepted<br/>
+LAR% -Lot Acceptance Rate  (LAR = LotA/LotT*100)<br/>
+LotQty -number of items (total of all lots)<br/>
+QtyT- number of items tested<br/>
+QtyDef -number of items defective<br/>
+%Def - % of of items defective (%Def=QtyDef /QtyT*100)
+
      
      
      
@@ -203,7 +204,8 @@ QtyDef<br/>
           
            </Row>
         {this.state.reportsM}
-  </Table>      
+  </Table> 
+    
          <Modal show={this.state.show} onHide={this.handleClose}>  </Modal>
     
     </div> </Col>

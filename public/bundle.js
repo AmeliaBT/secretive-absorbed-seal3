@@ -59564,15 +59564,16 @@ uniqueYM.reverse();
  React.createElement(Row, null, " ", React.createElement(Col, {xs: 3, smOffset: 1}, "   ", React.createElement("h4", null, "Key Performance Indicators  ")
    ), " "), 
 React.createElement(Row, null, 
-   React.createElement(Col, {xs: 2}, React.createElement("div", {className: "well"}, 
-     React.createElement("p", null, " Legend ", React.createElement("br", null), 
-     "LotT", React.createElement("br", null), 
-"LotA", React.createElement("br", null), 
-"LAR%", React.createElement("br", null), 
-"LotQty", React.createElement("br", null), 
-"QtyT", React.createElement("br", null), 
-"QtyDef", React.createElement("br", null), 
-"%Def", React.createElement("br", null)
+   React.createElement(Col, {xs: 3}, React.createElement("div", {className: "well"}, 
+     React.createElement("p", null, React.createElement("br", null), 
+     "LotT -number of lots tested", React.createElement("br", null), 
+"LotA - number of lots accepted", React.createElement("br", null), 
+"LAR% -Lot Acceptance Rate  (LAR = LotA/LotT*100)", React.createElement("br", null), 
+"LotQty -number of items (total of all lots)", React.createElement("br", null), 
+"QtyT- number of items tested", React.createElement("br", null), 
+"QtyDef -number of items defective", React.createElement("br", null), 
+"%Def - % of of items defective (%Def=QtyDef /QtyT*100)"
+
      
      
      
@@ -59596,6 +59597,7 @@ React.createElement(Table, {className: "myForm"},
            ), 
         this.state.reportsM
   ), 
+    
          React.createElement(Modal, {show: this.state.show, onHide: this.handleClose}, "  ")
     
     ), " ")
