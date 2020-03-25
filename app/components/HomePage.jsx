@@ -1,4 +1,4 @@
-//RI Gallery 
+//RI Gallery
 
 const React = require('react');
 

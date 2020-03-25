@@ -1,4 +1,4 @@
-// RI Gallery WIP 
+// NC old RI Gallery WIP 
 
 const React = require('react');
 const Link = require('react-router-dom').Link
@@ -11,7 +11,7 @@ const Header = require('./Header');
 const RIreport = require('./RIreport');
 
 /* the reports page that shows all reports */
-class RIreports extends React.Component {
+class NCreports extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -196,4 +196,4 @@ console.log(el);
   }
 };
 
-module.exports = RIreports;
+module.exports = NCreports;

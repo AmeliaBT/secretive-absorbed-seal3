@@ -15,7 +15,7 @@ let store = createStore(reducers);
 
 /* Import Components */
 const Main = require('./components/Main');
-const RIreports = require('./components/RIreports');
+const NCreports = require('./components/NCreports');
 const RIlist = require('./components/RIlist');
 const RIlistAll = require('./components/RIlistAll'); //change
 const RIlistAll2 = require('./components/RIlistAll2'); 
@@ -44,7 +44,7 @@ render((
         <Route path="/signup" component={SignUp}/>
         <Route path="/login" component={LogIn}/>
         <Route path="/homepage" component={HomePage}/>
-        <Route path="/reports" component={RIreports}/>
+        <Route path="/reports" component={NCreports}/>
          <Route path="/list" component={RIlist}/>
          <Route path="/list-all" component={RIlistAll}/>
          <Route path="/list-all2" component={RIlistAll2}/>
