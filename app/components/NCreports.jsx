@@ -17,9 +17,9 @@ class NCreports extends React.Component {
     this.state = {
        show: false,
        modal_label: "Choose a report from your library to view ",
-       chosenAnotherUserBook: "",
-       chosenBook: "",
-       anotherUserNickname: "",
+      // chosenAnotherUserBook: "",
+     //  chosenBook: "",
+     //  anotherUserNickname: "",
        disabled: true,
        reports: "loading...",
        modal_content: "loading..."
@@ -28,24 +28,24 @@ class NCreports extends React.Component {
     this.handleShow = this.handleShow.bind(this);
     this.handleClose = this.handleClose.bind(this);
     this.handleShowModal = this.handleShowModal.bind(this);
-    this.handleExchange = this.handleExchange.bind(this);
-    this.handleSelectChange = this.handleSelectChange.bind(this);
+   // this.handleExchange = this.handleExchange.bind(this);
+   // this.handleSelectChange = this.handleSelectChange.bind(this);
   }
    /***********************/
    // handlers
    /***********************/
-  handleShowModal(chosenAnotherUserBook, anotherUserNickname) {
+  handleShowModal( anotherUserNickname) {
     // show Modal
     this.handleShow();
     this.setState({
-          ["chosenAnotherUserBook"]: chosenAnotherUserBook,
-          ["anotherUserNickname"]: anotherUserNickname
+        //  ["chosenAnotherUserBook"]: chosenAnotherUserBook,
+          //["anotherUserNickname"]: anotherUserNickname
            });
   }
   /***********************/
   // send variables to create proposals
   /***********************/
-  handleExchange() {
+ // handleExchange() {
      // post request to create proposals
      /*
       let that = this;
@@ -82,15 +82,15 @@ class NCreports extends React.Component {
          }
         }
         */
-  }
+  //}
   /***********************/
-  handleSelectChange(event) {
-    console.log(event.target.value);
-     this.setState({
-          ["chosenBook"]: event.target.value,
-          ["disabled"]: false
-           });
-  }
+//  handleSelectChange(event) {
+//    console.log(event.target.value);
+ //    this.setState({
+//          ["chosenBook"]: event.target.value,
+//          ["disabled"]: false
+  //         });
+//  }
   /***********************/
    handleClose() {
     this.setState({ show: false });
@@ -187,7 +187,7 @@ console.log(el);
             </form>
           </Modal.Body>
           <Modal.Footer>
-            <Button onClick={this.handleExchange} className="btn-modal" disabled={this.state.disabled}>Confirm</Button>
+            {/*<Button onClick={this.handleExchange} className="btn-modal" disabled={this.state.disabled}>Confirm</Button>*/}
             <Button onClick={this.handleClose} className="btn-modal">Close</Button>
           </Modal.Footer>
         </Modal>
