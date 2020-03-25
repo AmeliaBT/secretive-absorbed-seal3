@@ -29,10 +29,7 @@ class RIreport extends React.Component {
     //get   supplier and pn of user by nickname
     let that = this;
       const xhr = new XMLHttpRequest();
-     /* 
-      xhr.open('POST', '/get-  supplier-city-by-nick', true);
- */
-//xhr.open('POST',  true);
+
 xhr.open('POST', '/get-all-users-reports', true);
  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
      
@@ -49,9 +46,9 @@ xhr.open('POST', '/get-all-users-reports', true);
           return;
         }
         let response = JSON.parse(this.responseText);
-        let   supplier = response.  supplier;
+        let   supplier = response.supplier;
         let pn = response.pn;
-        if(response.  supplier.length == 0)    supplier = "not specified";
+        if(response.supplier.length == 0)    supplier = "not specified";
         if(response.pn.length == 0)  pn = "not specified";
            that.setState({
           ["tooltip"]: <Popover id="popover" title="User location">
