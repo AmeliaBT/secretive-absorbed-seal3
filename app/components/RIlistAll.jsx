@@ -193,7 +193,7 @@ QtyDef - number of items defective<br/>
 <Table className="myForm">  
               
             <Row>             
-              <Col sm={2} ><b> Month-Year</b> </Col> 
+              <Col sm={2} ><b> Year- Month</b> </Col> 
               <Col sm={1} ><b> LotT </b></Col> 
               <Col sm={1} ><b> LotA </b></Col> 
               <Col sm={2} ><b> LAR% </b></Col> 
@@ -210,7 +210,7 @@ QtyDef - number of items defective<br/>
      
     </div> </Col>
   
-    <Col xs={4} ></Col>
+    <Col ></Col>
   </Row> 
           
     </div>
@@ -220,3 +220,5 @@ QtyDef - number of items defective<br/>
 };
 
 module.exports = RIlistAll;
+// <Col xs={5} > <div   >      
+//<Col xs={4} ></Col>

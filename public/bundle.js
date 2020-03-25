@@ -59585,7 +59585,7 @@ React.createElement(Row, null,
 React.createElement(Table, {className: "myForm"}, 
               
             React.createElement(Row, null, 
-              React.createElement(Col, {sm: 2}, React.createElement("b", null, " Month-Year"), " "), 
+              React.createElement(Col, {sm: 2}, React.createElement("b", null, " Year- Month"), " "), 
               React.createElement(Col, {sm: 1}, React.createElement("b", null, " LotT ")), 
               React.createElement(Col, {sm: 1}, React.createElement("b", null, " LotA ")), 
               React.createElement(Col, {sm: 2}, React.createElement("b", null, " LAR% ")), 
@@ -59602,7 +59602,7 @@ React.createElement(Table, {className: "myForm"},
      
     ), " "), 
   
-    React.createElement(Col, {xs: 4})
+    React.createElement(Col, null)
   )
           
     )
@@ -59612,6 +59612,8 @@ React.createElement(Table, {className: "myForm"},
 };
 
 module.exports = RIlistAll;
+// <Col xs={5} > <div   >      
+//<Col xs={4} ></Col>
 
 /***/ }),
 /* 388 */
