@@ -40,7 +40,7 @@ class NCreport extends React.Component {
     return(
       <div className="book-all">
       {/*   <img src={this.state.img_url} alt="book pic" className="img-all"/>*/}
-        <div className="bookname-all">{this.state.Gwo}</div>
+        <div  className="nc-all"><h4>{this.state.Gwo}</h4></div>
         <div className="exchange-btn-all" onClick={() => this.props.showModal(this.props.reportID, this.props.inspector)}>Show Report</div>
          <OverlayTrigger
             trigger={['hover', 'focus']}
@@ -55,7 +55,9 @@ class NCreport extends React.Component {
   }
 }
 module.exports = NCreport;
-//  componentWillMount() {
+//  <div className="bookname-all">{this.state.Gwo}</div>
+
+//componentWillMount() {
     //get   supplier and pn of user by nickname
   //  let that = this;
   //    const xhr = new XMLHttpRequest();

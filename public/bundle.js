@@ -59033,7 +59033,7 @@ class NCreport extends React.Component {
     return(
       React.createElement("div", {className: "book-all"}, 
       /*   <img src={this.state.img_url} alt="book pic" className="img-all"/>*/
-        React.createElement("div", {className: "bookname-all"}, this.state.Gwo), 
+        React.createElement("div", {className: "nc-all"}, React.createElement("h4", null, this.state.Gwo)), 
         React.createElement("div", {className: "exchange-btn-all", onClick: () => this.props.showModal(this.props.reportID, this.props.inspector)}, "Show Report"), 
          React.createElement(OverlayTrigger, {
             trigger: ['hover', 'focus'], 
@@ -59048,7 +59048,9 @@ class NCreport extends React.Component {
   }
 }
 module.exports = NCreport;
-//  componentWillMount() {
+//  <div className="bookname-all">{this.state.Gwo}</div>
+
+//componentWillMount() {
     //get   supplier and pn of user by nickname
   //  let that = this;
   //    const xhr = new XMLHttpRequest();
@@ -59126,7 +59128,7 @@ exports = module.exports = __webpack_require__(24)(false);
 
 
 // module
-exports.push([module.i, ".book-all {\n  background: #FAFAFA; /*antiquewhite;*/\n  width: 13.5%;\n  float: left;\n  margin-left: 10px;\n  border: 5px solid  #987D00;\n  margin-bottom: 20px;\n}\n\n.img-all {\n  width: 100%;\n  max-height: 200px;\n  min-height: 200px;\n}\n\n.bookname-all {\n  padding: 10px;\n  text-align: center;\n  font-size: 30px;\n  overflow: auto;\n  white-space: nowrap;\n  color: black;\n}\n\n.nickname-all {\n  padding: 10px;\n  text-align: center;\n  color:black;\n  overflow: auto;\n}\n\n.nickname-all:hover {\n  cursor: help;\n}\n\n.exchange-btn-all {\n  color: white; /*#987D00; */\n  width: 100%;\n  background: #231F20; /*black;*/\n  padding: 5px;\n  text-align: center;\n}\n\n.exchange-btn-all:hover {\n  color: #231F20 ;/* black;*/\n  width: 100%;\n  background:  white; ; /*yellow;*/\n  font-weight: bold;\n  cursor: pointer;\n}", ""]);
+exports.push([module.i, ".book-all {\n  background: #FAFAFA; /*antiquewhite;*/\n  width: 13.5%;\n  float: left;\n  margin-left: 10px;\n  border: 5px solid  #987D00;\n  margin-bottom: 20px;\n}\n\n.img-all {\n  width: 100%;\n  max-height: 200px;\n  min-height: 200px;\n}\n\n.bookname-all {\n  padding: 10px;\n  text-align: center;\n  font-size: 16px;\n  overflow: auto;\n  white-space: nowrap;\n  color: black;\n}\n\n.nickname-all {\n  padding: 10px;\n  text-align: center;\n  color:black;\n  overflow: auto;\n}\n\n.nickname-all:hover {\n  cursor: help;\n}\n\n.exchange-btn-all {\n  color: white; /*#987D00; */\n  width: 100%;\n  background: #231F20; /*black;*/\n  padding: 5px;\n  text-align: center;\n}\n\n.exchange-btn-all:hover {\n  color: #231F20 ;/* black;*/\n  width: 100%;\n  background:  white; ; /*yellow;*/\n  font-weight: bold;\n  cursor: pointer;\n}", ""]);
 
 // exports
 
