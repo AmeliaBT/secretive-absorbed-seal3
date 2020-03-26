@@ -24,8 +24,14 @@ class NCreport extends React.Component {
       
       tooltip: <Popover id="popover" title="some info">
                             <div>
-                            inspector: {this.props.inspector},
-                             
+                            inspector: {this.props.inspector} <br/>
+                              suplier:{this.props.ewo},  
+                   PN:{this.props.fwo} ,
+                 
+                   date:{this.props.jwo} ,
+                   PF:{this.props.two} ,            
+                   
+                   uwo:{this.props.uwo} //photo url
                            </div>
                            <div>
                              dp: 
@@ -40,7 +46,7 @@ class NCreport extends React.Component {
     return(
       <div className="book-all">
       {/*   <img src={this.state.img_url} alt="book pic" className="img-all"/>*/}
-        <div  className="nc-all"><h4>{this.state.Gwo}</h4></div>
+        <div  ><h4 className="nc-all">{this.state.Gwo}</h4></div>
         <div className="exchange-btn-all" onClick={() => this.props.showModal(this.props.reportID, this.props.inspector)}>Show Report</div>
          <OverlayTrigger
             trigger={['hover', 'focus']}

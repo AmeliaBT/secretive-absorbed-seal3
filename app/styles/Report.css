@@ -2,7 +2,10 @@
 .nc-all{
   padding: 10px;
   text-align: center;
-overflow: auto;}
+overflow: auto;
+/*white-space: nowrap;*/
+color: black;
+}
 .book-all {
   background: #FAFAFA; /*antiquewhite;*/
   width: 13.5%;
