@@ -480,12 +480,12 @@ app.post("/get-defect-reports", function(request, response) {
  reportModel.find({ 
  
     //two: new RegExp(regtwo, 'ig') 
-    two:"FailPass"
+    two:"Fail"
   }, 
                    (err, doc) => {
       if (err) throw err;
            response.json(doc);
-   //console.log(doc);
+   console.log(doc);
           }        
      );
            

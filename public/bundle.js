@@ -58855,6 +58855,7 @@ class NCreports extends React.Component {
           return;
         }
         let response = JSON.parse(this.responseText);
+        
         let reports = response.reports.map((el) => {
         //  return <RIreport showModal={that.handleShowModal} reportnumber={el.reportnumber} nickname={el.nickname} img_url={el.img_url}/> 
 /*
@@ -58882,7 +58883,9 @@ class NCreports extends React.Component {
       // getl user's filtered reports
       xhr = new XMLHttpRequest();
       
-      xhr.open('POST', '/get-user-filtered-reports', true);
+    //  xhr.open('POST', '/get-user-filtered-reports', true);
+    xhr.open('POST', '/get-defect-reports', true);
+    //get-defect-reports
       xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
       xhr.send();
