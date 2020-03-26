@@ -57,8 +57,8 @@ class NCreports extends React.Component {
       let that = this;
       let xhr = new XMLHttpRequest();
       
-     // xhr.open('POST', '/get-all-users-reports', true);
-     xhr.open('POST', '/get-defect-reports', true);
+     //xhr.open('POST', '/get-all-users-reports', true);
+    xhr.open('POST', '/get-defect-reports', true);
     //get-defect-reports
       xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
@@ -71,13 +71,14 @@ class NCreports extends React.Component {
           return;
         }
         let response = JSON.parse(this.responseText);
-        
-        let reports = response.reports.map((el) => {
+        console.log(response);
+       // let reports = response.reports.map((el) => {
+        let reports = response.map((el) => {  
         //  return <RIreport showModal={that.handleShowModal} reportnumber={el.reportnumber} nickname={el.nickname} img_url={el.img_url}/> 
 /*
 */
           return <NCreport 
-                   key={el.reportID}
+                  // key={el.reportID}
                    reportnumber={el.reportID} 
                    inspector={el.inspector}
                    ewo={el.ewo}  //suplier
@@ -96,12 +97,44 @@ class NCreports extends React.Component {
                     </div>
            });
        }
-      // getl user's filtered reports
+    
+  }
+  render() {
+    return (
+      <div>
+        <Header/>
+        <h4 >Defects </h4> 
+        {this.state.reports}
+         <Modal show={this.state.show} onHide={this.handleClose}>
+          <Modal.Header closeButton>
+            <Modal.Title>{this.state.modal_label}</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <form>
+              <FormGroup controlId="formControlsSelect">
+                <ControlLabel>Select</ControlLabel>
+                {this.state.modal_content}
+              </FormGroup>
+            </form>
+          </Modal.Body>
+          <Modal.Footer>
+            {/*<Button onClick={this.handleExchange} className="btn-modal" disabled={this.state.disabled}>Confirm</Button>*/}
+            <Button onClick={this.handleClose} className="btn-modal">Close</Button>
+          </Modal.Footer>
+        </Modal>
+      </div>
+    );
+  }
+};
+
+module.exports = NCreports;
+
+  // getl user's filtered reports
+    /*
       xhr = new XMLHttpRequest();
       
-    //  xhr.open('POST', '/get-user-filtered-reports', true);
-    xhr.open('POST', '/get-defect-reports', true);
-    //get-defect-reports
+     xhr.open('POST', '/get-user-filtered-reports', true);
+
       xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
       xhr.send();
@@ -133,33 +166,4 @@ class NCreports extends React.Component {
              });
         }
        }
-  }
-  render() {
-    return (
-      <div>
-        <Header/>
-        <h4 >Defects </h4> 
-        {this.state.reports}
-         <Modal show={this.state.show} onHide={this.handleClose}>
-          <Modal.Header closeButton>
-            <Modal.Title>{this.state.modal_label}</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <form>
-              <FormGroup controlId="formControlsSelect">
-                <ControlLabel>Select</ControlLabel>
-                {this.state.modal_content}
-              </FormGroup>
-            </form>
-          </Modal.Body>
-          <Modal.Footer>
-            {/*<Button onClick={this.handleExchange} className="btn-modal" disabled={this.state.disabled}>Confirm</Button>*/}
-            <Button onClick={this.handleClose} className="btn-modal">Close</Button>
-          </Modal.Footer>
-        </Modal>
-      </div>
-    );
-  }
-};
-
-module.exports = NCreports;
+    */

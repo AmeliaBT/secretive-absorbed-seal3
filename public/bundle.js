@@ -58841,8 +58841,8 @@ class NCreports extends React.Component {
       let that = this;
       let xhr = new XMLHttpRequest();
       
-     // xhr.open('POST', '/get-all-users-reports', true);
-     xhr.open('POST', '/get-defect-reports', true);
+     //xhr.open('POST', '/get-all-users-reports', true);
+    xhr.open('POST', '/get-defect-reports', true);
     //get-defect-reports
       xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
@@ -58855,13 +58855,14 @@ class NCreports extends React.Component {
           return;
         }
         let response = JSON.parse(this.responseText);
-        
-        let reports = response.reports.map((el) => {
+        console.log(response);
+       // let reports = response.reports.map((el) => {
+        let reports = response.map((el) => {  
         //  return <RIreport showModal={that.handleShowModal} reportnumber={el.reportnumber} nickname={el.nickname} img_url={el.img_url}/> 
 /*
 */
           return React.createElement(NCreport, {
-                   key: el.reportID, 
+                  // key={el.reportID}
                    reportnumber: el.reportID, 
                    inspector: el.inspector, 
                    ewo: el.ewo, //suplier
@@ -58880,43 +58881,7 @@ class NCreports extends React.Component {
                     )
            });
        }
-      // getl user's filtered reports
-      xhr = new XMLHttpRequest();
-      
-    //  xhr.open('POST', '/get-user-filtered-reports', true);
-    xhr.open('POST', '/get-defect-reports', true);
-    //get-defect-reports
-      xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-
-      xhr.send();
-
-      xhr.onreadystatechange = function() {
-        if (this.readyState != 4) return;
-        if (this.status != 200) {
-          alert( 'error: ' + (this.status ? this.statusText : 'request has not been set') );
-          return;
-        }
-        let response = JSON.parse(this.responseText);
-        let options = response.reports.map((el) => {
- 
-      return React.createElement("option", {value: el.reportnumber, key: el.toString()}, el.reportnumber);
-
-        });
-        if(options.length > 0) {
-           that.setState({
-          ["modal_content"]: React.createElement(FormControl, {componentClass: "select", 
-                                placeholder: "select", 
-                                onChange: that.handleSelectChange}, 
-                                options
-                              )
-           });
-        }
-        else {
-           that.setState({
-            ["modal_content"]: "You do not have reports: add the one before exchanging!"
-             });
-        }
-       }
+    
   }
   render() {
     return (
@@ -58947,6 +58912,45 @@ class NCreports extends React.Component {
 };
 
 module.exports = NCreports;
+
+  // getl user's filtered reports
+    /*
+      xhr = new XMLHttpRequest();
+      
+     xhr.open('POST', '/get-user-filtered-reports', true);
+
+      xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+      xhr.send();
+
+      xhr.onreadystatechange = function() {
+        if (this.readyState != 4) return;
+        if (this.status != 200) {
+          alert( 'error: ' + (this.status ? this.statusText : 'request has not been set') );
+          return;
+        }
+        let response = JSON.parse(this.responseText);
+        let options = response.reports.map((el) => {
+ 
+      return <option value={el.reportnumber} key={el.toString()}>{el.reportnumber}</option>;
+
+        });
+        if(options.length > 0) {
+           that.setState({
+          ["modal_content"]: <FormControl componentClass="select"
+                                placeholder="select"
+                                onChange={that.handleSelectChange}>
+                                {options}
+                              </FormControl>
+           });
+        }
+        else {
+           that.setState({
+            ["modal_content"]: "You do not have reports: add the one before exchanging!"
+             });
+        }
+       }
+    */
 
 /***/ }),
 /* 379 */
