@@ -58792,7 +58792,7 @@ const style = __webpack_require__(379);
 const {Modal, Button, form, FormGroup, FormControl, ControlLabel, option} = __webpack_require__(11);
 // other components and etc
 const Header = __webpack_require__(17);
-const RIreport = __webpack_require__(381);
+const NCreport = __webpack_require__(381);
 
 /* the reports page that shows all NC */
 class NCreports extends React.Component {
@@ -58800,7 +58800,7 @@ class NCreports extends React.Component {
     super(props);
     this.state = {
        show: false,
-       modal_label: "Choose a report from your library to view ",
+       modal_label: "Choose a report to view ",
      
        disabled: true,
        reports: "loading...",
@@ -58815,7 +58815,7 @@ class NCreports extends React.Component {
    /***********************/
    // handlers
    /***********************/
-  handleShowModal( anotherUserNickname) {
+  handleShowModal() {
     // show Modal
     this.handleShow();
     this.setState({
@@ -58856,7 +58856,7 @@ class NCreports extends React.Component {
         let reports = response.reports.map((el) => {
         //  return <RIreport showModal={that.handleShowModal} reportnumber={el.reportnumber} nickname={el.nickname} img_url={el.img_url}/> 
 
-          return React.createElement(RIreport, {key: el.reportID, reportnumber: el.reportID, inspector: el.inspector}) 
+          return React.createElement(NCreport, {key: el.reportID, reportnumber: el.reportID, inspector: el.inspector}) 
         });
            that.setState({
           ["reports"]: React.createElement("div", {className: "reports"}, 
@@ -58882,7 +58882,7 @@ class NCreports extends React.Component {
         let options = response.reports.map((el) => {
           //added .toString() below
       //    return <option value={el.reportnumber} key={el.reportnumber}>{el.reportnumber}</option>;
-console.log(el);
+//console.log(el);
       return React.createElement("option", {value: el.reportnumber, key: el.toString()}, el.reportnumber);
 
         });
@@ -58989,7 +58989,7 @@ const {OverlayTrigger, Popover} = __webpack_require__(11);
 const style = __webpack_require__(382);
 
 /* component for displaying book */
-class RIreport extends React.Component {
+class NCreport extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -59063,7 +59063,7 @@ xhr.open('POST', '/get-all-users-reports', true);
     );
   }
 }
-module.exports = RIreport;
+module.exports = NCreport;
 
 /***/ }),
 /* 382 */

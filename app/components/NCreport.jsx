@@ -7,7 +7,7 @@ const {OverlayTrigger, Popover} = require('react-bootstrap');
 const style = require('../styles/Report');
 
 /* component for displaying book */
-class RIreport extends React.Component {
+class NCreport extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -81,4 +81,4 @@ xhr.open('POST', '/get-all-users-reports', true);
     );
   }
 }
-module.exports = RIreport;
+module.exports = NCreport;

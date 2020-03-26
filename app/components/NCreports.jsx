@@ -8,7 +8,7 @@ const style = require('../styles/RIreports');
 const {Modal, Button, form, FormGroup, FormControl, ControlLabel, option} = require('react-bootstrap');
 // other components and etc
 const Header = require('./Header');
-const RIreport = require('./RIreport');
+const NCreport = require('./NCreport');
 
 /* the reports page that shows all NC */
 class NCreports extends React.Component {
@@ -16,7 +16,7 @@ class NCreports extends React.Component {
     super(props);
     this.state = {
        show: false,
-       modal_label: "Choose a report from your library to view ",
+       modal_label: "Choose a report to view ",
      
        disabled: true,
        reports: "loading...",
@@ -31,7 +31,7 @@ class NCreports extends React.Component {
    /***********************/
    // handlers
    /***********************/
-  handleShowModal( anotherUserNickname) {
+  handleShowModal() {
     // show Modal
     this.handleShow();
     this.setState({
@@ -72,7 +72,7 @@ class NCreports extends React.Component {
         let reports = response.reports.map((el) => {
         //  return <RIreport showModal={that.handleShowModal} reportnumber={el.reportnumber} nickname={el.nickname} img_url={el.img_url}/> 
 
-          return <RIreport key={el.reportID} reportnumber={el.reportID}  inspector={el.inspector} /> 
+          return <NCreport key={el.reportID} reportnumber={el.reportID}  inspector={el.inspector} /> 
         });
            that.setState({
           ["reports"]: <div className="reports">
@@ -98,7 +98,7 @@ class NCreports extends React.Component {
         let options = response.reports.map((el) => {
           //added .toString() below
       //    return <option value={el.reportnumber} key={el.reportnumber}>{el.reportnumber}</option>;
-console.log(el);
+//console.log(el);
       return <option value={el.reportnumber} key={el.toString()}>{el.reportnumber}</option>;
 
         });
