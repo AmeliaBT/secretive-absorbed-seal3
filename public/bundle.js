@@ -58917,6 +58917,7 @@ class NCreports extends React.Component {
     return (
       React.createElement("div", null, 
         React.createElement(Header, null), 
+        React.createElement("h4", null, "Defects "), 
         this.state.reports, 
          React.createElement(Modal, {show: this.state.show, onHide: this.handleClose}, 
           React.createElement(Modal.Header, {closeButton: true}, 

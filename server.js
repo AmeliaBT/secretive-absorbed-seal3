@@ -471,6 +471,29 @@ app.post("/get-user-filtered-reports", function(request, response) {
     
      });
 });
+
+app.post("/get-defect-reports", function(request, response) {
+   userModel.findById(request.session.passport.user, (err, user) => {
+       if (err) throw err;
+     let NN=user.inspname;     
+     // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+         reportModel.find({}, (err, docs) => {
+          if(err) throw err;
+          let reports = []   ;
+          for(let i = docs.length-1; i > -1; i--) {
+         if(docs[i].inspector === NN) { reports.push(docs[i]);}   
+            /* 
+              ["reportsLink"]: "/reports",
+             ["listLink"]: "/reports"            */              
+            if(i == 0) response.json({reports: reports});
+
+          }
+       });
+    
+     });
+});
+
+
 /***********************************/
 //create-filtered-table2
 

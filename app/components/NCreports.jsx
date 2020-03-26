@@ -133,6 +133,7 @@ class NCreports extends React.Component {
     return (
       <div>
         <Header/>
+        <h4 >Defects </h4> 
         {this.state.reports}
          <Modal show={this.state.show} onHide={this.handleClose}>
           <Modal.Header closeButton>
