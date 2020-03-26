@@ -58823,24 +58823,7 @@ class NCreports extends React.Component {
           //["anotherUserNickname"]: anotherUserNickname
            });
   }
-  /***********************/
-  // send variables to create proposals
-  /***********************/
- // handleExchange() {
-     // post request to create proposals
-     /*
-      let that = this;
-      
-        */
-  //}
-  /***********************/
-//  handleSelectChange(event) {
-//    console.log(event.target.value);
- //    this.setState({
-//          ["chosenBook"]: event.target.value,
-//          ["disabled"]: false
-  //         });
-//  }
+ 
   /***********************/
    handleClose() {
     this.setState({ show: false });
