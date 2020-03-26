@@ -16,7 +16,7 @@ class NCreport extends React.Component {
       reportID: this.props.reportnumber,
       tooltip: <Popover id="popover" title="some info">
                             <div>
-                            inspector: 
+                            inspector: {this.props.inspector}
                            </div>
                            <div>
                              dp: 
@@ -31,14 +31,12 @@ class NCreport extends React.Component {
       const xhr = new XMLHttpRequest();
 
 xhr.open('POST', '/get-all-users-reports', true);
- xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-     
-      
+ xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded'); 
       let body = 'inspector=' + encodeURIComponent(this.props.inspector);
 
 
       xhr.send(body);
-
+/*
       xhr.onreadystatechange = function() {
         if (this.readyState != 4) return;
         if (this.status != 200) {
@@ -61,6 +59,8 @@ xhr.open('POST', '/get-all-users-reports', true);
                         </Popover>
            });
         }
+    */
+    
   }
   /***********************/
   render() {

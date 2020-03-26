@@ -58880,9 +58880,7 @@ class NCreports extends React.Component {
         }
         let response = JSON.parse(this.responseText);
         let options = response.reports.map((el) => {
-          //added .toString() below
-      //    return <option value={el.reportnumber} key={el.reportnumber}>{el.reportnumber}</option>;
-//console.log(el);
+ 
       return React.createElement("option", {value: el.reportnumber, key: el.toString()}, el.reportnumber);
 
         });
@@ -58998,7 +58996,7 @@ class NCreport extends React.Component {
       reportID: this.props.reportnumber,
       tooltip: React.createElement(Popover, {id: "popover", title: "some info"}, 
                             React.createElement("div", null, 
-                            "inspector:" 
+                            "inspector: ", this.props.inspector
                            ), 
                            React.createElement("div", null, 
                              "dp:" 
@@ -59013,14 +59011,12 @@ class NCreport extends React.Component {
       const xhr = new XMLHttpRequest();
 
 xhr.open('POST', '/get-all-users-reports', true);
- xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-     
-      
+ xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded'); 
       let body = 'inspector=' + encodeURIComponent(this.props.inspector);
 
 
       xhr.send(body);
-
+/*
       xhr.onreadystatechange = function() {
         if (this.readyState != 4) return;
         if (this.status != 200) {
@@ -59033,16 +59029,18 @@ xhr.open('POST', '/get-all-users-reports', true);
         if(response.supplier.length == 0)    supplier = "not specified";
         if(response.pn.length == 0)  pn = "not specified";
            that.setState({
-          ["tooltip"]: React.createElement(Popover, {id: "popover", title: "User location"}, 
-                            React.createElement("div", null, 
-                            "supplier: ",   supplier
-                           ), 
-                           React.createElement("div", null, 
-                             "PN: ", pn
-                           )
-                        )
+          ["tooltip"]: <Popover id="popover" title="User location">
+                            <div>
+                            supplier: {  supplier}
+                           </div>
+                           <div>
+                             PN: {pn}
+                           </div>
+                        </Popover>
            });
         }
+    */
+    
   }
   /***********************/
   render() {
