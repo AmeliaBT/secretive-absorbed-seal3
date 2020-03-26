@@ -31,10 +31,10 @@ class RIlistItemMonth extends React.Component {
       <div>      
       <div className="table-row-line"> <Row > 
         
-         <Col  sm={2} >{this.state.month_year} </Col> 
+         <Col  sm={3} >{this.state.month_year} </Col> 
          <Col sm={1} > {this.state.lotT}</Col>
          <Col sm={1} > {this.state.lotA}</Col>
-        <Col sm={2} ><p style={{fontWeight: 'bold', fontSize: 14}} className={this.state.pfColor}> {this.state.lar} </p> </Col>
+        <Col sm={1} ><p style={{fontWeight: 'bold', fontSize: 14}} className={this.state.pfColor}> {this.state.lar} </p> </Col>
         
         <Col sm={2} > {this.state.lotQty}</Col>
          <Col sm={2} > {this.state.qtyT}</Col>

@@ -176,7 +176,7 @@ uniqueYM.reverse();
      <p ><br/>
      LotT -number of lots tested<br/>
 LotA - number of lots accepted<br/>
-LAR% - Lot Acceptance Rate  (LAR=LotA/LotT*100)<br/>
+LAR % - Lot Acceptance Rate  (LAR=LotA/LotT*100)<br/>
 LotQty - sum of items in all lots<br/>
 QtyT - number of items tested<br/>
 QtyDef - number of items defective<br/>
@@ -189,18 +189,18 @@ QtyDef - number of items defective<br/>
      </p>
    </div> </Col>
   
-  <Col xs={5} > <div   >        
+  <Col xs={7} > <div   >        
 <Table className="myForm">  
               
             <Row>             
-              <Col sm={2} ><b> Year- Month</b> </Col> 
-              <Col sm={1} ><b> LotT </b></Col> 
-              <Col sm={1} ><b> LotA </b></Col> 
-              <Col sm={2} ><b> LAR% </b></Col> 
-              <Col sm={2} ><b> LotQty </b></Col> 
-              <Col sm={2} ><b> QtyT </b></Col> 
-              <Col sm={1} ><b> QtyDef </b></Col>
-              <Col sm={1} ><b> %Def </b></Col> 
+              <Col sm={3} ><b> Year- Month</b> </Col> 
+              <Col sm={1} ><b> Lot T </b></Col> 
+              <Col sm={1} ><b> Lot A </b></Col> 
+              <Col sm={1} ><b> LAR % </b></Col> 
+              <Col sm={2} ><b> Lot Qty </b></Col> 
+              <Col sm={2} ><b> Qty T </b></Col> 
+              <Col sm={1} ><b> Qty Def </b></Col>
+              <Col sm={1} ><b> % Def </b></Col> 
              
            </Row>
         {this.state.reportsM}
