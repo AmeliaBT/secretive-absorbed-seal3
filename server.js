@@ -473,24 +473,20 @@ app.post("/get-user-filtered-reports", function(request, response) {
 });
 
 app.post("/get-defect-reports", function(request, response) {
-   userModel.findById(request.session.passport.user, (err, user) => {
-       if (err) throw err;
-     let NN=user.inspname;     
-     // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-         reportModel.find({}, (err, docs) => {
-          if(err) throw err;
-          let reports = []   ;
-          for(let i = docs.length-1; i > -1; i--) {
-         if(docs[i].inspector === NN) { reports.push(docs[i]);}   
-            /* 
-              ["reportsLink"]: "/reports",
-             ["listLink"]: "/reports"            */              
-            if(i == 0) response.json({reports: reports});
-
-          }
-       });
+  let regtwo = request.body.two; //pass-fail
+ regtwo='^(?!Pass)(?!Fail).*$'  };
+  reportModel.find({ 
+ 
+    two: new RegExp(regtwo, 'ig'), 
     
-     });
+  }, 
+                   (err, doc) => {
+      if (err) throw err;
+           response.json(doc);
+   //console.log(doc);
+          }        
+     );
+           
 });
 
 
@@ -511,8 +507,9 @@ let regfwo = request.body.fwo; //PN
    let owo = request.body.owo; // lot size
  let reg_inspector= request.body.inspector; 
 let cwo=request.body.cwo; // date inspected
- // if(reg_inspector=== "Other"){reg_inspector='^(?!Tuan).*$' }; //ok  
+ 
    if(reg_inspector=== "Other"){reg_inspector='^(?!Tuan)(?!Jim).*$'  };
+  
   if(regtwo=== "Other"){regtwo='^(?!Pass)(?!Fail).*$'  };
   
   if(owo ==="<100"){
