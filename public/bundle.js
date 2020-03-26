@@ -58786,7 +58786,7 @@ exports.push([module.i, "/*used:\nclassName=\"profile\"\nclassName=\"show-grid\"
 
 const React = __webpack_require__(0);
 const Link = __webpack_require__(9).Link
-// style for BOOKS
+// style 
 const style = __webpack_require__(379);
 // react-bootstrap
 const {Modal, Button, form, FormGroup, FormControl, ControlLabel, option} = __webpack_require__(11);
@@ -58794,16 +58794,14 @@ const {Modal, Button, form, FormGroup, FormControl, ControlLabel, option} = __we
 const Header = __webpack_require__(17);
 const RIreport = __webpack_require__(381);
 
-/* the reports page that shows all reports */
+/* the reports page that shows all NC */
 class NCreports extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
        show: false,
        modal_label: "Choose a report from your library to view ",
-      // chosenAnotherUserBook: "",
-     //  chosenBook: "",
-     //  anotherUserNickname: "",
+     
        disabled: true,
        reports: "loading...",
        modal_content: "loading..."
@@ -58812,8 +58810,7 @@ class NCreports extends React.Component {
     this.handleShow = this.handleShow.bind(this);
     this.handleClose = this.handleClose.bind(this);
     this.handleShowModal = this.handleShowModal.bind(this);
-   // this.handleExchange = this.handleExchange.bind(this);
-   // this.handleSelectChange = this.handleSelectChange.bind(this);
+  
   }
    /***********************/
    // handlers
@@ -58833,38 +58830,7 @@ class NCreports extends React.Component {
      // post request to create proposals
      /*
       let that = this;
-      const xhr = new XMLHttpRequest();
       
-      xhr.open('POST', '/create-proposals', true);
-      xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-      
-      
-      let body = 'chosenAnotherUserBook=' + encodeURIComponent(this.state.chosenAnotherUserBook) +
-      '&chosenBook=' + encodeURIComponent(this.state.chosenBook) +
-      '&anotherUserNickname=' + encodeURIComponent(this.state.anotherUserNickname);
-
-
-      xhr.send(body);
-
-      xhr.onreadystatechange = function() {
-        if (this.readyState != 4) return;
-        if (this.status != 200) {
-          alert( 'error: ' + (this.status ? this.statusText : 'request has not been set') );
-          return;
-        }
-        let response = JSON.parse(this.responseText);
-        if(response.error == 0) {
-           window.location.href = "/reports";
-           that.setState({
-          ["modal_label"]: "Succsess"
-           });
-        }
-        else {
-          that.setState({
-          ["modal_label"]: "Oops, something went wrong :/ try again pls"
-           });
-         }
-        }
         */
   //}
   /***********************/
