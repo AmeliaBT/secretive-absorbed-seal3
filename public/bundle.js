@@ -59005,15 +59005,22 @@ exports.push([module.i, "\n.btn-modal {\n  width: 49.5% !important;\n  float: ri
 
 // element for NCreports -Defects  (Nonconformances)
 const React = __webpack_require__(0);
+
 const Link = __webpack_require__(9).Link
 // react-bootstrap
-const {OverlayTrigger, Popover} = __webpack_require__(11);
+const {Col, Row, Button, Glyphicon , OverlayTrigger} = __webpack_require__(11);
+// react-bootstrap
+const {Popover} = __webpack_require__(11);
 // style for BOOK
 const style = __webpack_require__(382);
 
 /* component for displaying book */
 class NCreport extends React.Component {
   constructor(props) {
+    let jwo2;
+     let jwo=this.props.jwo;//Date Inspected:
+    if(jwo == null){jwo2=""}else{jwo2= jwo.slice(0,-14)};
+    
     super(props);
     this.state = {
       //img_url: this.props.img_url,
@@ -59022,7 +59029,7 @@ class NCreport extends React.Component {
         ewo:this.props.ewo,  //suplier
        fwo:this.props.fwo,  //PN
         Gwo:this.props.Gwo, //descrip
-         jwo:this.props.jwo, //date
+         jwo: jwo2, //   this.props.jwo, //date
          two:this.props.two, //pass-fail                   
           record:this.props.record ,//comment
          uwo:this.props.uwo ,  //photo url
@@ -59048,7 +59055,7 @@ class NCreport extends React.Component {
       React.createElement("div", {className: "book-all"}, 
       /*   <img src={this.state.img_url} alt="book pic" className="img-all"/>*/
         React.createElement("div", null, React.createElement("h4", {className: "nc-all"}, this.state.Gwo)), 
-        React.createElement("div", {className: "exchange-btn-all", onClick: () => this.props.showModal(this.props.reportID, this.props.inspector)}, "Show Report"), 
+        React.createElement("div", {className: "exchange-btn-all"}, React.createElement(Link, {to: 'report-view/' + this.state.reportID}, "   ", React.createElement(Button, {bsSize: "xsmall"}, "  ", React.createElement(Glyphicon, {glyph: "eye-open"}), "   "))), 
         
          React.createElement(OverlayTrigger, {
             trigger: ['hover', 'focus'], 
@@ -59063,6 +59070,8 @@ class NCreport extends React.Component {
   }
 }
 module.exports = NCreport;
+// <Link to={'report-view/' + this.state.reportID  }>   <Button bsSize="xsmall"  >  <Glyphicon glyph="eye-open"/>   </Button></Link> 
+// <div className="exchange-btn-all" onClick={() => this.props.showModal(this.props.reportID, this.props.inspector)}>Show Report</div>
 //  <div className="bookname-all">{this.state.Gwo}</div>
 
 //componentWillMount() {
