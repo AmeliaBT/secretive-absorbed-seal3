@@ -95,7 +95,7 @@ class Header extends React.Component {
        <Navbar collapseOnSelect>
         <Navbar.Header>
                  <Navbar.Brand >           
-            <Link to={this.state.listLinkAll} ><p  className="link"> KPI  </p></Link>            
+            <Link to={this.state.listLinkAll} ><p  className="link"> KPIs  </p></Link>            
           </Navbar.Brand>
                   <Navbar.Brand >           
             <Link to={this.state.listLinkAll2} ><p  className="link">Reports  </p></Link>            
@@ -104,7 +104,7 @@ class Header extends React.Component {
             <Link to={this.state.chartLinkA} ><p  className="link">Charts  </p></Link>            
           </Navbar.Brand>
           <Navbar.Brand >           
-            <Link to={this.state.reportsLink} ><p  className="link">NC</p></Link>            
+            <Link to={this.state.reportsLink} ><p  className="link">Defects</p></Link>            
           </Navbar.Brand>
           
           <Navbar.Brand >           

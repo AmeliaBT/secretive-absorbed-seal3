@@ -1,4 +1,4 @@
-// element for RI Gallery -WIP 
+// element for NCreports -Defects  (Nonconformances)
 const React = require('react');
 const Link = require('react-router-dom').Link
 // react-bootstrap

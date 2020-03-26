@@ -180,7 +180,7 @@ LAR % - Lot Acceptance Rate  (LAR=LotA/LotT*100)<br/>
 LotQty - sum of items in all lots<br/>
 QtyT - number of items tested<br/>
 QtyDef - number of items defective<br/>
-%Def - % of of items defective (%Def=QtyDef /QtyT*100)
+%Def - % of items defective (%Def=QtyDef/QtyT*100)
 
      
      

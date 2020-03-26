@@ -1458,7 +1458,7 @@ class Header extends React.Component {
        React.createElement(Navbar, {collapseOnSelect: true}, 
         React.createElement(Navbar.Header, null, 
                  React.createElement(Navbar.Brand, null, 
-            React.createElement(Link, {to: this.state.listLinkAll}, React.createElement("p", {className: "link"}, " KPI  "))
+            React.createElement(Link, {to: this.state.listLinkAll}, React.createElement("p", {className: "link"}, " KPIs  "))
           ), 
                   React.createElement(Navbar.Brand, null, 
             React.createElement(Link, {to: this.state.listLinkAll2}, React.createElement("p", {className: "link"}, "Reports  "))
@@ -1467,7 +1467,7 @@ class Header extends React.Component {
             React.createElement(Link, {to: this.state.chartLinkA}, React.createElement("p", {className: "link"}, "Charts  "))
           ), 
           React.createElement(Navbar.Brand, null, 
-            React.createElement(Link, {to: this.state.reportsLink}, React.createElement("p", {className: "link"}, "NC"))
+            React.createElement(Link, {to: this.state.reportsLink}, React.createElement("p", {className: "link"}, "Defects"))
           ), 
           
           React.createElement(Navbar.Brand, null, 
@@ -58991,7 +58991,7 @@ exports.push([module.i, "\n.btn-modal {\n  width: 49.5% !important;\n  float: ri
 /* 381 */
 /***/ (function(module, exports, __webpack_require__) {
 
-// element for RI Gallery -WIP 
+// element for NCreports -Defects  (Nonconformances)
 const React = __webpack_require__(0);
 const Link = __webpack_require__(9).Link
 // react-bootstrap
@@ -59543,7 +59543,7 @@ React.createElement(Row, null,
 "LotQty - sum of items in all lots", React.createElement("br", null), 
 "QtyT - number of items tested", React.createElement("br", null), 
 "QtyDef - number of items defective", React.createElement("br", null), 
-"%Def - % of of items defective (%Def=QtyDef /QtyT*100)"
+"%Def - % of items defective (%Def=QtyDef/QtyT*100)"
 
      
      
