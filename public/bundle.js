@@ -59040,10 +59040,10 @@ class NCreport extends React.Component {
       tooltip: React.createElement(Popover, {id: "popover", title: this.props.fwo}, 
                             React.createElement("div", null, 
                                                     
-                              "date:    ", this.state.jwo, React.createElement("br", null), 
+                              "date:    ", jwo2, React.createElement("br", null), 
                               "suplier: ", this.props.ewo, React.createElement("br", null), 
-                              "PF:      ", this.props.two, React.createElement("br", null), 
-                              "photo:   ", this.props.uwo, React.createElement("br", null), 
+                             
+                            
                               "inspector: ", this.props.inspector, React.createElement("br", null)
                            )
                            

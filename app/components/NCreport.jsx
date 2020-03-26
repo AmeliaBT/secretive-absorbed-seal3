@@ -32,13 +32,13 @@ class NCreport extends React.Component {
           record:this.props.record ,//comment
          uwo:this.props.uwo ,  //photo url
       
-      tooltip: <Popover id="popover" title={this.props.fwo}>
+      tooltip: <Popover id="popover" title=  {this.props.fwo}>
                             <div>
                                                     
-                              date:    {this.props.jwo}<br/>
+                              date:    {jwo2}<br/>
                               suplier: {this.props.ewo}<br/> 
-                              PF:      {this.props.two}<br/> 
-                              photo:   {this.props.uwo}<br/>
+                             
+                            
                               inspector: {this.props.inspector}<br/>
                            </div>
                            
