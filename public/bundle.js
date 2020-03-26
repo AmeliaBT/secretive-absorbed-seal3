@@ -58855,21 +58855,20 @@ class NCreports extends React.Component {
         let response = JSON.parse(this.responseText);
         let reports = response.reports.map((el) => {
         //  return <RIreport showModal={that.handleShowModal} reportnumber={el.reportnumber} nickname={el.nickname} img_url={el.img_url}/> 
-/* ewo: "",  // Supplier:
-Part Number  fwo: "",  // P/N:
-Description
-Date Inspected
-Comment
-date 
-url
+/*
 */
-          return React.createElement(NCreport, {key: el.reportID, 
+          return React.createElement(NCreport, {
+                   key: el.reportID, 
                    reportnumber: el.reportID, 
-                   inspector: el.inspector}
-                   
-                   
-                   
-                   
+                   inspector: el.inspector, 
+                   ewo: el.ewo, //suplier
+                   fwo: el.fwo, //PN
+                   Gwo: el.Gwo, //descrip
+                   jwo: el.jwo, //date
+                   two: el.two, //pass-fail                   
+                   record: el.record, //comment
+                   uwo: el.uwo}//photo url
+                                       
                    ) 
         });
            that.setState({
@@ -59008,6 +59007,8 @@ class NCreport extends React.Component {
       //img_url: this.props.img_url,
       inspector: this.props.inspector,
       reportID: this.props.reportnumber,
+      
+      
       tooltip: React.createElement(Popover, {id: "popover", title: "some info"}, 
                             React.createElement("div", null, 
                             "inspector: ", this.props.inspector

@@ -14,6 +14,8 @@ class NCreport extends React.Component {
       //img_url: this.props.img_url,
       inspector: this.props.inspector,
       reportID: this.props.reportnumber,
+      
+      
       tooltip: <Popover id="popover" title="some info">
                             <div>
                             inspector: {this.props.inspector}

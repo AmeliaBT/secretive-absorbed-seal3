@@ -71,21 +71,20 @@ class NCreports extends React.Component {
         let response = JSON.parse(this.responseText);
         let reports = response.reports.map((el) => {
         //  return <RIreport showModal={that.handleShowModal} reportnumber={el.reportnumber} nickname={el.nickname} img_url={el.img_url}/> 
-/* ewo: "",  // Supplier:
-Part Number  fwo: "",  // P/N:
-Description
-Date Inspected
-Comment
-date 
-url
+/*
 */
-          return <NCreport key={el.reportID}
+          return <NCreport 
+                   key={el.reportID}
                    reportnumber={el.reportID} 
-                   inspector={el.inspector} 
-                   
-                   
-                   
-                   
+                   inspector={el.inspector}
+                   ewo={el.ewo}  //suplier
+                   fwo={el.fwo}  //PN
+                   Gwo={el.Gwo} //descrip
+                   jwo={el.jwo} //date
+                   two={el.two} //pass-fail                   
+                   record={el.record} //comment
+                   uwo={el.uwo} //photo url
+                                       
                    /> 
         });
            that.setState({
