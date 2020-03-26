@@ -22,20 +22,16 @@ class NCreport extends React.Component {
           record:this.props.record ,//comment
          uwo:this.props.uwo ,  //photo url
       
-      tooltip: <Popover id="popover" title="some info">
+      tooltip: <Popover id="popover" title={this.props.fwo}>
                             <div>
-                            inspector: {this.props.inspector} <br/>
-                              suplier:{this.props.ewo},  
-                   PN:{this.props.fwo} ,
-                 
-                   date:{this.props.jwo} ,
-                   PF:{this.props.two} ,            
-                   
-                   uwo:{this.props.uwo} //photo url
+                                                    
+                              date:    {this.props.jwo}<br/>
+                              suplier: {this.props.ewo}<br/> 
+                              PF:      {this.props.two}<br/> 
+                              photo:   {this.props.uwo}<br/>
+                              inspector: {this.props.inspector}<br/>
                            </div>
-                           <div>
-                             dp: 
-                           </div>
+                           
                         </Popover>
     };
   }
