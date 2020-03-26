@@ -59611,6 +59611,16 @@ React.createElement(Table, {className: "myForm"},
 module.exports = RIlistAll;
 // <Col xs={5} > <div   >      
 //<Col xs={4} ></Col>
+/* 
+<Col sm={3} ><b> Year- Month</b> </Col> 
+              <Col sm={1} ><b> Lot T </b></Col> 
+              <Col sm={1} ><b> Lot A </b></Col> 
+              <Col sm={1} ><b> LAR % </b></Col> 
+              <Col sm={2} ><b> Lot Qty </b></Col> 
+              <Col sm={2} ><b> Qty T </b></Col> 
+              <Col sm={1} ><b> Qty Def </b></Col>
+              <Col sm={1} ><b> % Def </b></Col> 
+*/
 
 /***/ }),
 /* 388 */
