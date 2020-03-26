@@ -59017,11 +59017,14 @@ const style = __webpack_require__(382);
 /* component for displaying book */
 class NCreport extends React.Component {
   constructor(props) {
-    let jwo2;
-     let jwo=this.props.jwo;//Date Inspected:
-    if(jwo == null){jwo2=""}else{jwo2= jwo.slice(0,-14)};
     
     super(props);
+    let jwo2;
+     let jwo=this.props.jwo;  //Date Inspected:
+   
+    
+    if(jwo == null){jwo2= ""}else{jwo2= jwo.slice(0,10)};
+    
     this.state = {
       //img_url: this.props.img_url,
       inspector: this.props.inspector,
@@ -59037,7 +59040,7 @@ class NCreport extends React.Component {
       tooltip: React.createElement(Popover, {id: "popover", title: this.props.fwo}, 
                             React.createElement("div", null, 
                                                     
-                              "date:    ", this.props.jwo, React.createElement("br", null), 
+                              "date:    ", this.state.jwo, React.createElement("br", null), 
                               "suplier: ", this.props.ewo, React.createElement("br", null), 
                               "PF:      ", this.props.two, React.createElement("br", null), 
                               "photo:   ", this.props.uwo, React.createElement("br", null), 

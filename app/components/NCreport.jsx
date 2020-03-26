@@ -12,11 +12,14 @@ const style = require('../styles/Report');
 /* component for displaying book */
 class NCreport extends React.Component {
   constructor(props) {
-    let jwo2;
-     let jwo=this.props.jwo;//Date Inspected:
-    if(jwo == null){jwo2=""}else{jwo2= jwo.slice(0,-14)};
     
     super(props);
+    let jwo2;
+     let jwo=this.props.jwo;  //Date Inspected:
+   
+    
+    if(jwo == null){jwo2= ""}else{jwo2= jwo.slice(0,10)};
+    
     this.state = {
       //img_url: this.props.img_url,
       inspector: this.props.inspector,

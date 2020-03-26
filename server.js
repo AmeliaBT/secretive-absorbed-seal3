@@ -352,7 +352,7 @@ uwo: request.body["uwo"] //photo file
 
 };
 
-console.log(obj);
+//console.log(obj);
  
     let report = new reportModel(obj);
           
@@ -485,7 +485,7 @@ app.post("/get-defect-reports", function(request, response) {
                    (err, doc) => {
       if (err) throw err;
            response.json(doc);
-   console.log(doc);
+  
           }        
      );
            
