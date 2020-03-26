@@ -57,7 +57,9 @@ class NCreports extends React.Component {
       let that = this;
       let xhr = new XMLHttpRequest();
       
-      xhr.open('POST', '/get-all-users-reports', true);
+     // xhr.open('POST', '/get-all-users-reports', true);
+     xhr.open('POST', '/get-defect-reports', true);
+    //get-defect-reports
       xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
       xhr.send();

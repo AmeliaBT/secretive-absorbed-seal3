@@ -473,12 +473,14 @@ app.post("/get-user-filtered-reports", function(request, response) {
 });
 
 app.post("/get-defect-reports", function(request, response) {
-  let regtwo = request.body.two; //pass-fail
- regtwo='^(?!Pass)(?!Fail).*$'  };
-  reportModel.find({ 
+ // let regtwo = request.body.two; //pass-fail
+//regtwo='^(?!Pass)(?!Fail).*$' ;
+  
+  //regtwo='^(Pass)' ;
+ reportModel.find({ 
  
-    two: new RegExp(regtwo, 'ig'), 
-    
+    //two: new RegExp(regtwo, 'ig') 
+    two:"FailPass"
   }, 
                    (err, doc) => {
       if (err) throw err;
