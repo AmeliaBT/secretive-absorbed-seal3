@@ -14,11 +14,18 @@ class NCreport extends React.Component {
       //img_url: this.props.img_url,
       inspector: this.props.inspector,
       reportID: this.props.reportnumber,
-      
+        ewo:this.props.ewo,  //suplier
+       fwo:this.props.fwo,  //PN
+        Gwo:this.props.Gwo, //descrip
+         jwo:this.props.jwo, //date
+         two:this.props.two, //pass-fail                   
+          record:this.props.record ,//comment
+         uwo:this.props.uwo ,  //photo url
       
       tooltip: <Popover id="popover" title="some info">
                             <div>
-                            inspector: {this.props.inspector}
+                            inspector: {this.props.inspector},
+                             
                            </div>
                            <div>
                              dp: 
@@ -27,17 +34,38 @@ class NCreport extends React.Component {
     };
   }
   /***********************/
-  componentWillMount() {
+
+  /***********************/
+  render() {
+    return(
+      <div className="book-all">
+      {/*   <img src={this.state.img_url} alt="book pic" className="img-all"/>*/}
+        <div className="bookname-all">{this.state.Gwo}</div>
+        <div className="exchange-btn-all" onClick={() => this.props.showModal(this.props.reportID, this.props.inspector)}>Show Report</div>
+         <OverlayTrigger
+            trigger={['hover', 'focus']}
+            placement="bottom"
+            overlay={this.state.tooltip}
+          >
+              <div className="nickname-all">NC: {this.state.record}</div>
+             
+          </OverlayTrigger>
+      </div>
+    );
+  }
+}
+module.exports = NCreport;
+//  componentWillMount() {
     //get   supplier and pn of user by nickname
-    let that = this;
-      const xhr = new XMLHttpRequest();
+  //  let that = this;
+  //    const xhr = new XMLHttpRequest();
 
-xhr.open('POST', '/get-all-users-reports', true);
- xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded'); 
-      let body = 'inspector=' + encodeURIComponent(this.props.inspector);
+//xhr.open('POST', '/get-all-users-reports', true);
+// xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded'); 
+ //     let body = 'inspector=' + encodeURIComponent(this.props.inspector);
 
 
-      xhr.send(body);
+  //    xhr.send(body);
 /*
       xhr.onreadystatechange = function() {
         if (this.readyState != 4) return;
@@ -63,24 +91,4 @@ xhr.open('POST', '/get-all-users-reports', true);
         }
     */
     
-  }
-  /***********************/
-  render() {
-    return(
-      <div className="book-all">
-      {/*   <img src={this.state.img_url} alt="book pic" className="img-all"/>*/}
-        <div className="bookname-all">{this.state.reportID}</div>
-        <div className="exchange-btn-all" onClick={() => this.props.showModal(this.props.reportID, this.props.inspector)}>Show Report</div>
-         <OverlayTrigger
-            trigger={['hover', 'focus']}
-            placement="bottom"
-            overlay={this.state.tooltip}
-          >
-              <div className="nickname-all">Inspector: {this.state.inspector}</div>
-             
-          </OverlayTrigger>
-      </div>
-    );
-  }
-}
-module.exports = NCreport;
+ // }
