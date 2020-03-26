@@ -58857,7 +58857,10 @@ class NCreports extends React.Component {
           return;
         }
         let response = JSON.parse(this.responseText);
-        console.log(response);
+      //  console.log(response);
+        let response2=response.sort();
+        response2=response2.reverse();
+        console.log(response2)
        // let reports = response.reports.map((el) => {
         let reports = response.map((el) => {  
         //  return <RIreport showModal={that.handleShowModal} reportnumber={el.reportnumber} nickname={el.nickname} img_url={el.img_url}/> 
