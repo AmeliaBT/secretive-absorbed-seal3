@@ -58855,8 +58855,21 @@ class NCreports extends React.Component {
         let response = JSON.parse(this.responseText);
         let reports = response.reports.map((el) => {
         //  return <RIreport showModal={that.handleShowModal} reportnumber={el.reportnumber} nickname={el.nickname} img_url={el.img_url}/> 
-
-          return React.createElement(NCreport, {key: el.reportID, reportnumber: el.reportID, inspector: el.inspector}) 
+/*Part Number
+Description
+Date Inspected
+Comment
+date 
+url
+*/
+          return React.createElement(NCreport, {key: el.reportID, 
+                   reportnumber: el.reportID, 
+                   inspector: el.inspector}
+                   
+                   
+                   
+                   
+                   ) 
         });
            that.setState({
           ["reports"]: React.createElement("div", {className: "reports"}, 
@@ -59048,7 +59061,7 @@ xhr.open('POST', '/get-all-users-reports', true);
       React.createElement("div", {className: "book-all"}, 
       /*   <img src={this.state.img_url} alt="book pic" className="img-all"/>*/
         React.createElement("div", {className: "bookname-all"}, this.state.reportID), 
-        React.createElement("div", {className: "exchange-btn-all", onClick: () => this.props.showModal(this.props.reportID, this.props.nickname)}, "Update"), 
+        React.createElement("div", {className: "exchange-btn-all", onClick: () => this.props.showModal(this.props.reportID, this.props.inspector)}, "Show Report"), 
          React.createElement(OverlayTrigger, {
             trigger: ['hover', 'focus'], 
             placement: "bottom", 

@@ -68,7 +68,7 @@ xhr.open('POST', '/get-all-users-reports', true);
       <div className="book-all">
       {/*   <img src={this.state.img_url} alt="book pic" className="img-all"/>*/}
         <div className="bookname-all">{this.state.reportID}</div>
-        <div className="exchange-btn-all" onClick={() => this.props.showModal(this.props.reportID, this.props.nickname)}>Update</div>
+        <div className="exchange-btn-all" onClick={() => this.props.showModal(this.props.reportID, this.props.inspector)}>Show Report</div>
          <OverlayTrigger
             trigger={['hover', 'focus']}
             placement="bottom"
