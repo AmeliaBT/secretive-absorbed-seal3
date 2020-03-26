@@ -33,6 +33,7 @@ class NCreports extends React.Component {
    /***********************/
   handleShowModal() {
     // show Modal
+    alert(" from hsm");
     this.handleShow();
     this.setState({
         //  ["chosenAnotherUserBook"]: chosenAnotherUserBook,
@@ -42,6 +43,7 @@ class NCreports extends React.Component {
  
   /***********************/
    handleClose() {
+     alert("closing ");
     this.setState({ show: false });
   }
   /***********************/
