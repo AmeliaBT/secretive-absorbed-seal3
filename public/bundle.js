@@ -59049,6 +59049,7 @@ class NCreport extends React.Component {
       /*   <img src={this.state.img_url} alt="book pic" className="img-all"/>*/
         React.createElement("div", null, React.createElement("h4", {className: "nc-all"}, this.state.Gwo)), 
         React.createElement("div", {className: "exchange-btn-all", onClick: () => this.props.showModal(this.props.reportID, this.props.inspector)}, "Show Report"), 
+        
          React.createElement(OverlayTrigger, {
             trigger: ['hover', 'focus'], 
             placement: "bottom", 

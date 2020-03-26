@@ -44,6 +44,7 @@ class NCreport extends React.Component {
       {/*   <img src={this.state.img_url} alt="book pic" className="img-all"/>*/}
         <div  ><h4 className="nc-all">{this.state.Gwo}</h4></div>
         <div className="exchange-btn-all" onClick={() => this.props.showModal(this.props.reportID, this.props.inspector)}>Show Report</div>
+        
          <OverlayTrigger
             trigger={['hover', 'focus']}
             placement="bottom"
@@ -57,6 +58,8 @@ class NCreport extends React.Component {
   }
 }
 module.exports = NCreport;
+
+// <div className="exchange-btn-all" onClick={() => this.props.showModal(this.props.reportID, this.props.inspector)}>Show Report</div>
 //  <div className="bookname-all">{this.state.Gwo}</div>
 
 //componentWillMount() {
