@@ -14,7 +14,7 @@ class FilterA extends React.Component {
       sel_radio_a: '',
       sel_radio_b: '',
       sel_radio_c: '',
-      sel_radio_d: 'last12',
+      sel_radio_d: '',
       supplier:'',
       source:'',
       destination:'',
