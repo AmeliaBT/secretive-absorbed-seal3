@@ -7,11 +7,10 @@ const BrowserRouter = require('react-router-dom').BrowserRouter;
 const hashHistory = require('react-router-dom').hashHistory;
 
 // redux
-const { createStore } = require('redux');
+//const { createStore } = require('redux');
 const { Provider } = require('react-redux');
-const reducers = require('./reducers');
+//const reducers = require('./reducers');
 
-let store = createStore(reducers);
 
 /* Import Components */
 const Main = require('./components/Main');
@@ -26,14 +25,13 @@ const LogIn = require('./components/LogIn');
 const HomePage = require('./components/HomePage');
 const FilterA = require('./components/FilterA');
 const ChartA = require('./components/ChartA');
-//const DisplayMessages= require('./components/DisplayMessages');
-//const DisplayMessagesB= require('./components/DisplayMessagesB');
+
 const ManyRecords =require('./components/ManyRecords');
 //  <Route path="/report-edit" component={RIedit}/>
 //<Route path='/:handle' component={Profile} />
 render((
   
-  <Provider store={store}>
+  <Provider >
     <BrowserRouter>
       <div>
      
@@ -52,9 +50,9 @@ render((
         <Route path="/report-edit" component={RIedit}/>
         <Route path="/report-view" component={RIview}/>
          <Route path="/up-many-records" component={ManyRecords}/>
-          {/*< DisplayMessages />
-         <Route path="/reports" component={RIreports}/>
-        <Route path="/books" component={RIreports}/>*/}
+    
       </div>
     </BrowserRouter>
   </Provider>), document.getElementById('main'));
+
+//  <Provider store={store}>

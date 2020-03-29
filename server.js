@@ -102,7 +102,7 @@ app.use(express.static('public'));
 //using the middleware Multer to upload the photo on the server side.
 
 //app.use(multer({ dest: "./uploads/",  rename: function (fieldname, filename) { return filename; },}));
-app.use(multer({dest:'./public/images/uploads'}).any());
+//app.use(multer({dest:'./public/images/uploads'}).any());
 
 
 
