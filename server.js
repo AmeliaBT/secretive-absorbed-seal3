@@ -2,9 +2,7 @@
 const express = require('express');
 // for file upload
 //const multer  = require('multer');
-
 //react-html-table-to-excel
-
 const app = express();
 const books = {}; //
 require('dotenv').config()
@@ -35,45 +33,9 @@ const url = process.env.MONGOLAB_URI;
 // connection
 //error here below
 const promise_connection = mongoose.connect(url, { 	useMongoClient: true });
-//const storage = new GridFsStorage({ url: url});
-//const GridFsStorage = require('multer-gridfs-storage');
-//const storage = new GridFsStorage({ db: promise_connection });
-/* To Do: see Anon Message Board https://impossible-petalite.glitch.me/ for good connection
-
-try
-const promise_connection = mongoose.connect(url,{useNewUrlParser: true 
-    //, useUnifiedTopology: true                                                })
-.then(() => console.log("Success"))
-.catch(err => console.log(err)); 
-
-
-/*/
 
 
 
-let db = mongoose.connection;
-// if connection is success
-promise_connection.then(function(db){
-	console.log('Connected to mongodb');
-});
-
-
-
-
-/******************************/
-// set store
-/******************************/
-let store = new MongoDBStore(
-      {
-        uri: url,
-        collection: "sessions"
-      });
- // Catch errors
-    store.on('error', function(error) {
-      assert.ifError(error);
-      assert.ok(false);
-    });
-/***********************************/
 // set USEs
 /***********************************/
 app.use(bodyParser.json());   
@@ -88,7 +50,7 @@ app.use(session({
   cookie: {
         maxAge: 1000 * 60 * 60 * 24 * 1 // 1 day
       },
-  store: store,
+  //store: store,
   resave: false,
   saveUninitialized: false
   //cookie: { secure: true }
@@ -188,7 +150,7 @@ app.post("/sign-up", function(request, response) {
                                            //hash password
                                             bcrypt.hash(request.body["password"], saltRounds, function(err, hash) {
                                             
-                                              //, street: "", books: [], income: [], outcome: []
+                                            
                           // create a user
                     let obj = {inspname: request.body["inspname"], email: request.body["email"], password: hash, dep: request.body["dep"]};                    
                                                 let user = new userModel(obj);
@@ -252,8 +214,7 @@ app.post("/log-out", function(request, response) {
      })
 });
 /***********************************/
- //, street: document.street, books: document.books, income: document.income, outcome: document.outcome
-  // in addition to check is loged in user also we get user inspname
+
  
 app.post("/is-loged-in", function(request, response) {
  
@@ -285,32 +246,11 @@ app.post("/set-dep", function(request, response) {
 
 
 /* ********************************* */
-/*
-app.post("/set-street", function(request, response) {
-      reportModel.findById(request.session.passport.user, (err, user) => {
-      if (err) throw err;
-      user.set({street: request.body["street"]});
-      user.save(function (err, updatedUser) {
-        if (err) throw err;
-        response.json({update: true});
-      });
-    });
-});
-*/
-/* ********************************* */
-/*
-app.post("/get-street-city-by-nick", function(request, response) {
-      reportModel.findOne({inspname: request.body["inspname"]}, (err, user) => {
-      if (err) throw err;
-      response.json({street: user.street, city: user.city});
-    });
-});
+
 /***********************************/
 let nDocs; 
 app.post("/add-report", function(request, response) {
-// reportModel.findById(request.session.passport.user, (err, user) => {
-  //if (err) throw err; 
-   //get the number of documents
+
 reportModel.find({}, (err, docs) => {
   if (err) throw err;        
  nDocs= docs.length +100000200 ;//7000;
@@ -321,7 +261,6 @@ console.log(" nDoc1= "  +nDocs) ;
     // create a report
 
 let obj =  {
-//reportID: request.body["reportID"],   request.body._id;
 
 reportID:  nDocs, 
 daterec: request.body["daterec"], 
@@ -394,48 +333,9 @@ uwo: request.body["image"] //photo file
 
 });
 
+
+
 /***********************************/
-/*
-app.post("/add-report", function(request, response) {
-      reportModel.findById(request.session.passport.user, (err, user) => {
-      if (err) throw err;
-        //search book img
-        reports.search(request.body["reportnumber"], function(error, results) {
-            if ( ! error ) {
-                let arrayOfBooks = user.reports;
-              //  arrayOfBooks.push({reportnumber:request.body["reportnumber"], img_url: results[0].thumbnail, inspname: user.inspname});
-              arrayOfBooks.push({reportnumber:request.body["reportnumber"],  inspname: user.inspname});
-              user.set({reports: arrayOfBooks});
-                user.save(function (err, updatedUser) {
-                  if (err) throw err;
-                  response.json({update: true});
-                });
-            } else {
-                console.log(error);
-            }
-        });  
-    });
-});
-
- //   for(let j = 0; j < users[i].reports.length; j++) {              
-               /* // function for filtering
-               function checkBookName(el) {
-                 return el.chosenBook == users[i].reports[j].reportnumber;
-               }              
-            let filteredIncome = users[i].income.filter(checkBookName);
-              let filteredOutcome = users[i].outcome.filter(checkBookName);
-              if((filteredIncome.length == 0) && (filteredOutcome.length == 0)) {
-                reports.push(users[i].reports[j]);
-              } */
-         
-/***********************************/
-
-
-
-
-
-
-
 
 app.post("/get-all-users-reports", function(request, response) {
        reportModel.find({}, (err, docs) => {
@@ -447,9 +347,8 @@ app.post("/get-all-users-reports", function(request, response) {
           }
        });
 });
-/**  here err1  ********************************
- * get-user-filtered-reports for listLink  edit/delete
- * userModel.findById(request.session.passport.user
+/*  ********************************
+ 
 */
 app.post("/get-user-filtered-reports", function(request, response) {
    userModel.findById(request.session.passport.user, (err, user) => {
@@ -461,9 +360,7 @@ app.post("/get-user-filtered-reports", function(request, response) {
           let reports = []   ;
           for(let i = docs.length-1; i > -1; i--) {
          if(docs[i].inspector === NN) { reports.push(docs[i]);}   
-            /* 
-              ["reportsLink"]: "/reports",
-             ["listLink"]: "/reports"            */              
+                    
             if(i == 0) response.json({reports: reports});
 
           }
@@ -475,11 +372,8 @@ app.post("/get-user-filtered-reports", function(request, response) {
 app.post("/get-defect-reports", function(request, response) {
  // let regtwo = request.body.two; //pass-fail
 //regtwo='^(?!Pass)(?!Fail).*$' ;
-  
   //regtwo='^(Pass)' ;
  reportModel.find({ 
- 
-    //two: new RegExp(regtwo, 'ig') 
     two:"Fail"
   }, 
                    (err, doc) => {
@@ -494,7 +388,6 @@ app.post("/get-defect-reports", function(request, response) {
 
 /***********************************/
 //create-filtered-table2
-
 app.post("/create-filtered-table2", function(request, response) {
   let lot;
  let regreportID = request.body.reportID;  
@@ -543,16 +436,12 @@ let cwo=request.body.cwo; // date inspected
 dateN.setDate(dateN.getDate() -365);
   let dateSpan;
   if(cwo === "last12"){
- // dateSpan= { $gte : new Date("2019-03-16T20:15:31Z")} } 
-   dateSpan= { $gte : new Date(dateN)} } 
-  
-  else{ dateSpan = { $gte : new Date("2000-01-16T20:15:31Z")} }
-  
+   dateSpan= { $gte : new Date(dateN)} }   
+  else{ dateSpan = { $gte : new Date("2000-01-16T20:15:31Z")} }  
    reportModel.find({ 
     reportID: new RegExp(regreportID, 'ig'), 
      Gwo: new RegExp(regGwo, 'ig'), 
-     fwo: new RegExp(regfwo, 'ig'), 
-    
+     fwo: new RegExp(regfwo, 'ig'),     
     record: new RegExp(reg_record, 'ig'), 
     ewo: new RegExp(regewo, 'ig'), 
     mwo: new RegExp(regmwo, 'ig'), 
@@ -564,8 +453,7 @@ dateN.setDate(dateN.getDate() -365);
   }, 
                    (err, doc) => {
       if (err) throw err;
-           response.json(doc);
-   //console.log(doc);
+           response.json(doc);  
           }        
      );
            
@@ -573,8 +461,7 @@ dateN.setDate(dateN.getDate() -365);
   // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   app.post("/report-edit", function(request, response) {  
    reportModel.findOne({"reportID":request.body["reportID"]}, (err, doc) => {
- // console.log("request: ");
-  //  console.log(request); 
+ 
       if (err) throw err;
             response.json(doc);
           }        
@@ -582,22 +469,9 @@ dateN.setDate(dateN.getDate() -365);
 });
 /***********************************/
 
-/*app.post("/set-dep", function(request, response) {
-  userModel.findById(request.session.passport.user, (err, user) => {
-  if (err) throw err;
-  user.set({dep: request.body["dep"]});
-  user.save(function (err, updatedUser) {
-  if (err) throw err;
-  response.json({update: true});
-  });
- });
- }); */
-
 app.post("/set-report", function(request, response) {  
    reportModel.findOne({"_id":request.body["_id"]}, (err, doc) => {
-  if (err) throw err;
-  //  console.log("doc: ");
-  //   console.log(doc);
+  if (err) throw err; 
   doc.set({   
 daterec: request.body["daterec"],  
 Gwo: request.body["Gwo"], 
@@ -621,10 +495,7 @@ two: request.body["two"], 
 record: request.body["record"],
 uwo: request.body["uwo"] //photo file   
   });
-     
-  // doc.save();
-
-     
+    
      doc.save(function (err) {
               
          if (err) throw err;
@@ -657,7 +528,54 @@ app.post("/up-many-records", function(request, response) {
       }        
      );
 
-/* 
+
+/***********************************/
+app.post("/refuse-proposal-income", function(request, response) { 
+  reportModel.findById(request.session.passport.user, (err, user) => {
+      if (err) response.json({error: 1});
+        function checkProposal(element, index, array) {
+              if((element.chosenBook == request.body["chosenBook"]) &&
+                 (element.anotherUserinspname == request.body["anotherUserinspname"]) &&
+                 (element.chosenAnotherUserReport == request.body["chosenAnotherUserReport"])) {
+                  return true
+              }
+              else {
+                return false;
+              }
+            }
+        let arrayOfIncome = user.income;
+        arrayOfIncome.splice(arrayOfIncome.findIndex(checkProposal), 1);
+      user.set({income: arrayOfIncome});
+      user.save(function (err, updatedUser) {
+                  if (err) response.json({error: 2});
+                  reportModel.findOne({inspname: request.body["anotherUserinspname"]}, (err, anotherUser) => {
+                      if (err) response.json({error: 3});
+                    let arrayOfOutcome = anotherUser.outcome;
+                    arrayOfOutcome.splice(arrayOfOutcome.findIndex(checkProposal), 1);
+                    anotherUser.set({outcome: arrayOfOutcome});
+                    anotherUser.save((err, updatedAnotherUser) => {
+                      response.json({error: 0});
+                    });
+                  });
+                });
+    });
+});
+/******************************/
+// user sessions handlers:
+/******************************/
+passport.serializeUser(function(user_id, done) {
+  done(null, user_id);
+});
+passport.deserializeUser(function(user_id, done) {
+    done(null, user_id);
+});
+// listen for requests
+const listener = app.listen(process.env.PORT, function () {
+  console.log('Your app is listening on port ' + listener.address().port);
+});
+
+   /*
+ /* 
 
 reportModel.insertMany(request.body.record)
     .then(function (docs) {
@@ -709,41 +627,8 @@ done(null, data);
 
 
 
-*/
 
-
-
-
-/***********************************/
-
-
-
-
-app.post("/create-proposals", function(request, response) { 
-  reportModel.findById(request.session.passport.user, (err, user) => {
-      if (err) response.json({error: 1});
-       let arrayOfOutcome = user.outcome;
-       arrayOfOutcome.push({chosenBook: request.body["chosenBook"], 
-                            anotherUserinspname: request.body["anotherUserinspname"], 
-                            chosenAnotherUserReport: request.body["chosenAnotherUserReport"]});
-      user.set({outcome: arrayOfOutcome});
-      user.save(function (err, updatedUser) {
-                  if (err) response.json({error: 2});
-                  reportModel.findOne({inspname: request.body["anotherUserinspname"]}, (err, anotherUser) => {
-                      if (err) response.json({error: 3});
-                    let arrayOfIncome = anotherUser.income;
-                     arrayOfIncome.push({chosenBook: request.body["chosenAnotherUserReport"], 
-                                          anotherUserinspname: user.inspname, 
-                                          chosenAnotherUserReport: request.body["chosenBook"]});
-                    anotherUser.set({income: arrayOfIncome});
-                    anotherUser.save((err, updatedAnotherUser) => {
-                      response.json({error: 0});
-                    });
-                  });
-                });
-    });
-});
-/***********************************/
+  
 app.post("/refuse-proposal", function(request, response) { 
   reportModel.findById(request.session.passport.user, (err, user) => {
       if (err) response.json({error: 1});
@@ -774,8 +659,32 @@ app.post("/refuse-proposal", function(request, response) {
                 });
     });
 });
-/***********************************/
-/*
+
+app.post("/create-proposals", function(request, response) { 
+  reportModel.findById(request.session.passport.user, (err, user) => {
+      if (err) response.json({error: 1});
+       let arrayOfOutcome = user.outcome;
+       arrayOfOutcome.push({chosenBook: request.body["chosenBook"], 
+                            anotherUserinspname: request.body["anotherUserinspname"], 
+                            chosenAnotherUserReport: request.body["chosenAnotherUserReport"]});
+      user.set({outcome: arrayOfOutcome});
+      user.save(function (err, updatedUser) {
+                  if (err) response.json({error: 2});
+                  reportModel.findOne({inspname: request.body["anotherUserinspname"]}, (err, anotherUser) => {
+                      if (err) response.json({error: 3});
+                    let arrayOfIncome = anotherUser.income;
+                     arrayOfIncome.push({chosenBook: request.body["chosenAnotherUserReport"], 
+                                          anotherUserinspname: user.inspname, 
+                                          chosenAnotherUserReport: request.body["chosenBook"]});
+                    anotherUser.set({income: arrayOfIncome});
+                    anotherUser.save((err, updatedAnotherUser) => {
+                      response.json({error: 0});
+                    });
+                  });
+                });
+    });
+});
+
 app.post("/accept-proposal", function(request, response) { 
   reportModel.findById(request.session.passport.user, (err, user) => {
       if (err) response.json({error: 1});
@@ -852,50 +761,4 @@ app.post("/accept-proposal", function(request, response) {
     });
 });
 
-*/
-/***********************************/
-app.post("/refuse-proposal-income", function(request, response) { 
-  reportModel.findById(request.session.passport.user, (err, user) => {
-      if (err) response.json({error: 1});
-        function checkProposal(element, index, array) {
-              if((element.chosenBook == request.body["chosenBook"]) &&
-                 (element.anotherUserinspname == request.body["anotherUserinspname"]) &&
-                 (element.chosenAnotherUserReport == request.body["chosenAnotherUserReport"])) {
-                  return true
-              }
-              else {
-                return false;
-              }
-            }
-        let arrayOfIncome = user.income;
-        arrayOfIncome.splice(arrayOfIncome.findIndex(checkProposal), 1);
-      user.set({income: arrayOfIncome});
-      user.save(function (err, updatedUser) {
-                  if (err) response.json({error: 2});
-                  reportModel.findOne({inspname: request.body["anotherUserinspname"]}, (err, anotherUser) => {
-                      if (err) response.json({error: 3});
-                    let arrayOfOutcome = anotherUser.outcome;
-                    arrayOfOutcome.splice(arrayOfOutcome.findIndex(checkProposal), 1);
-                    anotherUser.set({outcome: arrayOfOutcome});
-                    anotherUser.save((err, updatedAnotherUser) => {
-                      response.json({error: 0});
-                    });
-                  });
-                });
-    });
-});
-/******************************/
-// user sessions handlers:
-/******************************/
-passport.serializeUser(function(user_id, done) {
-  done(null, user_id);
-});
-passport.deserializeUser(function(user_id, done) {
-    done(null, user_id);
-});
-// listen for requests
-const listener = app.listen(process.env.PORT, function () {
-  console.log('Your app is listening on port ' + listener.address().port);
-});
-
-   
+   */
