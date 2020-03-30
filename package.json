@@ -4,7 +4,7 @@
   "//3": "updating this file will download and update your packages",
   "name": "CMSstarter-react-redux",
   "version": "0.0.1",
-  "description": "A starter app for using Redux to manage state in React",
+  "description": "app  React 2020-03-30",
   "main": "server.js",
   "scripts": {
     "build": "webpack",
