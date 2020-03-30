@@ -34,8 +34,6 @@ const url = process.env.MONGOLAB_URI;
 //error here below
 const promise_connection = mongoose.connect(url, { 	useMongoClient: true });
 
-
-
 // set USEs
 /***********************************/
 app.use(bodyParser.json());   
