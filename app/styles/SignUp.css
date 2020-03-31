@@ -1,0 +1,13 @@
+.FormSU {
+  width: 600px;
+  margin: auto;
+  margin-top: 100px;
+  background: #987D00 ;/*#2f2f2f;*/
+  padding: 50px;
+  border: 1px solid black; /*10px solid #9d9d8e;*/
+}
+
+.form-labelSU {
+  color: black ; /*#f6ff67;*/
+  font-weight: bold;
+}

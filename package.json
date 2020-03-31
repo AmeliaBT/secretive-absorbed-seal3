@@ -1,0 +1,51 @@
+{
+  "//1": "describes your app and its dependencies",
+  "//2": "https://docs.npmjs.com/files/package.json",
+  "//3": "updating this file will download and update your packages",
+  "name": "CMSstarter-react-redux",
+  "version": "0.0.1",
+  "description": "app  React 2020-03-30",
+  "main": "server.js",
+  "scripts": {
+    "build": "webpack",
+    "start": "webpack && node server.js"
+  },
+  "dependencies": {
+    "bcrypt": "^1.0.3",
+    "body-parser": "^1.18.2",
+    "connect-mongodb-session": "^1.4.0",
+    "cookie-parser": "^1.4.3",
+    "css-loader": "^0.28.7",
+    "dotenv": "^4.0.0",
+    "express": "^4.16.2",
+    "express-session": "^1.15.6",
+    "jsx-loader": "^0.13.2",
+    "mongodb": "*",
+    "mongoose": "^4.13.8",
+    "passport": "^0.4.0",
+    "react": "^16.2.0",
+    "react-bootstrap": "^0.33.1",
+    "react-dom": "^16.2.0",
+    "react-inline-editing": "^1.0.10",  
+    "react-router-dom": "^4.2.2",   
+    "style-loader": "^0.19.1",
+    "webpack": "^3.10.0",   
+    "date": "^1.0.2",
+    "multer": "^1.4.2",     
+    "react-google-charts": "^3.0.15"
+  },
+  "engines": {
+    "node": "8.x"
+  },
+  "repository": {
+    "url": "https://glitch.com/edit/#!/starter-react-redux"
+  },
+  "license": "MIT",
+  
+  
+  "keywords": [
+    "node",
+    "glitch",
+    "express"
+  ]
+}

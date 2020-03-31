@@ -1,0 +1,31 @@
+body {
+  background: white; /* #d3d3d3; #f6ff67;  height:100%;*/
+  height:50%;
+}
+
+.jumbotron {
+  width: 90%;
+  margin: auto;
+  padding: 10px;
+  background-color: white; /* #d3d3d3 #353535;*/
+}
+
+.jmbtrn-p p{ 
+  
+  color: black; /*#f6ff67;*/
+   border: 1px solid lightgrey;
+  background-color: white;
+ padding: 20px;
+  font-size: small;
+}
+
+/* 
+
+.jmbtrn-p {
+  background-color: #90ee90 ; 
+  text-align: center;
+  color: #f6ff67;
+ border-left: 6px solid red;
+  background-color: lightgrey;
+}
+*/
