@@ -76,12 +76,14 @@ promise_connection.then(function(db){
 // describe the schema
 let Schema = mongoose.Schema,
     ObjectId = Schema.ObjectId;
+
 let userSchema = new Schema({
       inspname: String,
       email: String,
       password: String,
       dep: String,
-security_level:Number});
+security_level:String
+});
   
 let reportSchema = new Schema({
   reportID: String,
@@ -184,9 +186,11 @@ app.post("/sign-up", function(request, response) {
 app.post("/log-in", function(request, response) {
   console.log("expected an email below when login: ");
   console.log(request.body["email"]);
+  console.log(request.body["security_level"]);
+  
               userModel.find({ email: request.body["email"]}, function (err, document) {
               if(!err) {
-                console.log(" stacked here ...")
+                
                 if(document.length == 0) {
                   response.json({"error": "error0"});
                 }
@@ -194,13 +198,13 @@ app.post("/log-in", function(request, response) {
                 bcrypt.compare(request.body["password"], document[0]["password"], function(err, res) {
                 if(res === true) {
                 let user_id = document[0]["id"];
-                  console.log(" user ok " )
+                 
                 request.login(user_id, () => {
                      response.json({"error": 0});
                            });
                         }
                   else if(res === false) {
-                    console.log(" not ok ..");
+                    
                     response.json({"error": "error1"});
                   }
                    });
