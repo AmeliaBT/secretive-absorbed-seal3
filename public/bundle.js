@@ -1443,8 +1443,9 @@ class Header extends React.Component {
                         React.createElement(NavItem, {className: "span"}, 
                           React.createElement(Link, {to: "/login", className: "link"}, React.createElement("p", {className: "link"}, " Log in "))
                         )
-                      ), 
-            ["reportsLink"]: "/login"
+                      )
+            //, 
+            //["reportsLink"]: "/login"
             
            });
          }
