@@ -39,7 +39,7 @@ class LogIn extends React.Component {
       
       let body = 'email=' + encodeURIComponent(this.state.email) +
       '&password=' + encodeURIComponent(this.state.password)+
-           'securityLevel=' + encodeURIComponent(this.state.securityLevel)
+      '&securityLevel=' + encodeURIComponent(this.state.securityLevel)
       ;
 
 

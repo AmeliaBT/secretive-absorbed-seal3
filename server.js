@@ -186,9 +186,6 @@ app.post("/sign-up", function(request, response) {
 app.post("/log-in", function(request, response) {
   console.log("expected an email below when login: ");
   console.log(request.body["email"]);
-  //inspname
-  console.log(request.body["inspname"]);
-  //console.log(request.body["securityLevel"]);
   
               userModel.find({ email: request.body["email"]}, function (err, document) {
               if(!err) {
@@ -200,7 +197,7 @@ app.post("/log-in", function(request, response) {
                 bcrypt.compare(request.body["password"], document[0]["password"], function(err, res) {
                 if(res === true) {
                 let user_id = document[0]["id"];
-                 
+                 let user_id = document[0]["id"];
                 request.login(user_id, () => {
                      response.json({"error": 0});
                            });
