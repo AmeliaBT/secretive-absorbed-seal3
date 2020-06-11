@@ -80,7 +80,8 @@ let userSchema = new Schema({
       inspname: String,
       email: String,
       password: String,
-      dep: String});
+      dep: String,
+security_level:Number});
   
 let reportSchema = new Schema({
   reportID: String,
