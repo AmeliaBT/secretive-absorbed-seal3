@@ -80,8 +80,9 @@ class Header extends React.Component {
                         <NavItem className='span'>
                           <Link to='/login' className="link"><p  className="link"> Log in </p></Link>
                         </NavItem>
-                      </Nav>,
-          ["reportsLink"]: "/login"
+                      </Nav>, 
+            ["reportsLink"]: "/login"
+            
            });
          }
         }
