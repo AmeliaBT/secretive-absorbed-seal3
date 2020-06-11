@@ -82,7 +82,7 @@ let userSchema = new Schema({
       email: String,
       password: String,
       dep: String,
-security_level:String
+securityLevel:Number
 });
   
 let reportSchema = new Schema({
@@ -188,7 +188,7 @@ app.post("/log-in", function(request, response) {
   console.log(request.body["email"]);
   //inspname
   console.log(request.body["inspname"]);
-  console.log(request.body["security_level"]);
+  //console.log(request.body["securityLevel"]);
   
               userModel.find({ email: request.body["email"]}, function (err, document) {
               if(!err) {
