@@ -197,7 +197,8 @@ app.post("/log-in", function(request, response) {
                 bcrypt.compare(request.body["password"], document[0]["password"], function(err, res) {
                 if(res === true) {
                 let user_id = document[0]["id"];
-                 let user_id = document[0]["id"];
+                 let securityLevel = document[0]["securityLevel"];
+                  console.log("securityLevel: " + securityLevel);
                 request.login(user_id, () => {
                      response.json({"error": 0});
                            });
