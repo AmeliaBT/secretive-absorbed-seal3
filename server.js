@@ -186,6 +186,8 @@ app.post("/sign-up", function(request, response) {
 app.post("/log-in", function(request, response) {
   console.log("expected an email below when login: ");
   console.log(request.body["email"]);
+  //inspname
+  console.log(request.body["inspname"]);
   console.log(request.body["security_level"]);
   
               userModel.find({ email: request.body["email"]}, function (err, document) {

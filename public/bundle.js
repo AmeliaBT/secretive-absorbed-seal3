@@ -58418,7 +58418,8 @@ class LogIn extends React.Component {
     super(props);
     this.state = {
       email: "",
-      password: ""
+      password: "",
+      securityLevel:""
     };
     this.handleChangeValue = this.handleChangeValue.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -58441,7 +58442,9 @@ class LogIn extends React.Component {
       
       
       let body = 'email=' + encodeURIComponent(this.state.email) +
-      '&password=' + encodeURIComponent(this.state.password);
+      '&password=' + encodeURIComponent(this.state.password)+
+           'securityLevel=' + encodeURIComponent(this.state.securityLevel)
+      ;
 
 
       xhr.send(body);
