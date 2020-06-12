@@ -57,6 +57,7 @@ class Header extends React.Component {
           return;
         }
        let response = JSON.parse(this.responseText);
+        
         if(response.isLogedIn == true) {
            that.setState({
           ["navBtns"]: <Nav pullLeft className="link span">
