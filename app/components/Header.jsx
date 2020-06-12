@@ -68,7 +68,7 @@ class Header extends React.Component {
           that.setState({
           ["navBtns"]: <Nav pullLeft className="link span">
                        <NavItem className='span'> <Link  to='/homepage' className="link">{response.inspname}'s RI Form</Link> </NavItem> 
-                      <NavItem className='span'> <Link  to='/up-many-records' className="link">Admin</Link> </NavItem> 
+                    
                        <NavItem className='span'> <div  onClick={that.handleLogOut} className="link">Log out</div> </NavItem>
                       </Nav>,
             ["reportsLink"]: "/reports",
@@ -102,18 +102,8 @@ class Header extends React.Component {
  default:
          // visitor
         alert("visitor");
-          that.setState({
-          ["navBtns"]: <Nav pullLeft className="link span">
-                       <NavItem className='span'> <Link  to='/homepage' className="link">{response.inspname}'s RI Form</Link> </NavItem> 
-                      <NavItem className='span'> <Link  to='/up-many-records' className="link">Admin</Link> </NavItem> 
-                       <NavItem className='span'> <div  onClick={that.handleLogOut} className="link">Log out</div> </NavItem>
-                      </Nav>,
-            ["reportsLink"]: "/reports",
-             ["listLink"]: "/list",
-             ["listLinkAll"]: "/list-all",
-                ["listLinkAll2"]: "/list-all2",
-                ["chartLinkA"]: "/chartA"
-           });
+         
+     
     }         
  /********************/
           
