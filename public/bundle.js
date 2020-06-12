@@ -1426,18 +1426,8 @@ class Header extends React.Component {
             /* Show screen based on the Security level *********/         
      switch (securityLevel) {
       case 1:
-        alert("1");
-        break;
-
-      case 3:      
-         alert("3");
-        break;
- default:
-        alert("2");
-    }         
- /********************/
-          
-          
+         // user
+        alert("user");
           that.setState({
           ["navBtns"]: React.createElement(Nav, {pullLeft: true, className: "link span"}, 
                        React.createElement(NavItem, {className: "span"}, " ", React.createElement(Link, {to: "/homepage", className: "link"}, response.inspname, "'s RI Form"), " "), 
@@ -1450,6 +1440,59 @@ class Header extends React.Component {
                 ["listLinkAll2"]: "/list-all2",
                 ["chartLinkA"]: "/chartA"
            });
+        break;
+      case 2:
+         // Manager 
+        alert("2");
+        break;
+      case 3:   
+         //top level Admin
+         alert("Admin");
+          that.setState({
+          ["navBtns"]: React.createElement(Nav, {pullLeft: true, className: "link span"}, 
+                       React.createElement(NavItem, {className: "span"}, " ", React.createElement(Link, {to: "/homepage", className: "link"}, response.inspname, "'s RI Form"), " "), 
+                      React.createElement(NavItem, {className: "span"}, " ", React.createElement(Link, {to: "/up-many-records", className: "link"}, "Admin"), " "), 
+                       React.createElement(NavItem, {className: "span"}, " ", React.createElement("div", {onClick: that.handleLogOut, className: "link"}, "Log out"), " ")
+                      ),
+            ["reportsLink"]: "/reports",
+             ["listLink"]: "/list",
+             ["listLinkAll"]: "/list-all",
+                ["listLinkAll2"]: "/list-all2",
+                ["chartLinkA"]: "/chartA"
+           });
+        break;
+ default:
+         // visitor
+        alert("visitor");
+          that.setState({
+          ["navBtns"]: React.createElement(Nav, {pullLeft: true, className: "link span"}, 
+                       React.createElement(NavItem, {className: "span"}, " ", React.createElement(Link, {to: "/homepage", className: "link"}, response.inspname, "'s RI Form"), " "), 
+                      React.createElement(NavItem, {className: "span"}, " ", React.createElement(Link, {to: "/up-many-records", className: "link"}, "Admin"), " "), 
+                       React.createElement(NavItem, {className: "span"}, " ", React.createElement("div", {onClick: that.handleLogOut, className: "link"}, "Log out"), " ")
+                      ),
+            ["reportsLink"]: "/reports",
+             ["listLink"]: "/list",
+             ["listLinkAll"]: "/list-all",
+                ["listLinkAll2"]: "/list-all2",
+                ["chartLinkA"]: "/chartA"
+           });
+    }         
+ /********************/
+          
+        /*  
+          that.setState({
+          ["navBtns"]: <Nav pullLeft className="link span">
+                       <NavItem className='span'> <Link  to='/homepage' className="link">{response.inspname}'s RI Form</Link> </NavItem> 
+                      <NavItem className='span'> <Link  to='/up-many-records' className="link">Admin</Link> </NavItem> 
+                       <NavItem className='span'> <div  onClick={that.handleLogOut} className="link">Log out</div> </NavItem>
+                      </Nav>,
+            ["reportsLink"]: "/reports",
+             ["listLink"]: "/list",
+             ["listLinkAll"]: "/list-all",
+                ["listLinkAll2"]: "/list-all2",
+                ["chartLinkA"]: "/chartA"
+           });
+          */
         }
         else {
           that.setState({
