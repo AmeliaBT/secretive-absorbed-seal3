@@ -52,13 +52,14 @@ class SignUp extends React.Component {
         }
         let response = JSON.parse(this.responseText);
         if(response.error == 0) {
-         // window.location.href = "/books";
+         
          window.location.href = "/reports";
           that.setState({
           ["email"]: "Succsess",
           ["password"]: "Succsess",
           ["inspname"]: "Success",
-          ["dep"]: "Success"
+          ["dep"]: "Success",
+          ["securityLevel"]:"Success"
            });
         }
         else {
@@ -107,6 +108,9 @@ class SignUp extends React.Component {
                 </Col>
                 <Col sm={10}>
                   <FormControl type="text" name="dep" required value={this.state.dep} placeholder="Department" onChange={this.handleChangeValue} />
+                </Col>
+                <Col sm={10}>
+                  <FormControl type="text" name="securityLevel" required value={this.state.securityLevel} placeholder="securityLevel" onChange={this.handleChangeValue} />
                 </Col>
               </FormGroup>
 

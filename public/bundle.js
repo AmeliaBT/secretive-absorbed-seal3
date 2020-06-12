@@ -1451,7 +1451,8 @@ class Header extends React.Component {
           that.setState({
           ["navBtns"]: React.createElement(Nav, {pullLeft: true, className: "link span"}, 
                        React.createElement(NavItem, {className: "span"}, " ", React.createElement(Link, {to: "/homepage", className: "link"}, response.inspname, "'s RI Form"), " "), 
-                      React.createElement(NavItem, {className: "span"}, " ", React.createElement(Link, {to: "/up-many-records", className: "link"}, "Admin"), " "), 
+                       React.createElement(NavItem, {className: "span"}, " ", React.createElement(Link, {to: "/up-many-records", className: "link"}, "Admin"), " "), 
+                       React.createElement(NavItem, {className: "span"}, " ", React.createElement(Link, {to: "/signup", className: "link"}, React.createElement("p", {className: "link"}, "Add User")), " "), 
                        React.createElement(NavItem, {className: "span"}, " ", React.createElement("div", {onClick: that.handleLogOut, className: "link"}, "Log out"), " ")
                       ),
             ["reportsLink"]: "/reports",
@@ -58380,7 +58381,8 @@ class SignUp extends React.Component {
           ["email"]: "Succsess",
           ["password"]: "Succsess",
           ["inspname"]: "Success",
-          ["dep"]: "Success"
+          ["dep"]: "Success",
+          ["securityLevel"]:"Success"
            });
         }
         else {
@@ -58429,6 +58431,9 @@ class SignUp extends React.Component {
                 ), 
                 React.createElement(Col, {sm: 10}, 
                   React.createElement(FormControl, {type: "text", name: "dep", required: true, value: this.state.dep, placeholder: "Department", onChange: this.handleChangeValue})
+                ), 
+                React.createElement(Col, {sm: 10}, 
+                  React.createElement(FormControl, {type: "text", name: "securityLevel", required: true, value: this.state.securityLevel, placeholder: "securityLevel", onChange: this.handleChangeValue})
                 )
               ), 
 
