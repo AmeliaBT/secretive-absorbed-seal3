@@ -1420,27 +1420,20 @@ class Header extends React.Component {
           return;
         }
        let response = JSON.parse(this.responseText);
+         let securityLevel = response.securityLevel; 
   /********************/
-            // Show screen based on the Security level .
-        //{isLogedIn: request.isAuthenticated(), inspname: document.inspname, dep: document.dep, securityLevel: document.securityLevel}
-        let securityLevel = response.isLogedIn;
-         let inspname = response.inspname;
-        alert(securityLevel);
-        alert(inspname);
-    switch (securityLevel) {
+            // Show screen based on the Security level 
+     switch (securityLevel) {
       case true:
         alert("1")
         break;
 
-      case false:
-        // TODO: Rename this to computeUserBlockingExpiration
+      case false:      
          alert("3")
         break;
  default:
         alert("2")
-
-    }
-  
+    }  
         
  /********************/
         if(response.isLogedIn == true) {
