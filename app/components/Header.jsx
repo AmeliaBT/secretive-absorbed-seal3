@@ -102,7 +102,16 @@ class Header extends React.Component {
  default:
          // visitor
         alert("visitor");
-         
+        that.setState({
+          ["navBtns"]: <Nav pullLeft className="link span">
+              
+                        <NavItem className='span'>
+                          <Link to='/login' className="link"><p  className="link"> Log in </p></Link>
+                        </NavItem>
+                      </Nav>
+            
+            
+           });   
      
     }         
  /********************/

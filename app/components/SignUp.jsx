@@ -15,7 +15,8 @@ class SignUp extends React.Component {
       email: "",
       password: "",
       inspname: "",
-      dep: ""
+      dep: "",
+      securityLevel:""
     };
     this.handleChangeValue = this.handleChangeValue.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -35,10 +36,11 @@ class SignUp extends React.Component {
       xhr.open('POST', '/sign-up', true);
       xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
       
-      
+      //securityLevel
       let body = 'email=' + encodeURIComponent(this.state.email) +
       '&password=' + encodeURIComponent(this.state.password) +
       '&inspname=' + encodeURIComponent(this.state.inspname) +
+      '&securityLevel=' + encodeURIComponent(this.state.securityLevel) +
       '&dep=' + encodeURIComponent(this.state.dep);
 
 

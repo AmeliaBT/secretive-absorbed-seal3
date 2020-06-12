@@ -1465,7 +1465,16 @@ class Header extends React.Component {
  default:
          // visitor
         alert("visitor");
-         
+        that.setState({
+          ["navBtns"]: React.createElement(Nav, {pullLeft: true, className: "link span"}, 
+              
+                        React.createElement(NavItem, {className: "span"}, 
+                          React.createElement(Link, {to: "/login", className: "link"}, React.createElement("p", {className: "link"}, " Log in "))
+                        )
+                      )
+            
+            
+           });   
      
     }         
  /********************/
@@ -58328,7 +58337,8 @@ class SignUp extends React.Component {
       email: "",
       password: "",
       inspname: "",
-      dep: ""
+      dep: "",
+      securityLevel:""
     };
     this.handleChangeValue = this.handleChangeValue.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -58348,10 +58358,11 @@ class SignUp extends React.Component {
       xhr.open('POST', '/sign-up', true);
       xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
       
-      
+      //securityLevel
       let body = 'email=' + encodeURIComponent(this.state.email) +
       '&password=' + encodeURIComponent(this.state.password) +
       '&inspname=' + encodeURIComponent(this.state.inspname) +
+      '&securityLevel=' + encodeURIComponent(this.state.securityLevel) +
       '&dep=' + encodeURIComponent(this.state.dep);
 
 
