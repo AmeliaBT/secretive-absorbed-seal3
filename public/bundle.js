@@ -1421,23 +1421,24 @@ class Header extends React.Component {
         }
        let response = JSON.parse(this.responseText);
          let securityLevel = response.securityLevel; 
-  /********************/
-            // Show screen based on the Security level 
+
+        if(response.isLogedIn == true) {
+            /* Show screen based on the Security level *********/         
      switch (securityLevel) {
-      case true:
-        alert("1")
+      case 1:
+        alert("1");
         break;
 
-      case false:      
-         alert("3")
+      case 3:      
+         alert("3");
         break;
  default:
-        alert("2")
-    }  
-        
+        alert("2");
+    }         
  /********************/
-        if(response.isLogedIn == true) {
-           that.setState({
+          
+          
+          that.setState({
           ["navBtns"]: React.createElement(Nav, {pullLeft: true, className: "link span"}, 
                        React.createElement(NavItem, {className: "span"}, " ", React.createElement(Link, {to: "/homepage", className: "link"}, response.inspname, "'s RI Form"), " "), 
                       React.createElement(NavItem, {className: "span"}, " ", React.createElement(Link, {to: "/up-many-records", className: "link"}, "Admin"), " "), 

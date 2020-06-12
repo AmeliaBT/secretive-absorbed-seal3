@@ -58,23 +58,24 @@ class Header extends React.Component {
         }
        let response = JSON.parse(this.responseText);
          let securityLevel = response.securityLevel; 
-  /********************/
-            // Show screen based on the Security level 
+
+        if(response.isLogedIn == true) {
+            /* Show screen based on the Security level *********/         
      switch (securityLevel) {
-      case true:
-        alert("1")
+      case 1:
+        alert("1");
         break;
 
-      case false:      
-         alert("3")
+      case 3:      
+         alert("3");
         break;
  default:
-        alert("2")
-    }  
-        
+        alert("2");
+    }         
  /********************/
-        if(response.isLogedIn == true) {
-           that.setState({
+          
+          
+          that.setState({
           ["navBtns"]: <Nav pullLeft className="link span">
                        <NavItem className='span'> <Link  to='/homepage' className="link">{response.inspname}'s RI Form</Link> </NavItem> 
                       <NavItem className='span'> <Link  to='/up-many-records' className="link">Admin</Link> </NavItem> 
