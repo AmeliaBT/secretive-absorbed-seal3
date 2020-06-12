@@ -226,7 +226,7 @@ app.post("/is-loged-in", function(request, response) {
  
   if(request.session.hasOwnProperty("passport")) {
    userModel.findById(request.session.passport.user, (err, document) => {
-    if(!err) { response.json({isLogedIn: request.isAuthenticated(), inspname: document.inspname, dep: document.dep});  } 
+    if(!err) { response.json({isLogedIn: request.isAuthenticated(), inspname: document.inspname, dep: document.dep, securityLevel: document.securityLevel});  } 
     else { console.log("ERROR!: ", err);} 
 
    }

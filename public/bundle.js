@@ -1422,8 +1422,11 @@ class Header extends React.Component {
        let response = JSON.parse(this.responseText);
   /********************/
             // Show screen based on the Security level .
+        //{isLogedIn: request.isAuthenticated(), inspname: document.inspname, dep: document.dep, securityLevel: document.securityLevel}
         let securityLevel = response.isLogedIn;
+         let inspname = response.inspname;
         alert(securityLevel);
+        alert(inspname);
     switch (securityLevel) {
       case true:
         alert("1")
