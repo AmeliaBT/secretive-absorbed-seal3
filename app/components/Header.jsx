@@ -58,7 +58,22 @@ class Header extends React.Component {
         }
        let response = JSON.parse(this.responseText);
   /********************/
+            // Show screen based on the Security level .
+        let securityLevel = response
+    switch (securityLevel) {
+      case 1:
+        alert("1")
+        break;
+
+      case 3:
+        // TODO: Rename this to computeUserBlockingExpiration
+         alert("1")
+        break;
+ default:
         
+
+    }
+  
         
  /********************/
         if(response.isLogedIn == true) {
@@ -85,8 +100,7 @@ class Header extends React.Component {
                           <Link to='/login' className="link"><p  className="link"> Log in </p></Link>
                         </NavItem>
                       </Nav>
-            //, 
-            //["reportsLink"]: "/login"
+            
             
            });
          }
