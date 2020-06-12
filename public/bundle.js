@@ -1497,9 +1497,11 @@ class Header extends React.Component {
         else {
           that.setState({
           ["navBtns"]: React.createElement(Nav, {pullLeft: true, className: "link span"}, 
-                        React.createElement(NavItem, {className: "span"}, 
-                           React.createElement(Link, {to: "/signup", className: "link"}, React.createElement("p", {className: "link"}, "Sign up"))
-                        ), 
+              /* 
+                        <NavItem className='span'>
+                           <Link  to='/signup' className="link"><p  className="link">Sign up</p></Link>
+                        </NavItem> 
+              */
                         React.createElement(NavItem, {className: "span"}, 
                           React.createElement(Link, {to: "/login", className: "link"}, React.createElement("p", {className: "link"}, " Log in "))
                         )
