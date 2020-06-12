@@ -109,14 +109,20 @@ class SignUp extends React.Component {
                 <Col sm={10}>
                   <FormControl type="text" name="dep" required value={this.state.dep} placeholder="Department" onChange={this.handleChangeValue} />
                 </Col>
+                 </FormGroup>
+              <FormGroup controlId="formHorizontalLevel">
+                <Col className="form-labelSU" sm={2}>
+                 Security Level
+                </Col>               
+                
                 <Col sm={10}>
-                  <FormControl type="text" name="securityLevel" required value={this.state.securityLevel} placeholder="securityLevel" onChange={this.handleChangeValue} />
+                  <FormControl type="text" name="securityLevel" required value={this.state.securityLevel} placeholder=" Security Level" onChange={this.handleChangeValue} />
                 </Col>
               </FormGroup>
 
               <FormGroup>
                 <Col smOffset={2} sm={10}>
-                  <Button className="btn btn-primary btn-block" type="submit"><i className="fa fa-paper-plane"></i> Sign up</Button>
+                  <Button className="btn btn-primary btn-block" type="submit"><i className="fa fa-paper-plane"></i> Add User</Button>
                 </Col>
               </FormGroup>
           </Form>

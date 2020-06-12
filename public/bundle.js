@@ -58375,7 +58375,7 @@ class SignUp extends React.Component {
         }
         let response = JSON.parse(this.responseText);
         if(response.error == 0) {
-         // window.location.href = "/books";
+         
          window.location.href = "/reports";
           that.setState({
           ["email"]: "Succsess",
@@ -58431,15 +58431,21 @@ class SignUp extends React.Component {
                 ), 
                 React.createElement(Col, {sm: 10}, 
                   React.createElement(FormControl, {type: "text", name: "dep", required: true, value: this.state.dep, placeholder: "Department", onChange: this.handleChangeValue})
+                )
+                 ), 
+              React.createElement(FormGroup, {controlId: "formHorizontalLevel"}, 
+                React.createElement(Col, {className: "form-labelSU", sm: 2}, 
+                 "Security Level"
                 ), 
+                
                 React.createElement(Col, {sm: 10}, 
-                  React.createElement(FormControl, {type: "text", name: "securityLevel", required: true, value: this.state.securityLevel, placeholder: "securityLevel", onChange: this.handleChangeValue})
+                  React.createElement(FormControl, {type: "text", name: "securityLevel", required: true, value: this.state.securityLevel, placeholder: " Security Level", onChange: this.handleChangeValue})
                 )
               ), 
 
               React.createElement(FormGroup, null, 
                 React.createElement(Col, {smOffset: 2, sm: 10}, 
-                  React.createElement(Button, {className: "btn btn-primary btn-block", type: "submit"}, React.createElement("i", {className: "fa fa-paper-plane"}), " Sign up")
+                  React.createElement(Button, {className: "btn btn-primary btn-block", type: "submit"}, React.createElement("i", {className: "fa fa-paper-plane"}), " Add User")
                 )
               )
           )
