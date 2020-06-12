@@ -1422,18 +1422,19 @@ class Header extends React.Component {
        let response = JSON.parse(this.responseText);
   /********************/
             // Show screen based on the Security level .
-        let securityLevel = response
+        let securityLevel = response.isLogedIn;
+        alert(securityLevel);
     switch (securityLevel) {
-      case 1:
+      case true:
         alert("1")
         break;
 
-      case 2:
+      case false:
         // TODO: Rename this to computeUserBlockingExpiration
-        
+         alert("3")
         break;
  default:
-        
+        alert("2")
 
     }
   
