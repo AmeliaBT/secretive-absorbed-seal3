@@ -153,7 +153,7 @@ app.post("/sign-up", function(request, response) {
                                             
                                             
                           // create a user
-                    let obj = {inspname: request.body["inspname"], email: request.body["email"], password: hash, dep: request.body["dep"], securityLevel: request.body["dep"]};                    
+                    let obj = {inspname: request.body["inspname"], email: request.body["email"], password: hash, dep: request.body["dep"], securityLevel: request.body["securityLevel"]};                    
                                                 let user = new userModel(obj);
                                                 user.save(function (err) {
                                                   if (!err) console.log('Success!');
@@ -198,7 +198,7 @@ app.post("/log-in", function(request, response) {
                 if(res === true) {
                 let user_id = document[0]["id"];
                  let securityLevel = document[0]["securityLevel"];
-                  console.log("securityLevel: " + securityLevel);
+                 // console.log("securityLevel: " + securityLevel);
                 request.login(user_id, () => {
                      response.json({"error": 0});
                            });
@@ -238,20 +238,7 @@ app.post("/is-loged-in", function(request, response) {
         response.json({isLogedIn: request.isAuthenticated(), inspname: "0"}); 
     }
 });
-/***********************************/
-app.post("/set-dep", function(request, response) {
-  userModel.findById(request.session.passport.user, (err, user) => {
-  if (err) throw err;
-  user.set({dep: request.body["dep"]});
-  user.save(function (err, updatedUser) {
-  if (err) throw err;
-  response.json({update: true});
-  });
- });
- });
 
-
-/* ********************************* */
 
 /***********************************/
 let nDocs; 
@@ -316,32 +303,7 @@ uwo: request.body["uwo"] //photo file
    
 // });
 });
-/***********************************/
-//add-upload' not used does not work;
 
-app.post("/add-upload", function(request, response) {
-reportModel.find({}, (err, docs) => {
-  if (err) throw err;        
- nDocs= docs.length + 100000200 ; //6000;
- //console.log(" nDoc= "  +nDocs) ;
-let obj =  {
-reportID:  nDocs, 
-uwo: request.body["image"] //photo file
-};
-//console.log(obj); 
-    let report = new reportModel(obj);          
-            report.save(function (err) {
-              //if (err) throw err;
-              if (!err) console.log('Success!');
-              response.json({"error": 0});              
-            });
-    });
-
-});
-
-
-
-/***********************************/
 
 app.post("/get-all-users-reports", function(request, response) {
        reportModel.find({}, (err, docs) => {
@@ -515,7 +477,7 @@ uwo: request.body["uwo"] //photo file
 
 
 
-
+/***********************************/
 /***********************************/
 
   app.post("/report-view", function(request, response) {  
@@ -535,7 +497,67 @@ app.post("/up-many-records", function(request, response) {
      );
 
 
+
 /***********************************/
+//add-upload' not used does not work;
+
+app.post("/add-upload", function(request, response) {
+reportModel.find({}, (err, docs) => {
+  if (err) throw err;        
+ nDocs= docs.length + 100000200 ; //6000;
+ //console.log(" nDoc= "  +nDocs) ;
+let obj =  {
+reportID:  nDocs, 
+uwo: request.body["image"] //photo file
+};
+//console.log(obj); 
+    let report = new reportModel(obj);          
+            report.save(function (err) {
+              //if (err) throw err;
+              if (!err) console.log('Success!');
+              response.json({"error": 0});              
+            });
+    });
+
+});
+
+
+
+/***********************************/
+/***********************************/
+app.post("/set-dep", function(request, response) {
+  userModel.findById(request.session.passport.user, (err, user) => {
+  if (err) throw err;
+  user.set({dep: request.body["dep"]});
+  user.save(function (err, updatedUser) {
+  if (err) throw err;
+  response.json({update: true});
+  });
+ });
+ });
+
+
+/* ********************************* */
+
+/******************************/
+// user sessions handlers:
+/******************************/
+passport.serializeUser(function(user_id, done) {
+  done(null, user_id);
+});
+passport.deserializeUser(function(user_id, done) {
+    done(null, user_id);
+});
+// listen for requests
+const listener = app.listen(process.env.PORT, function () {
+  console.log('Your app is listening on port ' + listener.address().port);
+});
+
+   /*
+ /* 
+
+
+
 app.post("/refuse-proposal-income", function(request, response) { 
   reportModel.findById(request.session.passport.user, (err, user) => {
       if (err) response.json({error: 1});
@@ -566,22 +588,10 @@ app.post("/refuse-proposal-income", function(request, response) {
                 });
     });
 });
-/******************************/
-// user sessions handlers:
-/******************************/
-passport.serializeUser(function(user_id, done) {
-  done(null, user_id);
-});
-passport.deserializeUser(function(user_id, done) {
-    done(null, user_id);
-});
-// listen for requests
-const listener = app.listen(process.env.PORT, function () {
-  console.log('Your app is listening on port ' + listener.address().port);
-});
 
-   /*
- /* 
+
+
+
 
 reportModel.insertMany(request.body.record)
     .then(function (docs) {
