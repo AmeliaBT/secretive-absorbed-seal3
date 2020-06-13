@@ -1420,10 +1420,11 @@ class Header extends React.Component {
           return;
         }
        let response = JSON.parse(this.responseText);
-         let securityLevel = response.securityLevel; 
+         
 
         if(response.isLogedIn == true) {
-            /* Show screen based on the Security level *********/         
+            /* Show screen based on the Security level *********/   
+          let securityLevel = response.securityLevel; 
      switch (securityLevel) {
       case 1:
          // user

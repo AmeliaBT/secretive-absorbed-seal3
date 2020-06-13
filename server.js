@@ -153,7 +153,7 @@ app.post("/sign-up", function(request, response) {
                                             
                                             
                           // create a user
-                    let obj = {inspname: request.body["inspname"], email: request.body["email"], password: hash, dep: request.body["dep"]};                    
+                    let obj = {inspname: request.body["inspname"], email: request.body["email"], password: hash, dep: request.body["dep"], securityLevel: request.body["dep"]};                    
                                                 let user = new userModel(obj);
                                                 user.save(function (err) {
                                                   if (!err) console.log('Success!');
