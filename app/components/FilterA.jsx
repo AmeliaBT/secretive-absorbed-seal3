@@ -1,8 +1,8 @@
 //Fillter component used in many pages
 const React = require('react');
-const ReactDOM = require('react-dom');
+//const ReactDOM = require('react-dom');
 
-const style = require('../styles/FilterA');
+//const style = require('../styles/FilterA');
 
 class FilterA extends React.Component {
   constructor(props){
@@ -268,12 +268,3 @@ Pass/Fail:
 
 module.exports = FilterA;
 
-/*
-<div className="px-5 py-5">
-
-<CustomizedTypeahead
-          labelKey="name" 
-        options={options}
-        multiple
-          placeholder="Choose a state..."
-        />   */
