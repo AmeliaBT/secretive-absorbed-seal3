@@ -3,7 +3,7 @@ const Link = require('react-router-dom').Link
 // style for BOOKS
 const style = require('../styles/SignUp');
 // other components and etc
-const Header = require('./Header');
+
 // react-bootstrap
 const {Form, FormGroup, Col, FormControl, Button} = require('react-bootstrap');
 
@@ -70,7 +70,7 @@ class LogIn extends React.Component {
   render() {
     return (
       <div>
-            <Header/>
+            
             <Form className="FormSU" horizontal method="post" action="/login" name="login" onSubmit={this.handleSubmit}>   
               <FormGroup controlId="formHorizontalEmail">
                 <Col className="form-labelSU" sm={2}>

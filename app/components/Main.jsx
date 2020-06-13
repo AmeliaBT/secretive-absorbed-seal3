@@ -6,9 +6,9 @@ const style = require('../styles/Main');
 //const RINav = require('./RINav');
 //const Header = require('./Header');
 const LogIn = require('./LogIn');
-const ManyRecords = require('./ManyRecords');
+//const ManyRecords = require('./ManyRecords');
 // react-bootstrap
-const {Jumbotron} = require('react-bootstrap');
+//const {Jumbotron} = require('react-bootstrap');
 
 /* the main page that showed when user is not loged in */
 class Main extends React.Component {
@@ -23,8 +23,7 @@ class Main extends React.Component {
        {/*   <RINav/>     <Header/>*/}
         <p> To log in, enter your email and password, then click Login. Passwords are case-sensitive</p>
         <LogIn/>
-    
-     
+       
 
       </div>
     );
