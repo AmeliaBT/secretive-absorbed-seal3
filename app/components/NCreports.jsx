@@ -1,11 +1,9 @@
 // NC old RI Gallery WIP 
 
 const React = require('react');
-const Link = require('react-router-dom').Link
-// style 
-const style = require('../styles/RIreports');
+
 // react-bootstrap
-const {Modal, Button, form, FormGroup, FormControl, ControlLabel, option} = require('react-bootstrap');
+const {Modal, Button,  FormGroup,  ControlLabel} = require('react-bootstrap');
 // other components and etc
 const Header = require('./Header');
 const NCreport = require('./NCreport');
@@ -32,18 +30,14 @@ class NCreports extends React.Component {
    // handlers
    /***********************/
   handleShowModal() {
-    // show Modal
-    alert(" from hsm");
+    // show Modal   
     this.handleShow();
-    this.setState({
-        //  ["chosenAnotherUserBook"]: chosenAnotherUserBook,
-          //["anotherUserNickname"]: anotherUserNickname
-           });
+   // this.setState({          });
   }
  
   /***********************/
    handleClose() {
-     alert("closing ");
+     
     this.setState({ show: false });
   }
   /***********************/
@@ -59,7 +53,7 @@ class NCreports extends React.Component {
       let that = this;
       let xhr = new XMLHttpRequest();
       
-     //xhr.open('POST', '/get-all-users-reports', true);
+    
     xhr.open('POST', '/get-defect-reports', true);
     //get-defect-reports
       xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
@@ -73,15 +67,12 @@ class NCreports extends React.Component {
           return;
         }
         let response = JSON.parse(this.responseText);
-      //  console.log(response);
+      
         let response2=response.sort();
         response2=response2.reverse();
-        console.log(response2)
-       // let reports = response.reports.map((el) => {
+     
         let reports = response.map((el) => {  
-        //  return <RIreport showModal={that.handleShowModal} reportnumber={el.reportnumber} nickname={el.nickname} img_url={el.img_url}/> 
-/*
-*/
+ 
           return <NCreport 
                   // key={el.reportID}
                    reportnumber={el.reportID} 
@@ -133,42 +124,3 @@ class NCreports extends React.Component {
 };
 
 module.exports = NCreports;
-
-  // getl user's filtered reports
-    /*
-      xhr = new XMLHttpRequest();
-      
-     xhr.open('POST', '/get-user-filtered-reports', true);
-
-      xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-
-      xhr.send();
-
-      xhr.onreadystatechange = function() {
-        if (this.readyState != 4) return;
-        if (this.status != 200) {
-          alert( 'error: ' + (this.status ? this.statusText : 'request has not been set') );
-          return;
-        }
-        let response = JSON.parse(this.responseText);
-        let options = response.reports.map((el) => {
- 
-      return <option value={el.reportnumber} key={el.toString()}>{el.reportnumber}</option>;
-
-        });
-        if(options.length > 0) {
-           that.setState({
-          ["modal_content"]: <FormControl componentClass="select"
-                                placeholder="select"
-                                onChange={that.handleSelectChange}>
-                                {options}
-                              </FormControl>
-           });
-        }
-        else {
-           that.setState({
-            ["modal_content"]: "You do not have reports: add the one before exchanging!"
-             });
-        }
-       }
-    */
