@@ -7565,7 +7565,7 @@ class LogIn extends React.Component {
               React.createElement(FormGroup, null, 
                 React.createElement(Col, {smOffset: 2, sm: 10}, 
                  
-                  React.createElement(Button, {className: "btn btn-primary btn-block", type: "submit"}, React.createElement("i", {className: "fa fa-paper-plane"}), " Sign up")
+                  React.createElement(Button, {className: "btn btn-primary btn-block", type: "submit"}, React.createElement("i", {className: "fa fa-paper-plane"}), " Login")
                 )
               )
           )
@@ -46109,31 +46109,12 @@ class Main extends React.Component {
   render() {
     return (
       React.createElement("div", null, 
-       /*   <RINav/> */
-        React.createElement(Header, null), 
-      React.createElement(Jumbotron, {className: "jmbtrn-p"}, 
-       /*  <h1 className="jmbtrn-p" style={{color: "#f6ff67"}}>New CMS dB </h1>*/
-         React.createElement("h3", {className: "jmbtrn-p"}, " New RI dB for testing "), 
-        React.createElement("p", {className: "jmbtrn-p"}, 
-          "This is main section:", React.createElement("br", null), 
-          "Sign in or log in to view dB", React.createElement("br", null), 
-          React.createElement("br", null), 
-       React.createElement("br", null), 
-          "Features (WIP)", React.createElement("br", null), 
-          "A. Authentication: middleware for Node.js Passport", React.createElement("br", null), 
-          "B. Information Security: middleware HelmetJS (to prevent sensitive information from" + " " + 
-          "unintentially being passed between the server and client)", React.createElement("br", null), 
-          "C. Hash and Compare Passwords: cryptography BCrypt hashes (saltRounds = 10)", React.createElement("br", null), 
-
-"Feb 24, 2020", React.createElement("br", null), 
-  "Seeded MongoDB (on AWS with MongoDB Atlas) with initial data, 152 files; ", React.createElement("br", null), 
-  "Result:   recivinginspb.reportsforris", React.createElement("br", null), 
-  "COLLECTION SIZE: 65.1KB", React.createElement("br", null), 
-  "TOTAL DOCUMENTS: 152", React.createElement("br", null)
-        )
-        
-      )
+       /*   <RINav/>     <Header/>*/
+        React.createElement("p", null, " To log in, enter your email and password, then click Login. Passwords are case-sensitive"), 
+        React.createElement(LogIn, null)
     
+     
+
       )
     );
   }

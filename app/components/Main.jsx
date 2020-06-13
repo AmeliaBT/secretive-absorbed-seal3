@@ -21,30 +21,11 @@ class Main extends React.Component {
     return (
       <div>
        {/*   <RINav/>     <Header/>*/}
-        <l/>
-      <Jumbotron className="jmbtrn-p">
-       {/*  <h1 className="jmbtrn-p" style={{color: "#f6ff67"}}>New CMS dB </h1>*/}
-         <h3 className="jmbtrn-p" > New RI dB for testing </h3>
-        <p className="jmbtrn-p">
-          This is main section:<br/>
-          Sign in or log in to view dB<br/>
-          <br/>
-       <br/>
-          Features (WIP)<br/>
-          A. Authentication: middleware for Node.js Passport<br/>
-          B. Information Security: middleware HelmetJS (to prevent sensitive information from 
-          unintentially being passed between the server and client)<br/>
-          C. Hash and Compare Passwords: cryptography BCrypt hashes (saltRounds = 10)<br/>
-
-Feb 24, 2020<br/>
-  Seeded MongoDB (on AWS with MongoDB Atlas) with initial data, 152 files; <br/>
-  Result:   recivinginspb.reportsforris<br/>
-  COLLECTION SIZE: 65.1KB<br/>
-  TOTAL DOCUMENTS: 152<br/>
-        </p>
-        
-      </Jumbotron>
+        <p> To log in, enter your email and password, then click Login. Passwords are case-sensitive</p>
+        <LogIn/>
     
+     
+
       </div>
     );
   }
