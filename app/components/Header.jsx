@@ -2,7 +2,7 @@ const React = require('react');
 const Link = require('react-router-dom').Link
 
 // react-bootstrap
-const {Nav, Navbar, NavItem, NavDropdown, } = require('react-bootstrap');
+const {Nav, Navbar, NavItem} = require('react-bootstrap');
 
 /* the header component for navbar */
 class Header extends React.Component {
@@ -64,7 +64,7 @@ class Header extends React.Component {
      switch (securityLevel) {
       case 1:
          // user
-        alert("user");
+     
           that.setState({
           ["navBtns"]: <Nav pullLeft className="link span">
                        <NavItem className='span'> <Link  to='/homepage' className="link">{response.inspname}'s RI Form</Link> </NavItem> 
@@ -80,7 +80,7 @@ class Header extends React.Component {
         break;
       case 2:
          // Manager 
-        alert("2");
+       
         break;
       case 3:   
          //top level Admin
@@ -101,7 +101,7 @@ class Header extends React.Component {
         break;
  default:
          // visitor
-        alert("visitor");
+        
         that.setState({
           ["navBtns"]: <Nav pullLeft className="link span">
               
@@ -134,11 +134,7 @@ class Header extends React.Component {
         else {
           that.setState({
           ["navBtns"]: <Nav pullLeft className="link span">
-              {/* 
-                        <NavItem className='span'>
-                           <Link  to='/signup' className="link"><p  className="link">Sign up</p></Link>
-                        </NavItem> 
-              */}
+             
                         <NavItem className='span'>
                           <Link to='/login' className="link"><p  className="link"> Log in </p></Link>
                         </NavItem>
@@ -151,7 +147,7 @@ class Header extends React.Component {
   }
 
   /***********************/
-   /************  inverse    ***********/
+ 
   render() {
     return (
       <div  className="link span">
@@ -190,17 +186,3 @@ class Header extends React.Component {
 
 module.exports = Header;
                     
-
-
-{/*   <Link  to='/homepage' className="link">Welcome Inspector, {response.nickname}{response.name} {response.inspector} </Link>*/}  
-
-/* 
-
- <Link  to='/signup' className="link"><h5>^Sign^ [uP]</h5></Link>
-                        </NavItem> 
-                        <NavItem componentClass='span'>
-                          <Link to='/login' className="link"><h5> ^Log^ [iN] </h5></Link>
-
-
-                            <div className="link" onClick={that.handleLogOut}>^Log^ [ouT]</div>
-*/

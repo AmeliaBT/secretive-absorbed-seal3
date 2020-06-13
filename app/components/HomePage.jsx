@@ -2,12 +2,11 @@
 
 const React = require('react');
 
-const style = require('../styles/HomePage');
 // other components and etc
 const Header = require('./Header');
 const FormRI =require('./FormRI');
 // react-bootstrap
-const {Grid, Row, Col, FormControl} = require('react-bootstrap');
+const { Row} = require('react-bootstrap');
 
 /* component for ri home page */
 class HomePage extends React.Component {
@@ -41,10 +40,10 @@ class HomePage extends React.Component {
           return;
         }
         let response = JSON.parse(this.responseText);
-        console.log("respond parsed ")
+       // console.log("respond parsed ")
      
           if(response.isLogedIn == true) {
-            console.log(" loged in ok")
+           // console.log(" loged in ok")
              that.setState({
             ["inspname"]: response.inspname,
             ["dep"]: response.dep
