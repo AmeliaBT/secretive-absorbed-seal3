@@ -3,7 +3,7 @@ const React = require('react');
 
 // react-bootstrap
 const {Image,  Form, FormGroup, Col, FormControl, Button, Grid, Row, ControlLabel} = require('react-bootstrap');
-
+const style = require('../styles/FormRI');
 const mySel = [
   { id: 1, selname: "WO" },
   { id: 2, selname: "PO" },

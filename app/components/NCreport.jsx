@@ -1,6 +1,6 @@
 // element for NCreports -Defects  (Nonconformances)
 const React = require('react');
-
+const style = require('../styles/Report');
 const Link = require('react-router-dom').Link
 // react-bootstrap
 const {Button, Glyphicon , OverlayTrigger} = require('react-bootstrap');

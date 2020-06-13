@@ -1,6 +1,6 @@
 const React = require('react');
 const Link = require('react-router-dom').Link
-
+const style = require('../styles/Header');
 // react-bootstrap
 const {Nav, Navbar, NavItem} = require('react-bootstrap');
 
@@ -84,7 +84,7 @@ class Header extends React.Component {
         break;
       case 3:   
          //top level Admin
-         alert("Admin");
+        
           that.setState({
           ["navBtns"]: <Nav pullLeft className="link span">
                        <NavItem className='span'> <Link  to='/homepage' className="link">{response.inspname}'s RI Form</Link> </NavItem> 
