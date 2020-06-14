@@ -1,5 +1,5 @@
 const React = require('react');
-
+const style = require('../styles/SignUp');
 // react-bootstrap
 const {Form, FormGroup, Col, FormControl, Button} = require('react-bootstrap');
 
