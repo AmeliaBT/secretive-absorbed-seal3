@@ -1769,7 +1769,8 @@ class Header extends React.Component {
              ["listLink"]: "/list",
              ["listLinkAll"]: "/list-all",
                 ["listLinkAll2"]: "/list-all2",
-                ["chartLinkA"]: "/chartA"
+                ["chartLinkA"]: "/chartA",
+            securityLevel: securityLevel
            });
         break;
       case 2:
