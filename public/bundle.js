@@ -1755,6 +1755,7 @@ class Header extends React.Component {
         if(response.isLogedIn == true) {
             /* Show screen based on the Security level *********/   
           let securityLevel = response.securityLevel; 
+           let sLevel= this.props.location.pathname;
      switch (securityLevel) {
       case 1:
          // user
@@ -58022,14 +58023,14 @@ module.exports = RIview;
 
 const React = __webpack_require__(0);
 const Link = __webpack_require__(13).Link
-// style for BOOKS
+
 const style = __webpack_require__(92);
-// other components and etc
+
 const Header = __webpack_require__(22);
 // react-bootstrap
 const {Form, FormGroup, Col, FormControl, Button} = __webpack_require__(10);
 
-/* the books page that shows all books */
+/*  */
 class SignUp extends React.Component {
   constructor(props) {
     super(props);

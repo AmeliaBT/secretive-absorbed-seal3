@@ -1,13 +1,13 @@
 const React = require('react');
 const Link = require('react-router-dom').Link
-// style for BOOKS
+
 const style = require('../styles/SignUp');
-// other components and etc
+
 const Header = require('./Header');
 // react-bootstrap
 const {Form, FormGroup, Col, FormControl, Button} = require('react-bootstrap');
 
-/* the books page that shows all books */
+/*  */
 class SignUp extends React.Component {
   constructor(props) {
     super(props);

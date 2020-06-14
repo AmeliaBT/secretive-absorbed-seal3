@@ -61,6 +61,7 @@ class Header extends React.Component {
         if(response.isLogedIn == true) {
             /* Show screen based on the Security level *********/   
           let securityLevel = response.securityLevel; 
+           let sLevel= this.props.location.pathname;
      switch (securityLevel) {
       case 1:
          // user
