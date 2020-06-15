@@ -184,8 +184,8 @@ app.post("/sign-up", function(request, response) {
 });
 /***********************************/
 app.post("/log-in", function(request, response) {
-  console.log("expected an email below when login: ");
-  console.log(request.body["email"]);
+//console.log("expected an email below when login: ");
+  //console.log(request.body["email"]);
   
               userModel.find({ email: request.body["email"]}, function (err, document) {
               if(!err) {
