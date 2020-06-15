@@ -74,9 +74,9 @@ class Header extends React.Component {
                       </Nav>,
             ["reportsLink"]: "/reports",
             // ["listLink"]: "/list",
-             ["listLinkAll"]: "/list-all",
-                ["listLinkAll2"]: "/list-all2",
-                ["chartLinkA"]: "/chartA",
+            ["listLinkAll"]: "/list-all",
+              ["listLinkAll2"]: "/list-all2",
+               ["chartLinkA"]: "/chartA",
             securityLevel: securityLevel
            });
         break;
