@@ -58394,7 +58394,7 @@ class SignUp3 extends React.Component {
 
       xhr.onreadystatechange = function() {
         if (this.readyState != 4){
-          this.handleLogOut()
+          this.handleLogOut
         } 
           //return;
         
