@@ -108,6 +108,7 @@ class Header extends React.Component {
                        <NavItem className='span'> <Link  to='/list' className="link">Edit Record </Link> </NavItem> 
                        <NavItem className='span'> <Link  to='/up-many-records' className="link">Admin</Link> </NavItem> 
                        <NavItem className='span'> <Link  to='/signup' className="link"><p  className="link">Add User</p></Link> </NavItem> 
+                      <NavItem className='span'> <Link  to='/signup' className="link"><p  className="link">Add User</p></Link> </NavItem> 
                        <NavItem className='span'> <div  onClick={that.handleLogOut} className="link">Log out</div> </NavItem>
                       </Nav>,
             ["reportsLink"]: "/reports",

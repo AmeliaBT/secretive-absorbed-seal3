@@ -1734,6 +1734,7 @@ class Header extends React.Component {
                        React.createElement(NavItem, {className: "span"}, " ", React.createElement(Link, {to: "/list", className: "link"}, "Edit Record "), " "), 
                        React.createElement(NavItem, {className: "span"}, " ", React.createElement(Link, {to: "/up-many-records", className: "link"}, "Admin"), " "), 
                        React.createElement(NavItem, {className: "span"}, " ", React.createElement(Link, {to: "/signup", className: "link"}, React.createElement("p", {className: "link"}, "Add User")), " "), 
+                      
                        React.createElement(NavItem, {className: "span"}, " ", React.createElement("div", {onClick: that.handleLogOut, className: "link"}, "Log out"), " ")
                       ),
             ["reportsLink"]: "/reports",
