@@ -537,20 +537,31 @@ app.post("/set-dep", function(request, response) {
 
 /* ********************************* */
 app.post("/set-password", function(request, response) {
+  console.log(" pw1");
+  console.log(request.body["password"]); 
+
+  let newPW= bcrypt.hash(request.body["password"], saltRounds);
+  console.log(" pw2 newPW ");
+    console.log(newPW);
+  
+  console.log(newPW);
   userModel.findById(request.session.passport.user, (err, user) => {
   if (err) throw err;
     ////hash password
 //bcrypt.hash(request.body["password"], saltRounds)
   //  bcrypt.hash(request.body["password"], saltRounds);
  // user.set({password: request.body["password"]});
-   let newPW= bcrypt.hash(request.body["password"], saltRounds);
-    console.log
-user.set({password: bcrypt.hash(request.body["password"], saltRounds)});
+   
     
+//user.set({password: bcrypt.hash(request.body["password"], saltRounds)});\
+    
+    let updatedUser={}
+/*        
   user.save(function (err, updatedUser) {
   if (err) throw err;
   response.json({update: true});
   });
+*/
  });
  });
 
