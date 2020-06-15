@@ -62,15 +62,31 @@ class Header extends React.Component {
         if(response.isLogedIn == true) {
             /* Show screen based on the Security level *********/   
           let securityLevel = response.securityLevel; 
-         //  let sLevel= this.props.location.pathname;
+         
      switch (securityLevel) {
       case 1:
          // user
      
           that.setState({
+          ["navBtns"]: <Nav pullLeft className="link span">                    
+                    
+                       <NavItem className='span'> <div  onClick={that.handleLogOut} className="link">Log out</div> </NavItem>
+                      </Nav>,
+            ["reportsLink"]: "/reports",
+            // ["listLink"]: "/list",
+             ["listLinkAll"]: "/list-all",
+                ["listLinkAll2"]: "/list-all2",
+                ["chartLinkA"]: "/chartA",
+            securityLevel: securityLevel
+           });
+        break;
+      case 2:
+         // Manager
+          that.setState({
           ["navBtns"]: <Nav pullLeft className="link span">
                        <NavItem className='span'> <Link  to='/homepage' className="link">{response.inspname}'s RI Form</Link> </NavItem> 
-                    
+                       
+                       <NavItem className='span'> <Link  to='/signup' className="link"><p  className="link">Add User</p></Link> </NavItem> 
                        <NavItem className='span'> <div  onClick={that.handleLogOut} className="link">Log out</div> </NavItem>
                       </Nav>,
             ["reportsLink"]: "/reports",
@@ -80,9 +96,7 @@ class Header extends React.Component {
                 ["chartLinkA"]: "/chartA",
             securityLevel: securityLevel
            });
-        break;
-      case 2:
-         // Manager 
+         
        
         break;
       case 3:   

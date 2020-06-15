@@ -1756,15 +1756,31 @@ class Header extends React.Component {
         if(response.isLogedIn == true) {
             /* Show screen based on the Security level *********/   
           let securityLevel = response.securityLevel; 
-         //  let sLevel= this.props.location.pathname;
+         
      switch (securityLevel) {
       case 1:
          // user
      
           that.setState({
           ["navBtns"]: React.createElement(Nav, {pullLeft: true, className: "link span"}, 
-                       React.createElement(NavItem, {className: "span"}, " ", React.createElement(Link, {to: "/homepage", className: "link"}, response.inspname, "'s RI Form"), " "), 
                     
+                       React.createElement(NavItem, {className: "span"}, " ", React.createElement("div", {onClick: that.handleLogOut, className: "link"}, "Log out"), " ")
+                      ),
+            ["reportsLink"]: "/reports",
+            // ["listLink"]: "/list",
+             ["listLinkAll"]: "/list-all",
+                ["listLinkAll2"]: "/list-all2",
+                ["chartLinkA"]: "/chartA",
+            securityLevel: securityLevel
+           });
+        break;
+      case 2:
+         // Manager
+          that.setState({
+          ["navBtns"]: React.createElement(Nav, {pullLeft: true, className: "link span"}, 
+                       React.createElement(NavItem, {className: "span"}, " ", React.createElement(Link, {to: "/homepage", className: "link"}, response.inspname, "'s RI Form"), " "), 
+                       
+                       React.createElement(NavItem, {className: "span"}, " ", React.createElement(Link, {to: "/signup", className: "link"}, React.createElement("p", {className: "link"}, "Add User")), " "), 
                        React.createElement(NavItem, {className: "span"}, " ", React.createElement("div", {onClick: that.handleLogOut, className: "link"}, "Log out"), " ")
                       ),
             ["reportsLink"]: "/reports",
@@ -1774,9 +1790,7 @@ class Header extends React.Component {
                 ["chartLinkA"]: "/chartA",
             securityLevel: securityLevel
            });
-        break;
-      case 2:
-         // Manager 
+         
        
         break;
       case 3:   
