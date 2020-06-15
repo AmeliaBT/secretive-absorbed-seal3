@@ -540,9 +540,10 @@ app.post("/set-password", function(request, response) {
   if (err) throw err;
     ////hash password
 //bcrypt.hash(request.body["password"], saltRounds)
-    
+  //  bcrypt.hash(request.body["password"], saltRounds);
  // user.set({password: request.body["password"]});
-user.set({password: request.body});
+    
+user.set({password: bcrypt.hash(request.body["password"], saltRounds)});
   user.save(function (err, updatedUser) {
   if (err) throw err;
   response.json({update: true});
