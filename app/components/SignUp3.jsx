@@ -16,7 +16,29 @@ class SignUp3 extends React.Component {
     };
     this.handleChangeValue = this.handleChangeValue.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleLogOut = this.handleLogOut.bind(this);
   }
+   handleLogOut() {
+      const xhr = new XMLHttpRequest();
+
+      xhr.open('POST', '/log-out', true);
+
+      xhr.send();
+
+      xhr.onreadystatechange = function() {
+        if (this.readyState != 4) return;
+        if (this.status != 200) {
+          alert( 'error: ' + (this.status ? this.statusText : 'request has not been set') );
+          return;
+        }
+        let response = JSON.parse(this.responseText);
+        if(response.error == 0) {
+          window.location.href = "/";
+        }
+      }
+  }
+  
+  
   handleChangeValue(event) {
      const target = event.target;
       const value = target.value;
@@ -55,6 +77,10 @@ class SignUp3 extends React.Component {
           ["password"]: "Succsess"
          
            });
+          
+          
+          
+          
         }
         else {
           that.setState({
@@ -62,8 +88,12 @@ class SignUp3 extends React.Component {
            });
          }
         }
+    
+    
       event.preventDefault();
      }
+  
+  
   render() {
     return (
       <div>
