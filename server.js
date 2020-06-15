@@ -521,9 +521,6 @@ uwo: request.body["image"] //photo file
 
 });
 
-
-
-/***********************************/
 /***********************************/
 app.post("/set-dep", function(request, response) {
   userModel.findById(request.session.passport.user, (err, user) => {
@@ -538,7 +535,16 @@ app.post("/set-dep", function(request, response) {
 
 
 /* ********************************* */
-
+app.post("/set-password", function(request, response) {
+  userModel.findById(request.session.passport.user, (err, user) => {
+  if (err) throw err;
+  user.set({password: request.body["password"]});
+  user.save(function (err, updatedUser) {
+  if (err) throw err;
+  response.json({update: true});
+  });
+ });
+ });
 /******************************/
 // user sessions handlers:
 /******************************/
