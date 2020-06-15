@@ -63,7 +63,11 @@ class SignUp3 extends React.Component {
       xhr.send(body);
 
       xhr.onreadystatechange = function() {
-        if (this.readyState != 4) return;
+        if (this.readyState != 4){
+          this.handleLogOut()
+        } 
+          //return;
+        
         if (this.status != 200) {
           alert( 'error: ' + (this.status ? this.statusText : 'request has not been set') );
           return;

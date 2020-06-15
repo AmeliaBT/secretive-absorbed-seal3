@@ -18,7 +18,8 @@ const RIlistAll2 = require('./components/RIlistAll2');
 const RIedit = require('./components/RIedit');
 const RIview = require('./components/RIview');
 const SignUp = require('./components/SignUp');
-const SignUp2 = require('./components/SignUp2');
+const SignUp2 = require('./components/SignUp2'); // for level 2 (manager)
+const SignUp3 = require('./components/SignUp3'); //change PW
 const LogIn = require('./components/LogIn');
 const HomePage = require('./components/HomePage');
 const FilterA = require('./components/FilterA');
@@ -34,6 +35,8 @@ render(
         
         <Route path="/signup" component={SignUp}/>
            <Route path="/signup2" component={SignUp2}/>
+          <Route path="/signup3" component={SignUp3}/>
+        
         <Route path="/login" component={LogIn}/>
         <Route path="/homepage" component={HomePage}/>
         <Route path="/reports" component={NCreports}/>
