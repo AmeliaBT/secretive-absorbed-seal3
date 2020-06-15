@@ -539,12 +539,13 @@ app.post("/set-dep", function(request, response) {
 app.post("/set-password", function(request, response) {
   console.log(" pw1");
   console.log(request.body["password"]); 
+let pw1= request.body["password"]; 
 
-  let newPW= bcrypt.hash(request.body["password"], saltRounds);
-  console.log(" pw2 newPW ");
-    console.log(newPW);
+  let newPW= bcrypt.hash(pw1, saltRounds);
   
-  console.log(newPW);
+  console.log(" pw2 newPW ");
+    console.log(newPW);  
+  
   userModel.findById(request.session.passport.user, (err, user) => {
   if (err) throw err;
     ////hash password
