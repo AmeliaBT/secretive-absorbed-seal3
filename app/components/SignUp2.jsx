@@ -8,7 +8,7 @@ const Header = require('./Header');
 const {Form, FormGroup, Col, FormControl, Button} = require('react-bootstrap');
 
 /*  */
-class SignUp extends React.Component {
+class SignUp2 extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -16,7 +16,7 @@ class SignUp extends React.Component {
       password: "",
       inspname: "",
       dep: "",
-      securityLevel:""
+      securityLevel:1
     };
     this.handleChangeValue = this.handleChangeValue.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -118,7 +118,7 @@ class SignUp extends React.Component {
                 </Col>               
                 
                 <Col sm={10}>
-                  <FormControl type="text" name="securityLevel" required value={this.state.securityLevel} placeholder=" Security Level" onChange={this.handleChangeValue} />
+                  <FormControl type="text" name="securityLevel"  value={1} placeholder="1"  />
                 </Col>
               </FormGroup>
 
@@ -133,4 +133,5 @@ class SignUp extends React.Component {
   }
 };
 
-module.exports = SignUp;
+module.exports = SignUp2;
+// <FormControl type="text" name="securityLevel" required value={this.state.securityLevel} placeholder=" Security Level" onChange={this.handleChangeValue} />

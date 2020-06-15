@@ -1780,7 +1780,7 @@ class Header extends React.Component {
           ["navBtns"]: React.createElement(Nav, {pullLeft: true, className: "link span"}, 
                        React.createElement(NavItem, {className: "span"}, " ", React.createElement(Link, {to: "/homepage", className: "link"}, response.inspname, "'s RI Form"), " "), 
                        
-                       React.createElement(NavItem, {className: "span"}, " ", React.createElement(Link, {to: "/signup", className: "link"}, React.createElement("p", {className: "link"}, "Add User")), " "), 
+                       React.createElement(NavItem, {className: "span"}, " ", React.createElement(Link, {to: "/signup2", className: "link"}, React.createElement("p", {className: "link"}, "Add User")), " "), 
                        React.createElement(NavItem, {className: "span"}, " ", React.createElement("div", {onClick: that.handleLogOut, className: "link"}, "Log out"), " ")
                       ),
             ["reportsLink"]: "/reports",

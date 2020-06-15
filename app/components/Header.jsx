@@ -85,12 +85,12 @@ class Header extends React.Component {
           that.setState({
           ["navBtns"]: <Nav pullLeft className="link span">
                        <NavItem className='span'> <Link  to='/homepage' className="link">{response.inspname}'s RI Form</Link> </NavItem> 
-                       
-                       <NavItem className='span'> <Link  to='/signup' className="link"><p  className="link">Add User</p></Link> </NavItem> 
+                         <NavItem className='span'> <Link  to='/list' className="link">Edit Record </Link> </NavItem> 
+                       <NavItem className='span'> <Link  to='/signup2' className="link"><p  className="link">Add User</p></Link> </NavItem> 
                        <NavItem className='span'> <div  onClick={that.handleLogOut} className="link">Log out</div> </NavItem>
                       </Nav>,
             ["reportsLink"]: "/reports",
-             ["listLink"]: "/list",
+            // ["listLink"]: "/list",
              ["listLinkAll"]: "/list-all",
                 ["listLinkAll2"]: "/list-all2",
                 ["chartLinkA"]: "/chartA",
