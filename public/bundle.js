@@ -1708,7 +1708,8 @@ class Header extends React.Component {
       listLink: "",
       listLinkAll: "",
       listLinkAll2: "",
-      chartLinkA:""
+      chartLinkA:"",
+      securityLevel: ""
     };
     this.handleLogOut = this.handleLogOut.bind(this);
   }
@@ -1755,7 +1756,7 @@ class Header extends React.Component {
         if(response.isLogedIn == true) {
             /* Show screen based on the Security level *********/   
           let securityLevel = response.securityLevel; 
-           let sLevel= this.props.location.pathname;
+         //  let sLevel= this.props.location.pathname;
      switch (securityLevel) {
       case 1:
          // user
@@ -1792,7 +1793,8 @@ class Header extends React.Component {
              ["listLink"]: "/list",
              ["listLinkAll"]: "/list-all",
                 ["listLinkAll2"]: "/list-all2",
-                ["chartLinkA"]: "/chartA"
+                ["chartLinkA"]: "/chartA",
+            securityLevel: securityLevel
            });
         break;
  default:
