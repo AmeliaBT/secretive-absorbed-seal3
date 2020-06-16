@@ -545,11 +545,15 @@ app.post("/set-password", function(request, response) {
     bcrypt.hash(pw1, saltRounds, function(err, hash) {
   // Store hash in DB. 
    user.password=hash;
-   user.save();   
-});
+   user.save(); 
+      
+      });
 
-
+console.log("saved new pw");
  });
+  //?
+  console.log(" to do redirect ");
+   //response.redirect("/login");
  });
 
 
