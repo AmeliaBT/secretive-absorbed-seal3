@@ -538,28 +538,14 @@ app.post("/set-dep", function(request, response) {
 
 /* ********************************* */
 app.post("/set-password", function(request, response) {   
-  let pw1= request.body["password"];  
-  console.log(pw1);
+  let pw1= request.body["password"];    
   userModel.findById(request.session.passport.user, (err, user) => {
-  if (err) throw err;
-      console.log("user: ");
-        console.log(user);
- bcrypt.hash(pw1, saltRounds, function(err, hash) {
-  // Store hash in password DB.
-   console.log("storing ... ");
-  
-   user.password=hash ;
- user.save(
-   /*
-   function (err, updatedUser) {
-  if (err) throw err;
-   console.log('saving .. ')
-  response.json({update: true});
-  }*/
-   
- );
-   
-   
+  if (err) throw err;      
+ 
+    bcrypt.hash(pw1, saltRounds, function(err, hash) {
+  // Store hash in DB. 
+   user.password=hash;
+   user.save();   
 });
 
 
