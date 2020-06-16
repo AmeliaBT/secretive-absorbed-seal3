@@ -153,7 +153,8 @@ app.post("/sign-up", function(request, response) {
                                             
                                             
                           // create a user
-                    let obj = {inspname: request.body["inspname"], email: request.body["email"], password: hash, dep: request.body["dep"], securityLevel: request.body["securityLevel"]};                    
+                    let obj = {inspname: request.body["inspname"], email: request.body["email"], password: hash, dep: request.body["dep"], securityLevel: request.body["securityLevel"]}; 
+                                              
                                                 let user = new userModel(obj);
                                                 user.save(function (err) {
                                                   if (!err) console.log('Success!');
@@ -545,7 +546,8 @@ app.post("/set-password", function(request, response) {
         console.log(user);
  bcrypt.hash(pw1, saltRounds, function(err, hash) {
   // Store hash in password DB.
-   console.log("storing ... ")
+   console.log("storing ... ");
+   let updatedUser={ password: hash};
  user.save(function (err, updatedUser) {
   if (err) throw err;
    console.log('saving .. ')
