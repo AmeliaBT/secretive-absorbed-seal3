@@ -550,10 +550,11 @@ app.post("/set-password", function(request, response) {
       });
 
 console.log("saved new pw");
+    console.log(" to do redirect ");
+   response.redirect("/login");
  });
   //?
-  console.log(" to do redirect ");
-   //response.redirect("/login");
+  
  });
 
 
