@@ -547,12 +547,17 @@ app.post("/set-password", function(request, response) {
  bcrypt.hash(pw1, saltRounds, function(err, hash) {
   // Store hash in password DB.
    console.log("storing ... ");
-   let updatedUser={ password: hash};
- user.save(function (err, updatedUser) {
+  
+   user.password=hash ;
+ user.save(
+   /*
+   function (err, updatedUser) {
   if (err) throw err;
    console.log('saving .. ')
   response.json({update: true});
-  });
+  }*/
+   
+ );
    
    
 });
