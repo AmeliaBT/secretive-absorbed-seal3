@@ -537,25 +537,24 @@ app.post("/set-dep", function(request, response) {
 
 
 /* ********************************* */
-app.post("/set-password", function(request, response) {   
+app.post("/set-password", function(request, response, next) {   
   let pw1= request.body["password"];    
   userModel.findById(request.session.passport.user, (err, user) => {
-  if (err) throw err;      
- 
-    bcrypt.hash(pw1, saltRounds, function(err, hash) {
+  if (err) throw err;    
+     bcrypt.hash(pw1, saltRounds, function(err, hash) {
   // Store hash in DB. 
    user.password=hash;
    user.save(); 
       
       });
 
-console.log("saved new pw");
-    console.log(" to do redirect ");
-   response.redirect("/login");
+   
  });
-  //?
+ 
   
  });
+
+
 
 
 /******************************/
