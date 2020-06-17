@@ -1,12 +1,12 @@
 //shows requested RI Report (form with photos); editing and saving are enabled 
 const React = require('react');
-const ReactDOM = require('react-dom');
-const Link = require('react-router-dom').Link
+//const ReactDOM = require('react-dom');
+//const Link = require('react-router-dom').Link
 const Header = require('./Header');
 const RIphoto2 = require('./RIphoto2');
 let myLink, myLink2;;
 // react-bootstrap
-const {Image, Grid, Row, Col, FormControl, ControlLabel, FormGroup, HelpBlock, Tabs, Tab, Form, Button} = require('react-bootstrap');
+const {Grid, Row, Col, FormControl, ControlLabel, FormGroup, Form, Button} = require('react-bootstrap');
 class RIedit extends React.Component {
   constructor(props) {   
     super(props);
@@ -55,7 +55,7 @@ this.state = {
   };
   
    handleSubmit(event) { let that = this; 
-   // console.log(that)
+ 
       const xhr = new XMLHttpRequest();      
       xhr.open('POST', '/set-report', true);
       xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
@@ -129,8 +129,8 @@ this.state = {
       let that = this;
       const xhr = new XMLHttpRequest();
       let repPath= this.props.location.pathname;
-    let pageID=  repPath.substring(13); // report-edit/6032 12 pageID: /6031
-//alert("pageID: " +pageID); 
+    let pageID=  repPath.substring(13); 
+
    xhr.open('POST',"/report-edit" , true); 
       xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');    
  let body = 'reportID=' + encodeURIComponent(pageID) ;
@@ -144,12 +144,10 @@ this.state = {
         }
         let response = JSON.parse(this.responseText);
         
-      //  alert(response.lwo);
+    
          myLink=response.lwo;
       myLink2=response.uwo;
-  // if(response.error == 0) {
-        //   window.location.href = "/reports";
-        let cwo2, jwo2;
+         let cwo2, jwo2;
         if(response.cwo == null){ cwo2=""}else {cwo2= response.cwo.slice(0,-14) };
         if(response.jwo == null){ jwo2=""}else {jwo2= response.cwo.slice(0,-14) };
              that.setState({
@@ -180,17 +178,12 @@ this.state = {
            }); 
     
         }
-// get photo
     
 // event.preventDefault();
      }
-  
    
-  
-  
   render() {
-  
-    
+      
     return (
       <div >
      <Header/>  
@@ -310,19 +303,7 @@ this.state = {
     );
   }
 
- 
-
 }
 
 
-
 module.exports = RIedit;
-
-/* 
- <img src="https://static.pexels.com/photos/296886/pexels-photo-296886.jpeg"  alt="ri1 pic"/> 
-<div style={{width: 660, height: 'auto'}}>
-          <p> </p>
-            <Image src={"https://static.pexels.com/photos/" + this.state.uwo + "/pexels-photo-" + this.state.uwo +".jpeg"	} responsive />    
-            </div>
-
-*/

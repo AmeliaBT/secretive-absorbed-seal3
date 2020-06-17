@@ -39,9 +39,7 @@ class NCreport extends React.Component {
                         </Popover>
     };
   }
-  /***********************/
-
-  /***********************/
+ 
   render() {
     return(
       <div className="book-all">

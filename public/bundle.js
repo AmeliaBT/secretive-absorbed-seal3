@@ -975,6 +975,95 @@ module.exports = _interopRequireDefault;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/**
+ * Safe chained function
+ *
+ * Will only create a new function if needed,
+ * otherwise will pass back existing functions or null.
+ *
+ * @param {function} functions to chain
+ * @returns {function|null}
+ */
+function createChainedFunction() {
+  for (var _len = arguments.length, funcs = new Array(_len), _key = 0; _key < _len; _key++) {
+    funcs[_key] = arguments[_key];
+  }
+
+  return funcs.filter(function (f) {
+    return f != null;
+  }).reduce(function (acc, f) {
+    if (typeof f !== 'function') {
+      throw new Error('Invalid Argument Type, must only provide functions, undefined, or null.');
+    }
+
+    if (acc === null) {
+      return f;
+    }
+
+    return function chainedFunction() {
+      for (var _len2 = arguments.length, args = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
+        args[_key2] = arguments[_key2];
+      }
+
+      acc.apply(this, args);
+      f.apply(this, args);
+    };
+  }, null);
+}
+
+/* harmony default export */ __webpack_exports__["a"] = (createChainedFunction);
+
+/***/ }),
+/* 12 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(process) {
+
+function checkDCE() {
+  /* global __REACT_DEVTOOLS_GLOBAL_HOOK__ */
+  if (
+    typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ === 'undefined' ||
+    typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE !== 'function'
+  ) {
+    return;
+  }
+  if (process.env.NODE_ENV !== 'production') {
+    // This branch is unreachable because this function is only called
+    // in production, but the condition is true only in development.
+    // Therefore if the branch is still here, dead code elimination wasn't
+    // properly applied.
+    // Don't change the message. React DevTools relies on it. Also make sure
+    // this message doesn't occur elsewhere in this function, or it will cause
+    // a false positive.
+    throw new Error('^_^');
+  }
+  try {
+    // Verify that the code above has been dead code eliminated (DCE'd).
+    __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE(checkDCE);
+  } catch (err) {
+    // DevTools shouldn't crash React, no matter what.
+    // We should still report in case we break this code.
+    console.error(err);
+  }
+}
+
+if (process.env.NODE_ENV === 'production') {
+  // DCE check should happen before ReactDOM bundle executes so that
+  // DevTools can report bad minification during injection.
+  checkDCE();
+  module.exports = __webpack_require__(149);
+} else {
+  module.exports = __webpack_require__(152);
+}
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7)))
+
+/***/ }),
+/* 13 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__BrowserRouter__ = __webpack_require__(156);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "BrowserRouter", function() { return __WEBPACK_IMPORTED_MODULE_0__BrowserRouter__["a"]; });
@@ -1032,95 +1121,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
-
-/***/ }),
-/* 12 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/**
- * Safe chained function
- *
- * Will only create a new function if needed,
- * otherwise will pass back existing functions or null.
- *
- * @param {function} functions to chain
- * @returns {function|null}
- */
-function createChainedFunction() {
-  for (var _len = arguments.length, funcs = new Array(_len), _key = 0; _key < _len; _key++) {
-    funcs[_key] = arguments[_key];
-  }
-
-  return funcs.filter(function (f) {
-    return f != null;
-  }).reduce(function (acc, f) {
-    if (typeof f !== 'function') {
-      throw new Error('Invalid Argument Type, must only provide functions, undefined, or null.');
-    }
-
-    if (acc === null) {
-      return f;
-    }
-
-    return function chainedFunction() {
-      for (var _len2 = arguments.length, args = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
-        args[_key2] = arguments[_key2];
-      }
-
-      acc.apply(this, args);
-      f.apply(this, args);
-    };
-  }, null);
-}
-
-/* harmony default export */ __webpack_exports__["a"] = (createChainedFunction);
-
-/***/ }),
-/* 13 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(process) {
-
-function checkDCE() {
-  /* global __REACT_DEVTOOLS_GLOBAL_HOOK__ */
-  if (
-    typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ === 'undefined' ||
-    typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE !== 'function'
-  ) {
-    return;
-  }
-  if (process.env.NODE_ENV !== 'production') {
-    // This branch is unreachable because this function is only called
-    // in production, but the condition is true only in development.
-    // Therefore if the branch is still here, dead code elimination wasn't
-    // properly applied.
-    // Don't change the message. React DevTools relies on it. Also make sure
-    // this message doesn't occur elsewhere in this function, or it will cause
-    // a false positive.
-    throw new Error('^_^');
-  }
-  try {
-    // Verify that the code above has been dead code eliminated (DCE'd).
-    __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE(checkDCE);
-  } catch (err) {
-    // DevTools shouldn't crash React, no matter what.
-    // We should still report in case we break this code.
-    console.error(err);
-  }
-}
-
-if (process.env.NODE_ENV === 'production') {
-  // DCE check should happen before ReactDOM bundle executes so that
-  // DevTools can report bad minification during injection.
-  checkDCE();
-  module.exports = __webpack_require__(149);
-} else {
-  module.exports = __webpack_require__(152);
-}
-
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7)))
 
 /***/ }),
 /* 14 */
@@ -1438,7 +1438,7 @@ module.exports = warning;
 /***/ (function(module, exports, __webpack_require__) {
 
 const React = __webpack_require__(0);
-const Link = __webpack_require__(11).Link
+const Link = __webpack_require__(13).Link
 const style = __webpack_require__(334);
 // react-bootstrap
 const {Nav, Navbar, NavItem} = __webpack_require__(9);
@@ -1702,7 +1702,7 @@ module.exports = invariant;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_prop_types__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_prop_types_extra_lib_elementType__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_prop_types_extra_lib_elementType___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_prop_types_extra_lib_elementType__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__utils_createChainedFunction__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__utils_createChainedFunction__ = __webpack_require__(11);
 
 
 
@@ -3489,7 +3489,7 @@ exports.default = function (componentOrElement) {
   return (0, _ownerDocument2.default)(_reactDom2.default.findDOMNode(componentOrElement));
 };
 
-var _reactDom = __webpack_require__(13);
+var _reactDom = __webpack_require__(12);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
@@ -4054,7 +4054,7 @@ module.exports = exports['default'];
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_prop_types__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_prop_types__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_react_dom__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_react_dom__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10_react_dom__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_prop_types_extra_lib_all__ = __webpack_require__(50);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_prop_types_extra_lib_all___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11_prop_types_extra_lib_all__);
@@ -4069,7 +4069,7 @@ module.exports = exports['default'];
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__DropdownMenu__ = __webpack_require__(237);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__DropdownToggle__ = __webpack_require__(121);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__utils_bootstrapUtils__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__utils_createChainedFunction__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__utils_createChainedFunction__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__utils_PropTypes__ = __webpack_require__(110);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__utils_ValidComponentChildren__ = __webpack_require__(15);
 
@@ -4766,7 +4766,7 @@ module.exports = exports["default"];
 exports.__esModule = true;
 exports.default = getContainer;
 
-var _reactDom = __webpack_require__(13);
+var _reactDom = __webpack_require__(12);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
@@ -5549,7 +5549,7 @@ Glyphicon.propTypes = propTypes;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_react_transition_group_Transition__ = __webpack_require__(116);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_react_transition_group_Transition___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_react_transition_group_Transition__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__utils_capitalize__ = __webpack_require__(114);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__utils_createChainedFunction__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__utils_createChainedFunction__ = __webpack_require__(11);
 
 
 
@@ -7482,8 +7482,6 @@ const style = __webpack_require__(41);
 // react-bootstrap
 const {Form, FormGroup, Col, FormControl, Button} = __webpack_require__(9);
 
-
-/*  */
 class LogIn extends React.Component {
   constructor(props) {
     super(props);
@@ -7505,21 +7503,15 @@ class LogIn extends React.Component {
   }
   handleSubmit(event) {
       let that = this;
-//console.log(that)
-      const xhr = new XMLHttpRequest();
-      
+      const xhr = new XMLHttpRequest();      
       xhr.open('POST', '/log-in', true);
-      xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-      
+      xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');      
       
       let body = 'email=' + encodeURIComponent(this.state.email) +
       '&password=' + encodeURIComponent(this.state.password)+
-      '&securityLevel=' + encodeURIComponent(this.state.securityLevel)
-      ;
-
+      '&securityLevel=' + encodeURIComponent(this.state.securityLevel)   ;
 
       xhr.send(body);
-
       xhr.onreadystatechange = function() {
         if (this.readyState != 4) return;
         if (this.status != 200) {
@@ -8389,7 +8381,7 @@ BreadcrumbItem.defaultProps = defaultProps;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_prop_types__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_prop_types__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_react_dom__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_react_dom__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_react_dom__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_dom_helpers_transition__ = __webpack_require__(219);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_dom_helpers_transition___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_dom_helpers_transition__);
@@ -8580,7 +8572,7 @@ var PropTypes = _interopRequireWildcard(__webpack_require__(2));
 
 var _react = _interopRequireDefault(__webpack_require__(0));
 
-var _reactDom = _interopRequireDefault(__webpack_require__(13));
+var _reactDom = _interopRequireDefault(__webpack_require__(12));
 
 var _reactLifecyclesCompat = __webpack_require__(107);
 
@@ -9244,7 +9236,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactDom = __webpack_require__(13);
+var _reactDom = __webpack_require__(12);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
@@ -9819,7 +9811,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactDom = __webpack_require__(13);
+var _reactDom = __webpack_require__(12);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
@@ -10154,7 +10146,7 @@ ModalFooter.defaultProps = defaultProps;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__utils_bootstrapUtils__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__utils_createChainedFunction__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__utils_createChainedFunction__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__CloseButton__ = __webpack_require__(72);
 
 
@@ -10318,14 +10310,14 @@ ModalTitle.defaultProps = defaultProps;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_prop_types__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_prop_types__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_react_dom__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_react_dom__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_react_dom__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_prop_types_extra_lib_all__ = __webpack_require__(50);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_prop_types_extra_lib_all___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_prop_types_extra_lib_all__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_warning__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_warning___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_warning__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__utils_bootstrapUtils__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__utils_createChainedFunction__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__utils_createChainedFunction__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__utils_ValidComponentChildren__ = __webpack_require__(15);
 
 
@@ -10747,7 +10739,7 @@ NavbarBrand.contextTypes = contextTypes;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_prop_types__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_prop_types__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__SafeAnchor__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__utils_createChainedFunction__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__utils_createChainedFunction__ = __webpack_require__(11);
 
 
 
@@ -11056,7 +11048,7 @@ module.exports = exports["default"];
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_prop_types__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_prop_types__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__SafeAnchor__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__utils_createChainedFunction__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__utils_createChainedFunction__ = __webpack_require__(11);
 
 
 
@@ -11265,7 +11257,7 @@ PanelCollapse.contextTypes = contextTypes;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_react_prop_types_lib_elementType__ = __webpack_require__(81);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_react_prop_types_lib_elementType___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_react_prop_types_lib_elementType__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__SafeAnchor__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__utils_createChainedFunction__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__utils_createChainedFunction__ = __webpack_require__(11);
 
 
 
@@ -11378,7 +11370,7 @@ PanelToggle.contextTypes = contextTypes;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_warning__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_warning___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_warning__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__utils_bootstrapUtils__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__utils_createChainedFunction__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__utils_createChainedFunction__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__Fade__ = __webpack_require__(54);
 
 
@@ -11753,7 +11745,7 @@ ToggleButton.propTypes = propTypes;
 
 // component item for Table View  (with edits disabled)
 const React = __webpack_require__(0);
-const Link = __webpack_require__(11).Link
+const Link = __webpack_require__(13).Link
 // react-bootstrap
 const {Col, Row, Button, Glyphicon , OverlayTrigger} = __webpack_require__(9);
 // style 
@@ -11829,7 +11821,7 @@ module.exports = RIlistItemAll ;
 
 //used by RI Report (form with photos); editing and saving are enabled 
 const React = __webpack_require__(0);
-const Link = __webpack_require__(11).Link
+const Link = __webpack_require__(13).Link
 const {Image} = __webpack_require__(9);
 class RIphoto2 extends React.Component {
   constructor(props) {
@@ -11862,12 +11854,12 @@ module.exports = RIphoto2;
 /***/ (function(module, exports, __webpack_require__) {
 
 const React = __webpack_require__(0);
-const { render } = __webpack_require__(13);
+const { render } = __webpack_require__(12);
 
 // router
-const Route = __webpack_require__(11).Route;
-const BrowserRouter = __webpack_require__(11).BrowserRouter;
-const hashHistory = __webpack_require__(11).hashHistory;
+const Route = __webpack_require__(13).Route;
+const BrowserRouter = __webpack_require__(13).BrowserRouter;
+const hashHistory = __webpack_require__(13).hashHistory;
 // redux
 //const { createStore } = require('redux');
 //const reducers = require('./reducers');
@@ -45877,9 +45869,7 @@ module.exports = hoistNonReactStatics;
 /***/ (function(module, exports, __webpack_require__) {
 
 const React = __webpack_require__(0);
-
 const LogIn = __webpack_require__(92);
-
 /* the main page that showed when user is not loged in */
 class Main extends React.Component {
   constructor(props) {
@@ -45892,8 +45882,6 @@ class Main extends React.Component {
       React.createElement("div", null, 
            React.createElement("p", null, " To log in, enter your email and password, then click Login. Passwords are case-sensitive"), 
         React.createElement(LogIn, null)
-       
-
       )
     );
   }
@@ -48329,12 +48317,12 @@ exports.classNamesShape = classNamesShape;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_prop_types__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_prop_types__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_react_dom__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_react_dom__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_react_dom__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_react_overlays_lib_RootCloseWrapper__ = __webpack_require__(119);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_react_overlays_lib_RootCloseWrapper___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10_react_overlays_lib_RootCloseWrapper__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__utils_bootstrapUtils__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__utils_createChainedFunction__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__utils_createChainedFunction__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__utils_ValidComponentChildren__ = __webpack_require__(15);
 
 
@@ -50322,7 +50310,7 @@ MediaRight.propTypes = propTypes;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_prop_types_extra_lib_all___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_prop_types_extra_lib_all__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__SafeAnchor__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__utils_bootstrapUtils__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__utils_createChainedFunction__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__utils_createChainedFunction__ = __webpack_require__(11);
 
 
 
@@ -50502,7 +50490,7 @@ MenuItem.defaultProps = defaultProps;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_prop_types__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10_prop_types__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_react_dom__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_react_dom__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11_react_dom__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_react_overlays_lib_Modal__ = __webpack_require__(279);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_react_overlays_lib_Modal___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_12_react_overlays_lib_Modal__);
@@ -50517,7 +50505,7 @@ MenuItem.defaultProps = defaultProps;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__ModalHeader__ = __webpack_require__(131);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__ModalTitle__ = __webpack_require__(132);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__utils_bootstrapUtils__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__utils_createChainedFunction__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__utils_createChainedFunction__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__utils_splitComponentProps__ = __webpack_require__(53);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__utils_StyleConfig__ = __webpack_require__(14);
 
@@ -50997,7 +50985,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactDom = __webpack_require__(13);
+var _reactDom = __webpack_require__(12);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
@@ -51950,7 +51938,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactDom = __webpack_require__(13);
+var _reactDom = __webpack_require__(12);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
@@ -52186,7 +52174,7 @@ module.exports = exports['default'];
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__NavbarToggle__ = __webpack_require__(292);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__utils_bootstrapUtils__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__utils_StyleConfig__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__utils_createChainedFunction__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__utils_createChainedFunction__ = __webpack_require__(11);
 
 
 
@@ -52587,7 +52575,7 @@ NavbarHeader.contextTypes = contextTypes;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_prop_types__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_prop_types__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__utils_bootstrapUtils__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__utils_createChainedFunction__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__utils_createChainedFunction__ = __webpack_require__(11);
 
 
 
@@ -53042,7 +53030,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactDom = __webpack_require__(13);
+var _reactDom = __webpack_require__(12);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
@@ -53503,12 +53491,12 @@ module.exports = exports["default"];
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_prop_types__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_prop_types__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_react_dom__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_react_dom__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_react_dom__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_warning__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_warning___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_warning__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__Overlay__ = __webpack_require__(136);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__utils_createChainedFunction__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__utils_createChainedFunction__ = __webpack_require__(11);
 
 
 
@@ -54014,7 +54002,7 @@ function _resetWarned() {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_prop_types__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__PagerItem__ = __webpack_require__(139);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__utils_bootstrapUtils__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__utils_createChainedFunction__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__utils_createChainedFunction__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__utils_ValidComponentChildren__ = __webpack_require__(15);
 
 
@@ -55967,7 +55955,7 @@ Thumbnail.propTypes = propTypes;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_invariant__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_invariant___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_invariant__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_uncontrollable__ = __webpack_require__(27);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__utils_createChainedFunction__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__utils_createChainedFunction__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__utils_ValidComponentChildren__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ButtonGroup__ = __webpack_require__(73);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ToggleButton__ = __webpack_require__(143);
@@ -56284,7 +56272,7 @@ function (_React$Component) {
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__bootstrapUtils__ = __webpack_require__(6);
 /* harmony reexport (module object) */ __webpack_require__.d(__webpack_exports__, "bootstrapUtils", function() { return __WEBPACK_IMPORTED_MODULE_0__bootstrapUtils__; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__createChainedFunction__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__createChainedFunction__ = __webpack_require__(11);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "createChainedFunction", function() { return __WEBPACK_IMPORTED_MODULE_1__createChainedFunction__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ValidComponentChildren__ = __webpack_require__(15);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "ValidComponentChildren", function() { return __WEBPACK_IMPORTED_MODULE_2__ValidComponentChildren__["a"]; });
@@ -56299,8 +56287,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* 333 */
 /***/ (function(module, exports, __webpack_require__) {
 
-// NC old RI Gallery WIP 
-
+// NC
 const React = __webpack_require__(0);
 
 // react-bootstrap
@@ -56315,8 +56302,7 @@ class NCreports extends React.Component {
     super(props);
     this.state = {
        show: false,
-       modal_label: "Choose a report to view ",
-     
+       modal_label: "Choose a report to view ",     
        disabled: true,
        reports: "loading...",
        modal_content: "loading..."
@@ -56479,7 +56465,7 @@ exports.push([module.i, ".span{\n  color: #987D00; \n}\n.link {\n  text-decorati
 // element for NCreports -Defects  (Nonconformances)
 const React = __webpack_require__(0);
 const style = __webpack_require__(337);
-const Link = __webpack_require__(11).Link
+const Link = __webpack_require__(13).Link
 // react-bootstrap
 const {Button, Glyphicon , OverlayTrigger} = __webpack_require__(9);
 // react-bootstrap
@@ -56517,9 +56503,7 @@ class NCreport extends React.Component {
                         )
     };
   }
-  /***********************/
-
-  /***********************/
+ 
   render() {
     return(
       React.createElement("div", {className: "book-all"}, 
@@ -56593,21 +56577,14 @@ exports.push([module.i, "\n.nc-all{\n  padding: 10px;\n  text-align: center;\nov
 
 // Edit  (no Filter); Inspector Reports only
 const React = __webpack_require__(0);
-const Link = __webpack_require__(11).Link
-// style for RIlist
 
 const style = __webpack_require__(40);
 // react-bootstrap
-const {Table ,filterFactory, Row, Col} = __webpack_require__(9);
+const {Table , Row, Col} = __webpack_require__(9);
 // other components and etc
-//import BootstrapTable from 'react-bootstrap-table-next';
-//import filterFactory, { textFilter } from 'react-bootstrap-table2-filter';
-
 const Header = __webpack_require__(19);
-
 const RIlistItem = __webpack_require__(341);
 
-/* the page that shows all RI reports */
 class RIlist extends React.Component {
   constructor(props) {
     super(props);
@@ -56619,13 +56596,12 @@ class RIlist extends React.Component {
     
    this.handleShow = this.handleShow.bind(this);
     this.handleClose = this.handleClose.bind(this);
-   // this.handleShowModal = this.handleShowModal.bind(this);  
+   
   }
    /***********************/
    // handlers
    /***********************/
  
-  /***********************/
    handleClose() {
     this.setState({ show: false });
   }
@@ -56678,28 +56654,22 @@ class RIlist extends React.Component {
     return (
       React.createElement("div", null, 
         React.createElement(Header, null), 
-         React.createElement(Table, {className: "myForm"}, 
-            React.createElement(Row, null, 
-        
-             React.createElement(Col, {sm: 1}, " ", React.createElement("b", null, "RI "), "  "), 
-              React.createElement(Col, {sm: 1}, React.createElement("b", null, " Inspector"), " "), 
-                React.createElement(Col, {sm: 1}, " ", React.createElement("b", null, "PN ")), 
-                React.createElement(Col, {sm: 2}, React.createElement("b", null, "Description ")), 
-               React.createElement(Col, { sm: 1}, " ", React.createElement("b", null, "Date Inspected ")), 
-              React.createElement(Col, { sm: 1}, React.createElement("b", null, "Pass / Fail  ")), 
-               React.createElement(Col, {sm: 1}, " ", React.createElement("b", null, "Lot Size ")), 
-              React.createElement(Col, {sm: 3}, " ", React.createElement("b", null, "Comment"), " "), 
-              React.createElement(Col, {sm: 1}, React.createElement("b", null, "Edit  "))
-          
-           
-           ), 
-       
-        
-        this.state.reports
+        React.createElement(Table, {className: "myForm"}, 
+          React.createElement(Row, null, 
+            React.createElement(Col, {sm: 1}, " ", React.createElement("b", null, "RI "), "  "), 
+            React.createElement(Col, {sm: 1}, React.createElement("b", null, " Inspector"), " "), 
+            React.createElement(Col, {sm: 1}, " ", React.createElement("b", null, "PN ")), 
+            React.createElement(Col, {sm: 2}, React.createElement("b", null, "Description ")), 
+            React.createElement(Col, {sm: 1}, " ", React.createElement("b", null, "Date Inspected ")), 
+            React.createElement(Col, {sm: 1}, React.createElement("b", null, "Pass / Fail  ")), 
+            React.createElement(Col, {sm: 1}, " ", React.createElement("b", null, "Lot Size ")), 
+            React.createElement(Col, {sm: 3}, " ", React.createElement("b", null, "Comment"), " "), 
+            React.createElement(Col, {sm: 1}, React.createElement("b", null, "Edit  "))
 
-       )
-       
-     
+          ), 
+
+          this.state.reports
+        )
       )
     );
   }
@@ -56729,7 +56699,7 @@ exports.push([module.i, "/*used:\nclassName=\"profile\"\nclassName=\"show-grid\"
 //component item for Edit   (with edits enabled)
 /* ootstrap's global default font-size is 14px, with a line-height of 1.428. This is applied to the <body> element and all paragraphs ( <p> ). In addition, all <p> elements have a bottom margin that equals half their computed line-height (10px by default).*/
 const React = __webpack_require__(0);
-const Link = __webpack_require__(11).Link
+const Link = __webpack_require__(13).Link
 // react-bootstrap
 const {Col, Grid, Row, Button, Glyphicon } = __webpack_require__(9);
 const style = __webpack_require__(84);
@@ -56839,7 +56809,7 @@ QtyT
 
 */
 const React = __webpack_require__(0);
-const Link = __webpack_require__(11).Link
+const Link = __webpack_require__(13).Link
 // style for list
 const style = __webpack_require__(40);
 // react-bootstrap
@@ -57068,7 +57038,7 @@ module.exports = RIlistAll;
 
 // component item for Table View  (with edits disabled)
 const React = __webpack_require__(0);
-const Link = __webpack_require__(11).Link
+const Link = __webpack_require__(13).Link
 // react-bootstrap
 const {Col, Row, Button, Glyphicon , OverlayTrigger} = __webpack_require__(9);
 // style 
@@ -57151,7 +57121,7 @@ module.exports = RIlistItemMonth;
 
 // Table View  with  Filter; All can view and  filter 
 const React = __webpack_require__(0);
-const Link = __webpack_require__(11).Link
+const Link = __webpack_require__(13).Link
 // style for list
 
 const style = __webpack_require__(40);
@@ -57487,13 +57457,13 @@ exports.push([module.i, "\nul,\nol {\n  list-style: none;\n  margin: 0;\n  paddi
 
 //shows requested RI Report (form with photos); editing and saving are enabled 
 const React = __webpack_require__(0);
-const ReactDOM = __webpack_require__(13);
-const Link = __webpack_require__(11).Link
+//const ReactDOM = require('react-dom');
+//const Link = require('react-router-dom').Link
 const Header = __webpack_require__(19);
 const RIphoto2 = __webpack_require__(145);
 let myLink, myLink2;;
 // react-bootstrap
-const {Image, Grid, Row, Col, FormControl, ControlLabel, FormGroup, HelpBlock, Tabs, Tab, Form, Button} = __webpack_require__(9);
+const {Grid, Row, Col, FormControl, ControlLabel, FormGroup, Form, Button} = __webpack_require__(9);
 class RIedit extends React.Component {
   constructor(props) {   
     super(props);
@@ -57542,7 +57512,7 @@ this.state = {
   };
   
    handleSubmit(event) { let that = this; 
-   // console.log(that)
+ 
       const xhr = new XMLHttpRequest();      
       xhr.open('POST', '/set-report', true);
       xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
@@ -57616,8 +57586,8 @@ this.state = {
       let that = this;
       const xhr = new XMLHttpRequest();
       let repPath= this.props.location.pathname;
-    let pageID=  repPath.substring(13); // report-edit/6032 12 pageID: /6031
-//alert("pageID: " +pageID); 
+    let pageID=  repPath.substring(13); 
+
    xhr.open('POST',"/report-edit" , true); 
       xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');    
  let body = 'reportID=' + encodeURIComponent(pageID) ;
@@ -57631,12 +57601,10 @@ this.state = {
         }
         let response = JSON.parse(this.responseText);
         
-      //  alert(response.lwo);
+    
          myLink=response.lwo;
       myLink2=response.uwo;
-  // if(response.error == 0) {
-        //   window.location.href = "/reports";
-        let cwo2, jwo2;
+         let cwo2, jwo2;
         if(response.cwo == null){ cwo2=""}else {cwo2= response.cwo.slice(0,-14) };
         if(response.jwo == null){ jwo2=""}else {jwo2= response.cwo.slice(0,-14) };
              that.setState({
@@ -57667,17 +57635,12 @@ this.state = {
            }); 
     
         }
-// get photo
     
 // event.preventDefault();
      }
-  
    
-  
-  
   render() {
-  
-    
+      
     return (
       React.createElement("div", null, 
      React.createElement(Header, null), 
@@ -57797,22 +57760,11 @@ React.createElement(FormGroup, { className: "input-row"}, React.createElement(C
     );
   }
 
- 
-
 }
-
 
 
 module.exports = RIedit;
 
-/* 
- <img src="https://static.pexels.com/photos/296886/pexels-photo-296886.jpeg"  alt="ri1 pic"/> 
-<div style={{width: 660, height: 'auto'}}>
-          <p> </p>
-            <Image src={"https://static.pexels.com/photos/" + this.state.uwo + "/pexels-photo-" + this.state.uwo +".jpeg"	} responsive />    
-            </div>
-
-*/
 
 /***/ }),
 /* 349 */
@@ -57820,8 +57772,8 @@ module.exports = RIedit;
 
 //shows requested RI Report (form with photos); editing and saving are disabled 
 const React = __webpack_require__(0);
-const ReactDOM = __webpack_require__(13);
-const Link = __webpack_require__(11).Link
+const ReactDOM = __webpack_require__(12);
+const Link = __webpack_require__(13).Link
 //const style = require('../styles/Profile');
 const Header = __webpack_require__(19);
 const RIphoto2 = __webpack_require__(145);
@@ -58027,7 +57979,7 @@ module.exports = RIview;
 /***/ (function(module, exports, __webpack_require__) {
 
 const React = __webpack_require__(0);
-const Link = __webpack_require__(11).Link
+const Link = __webpack_require__(13).Link
 
 const style = __webpack_require__(41);
 
@@ -58168,7 +58120,7 @@ module.exports = SignUp;
 /***/ (function(module, exports, __webpack_require__) {
 
 const React = __webpack_require__(0);
-const Link = __webpack_require__(11).Link
+const Link = __webpack_require__(13).Link
 
 const style = __webpack_require__(41);
 
@@ -58310,7 +58262,7 @@ module.exports = SignUp2;
 /***/ (function(module, exports, __webpack_require__) {
 
 const React = __webpack_require__(0);
-const Link = __webpack_require__(11).Link
+const Link = __webpack_require__(13).Link
 
 const style = __webpack_require__(41);
 
@@ -58517,12 +58469,7 @@ class HomePage extends React.Component {
 ), 
         
 React.createElement("div", {className: "myForm"}, 
-
-   /* *********************************** */
         React.createElement(FormRI, null)
-   /* *********************************** */
- 
-     
           )
         )
     );
@@ -60245,7 +60192,7 @@ module.exports = exports['default'];
 /***/ (function(module, exports, __webpack_require__) {
 
 const React = __webpack_require__(0);
-const Link = __webpack_require__(11).Link
+const Link = __webpack_require__(13).Link
 const {Row, Col} = __webpack_require__(9);
 class TableHead extends React.Component {
   render()  {
@@ -60273,17 +60220,12 @@ module.exports = TableHead;
 
 //Admin 
 const React = __webpack_require__(0);
-const Link = __webpack_require__(11).Link
-//const style = require('../styles/FormRI');
+
 const style = __webpack_require__(40);
 const Header = __webpack_require__(19);
-
-const { option, Form, FormGroup, Col, FormControl, Button, Grid, Row, ControlLabel} = __webpack_require__(9);
+const { Form, FormGroup, Col,  Button, Row, ControlLabel} = __webpack_require__(9);
 //const Person = mongoose.model('Person', personSchema);
 
-const  arrayOfPeople=[{name:'Eva', age: 5, favoriteFoods: ["apple", "milk"]}, 
-                   {name:'Eva2', age: 6, favoriteFoods: ["apple2", "milk2"]},
-                  {name:'Eva3', age: 7, favoriteFoods: ["apple3", "milk3"]}] ;
 
 class ManyRecords extends React.Component {
   constructor(props) {
@@ -60438,22 +60380,7 @@ React.createElement(Row, null,
 };
 
 module.exports = ManyRecords;
-/* 
 
-
-<FormGroup className="input-row"><ControlLabel> 	Photo 	</ControlLabel>
-    
-    <FormControl type="file"  name="uwo"  ref="imageInput" accept="image/png, image/jpeg" value={this.state.uwo }  onChange={ this.uploadFile }   />   </FormGroup>  
-    
-            <p>  sample1:  </p>
-<code>{`
-[
-{name:'Eva', age: 5, favoriteFoods: ["apple", "milk"]}, 
-{name:'Eva2', age: 6, favoriteFoods: ["apple2", "milk2"]},
-{name:'Eva3', age: 7, favoriteFoods: ["apple3", "milk3"]}
-] 
-`}</code>
-*/
 
 /***/ })
 /******/ ]);

@@ -67,13 +67,8 @@ class HomePage extends React.Component {
 </Row>
 </div>
         
-<div className="myForm">
-
-   {/* *********************************** */}
-        <FormRI /> 
-   {/* *********************************** */}
- 
-     
+<div className="myForm"> 
+        <FormRI />  
           </div>
         </div>
     );

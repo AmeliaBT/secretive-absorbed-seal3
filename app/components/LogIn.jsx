@@ -3,8 +3,6 @@ const style = require('../styles/SignUp');
 // react-bootstrap
 const {Form, FormGroup, Col, FormControl, Button} = require('react-bootstrap');
 
-
-/*  */
 class LogIn extends React.Component {
   constructor(props) {
     super(props);
@@ -26,21 +24,15 @@ class LogIn extends React.Component {
   }
   handleSubmit(event) {
       let that = this;
-//console.log(that)
-      const xhr = new XMLHttpRequest();
-      
+      const xhr = new XMLHttpRequest();      
       xhr.open('POST', '/log-in', true);
-      xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-      
+      xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');      
       
       let body = 'email=' + encodeURIComponent(this.state.email) +
       '&password=' + encodeURIComponent(this.state.password)+
-      '&securityLevel=' + encodeURIComponent(this.state.securityLevel)
-      ;
-
+      '&securityLevel=' + encodeURIComponent(this.state.securityLevel)   ;
 
       xhr.send(body);
-
       xhr.onreadystatechange = function() {
         if (this.readyState != 4) return;
         if (this.status != 200) {

@@ -1,5 +1,4 @@
-// NC old RI Gallery WIP 
-
+// NC
 const React = require('react');
 
 // react-bootstrap
@@ -14,8 +13,7 @@ class NCreports extends React.Component {
     super(props);
     this.state = {
        show: false,
-       modal_label: "Choose a report to view ",
-     
+       modal_label: "Choose a report to view ",     
        disabled: true,
        reports: "loading...",
        modal_content: "loading..."

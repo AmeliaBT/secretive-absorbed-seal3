@@ -1,16 +1,11 @@
 //Admin 
 const React = require('react');
-const Link = require('react-router-dom').Link
-//const style = require('../styles/FormRI');
+
 const style = require('../styles/HomePage');
 const Header = require('./Header');
-
-const { option, Form, FormGroup, Col, FormControl, Button, Grid, Row, ControlLabel} = require('react-bootstrap');
+const { Form, FormGroup, Col,  Button, Row, ControlLabel} = require('react-bootstrap');
 //const Person = mongoose.model('Person', personSchema);
 
-const  arrayOfPeople=[{name:'Eva', age: 5, favoriteFoods: ["apple", "milk"]}, 
-                   {name:'Eva2', age: 6, favoriteFoods: ["apple2", "milk2"]},
-                  {name:'Eva3', age: 7, favoriteFoods: ["apple3", "milk3"]}] ;
 
 class ManyRecords extends React.Component {
   constructor(props) {
@@ -165,19 +160,3 @@ handleSubmit(event) { let that = this;
 };
 
 module.exports = ManyRecords;
-/* 
-
-
-<FormGroup className="input-row"><ControlLabel> 	Photo 	</ControlLabel>
-    
-    <FormControl type="file"  name="uwo"  ref="imageInput" accept="image/png, image/jpeg" value={this.state.uwo }  onChange={ this.uploadFile }   />   </FormGroup>  
-    
-            <p>  sample1:  </p>
-<code>{`
-[
-{name:'Eva', age: 5, favoriteFoods: ["apple", "milk"]}, 
-{name:'Eva2', age: 6, favoriteFoods: ["apple2", "milk2"]},
-{name:'Eva3', age: 7, favoriteFoods: ["apple3", "milk3"]}
-] 
-`}</code>
-*/
