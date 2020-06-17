@@ -548,10 +548,17 @@ function(request, response, next) {
    user.save();       
       });  
  });    
-    next();},     
+    next();},    
+       
      function(request, response) {
          // response.send(req.user);
-          response.redirect("/login");
+    console.log(" redirecting ? ");
+        //  response.redirect("/login");
+    request.logout();
+          request.session.destroy(function(err) {
+          response.status(200).clearCookie('connect.sid', {path: '/'}).json({error: 0});
+     })
+  
 } );
   
   
