@@ -1,13 +1,9 @@
 const React = require('react');
-const Link = require('react-router-dom').Link
-
 const style = require('../styles/SignUp');
-
 const Header = require('./Header');
 // react-bootstrap
 const {Form, FormGroup, Col, FormControl, Button} = require('react-bootstrap');
 
-/*  */
 class SignUp extends React.Component {
   constructor(props) {
     super(props);

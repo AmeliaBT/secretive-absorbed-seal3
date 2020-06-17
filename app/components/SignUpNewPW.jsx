@@ -1,14 +1,11 @@
 const React = require('react');
-const Link = require('react-router-dom').Link
-
 const style = require('../styles/SignUp');
 
 const Header = require('./Header');
 // react-bootstrap
 const {Form, FormGroup, Col, FormControl, Button} = require('react-bootstrap');
-
-/*  */
-class SignUp3 extends React.Component {
+/* Change PW  form */
+class SignUpNewPW extends React.Component {
   constructor(props) {
     super(props);
     this.state = {    
@@ -20,9 +17,7 @@ class SignUp3 extends React.Component {
   }
    handleLogOut() {
       const xhr = new XMLHttpRequest();
-
       xhr.open('POST', '/log-out', true);
-
       xhr.send();
 
       xhr.onreadystatechange = function() {
@@ -55,35 +50,25 @@ class SignUp3 extends React.Component {
       xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
       
       //securityLevel
-      let body = 
-          
+      let body =           
       'password=' + encodeURIComponent(this.state.password)   ;
-
-
       xhr.send(body);
-
       xhr.onreadystatechange = function() {
         if (this.readyState != 4){
           this.handleLogOut
         } 
-          //return;
-        
+          //return;        
         if (this.status != 200) {
           alert( 'error: ' + (this.status ? this.statusText : 'request has not been set') );
           return;
         }
         let response = JSON.parse(this.responseText);
-        if(response.error == 0) {
-         
+        if(response.error == 0) {         
          window.location.href = "/reports";
-          that.setState({
-         
-          ["password"]: "Succsess"
-         
+          that.setState({         
+          ["password"]: "Succsess"         
            });
-          
-          
-          
+               
           
         }
         else {
@@ -103,10 +88,7 @@ class SignUp3 extends React.Component {
       <div>
             <Header/>
             <Form className="FormSU" horizontal method="post" action="/set-password" name="changePW" onSubmit={this.handleSubmit}>
-            
-
-           
-
+              
               <FormGroup controlId="formHorizontalPassword">
                 <Col className="form-labelSU" sm={2}>
                   New Password
@@ -115,9 +97,7 @@ class SignUp3 extends React.Component {
                   <FormControl type="password" name="password" required value={this.state.password} placeholder="Password" onChange={this.handleChangeValue} />
                 </Col>
               </FormGroup>
-            
-          
-
+                     
               <FormGroup>
                 <Col smOffset={2} sm={10}>
                   <Button className="btn btn-primary btn-block" type="submit"><i className="fa fa-paper-plane"></i> Update Password</Button>
@@ -129,5 +109,4 @@ class SignUp3 extends React.Component {
   }
 };
 
-module.exports = SignUp3;
-// <FormControl type="text" name="securityLevel" required value={this.state.securityLevel} placeholder=" Security Level" onChange={this.handleChangeValue} />
+module.exports = SignUpNewPW;
