@@ -2,7 +2,7 @@
 const React = require('react');
 const Link = require('react-router-dom').Link
 // react-bootstrap
-const {Col, Row, Button, Glyphicon , OverlayTrigger} = require('react-bootstrap');
+const {Col, Row, Button, Glyphicon } = require('react-bootstrap');
 // style 
 const style = require('../styles/RIlistItem');
 /* component for displaying one line of list  */
@@ -31,15 +31,12 @@ class RIlistItemAll extends React.Component {
             }
         }
 
-   componentWillMount() {
-    //get   supplier and pn of user by nickname
-    //let that = this;
-    //  const xhr = new XMLHttpRequest();
-     
-  }
+  // componentWillMount() {
+       
+  //}
   /***********************/
   render() {
-    const {report, showDelete, showDelete2} = this.props;
+   // const {report, showDelete, showDelete2} = this.props;
     return(
       <div>
        
