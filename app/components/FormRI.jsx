@@ -12,13 +12,13 @@ const mySel = [
 ];
 
 //supplier name
-
+/*
 const mySelE = [
   { id: 1, selname: "ATDG" },
   { id: 2, selname: "CAMEO" } ,
   { id: 3, selname: "" } 
 ];
-
+*/
 
   //Source
 const mySelM = [
@@ -49,9 +49,9 @@ const mySelN = [
 let options = mySel.map((el) => {
           return <option value={el.selname} key={el.selname}>{el.selname}</option>;
         });
-let optionsE = mySelE.map((el) => {
-          return <option value={el.selname} key={el.selname}>{el.selname}</option>;
-        });
+//let optionsE = mySelE.map((el) => {
+   //       return <option value={el.selname} key={el.selname}>{el.selname}</option>;
+   //     });
       
 let optionsM = mySelM.map((el) => {
           return <option value={el.selname} key={el.selname}>{el.selname}</option>;
@@ -60,13 +60,14 @@ let optionsM = mySelM.map((el) => {
 let optionsN = mySelN.map((el) => {
           return <option value={el.selname} key={el.selname}>{el.selname}</option>;
         });
-//const renderOptions = (options) => {return options.map((i) => {return <option key={i.name} name={i.name} value={i.value}>{i.value}</option>;  }); };
- let optionsDate = {
+        /*
+let optionsDate = {
         weekday: "short",
         year: "numeric",
         month: "2-digit",
         day: "numeric"
-    };
+    };*/
+
 /* the rep page that shows all reps */
 class FormRI extends React.Component {
   constructor(props) {
@@ -121,7 +122,7 @@ componentWillMount() {
      let response = JSON.parse(this.responseText);
      
        if(response.isLogedIn == true) {
-       //  console.log(" loged in ok");
+       
           that.setState({
         ["inspname"]: response.inspname,
          ["inspector"]: response.inspname,
@@ -132,9 +133,6 @@ componentWillMount() {
   
   
 } 
-
-
-//
 
    handleChangeValue(event) {
      const target = event.target;
@@ -327,10 +325,7 @@ componentWillMount() {
 </Row>  
      
   </Grid>     
-   </Form>
-   
-        
-        
+   </Form>      
         
   </div>
     );

@@ -136,21 +136,7 @@ class Header extends React.Component {
      
     }         
  /********************/
-          
-        /*  
-          that.setState({
-          ["navBtns"]: <Nav pullLeft className="link span">
-                       <NavItem className='span'> <Link  to='/homepage' className="link">{response.inspname}'s RI Form</Link> </NavItem> 
-                      <NavItem className='span'> <Link  to='/up-many-records' className="link">Admin</Link> </NavItem> 
-                       <NavItem className='span'> <div  onClick={that.handleLogOut} className="link">Log out</div> </NavItem>
-                      </Nav>,
-            ["reportsLink"]: "/reports",
-             ["listLink"]: "/list",
-             ["listLinkAll"]: "/list-all",
-                ["listLinkAll2"]: "/list-all2",
-                ["chartLinkA"]: "/chartA"
-           });
-          */
+       
         }
         else {
           that.setState({
@@ -186,11 +172,7 @@ class Header extends React.Component {
           <Navbar.Brand >           
             <Link to={this.state.reportsLink} ><p  className="link">Defects</p></Link>            
           </Navbar.Brand>
-         {/* 
-          <Navbar.Brand >           
-            <Link to={this.state.listLink} ><p  className="link">Editing   </p></Link>            
-          </Navbar.Brand>*/} 
-          
+        
    
   
           

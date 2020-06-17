@@ -1,7 +1,7 @@
 // Charts
 const React = require('react');
 //const Link = require('react-router-dom').Link
-//const style = require('../styles/HomePage');
+const style = require('../styles/HomePage');
 const {Table ,Row, Col, Modal} = require('react-bootstrap');
 const Header = require('./Header');
 const FilterA =require('./FilterA');

@@ -1,7 +1,5 @@
 //RI Gallery
-
 const React = require('react');
-
 // other components and etc
 const Header = require('./Header');
 const FormRI =require('./FormRI');
@@ -39,18 +37,14 @@ class HomePage extends React.Component {
           alert( 'error: ' + (this.status ? this.statusText : 'request has not been set') );
           return;
         }
-        let response = JSON.parse(this.responseText);
-       // console.log("respond parsed ")
+        let response = JSON.parse(this.responseText);   
      
           if(response.isLogedIn == true) {
-           // console.log(" loged in ok")
+          
              that.setState({
             ["inspname"]: response.inspname,
             ["dep"]: response.dep
-             /*,
-            ["user_reports"]: reports
-            /*
-           */
+           
            });
           }
         }
