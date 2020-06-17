@@ -537,23 +537,34 @@ app.post("/set-dep", function(request, response) {
 
 
 /* ********************************* */
-app.post("/set-password", function(request, response, next) {   
+app.post("/set-password", 
+function(request, response, next) {   
   let pw1= request.body["password"];    
   userModel.findById(request.session.passport.user, (err, user) => {
   if (err) throw err;    
      bcrypt.hash(pw1, saltRounds, function(err, hash) {
   // Store hash in DB. 
    user.password=hash;
-   user.save(); 
-      
-      });
-
-   
- });
- 
+   user.save();       
+      });  
+ });    
+    next();},     
+     function(request, response) {
+         // response.send(req.user);
+          response.redirect("/login");
+} );
   
- });
+  
 
+/*
+app.get('/user', 
+function(req, res, next) {
+req.user = getTheUserSync(); // Hypothetical synchronous operation
+next();}, 
+function(req, res) {
+res.send(req.user);}
+)
+*/
 
 
 
