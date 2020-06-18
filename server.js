@@ -248,10 +248,10 @@ app.post("/add-report", function(request, response) {
 reportModel.find({}, (err, docs) => {
   if (err) throw err;        
  nDocs= docs.length +100000200 ;//7000;
- //console.log(" nDoc= "  +nDocs) ;
+ console.log(" nDoc= "  +nDocs) ;
 //_____________________________
 
-//console.log(" nDoc1= "  +nDocs) ;
+console.log(" nDoc1= "  +nDocs) ;
     // create a report
 
 let obj =  {
@@ -382,7 +382,8 @@ let cwo=request.body.cwo; // date inspected
     lot={ $lte: 99 };
   }else{
      lot={ $gte: 0 };
-    //console.log("no: "+ owo)}
+    //console.log("no: "+ owo) 
+  }
   
   switch(owo) {
   case "<100":   
@@ -490,7 +491,7 @@ uwo: request.body["uwo"] //photo file
 /***********************************/
 
 app.post("/up-many-records", function(request, response) {   
-   //console.log(request.body.record);
+   console.log(request.body.record);
    // reportModel.create( request.body.record, function(err) {   
   //reportModel.create( [ ]    , function(err) {    console.log(err); // });
   
