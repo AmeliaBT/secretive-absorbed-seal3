@@ -292,6 +292,7 @@ function(request, response, next) {
   // number of existing RI records   
   reportModel.find({}, (err, docs) => {        
                      //nDocs= docs.length +100000200 ;// starting number 
+    Let n c= docs.length + nDocs;
                          nDocs= docs.length + nDocs;
     console.log(" nDoc1= "  +nDocs) ;
  });   
@@ -332,6 +333,9 @@ uwo: request.body["uwo"] //photo file
      report.save(function (err) {
               //if (err) throw err;
               if (!err) console.log('Success!');
+        console.log(" after next nDoc1= "  +nDocs) ;
+     //  Success!
+// nDoc1= 100000362
               response.json({"error": 0});              
             });
   
