@@ -290,7 +290,26 @@ uwo: request.body["uwo"] //photo file
     });
 });
 
-
+/* ********************************* */
+app.post("/add-report", 
+function(request, response, next) {    
+  let nDocs; // number of existing RI records   
+  reportModel.find({}, (err, docs) => {        
+                     nDocs= docs.length +100000200 ;// starting number 
+    console.log(" nDoc1= "  +nDocs) ;
+ });   
+  // save with RI number *******************
+  
+    next();},    
+       
+     function(request, response) {         
+    request.logout();
+          request.session.destroy(function(err) {
+          response.status(200).clearCookie('connect.sid', {path: '/'}).json({error: 0});
+     })
+  
+} );
+  
 app.post("/get-all-users-reports", function(request, response) {
        reportModel.find({}, (err, docs) => {
           if(err) throw err;
