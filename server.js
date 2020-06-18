@@ -242,18 +242,65 @@ app.post("/is-loged-in", function(request, response) {
 
 
 /***********************************/
+/*
 let nDocs; 
 app.post("/add-report", function(request, response,  next) {
-
 reportModel.find({}, (err, docs) => {
   if (err) throw err;        
- nDocs= docs.length +100000200 ;//7000;
-
-console.log(" nDoc1= "  +nDocs) ;
-    // create a report
-
+ nDocs= docs.length +100000200 ;
+console.log(" nDoc1= "  +nDocs) ;  
 let obj =  {
+reportID:  nDocs, 
+daterec: request.body["daterec"], 
+inspector: request.body["inspector"], 
+Gwo: request.body["Gwo"], 
+cwo: request.body["cwo"], 
+dwo: request.body["dwo"], 
+ewo: request.body["ewo"], 
+fwo: request.body["fwo"], 
+hwo: request.body["hwo"], 
+iwo: request.body["iwo"], 
+jwo: request.body["jwo"], 
+kwo: request.body["kwo"],
+lwo: request.body["lwo"], 
+mwo: request.body["mwo"], 
+nwo: request.body["nwo"], 
+owo: request.body["owo"], 
+pwo: request.body["pwo"], 
+qwo: request.body["qwo"], 
+rwo: request.body["rwo"], 
+swo: request.body["swo"], 
+two: request.body["two"], 
+record: request.body["record"],
+uwo: request.body["uwo"] 
+}; 
+    let report = new reportModel(obj);          
+            report.save(function (err) {
+             
+              if (!err) console.log('Success!');
+              response.json({"error": 0});              
+            });
+    });
+});
 
+*/
+/* ********************************* */
+let nDocs=100000200; // starting number 
+
+app.post("/add-report", 
+function(request, response, next) {    
+  // number of existing RI records   
+  reportModel.find({}, (err, docs) => {        
+                     //nDocs= docs.length +100000200 ;// starting number 
+                         nDocs= docs.length + nDocs;
+    console.log(" nDoc1= "  +nDocs) ;
+ });   
+  // save with RI number *******************
+  
+    next();},    
+       
+function(request, response) {         
+    let obj =  {
 reportID:  nDocs, 
 daterec: request.body["daterec"], 
 inspector: request.body["inspector"], 
@@ -281,34 +328,15 @@ record: request.body["record"],
 uwo: request.body["uwo"] //photo file 
 };
  
-    let report = new reportModel(obj);          
-            report.save(function (err) {
+    let report = new reportModel(obj);    
+     report.save(function (err) {
               //if (err) throw err;
               if (!err) console.log('Success!');
               response.json({"error": 0});              
             });
-    });
-});
-
-/* ********************************* */
-app.post("/add-report", 
-function(request, response, next) {    
-  let nDocs; // number of existing RI records   
-  reportModel.find({}, (err, docs) => {        
-                     nDocs= docs.length +100000200 ;// starting number 
-    console.log(" nDoc1= "  +nDocs) ;
- });   
-  // save with RI number *******************
   
-    next();},    
-       
-     function(request, response) {         
-    request.logout();
-          request.session.destroy(function(err) {
-          response.status(200).clearCookie('connect.sid', {path: '/'}).json({error: 0});
-     })
-  
-} );
+} 
+   );
   
 app.post("/get-all-users-reports", function(request, response) {
        reportModel.find({}, (err, docs) => {
