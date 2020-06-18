@@ -1461,7 +1461,7 @@ class Header extends React.Component {
           that.setState({
           ["navBtns"]: React.createElement(Nav, {pullLeft: true, className: "link span"}, 
                        React.createElement(NavItem, {className: "span"}, " ", React.createElement(Link, {to: "/homepage", className: "link"}, response.inspname, "'s RI Form"), " "), 
-                         React.createElement(NavItem, {className: "span"}, " ", React.createElement(Link, {to: "/list", className: "link"}, "Edit Record "), " "), 
+                         React.createElement(NavItem, {className: "span"}, " ", React.createElement(Link, {to: "/list", className: "link"}, "Edit Report "), " "), 
                        React.createElement(NavItem, {className: "span"}, " ", React.createElement(Link, {to: "/signup2", className: "link"}, React.createElement("p", {className: "link"}, "Add User")), " "), 
                        React.createElement(NavItem, {className: "span"}, " ", React.createElement(Link, {to: "/SignUpNewPW", className: "link"}, React.createElement("p", {className: "link"}, "Change PW ")), " "), 
                        React.createElement(NavItem, {className: "span"}, " ", React.createElement("div", {onClick: that.handleLogOut, className: "link"}, "Log out"), " ")
@@ -1482,7 +1482,7 @@ class Header extends React.Component {
           that.setState({
           ["navBtns"]: React.createElement(Nav, {pullLeft: true, className: "link span"}, 
                        React.createElement(NavItem, {className: "span"}, " ", React.createElement(Link, {to: "/homepage", className: "link"}, response.inspname, "'s RI Form"), " "), 
-                       React.createElement(NavItem, {className: "span"}, " ", React.createElement(Link, {to: "/list", className: "link"}, "Edit Record "), " "), 
+                       React.createElement(NavItem, {className: "span"}, " ", React.createElement(Link, {to: "/list", className: "link"}, "Edit Report "), " "), 
                        React.createElement(NavItem, {className: "span"}, " ", React.createElement(Link, {to: "/up-many-records", className: "link"}, "Admin"), " "), 
                        React.createElement(NavItem, {className: "span"}, " ", React.createElement(Link, {to: "/signup", className: "link"}, React.createElement("p", {className: "link"}, "Add User")), " "), 
                       React.createElement(NavItem, {className: "span"}, " ", React.createElement(Link, {to: "/SignUpNewPW", className: "link"}, React.createElement("p", {className: "link"}, "Change PW ")), " "), 
@@ -56719,7 +56719,7 @@ class RIlistItem extends React.Component {
 
         React.createElement(Row, null, 
           React.createElement(Col, {sm: 1}, "#", this.state.reportID, " "), 
-          React.createElement(Col, {sm: 1}, "#", this.state.inspector, " "), 
+          React.createElement(Col, {sm: 1}, this.state.inspector, " "), 
           React.createElement(Col, {sm: 1}, " ", React.createElement("p", {style: { fontSize: 12}}, " ", this.state.fwo, " "), " "), 
 
           React.createElement(Col, {sm: 2}, " ", this.state.Gwo), 
