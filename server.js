@@ -293,7 +293,8 @@ function(request, response, next) {
   
   reportModel.find({}, (err, docs) => {  
     request.reportID= docs.length +100000200 ;
-    console.log(docs.length +100000200);
+    console.log(" len: " +docs.length +100000200);
+    console.log("request.reportID: " + request.reportID);
  });   
   // save with RI number *******************
   
@@ -328,7 +329,9 @@ record: request.body["record"],
 uwo: request.body["uwo"] //photo file 
 };
  
-    let report = new reportModel(obj);    
+    let report = new reportModel(obj); 
+  console.log(" obj ");
+  console.log(report);
      report.save(function (err) {
               //if (err) throw err;
               if (!err) console.log('Success!');    
