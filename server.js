@@ -243,13 +243,11 @@ app.post("/is-loged-in", function(request, response) {
 
 /***********************************/
 let nDocs; 
-app.post("/add-report", function(request, response) {
+app.post("/add-report", function(request, response,  next) {
 
 reportModel.find({}, (err, docs) => {
   if (err) throw err;        
  nDocs= docs.length +100000200 ;//7000;
- console.log(" nDoc= "  +nDocs) ;
-//_____________________________
 
 console.log(" nDoc1= "  +nDocs) ;
     // create a report
@@ -280,29 +278,16 @@ rwo: request.body["rwo"], 
 swo: request.body["swo"], 
 two: request.body["two"], 
 record: request.body["record"],
-uwo: request.body["uwo"] //photo file
- 
-
+uwo: request.body["uwo"] //photo file 
 };
-
-//console.log(obj);
  
-    let report = new reportModel(obj);
-          
+    let report = new reportModel(obj);          
             report.save(function (err) {
               //if (err) throw err;
               if (!err) console.log('Success!');
-              response.json({"error": 0});
-              
+              response.json({"error": 0});              
             });
-//_____________________________
-
     });
-
-
-        
-   
-// });
 });
 
 
@@ -502,18 +487,19 @@ app.post("/up-many-records", function(request, response) {
 
 
 /***********************************/
-//add-upload' not used does not work;
+//add-upload' not used does not work yet 
 
 app.post("/add-upload", function(request, response) {
+/*
 reportModel.find({}, (err, docs) => {
   if (err) throw err;        
  nDocs= docs.length + 100000200 ; //6000;
- //console.log(" nDoc= "  +nDocs) ;
+ 
 let obj =  {
 reportID:  nDocs, 
 uwo: request.body["image"] //photo file
 };
-//console.log(obj); 
+
     let report = new reportModel(obj);          
             report.save(function (err) {
               //if (err) throw err;
@@ -521,7 +507,7 @@ uwo: request.body["image"] //photo file
               response.json({"error": 0});              
             });
     });
-
+*/
 });
 
 /***********************************/
