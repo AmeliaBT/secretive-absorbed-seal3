@@ -272,13 +272,28 @@ uwo: request.body["uwo"]
 /* ********************************* */
 //let nDocs=100000200; // starting number 
 //app.use(middleware);
+//app.post("/add-report",
+//app.get("/now", function(req, res, next){
+ app.post("/add-report", function(req, res, next){ 
+  req.time = new Date().toString();
+  next();
+},
+  function (req, res) {
+      //res.send(req.time); 
+  console.log("hi now ");
+  console.log({'time': req.time})
+    res.json({'time': req.time});
+  }
+);
+
+
 app.post("/add-report", function(request, response, next) {
   request.test0=6666; 
   reportModel.find({}, (err, docs) => {  
   if (err) throw err;
 
   request.nd =docs.length ;// +100000200 ;     
-// }); 
+ }); 
    
     request.test1=777;
     request.test2=8888;
@@ -334,7 +349,7 @@ uwo: request.body["uwo"] //photo file
   
 } 
    );
-});   
+  
 app.post("/get-all-users-reports", function(request, response) {
        reportModel.find({}, (err, docs) => {
           if(err) throw err;
