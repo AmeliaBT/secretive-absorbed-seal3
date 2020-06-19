@@ -271,12 +271,9 @@ uwo: request.body["uwo"]
 */
 /* ********************************* */
 //let nDocs=100000200; // starting number 
-//app.use(middleware);
-//app.post("/add-report",
-//app.get("/now", function(req, res, next){
+/*
  app.post("/add-report", function(req, res, next){ 
- // req.time = new Date().toString();
- //User.find({}, function(err, data) { console.log(err, data, data.length);});  
+ 
 reportModel.find({}, (err, docs) => {
   console.log(docs.length);
    req.nd=  docs.length; 
@@ -292,31 +289,22 @@ reportModel.find({}, (err, docs) => {
     res.json({'time': req.time});
   }
 );
-
+*/
 
 app.post("/add-report", function(request, response, next) {
-  request.test0=6666; 
+  
   reportModel.find({}, (err, docs) => {  
-    request.nd =docs.length ;// +100000200 ;     
+    request.nd =docs.length +100000200 ; 
+    next();
  }); 
    
-    request.test1=777;
-    request.test2=8888;
- // request.nd=nd;
-  console.log("nd2: ")
-   // console.log(nd);
-    next();},    
+   
+    },    
   // save with RI number *******************       
 function(request, response) { 
-  console.log("hi 4 " + request.body["inspector"]); //ok
- // let nD=
-  console.log("hi 5 " );
-   console.log(request.test0);   // 6666
-  //console.log(request.test1); // undefined nery long object
-  console.log(request.test2); // 8888 
-  console.log(request.nd); 
+  
     let obj =  {
-reportID:   request.test2, 
+reportID:   request.nd, 
 daterec: request.body["daterec"], 
 inspector: request.body["inspector"], 
 Gwo: request.body["Gwo"], 
