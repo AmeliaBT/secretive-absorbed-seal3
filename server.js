@@ -4,7 +4,7 @@ const express = require('express');
 //const multer  = require('multer');
 //react-html-table-to-excel
 const app = express();
-const books = {}; //
+// books = {}; //
 require('dotenv').config()
 // body-parser
 const bodyParser = require('body-parser');
@@ -17,12 +17,12 @@ const bcrypt = require('bcrypt');
 const saltRounds = 10;
 // session
 const session = require('express-session');
-const MongoDBStore = require('connect-mongodb-session')(session);
+//const MongoDBStore = require('connect-mongodb-session')(session);
 // assert
-const assert = require('assert');
+//const assert = require('assert');
 //require/import the mongodb native drivers
-const mongodb = require('mongodb');
-const MongoClient = mongodb.MongoClient;
+// mongodb = require('mongodb');
+//const MongoClient = mongodb.MongoClient;
 // using Node.js `require()`
 const mongoose = require('mongoose');
 //to fix error: DeprecationWarning: Mongoose: mpromise 
