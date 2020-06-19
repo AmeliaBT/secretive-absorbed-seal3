@@ -288,17 +288,13 @@ uwo: request.body["uwo"]
 //let nDocs=100000200; // starting number 
 //app.use(middleware);
 app.post("/add-report", function(request, response, next) {
-  request.test0=6666;
-   //console.log(request.body["reportID"] ) ; //''
-  // console.log(request.body["inspector"] ) ; //ok 
- // console.log(request.body["fwo"] ) ;//PN ok
-  //  console.log(" h3:" + nD);
+  request.test0=6666; 
     // number of existing RI records  
   let nD=reportModel.find({}, (err, docs) => {  
-  docs.length +100000200 ;    
-    request.test=7777;
-    
+  docs.length +100000200 ; 
  }); 
+   
+    request.test1=nD;
     request.test2=8888;
     next();},    
   // save with RI number *******************       
@@ -307,7 +303,7 @@ function(request, response) {
  // let nD=
   console.log("hi 5 " );
    console.log(request.test0);   // 6666
-  console.log(request.test); // undefined
+  //console.log(request.test1); // undefined nery long object
   console.log(request.test2); // 8888 
   
     let obj =  {
