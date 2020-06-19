@@ -492,15 +492,7 @@ dateN.setDate(dateN.getDate() -365);
 });
 /***********************************/
 
-app.post("/set-report", function(request, response) { 
-  
-  /*
-    userModel.findById(request.session.passport.user, (err, document) => {
-        request.sessuser =document.inspname; 
-      console.log(" insp1: " + request.sessuser);
-    console.log(" insp2: " + request.body["daterec"]);
-   });
-  */
+app.post("/set-report", function(request, response) {  
    reportModel.findOne({"_id":request.body["_id"]}, (err, doc) => {
   if (err) throw err; 
 
