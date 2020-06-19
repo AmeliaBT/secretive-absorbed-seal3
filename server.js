@@ -275,12 +275,15 @@ uwo: request.body["uwo"]
 app.post("/add-report", function(request, response, next) {
   request.test0=6666; 
     // number of existing RI records  
-  let nD= reportModel.find({}, (err, docs) => {  
-  docs.length +100000200 ; 
-    
+  console.log("hi 1 " );
+  reportModel.find({}, (err, docs) => {  
+  let nd= docs.length ;// +100000200 ; 
+    console.log("hi 2 " );
+    console.log("nd: ")
+    console.log(nd);
  }); 
    
-    request.test1=nD;
+    request.test1=777;
     request.test2=8888;
     next();},    
   // save with RI number *******************       
