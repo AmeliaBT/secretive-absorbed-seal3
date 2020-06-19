@@ -292,13 +292,13 @@ reportModel.find({}, (err, docs) => {
 */
 
 app.post("/add-report", function(request, response, next) {
-/*
+
     userModel.findById(request.session.passport.user, (err, document) => {
         request.sessuser =document.inspname; 
       console.log(" insp: " + request.sessuser);
-    next();
-   }),
-  */
+    
+   });
+
   reportModel.find({}, (err, docs) => {  
     request.nd =docs.length +100000200 ; 
     console.log(" N: "  + request.nd)
@@ -315,6 +315,7 @@ function(request, response) {
   console.log(" got 2 items ");
   console.log(request.nd );
   console.log(request.sessuser);
+  if(request.body["inspector"] == request.sessuser ){
     let obj =  {
 reportID:   request.nd, 
 daterec: request.body["daterec"], 
@@ -342,16 +343,18 @@ two: request.body["two"], 
 record: request.body["record"],
 uwo: request.body["uwo"] //photo file 
 };
- 
+  
     let reportN = new reportModel(obj); 
-  console.log(" reportN.reportID:  ");
-  console.log(reportN.reportID);
-     reportN.save(function (err) {
+       reportN.save(function (err) {
               //if (err) throw err;
               if (!err) console.log('Success!');    
               response.json({"error": 0});              
             });
-  
+  }else {// unautorised user
+    
+    console.log('unauthorized user!');    
+              response.json({"error": "unauthorized user"});  
+  }
 } 
    );
   
