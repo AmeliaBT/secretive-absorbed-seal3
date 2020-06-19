@@ -292,16 +292,16 @@ reportModel.find({}, (err, docs) => {
 */
 
 app.post("/add-report", function(request, response, next) {
-
+/*
     userModel.findById(request.session.passport.user, (err, document) => {
         request.sessuser =document.inspname; 
       console.log(" insp: " + request.sessuser);
     
-   });
+   });*/
 
   reportModel.find({}, (err, docs) => {  
     request.nd =docs.length +100000200 ; 
-    console.log(" N: "  + request.nd)
+    //console.log(" N: "  + request.nd)
     next();
  }); 
    
@@ -311,11 +311,7 @@ app.post("/add-report", function(request, response, next) {
    
     },    
   // save with RI number *******************       
-function(request, response) { 
-  console.log(" got 2 items ");
-  console.log(request.nd );
-  console.log(request.sessuser);
-  if(request.body["inspector"] == request.sessuser ){
+function(request, response) {   
     let obj =  {
 reportID:   request.nd, 
 daterec: request.body["daterec"], 
@@ -350,11 +346,7 @@ uwo: request.body["uwo"] //photo file
               if (!err) console.log('Success!');    
               response.json({"error": 0});              
             });
-  }else {// unautorised user
-    
-    console.log('unauthorized user!');    
-              response.json({"error": "unauthorized user"});  
-  }
+
 } 
    );
   
