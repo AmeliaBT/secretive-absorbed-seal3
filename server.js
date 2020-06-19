@@ -288,29 +288,26 @@ uwo: request.body["uwo"]
 //let nDocs=100000200; // starting number 
 //app.use(middleware);
 app.post("/add-report", function(request, response, next) {  
-  console.log(" h1");
- console.log(request.body["reportID"] ) ; //''
-   console.log(request.body["inspector"] ) ; //ok 
-  console.log(request.body["fwo"] ) ;//PN ok
-
-  // number of existing RI records  
+   //console.log(request.body["reportID"] ) ; //''
+  // console.log(request.body["inspector"] ) ; //ok 
+ // console.log(request.body["fwo"] ) ;//PN ok
+  //  console.log(" h3:" + nD);
+    // number of existing RI records  
   let nD=reportModel.find({}, (err, docs) => {  
-  docs.length +100000200 ; 
-      console.log(" h2");
+  docs.length +100000200 ;    
+    request.test=7777;
     
  }); 
-   console.log(" h3:" + nD);
- request.body["reportID"] = nD;
-   
-     console.log( request.body["reportID"]) ;
+    request.test2=8888;
     next();},    
   // save with RI number *******************       
 function(request, response) { 
   console.log("hi 4 " + request.body["inspector"]); //ok
-  let nD=
-  console.log("hi 5 " + request.body["reportID"]);
+ // let nD=
+  //console.log("hi 5 " + request.body["reportID"]);
+  
     let obj =  {
-reportID:   request.body["reportID"], 
+reportID:   request.test, 
 daterec: request.body["daterec"], 
 inspector: request.body["inspector"], 
 Gwo: request.body["Gwo"], 
