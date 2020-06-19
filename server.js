@@ -289,7 +289,10 @@ uwo: request.body["uwo"]
 //app.use(middleware);
 app.post("/add-report", function(request, response, next) {  
   console.log(" h1");
- console.log(request.reportID) ;
+ console.log(request.body["reportID"] ) ;
+   console.log(request.body["inspector"] ) ;
+  console.log(request.body["fwo"] ) ;//PN
+
   // number of existing RI records   
  request.body["reportID"] = reportModel.find({}, (err, docs) => {  
   docs.length +100000200 ;    
@@ -309,7 +312,7 @@ Gwo: request.body["Gwo"], 
 cwo: request.body["cwo"], 
 dwo: request.body["dwo"], 
 ewo: request.body["ewo"], 
-fwo: request.body["fwo"], 
+fwo: request.body["fwo"], //PN
 hwo: request.body["hwo"], 
 
 iwo: request.body["iwo"], 
