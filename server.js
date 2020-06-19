@@ -289,15 +289,19 @@ uwo: request.body["uwo"]
 //app.use(middleware);
 app.post("/add-report", function(request, response, next) {  
   console.log(" h1");
- console.log(request.body["reportID"] ) ;
-   console.log(request.body["inspector"] ) ;
-  console.log(request.body["fwo"] ) ;//PN
+ console.log(request.body["reportID"] ) ; //''
+   console.log(request.body["inspector"] ) ; //ok 
+  console.log(request.body["fwo"] ) ;//PN ok
 
-  // number of existing RI records   
- request.body["reportID"] = reportModel.find({}, (err, docs) => {  
-  docs.length +100000200 ;    
+  // number of existing RI records  
+  let nD=reportModel.find({}, (err, docs) => {  
+  docs.length +100000200 ; 
+      console.log(" h2");
+    
  }); 
-    console.log(" h2");
+   console.log(" h3");
+ request.body["reportID"] = nD;
+   
      console.log( request.body["reportID"]) ;
     next();},    
   // save with RI number *******************       
