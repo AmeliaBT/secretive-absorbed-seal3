@@ -290,8 +290,9 @@ uwo: request.body["uwo"]
 app.post("/add-report", function(request, response, next) {
   request.test0=6666; 
     // number of existing RI records  
-  let nD=reportModel.find({}, (err, docs) => {  
+  let nD= reportModel.find({}, (err, docs) => {  
   docs.length +100000200 ; 
+    
  }); 
    
     request.test1=nD;
@@ -307,7 +308,7 @@ function(request, response) {
   console.log(request.test2); // 8888 
   
     let obj =  {
-reportID:   request.test8, 
+reportID:   request.test2, 
 daterec: request.body["daterec"], 
 inspector: request.body["inspector"], 
 Gwo: request.body["Gwo"], 
@@ -334,10 +335,10 @@ record: request.body["record"],
 uwo: request.body["uwo"] //photo file 
 };
  
-    let report = new reportModel(obj); 
-  console.log(" obj ");
-  //console.log(report);
-     report.save(function (err) {
+    let reportN = new reportModel(obj); 
+  console.log(" reportN.reportID:  ");
+  console.log(reportN.reportID);
+     reportN.save(function (err) {
               //if (err) throw err;
               if (!err) console.log('Success!');    
               response.json({"error": 0});              
