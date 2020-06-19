@@ -276,8 +276,11 @@ uwo: request.body["uwo"]
 //app.get("/now", function(req, res, next){
  app.post("/add-report", function(req, res, next){ 
   req.time = new Date().toString();
-   
- req.nd =reportModel.find({}, (err, docs) => {docs.length }); 
+ //User.find({}, function(err, data) { console.log(err, data, data.length);});  
+reportModel.find({}, (err, docs) => {console.log(docs.length);
+                           req.nd=  docs.length;       
+                                    
+                                    }); 
    
   next();
 },
