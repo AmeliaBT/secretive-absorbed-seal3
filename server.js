@@ -299,14 +299,16 @@ app.post("/add-report", function(request, response, next) {
       console.log(" h2");
     
  }); 
-   console.log(" h3");
+   console.log(" h3:" + nD);
  request.body["reportID"] = nD;
    
      console.log( request.body["reportID"]) ;
     next();},    
   // save with RI number *******************       
 function(request, response) { 
-  console.log("hi 3 " + request.body["inspector"]);
+  console.log("hi 4 " + request.body["inspector"]); //ok
+  let nD=
+  console.log("hi 5 " + request.body["reportID"]);
     let obj =  {
 reportID:   request.body["reportID"], 
 daterec: request.body["daterec"], 
@@ -337,7 +339,7 @@ uwo: request.body["uwo"] //photo file
  
     let report = new reportModel(obj); 
   console.log(" obj ");
-  console.log(report);
+  //console.log(report);
      report.save(function (err) {
               //if (err) throw err;
               if (!err) console.log('Success!');    
