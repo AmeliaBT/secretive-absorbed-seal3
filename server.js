@@ -4,7 +4,7 @@ const express = require('express');
 //const multer  = require('multer');
 //react-html-table-to-excel
 const app = express();
-// books = {}; //
+
 require('dotenv').config()
 // body-parser
 const bodyParser = require('body-parser');
@@ -17,21 +17,13 @@ const bcrypt = require('bcrypt');
 const saltRounds = 10;
 // session
 const session = require('express-session');
-//const MongoDBStore = require('connect-mongodb-session')(session);
-// assert
-//const assert = require('assert');
-//require/import the mongodb native drivers
-// mongodb = require('mongodb');
-//const MongoClient = mongodb.MongoClient;
-// using Node.js `require()`
+
 const mongoose = require('mongoose');
 //to fix error: DeprecationWarning: Mongoose: mpromise 
 mongoose.Promise = global.Promise;
 // connection URL
 const url = process.env.MONGOLAB_URI;   
-
 // connection
-//error here below
 const promise_connection = mongoose.connect(url, { 	useMongoClient: true });
 
 // set USEs
@@ -58,13 +50,6 @@ app.use(passport.initialize());
 app.use(passport.session());
 /***/
 app.use(express.static('public'));
-/***********************************/
-//using the middleware Multer to upload the photo on the server side.
-
-//app.use(multer({ dest: "./uploads/",  rename: function (fieldname, filename) { return filename; },}));
-//app.use(multer({dest:'./public/images/uploads'}).any());
-
-
 
 /******************************/
 // mongoDB models and schemas
@@ -614,6 +599,15 @@ passport.serializeUser(function(user_id, done) {
 passport.deserializeUser(function(user_id, done) {
     done(null, user_id);
 });
+
+/***********************************/
+//using the middleware Multer to upload the photo on the server side.
+
+//app.use(multer({ dest: "./uploads/",  rename: function (fieldname, filename) { return filename; },}));
+//app.use(multer({dest:'./public/images/uploads'}).any());
+
+
+
 // listen for requests
 const listener = app.listen(process.env.PORT, function () {
   console.log('Your app is listening on port ' + listener.address().port);
