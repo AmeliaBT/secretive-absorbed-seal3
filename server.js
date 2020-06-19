@@ -274,18 +274,17 @@ uwo: request.body["uwo"]
 //app.use(middleware);
 app.post("/add-report", function(request, response, next) {
   request.test0=6666; 
-  let nd;
-    // number of existing RI records  
-  console.log("hi 1 " );
-  request.nd= reportModel.find({}, (err, docs) => {  
-  docs.length ;// +100000200 ;     
- }); 
+  reportModel.find({}, (err, docs) => {  
+  if (err) throw err;
+
+  request.nd =docs.length ;// +100000200 ;     
+// }); 
    
     request.test1=777;
     request.test2=8888;
  // request.nd=nd;
   console.log("nd2: ")
-    console.log(nd);
+   // console.log(nd);
     next();},    
   // save with RI number *******************       
 function(request, response) { 
@@ -295,7 +294,7 @@ function(request, response) {
    console.log(request.test0);   // 6666
   //console.log(request.test1); // undefined nery long object
   console.log(request.test2); // 8888 
-  
+  console.log(request.nd); 
     let obj =  {
 reportID:   request.test2, 
 daterec: request.body["daterec"], 
@@ -335,7 +334,7 @@ uwo: request.body["uwo"] //photo file
   
 } 
    );
-  
+});   
 app.post("/get-all-users-reports", function(request, response) {
        reportModel.find({}, (err, docs) => {
           if(err) throw err;
@@ -473,7 +472,8 @@ dateN.setDate(dateN.getDate() -365);
 app.post("/set-report", function(request, response) {  
    reportModel.findOne({"_id":request.body["_id"]}, (err, doc) => {
   if (err) throw err; 
-  doc.set({   
+
+     doc.set({   
 daterec: request.body["daterec"],  
 Gwo: request.body["Gwo"], 
 cwo: request.body["cwo"], 
