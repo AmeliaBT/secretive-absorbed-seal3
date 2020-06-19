@@ -298,11 +298,23 @@ app.post("/add-report", function(request, response, next) {
     next();
  }); 
    
+  userModel.findById(request.session.passport.user, (err, document) => {
+    //if(!err) { response.json({isLogedIn: request.isAuthenticated(), inspname: document.inspname, dep: document.dep, securityLevel: document.securityLevel});  } 
+    //else { console.log("ERROR!: ", err);} 
+    request.sessuser =document.inspname; 
+    next();
+   }
+ 
+ );
+  
+  
    
     },    
   // save with RI number *******************       
 function(request, response) { 
-  
+  console.log(" got 2 items ");
+  console.log(request.nd );
+  console.log(request.sessuser);
     let obj =  {
 reportID:   request.nd, 
 daterec: request.body["daterec"], 
