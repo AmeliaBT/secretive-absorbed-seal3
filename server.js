@@ -275,14 +275,14 @@ uwo: request.body["uwo"]
 //app.post("/add-report",
 //app.get("/now", function(req, res, next){
  app.post("/add-report", function(req, res, next){ 
-  req.time = new Date().toString();
+ // req.time = new Date().toString();
  //User.find({}, function(err, data) { console.log(err, data, data.length);});  
-reportModel.find({}, (err, docs) => {console.log(docs.length);
-                           req.nd=  docs.length;       
-                                    
-                                    }); 
-   
-  next();
+reportModel.find({}, (err, docs) => {
+  console.log(docs.length);
+   req.nd=  docs.length; 
+   req.time = new Date().toString();
+    next();       }); 
+
 },
   function (req, res) {
       //res.send(req.time); 
