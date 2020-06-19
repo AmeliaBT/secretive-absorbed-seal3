@@ -292,20 +292,20 @@ reportModel.find({}, (err, docs) => {
 */
 
 app.post("/add-report", function(request, response, next) {
-  
+/*
+    userModel.findById(request.session.passport.user, (err, document) => {
+        request.sessuser =document.inspname; 
+      console.log(" insp: " + request.sessuser);
+    next();
+   }),
+  */
   reportModel.find({}, (err, docs) => {  
     request.nd =docs.length +100000200 ; 
+    console.log(" N: "  + request.nd)
     next();
  }); 
    
-  userModel.findById(request.session.passport.user, (err, document) => {
-    //if(!err) { response.json({isLogedIn: request.isAuthenticated(), inspname: document.inspname, dep: document.dep, securityLevel: document.securityLevel});  } 
-    //else { console.log("ERROR!: ", err);} 
-    request.sessuser =document.inspname; 
-    next();
-   }
- 
- );
+
   
   
    
