@@ -287,7 +287,8 @@ uwo: request.body["uwo"]
 /* ********************************* */
 //let nDocs=100000200; // starting number 
 //app.use(middleware);
-app.post("/add-report", function(request, response, next) {  
+app.post("/add-report", function(request, response, next) {
+  request.test0=6666;
    //console.log(request.body["reportID"] ) ; //''
   // console.log(request.body["inspector"] ) ; //ok 
  // console.log(request.body["fwo"] ) ;//PN ok
@@ -304,10 +305,13 @@ app.post("/add-report", function(request, response, next) {
 function(request, response) { 
   console.log("hi 4 " + request.body["inspector"]); //ok
  // let nD=
-  //console.log("hi 5 " + request.body["reportID"]);
+  console.log("hi 5 " );
+   console.log(request.test0);   // 6666
+  console.log(request.test); // undefined
+  console.log(request.test2); // 8888 
   
     let obj =  {
-reportID:   request.test, 
+reportID:   request.test8, 
 daterec: request.body["daterec"], 
 inspector: request.body["inspector"], 
 Gwo: request.body["Gwo"], 
