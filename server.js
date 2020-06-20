@@ -489,8 +489,8 @@ app.post("/set-report", function(request, response) {
   console.log(request.body["_id"]);
   
    reportModel.findOne({"_id":request.body["_id"]}, (err, doc) => {
-     //console.log(doc);
-  if (err) throw err.message; 
+     console.log(doc);
+  if (err) throw err; 
   doc.set({   
 daterec: request.body["daterec"],  
 Gwo: request.body["Gwo"], 
@@ -517,7 +517,7 @@ uwo: request.body["uwo"] //photo file
     
     
          doc.save(function (err) {              
-         if (err) throw err.message;
+         if (err) throw err;
             if (!err) console.log('Success!');   
            response.json({error: 0})               
             });
