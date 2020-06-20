@@ -57366,10 +57366,10 @@ this.state = {
       lwo: "", 
       mwo: "",  // Source:
       nwo: "",  // Destination:
-      owo: "",  // Lot Size:
-      pwo: "",  // Sample Size:
-      qwo: "",  // Qty Defective:
-      rwo: "",  // Qty Rejected:
+      owo: 0,  // Lot Size:
+      pwo: 0,  // Sample Size:
+      qwo: 0,  // Qty Defective:
+      rwo: 0,  // Qty Rejected:
       swo: "",  // DMR #:
       two: "",  // Pass / Fail:
       record: "", // comment -note
@@ -57486,11 +57486,14 @@ this.state = {
     
          myLink=response.lwo;
       myLink2=response.uwo;
-         let cwo2, jwo2, owo2, pwo2,  qwo2,  rwo2;
+         let cwo2, jwo2; 
         if(response.cwo == null){ cwo2=""}else {cwo2= response.cwo.slice(0,-14) };
         if(response.jwo == null){ jwo2=""}else {jwo2= response.cwo.slice(0,-14) };
         
         if(response.owo == null){ response.owo=0};
+        if(response.pwo == null){ response.pwo=0};
+        if(response.qwo == null){ response.qwo=0};
+        if(response.rwo == null){ response.rwo=0};
 
              that.setState({
                 ["_id"]: response._id,
