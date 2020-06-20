@@ -485,17 +485,14 @@ dateN.setDate(dateN.getDate() -365);
 /***********************************/
 app.post("/set-report", function(request, response) { 
       userModel.findById(request.session.passport.user, (error, document) => {
-        request.sessuser =document.inspname; 
-        console.log(" hi 1")
-      console.log(" insp: " + request.sessuser);
-  //  next(); 
+        request.sessuser =document.inspname;     
    }),
   
  reportModel.findOne({"_id":request.body["_id"]}, (err, doc) => {
-        
-        console.log(" hi 2");
-        console.log
-  if (err) throw err; 
+ if (err) throw err; 
+     
+  if(request.sessuser === doc.inspector ) {   
+ // original document owner is making the change
   doc.set({   
 daterec: request.body["daterec"],  
 Gwo: request.body["Gwo"], 
@@ -524,6 +521,12 @@ uwo: request.body["uwo"] //photo file
             if (!err) console.log('Success!');   
            response.json({error: 0})               
             });
+        
+        } else{
+          // not original document owner is making the change; do not save
+           response.json({error: "Not saved! -you do not own this report "}) 
+        } 
+        
    });
 });
 
@@ -531,59 +534,7 @@ uwo: request.body["uwo"] //photo file
 
 
 /*****************************************/
-/*
-app.post("/set-report", function(request, response, next) {
-   userModel.findById(request.session.passport.user, (err, document) => {
-        request.sessuser =document.inspname; 
-      console.log(" insp: " + request.sessuser);
-    
-   });
-  
- reportModel.findOne({"_id":request.body["_id"]}, (err, doc) => {
-     if (err) throw err; 
-   
-      next();
- })
-},
-function(request, response) {  
-  
-    let obj =  {
-_id:request.body["_id"],
-daterec: request.body["daterec"],  
-Gwo: request.body["Gwo"], 
-cwo: request.body["cwo"], 
-dwo: request.body["dwo"], 
-ewo: request.body["ewo"], 
-fwo: request.body["fwo"], 
-hwo: request.body["hwo"], 
-iwo: request.body["iwo"], 
-jwo: request.body["jwo"], 
-kwo: request.body["kwo"],
-lwo: request.body["lwo"], //photo string
-mwo: request.body["mwo"], 
-nwo: request.body["nwo"], 
-owo: request.body["owo"], 
-pwo: request.body["pwo"], 
-qwo: request.body["qwo"], 
-rwo: request.body["rwo"], 
-swo: request.body["swo"], 
-two: request.body["two"], 
-record: request.body["record"],
-uwo: request.body["uwo"] //photo file   
-  };   
-  
-  
-         obj.save(function (err) {              
-        // if (err) throw err;
-            if (!err) console.log('Success!');   
-           response.json({error: 0})               
-            });
 
-
-});
-
-
-*/
 
 
 
