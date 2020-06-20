@@ -483,12 +483,46 @@ dateN.setDate(dateN.getDate() -365);
      );
 });
 /***********************************/
+
+
+app.post("/set-report", function(request, response, next) {
+   userModel.findById(request.session.passport.user, (err, document) => {
+        request.sessuser =document.inspname; 
+      console.log(" insp: " + request.sessuser);
+    
+   });
+  
+ reportModel.findOne({"_id":request.body["_id"]}, (err, doc) => {
+     if (err) throw err; 
+ })
+function(request, response) {   
+    let obj =  {
+ 
+daterec: request.body["daterec"],  
+
+uwo: request.body["uwo"] //photo file   
+  });   
+  
+  
+         doc.save(function (err) {              
+         if (err) throw err;
+            if (!err) console.log('Success!');   
+           response.json({error: 0})               
+            });
+//});
+
+});
+
+
+
+
+
+
+
 /***********************************/
 
-app.post("/set-report", function(request, response, next) {  
-
+app.post("/set-report", function(request, response) { 
  reportModel.findOne({"_id":request.body["_id"]}, (err, doc) => {
-     console.log(doc);
   if (err) throw err; 
   doc.set({   
 daterec: request.body["daterec"],  
@@ -512,16 +546,12 @@ swo: request.body["swo"], 
 two: request.body["two"], 
 record: request.body["record"],
 uwo: request.body["uwo"] //photo file   
-  });
-    
-    
+  });   
          doc.save(function (err) {              
          if (err) throw err;
             if (!err) console.log('Success!');   
            response.json({error: 0})               
             });
-     
-      
    });
 });
 
