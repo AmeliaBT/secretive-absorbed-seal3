@@ -486,7 +486,10 @@ dateN.setDate(dateN.getDate() -365);
 /***********************************/
 
 app.post("/set-report", function(request, response) {  
+  console.log(request.body["_id"]);
+  
    reportModel.findOne({"_id":request.body["_id"]}, (err, doc) => {
+     console.log(doc);
   if (err) throw err; 
   doc.set({   
 daterec: request.body["daterec"],  
@@ -511,12 +514,12 @@ two: request.body["two"], 
 record: request.body["record"],
 uwo: request.body["uwo"] //photo file   
   });
-    
-     doc.save(function (err) {
-              
+    /*
+         doc.save(function (err) {              
          if (err) throw err;
            response.json({error: 0})               
             });
+     */
       
    });
 });
