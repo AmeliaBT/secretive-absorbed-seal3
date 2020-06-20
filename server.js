@@ -227,69 +227,8 @@ app.post("/is-loged-in", function(request, response) {
 
 
 /***********************************/
-/*
-let nDocs; 
-app.post("/add-report", function(request, response,  next) {
-reportModel.find({}, (err, docs) => {
-  if (err) throw err;        
- nDocs= docs.length +100000200 ;
-console.log(" nDoc1= "  +nDocs) ;  
-let obj =  {
-reportID:  nDocs, 
-daterec: request.body["daterec"], 
-inspector: request.body["inspector"], 
-Gwo: request.body["Gwo"], 
-cwo: request.body["cwo"], 
-dwo: request.body["dwo"], 
-ewo: request.body["ewo"], 
-fwo: request.body["fwo"], 
-hwo: request.body["hwo"], 
-iwo: request.body["iwo"], 
-jwo: request.body["jwo"], 
-kwo: request.body["kwo"],
-lwo: request.body["lwo"], 
-mwo: request.body["mwo"], 
-nwo: request.body["nwo"], 
-owo: request.body["owo"], 
-pwo: request.body["pwo"], 
-qwo: request.body["qwo"], 
-rwo: request.body["rwo"], 
-swo: request.body["swo"], 
-two: request.body["two"], 
-record: request.body["record"],
-uwo: request.body["uwo"] 
-}; 
-    let report = new reportModel(obj);          
-            report.save(function (err) {
-             
-              if (!err) console.log('Success!');
-              response.json({"error": 0});              
-            });
-    });
-});
 
-*/
 /* ********************************* */
-//let nDocs=100000200; // starting number 
-/*
- app.post("/add-report", function(req, res, next){ 
- 
-reportModel.find({}, (err, docs) => {
-  console.log(docs.length);
-   req.nd=  docs.length; 
-   req.time = new Date().toString();
-    next();       }); 
-
-},
-  function (req, res) {
-      //res.send(req.time); 
-  console.log("hi now ");
-  console.log({'time': req.time})
-   console.log({'time2': req.nd})
-    res.json({'time': req.time});
-  }
-);
-*/
 
 app.post("/add-report", function(request, response, next) {
 /*
@@ -304,11 +243,7 @@ app.post("/add-report", function(request, response, next) {
     //console.log(" N: "  + request.nd)
     next();
  }); 
-   
-
-  
-  
-   
+    
     },    
   // save with RI number *******************       
 function(request, response) {   
@@ -523,8 +458,8 @@ uwo: request.body["uwo"] //photo file
             });
         
         } else{
-          // not original document owner is making the change; do not save
-           response.json({error: "Not saved! -you do not own this report "}) 
+          // not original document owner is making the change; do not save          
+          response.json({"error": "inspname"});
         } 
         
    });
@@ -534,52 +469,6 @@ uwo: request.body["uwo"] //photo file
 
 
 /*****************************************/
-
-
-
-
-
-/*  original **********************************/
-/*
-app.post("/set-report", function(request, response) { 
- reportModel.findOne({"_id":request.body["_id"]}, (err, doc) => {
-  if (err) throw err; 
-  doc.set({   
-daterec: request.body["daterec"],  
-Gwo: request.body["Gwo"], 
-cwo: request.body["cwo"], 
-dwo: request.body["dwo"], 
-ewo: request.body["ewo"], 
-fwo: request.body["fwo"], 
-hwo: request.body["hwo"], 
-iwo: request.body["iwo"], 
-jwo: request.body["jwo"], 
-kwo: request.body["kwo"],
-lwo: request.body["lwo"], //photo string
-mwo: request.body["mwo"], 
-nwo: request.body["nwo"], 
-owo: request.body["owo"], 
-pwo: request.body["pwo"], 
-qwo: request.body["qwo"], 
-rwo: request.body["rwo"], 
-swo: request.body["swo"], 
-two: request.body["two"], 
-record: request.body["record"],
-uwo: request.body["uwo"] //photo file   
-  });   
-         doc.save(function (err) {              
-         if (err) throw err;
-            if (!err) console.log('Success!');   
-           response.json({error: 0})               
-            });
-   });
-});
-
-*/
-
-
-
-/***********************************/
 
 /***********************************/
 /***********************************/
