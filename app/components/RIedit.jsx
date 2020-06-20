@@ -147,9 +147,11 @@ this.state = {
     
          myLink=response.lwo;
       myLink2=response.uwo;
-         let cwo2, jwo2;
+         let cwo2, jwo2, owo2, pwo2,  qwo2,  rwo2;
         if(response.cwo == null){ cwo2=""}else {cwo2= response.cwo.slice(0,-14) };
         if(response.jwo == null){ jwo2=""}else {jwo2= response.cwo.slice(0,-14) };
+        
+        
              that.setState({
                 ["_id"]: response._id,
             ["reportID"]: response.reportID,
