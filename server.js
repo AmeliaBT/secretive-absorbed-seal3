@@ -300,7 +300,7 @@ app.post("/add-report", function(request, response, next) {
    });*/
 
   reportModel.find({}, (err, docs) => {  
-    request.nd =docs.length +100000200 ; 
+    request.nd =(docs.length +100000200 ).toString(); 
     //console.log(" N: "  + request.nd)
     next();
  }); 
