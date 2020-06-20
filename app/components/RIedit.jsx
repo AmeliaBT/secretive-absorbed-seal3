@@ -151,7 +151,8 @@ this.state = {
         if(response.cwo == null){ cwo2=""}else {cwo2= response.cwo.slice(0,-14) };
         if(response.jwo == null){ jwo2=""}else {jwo2= response.cwo.slice(0,-14) };
         
-        
+        if(response.owo == null){ response.owo=0};
+
              that.setState({
                 ["_id"]: response._id,
             ["reportID"]: response.reportID,
