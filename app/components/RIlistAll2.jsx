@@ -207,7 +207,7 @@ class RIlistAll2 extends React.Component {
             <br />
           </div> </Col>
           <Col xs={10} > <div   >
-            <Table >
+            <Table ><tbody>  
               <Row>
                 <Col sm={1}> <b>RI </b>  </Col>
                 <Col sm={1} ><b> Inspector</b> </Col>
@@ -220,7 +220,7 @@ class RIlistAll2 extends React.Component {
                 <Col sm={1} > <b>View </b> </Col>
               </Row>
               {this.state.reports}
-            </Table>
+              </tbody>   </Table>
             <Modal show={this.state.show} onHide={this.handleClose}>  </Modal>
 
           </div>

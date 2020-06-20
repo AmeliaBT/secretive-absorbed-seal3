@@ -11784,7 +11784,7 @@ class RIlistItemAll extends React.Component {
 
         React.createElement("div", {className: "table-row-line"}, 
 
-          React.createElement(Row, null, 
+          React.createElement(Row, null, React.createElement("tbody", null, 
             React.createElement(Col, {sm: 1}, this.state.reportID, " "), 
             React.createElement(Col, {sm: 1}, " ", this.state.inspector), 
 
@@ -11798,7 +11798,7 @@ class RIlistItemAll extends React.Component {
               React.createElement(Button, {bsSize: "xsmall"}, 
                 React.createElement(Glyphicon, {glyph: "eye-open"}), "   ")), " ")
 
-          )
+            ), "   ")
         )
 
       )
@@ -56717,7 +56717,7 @@ class RIlistItem extends React.Component {
       React.createElement("div", null, 
         React.createElement("div", {className: "table-row-line"}, " "), 
 
-        React.createElement(Row, null, 
+        React.createElement(Row, null, React.createElement("tbody", null, 
           React.createElement(Col, {sm: 1}, "#", this.state.reportID, " "), 
           React.createElement(Col, {sm: 1}, this.state.inspector, " "), 
           React.createElement(Col, {sm: 1}, " ", React.createElement("p", {style: { fontSize: 12}}, " ", this.state.fwo, " "), " "), 
@@ -56732,7 +56732,7 @@ class RIlistItem extends React.Component {
             React.createElement(Button, {bsSize: "xsmall"}, React.createElement(Glyphicon, {glyph: "edit"}), " ")), " ")
 
 
-        )
+          ), "   ")
 
       )
     );
@@ -57029,7 +57029,7 @@ class RIlistItemMonth extends React.Component {
   render() {
     return (
       React.createElement("div", null, 
-        React.createElement("div", {className: "table-row-line"}, " ", React.createElement(Row, null, 
+        React.createElement("div", {className: "table-row-line"}, " ", React.createElement(Row, null, React.createElement("tbody", null, 
           React.createElement(Col, {sm: 3}, this.state.month_year, " "), 
           React.createElement(Col, {sm: 1}, " ", this.state.lotT), 
           React.createElement(Col, {sm: 1}, " ", this.state.lotA), 
@@ -57040,7 +57040,7 @@ class RIlistItemMonth extends React.Component {
           React.createElement(Col, {sm: 1}, " ", this.state.def), 
           React.createElement(Col, {sm: 1}, " ", this.state.defR)
 
-        ), " ")
+          ), "   "), " ")
       )
     );
   }
@@ -57261,7 +57261,7 @@ class RIlistAll2 extends React.Component {
             React.createElement("br", null)
           ), " "), 
           React.createElement(Col, {xs: 10}, " ", React.createElement("div", null, 
-            React.createElement(Table, null, 
+            React.createElement(Table, null, React.createElement("tbody", null, 
               React.createElement(Row, null, 
                 React.createElement(Col, {sm: 1}, " ", React.createElement("b", null, "RI "), "  "), 
                 React.createElement(Col, {sm: 1}, React.createElement("b", null, " Inspector"), " "), 
@@ -57274,7 +57274,7 @@ class RIlistAll2 extends React.Component {
                 React.createElement(Col, {sm: 1}, " ", React.createElement("b", null, "View "), " ")
               ), 
               this.state.reports
-            ), 
+              ), "   "), 
             React.createElement(Modal, {show: this.state.show, onHide: this.handleClose}, "  ")
 
           )
@@ -60054,7 +60054,7 @@ const React = __webpack_require__(0);
 const { Row, Col } = __webpack_require__(9);
 class TableHead extends React.Component {
    render() {
-      return (React.createElement("div", null, " ", React.createElement(Row, null, 
+      return (React.createElement("div", null, " ", React.createElement(Row, null, React.createElement("tbody", null, 
          React.createElement(Col, {sm: 1}, " ", React.createElement("b", null, "RI "), "  "), 
          React.createElement(Col, {sm: 1}, React.createElement("b", null, " Inspector"), " "), 
          React.createElement(Col, {sm: 1}, React.createElement("b", null, " Part Number ")), 
@@ -60064,7 +60064,7 @@ class TableHead extends React.Component {
          React.createElement(Col, {sm: 1}, " ", React.createElement("b", null, "Lot Size "), " "), 
          React.createElement(Col, {sm: 2}, " ", React.createElement("b", null, "Comment"), " "), 
          React.createElement(Col, {sm: 1}, " ", React.createElement("b", null, "View "), " ")
-      ), " "))
+          ), "  "), " "))
    }
 
 }

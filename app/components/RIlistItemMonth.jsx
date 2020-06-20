@@ -26,7 +26,7 @@ class RIlistItemMonth extends React.Component {
   render() {
     return (
       <div>
-        <div className="table-row-line"> <Row >
+        <div className="table-row-line"> <Row ><tbody>  
           <Col sm={3} >{this.state.month_year} </Col>
           <Col sm={1} > {this.state.lotT}</Col>
           <Col sm={1} > {this.state.lotA}</Col>
@@ -37,7 +37,7 @@ class RIlistItemMonth extends React.Component {
           <Col sm={1} > {this.state.def}</Col>
           <Col sm={1} > {this.state.defR}</Col>
 
-        </Row> </div>
+          </tbody>   </Row> </div>
       </div>
     );
   }

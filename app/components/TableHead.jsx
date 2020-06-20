@@ -3,7 +3,7 @@ const React = require('react');
 const { Row, Col } = require('react-bootstrap');
 class TableHead extends React.Component {
    render() {
-      return (<div> <Row>
+      return (<div> <Row><tbody>  
          <Col sm={1}> <b>RI </b>  </Col>
          <Col sm={1} ><b> Inspector</b> </Col>
          <Col sm={1} ><b> Part Number </b></Col>
@@ -13,7 +13,7 @@ class TableHead extends React.Component {
          <Col sm={1} > <b>Lot Size </b> </Col>
          <Col sm={2} > <b>Comment</b> </Col>
          <Col sm={1} > <b>View </b> </Col>
-      </Row> </div>)
+          </tbody>  </Row> </div>)
    }
 
 }
