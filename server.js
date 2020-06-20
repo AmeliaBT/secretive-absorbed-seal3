@@ -483,17 +483,18 @@ dateN.setDate(dateN.getDate() -365);
      );
 });
 /***********************************/
-app.post("/set-report", function(request, response, next) { 
-      userModel.findById(request.session.passport.user, (err, document) => {
+app.post("/set-report", function(request, response) { 
+      userModel.findById(request.session.passport.user, (error, document) => {
         request.sessuser =document.inspname; 
         console.log(" hi 1")
       console.log(" insp: " + request.sessuser);
-    next(); 
+  //  next(); 
    }),
   
  reportModel.findOne({"_id":request.body["_id"]}, (err, doc) => {
         
-        console.log(" hi 2")
+        console.log(" hi 2");
+        console.log
   if (err) throw err; 
   doc.set({   
 daterec: request.body["daterec"],  
@@ -530,6 +531,7 @@ uwo: request.body["uwo"] //photo file
 
 
 /*****************************************/
+/*
 app.post("/set-report", function(request, response, next) {
    userModel.findById(request.session.passport.user, (err, document) => {
         request.sessuser =document.inspname; 
@@ -581,13 +583,13 @@ uwo: request.body["uwo"] //photo file
 });
 
 
-
+*/
 
 
 
 
 /*  original **********************************/
-
+/*
 app.post("/set-report", function(request, response) { 
  reportModel.findOne({"_id":request.body["_id"]}, (err, doc) => {
   if (err) throw err; 
@@ -622,7 +624,7 @@ uwo: request.body["uwo"] //photo file
    });
 });
 
-
+*/
 
 
 
