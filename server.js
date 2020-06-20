@@ -485,10 +485,9 @@ dateN.setDate(dateN.getDate() -365);
 /***********************************/
 /***********************************/
 
-app.post("/set-report", function(request, response) {  
-  console.log(request.body["_id"]);
-  
-   reportModel.findOne({"_id":request.body["_id"]}, (err, doc) => {
+app.post("/set-report", function(request, response, next) {  
+
+ reportModel.findOne({"_id":request.body["_id"]}, (err, doc) => {
      console.log(doc);
   if (err) throw err; 
   doc.set({   
