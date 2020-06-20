@@ -56954,7 +56954,7 @@ React.createElement(Row, null,
   
   React.createElement(Col, {xs: 7}, " ", React.createElement("div", null, 
 React.createElement(Table, {className: "myForm"}, 
-              
+       React.createElement("tbody", null, 
             React.createElement(Row, null, 
               React.createElement(Col, {sm: 3}, React.createElement("b", null, " Year- Month"), " "), 
               React.createElement(Col, {sm: 1}, React.createElement("b", null, " Lot T ")), 
@@ -56967,6 +56967,7 @@ React.createElement(Table, {className: "myForm"},
              
            ), 
         this.state.reportsM
+  )
   ), 
     
          React.createElement(Modal, {show: this.state.show, onHide: this.handleClose}, "  ")

@@ -191,7 +191,7 @@ QtyDef - number of items defective<br/>
   
   <Col xs={7} > <div   >        
 <Table className="myForm">  
-              
+       <tbody>          
             <Row>             
               <Col sm={3} ><b> Year- Month</b> </Col> 
               <Col sm={1} ><b> Lot T </b></Col> 
@@ -204,6 +204,7 @@ QtyDef - number of items defective<br/>
              
            </Row>
         {this.state.reportsM}
+  </tbody>   
   </Table> 
     
          <Modal show={this.state.show} onHide={this.handleClose}>  </Modal>
