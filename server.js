@@ -514,14 +514,14 @@ two: request.body["two"], 
 record: request.body["record"],
 uwo: request.body["uwo"] //photo file   
   });
-     console.log("ready to save doc below");
-     console.log(doc);
-    /*
+    
+    
          doc.save(function (err) {              
-         if (err) throw err;
+        // if (err) throw err;
+            if (!err) console.log('Success!');   
            response.json({error: 0})               
             });
-     */
+     
       
    });
 });
