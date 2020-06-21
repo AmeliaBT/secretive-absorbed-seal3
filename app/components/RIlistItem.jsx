@@ -38,7 +38,7 @@ class RIlistItem extends React.Component {
       <div>
         <div className="table-row-line"> </div>
 
-        <Row ><tbody>  
+        <Row >tbody>  
           <Col sm={1} >#{this.state.reportID} </Col>
           <Col sm={1} >{this.state.inspector} </Col>
           <Col sm={1} > <p style={{ fontSize: 12 }}> {this.state.fwo} </p> </Col>
@@ -53,7 +53,7 @@ class RIlistItem extends React.Component {
             <Button bsSize="xsmall"  ><Glyphicon glyph="edit" /> </Button></Link> </Col>
 
 
-          </tbody>   </Row>
+         </Row>
 
       </div>
     );

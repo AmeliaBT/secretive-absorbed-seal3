@@ -39,7 +39,7 @@ class RIlistItemAll extends React.Component {
 
         <div className="table-row-line">
 
-          <Row ><tbody>  
+          <Row > 
             <Col sm={1} >{this.state.reportID} </Col>
             <Col sm={1} > {this.state.inspector}</Col>
 
@@ -53,7 +53,7 @@ class RIlistItemAll extends React.Component {
               <Button bsSize="xsmall"  >
                 <Glyphicon glyph="eye-open" />   </Button></Link> </Col>
 
-            </tbody>   </Row>
+            </Row>
         </div>
 
       </div>
