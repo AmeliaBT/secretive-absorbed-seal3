@@ -1,20 +1,13 @@
 // Edit  (no Filter); Inspector Reports only
 const React = require('react');
-const Link = require('react-router-dom').Link
-// style for RIlist
 
 const style = require('../styles/HomePage');
 // react-bootstrap
-const {Table ,filterFactory, Row, Col} = require('react-bootstrap');
+const {Table , Row, Col} = require('react-bootstrap');
 // other components and etc
-//import BootstrapTable from 'react-bootstrap-table-next';
-//import filterFactory, { textFilter } from 'react-bootstrap-table2-filter';
-
 const Header = require('./Header');
-
 const RIlistItem = require('./RIlistItem');
 
-/* the page that shows all RI reports */
 class RIlist extends React.Component {
   constructor(props) {
     super(props);
@@ -26,13 +19,12 @@ class RIlist extends React.Component {
     
    this.handleShow = this.handleShow.bind(this);
     this.handleClose = this.handleClose.bind(this);
-   // this.handleShowModal = this.handleShowModal.bind(this);  
+   
   }
    /***********************/
    // handlers
    /***********************/
  
-  /***********************/
    handleClose() {
     this.setState({ show: false });
   }
@@ -84,29 +76,23 @@ class RIlist extends React.Component {
   render() {
     return (
       <div>
-        <Header/>       
-         <Table className="myForm">
-            <Row>
-        
-             <Col sm={1}> <b>RI </b>  </Col> 
-              <Col sm={1} ><b> Inspector</b> </Col> 
-                <Col sm={1} > <b>PN </b></Col> 
-                <Col sm={2} ><b>Description </b></Col> 
-               <Col  sm={1} > <b>Date Inspected </b></Col> 
-              <Col  sm={1} ><b>Pass / Fail  </b></Col> 
-               <Col sm={1} > <b>Lot Size </b></Col> 
-              <Col sm={3} > <b>Comment</b> </Col> 
-              <Col sm={1} ><b>Edit  </b></Col> 
-          
-           
-           </Row>
-       
-        
-        {this.state.reports}          
+        <Header />
+        <Table className="myForm">
+          <Row>
+            <Col sm={1}> <b>RI </b>  </Col>
+            <Col sm={1} ><b> Inspector</b> </Col>
+            <Col sm={1} > <b>PN </b></Col>
+            <Col sm={2} ><b>Description </b></Col>
+            <Col sm={1} > <b>Date Inspected </b></Col>
+            <Col sm={1} ><b>Pass / Fail  </b></Col>
+            <Col sm={1} > <b>Lot Size </b></Col>
+            <Col sm={3} > <b>Comment</b> </Col>
+            <Col sm={1} ><b>Edit  </b></Col>
 
-       </Table> 
-       
-     
+          </Row>
+
+          {this.state.reports}
+        </Table>
       </div>
     );
   }

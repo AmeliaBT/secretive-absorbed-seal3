@@ -1,8 +1,8 @@
 // Charts
 const React = require('react');
-const Link = require('react-router-dom').Link
+//const Link = require('react-router-dom').Link
 const style = require('../styles/HomePage');
-const {Table , Grid, Row, Col, Modal} = require('react-bootstrap');
+const {Table ,Row, Col, Modal} = require('react-bootstrap');
 const Header = require('./Header');
 const FilterA =require('./FilterA');
 const RIlistItemAll = require('./RIlistItemAll');
@@ -13,9 +13,9 @@ let arrayOfRIs1= [  ["Date", "Lot Size"]];
 let arrayOfRIs2= [  ["Date", "Qty Tested", "Qty Fail"]];
 let arrayOfRIs3= ["Date"];
 let uniqueYM;
-let MyChartRI1;
-let MyChartRI2;
-let arrayOfYM;
+//let MyChartRI1;
+//let MyChartRI2;
+//let arrayOfYM;
 let arrLotYM;
 let arrayOfRIsPF=[];
  
@@ -117,7 +117,7 @@ class ChartA extends React.Component {
            let myLot= el.owo; 
            let qtyTested= el.pwo; 
            let qtyFail= el.qwo; 
-            let qtyRejected= el.rwo; 
+          //  let qtyRejected= el.rwo; 
            let pass_fail= el.two; 
             arrayOfRIs1.push([myDate, myLot ]) ;
         arrayOfRIs2.push([myDate,  qtyTested, qtyFail]) ; 
@@ -350,38 +350,3 @@ class ChartA extends React.Component {
 
 module.exports = ChartA;
        
-// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
-
-  //  timeline: {  groupByRowLabel: true },
-              //  hAxis: {title: "Date Inspected",  format: 'MMM/yyyy'},
-  // hAxis: { title: "Lot Qty", viewWindow: { min: 0, max: 15 } },
-//  vAxis: { title: "Date tested", viewWindow: { min: 0, max: 15 } },
-   //  gridlines: {color: 'red'},
-//  gridlines: {count: 15}
-
-        /* 
-          <ChartA1 />
-        
-        Records._ID,
-	     C1, //dateInspected cwo
-	     T1, //pass fail	        
-	     O1, //qty lot
-	     P1, //qty tested
-	     Q1, //qty fail
-	     R1, //qty rejected
-	     CREATE_DATE, //"created"
-       
-       
-       
-       */
-    {/* <RIlistItemAll  key={el.reportID}
-           reportnumber={el.reportID}  
-           inspector={el.inspector}
-             fwo={el.fwo}     
-           Gwo={el.Gwo}
-           jwo={el.jwo}
-           two={el.two}
-           owo={el.owo}
-           record={el.record}
-           lwo ={el.lwo}       
-            /> */}

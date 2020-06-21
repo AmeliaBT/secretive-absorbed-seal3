@@ -1,9 +1,8 @@
 const React = require('react');
 const Link = require('react-router-dom').Link
-// style for HEADER
 const style = require('../styles/Header');
 // react-bootstrap
-const {Nav, Navbar, NavItem, NavDropdown, MenuItem} = require('react-bootstrap');
+const {Nav, Navbar, NavItem} = require('react-bootstrap');
 
 /* the header component for navbar */
 class Header extends React.Component {
@@ -15,7 +14,8 @@ class Header extends React.Component {
       listLink: "",
       listLinkAll: "",
       listLinkAll2: "",
-      chartLinkA:""
+      chartLinkA:"",
+      securityLevel: ""
     };
     this.handleLogOut = this.handleLogOut.bind(this);
   }
@@ -57,38 +57,104 @@ class Header extends React.Component {
           return;
         }
        let response = JSON.parse(this.responseText);
+         
+
         if(response.isLogedIn == true) {
-           that.setState({
-          ["navBtns"]: <Nav pullLeft className="link span">
-                       <NavItem className='span'> <Link  to='/homepage' className="link">{response.inspname}'s RI Form</Link> </NavItem> 
-                      <NavItem className='span'> <Link  to='/up-many-records' className="link">Admin</Link> </NavItem> 
+            /* Show screen based on the Security level *********/   
+          let securityLevel = response.securityLevel; 
+         
+     switch (securityLevel) {
+      case 1:
+         // user
+     
+          that.setState({
+          ["navBtns"]: <Nav pullLeft className="link span">                    
+                      <NavItem className='span'> <Link  to='/SignUpNewPW' className="link"><p  className="link">Change PW </p></Link> </NavItem> 
                        <NavItem className='span'> <div  onClick={that.handleLogOut} className="link">Log out</div> </NavItem>
                       </Nav>,
             ["reportsLink"]: "/reports",
-             ["listLink"]: "/list",
+            // ["listLink"]: "/list",
+            ["listLinkAll"]: "/list-all",
+              ["listLinkAll2"]: "/list-all2",
+               ["chartLinkA"]: "/chartA",
+            securityLevel: securityLevel
+           });
+        break;
+      case 2:
+         // Manager
+          that.setState({
+          ["navBtns"]: <Nav pullLeft className="link span">
+                       <NavItem className='span'> <Link  to='/homepage' className="link">{response.inspname}'s RI Form</Link> </NavItem> 
+                         <NavItem className='span'> <Link  to='/list' className="link">Edit Report </Link> </NavItem> 
+                       <NavItem className='span'> <Link  to='/signup2' className="link"><p  className="link">Add User</p></Link> </NavItem> 
+                       <NavItem className='span'> <Link  to='/SignUpNewPW' className="link"><p  className="link">Change PW </p></Link> </NavItem> 
+                       <NavItem className='span'> <div  onClick={that.handleLogOut} className="link">Log out</div> </NavItem>
+                      </Nav>,
+            ["reportsLink"]: "/reports",
+            // ["listLink"]: "/list",
              ["listLinkAll"]: "/list-all",
                 ["listLinkAll2"]: "/list-all2",
-                ["chartLinkA"]: "/chartA"
+                ["chartLinkA"]: "/chartA",
+            securityLevel: securityLevel
            });
+         
+       
+        break;
+      case 3:   
+         //top level Admin
+        
+          that.setState({
+          ["navBtns"]: <Nav pullLeft className="link span">
+                       <NavItem className='span'> <Link  to='/homepage' className="link">{response.inspname}'s RI Form</Link> </NavItem> 
+                       <NavItem className='span'> <Link  to='/list' className="link">Edit Report </Link> </NavItem> 
+                       <NavItem className='span'> <Link  to='/up-many-records' className="link">Admin</Link> </NavItem> 
+                       <NavItem className='span'> <Link  to='/signup' className="link"><p  className="link">Add User</p></Link> </NavItem> 
+                      <NavItem className='span'> <Link  to='/SignUpNewPW' className="link"><p  className="link">Change PW </p></Link> </NavItem> 
+                       <NavItem className='span'> <div  onClick={that.handleLogOut} className="link">Log out</div> </NavItem>
+                      </Nav>,
+            ["reportsLink"]: "/reports",
+            // ["listLink"]: "/list",
+             ["listLinkAll"]: "/list-all",
+                ["listLinkAll2"]: "/list-all2",
+                ["chartLinkA"]: "/chartA",
+            securityLevel: securityLevel
+           });
+        break;
+ default:
+         // visitor
+        
+        that.setState({
+          ["navBtns"]: <Nav pullLeft className="link span">
+              
+                        <NavItem className='span'>
+                          <Link to='/login' className="link"><p  className="link"> Log in </p></Link>
+                        </NavItem>
+                      </Nav>
+            
+            
+           });   
+     
+    }         
+ /********************/
+       
         }
         else {
           that.setState({
           ["navBtns"]: <Nav pullLeft className="link span">
-                        <NavItem className='span'>
-                           <Link  to='/signup' className="link"><p  className="link">Sign up</p></Link>
-                        </NavItem> 
+             
                         <NavItem className='span'>
                           <Link to='/login' className="link"><p  className="link"> Log in </p></Link>
                         </NavItem>
-                      </Nav>,
-          ["reportsLink"]: "/login"
+                      </Nav>
+            
+            
            });
          }
         }
   }
 
   /***********************/
-   /************  inverse    ***********/
+ 
   render() {
     return (
       <div  className="link span">
@@ -106,11 +172,7 @@ class Header extends React.Component {
           <Navbar.Brand >           
             <Link to={this.state.reportsLink} ><p  className="link">Defects</p></Link>            
           </Navbar.Brand>
-          
-          <Navbar.Brand >           
-            <Link to={this.state.listLink} ><p  className="link">Editing   </p></Link>            
-          </Navbar.Brand>
-          
+        
    
   
           
@@ -127,17 +189,3 @@ class Header extends React.Component {
 
 module.exports = Header;
                     
-
-
-{/*   <Link  to='/homepage' className="link">Welcome Inspector, {response.nickname}{response.name} {response.inspector} </Link>*/}  
-
-/* 
-
- <Link  to='/signup' className="link"><h5>^Sign^ [uP]</h5></Link>
-                        </NavItem> 
-                        <NavItem componentClass='span'>
-                          <Link to='/login' className="link"><h5> ^Log^ [iN] </h5></Link>
-
-
-                            <div className="link" onClick={that.handleLogOut}>^Log^ [ouT]</div>
-*/

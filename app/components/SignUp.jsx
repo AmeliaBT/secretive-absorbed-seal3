@@ -1,13 +1,9 @@
 const React = require('react');
-const Link = require('react-router-dom').Link
-// style for BOOKS
 const style = require('../styles/SignUp');
-// other components and etc
 const Header = require('./Header');
 // react-bootstrap
 const {Form, FormGroup, Col, FormControl, Button} = require('react-bootstrap');
 
-/* the books page that shows all books */
 class SignUp extends React.Component {
   constructor(props) {
     super(props);
@@ -15,7 +11,8 @@ class SignUp extends React.Component {
       email: "",
       password: "",
       inspname: "",
-      dep: ""
+      dep: "",
+      securityLevel:""
     };
     this.handleChangeValue = this.handleChangeValue.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -35,10 +32,11 @@ class SignUp extends React.Component {
       xhr.open('POST', '/sign-up', true);
       xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
       
-      
+      //securityLevel
       let body = 'email=' + encodeURIComponent(this.state.email) +
       '&password=' + encodeURIComponent(this.state.password) +
       '&inspname=' + encodeURIComponent(this.state.inspname) +
+      '&securityLevel=' + encodeURIComponent(this.state.securityLevel) +
       '&dep=' + encodeURIComponent(this.state.dep);
 
 
@@ -52,13 +50,14 @@ class SignUp extends React.Component {
         }
         let response = JSON.parse(this.responseText);
         if(response.error == 0) {
-         // window.location.href = "/books";
+         
          window.location.href = "/reports";
           that.setState({
           ["email"]: "Succsess",
           ["password"]: "Succsess",
           ["inspname"]: "Success",
-          ["dep"]: "Success"
+          ["dep"]: "Success",
+          ["securityLevel"]:"Success"
            });
         }
         else {
@@ -108,11 +107,20 @@ class SignUp extends React.Component {
                 <Col sm={10}>
                   <FormControl type="text" name="dep" required value={this.state.dep} placeholder="Department" onChange={this.handleChangeValue} />
                 </Col>
+                 </FormGroup>
+              <FormGroup controlId="formHorizontalLevel">
+                <Col className="form-labelSU" sm={2}>
+                 Security Level
+                </Col>               
+                
+                <Col sm={10}>
+                  <FormControl type="text" name="securityLevel" required value={this.state.securityLevel} placeholder=" Security Level" onChange={this.handleChangeValue} />
+                </Col>
               </FormGroup>
 
               <FormGroup>
                 <Col smOffset={2} sm={10}>
-                  <Button className="btn btn-primary btn-block" type="submit"><i className="fa fa-paper-plane"></i> Sign up</Button>
+                  <Button className="btn btn-primary btn-block" type="submit"><i className="fa fa-paper-plane"></i> Add User</Button>
                 </Col>
               </FormGroup>
           </Form>

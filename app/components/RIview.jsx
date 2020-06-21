@@ -1,11 +1,8 @@
 //shows requested RI Report (form with photos); editing and saving are disabled 
 const React = require('react');
-const ReactDOM = require('react-dom');
-const Link = require('react-router-dom').Link
-//const style = require('../styles/Profile');
 const Header = require('./Header');
 const RIphoto2 = require('./RIphoto2');
-const {Grid, Row, Col, FormControl, ControlLabel, FormGroup, HelpBlock, Tabs, Tab, Form, Button} = require('react-bootstrap');
+const {Grid, Row, Col, FormControl, ControlLabel, FormGroup} = require('react-bootstrap');
 let myLink, myLink2;
 class RIview extends React.Component {
   
@@ -39,58 +36,58 @@ this.state = {
        
   }
   componentWillMount() {
-     // get report data
-      let that = this;
-      const xhr = new XMLHttpRequest();
-      let repPath= this.props.location.pathname;
-    let pageID=  repPath.substring(13); 
-   xhr.open('POST',"/report-edit" , true); 
-      xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');    
- let body = 'reportID=' + encodeURIComponent(pageID) ;
-      xhr.send(body);
-      xhr.onreadystatechange = function() {
-        if (this.readyState != 4) return;
-        if (this.status != 200) {
-          alert( 'error: ' + (this.status ? this.statusText : 'request has not been set') );
-          return;
-        }
-        let response = JSON.parse(this.responseText);               
-     // if(response.isLogedIn == true) {
-      myLink=response.lwo;// props for photos
-      myLink2=response.uwo;
-        
-        let cwo2, jwo2;
-        if(response.cwo == null){ cwo2=""}else {cwo2= response.cwo.slice(0,-14) };
-        if(response.jwo == null){ jwo2=""}else {jwo2= response.cwo.slice(0,-14) };
-        
-             that.setState({
-                ["_id"]: response._id,
-            ["reportID"]: response.reportID,
-             ["inspector"]  : response.inspector ,
-              ["daterec"]  : response.daterec,  
-                 ["Gwo"]: response.Gwo,
-                 ["cwo"]  : cwo2 , //response.cwo.slice(0,-14) ,    
-                 ["dwo"]  : response.dwo ,    
-                 ["ewo"]  : response.ewo ,    
-            ["fwo"]: response.fwo,
-           ["hwo"]  : response.hwo ,   
-                ["iwo"]  : response.iwo ,   
-             ["jwo"]: jwo2, //response.jwo.slice(0,-14) ,
-                ["kwo"]  : response.kwo ,   
-                ["lwo"]  : response.lwo ,   
-                ["mwo"]  : response.mwo ,   
-                ["nwo"]  : response.nwo , 
-               ["owo"]: response.owo,
-                ["pwo"]  : response.pwo ,  
-                ["qwo"]  : response.qwo,  
-                ["rwo"]  : response.rwo ,  
-                ["swo"]  : response.swo ,  
-                ["two"]: response.two,
-                ["record"]  : response.record ,   
-                ["uwo"]  : response.uwo   
-           });     
-        }
-  
+    // get report data
+    let that = this;
+    const xhr = new XMLHttpRequest();
+    let repPath = this.props.location.pathname;
+    let pageID = repPath.substring(13);
+    xhr.open('POST', "/report-edit", true);
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    let body = 'reportID=' + encodeURIComponent(pageID);
+    xhr.send(body);
+    xhr.onreadystatechange = function () {
+      if (this.readyState != 4) return;
+      if (this.status != 200) {
+        alert('error: ' + (this.status ? this.statusText : 'request has not been set'));
+        return;
+      }
+      let response = JSON.parse(this.responseText);
+
+      myLink = response.lwo;// props for photos
+      myLink2 = response.uwo;
+
+      let cwo2, jwo2;
+      if (response.cwo == null) { cwo2 = "" } else { cwo2 = response.cwo.slice(0, -14) };
+      if (response.jwo == null) { jwo2 = "" } else { jwo2 = response.cwo.slice(0, -14) };
+
+      that.setState({
+        ["_id"]: response._id,
+        ["reportID"]: response.reportID,
+        ["inspector"]: response.inspector,
+        ["daterec"]: response.daterec,
+        ["Gwo"]: response.Gwo,
+        ["cwo"]: cwo2, //response.cwo.slice(0,-14) ,    
+        ["dwo"]: response.dwo,
+        ["ewo"]: response.ewo,
+        ["fwo"]: response.fwo,
+        ["hwo"]: response.hwo,
+        ["iwo"]: response.iwo,
+        ["jwo"]: jwo2, //response.jwo.slice(0,-14) ,
+        ["kwo"]: response.kwo,
+        ["lwo"]: response.lwo,
+        ["mwo"]: response.mwo,
+        ["nwo"]: response.nwo,
+        ["owo"]: response.owo,
+        ["pwo"]: response.pwo,
+        ["qwo"]: response.qwo,
+        ["rwo"]: response.rwo,
+        ["swo"]: response.swo,
+        ["two"]: response.two,
+        ["record"]: response.record,
+        ["uwo"]: response.uwo
+      });
+    }
+
   }
 
 

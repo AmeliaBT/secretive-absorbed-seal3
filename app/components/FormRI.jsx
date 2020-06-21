@@ -1,34 +1,24 @@
 //Inspector Form
 const React = require('react');
-const Link = require('react-router-dom').Link
-// style for BOOKS
-const style = require('../styles/FormRI');
-// other components and etc
-const Header = require('./Header');
-//const CreatableSelect= require('react-select');
-//const { Creatable }= require('react-select');
 
 // react-bootstrap
-const {ResponsiveEmbed, Image, InputGroup, option, Form, FormGroup, Col, FormControl, Button, Grid, Row, ControlLabel} = require('react-bootstrap');
-
+const {Image,  Form, FormGroup, Col, FormControl, Button, Grid, Row, ControlLabel} = require('react-bootstrap');
+const style = require('../styles/FormRI');
 const mySel = [
   { id: 1, selname: "WO" },
   { id: 2, selname: "PO" },
   { id: 3, selname: "Other" },
    { id: 4, selname: "" }
 ];
-const mySelT = [
-  { id: 1, selname: "Pass" },
-  { id: 2, selname: "Fail" } 
-];
-//supplier name
 
+//supplier name
+/*
 const mySelE = [
   { id: 1, selname: "ATDG" },
   { id: 2, selname: "CAMEO" } ,
   { id: 3, selname: "" } 
 ];
-
+*/
 
   //Source
 const mySelM = [
@@ -59,9 +49,9 @@ const mySelN = [
 let options = mySel.map((el) => {
           return <option value={el.selname} key={el.selname}>{el.selname}</option>;
         });
-let optionsE = mySelE.map((el) => {
-          return <option value={el.selname} key={el.selname}>{el.selname}</option>;
-        });
+//let optionsE = mySelE.map((el) => {
+   //       return <option value={el.selname} key={el.selname}>{el.selname}</option>;
+   //     });
       
 let optionsM = mySelM.map((el) => {
           return <option value={el.selname} key={el.selname}>{el.selname}</option>;
@@ -70,13 +60,14 @@ let optionsM = mySelM.map((el) => {
 let optionsN = mySelN.map((el) => {
           return <option value={el.selname} key={el.selname}>{el.selname}</option>;
         });
-//const renderOptions = (options) => {return options.map((i) => {return <option key={i.name} name={i.name} value={i.value}>{i.value}</option>;  }); };
- let optionsDate = {
+        /*
+let optionsDate = {
         weekday: "short",
         year: "numeric",
         month: "2-digit",
         day: "numeric"
-    };
+    };*/
+
 /* the rep page that shows all reps */
 class FormRI extends React.Component {
   constructor(props) {
@@ -114,7 +105,7 @@ class FormRI extends React.Component {
     
     
   }
-//** %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+//**
 componentWillMount() {
   // get user inspname 
    let that = this;
@@ -131,7 +122,7 @@ componentWillMount() {
      let response = JSON.parse(this.responseText);
      
        if(response.isLogedIn == true) {
-       //  console.log(" loged in ok");
+       
           that.setState({
         ["inspname"]: response.inspname,
          ["inspector"]: response.inspname,
@@ -142,9 +133,6 @@ componentWillMount() {
   
   
 } 
-
-
-//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
    handleChangeValue(event) {
      const target = event.target;
@@ -235,10 +223,7 @@ componentWillMount() {
       <div >        
 <Form  method="post" action="/addRIreport" onSubmit={this.handleSubmit} encType="multipart/form-data" >       
  <Grid>  
-   {/* 
-<FormGroup className="input-row" ><ControlLabel> 	 reportID:	</ControlLabel><FormControl type="text" name="reportID"   value={this.state.reportID	} placeholder={this.state.reportID	} onChange={this.handleChangeValue} />  </FormGroup> 
-Submit RI form  
-  <Row> <Col  sm={11} >  <div className="profile-line"></div></Col>  </Row>*/}
+
    <Row>  <Col smOffset={7}  sm={4} > 
       <FormGroup > 
      <Button className="btn btn-primary btn-block" type="submit"><i className="fa fa-paper-plane"></i> Submit</Button>
@@ -249,8 +234,7 @@ Submit RI form
 <Row >
 <Col sm={3} >	 <div className="well">   
  <FormGroup className="input-row"><ControlLabel>Inspector:</ControlLabel> <FormControl   readOnly type="text" name="inspector" value={this.state.inspector	} placeholder={this.state.inspector	 }  /> </FormGroup>    
- {/* <FormGroup ><ControlLabel>Supplier:</ControlLabel> <FormControl  className="input-row3" type="text" name="ewo" value={this.state.ewo} componentClass="select"  placeholder="select" onChange={this.handleSelectChangeE}> {optionsE} </FormControl> </FormGroup> 
-   */}
+
   <FormGroup className="input-row"><ControlLabel>Supplier:</ControlLabel>    <FormControl  className="input-row" type="text" name="ewo" value={this.state.ewo}   onChange={this.handleChangeValue} />  </FormGroup>  
  
   </div></Col>  <Col sm={2} >	 <div className="well">    
@@ -261,15 +245,7 @@ Submit RI form
        value={this.state.dwo} componentClass="select"  placeholder="select" 
        onChange={this.handleChangeValue}> {options}  
      </FormControl>
-        {/* 
-     <FormControl 
-      className="input-row3" type="text" name="dwo" 
-       value={this.state.dwo} componentClass="select"  placeholder="select" 
-       onChange={this.handleSelectChange}> {options} 
-       onInputChange={this.handleChangeValue}
-       isClearable
-     </FormControl>     
-          */} 
+  
     
   </FormGroup> 
     
@@ -299,9 +275,7 @@ Submit RI form
   </div></Col>
 
    <Col sm={3} ><div className="well">    
-{/* 
-  <FormGroup className="input-row"><ControlLabel> 	 Documentation Revision:	</ControlLabel><FormControl type="text" name="hwo"   value={this.state.hwo	} placeholder={this.state.hwo	} onChange={this.handleChangeValue} />  </FormGroup> 
-  */}     
+   
   <FormGroup className="input-row"><ControlLabel> 	 Received SW:	</ControlLabel><FormControl type="text" name="iwo"   value={this.state.iwo	} placeholder={this.state.iwo	} onChange={this.handleChangeValue} />  </FormGroup> 
   </div></Col>
   </Row>
@@ -330,9 +304,7 @@ Submit RI form
   </FormGroup> 
    </Col>
   </Row>
-   {/* 
- <Row> <Col  sm={11} >  <div className="profile-line"></div></Col>  </Row>
- */}
+
    <Row> 
 <Col sm={6} >
 <FormGroup className="input-row"><ControlLabel>Photo 1 (I:\QC-Reports\RI_Photos\) 	</ControlLabel><FormControl type="file"  name="lwo"     placeholder={this.state.lwo	} onChange={this.handleChangeValueImg}  />   </FormGroup>  
@@ -353,10 +325,7 @@ Submit RI form
 </Row>  
      
   </Grid>     
-   </Form>
-   
-        
-        
+   </Form>      
         
   </div>
     );
@@ -364,36 +333,3 @@ Submit RI form
 };
 
 module.exports = FormRI;
-/* 
-  <Image src={"http://10.4.5.6/Intranet/data/QualityAssurance/QC-Reports/RI_Photos/" + this.state.lwo } responsive />   
-<div style={{width: 660, height: 'auto'}}>
-          <p> </p>
-            <Image src={"https://static.pexels.com/photos/" + this.state.uwo + "/pexels-photo-" + this.state.uwo +".jpeg"	} responsive />    
-            </div>
-
-807598 
-<ResponsiveEmbed a16by9>
-                    <embed type="image/href+xml" href = "https://static.pexels.com/photos/296886/pexels-photo-296886.jpeg"/>
-                </ResponsiveEmbed>
-                
-href = "https://drive.google.com/file/d/19Ol1VZu646JIQE20-iSmI5Wma0I1_a_2/view?usp=sharing"/>
-            
- <embed type="image/href+xml" href = "https://static.pexels.com/photos/296886/pexels-photo-296886.jpeg"/>
-             
-
-   <InputGroup>
-        <FormControl
-          type="text"
-          placeholder="Search..."
-          onChange={this.handleChange.bind(this)}
-        />
-        <div className="search-icon">
-          <i class="fas fa-search" />
-        </div>
-      </InputGroup>  
-<FontAwesomeIcon icon="search" />
-
-<FormGroup className="input-row"><ControlLabel> 	Photo 	</ControlLabel>
-    
-    <FormControl type="file"  name="uwo"  ref="imageInput" accept="image/png, image/jpeg" value={this.state.uwo }  onChange={ this.uploadFile }   />   </FormGroup>  
-*/

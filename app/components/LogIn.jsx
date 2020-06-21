@@ -1,20 +1,15 @@
 const React = require('react');
-const Link = require('react-router-dom').Link
-// style for BOOKS
 const style = require('../styles/SignUp');
-// other components and etc
-const Header = require('./Header');
 // react-bootstrap
 const {Form, FormGroup, Col, FormControl, Button} = require('react-bootstrap');
 
-
-/* the books page that shows all books */
 class LogIn extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       email: "",
-      password: ""
+      password: "",
+      securityLevel:""
     };
     this.handleChangeValue = this.handleChangeValue.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -29,19 +24,15 @@ class LogIn extends React.Component {
   }
   handleSubmit(event) {
       let that = this;
-    console.log(that)
-      const xhr = new XMLHttpRequest();
-      
+      const xhr = new XMLHttpRequest();      
       xhr.open('POST', '/log-in', true);
-      xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-      
+      xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');      
       
       let body = 'email=' + encodeURIComponent(this.state.email) +
-      '&password=' + encodeURIComponent(this.state.password);
-
+      '&password=' + encodeURIComponent(this.state.password)+
+      '&securityLevel=' + encodeURIComponent(this.state.securityLevel)   ;
 
       xhr.send(body);
-
       xhr.onreadystatechange = function() {
         if (this.readyState != 4) return;
         if (this.status != 200) {
@@ -67,7 +58,7 @@ class LogIn extends React.Component {
   render() {
     return (
       <div>
-            <Header/>
+            
             <Form className="FormSU" horizontal method="post" action="/login" name="login" onSubmit={this.handleSubmit}>   
               <FormGroup controlId="formHorizontalEmail">
                 <Col className="form-labelSU" sm={2}>
@@ -90,7 +81,7 @@ class LogIn extends React.Component {
               <FormGroup>
                 <Col smOffset={2} sm={10}>
                  
-                  <Button className="btn btn-primary btn-block" type="submit"><i className="fa fa-paper-plane"></i> Sign up</Button>
+                  <Button className="btn btn-primary btn-block" type="submit"><i className="fa fa-paper-plane"></i> Login</Button>
                 </Col>
               </FormGroup>
           </Form>
