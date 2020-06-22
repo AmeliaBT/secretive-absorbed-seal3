@@ -58145,10 +58145,13 @@ const style = __webpack_require__(41);
 const Header = __webpack_require__(18);
 // react-bootstrap
 const {Form, FormGroup, Col, FormControl, Button} = __webpack_require__(9);
+alert(" SignUpNewPW ");
 /* Change PW  form */
 class SignUpNewPW extends React.Component {
   constructor(props) {
     super(props);
+    alert(" SignUpNewPW 2");
+
     this.state = {    
       password: ""      
     };
