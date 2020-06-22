@@ -12245,7 +12245,7 @@ class RIlistItemAll extends React.Component {
 
 
   render() {
-    // const {report, showDelete, showDelete2} = this.props;
+    // const {report, showDelete, showDelete2} = this.props;  key={this.state.reportID}
     return (
       React.createElement("div", null, 
 
@@ -56827,7 +56827,7 @@ class NCreports extends React.Component {
         let reports = response.map((el) => {  
  
           return React.createElement(NCreport, {
-                  // key={el.reportID}
+                  key: el.reportID, 
                    reportnumber: el.reportID, 
                    inspector: el.inspector, 
                    ewo: el.ewo, //suplier
@@ -56972,7 +56972,7 @@ class NCreport extends React.Component {
  
   render() {
     return(
-      React.createElement("div", {className: "book-all", key: this.state.reportID}, 
+      React.createElement("div", {className: "book-all"}, 
       /*   <img src={this.state.img_url} alt="book pic" className="img-all"/>*/
         React.createElement("div", null, React.createElement("h4", {className: "nc-all"}, this.state.Gwo)), 
         React.createElement("div", {className: "exchange-btn-all"}, 

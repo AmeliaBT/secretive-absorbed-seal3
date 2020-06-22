@@ -42,7 +42,7 @@ class NCreport extends React.Component {
  
   render() {
     return(
-      <div className="book-all" key={this.state.reportID} >
+      <div className="book-all"  >
       {/*   <img src={this.state.img_url} alt="book pic" className="img-all"/>*/}
         <div  ><h4 className="nc-all">{this.state.Gwo}</h4></div>
         <div className="exchange-btn-all"  >
