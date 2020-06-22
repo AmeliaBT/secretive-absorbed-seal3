@@ -19,6 +19,8 @@ const {Table , Grid, Row, Col, Modal} = require('react-bootstrap');
 const Header = require('./Header');
 const RIlistItemMonth = require('./RIlistItemMonth');
 
+let parse = require('html-react-parser');
+
 let arrayOfRIs1= [  ["Date", "Lot Size"]];
 let arrayOfRIs2= [  ["Date", "Qty Tested", "Qty Fail"]];
 let arrayOfRIs3= ["Date"];
@@ -140,7 +142,7 @@ uniqueYM.reverse();
        // arrLotYM.push([uniqueYM[i], lotA/lotN*100 ]) ;
  }   
      
-     
+ //see https://stackoverflow.com/questions/56956391/react-warning-validatedomnesting-text-nodes-cannot-appear-as-a-child-of    
        
   let reportsM =arrLotYM.map((el) => {  
    return < RIlistItemMonth
