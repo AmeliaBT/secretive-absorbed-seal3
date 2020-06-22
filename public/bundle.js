@@ -56474,7 +56474,7 @@ class NCreport extends React.Component {
           record:this.props.record ,//comment
          uwo:this.props.uwo ,  //photo url
       
-      tooltip: React.createElement(Popover, {title: this.props.fwo}, 
+      tooltip: React.createElement(Popover, {id: "pop", title: this.props.fwo}, 
                             React.createElement("div", null, 
                               "DATE:   ", React.createElement("b", null, "  ", jwo2, "      "), " ", React.createElement("br", null), 
                               "SUPPLIER: ", React.createElement("b", null, this.props.ewo, "   "), React.createElement("br", null), 
