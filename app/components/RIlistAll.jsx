@@ -145,9 +145,10 @@ uniqueYM.reverse();
      
  //see https://stackoverflow.com/questions/56956391/react-warning-validatedomnesting-text-nodes-cannot-appear-as-a-child-of    
        
-  let reportsM =arrLotYM.map((el) => {  
+  let reportsM =arrLotYM.map((el, index   ) => {  
    return < RIlistItemMonth
-          month_year={el[0]} 
+            key={index}
+            month_year={el[0]} 
                lotT={el[1]}
                lotA={el[2]}
                  lar={el[3]}
