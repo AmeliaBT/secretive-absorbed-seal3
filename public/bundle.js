@@ -1449,7 +1449,7 @@ class Header extends React.Component {
                        React.createElement(NavItem, {className: "span"}, " ", React.createElement("div", {onClick: that.handleLogOut, className: "link"}, "Log out"), " ")
                       ),
             ["reportsLink"]: "/reports",
-            // ["listLink"]: "/list",
+           
             ["listLinkAll"]: "/list-all",
               ["listLinkAll2"]: "/list-all2",
                ["chartLinkA"]: "/chartA",
@@ -1467,7 +1467,7 @@ class Header extends React.Component {
                        React.createElement(NavItem, {className: "span"}, " ", React.createElement("div", {onClick: that.handleLogOut, className: "link"}, "Log out"), " ")
                       ),
             ["reportsLink"]: "/reports",
-            // ["listLink"]: "/list",
+           
              ["listLinkAll"]: "/list-all",
                 ["listLinkAll2"]: "/list-all2",
                 ["chartLinkA"]: "/chartA",
@@ -12308,9 +12308,7 @@ const { render } = __webpack_require__(13);
 const Route = __webpack_require__(22).Route;
 const BrowserRouter = __webpack_require__(22).BrowserRouter;
 const hashHistory = __webpack_require__(22).hashHistory;
-// redux
-//const { createStore } = require('redux');
-//const reducers = require('./reducers');
+
 
 /* Import Components */
 const Main = __webpack_require__(169);
@@ -12329,13 +12327,11 @@ const FilterA = __webpack_require__(83);
 const ChartA = __webpack_require__(356);
 
 const ManyRecords =__webpack_require__(360);
-//  <Route path="/report-edit" component={RIedit}/>
-//<Route path='/:handle' component={Profile} />
+
 render(
     React.createElement(BrowserRouter, null, 
       React.createElement("div", null, 
         React.createElement(Route, {exact: true, path: "/", component: Main}), 
-        
         React.createElement(Route, {path: "/signup", component: SignUp}), 
            React.createElement(Route, {path: "/signup2", component: SignUp2}), 
           React.createElement(Route, {path: "/signup3", component: SignUpNewPW}), 
@@ -12354,7 +12350,7 @@ render(
     ), 
        document.getElementById('main'));
 
-//  <Provider store={store}>
+
 
 /***/ }),
 /* 147 */

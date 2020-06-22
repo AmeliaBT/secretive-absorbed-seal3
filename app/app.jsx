@@ -5,9 +5,7 @@ const { render } = require('react-dom');
 const Route = require('react-router-dom').Route;
 const BrowserRouter = require('react-router-dom').BrowserRouter;
 const hashHistory = require('react-router-dom').hashHistory;
-// redux
-//const { createStore } = require('redux');
-//const reducers = require('./reducers');
+
 
 /* Import Components */
 const Main = require('./components/Main');
@@ -26,13 +24,11 @@ const FilterA = require('./components/FilterA');
 const ChartA = require('./components/ChartA');
 
 const ManyRecords =require('./components/ManyRecords');
-//  <Route path="/report-edit" component={RIedit}/>
-//<Route path='/:handle' component={Profile} />
+
 render(
     <BrowserRouter>
       <div>       
-        <Route exact path="/" component={Main}/>     
-        
+        <Route exact path="/" component={Main}/>  
         <Route path="/signup" component={SignUp}/>
            <Route path="/signup2" component={SignUp2}/>
           <Route path="/signup3" component={SignUpNewPW}/>
@@ -51,4 +47,3 @@ render(
     </BrowserRouter>, 
        document.getElementById('main'));
 
-//  <Provider store={store}>

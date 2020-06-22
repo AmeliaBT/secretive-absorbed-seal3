@@ -73,7 +73,7 @@ class Header extends React.Component {
                        <NavItem className='span'> <div  onClick={that.handleLogOut} className="link">Log out</div> </NavItem>
                       </Nav>,
             ["reportsLink"]: "/reports",
-            // ["listLink"]: "/list",
+           
             ["listLinkAll"]: "/list-all",
               ["listLinkAll2"]: "/list-all2",
                ["chartLinkA"]: "/chartA",
@@ -91,7 +91,7 @@ class Header extends React.Component {
                        <NavItem className='span'> <div  onClick={that.handleLogOut} className="link">Log out</div> </NavItem>
                       </Nav>,
             ["reportsLink"]: "/reports",
-            // ["listLink"]: "/list",
+           
              ["listLinkAll"]: "/list-all",
                 ["listLinkAll2"]: "/list-all2",
                 ["chartLinkA"]: "/chartA",
