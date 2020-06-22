@@ -26,13 +26,14 @@
     "react": "^16.2.0",
     "react-bootstrap": "^0.33.1",
     "react-dom": "^16.2.0",
-    "react-inline-editing": "^1.0.10",  
-    "react-router-dom": "^4.2.2",   
+    "react-inline-editing": "^1.0.10",
+    "react-router-dom": "^5.2.0",
     "style-loader": "^0.19.1",
-    "webpack": "^3.10.0",   
+    "webpack": "^3.10.0",
     "date": "^1.0.2",
-    "multer": "^1.4.2",     
-    "react-google-charts": "^3.0.15"
+    "multer": "^1.4.2",
+    "react-google-charts": "^3.0.15",
+    "html-react-parser": "^0.13.0"
   },
   "engines": {
     "node": "8.x"
@@ -41,8 +42,6 @@
     "url": "https://glitch.com/edit/#!/starter-react-redux"
   },
   "license": "MIT",
-  
-  
   "keywords": [
     "node",
     "glitch",
