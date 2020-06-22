@@ -1445,7 +1445,7 @@ class Header extends React.Component {
      
           that.setState({
           ["navBtns"]: React.createElement(Nav, {pullLeft: true, className: "link span"}, 
-                      React.createElement(NavItem, {className: "span"}, " ", React.createElement(Link, {to: "/SignUpNewPW", className: "link"}, React.createElement("p", {className: "link"}, "Change PW ")), " "), 
+                      React.createElement(NavItem, {className: "span"}, " ", React.createElement(Link, {to: "/signup3", className: "link"}, React.createElement("p", {className: "link"}, "Change PW ")), " "), 
                        React.createElement(NavItem, {className: "span"}, " ", React.createElement("div", {onClick: that.handleLogOut, className: "link"}, "Log out"), " ")
                       ),
             ["reportsLink"]: "/reports",
@@ -1463,7 +1463,7 @@ class Header extends React.Component {
                        React.createElement(NavItem, {className: "span"}, " ", React.createElement(Link, {to: "/homepage", className: "link"}, response.inspname, "'s RI Form"), " "), 
                          React.createElement(NavItem, {className: "span"}, " ", React.createElement(Link, {to: "/list", className: "link"}, "Edit Report "), " "), 
                        React.createElement(NavItem, {className: "span"}, " ", React.createElement(Link, {to: "/signup2", className: "link"}, React.createElement("p", {className: "link"}, "Add User")), " "), 
-                       React.createElement(NavItem, {className: "span"}, " ", React.createElement(Link, {to: "/SignUpNewPW", className: "link"}, React.createElement("p", {className: "link"}, "Change PW ")), " "), 
+                       React.createElement(NavItem, {className: "span"}, " ", React.createElement(Link, {to: "/signup3", className: "link"}, React.createElement("p", {className: "link"}, "Change PW ")), " "), 
                        React.createElement(NavItem, {className: "span"}, " ", React.createElement("div", {onClick: that.handleLogOut, className: "link"}, "Log out"), " ")
                       ),
             ["reportsLink"]: "/reports",
@@ -1484,8 +1484,8 @@ class Header extends React.Component {
                        React.createElement(NavItem, {className: "span"}, " ", React.createElement(Link, {to: "/homepage", className: "link"}, response.inspname, "'s RI Form"), " "), 
                        React.createElement(NavItem, {className: "span"}, " ", React.createElement(Link, {to: "/list", className: "link"}, "Edit Report "), " "), 
                        React.createElement(NavItem, {className: "span"}, " ", React.createElement(Link, {to: "/up-many-records", className: "link"}, "Admin"), " "), 
-                       React.createElement(NavItem, {className: "span"}, " ", React.createElement(Link, {to: "/signup", className: "link"}, React.createElement("p", {className: "link"}, "Add User")), " "), 
-                      React.createElement(NavItem, {className: "span"}, " ", React.createElement(Link, {to: "/SignUpNewPW", className: "link"}, React.createElement("p", {className: "link"}, "Change PW ")), " "), 
+                       React.createElement(NavItem, {className: "span"}, " ", React.createElement(Link, {to: "/signup2", className: "link"}, React.createElement("p", {className: "link"}, "Add User")), " "), 
+                      React.createElement(NavItem, {className: "span"}, " ", React.createElement(Link, {to: "/signup3", className: "link"}, React.createElement("p", {className: "link"}, "Change PW ")), " "), 
                        React.createElement(NavItem, {className: "span"}, " ", React.createElement("div", {onClick: that.handleLogOut, className: "link"}, "Log out"), " ")
                       ),
             ["reportsLink"]: "/reports",
@@ -58145,12 +58145,12 @@ const style = __webpack_require__(41);
 const Header = __webpack_require__(18);
 // react-bootstrap
 const {Form, FormGroup, Col, FormControl, Button} = __webpack_require__(9);
-alert(" SignUpNewPW ");
+
 /* Change PW  form */
 class SignUpNewPW extends React.Component {
   constructor(props) {
     super(props);
-    alert(" SignUpNewPW 2");
+   
 
     this.state = {    
       password: ""      
@@ -58956,7 +58956,7 @@ class ChartA extends React.Component {
     this.setState({ show: true });
   }
    /***********************/
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     // load reports
       let that = this;
       let xhr = new XMLHttpRequest();  
