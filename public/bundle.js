@@ -56497,7 +56497,7 @@ class NCreport extends React.Component {
             placement: "bottom", 
             overlay: this.state.tooltip
           }, 
-              React.createElement("div", {className: "nickname-all"}, "NC: ", this.state.record)
+              React.createElement("div", {key: this.state.reportID, className: "nickname-all"}, "NC: ", this.state.record)
              
           )
       )

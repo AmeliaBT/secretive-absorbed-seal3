@@ -52,7 +52,7 @@ class NCreport extends React.Component {
             placement="bottom"
             overlay={this.state.tooltip}
           >
-              <div className="nickname-all">NC: {this.state.record}</div>
+              <div key={this.state.reportID}className="nickname-all">NC: {this.state.record}</div>
              
           </OverlayTrigger>
       </div>
