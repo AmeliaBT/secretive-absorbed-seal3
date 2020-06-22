@@ -42,7 +42,7 @@ class NCreport extends React.Component {
  
   render() {
     return(
-      <div className="book-all">
+      <div className="book-all" key={this.state.reportID} >
       {/*   <img src={this.state.img_url} alt="book pic" className="img-all"/>*/}
         <div  ><h4 className="nc-all">{this.state.Gwo}</h4></div>
         <div className="exchange-btn-all"  >
@@ -55,7 +55,7 @@ class NCreport extends React.Component {
             placement="bottom"
             overlay={this.state.tooltip}
           >
-              <div key={this.state.reportID} className="nickname-all">NC: {this.state.record}</div>
+              <div className="nickname-all">NC: {this.state.record}</div>
              
           </OverlayTrigger>
       </div>

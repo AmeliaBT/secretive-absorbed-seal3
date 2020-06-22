@@ -56972,7 +56972,7 @@ class NCreport extends React.Component {
  
   render() {
     return(
-      React.createElement("div", {className: "book-all"}, 
+      React.createElement("div", {className: "book-all", key: this.state.reportID}, 
       /*   <img src={this.state.img_url} alt="book pic" className="img-all"/>*/
         React.createElement("div", null, React.createElement("h4", {className: "nc-all"}, this.state.Gwo)), 
         React.createElement("div", {className: "exchange-btn-all"}, 
@@ -56985,7 +56985,7 @@ class NCreport extends React.Component {
             placement: "bottom", 
             overlay: this.state.tooltip
           }, 
-              React.createElement("div", {key: this.state.reportID, className: "nickname-all"}, "NC: ", this.state.record)
+              React.createElement("div", {className: "nickname-all"}, "NC: ", this.state.record)
              
           )
       )
