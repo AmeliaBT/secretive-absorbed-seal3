@@ -42,7 +42,7 @@ class Header extends React.Component {
       }
   }
   /***********************/
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     // check if user is loged in
       let that = this;
       const xhr = new XMLHttpRequest();

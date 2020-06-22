@@ -24,7 +24,7 @@ class HomePage extends React.Component {
       return (text.length > 0 && text.length < 17);
     }
   /****************************/
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
      // get user inspname 
       let that = this;
       const xhr = new XMLHttpRequest();      

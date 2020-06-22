@@ -64,7 +64,7 @@ class RIlistAll extends React.Component {
   }
    /***********************/
  /***********************/
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     // load reports
       let that = this;
       let xhr = new XMLHttpRequest();  

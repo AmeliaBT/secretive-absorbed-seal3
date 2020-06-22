@@ -1418,7 +1418,7 @@ class Header extends React.Component {
       }
   }
   /***********************/
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     // check if user is loged in
       let that = this;
       const xhr = new XMLHttpRequest();
@@ -56316,7 +56316,7 @@ class NCreports extends React.Component {
     this.setState({ show: true });
   }
    /***********************/
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     // load reports
       let that = this;
       let xhr = new XMLHttpRequest();
@@ -56594,7 +56594,7 @@ class RIlist extends React.Component {
     this.setState({ show: true });
   }
    /***********************/
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     // load reports
       let that = this;
       let xhr = new XMLHttpRequest();  
@@ -56827,7 +56827,7 @@ class RIlistAll extends React.Component {
   }
    /***********************/
  /***********************/
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     // load reports
       let that = this;
       let xhr = new XMLHttpRequest();  
@@ -57203,7 +57203,7 @@ class RIlistAll2 extends React.Component {
     this.setState({ show: true });
   }
    /***********************/
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     // load reports
       let that = this;
       let xhr = new XMLHttpRequest();  
@@ -57464,7 +57464,7 @@ this.state = {
     }
   /****************************/
   
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
      // get report data
       let that = this;
       const xhr = new XMLHttpRequest();
@@ -57696,7 +57696,7 @@ this.state = {
 }
        
   }
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     // get report data
     let that = this;
     const xhr = new XMLHttpRequest();
@@ -58283,7 +58283,7 @@ class HomePage extends React.Component {
       return (text.length > 0 && text.length < 17);
     }
   /****************************/
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
      // get user inspname 
       let that = this;
       const xhr = new XMLHttpRequest();      
@@ -58448,7 +58448,7 @@ class FormRI extends React.Component {
     
   }
 //**
-componentWillMount() {
+UNSAFE_componentWillMount() {
   // get user inspname 
    let that = this;
    const xhr = new XMLHttpRequest();      

@@ -149,7 +149,7 @@ class RIlistAll2 extends React.Component {
     this.setState({ show: true });
   }
    /***********************/
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     // load reports
       let that = this;
       let xhr = new XMLHttpRequest();  
