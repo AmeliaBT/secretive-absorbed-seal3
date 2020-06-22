@@ -20,6 +20,7 @@ const Header = require('./Header');
 const RIlistItemMonth = require('./RIlistItemMonth');
 
 let parse = require('html-react-parser');
+//currently returning a string. It needs to return JSX . parse('<div>text</div>'); // equivalent to `React.createElement('div', {}, 'text')`
 
 let arrayOfRIs1= [  ["Date", "Lot Size"]];
 let arrayOfRIs2= [  ["Date", "Qty Tested", "Qty Fail"]];

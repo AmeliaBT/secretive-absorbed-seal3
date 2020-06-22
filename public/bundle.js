@@ -57268,6 +57268,7 @@ const Header = __webpack_require__(18);
 const RIlistItemMonth = __webpack_require__(331);
 
 let parse = __webpack_require__(332);
+//currently returning a string. It needs to return JSX . parse('<div>text</div>'); // equivalent to `React.createElement('div', {}, 'text')`
 
 let arrayOfRIs1= [  ["Date", "Lot Size"]];
 let arrayOfRIs2= [  ["Date", "Qty Tested", "Qty Fail"]];
