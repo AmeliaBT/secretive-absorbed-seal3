@@ -57398,7 +57398,7 @@ uniqueYM.reverse();
        
   let reportsM =arrLotYM.map((el, index   ) => {  
    return React.createElement(RIlistItemMonth, {
-            key: el.index, 
+            key: index, 
             month_year: el[0], 
                lotT: el[1], 
                lotA: el[2], 
