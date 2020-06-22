@@ -56975,7 +56975,10 @@ class NCreport extends React.Component {
       React.createElement("div", {className: "book-all"}, 
       /*   <img src={this.state.img_url} alt="book pic" className="img-all"/>*/
         React.createElement("div", null, React.createElement("h4", {className: "nc-all"}, this.state.Gwo)), 
-        React.createElement("div", {className: "exchange-btn-all"}, React.createElement(Link, {to: 'report-view/' + this.state.reportID}, "   ", React.createElement(Button, {bsSize: "xsmall"}, "  ", React.createElement(Glyphicon, {glyph: "eye-open"}), "   "))), 
+        React.createElement("div", {className: "exchange-btn-all"}, 
+          React.createElement(Link, {to: 'report-view/' + this.state.reportID}, 
+            React.createElement(Button, {bsSize: "xsmall"}, "  ", React.createElement(Glyphicon, {glyph: "eye-open"}), "   "))
+          ), 
         
          React.createElement(OverlayTrigger, {
             trigger: ['hover', 'focus'], 
