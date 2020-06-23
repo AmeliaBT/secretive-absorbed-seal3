@@ -159,23 +159,16 @@ class Header extends React.Component {
     return (
       <div  className="link span">
        <Navbar collapseOnSelect>
-        <Navbar.Header>
-                 <Navbar.Brand >           
-            <Link to={this.state.listLinkAll} ><p  className="link"> KPIs  </p></Link>            
-          </Navbar.Brand>
-                  <Navbar.Brand >           
-            <Link to={this.state.listLinkAll2} ><p  className="link">Reports  </p></Link>            
-          </Navbar.Brand>
-          <Navbar.Brand >           
-            <Link to={this.state.chartLinkA} ><p  className="link">Charts  </p></Link>            
-          </Navbar.Brand>
+        <Navbar.Header>                          
+        <Link to={this.state.listLinkAll} > <Navbar.Brand > <p  className="link"> KPIs  </p></Navbar.Brand></Link>            
+        <Link to={this.state.listLinkAll2} >   <  Navbar.Brand > <p  className="link">Reports  </p> </Navbar.Brand></Link>            
+        <Link to={this.state.chartLinkA} > <Navbar.Brand > <p  className="link">Charts  </p> </Navbar.Brand></Link>            
+         
          {/* <Navbar.Brand >           
-           <Link to={this.state.reportsLink} ><p  className="link">Defects</p></Link> 
-          </Navbar.Brand>*/}   
+           <Link to={this.state.reportsLink} ><p  className="link">Defects</p></Link>       </Navbar.Brand>*/}   
+      
+<Link to={this.state.reportsLink} ><Navbar.Brand ><p  className="link">Defects</p></Navbar.Brand></Link> 
         
-<Navbar.Brand className="link">           
-           <Link to={this.state.reportsLink} >Defects</Link> 
-          </Navbar.Brand>
   
           
           <Navbar.Toggle />

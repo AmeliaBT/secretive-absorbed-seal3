@@ -1536,22 +1536,18 @@ class Header extends React.Component {
       React.createElement("div", {className: "link span"}, 
        React.createElement(Navbar, {collapseOnSelect: true}, 
         React.createElement(Navbar.Header, null, 
-                 React.createElement(Navbar.Brand, null, 
-            React.createElement(Link, {to: this.state.listLinkAll}, React.createElement("p", {className: "link"}, " KPIs  "))
-          ), 
-                  React.createElement(Navbar.Brand, null, 
-            React.createElement(Link, {to: this.state.listLinkAll2}, React.createElement("p", {className: "link"}, "Reports  "))
-          ), 
-          React.createElement(Navbar.Brand, null, 
-            React.createElement(Link, {to: this.state.chartLinkA}, React.createElement("p", {className: "link"}, "Charts  "))
-          ), 
+        React.createElement(Link, {to: this.state.listLinkAll}, " ", React.createElement(Navbar.Brand, null, " ", React.createElement("p", {className: "link"}, " KPIs  "))), 
+        React.createElement(Link, {to: this.state.listLinkAll2}, "   ", React.createElement(Navbar.Brand, null, " ", React.createElement("p", {className: "link"}, "Reports  "), " ")), 
+        React.createElement(Link, {to: this.state.chartLinkA}, " ", React.createElement(Navbar.Brand, null, 
+React.createElement("p", {className: "link"}, "Charts  "), " ")), 
+         
          /* <Navbar.Brand >           
            <Link to={this.state.reportsLink} ><p  className="link">Defects</p></Link> 
           </Navbar.Brand>*/
         
-React.createElement(Navbar.Brand, {className: "link"}, 
-           React.createElement(Link, {to: this.state.reportsLink}, "Defects")
-          ), 
+      
+React.createElement(Link, {to: this.state.reportsLink}, React.createElement(Navbar.Brand, null, React.createElement("p", {className: "link"}, "Defects"))), 
+        
   
           
           React.createElement(Navbar.Toggle, null)
