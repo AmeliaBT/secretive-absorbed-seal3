@@ -1386,11 +1386,12 @@ class Header extends React.Component {
     super(props);
     this.state = {
       navBtns: null,
-      reportsLink: "",
+     
       listLink: "",
       listLinkAll: "",
       listLinkAll2: "",
       chartLinkA:"",
+       reportsLink: "", //defects
       securityLevel: ""
     };
     this.handleLogOut = this.handleLogOut.bind(this);
@@ -1441,15 +1442,13 @@ class Header extends React.Component {
          
      switch (securityLevel) {
       case 1:
-         // user
-     
+         // user     
           that.setState({
           ["navBtns"]: React.createElement(Nav, {pullLeft: true, className: "link span"}, 
                       React.createElement(NavItem, {className: "span"}, " ", React.createElement(Link, {to: "/signup3", className: "link"}, React.createElement("p", {className: "link"}, "Change PW ")), " "), 
                        React.createElement(NavItem, {className: "span"}, " ", React.createElement("div", {onClick: that.handleLogOut, className: "link"}, "Log out"), " ")
                       ),
-            ["reportsLink"]: "/reports",
-           
+            ["reportsLink"]: "/reports",           
             ["listLinkAll"]: "/list-all",
               ["listLinkAll2"]: "/list-all2",
                ["chartLinkA"]: "/chartA",
@@ -1466,11 +1465,12 @@ class Header extends React.Component {
                        React.createElement(NavItem, {className: "span"}, " ", React.createElement(Link, {to: "/signup3", className: "link"}, React.createElement("p", {className: "link"}, "Change PW ")), " "), 
                        React.createElement(NavItem, {className: "span"}, " ", React.createElement("div", {onClick: that.handleLogOut, className: "link"}, "Log out"), " ")
                       ),
-            ["reportsLink"]: "/reports",
+           
            
              ["listLinkAll"]: "/list-all",
                 ["listLinkAll2"]: "/list-all2",
                 ["chartLinkA"]: "/chartA",
+             ["reportsLink"]: "/reports", //defects
             securityLevel: securityLevel
            });
          
@@ -1490,11 +1490,18 @@ class Header extends React.Component {
                       ),
            
             // ["listLink"]: "/list",
-             ["listLinkAll"]: "/list-all",
+          /*   ["listLinkAll"]: "/list-all",
                 ["listLinkAll2"]: "/list-all2",
                 ["chartLinkA"]: "/chartA",
              ["reportsLink"]: "/reports",
             securityLevel: securityLevel
+            */
+           listLinkAll: "/list-all",
+                listLinkAll2: "/list-all2",
+                chartLinkA: "/chartA",
+             reportsLink: "/reports",
+            securityLevel: securityLevel
+            
            });
         break;
  default:
@@ -1537,9 +1544,10 @@ class Header extends React.Component {
       React.createElement("div", {className: "link span"}, 
        React.createElement(Navbar, {collapseOnSelect: true}, 
         React.createElement(Navbar.Header, null, 
-        React.createElement(Link, {to: this.state.listLinkAll}, " ", React.createElement(Navbar.Brand, null, " ", React.createElement("p", {className: "link"}, " KPIs  "))), 
+        React.createElement(Link, {to: this.state.listLinkAll}, " ", React.createElement(Navbar.Brand, null, "  KPIs ")), 
         React.createElement(Link, {to: this.state.listLinkAll2}, "   ", React.createElement(Navbar.Brand, null, " ", React.createElement("p", {className: "link"}, "Reports  "), " ")), 
-        React.createElement(Link, {to: this.state.reportsLink}, React.createElement(Navbar.Brand, null, React.createElement("p", {className: "link"}, "Defects"))), 
+        React.createElement(Link, {to: this.state.chartLinkA}, " ", React.createElement(Navbar.Brand, null, " ", React.createElement("p", {className: "link"}, "Charts  "), " ")), 
+        React.createElement(Link, {to: this.state.reportsLink}, React.createElement(Navbar.Brand, null, "Defects")), 
          /* <Navbar.Brand >           
            <Link to={this.state.reportsLink} ><p  className="link">Defects</p></Link>       </Navbar.Brand>
            <Link to={this.state.chartLinkA} > <Navbar.Brand > <p  className="link">Charts  </p> </Navbar.Brand></Link>   

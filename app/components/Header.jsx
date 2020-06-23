@@ -10,11 +10,12 @@ class Header extends React.Component {
     super(props);
     this.state = {
       navBtns: null,
-      reportsLink: "",
+     
       listLink: "",
       listLinkAll: "",
       listLinkAll2: "",
       chartLinkA:"",
+       reportsLink: "", //defects
       securityLevel: ""
     };
     this.handleLogOut = this.handleLogOut.bind(this);
@@ -65,15 +66,13 @@ class Header extends React.Component {
          
      switch (securityLevel) {
       case 1:
-         // user
-     
+         // user     
           that.setState({
           ["navBtns"]: <Nav pullLeft className="link span">                    
                       <NavItem className='span'> <Link  to='/signup3' className="link"><p  className="link">Change PW </p></Link> </NavItem> 
                        <NavItem className='span'> <div  onClick={that.handleLogOut} className="link">Log out</div> </NavItem>
                       </Nav>,
-            ["reportsLink"]: "/reports",
-           
+            ["reportsLink"]: "/reports",           
             ["listLinkAll"]: "/list-all",
               ["listLinkAll2"]: "/list-all2",
                ["chartLinkA"]: "/chartA",
@@ -90,11 +89,12 @@ class Header extends React.Component {
                        <NavItem className='span'> <Link  to='/signup3' className="link"><p  className="link">Change PW </p></Link> </NavItem> 
                        <NavItem className='span'> <div  onClick={that.handleLogOut} className="link">Log out</div> </NavItem>
                       </Nav>,
-            ["reportsLink"]: "/reports",
+           
            
              ["listLinkAll"]: "/list-all",
                 ["listLinkAll2"]: "/list-all2",
                 ["chartLinkA"]: "/chartA",
+             ["reportsLink"]: "/reports", //defects
             securityLevel: securityLevel
            });
          
@@ -114,11 +114,18 @@ class Header extends React.Component {
                       </Nav>,
            
             // ["listLink"]: "/list",
-             ["listLinkAll"]: "/list-all",
+          /*   ["listLinkAll"]: "/list-all",
                 ["listLinkAll2"]: "/list-all2",
                 ["chartLinkA"]: "/chartA",
              ["reportsLink"]: "/reports",
             securityLevel: securityLevel
+            */
+           listLinkAll: "/list-all",
+                listLinkAll2: "/list-all2",
+                chartLinkA: "/chartA",
+             reportsLink: "/reports",
+            securityLevel: securityLevel
+            
            });
         break;
  default:
@@ -161,9 +168,10 @@ class Header extends React.Component {
       <div  className="link span">
        <Navbar collapseOnSelect>
         <Navbar.Header>                          
-        <Link to={this.state.listLinkAll} > <Navbar.Brand > <p  className="link"> KPIs  </p></Navbar.Brand></Link>            
-        <Link to={this.state.listLinkAll2} >   <  Navbar.Brand > <p  className="link">Reports  </p> </Navbar.Brand></Link>            
-        <Link to={this.state.reportsLink} ><Navbar.Brand ><p  className="link" >Defects</p></Navbar.Brand></Link> 
+        <Link to={this.state.listLinkAll} > <Navbar.Brand >  KPIs </Navbar.Brand></Link>            
+        <Link to={this.state.listLinkAll2} >   <  Navbar.Brand > <p  className="link">Reports  </p> </Navbar.Brand></Link> 
+        <Link to={this.state.chartLinkA} > <Navbar.Brand > <p  className="link">Charts  </p> </Navbar.Brand></Link>   
+        <Link to={this.state.reportsLink} ><Navbar.Brand >Defects</Navbar.Brand></Link> 
          {/* <Navbar.Brand >           
            <Link to={this.state.reportsLink} ><p  className="link">Defects</p></Link>       </Navbar.Brand>
            <Link to={this.state.chartLinkA} > <Navbar.Brand > <p  className="link">Charts  </p> </Navbar.Brand></Link>   
