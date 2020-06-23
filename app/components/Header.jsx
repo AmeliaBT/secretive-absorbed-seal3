@@ -2,7 +2,7 @@ const React = require('react');
 const Link = require('react-router-dom').Link
 const style = require('../styles/Header');
 // react-bootstrap
-const {Nav, Navbar, NavItem} = require('react-bootstrap');
+const {Nav, Navbar, NavItem } = require('react-bootstrap');
 
 /* the header component for navbar */
 class Header extends React.Component {
@@ -10,11 +10,12 @@ class Header extends React.Component {
     super(props);
     this.state = {
       navBtns: null,
-      reportsLink: "",
+     
       listLink: "",
       listLinkAll: "",
       listLinkAll2: "",
       chartLinkA:"",
+       reportsLink: "", //defects
       securityLevel: ""
     };
     this.handleLogOut = this.handleLogOut.bind(this);
@@ -42,7 +43,7 @@ class Header extends React.Component {
       }
   }
   /***********************/
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     // check if user is loged in
       let that = this;
       const xhr = new XMLHttpRequest();
@@ -62,22 +63,27 @@ class Header extends React.Component {
         if(response.isLogedIn == true) {
             /* Show screen based on the Security level *********/   
           let securityLevel = response.securityLevel; 
-         
+       that.setState({
+       /*   ["listLinkAll"]: "/list-all",
+                ["listLinkAll2"]: "/list-all2",
+                ["chartLinkA"]: "/chartA",
+             ["reportsLink"]: "/reports",
+            securityLevel: securityLevel
+              */
+               listLinkAll:  "/list-all",
+                listLinkAll2: "/list-all2",
+                chartLinkA: "/chartA",
+                reportsLink: "/reports",
+               securityLevel: securityLevel
+           });   
      switch (securityLevel) {
       case 1:
-         // user
-     
+         // user     
           that.setState({
           ["navBtns"]: <Nav pullLeft className="link span">                    
-                      <NavItem className='span'> <Link  to='/SignUpNewPW' className="link"><p  className="link">Change PW </p></Link> </NavItem> 
+                      <NavItem className='span'> <Link  to='/signup3' className="link"><p  className="link">Change PW </p></Link> </NavItem> 
                        <NavItem className='span'> <div  onClick={that.handleLogOut} className="link">Log out</div> </NavItem>
-                      </Nav>,
-            ["reportsLink"]: "/reports",
-            // ["listLink"]: "/list",
-            ["listLinkAll"]: "/list-all",
-              ["listLinkAll2"]: "/list-all2",
-               ["chartLinkA"]: "/chartA",
-            securityLevel: securityLevel
+                      </Nav>
            });
         break;
       case 2:
@@ -87,15 +93,9 @@ class Header extends React.Component {
                        <NavItem className='span'> <Link  to='/homepage' className="link">{response.inspname}'s RI Form</Link> </NavItem> 
                          <NavItem className='span'> <Link  to='/list' className="link">Edit Report </Link> </NavItem> 
                        <NavItem className='span'> <Link  to='/signup2' className="link"><p  className="link">Add User</p></Link> </NavItem> 
-                       <NavItem className='span'> <Link  to='/SignUpNewPW' className="link"><p  className="link">Change PW </p></Link> </NavItem> 
+                       <NavItem className='span'> <Link  to='/signup3' className="link"><p  className="link">Change PW </p></Link> </NavItem> 
                        <NavItem className='span'> <div  onClick={that.handleLogOut} className="link">Log out</div> </NavItem>
-                      </Nav>,
-            ["reportsLink"]: "/reports",
-            // ["listLink"]: "/list",
-             ["listLinkAll"]: "/list-all",
-                ["listLinkAll2"]: "/list-all2",
-                ["chartLinkA"]: "/chartA",
-            securityLevel: securityLevel
+                      </Nav>
            });
          
        
@@ -108,16 +108,10 @@ class Header extends React.Component {
                        <NavItem className='span'> <Link  to='/homepage' className="link">{response.inspname}'s RI Form</Link> </NavItem> 
                        <NavItem className='span'> <Link  to='/list' className="link">Edit Report </Link> </NavItem> 
                        <NavItem className='span'> <Link  to='/up-many-records' className="link">Admin</Link> </NavItem> 
-                       <NavItem className='span'> <Link  to='/signup' className="link"><p  className="link">Add User</p></Link> </NavItem> 
-                      <NavItem className='span'> <Link  to='/SignUpNewPW' className="link"><p  className="link">Change PW </p></Link> </NavItem> 
+                       <NavItem className='span'> <Link  to='/signup2' className="link"><p  className="link">Add User</p></Link> </NavItem> 
+                      <NavItem className='span'> <Link  to='/signup3' className="link"><p  className="link">Change PW </p></Link> </NavItem> 
                        <NavItem className='span'> <div  onClick={that.handleLogOut} className="link">Log out</div> </NavItem>
-                      </Nav>,
-            ["reportsLink"]: "/reports",
-            // ["listLink"]: "/list",
-             ["listLinkAll"]: "/list-all",
-                ["listLinkAll2"]: "/list-all2",
-                ["chartLinkA"]: "/chartA",
-            securityLevel: securityLevel
+                      </Nav>
            });
         break;
  default:
@@ -130,18 +124,14 @@ class Header extends React.Component {
                           <Link to='/login' className="link"><p  className="link"> Log in </p></Link>
                         </NavItem>
                       </Nav>
-            
-            
            });   
      
     }         
- /********************/
-       
+ /********************/       
         }
         else {
           that.setState({
-          ["navBtns"]: <Nav pullLeft className="link span">
-             
+          ["navBtns"]: <Nav pullLeft className="link span">             
                         <NavItem className='span'>
                           <Link to='/login' className="link"><p  className="link"> Log in </p></Link>
                         </NavItem>
@@ -157,27 +147,16 @@ class Header extends React.Component {
  
   render() {
     return (
-      <div  className="link span">
-       <Navbar collapseOnSelect>
-        <Navbar.Header>
-                 <Navbar.Brand >           
-            <Link to={this.state.listLinkAll} ><p  className="link"> KPIs  </p></Link>            
-          </Navbar.Brand>
-                  <Navbar.Brand >           
-            <Link to={this.state.listLinkAll2} ><p  className="link">Reports  </p></Link>            
-          </Navbar.Brand>
-          <Navbar.Brand >           
-            <Link to={this.state.chartLinkA} ><p  className="link">Charts  </p></Link>            
-          </Navbar.Brand>
-          <Navbar.Brand >           
-            <Link to={this.state.reportsLink} ><p  className="link">Defects</p></Link>            
-          </Navbar.Brand>
-        
-   
-  
-          
-          <Navbar.Toggle />
+      <div  >
+       <Navbar >
+        <Navbar.Header>                          
+        <Link to={this.state.listLinkAll} > <Navbar.Brand >  KPIs </Navbar.Brand></Link>            
+        <Link to={this.state.listLinkAll2} > <Navbar.Brand > Reports </Navbar.Brand></Link> 
+        <Link to={this.state.chartLinkA} > <Navbar.Brand >Charts </Navbar.Brand></Link>   
+        <Link to={this.state.reportsLink} ><Navbar.Brand >Defects</Navbar.Brand></Link>         
+        <Navbar.Toggle />
         </Navbar.Header>
+         
         <Navbar.Collapse>
           {this.state.navBtns}
         </Navbar.Collapse>
@@ -189,3 +168,7 @@ class Header extends React.Component {
 
 module.exports = Header;
                     
+ {/*  <Navbar collapseOnSelect> <Navbar.Brand >           
+           <Link to={this.state.reportsLink} ><p  className="link">Defects</p></Link>       </Navbar.Brand>
+           <Link to={this.state.chartLinkA} > <Navbar.Brand > <p  className="link">Charts  </p> </Navbar.Brand></Link>   
+           <Navbar.Toggle />*/}  

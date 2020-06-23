@@ -46,7 +46,7 @@ class NCreports extends React.Component {
     this.setState({ show: true });
   }
    /***********************/
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     // load reports
       let that = this;
       let xhr = new XMLHttpRequest();
@@ -72,7 +72,7 @@ class NCreports extends React.Component {
         let reports = response.map((el) => {  
  
           return <NCreport 
-                  // key={el.reportID}
+                  key={el.reportID}
                    reportnumber={el.reportID} 
                    inspector={el.inspector}
                    ewo={el.ewo}  //suplier

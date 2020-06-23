@@ -149,7 +149,7 @@ class RIlistAll2 extends React.Component {
     this.setState({ show: true });
   }
    /***********************/
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     // load reports
       let that = this;
       let xhr = new XMLHttpRequest();  
@@ -207,7 +207,7 @@ class RIlistAll2 extends React.Component {
             <br />
           </div> </Col>
           <Col xs={10} > <div   >
-            <Table ><tbody>  
+            <Table > 
               <Row>
                 <Col sm={1}> <b>RI </b>  </Col>
                 <Col sm={1} ><b> Inspector</b> </Col>
@@ -220,7 +220,7 @@ class RIlistAll2 extends React.Component {
                 <Col sm={1} > <b>View </b> </Col>
               </Row>
               {this.state.reports}
-              </tbody>   </Table>
+               </Table>
             <Modal show={this.state.show} onHide={this.handleClose}>  </Modal>
 
           </div>

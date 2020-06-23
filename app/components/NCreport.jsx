@@ -29,7 +29,7 @@ class NCreport extends React.Component {
           record:this.props.record ,//comment
          uwo:this.props.uwo ,  //photo url
       
-      tooltip: <Popover  title=  {this.props.fwo}  >
+      tooltip: <Popover id="pop" title=  {this.props.fwo}  >
                             <div>                                                    
                               DATE:   <b>  {jwo2}      </b> <br/>
                               SUPPLIER: <b>{this.props.ewo}   </b><br/>
@@ -42,10 +42,13 @@ class NCreport extends React.Component {
  
   render() {
     return(
-      <div className="book-all">
+      <div className="book-all"  >
       {/*   <img src={this.state.img_url} alt="book pic" className="img-all"/>*/}
         <div  ><h4 className="nc-all">{this.state.Gwo}</h4></div>
-        <div className="exchange-btn-all"  ><Link to={'report-view/' + this.state.reportID  }>   <Button bsSize="xsmall"  >  <Glyphicon glyph="eye-open"/>   </Button></Link></div>
+        <div className="exchange-btn-all"  >
+          <Link to={'report-view/' + this.state.reportID  }>
+            <Button bsSize="xsmall"  >  <Glyphicon glyph="eye-open"/>   </Button></Link>
+          </div>
         
          <OverlayTrigger
             trigger={['hover', 'focus']}

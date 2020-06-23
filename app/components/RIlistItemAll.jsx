@@ -33,13 +33,13 @@ class RIlistItemAll extends React.Component {
 
 
   render() {
-    // const {report, showDelete, showDelete2} = this.props;
+    // const {report, showDelete, showDelete2} = this.props;  key={this.state.reportID}
     return (
-      <div>
+      <div >
 
-        <div className="table-row-line">
+        <div className="table-row-line"  >
 
-          <Row ><tbody>  
+          <Row  > 
             <Col sm={1} >{this.state.reportID} </Col>
             <Col sm={1} > {this.state.inspector}</Col>
 
@@ -53,7 +53,7 @@ class RIlistItemAll extends React.Component {
               <Button bsSize="xsmall"  >
                 <Glyphicon glyph="eye-open" />   </Button></Link> </Col>
 
-            </tbody>   </Row>
+            </Row>
         </div>
 
       </div>

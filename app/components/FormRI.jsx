@@ -106,7 +106,7 @@ class FormRI extends React.Component {
     
   }
 //**
-componentWillMount() {
+UNSAFE_componentWillMount() {
   // get user inspname 
    let that = this;
    const xhr = new XMLHttpRequest();      

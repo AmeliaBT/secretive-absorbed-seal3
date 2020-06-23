@@ -124,7 +124,7 @@ this.state = {
     }
   /****************************/
   
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
      // get report data
       let that = this;
       const xhr = new XMLHttpRequest();

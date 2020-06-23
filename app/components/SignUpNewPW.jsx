@@ -4,10 +4,13 @@ const style = require('../styles/SignUp');
 const Header = require('./Header');
 // react-bootstrap
 const {Form, FormGroup, Col, FormControl, Button} = require('react-bootstrap');
+
 /* Change PW  form */
 class SignUpNewPW extends React.Component {
   constructor(props) {
     super(props);
+   
+
     this.state = {    
       password: ""      
     };

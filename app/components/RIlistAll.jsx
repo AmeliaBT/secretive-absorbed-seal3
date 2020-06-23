@@ -19,6 +19,9 @@ const {Table , Grid, Row, Col, Modal} = require('react-bootstrap');
 const Header = require('./Header');
 const RIlistItemMonth = require('./RIlistItemMonth');
 
+let parse = require('html-react-parser');
+//currently returning a string. It needs to return JSX . parse('<div>text</div>'); // equivalent to `React.createElement('div', {}, 'text')`
+
 let arrayOfRIs1= [  ["Date", "Lot Size"]];
 let arrayOfRIs2= [  ["Date", "Qty Tested", "Qty Fail"]];
 let arrayOfRIs3= ["Date"];
@@ -64,7 +67,7 @@ class RIlistAll extends React.Component {
   }
    /***********************/
  /***********************/
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     // load reports
       let that = this;
       let xhr = new XMLHttpRequest();  
@@ -140,11 +143,12 @@ uniqueYM.reverse();
        // arrLotYM.push([uniqueYM[i], lotA/lotN*100 ]) ;
  }   
      
-     
+ //see https://stackoverflow.com/questions/56956391/react-warning-validatedomnesting-text-nodes-cannot-appear-as-a-child-of    
        
-  let reportsM =arrLotYM.map((el) => {  
+  let reportsM =arrLotYM.map((el, index   ) => {  
    return < RIlistItemMonth
-          month_year={el[0]} 
+            key={index}
+            month_year={el[0]} 
                lotT={el[1]}
                lotA={el[2]}
                  lar={el[3]}
@@ -191,7 +195,7 @@ QtyDef - number of items defective<br/>
   
   <Col xs={7} > <div   >        
 <Table className="myForm">  
-       <tbody>          
+               
             <Row>             
               <Col sm={3} ><b> Year- Month</b> </Col> 
               <Col sm={1} ><b> Lot T </b></Col> 
@@ -204,7 +208,7 @@ QtyDef - number of items defective<br/>
              
            </Row>
         {this.state.reportsM}
-  </tbody>   
+  
   </Table> 
     
          <Modal show={this.state.show} onHide={this.handleClose}>  </Modal>
