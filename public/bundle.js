@@ -1439,7 +1439,14 @@ class Header extends React.Component {
         if(response.isLogedIn == true) {
             /* Show screen based on the Security level *********/   
           let securityLevel = response.securityLevel; 
-         
+       that.setState({
+     
+            ["reportsLink"]: "/reports",           
+            ["listLinkAll"]: "/list-all",
+              ["listLinkAll2"]: "/list-all2",
+               ["chartLinkA"]: "/chartA",
+            securityLevel: securityLevel
+           });   
      switch (securityLevel) {
       case 1:
          // user     
@@ -1495,15 +1502,13 @@ class Header extends React.Component {
                 ["chartLinkA"]: "/chartA",
              ["reportsLink"]: "/reports",
             securityLevel: securityLevel
-            */ 
-           ["listLinkAll"]: React.createElement(Nav, null, "  ", React.createElement(Link, {to: "/list", className: "link"}, " abc"), ",", 
-                              React.createElement(Link, {to: "/signup3", className: "link"}, React.createElement("p", {className: "link"}, "Change PW "))
-                             ) ,
+           
+               listLinkAll:  "/list-all",
                 listLinkAll2: "/list-all2",
                 chartLinkA: "/chartA",
-             reportsLink: "/reports",
-            securityLevel: securityLevel
-            
+                reportsLink: "/reports",
+               securityLevel: securityLevel
+             */
            });
         break;
  default:
