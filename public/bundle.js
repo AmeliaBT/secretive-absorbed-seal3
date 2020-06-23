@@ -1488,11 +1488,12 @@ class Header extends React.Component {
                       React.createElement(NavItem, {className: "span"}, " ", React.createElement(Link, {to: "/signup3", className: "link"}, React.createElement("p", {className: "link"}, "Change PW ")), " "), 
                        React.createElement(NavItem, {className: "span"}, " ", React.createElement("div", {onClick: that.handleLogOut, className: "link"}, "Log out"), " ")
                       ),
-            ["reportsLink"]: "/reports",
+           
             // ["listLink"]: "/list",
              ["listLinkAll"]: "/list-all",
                 ["listLinkAll2"]: "/list-all2",
                 ["chartLinkA"]: "/chartA",
+             ["reportsLink"]: "/reports",
             securityLevel: securityLevel
            });
         break;
@@ -1538,15 +1539,12 @@ class Header extends React.Component {
         React.createElement(Navbar.Header, null, 
         React.createElement(Link, {to: this.state.listLinkAll}, " ", React.createElement(Navbar.Brand, null, " ", React.createElement("p", {className: "link"}, " KPIs  "))), 
         React.createElement(Link, {to: this.state.listLinkAll2}, "   ", React.createElement(Navbar.Brand, null, " ", React.createElement("p", {className: "link"}, "Reports  "), " ")), 
-        React.createElement(Link, {to: this.state.chartLinkA}, " ", React.createElement(Navbar.Brand, null, " ", React.createElement("p", {className: "link"}, "Charts  "), " ")), 
-         
-         /* <Navbar.Brand >           
-           <Link to={this.state.reportsLink} ><p  className="link">Defects</p></Link>       </Navbar.Brand>*/
-      
         React.createElement(Link, {to: this.state.reportsLink}, React.createElement(Navbar.Brand, null, React.createElement("p", {className: "link"}, "Defects"))), 
-        
-  
-          
+         /* <Navbar.Brand >           
+           <Link to={this.state.reportsLink} ><p  className="link">Defects</p></Link>       </Navbar.Brand>
+           <Link to={this.state.chartLinkA} > <Navbar.Brand > <p  className="link">Charts  </p> </Navbar.Brand></Link>   
+           */
+       
           React.createElement(Navbar.Toggle, null)
         ), 
         React.createElement(Navbar.Collapse, null, 

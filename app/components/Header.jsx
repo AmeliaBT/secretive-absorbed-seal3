@@ -112,11 +112,12 @@ class Header extends React.Component {
                       <NavItem className='span'> <Link  to='/signup3' className="link"><p  className="link">Change PW </p></Link> </NavItem> 
                        <NavItem className='span'> <div  onClick={that.handleLogOut} className="link">Log out</div> </NavItem>
                       </Nav>,
-            ["reportsLink"]: "/reports",
+           
             // ["listLink"]: "/list",
              ["listLinkAll"]: "/list-all",
                 ["listLinkAll2"]: "/list-all2",
                 ["chartLinkA"]: "/chartA",
+             ["reportsLink"]: "/reports",
             securityLevel: securityLevel
            });
         break;
@@ -162,15 +163,12 @@ class Header extends React.Component {
         <Navbar.Header>                          
         <Link to={this.state.listLinkAll} > <Navbar.Brand > <p  className="link"> KPIs  </p></Navbar.Brand></Link>            
         <Link to={this.state.listLinkAll2} >   <  Navbar.Brand > <p  className="link">Reports  </p> </Navbar.Brand></Link>            
-        <Link to={this.state.chartLinkA} > <Navbar.Brand > <p  className="link">Charts  </p> </Navbar.Brand></Link>            
-         
+        <Link to={this.state.reportsLink} ><Navbar.Brand ><p  className="link" >Defects</p></Navbar.Brand></Link> 
          {/* <Navbar.Brand >           
-           <Link to={this.state.reportsLink} ><p  className="link">Defects</p></Link>       </Navbar.Brand>*/}   
-      
-        <Link to={this.state.reportsLink} ><Navbar.Brand ><p  className="link">Defects</p></Navbar.Brand></Link> 
-        
-  
-          
+           <Link to={this.state.reportsLink} ><p  className="link">Defects</p></Link>       </Navbar.Brand>
+           <Link to={this.state.chartLinkA} > <Navbar.Brand > <p  className="link">Charts  </p> </Navbar.Brand></Link>   
+           */}   
+       
           <Navbar.Toggle />
         </Navbar.Header>
         <Navbar.Collapse>
