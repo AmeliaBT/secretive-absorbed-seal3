@@ -169,8 +169,10 @@ class Header extends React.Component {
           <Navbar.Brand >           
             <Link to={this.state.chartLinkA} ><p  className="link">Charts  </p></Link>            
           </Navbar.Brand>
-          <Navbar.Brand >           
-            <Link to={this.state.reportsLink} ><p  className="link">Defects</p></Link>            
+         {/* <Navbar.Brand >           
+           <Link to={this.state.reportsLink} ><p  className="link">Defects</p></Link>    */}        
+          
+          
           </Navbar.Brand>
         
    

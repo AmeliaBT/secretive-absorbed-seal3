@@ -1545,8 +1545,10 @@ class Header extends React.Component {
           React.createElement(Navbar.Brand, null, 
             React.createElement(Link, {to: this.state.chartLinkA}, React.createElement("p", {className: "link"}, "Charts  "))
           ), 
-          React.createElement(Navbar.Brand, null, 
-            React.createElement(Link, {to: this.state.reportsLink}, React.createElement("p", {className: "link"}, "Defects"))
+          React.createElement(Navbar.Brand, null
+          /* <Link to={this.state.reportsLink} ><p  className="link">Defects</p></Link>    */
+          
+          
           ), 
         
    
