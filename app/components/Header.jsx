@@ -165,20 +165,20 @@ class Header extends React.Component {
  
   render() {
     return (
-      <div  className="link span">
-       <Navbar collapseOnSelect>
+      <div  >
+       <Navbar >
         <Navbar.Header>                          
         <Link to={this.state.listLinkAll} > <Navbar.Brand >  KPIs </Navbar.Brand></Link>            
-        <Link to={this.state.listLinkAll2} >   <  Navbar.Brand > <p  className="link">Reports  </p> </Navbar.Brand></Link> 
-        <Link to={this.state.chartLinkA} > <Navbar.Brand > <p  className="link">Charts  </p> </Navbar.Brand></Link>   
+        <Link to={this.state.listLinkAll2} > <Navbar.Brand > Reports </Navbar.Brand></Link> 
+        <Link to={this.state.chartLinkA} > <Navbar.Brand >Charts </Navbar.Brand></Link>   
         <Link to={this.state.reportsLink} ><Navbar.Brand >Defects</Navbar.Brand></Link> 
-         {/* <Navbar.Brand >           
+         {/*  <Navbar collapseOnSelect> <Navbar.Brand >           
            <Link to={this.state.reportsLink} ><p  className="link">Defects</p></Link>       </Navbar.Brand>
            <Link to={this.state.chartLinkA} > <Navbar.Brand > <p  className="link">Charts  </p> </Navbar.Brand></Link>   
-           */}   
-       
-          <Navbar.Toggle />
+           <Navbar.Toggle />*/}  
+           <Navbar.Toggle />
         </Navbar.Header>
+         
         <Navbar.Collapse>
           {this.state.navBtns}
         </Navbar.Collapse>
