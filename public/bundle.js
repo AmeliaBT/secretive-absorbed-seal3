@@ -1495,8 +1495,10 @@ class Header extends React.Component {
                 ["chartLinkA"]: "/chartA",
              ["reportsLink"]: "/reports",
             securityLevel: securityLevel
-            */
-           listLinkAll: "/list-all",
+            */ 
+           ["listLinkAll"]: React.createElement(Nav, null, "  ", React.createElement(Link, {to: "/list", className: "link"}, " abc"), ",", 
+                              React.createElement(Link, {to: "/signup3", className: "link"}, React.createElement("p", {className: "link"}, "Change PW "))
+                             ) ,
                 listLinkAll2: "/list-all2",
                 chartLinkA: "/chartA",
              reportsLink: "/reports",
@@ -56916,7 +56918,7 @@ exports = module.exports = __webpack_require__(23)(false);
 
 
 // module
-exports.push([module.i, ".span{\n  color: #987D00; \n}\n.link {\n  text-decoration: none;\n  color: black; \n  list-style-type: none; \n  overflow: hidden;  \n  display: inline;\n}\n.link:hover {\n  text-decoration: none;\n  color: #987D00;\n}\n.navbar-nav span[role=button] {\n  padding-left: 100px; \n  line-height: 20px; \n}\n\n\n\n\n/*\n\n.navbar-nav span[role=button] {\n  padding-left: 10px;\n  display: inline;\n  line-height: 20px;\n background-color: blue;\n\n}\n\n\n.span{background-color: green;}\n\n.riheader {\n  display: inline;\n  padding-right: 100px;\n  font-weight: bold;\n}\n\n\n background-color: coral;\n.riheader{background-color: aqua;}\n display: inline-block;\n className=\"riheader\"\n*/", ""]);
+exports.push([module.i, ".span{\n  color: #987D00; \n}\n.link {\n  text-decoration: none;\n  color: black; \n  list-style-type: none; \n  overflow: hidden;  \n  display: inline;\n}\n.link:hover {\n  text-decoration: none;\n  color: #987D00;\n}\n.navbar-nav span[role=button] {\n  padding-left: 100px; \n  line-height: 20px; \n}\n\n", ""]);
 
 // exports
 

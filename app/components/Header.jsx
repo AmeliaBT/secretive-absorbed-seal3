@@ -119,8 +119,10 @@ class Header extends React.Component {
                 ["chartLinkA"]: "/chartA",
              ["reportsLink"]: "/reports",
             securityLevel: securityLevel
-            */
-           listLinkAll: "/list-all",
+            */ 
+           ["listLinkAll"]: <Nav>  <Link  to='/list' className="link"> abc</Link>,
+                              <Link  to='/signup3' className="link"><p  className="link">Change PW </p></Link> 
+                             </Nav> ,
                 listLinkAll2: "/list-all2",
                 chartLinkA: "/chartA",
              reportsLink: "/reports",
