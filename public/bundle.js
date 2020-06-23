@@ -1538,15 +1538,12 @@ class Header extends React.Component {
         React.createElement(Navbar.Header, null, 
         React.createElement(Link, {to: this.state.listLinkAll}, " ", React.createElement(Navbar.Brand, null, " ", React.createElement("p", {className: "link"}, " KPIs  "))), 
         React.createElement(Link, {to: this.state.listLinkAll2}, "   ", React.createElement(Navbar.Brand, null, " ", React.createElement("p", {className: "link"}, "Reports  "), " ")), 
-        React.createElement(Link, {to: this.state.chartLinkA}, " ", React.createElement(Navbar.Brand, null, 
-React.createElement("p", {className: "link"}, "Charts  "), " ")), 
+        React.createElement(Link, {to: this.state.chartLinkA}, " ", React.createElement(Navbar.Brand, null, " ", React.createElement("p", {className: "link"}, "Charts  "), " ")), 
          
          /* <Navbar.Brand >           
-           <Link to={this.state.reportsLink} ><p  className="link">Defects</p></Link> 
-          </Navbar.Brand>*/
-        
+           <Link to={this.state.reportsLink} ><p  className="link">Defects</p></Link>       </Navbar.Brand>*/
       
-React.createElement(Link, {to: this.state.reportsLink}, React.createElement(Navbar.Brand, null, React.createElement("p", {className: "link"}, "Defects"))), 
+        React.createElement(Link, {to: this.state.reportsLink}, React.createElement(Navbar.Brand, null, React.createElement("p", {className: "link"}, "Defects"))), 
         
   
           
