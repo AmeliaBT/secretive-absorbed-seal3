@@ -1440,12 +1440,17 @@ class Header extends React.Component {
             /* Show screen based on the Security level *********/   
           let securityLevel = response.securityLevel; 
        that.setState({
-     
-            ["reportsLink"]: "/reports",           
-            ["listLinkAll"]: "/list-all",
-              ["listLinkAll2"]: "/list-all2",
-               ["chartLinkA"]: "/chartA",
+       /*   ["listLinkAll"]: "/list-all",
+                ["listLinkAll2"]: "/list-all2",
+                ["chartLinkA"]: "/chartA",
+             ["reportsLink"]: "/reports",
             securityLevel: securityLevel
+              */
+               listLinkAll:  "/list-all",
+                listLinkAll2: "/list-all2",
+                chartLinkA: "/chartA",
+                reportsLink: "/reports",
+               securityLevel: securityLevel
            });   
      switch (securityLevel) {
       case 1:
@@ -1454,12 +1459,7 @@ class Header extends React.Component {
           ["navBtns"]: React.createElement(Nav, {pullLeft: true, className: "link span"}, 
                       React.createElement(NavItem, {className: "span"}, " ", React.createElement(Link, {to: "/signup3", className: "link"}, React.createElement("p", {className: "link"}, "Change PW ")), " "), 
                        React.createElement(NavItem, {className: "span"}, " ", React.createElement("div", {onClick: that.handleLogOut, className: "link"}, "Log out"), " ")
-                      ),
-            ["reportsLink"]: "/reports",           
-            ["listLinkAll"]: "/list-all",
-              ["listLinkAll2"]: "/list-all2",
-               ["chartLinkA"]: "/chartA",
-            securityLevel: securityLevel
+                      )
            });
         break;
       case 2:
@@ -1471,14 +1471,7 @@ class Header extends React.Component {
                        React.createElement(NavItem, {className: "span"}, " ", React.createElement(Link, {to: "/signup2", className: "link"}, React.createElement("p", {className: "link"}, "Add User")), " "), 
                        React.createElement(NavItem, {className: "span"}, " ", React.createElement(Link, {to: "/signup3", className: "link"}, React.createElement("p", {className: "link"}, "Change PW ")), " "), 
                        React.createElement(NavItem, {className: "span"}, " ", React.createElement("div", {onClick: that.handleLogOut, className: "link"}, "Log out"), " ")
-                      ),
-           
-           
-             ["listLinkAll"]: "/list-all",
-                ["listLinkAll2"]: "/list-all2",
-                ["chartLinkA"]: "/chartA",
-             ["reportsLink"]: "/reports", //defects
-            securityLevel: securityLevel
+                      )
            });
          
        
@@ -1494,21 +1487,7 @@ class Header extends React.Component {
                        React.createElement(NavItem, {className: "span"}, " ", React.createElement(Link, {to: "/signup2", className: "link"}, React.createElement("p", {className: "link"}, "Add User")), " "), 
                       React.createElement(NavItem, {className: "span"}, " ", React.createElement(Link, {to: "/signup3", className: "link"}, React.createElement("p", {className: "link"}, "Change PW ")), " "), 
                        React.createElement(NavItem, {className: "span"}, " ", React.createElement("div", {onClick: that.handleLogOut, className: "link"}, "Log out"), " ")
-                      ),
-           
-            // ["listLink"]: "/list",
-          /*   ["listLinkAll"]: "/list-all",
-                ["listLinkAll2"]: "/list-all2",
-                ["chartLinkA"]: "/chartA",
-             ["reportsLink"]: "/reports",
-            securityLevel: securityLevel
-           
-               listLinkAll:  "/list-all",
-                listLinkAll2: "/list-all2",
-                chartLinkA: "/chartA",
-                reportsLink: "/reports",
-               securityLevel: securityLevel
-             */
+                      )
            });
         break;
  default:
@@ -1521,18 +1500,14 @@ class Header extends React.Component {
                           React.createElement(Link, {to: "/login", className: "link"}, React.createElement("p", {className: "link"}, " Log in "))
                         )
                       )
-            
-            
            });   
      
     }         
- /********************/
-       
+ /********************/       
         }
         else {
           that.setState({
           ["navBtns"]: React.createElement(Nav, {pullLeft: true, className: "link span"}, 
-             
                         React.createElement(NavItem, {className: "span"}, 
                           React.createElement(Link, {to: "/login", className: "link"}, React.createElement("p", {className: "link"}, " Log in "))
                         )
@@ -1555,11 +1530,7 @@ class Header extends React.Component {
         React.createElement(Link, {to: this.state.listLinkAll2}, " ", React.createElement(Navbar.Brand, null, " Reports ")), 
         React.createElement(Link, {to: this.state.chartLinkA}, " ", React.createElement(Navbar.Brand, null, "Charts ")), 
         React.createElement(Link, {to: this.state.reportsLink}, React.createElement(Navbar.Brand, null, "Defects")), 
-         /*  <Navbar collapseOnSelect> <Navbar.Brand >           
-           <Link to={this.state.reportsLink} ><p  className="link">Defects</p></Link>       </Navbar.Brand>
-           <Link to={this.state.chartLinkA} > <Navbar.Brand > <p  className="link">Charts  </p> </Navbar.Brand></Link>   
-           <Navbar.Toggle />*/
-           React.createElement(Navbar.Toggle, null)
+        React.createElement(Navbar.Toggle, null)
         ), 
          
         React.createElement(Navbar.Collapse, null, 
@@ -1573,7 +1544,10 @@ class Header extends React.Component {
 
 module.exports = Header;
                     
-
+ {/*  <Navbar collapseOnSelect> <Navbar.Brand >           
+           <Link to={this.state.reportsLink} ><p  className="link">Defects</p></Link>       </Navbar.Brand>
+           <Link to={this.state.chartLinkA} > <Navbar.Brand > <p  className="link">Charts  </p> </Navbar.Brand></Link>   
+           <Navbar.Toggle />*/}  
 
 /***/ }),
 /* 19 */
