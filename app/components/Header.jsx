@@ -2,7 +2,7 @@ const React = require('react');
 const Link = require('react-router-dom').Link
 const style = require('../styles/Header');
 // react-bootstrap
-const {Nav, Navbar, NavItem} = require('react-bootstrap');
+const {Nav, Navbar, NavItem } = require('react-bootstrap');
 
 /* the header component for navbar */
 class Header extends React.Component {
@@ -170,12 +170,12 @@ class Header extends React.Component {
             <Link to={this.state.chartLinkA} ><p  className="link">Charts  </p></Link>            
           </Navbar.Brand>
          {/* <Navbar.Brand >           
-           <Link to={this.state.reportsLink} ><p  className="link">Defects</p></Link>    */}        
-          
-          
-          </Navbar.Brand>
+           <Link to={this.state.reportsLink} ><p  className="link">Defects</p></Link> 
+          </Navbar.Brand>*/}   
         
-   
+  <Navbar.Brand           
+        as={Link}  to={this.state.reportsLink} ><p  className="link">Defects</p>
+          </Navbar.Brand>
   
           
           <Navbar.Toggle />

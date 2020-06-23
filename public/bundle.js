@@ -1378,7 +1378,7 @@ const React = __webpack_require__(0);
 const Link = __webpack_require__(22).Link
 const style = __webpack_require__(321);
 // react-bootstrap
-const {Nav, Navbar, NavItem} = __webpack_require__(9);
+const {Nav, Navbar, NavItem } = __webpack_require__(9);
 
 /* the header component for navbar */
 class Header extends React.Component {
@@ -1545,13 +1545,13 @@ class Header extends React.Component {
           React.createElement(Navbar.Brand, null, 
             React.createElement(Link, {to: this.state.chartLinkA}, React.createElement("p", {className: "link"}, "Charts  "))
           ), 
-          React.createElement(Navbar.Brand, null
-          /* <Link to={this.state.reportsLink} ><p  className="link">Defects</p></Link>    */
-          
-          
-          ), 
+         /* <Navbar.Brand >           
+           <Link to={this.state.reportsLink} ><p  className="link">Defects</p></Link> 
+          </Navbar.Brand>*/
         
-   
+  React.createElement(Navbar.Brand, {
+        as: Link, to: this.state.reportsLink}, React.createElement("p", {className: "link"}, "Defects")
+          ), 
   
           
           React.createElement(Navbar.Toggle, null)
