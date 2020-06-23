@@ -1,7 +1,6 @@
 {
-  "//1": "describes your app and its dependencies",
-  "//2": "https://docs.npmjs.com/files/package.json",
-  "//3": "updating this file will download and update your packages",
+  
+  "//": "https://docs.npmjs.com/files/package.json",
   "name": "CMSstarter-react-redux",
   "version": "0.0.1",
   "description": "app  React 2020-03-30",
